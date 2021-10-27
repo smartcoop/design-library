@@ -26,6 +26,16 @@ namespace Smart.Design.Razor.TagHelpers.Html
         TagBuilder GenerateSmartInputText(ViewContext viewContext, string id, string name, string placeholder,
             object? value, ModelExpression @for);
 
+
+        /// <summary>
+        /// Generate a &lt;div&gt; that represents a panel and is compliant with smart design.
+        /// A panel is composed of two things: a header and a body.
+        /// </summary>
+        /// <param name="header">The header of the panel.</param>
+        /// <param name="body">The content of the panel. This can be any html.</param>
+        /// <returns>A instance of a &lt;div&gt; that represents a panel.</returns>
+        TagBuilder GenerateSmartPanel(string header, IHtmlContent body);
+
         /// <summary>
         /// Generates a &lt;div&gt; whose content is a &lt;svg&gt;.
         /// </summary>
