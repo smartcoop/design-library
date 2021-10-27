@@ -12,6 +12,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartButtonToolbarTagName = "smart-button-toolbar";
 
+        public const string SmartCheckboxTagName = "smart-checkbox";
+
         public const string SmartContainerTagName = "smart-container";
 
         public const string SmartFormGroupInputText = "smart-form-group-input-text";
