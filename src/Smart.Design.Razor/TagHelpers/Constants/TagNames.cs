@@ -14,6 +14,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartContainerTagName = "smart-container";
 
+        public const string SmartFormGroupInputText = "smart-form-group-input-text";
+
         public const string SmartGridColumnTagName = "smart-grid-column";
 
         public const string SmartGridTagName = "smart-grid";
