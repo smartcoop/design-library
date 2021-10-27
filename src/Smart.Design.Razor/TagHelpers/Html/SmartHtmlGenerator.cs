@@ -97,6 +97,15 @@ namespace Smart.Design.Razor.TagHelpers.Html
             return panel;
         }
 
+
+        /// <inheritdoc />
+        public TagBuilder GenerateHorizontalRule()
+        {
+            var hr = new TagBuilder("hr");
+            hr.AddCssClass("c-hr");
+            return hr;
+        }
+
         /// <inheritdoc />
         public TagBuilder GenerateIcon(Icon icon)
         {

@@ -36,6 +36,14 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <returns>A instance of a &lt;div&gt; that represents a panel.</returns>
         TagBuilder GenerateSmartPanel(string header, IHtmlContent body);
 
+
+        /// <summary>
+        /// Generate a &lt;hr&gt; that is compliant with smart design
+        /// More information can be seen <see href="https://sesign.smart.coop">here</see>.
+        /// </summary>
+        /// <returns></returns>
+        TagBuilder GenerateHorizontalRule();
+
         /// <summary>
         /// Generates a &lt;div&gt; whose content is a &lt;svg&gt;.
         /// </summary>

@@ -10,6 +10,9 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartButtonTagName = "smart-button";
 
+
+        public const string SmartHorizontalRuleTagName = "smart-hr";
+
         public const string SmartInputTagName = "smart-input";
 
         public const string SmartPanelTagName = "smart-panel";
