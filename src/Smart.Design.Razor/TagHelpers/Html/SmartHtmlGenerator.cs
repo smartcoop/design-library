@@ -7,10 +7,16 @@ using CaseExtensions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Smart.Design.Razor.Enums;
+
 namespace Smart.Design.Razor.TagHelpers.Html
 {
     public class SmartHtmlGenerator : ISmartHtmlGenerator
     {
+        private static string? s_baseIconPath;
+        private static string BaseIconPath => s_baseIconPath ??=
+        	$"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/wwwroot/icons";
+
         private readonly ValidationHtmlAttributeProvider _validationHtmlAttributeProvider;
 
         public SmartHtmlGenerator(ValidationHtmlAttributeProvider validationHtmlAttributeProvider)
@@ -58,6 +64,32 @@ namespace Smart.Design.Razor.TagHelpers.Html
                     inputName, inputTextTagBuilder.Attributes);
 
             return inputTextTagBuilder;
+        }
+
+
+        /// <inheritdoc />
+        public TagBuilder GenerateIcon(Icon icon)
+        {
+            var iconDiv = new TagBuilder("div");
+            iconDiv.AddCssClass($"o-svg-icon o-svg-icon-{icon.ToString().ToKebabCase()}");
+            if (icon != Icon.None)
+            {
+                var svg = File.ReadAllText($"{BaseIconPath}/{icon.ToString().ToKebabCase()}.svg");
+                iconDiv.InnerHtml.AppendHtml(svg);
+            }
+
+            return iconDiv;
+        }
+
+        /// <inheritdoc />
+        public async Task<TagBuilder> GenerateIconAsync(Icon icon)
+        {
+            var iconDiv = new TagBuilder("div");
+            iconDiv.AddCssClass($"o-svg-icon o-svg-icon-{icon.ToString().ToKebabCase()}");
+            var svg = await File.ReadAllTextAsync($"{BaseIconPath}/{icon.ToString().ToKebabCase()}.svg");
+            iconDiv.InnerHtml.AppendHtml(svg);
+
+            return iconDiv;
         }
 
         private string GetAttributeName(string name, ModelExpression modelExpression)

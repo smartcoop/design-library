@@ -7,6 +7,9 @@ namespace Smart.Design.Razor.TagHelpers.Constants
     /// </summary>
     public static class TagNames
     {
+
+        public const string SmartButtonTagName = "smart-button";
+
         public const string SmartInputTagName = "smart-input";
     }
 }

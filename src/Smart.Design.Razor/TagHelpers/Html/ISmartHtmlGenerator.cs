@@ -2,6 +2,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Smart.Design.Razor.Enums;
+
 #nullable enable
 namespace Smart.Design.Razor.TagHelpers.Html
 {
@@ -23,6 +25,23 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <returns></returns>
         TagBuilder GenerateSmartInputText(ViewContext viewContext, string id, string name, string placeholder,
             object? value, ModelExpression @for);
+
+        /// <summary>
+        /// Generates a &lt;div&gt; whose content is a &lt;svg&gt;.
+        /// </summary>
+        /// <param name="icon">The icon to render.</param>
+        /// <returns>An instance of the icon.</returns>
+        TagBuilder GenerateIcon(Icon icon);
+
+        /// <summary>
+        /// Generates asynchronously a div whose content is a &lt;svg&gt;.
+        /// </summary>
+        /// <param name="icon">The icon to render</param>
+        /// <returns>
+        /// A task that represents the rendering asynchronous operation.
+        /// The task result is the instance of the icon.
+        /// </returns>
+        Task<TagBuilder> GenerateIconAsync(Icon icon);
     }
 #nullable disable
 }
