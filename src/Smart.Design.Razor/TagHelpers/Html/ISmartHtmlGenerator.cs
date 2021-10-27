@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.Enums;
 
 #nullable enable
@@ -35,6 +36,17 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="body">The content of the panel. This can be any html.</param>
         /// <returns>A instance of a &lt;div&gt; that represents a panel.</returns>
         TagBuilder GenerateSmartPanel(string header, IHtmlContent body);
+
+        /// <summary>
+        /// Generate a &lt;textarea&gt; that is compliant with smart design.
+        /// </summary>
+        /// <param name="id">The id of the &lt;textarea&gt;</param>
+        /// <param name="name">The name of the &lt;textarea&gt;</param>
+        /// <param name="rows">The number of rows of the &lt;textarea&gt;. This parameter is optional.</param>
+        /// <param name="textareaSize"></param>
+        /// <param name="for"></param>
+        /// <returns>An instance of the &lt;textarea&gt;</returns>
+        TagBuilder GenerateSmartTextArea(string id, string name, int? rows, TextAreaSize textareaSize, ModelExpression @for);
 
         /// <summary>
         /// Generate a div that represents the smart button toolbar.

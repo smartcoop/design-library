@@ -7,6 +7,7 @@ using CaseExtensions;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.Enums;
 
 namespace Smart.Design.Razor.TagHelpers.Html
@@ -95,6 +96,37 @@ namespace Smart.Design.Razor.TagHelpers.Html
             panel.InnerHtml.AppendHtml(panelBody);
 
             return panel;
+        }
+
+        /// <inheritdoc />
+        public TagBuilder GenerateSmartTextArea(string id, string name, int? rows, TextAreaSize textareaSize, ModelExpression @for)
+        {
+            var textAreaTagBuilder = new TagBuilder("textarea");
+            textAreaTagBuilder.AddCssClass("c-textarea");
+
+            if (!string.IsNullOrWhiteSpace(id))
+            {
+                textAreaTagBuilder.Attributes.Add("id", id);
+            }
+
+            AddNameAttribute(textAreaTagBuilder, @for, name);
+
+            if (rows.HasValue)
+            {
+                textAreaTagBuilder.Attributes.Add("rows", rows.Value.ToString(CultureInfo.InvariantCulture));
+            }
+
+            if (textareaSize != TextAreaSize.Unspecified)
+            {
+                textAreaTagBuilder.AddCssClass($"c-input--h-{textareaSize.ToString().ToLowerInvariant()}");
+            }
+
+            if (@for?.Model is string content && !string.IsNullOrWhiteSpace(content))
+            {
+                textAreaTagBuilder.InnerHtml.SetHtmlContent(content);
+            }
+
+            return textAreaTagBuilder;
         }
 
         /// <inheritdoc />
@@ -195,6 +227,23 @@ namespace Smart.Design.Razor.TagHelpers.Html
         private string GetAttributeName(string name, ModelExpression modelExpression)
         {
             return !string.IsNullOrWhiteSpace(modelExpression?.Name) ? modelExpression.Name : name;
+        }
+
+        /// <summary>
+        /// Sets <see cref="TagBuilder" />'s name depending on the value of <paramref name="modelExpression" /> and <paramref name="name"/>.
+        /// If both <paramref name="modelExpression"/> <see cref="ModelExpression.Name"/> and <paramref name="name"/> are empty or null, the attribute is not set.
+        /// <see cref="ModelExpression.Name"/> of <paramref name="modelExpression"/> property has precedence over <paramref name="name" />.
+        /// </summary>
+        /// <param name="tagBuilder">The <see cref="TagBuilder"/> to which attribute name should be set.</param>
+        /// <param name="modelExpression">A <see cref="ModelExpression" /> that can be associated to the <paramref name="tagBuilder" /></param>
+        /// <param name="name">Value of the name attribute if specified.</param>
+        private void AddNameAttribute(TagBuilder tagBuilder, ModelExpression modelExpression, string name)
+        {
+            var attributeName = GetAttributeName(name, modelExpression);
+            if (!string.IsNullOrWhiteSpace(attributeName))
+            {
+                tagBuilder.Attributes["name"] = attributeName;
+            }
         }
     }
 }

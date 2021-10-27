@@ -24,5 +24,6 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartPanelTagName = "smart-panel";
 
+        public const string SmartTextareaTagName = "smart-textarea";
     }
 }
