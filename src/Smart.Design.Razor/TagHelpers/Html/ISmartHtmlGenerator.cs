@@ -61,6 +61,19 @@ namespace Smart.Design.Razor.TagHelpers.Html
         TagBuilder GenerateFormGroupControlsContainer();
 
         /// <summary>
+        /// Generates a smart design radio button.
+        /// Documentation is available <see href="https://design.smart.coop/development/docs/c-radio-button.html">here</see>.
+        /// </summary>
+        /// <param name="id">The id of the generated &lt;input&gt; element.</param>
+        /// <param name="name">The attribute name of the generated &lt;input&gt; element.</param>
+        /// <param name="label">The label associated to the radio button.</param>
+        /// <param name="value">Value of the generated &lt;input&gt; element.</param>
+        /// <param name="checked">If the radio button is checked or not.</param>
+        /// <param name="for">The <see cref="ModelExpression"/> passed to the tag helper.</param>
+        /// <returns>A instance of a smart design radio button.</returns>
+        TagBuilder GenerateSmartRadio(string id, string name, string label, string value, bool @checked, ModelExpression @for);
+
+        /// <summary>
         /// Generate a &lt;div&gt; that represents a panel and is compliant with smart design.
         /// A panel is composed of two things: a header and a body.
         /// </summary>
