@@ -7,7 +7,6 @@ namespace Smart.Design.Razor.TagHelpers.Constants
     /// </summary>
     public static class TagNames
     {
-
         public const string SmartButtonTagName = "smart-button";
 
         public const string SmartButtonToolbarTagName = "smart-button-toolbar";
@@ -29,6 +28,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants
         public const string SmartHorizontalRuleTagName = "smart-hr";
 
         public const string SmartInputTagName = "smart-input";
+
+        public const string SmartInputTimeTagName = "smart-input-time";
 
         public const string SmartPanelTagName = "smart-panel";
 

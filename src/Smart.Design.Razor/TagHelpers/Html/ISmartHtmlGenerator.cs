@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -157,6 +158,15 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <returns>An instance of a form.</returns>
         TagBuilder GenerateForm(FormLayout layout, IHtmlContent content);
 
+        /// <summary>
+        /// Generates an &lt;input&gt; time compliant with smart design.
+        /// </summary>
+        /// <param name="id">Id attribute of the element.</param>
+        /// <param name="name">Name attribute of the element.</param>
+        /// <param name="value">The value of the input.</param>
+        /// <param name="for">The <see cref="ModelExpression"/> associated to the html element.</param>
+        /// <returns></returns>
+        TagBuilder GenerateInputTime(string id, string name, DateTime? value, ModelExpression @for);
     }
 #nullable disable
 }
