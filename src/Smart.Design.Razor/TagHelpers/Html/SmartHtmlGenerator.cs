@@ -122,6 +122,53 @@ namespace Smart.Design.Razor.TagHelpers.Html
             return labelTagBuilder;
         }
 
+        public TagBuilder GenerateInputGroup(ViewContext viewContext, string id, string name, string placeholder, string value, ModelExpression @for,
+            Alignment alignment, Icon icon, string text)
+        {
+            var inputGroup = new TagBuilder("div");
+            inputGroup.AddCssClass("c-input-group");
+
+            if (!string.IsNullOrWhiteSpace(text) && icon != Icon.None)
+            {
+                throw new ArgumentException($"{nameof(text)} and {nameof(icon)} can not be specified at the same time");
+            }
+
+            // Content can be aligned at the beginning or at the end of the inputGroup.
+
+            TagBuilder group = null;
+
+            // If text or icon is set we need to prepare the grouping.
+            if (!string.IsNullOrWhiteSpace(text) || icon != Icon.None)
+            {
+                group = new TagBuilder("div");
+                group.AddCssClass($"c-input-group__{(alignment == Alignment.Start ? "prepend" : "append")}");
+
+                if (icon is not Icon.None)
+                {
+                    var svgIcon = GenerateIcon(icon);
+                    group.InnerHtml.SetHtmlContent(svgIcon);
+                }
+                else if (text is not null)
+                {
+                    group.InnerHtml.SetHtmlContent(text);
+                }
+            }
+
+            if (group is not null && alignment == Alignment.Start)
+            {
+                inputGroup.InnerHtml.AppendHtml(group);
+            }
+
+            inputGroup.InnerHtml.AppendHtml(GenerateSmartInputText(viewContext, id, name, placeholder, value, @for));
+
+            if (alignment == Alignment.End && group.HasInnerHtml)
+            {
+                inputGroup.InnerHtml.AppendHtml(group);
+            }
+
+            return inputGroup;
+        }
+
         /// <inheritdoc />
         public virtual TagBuilder GenerateFormGroupControlsContainer()
         {
