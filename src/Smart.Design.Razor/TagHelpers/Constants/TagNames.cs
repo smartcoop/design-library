@@ -17,6 +17,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartFormAttributeName = "smart-form";
 
+        public const string SmartFormGroupInputGroup = "smart-form-group-input-group";
+        
         public const string SmartFormGroupInputText = "smart-form-group-input-text";
 
         public const string SmartFormGroupTextArea = "smart-form-group-textarea";
