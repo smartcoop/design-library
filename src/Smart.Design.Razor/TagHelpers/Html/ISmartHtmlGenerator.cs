@@ -210,6 +210,15 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="elevation">Size of the elevation</param>
         /// <returns>A instance of an elevator.</returns>
         TagBuilder GenerateElevation(ElevationSize elevation);
+
+        /// <summary>
+        /// Generates a smart design alert stack.
+        /// Documentation is available <see href="https://design.smart.coop/development/docs/c-alert-stack.html">here</see>.
+        /// </summary>
+        /// <param name="icon">The leading icon of the alert.</param>
+        /// <param name="message">The message to be displayed.</param>
+        /// <returns></returns>
+        TagBuilder GenerateAlertStack(Icon icon, string message);
     }
 #nullable disable
 }
