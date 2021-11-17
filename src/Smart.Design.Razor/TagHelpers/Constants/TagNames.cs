@@ -45,6 +45,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartInputTimeTagName = "smart-input-time";
 
+        public const string SmartLoader = "smart-loader";
+
         public const string SmartPanelTagName = "smart-panel";
 
         public const string SmartRadioButtonTagName = "smart-radio";

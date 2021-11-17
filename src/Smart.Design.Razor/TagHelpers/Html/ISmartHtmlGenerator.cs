@@ -219,6 +219,14 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="message">The message to be displayed.</param>
         /// <returns></returns>
         TagBuilder GenerateAlertStack(Icon icon, string message);
+
+        /// <summary>
+        /// Generates a smart design loader.
+        /// Documentation is available <see ref="https://design.smart.coop/development/docs/c-loader.html">here</see>.
+        /// </summary>
+        /// <param name="loading">The state of the component, i.e. loading or not.</param>
+        /// <returns>An instance of a smart design loader.</returns>
+        TagBuilder GenerateLoader(bool loading);
     }
 #nullable disable
 }

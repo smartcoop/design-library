@@ -520,6 +520,18 @@ namespace Smart.Design.Razor.TagHelpers.Html
             return mainDiv;
         }
 
+        /// <inheritdoc />
+        public TagBuilder GenerateLoader(bool loading)
+        {
+            var loader = new TagBuilder("div");
+            loader.AddCssClass("c-loader");
+            loader.Attributes["role"] = "alert";
+            loader.Attributes["aria-busy"] = loading.ToString();
+
+            return loader;
+
+        }
+
         private string GetAttributeName(string name, ModelExpression modelExpression)
         {
             return !string.IsNullOrWhiteSpace(modelExpression?.Name) ? modelExpression.Name : name;
