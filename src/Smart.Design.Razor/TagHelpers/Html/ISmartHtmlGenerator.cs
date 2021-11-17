@@ -227,6 +227,18 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="loading">The state of the component, i.e. loading or not.</param>
         /// <returns>An instance of a smart design loader.</returns>
         TagBuilder GenerateLoader(bool loading);
+
+        /// <summary>
+        /// Generates a smart design avatar.
+        /// </summary>
+        /// <param name="size"></param>
+        /// <param name="imageUrl"></param>
+        /// <param name="text">Associated text to the avatar</param>
+        /// <param name="icon"></param>
+        /// <param name="initial"></param>
+        /// <param name="link"></param>
+        /// <returns></returns>
+        TagBuilder GenerateAvatar(AvatarSize size, string imageUrl, string text, Icon icon, string initial, string link);
     }
 #nullable disable
 }

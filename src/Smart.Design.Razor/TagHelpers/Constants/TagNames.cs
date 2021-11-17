@@ -9,6 +9,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants
     {
         public const string SmartAlertStack = "smart-alert-stack";
 
+        public const string SmartAvatar = "smart-avatar";
+
         public const string SmartBannerTagName = "smart-banner";
 
         public const string SmartButtonTagName = "smart-button";
