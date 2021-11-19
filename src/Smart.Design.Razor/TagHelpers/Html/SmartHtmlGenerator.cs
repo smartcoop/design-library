@@ -149,6 +149,27 @@ namespace Smart.Design.Razor.TagHelpers.Html
             return iconDiv;
         }
 
+        /// <inheritdoc />
+        public TagBuilder GenerateSmartGrid()
+        {
+            var grid = new TagBuilder("div");
+            grid.AddCssClass("o-grid");
+
+            return grid;
+        }
+
+        /// <inheritdoc />
+        public TagBuilder GenerateSmartColumnGrid(int width)
+        {
+            var tagBuilder = new TagBuilder("div");
+            if (width is < 1 or > 24)
+                throw new IndexOutOfRangeException("Width must be between 1 and 12");
+
+            tagBuilder.AddCssClass($"o-grid-col-{width}");
+
+            return tagBuilder;
+        }
+
         private string GetAttributeName(string name, ModelExpression modelExpression)
         {
             return !string.IsNullOrWhiteSpace(modelExpression?.Name) ? modelExpression.Name : name;

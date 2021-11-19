@@ -68,6 +68,21 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// The task result is the instance of the icon.
         /// </returns>
         Task<TagBuilder> GenerateIconAsync(Icon icon);
+
+        /// <summary>
+        /// Generates a &lt;div&gt; that is a smart design grid.
+        /// Documentation is available <see href="https://design.smart.coop/development/docs/o-grid.html">here</see>.
+        /// </summary>
+        /// <returns>An instance of the grid.</returns>
+        TagBuilder GenerateSmartGrid();
+
+        /// <summary>
+        /// Generates a column for the smart grid.
+        /// Documentation is available <see href="https://design.smart.coop/development/docs/o-grid.html">here</see>.
+        /// </summary>
+        /// <param name="width">The width of the column.</param>
+        /// <returns>An instance of a column.</returns>
+        TagBuilder GenerateSmartColumnGrid(int width);
     }
 #nullable disable
 }
