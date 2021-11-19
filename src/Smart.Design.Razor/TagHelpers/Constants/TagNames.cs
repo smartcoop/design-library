@@ -12,6 +12,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartButtonToolbarTagName = "smart-button-toolbar";
 
+        public const string SmartContainerTagName = "smart-container";
+
         public const string SmartGridColumnTagName = "smart-grid-column";
 
         public const string SmartGridTagName = "smart-grid";

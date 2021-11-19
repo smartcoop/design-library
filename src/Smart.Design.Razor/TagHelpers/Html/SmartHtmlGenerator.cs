@@ -117,6 +117,28 @@ namespace Smart.Design.Razor.TagHelpers.Html
         }
 
         /// <inheritdoc />
+        public TagBuilder GenerateSmartContainer(ContainerSize size)
+        {
+            var container = new TagBuilder("div");
+            var cssClass = ContainerSizeCssClass(size);
+            container.AddCssClass("o-container");
+            container.AddCssClass(cssClass);
+
+            return container;
+        }
+
+        private static string ContainerSizeCssClass(ContainerSize size)
+        {
+            return size switch
+            {
+                ContainerSize.Small => "o-container--small",
+                ContainerSize.Medium => "o-container--medium",
+                ContainerSize.Large => "o-container--large",
+                _ => "o-container--medium",
+            };
+        }
+
+        /// <inheritdoc />
         public TagBuilder GenerateHorizontalRule()
         {
             var hr = new TagBuilder("hr");
