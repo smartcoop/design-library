@@ -482,6 +482,14 @@ namespace Smart.Design.Razor.TagHelpers.Html
             return globalBanner;
         }
 
+        /// <inheritdoc />
+        public TagBuilder GenerateElevation(ElevationSize elevation)
+        {
+            var div = new TagBuilder("div");
+            div.AddCssClass($"u-shadow-{(int) elevation}");
+            return div;
+        }
+
         private string GetAttributeName(string name, ModelExpression modelExpression)
         {
             return !string.IsNullOrWhiteSpace(modelExpression?.Name) ? modelExpression.Name : name;

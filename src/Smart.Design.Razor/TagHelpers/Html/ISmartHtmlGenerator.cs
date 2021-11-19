@@ -203,6 +203,13 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="label">The label displayed by the banner.</param>
         /// <returns>A instance of a global banner</returns>
         TagBuilder GenerateGlobalBanner(GlobalBannerType globalBannerType, string label);
+
+        /// <summary>
+        /// Generates an elevated card with shadows.
+        /// </summary>
+        /// <param name="elevation">Size of the elevation</param>
+        /// <returns>A instance of an elevator.</returns>
+        TagBuilder GenerateElevation(ElevationSize elevation);
     }
 #nullable disable
 }
