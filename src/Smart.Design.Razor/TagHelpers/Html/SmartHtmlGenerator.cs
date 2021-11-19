@@ -340,6 +340,32 @@ namespace Smart.Design.Razor.TagHelpers.Html
             return tagBuilder;
         }
 
+        /// <inheritdoc />
+        public TagBuilder GenerateForm(FormLayout layout, IHtmlContent content)
+        {
+            string LayoutCssClass()
+            {
+                return layout switch
+                {
+                    FormLayout.Horizontal => "o-form-group-layout--horizontal",
+                    FormLayout.Standard   => "o-form-group-layout--standard",
+                    FormLayout.Inline     => "o-form-group-layout--inline",
+                    _                     => "o-form-group-layout--standard"
+                };
+            }
+
+            var form = new TagBuilder("form");
+
+            var formGroupLayout = new TagBuilder("div");
+            formGroupLayout.AddCssClass("o-form-group-layout");
+            formGroupLayout.AddCssClass(LayoutCssClass());
+
+            formGroupLayout.InnerHtml.SetHtmlContent(content);
+            form.InnerHtml.SetHtmlContent(formGroupLayout);
+
+            return form;
+        }
+
         private string GetAttributeName(string name, ModelExpression modelExpression)
         {
             return !string.IsNullOrWhiteSpace(modelExpression?.Name) ? modelExpression.Name : name;

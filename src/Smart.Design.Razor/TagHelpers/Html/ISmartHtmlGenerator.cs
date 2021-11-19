@@ -148,6 +148,15 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="width">The width of the column.</param>
         /// <returns>An instance of a column.</returns>
         TagBuilder GenerateSmartColumnGrid(int width);
+
+        /// <summary>
+        /// Generate a &lt;form&gt; compliant with smart design.
+        /// </summary>
+        /// <param name="layout">The layout to be applied.</param>
+        /// <param name="content"></param>
+        /// <returns>An instance of a form.</returns>
+        TagBuilder GenerateForm(FormLayout layout, IHtmlContent content);
+
     }
 #nullable disable
 }
