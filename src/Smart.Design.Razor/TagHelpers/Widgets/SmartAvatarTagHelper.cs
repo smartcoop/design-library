@@ -60,8 +60,9 @@ namespace Smart.Design.Razor.TagHelpers.Widgets
 
             output.TagMode = TagMode.StartTagAndEndTag;
             output.TagName = avatar.TagName;
-            output.ClearAllAttributes();
-            output.MergeAttributes(avatar);
+
+            output.ClearAndMergeAttributes(avatar);
+
             output.Content.SetHtmlContent(avatar.InnerHtml);
         }
     }

@@ -28,12 +28,12 @@ namespace Smart.Design.Razor.TagHelpers.Panel
         {
             var panelBody = await output.GetChildContentAsync();
             var panel = HtmlGenerator.GenerateSmartPanel(Header, panelBody);
+
             output.TagName = panel.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            output.ClearAndCopyClassAttribute(context);
+            output.ClearAndMergeAttributes(panel);
 
-            output.MergeAttributes(panel);
             output.Content.SetHtmlContent(panel.InnerHtml);
         }
     }

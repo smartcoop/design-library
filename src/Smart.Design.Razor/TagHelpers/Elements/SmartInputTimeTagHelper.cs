@@ -41,8 +41,7 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             output.TagName = inputTime.TagName;
             output.TagMode = TagMode.SelfClosing;
 
-            output.ClearAllAttributes();
-            output.MergeAttributes(inputTime);
+            output.ClearAndMergeAttributes(inputTime);
         }
     }
 }

@@ -71,9 +71,7 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             output.TagName = button.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            output.Attributes.Clear();
-            output.MergeAttributes(button);
-
+            output.ClearAndMergeAttributes(button);
             output.Content.SetHtmlContent(button.InnerHtml);
         }
 

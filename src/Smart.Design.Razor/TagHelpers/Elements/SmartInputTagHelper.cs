@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Constants;
+using Smart.Design.Razor.TagHelpers.Extensions;
 using Smart.Design.Razor.TagHelpers.Html;
 
 namespace Smart.Design.Razor.TagHelpers.Elements
@@ -44,8 +45,9 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             var input = _smartHtmlGenerator.GenerateSmartInputText(ViewContext, Id, Name, Placeholder, Value, For);
 
             output.TagName = input.TagName;
-            output.MergeAttributes(input);
             output.TagMode = TagMode.SelfClosing;
+
+            output.ClearAndMergeAttributes(input);
         }
     }
 }

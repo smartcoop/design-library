@@ -29,8 +29,7 @@ namespace Smart.Design.Razor.TagHelpers.Card
             output.TagName = elevator.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            output.ClearAllAttributes();
-            output.MergeAttributes(elevator);
+            output.ClearAndMergeAttributes(elevator);
         }
     }
 }

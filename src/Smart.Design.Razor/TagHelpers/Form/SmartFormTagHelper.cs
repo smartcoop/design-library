@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.Enums;
 using Smart.Design.Razor.TagHelpers.Constants;
+using Smart.Design.Razor.TagHelpers.Extensions;
 using Smart.Design.Razor.TagHelpers.Html;
 
 namespace Smart.Design.Razor.TagHelpers.Form
@@ -43,9 +44,11 @@ namespace Smart.Design.Razor.TagHelpers.Form
 
             var form = _generator.GenerateForm(Layout, content);
 
-            output.MergeAttributes(form);
             output.TagName = form.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
+
+            output.ClearAndMergeAttributes(form);
+
             output.Content.SetHtmlContent(form.InnerHtml);
         }
     }

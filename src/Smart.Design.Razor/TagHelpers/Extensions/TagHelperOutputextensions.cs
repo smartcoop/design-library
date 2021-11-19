@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 
@@ -25,6 +26,18 @@ namespace Smart.Design.Razor.TagHelpers.Extensions
         public static void ClearAllAttributes(this TagHelperOutput output)
         {
             output.Attributes.Clear();
+        }
+
+        /// <summary>
+        /// Clears all attributes of <paramref name="output" /> and merges the given <paramref name="tagBuilder"/>'s <see cref="TagBuilder.Attributes"/>
+        /// into the <paramref name="output"/>.
+        /// </summary>
+        /// <param name="output">The <see cref="TagHelperOutput"/> this method extends.</param>
+        /// <param name="tagBuilder">The <see cref="TagBuilder"/> to merge attributes from.</param>
+        public static void ClearAndMergeAttributes(this TagHelperOutput output, TagBuilder tagBuilder)
+        {
+            output.ClearAllAttributes();
+            output.MergeAttributes(tagBuilder);
         }
     }
 }

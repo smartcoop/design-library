@@ -30,9 +30,9 @@ namespace Smart.Design.Razor.TagHelpers.Widgets
         {
             var global = _smartHtmlGenerator.GenerateGlobalBanner(Type, Label);
 
-            output.ClearAllAttributes();
             output.TagName = global.TagName;
-            output.MergeAttributes(global);
+
+            output.ClearAndMergeAttributes(global);
 
             output.Content.SetHtmlContent(global.InnerHtml);
         }

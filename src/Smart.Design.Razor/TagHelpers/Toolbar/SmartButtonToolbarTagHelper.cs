@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.Enums;
 using Smart.Design.Razor.TagHelpers.Constants;
+using Smart.Design.Razor.TagHelpers.Extensions;
 using Smart.Design.Razor.TagHelpers.Html;
 
 namespace Smart.Design.Razor.TagHelpers.Toolbar
@@ -34,8 +35,7 @@ namespace Smart.Design.Razor.TagHelpers.Toolbar
             output.TagName = toolbar.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            output.Attributes.Clear();
-            output.MergeAttributes(toolbar);
+            output.ClearAndMergeAttributes(toolbar);
         }
     }
 }

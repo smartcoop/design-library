@@ -26,8 +26,7 @@ namespace Smart.Design.Razor.TagHelpers.Tabs
             output.TagName = itemsContainer.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            output.ClearAllAttributes();
-            output.MergeAttributes(itemsContainer);
+            output.ClearAndMergeAttributes(itemsContainer);
         }
     }
 }

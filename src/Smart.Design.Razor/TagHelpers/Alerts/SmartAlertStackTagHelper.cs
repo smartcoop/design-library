@@ -30,11 +30,11 @@ namespace Smart.Design.Razor.TagHelpers.Alerts
         {
             var alertStack = _smartHtmlGenerator.GenerateAlertStack(Icon, Message);
 
-            output.ClearAllAttributes();
             output.TagName = "div";
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            output.MergeAttributes(alertStack);
+            output.ClearAndMergeAttributes(alertStack);
+
             output.Content.SetHtmlContent(alertStack);
         }
     }

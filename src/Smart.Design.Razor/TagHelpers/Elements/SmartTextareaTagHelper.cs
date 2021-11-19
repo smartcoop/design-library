@@ -32,14 +32,12 @@ namespace Smart.Design.Razor.TagHelpers.Elements
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.ClearAllAttributes();
-
             var textarea = HtmlGenerator.GenerateSmartTextArea(Id, Name, Rows, TextareaSize, For);
 
             output.TagMode = TagMode.StartTagAndEndTag;
             output.TagName = textarea.TagName;
 
-            output.MergeAttributes(textarea);
+            output.ClearAndMergeAttributes(textarea);
 
             if (textarea.HasInnerHtml)
             {

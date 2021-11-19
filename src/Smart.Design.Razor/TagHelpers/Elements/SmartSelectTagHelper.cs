@@ -47,8 +47,8 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             output.Reinitialize(holder.TagName, TagMode.StartTagAndEndTag);
             output.Content.Clear();
             output.PostContent.SetHtmlContent(select);
-            output.ClearAllAttributes();
-            output.MergeAttributes(holder);
+
+            output.ClearAndMergeAttributes(holder);
         }
     }
 }

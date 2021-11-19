@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Constants;
+using Smart.Design.Razor.TagHelpers.Extensions;
 using Smart.Design.Razor.TagHelpers.Html;
 
 namespace Smart.Design.Razor.TagHelpers.Grid
@@ -22,9 +23,11 @@ namespace Smart.Design.Razor.TagHelpers.Grid
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
             var grid = _smartHtmlGenerator.GenerateSmartGrid();
+
             output.TagName = grid.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
-            output.MergeAttributes(grid);
+
+            output.ClearAndMergeAttributes(grid);
         }
     }
 }

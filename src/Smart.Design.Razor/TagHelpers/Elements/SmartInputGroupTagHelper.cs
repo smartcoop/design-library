@@ -51,10 +51,10 @@ namespace Smart.Design.Razor.TagHelpers.Elements
 
             var inputGroup = HtmlGenerator.GenerateInputGroup(ViewContext, Id, Name, Placeholder, Value, For, Alignment, Icon, GroupedText);
 
-            output.ClearAllAttributes();
             output.TagName = inputGroup.TagName;
-            output.MergeAttributes(inputGroup);
             output.TagMode = TagMode.StartTagAndEndTag;
+
+            output.ClearAndMergeAttributes(inputGroup);
 
             output.Content.SetHtmlContent(inputGroup.InnerHtml);
         }

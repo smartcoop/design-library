@@ -24,16 +24,15 @@ namespace Smart.Design.Razor.TagHelpers.FormGroup
         {
             _smartHtmlGenerator = smartHtmlGenerator;
         }
-        
+
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.ClearAllAttributes();
             output.TagMode = TagMode.StartTagAndEndTag;
 
             var formGroup = _smartHtmlGenerator.GenerateFormGroup();
 
-            output.MergeAttributes(formGroup);
-            
+            output.ClearAndMergeAttributes(formGroup);
+
             output.PreContent.SetHtmlContent(_smartHtmlGenerator.GenerateFormGroupLabel(Label, null));
             output.PostContent.SetHtmlContent(_smartHtmlGenerator.GenerateFormGroupHelperText(HelperText));
         }

@@ -18,12 +18,11 @@ namespace Smart.Design.Razor.TagHelpers.FormGroup
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
-            output.ClearAllAttributes();
             var formGroupControls = _smartHtmlGenerator.GenerateFormGroupControlsContainer();
             output.TagMode = TagMode.StartTagAndEndTag;
             output.TagName = formGroupControls.TagName;
 
-            output.MergeAttributes(formGroupControls);
+            output.ClearAndMergeAttributes(formGroupControls);
         }
     }
 }

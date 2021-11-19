@@ -28,8 +28,7 @@ namespace Smart.Design.Razor.TagHelpers.Widgets
             output.TagMode = TagMode.StartTagAndEndTag;
             output.TagName = loader.TagName;
 
-            output.ClearAllAttributes();
-            output.MergeAttributes(loader);
+            output.ClearAndMergeAttributes(loader);
         }
     }
 }
