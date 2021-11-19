@@ -53,8 +53,16 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartRadioButtonTagName = "smart-radio";
 
-        public const string SmartTextareaTagName = "smart-textarea";
-
         public const string SmartSelectTagName = "smart-select";
+
+        public const string SmartTabs = "smart-tabs";
+
+        public const string SmartTabsItem = "smart-tabs-item";
+
+        public const string SmartTabsItems = "smart-tabs-items";
+
+        public const string SmartTabsSection = "smart-tabs-section";
+
+        public const string SmartTextareaTagName = "smart-textarea";
     }
 }

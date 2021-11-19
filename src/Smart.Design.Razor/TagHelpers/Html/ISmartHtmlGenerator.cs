@@ -247,6 +247,34 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="buttonOptions">Configuration of the smart design button properties.</param>
         /// <returns>A task that represents the asynchronous generation of an instance of a smart design button.</returns>
         Task<TagBuilder> GenerateSmartButton(SmartButtonOptions buttonOptions);
+
+        /// <summary>
+        /// Generate a empty &lt;nav&gt; element compliant with smart design tab whose purpose is containing smart design tab items.
+        /// </summary>
+        /// <param name="bordered">True if the tab items should be bordered.</param>
+        /// <returns>An instance of a empty smart design tab.</returns>
+        TagBuilder GenerateSmartTab(bool bordered);
+
+        /// <summary>
+        /// Generates a &lt;ul&gt; element whose purpose is containing smart design tab items.
+        /// </summary>
+        /// <returns>An instance of a &lt;ul&gt; element</returns>
+        TagBuilder GenerateSmartTabItemsContainer();
+
+        /// <summary>
+        /// Generate a smart design tab item.
+        /// </summary>
+        /// <param name="label">Label of the tab item.</param>
+        /// <param name="ref">Html reference to its html content.</param>
+        /// <returns>A instance of a smart design tab item.</returns>
+        TagBuilder GenerateSmartTabItem(string label, string @ref);
+
+        /// <summary>
+        /// Generates a smart design tab's section. A smart design tab's section is the content that is related to a smart design tab ite.
+        /// </summary>
+        /// <param name="id">Html id of the smart design tab section. The id should be matching of the smart design tab items.</param>
+        /// <returns>A instance of a smart design tab section.</returns>
+        TagBuilder GenerateSmartTabSection(string id);
     }
 #nullable disable
 }

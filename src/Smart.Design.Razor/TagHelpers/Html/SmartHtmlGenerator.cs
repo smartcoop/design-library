@@ -691,6 +691,51 @@ namespace Smart.Design.Razor.TagHelpers.Html
             return cssClasses;
         }
 
+        /// <param name="bordered"></param>
+        /// <inheritdoc />
+        public TagBuilder GenerateSmartTab(bool bordered)
+        {
+            var nav = new TagBuilder("nav");
+            nav.AddCssClass("c-tabs");
+            if (bordered)
+            {
+                nav.AddCssClass("c-tabs--border-bottom");
+            }
+
+            return nav;
+        }
+
+        /// <inheritdoc />
+        public TagBuilder GenerateSmartTabItemsContainer()
+        {
+            return new TagBuilder("ul");
+        }
+
+        /// <inheritdoc />
+        public TagBuilder GenerateSmartTabItem(string label, string @ref)
+        {
+            var li = new TagBuilder("li");
+
+            // Anchor that references the tab item's content.
+            var anchor = new TagBuilder("a");
+            anchor.AddCssClass("c-tabs__item");
+            anchor.Attributes["href"] = @ref;
+
+            anchor.InnerHtml.SetContent(label);
+
+            li.InnerHtml.SetHtmlContent(anchor);
+
+            return li;
+        }
+
+        public TagBuilder GenerateSmartTabSection(string id)
+        {
+            var section = new TagBuilder("div");
+            section.AddCssClass("c-tabs__section");
+
+            return section;
+        }
+
         private string GetAttributeName(string name, ModelExpression modelExpression)
         {
             return !string.IsNullOrWhiteSpace(modelExpression?.Name) ? modelExpression.Name : name;
