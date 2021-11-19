@@ -17,7 +17,7 @@ namespace Smart.Design.Razor.TagHelpers.Extensions
                 TrailingIcon = tagHelper.TrailingIcon,
                 Style        = tagHelper.Style,
                 Type         = tagHelper.Type,
-                Loading      = tagHelper.Loading
+                IsLoading    = tagHelper.IsLoading
             };
         }
     }

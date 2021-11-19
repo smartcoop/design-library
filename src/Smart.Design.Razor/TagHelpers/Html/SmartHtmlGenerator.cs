@@ -606,19 +606,27 @@ namespace Smart.Design.Razor.TagHelpers.Html
         {
             var button = new TagBuilder("button");
 
-            var styleCssClass = ComputeButtonStyleCssClass(buttonOptions.Style);
             button.AddCssClass("c-button");
+
+            var styleCssClass = ComputeButtonStyleCssClass(buttonOptions);
             button.AddCssClass(styleCssClass);
             button.Attributes["type"] = buttonOptions.Type.ToString().ToLowerInvariant();
 
-            if (buttonOptions.Disabled)
+            if (buttonOptions.Disabled || buttonOptions.IsLoading)
             {
-                button.Attributes.Add("disabled", "disabled");
+                button.Attributes["disabled"] = "disabled";
             }
 
             if (buttonOptions.IsBlock)
             {
                 button.AddCssClass("c-button--block");
+            }
+
+            if (buttonOptions.IsLoading)
+            {
+                var loadingDiv = new TagBuilder("div");
+                loadingDiv.AddCssClass("c-loader");
+                button.InnerHtml.AppendHtml(loadingDiv);
             }
 
             var buttonContent = new TagBuilder("span");
@@ -657,22 +665,30 @@ namespace Smart.Design.Razor.TagHelpers.Html
                 iconOnlyDiv.InnerHtml.SetContent(buttonOptions.Label);
             }
 
-            button.InnerHtml.SetHtmlContent(buttonContent);
+            button.InnerHtml.AppendHtml(buttonContent);
 
             return button;
         }
 
-        private string ComputeButtonStyleCssClass(ButtonStyle style)
+        private string ComputeButtonStyleCssClass(SmartButtonOptions options)
         {
-            return style switch
+            var style = options.Style;
+            var cssClasses = style switch
             {
-                ButtonStyle.Primary => "c-button--primary",
-                ButtonStyle.Secondary => "c-button--secondary",
-                ButtonStyle.Borderless => "c-button--borderless",
-                ButtonStyle.Danger => "c-button--danger",
+                ButtonStyle.Primary         => "c-button--primary",
+                ButtonStyle.Secondary       => "c-button--secondary",
+                ButtonStyle.Borderless      => "c-button--borderless",
+                ButtonStyle.Danger          => "c-button--danger",
                 ButtonStyle.DangerSecondary => "c-button--danger-secondary",
-                _ => throw new NotImplementedException($"Style undefined for style {style}")
+                _                           => throw new NotImplementedException($"Style undefined for style {style}")
             };
+
+            if (options.IsLoading)
+            {
+                cssClasses = $" {cssClasses} c-button--loading";
+            }
+
+            return cssClasses;
         }
 
         private string GetAttributeName(string name, ModelExpression modelExpression)

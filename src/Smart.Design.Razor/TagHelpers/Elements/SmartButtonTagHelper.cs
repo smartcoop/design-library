@@ -57,6 +57,9 @@ namespace Smart.Design.Razor.TagHelpers.Elements
         [HtmlAttributeName("icon-only")]
         public bool IconOnly { get; set; }
 
+        [HtmlAttributeName("loading")]
+        public bool IsLoading { get; set; }
+
         public SmartButtonTagHelper(ISmartHtmlGenerator smartHtmlGenerator) : base(smartHtmlGenerator)
         {
         }

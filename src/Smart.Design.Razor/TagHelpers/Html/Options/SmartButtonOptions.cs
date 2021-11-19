@@ -19,5 +19,7 @@ namespace Smart.Design.Razor.TagHelpers.Html.Options
         public bool IsBlock { get; set; }
 
         public bool IconOnly { get; set; }
+
+        public bool IsLoading { get; set; }
     }
 }
