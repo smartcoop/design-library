@@ -53,7 +53,7 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="label">The value of the label.</param>
         /// <param name="labelFor"></param>
         /// <returns>A instance of the &lt;label&gt;</returns>
-        TagBuilder GenerateFormGroupLabel(string label, string labelFor);
+        TagBuilder GenerateFormGroupLabel(string label, string? labelFor);
 
         /// <summary>
         /// Generate a &lt;div&gt; in which are grouped element of a form group.
@@ -192,6 +192,8 @@ namespace Smart.Design.Razor.TagHelpers.Html
             ModelExpression @for,
             Alignment alignment,
             Icon icon, string text);
+
+        TagBuilder GenerateFormGroupHelperText(string helperText);
     }
 #nullable disable
 }

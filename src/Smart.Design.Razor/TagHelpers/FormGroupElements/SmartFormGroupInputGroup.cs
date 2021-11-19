@@ -1,17 +1,11 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.Enums;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Html;
 
-namespace Smart.Design.Razor.TagHelpers.FormGroups
+namespace Smart.Design.Razor.TagHelpers.FormGroupElements
 {
     /// <summary>
     /// <see cref="BaseSmartFormGroupTagHelper"/> implementation with a <see cref="SmartFormGroupInputGroup" />.

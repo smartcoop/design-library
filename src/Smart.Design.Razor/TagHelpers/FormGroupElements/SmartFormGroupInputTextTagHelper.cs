@@ -4,7 +4,7 @@ using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Constants;
 using Smart.Design.Razor.TagHelpers.Html;
 
-namespace Smart.Design.Razor.TagHelpers.FormGroups
+namespace Smart.Design.Razor.TagHelpers.FormGroupElements
 {    /// <summary>
     /// <see cref="BaseSmartFormGroupTagHelper" /> implementation with a <see cref="SmartFormGroupInputTextTagHelper" />.
     /// </summary>
