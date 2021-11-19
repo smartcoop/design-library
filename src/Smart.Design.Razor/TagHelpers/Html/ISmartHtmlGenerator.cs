@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.Enums;
+using Smart.Design.Razor.TagHelpers.Html.Options;
 
 #nullable enable
 namespace Smart.Design.Razor.TagHelpers.Html
@@ -239,6 +240,13 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="link"></param>
         /// <returns></returns>
         TagBuilder GenerateAvatar(AvatarSize size, string imageUrl, string text, Icon icon, string initial, string link);
+
+        /// <summary>
+        /// Generates a smart design button.
+        /// </summary>
+        /// <param name="buttonOptions">Configuration of the smart design button properties.</param>
+        /// <returns>A task that represents the asynchronous generation of an instance of a smart design button.</returns>
+        Task<TagBuilder> GenerateSmartButton(SmartButtonOptions buttonOptions);
     }
 #nullable disable
 }

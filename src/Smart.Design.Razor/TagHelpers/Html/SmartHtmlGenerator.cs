@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Smart.Design.Razor.Enums;
+using Smart.Design.Razor.TagHelpers.Html.Options;
 
 namespace Smart.Design.Razor.TagHelpers.Html
 {
@@ -598,6 +599,80 @@ namespace Smart.Design.Razor.TagHelpers.Html
             }
 
             return avatar;
+        }
+
+        /// <inheritdoc />
+        public async Task<TagBuilder> GenerateSmartButton(SmartButtonOptions buttonOptions)
+        {
+            var button = new TagBuilder("button");
+
+            var styleCssClass = ComputeButtonStyleCssClass(buttonOptions.Style);
+            button.AddCssClass("c-button");
+            button.AddCssClass(styleCssClass);
+            button.Attributes["type"] = buttonOptions.Type.ToString().ToLowerInvariant();
+
+            if (buttonOptions.Disabled)
+            {
+                button.Attributes.Add("disabled", "disabled");
+            }
+
+            if (buttonOptions.IsBlock)
+            {
+                button.AddCssClass("c-button--block");
+            }
+
+            var buttonContent = new TagBuilder("span");
+            buttonContent.AddCssClass("c-button__content");
+
+            // If a leading icon is specified it needs to be added as the first child of the container.
+            if (buttonOptions.LeadingIcon != Icon.None)
+            {
+                var leadingIcon = await GenerateIconAsync(buttonOptions.LeadingIcon);
+                buttonContent.InnerHtml.AppendHtml(leadingIcon);
+            }
+
+            // If the attribute icon-only is not set to true, we expect to put a span.
+            if (!buttonOptions.IconOnly)
+            {
+                var spanButtonLabelTagBuilder = new TagBuilder("span");
+                spanButtonLabelTagBuilder.AddCssClass("c-button__label");
+                spanButtonLabelTagBuilder.InnerHtml.SetContent(buttonOptions.Label);
+                buttonContent.InnerHtml.AppendHtml(spanButtonLabelTagBuilder);
+            }
+
+            // We cannot put a a trailing icon if IconOnly attribute is set to true.
+            // Obviously a trailing icon needs to be set.
+            if (buttonOptions.TrailingIcon != Icon.None && !buttonOptions.IconOnly)
+            {
+                var trailingIcon = await GenerateIconAsync(buttonOptions.TrailingIcon);
+                buttonContent.InnerHtml.AppendHtml(trailingIcon);
+            }
+
+            // When creating a icon only icon last child of the container needs to a class with `u-sr-accessible` attribute.
+            // See smart design documentation for more insight.
+            if (buttonOptions.IconOnly)
+            {
+                var iconOnlyDiv = new TagBuilder("div");
+                iconOnlyDiv.AddCssClass("u-sr-accessible");
+                iconOnlyDiv.InnerHtml.SetContent(buttonOptions.Label);
+            }
+
+            button.InnerHtml.SetHtmlContent(buttonContent);
+
+            return button;
+        }
+
+        private string ComputeButtonStyleCssClass(ButtonStyle style)
+        {
+            return style switch
+            {
+                ButtonStyle.Primary => "c-button--primary",
+                ButtonStyle.Secondary => "c-button--secondary",
+                ButtonStyle.Borderless => "c-button--borderless",
+                ButtonStyle.Danger => "c-button--danger",
+                ButtonStyle.DangerSecondary => "c-button--danger-secondary",
+                _ => throw new NotImplementedException($"Style undefined for style {style}")
+            };
         }
 
         private string GetAttributeName(string name, ModelExpression modelExpression)
