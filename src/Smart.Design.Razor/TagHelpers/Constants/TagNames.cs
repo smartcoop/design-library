@@ -57,6 +57,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartRadioButtonTagName = "smart-radio";
 
+        public const string SmartProgressBar = "smart-progress-bar";
+
         public const string SmartSelectTagName = "smart-select";
 
         public const string SmartTabs = "smart-tabs";

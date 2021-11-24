@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Smart.Design.Razor.TagHelpers.Html;
 using Smart.Design.Razor.TagHelpers.IconList;
+using Smart.Design.Razor.TagHelpers.ProgressBar;
 
 namespace Smart.Design.Razor.Extensions
 {
@@ -10,6 +11,7 @@ namespace Smart.Design.Razor.Extensions
         {
             return services
                 .AddTransient<ISmartHtmlGenerator, SmartHtmlGenerator>()
+                .AddTransient<IProgressBarHtmlGenerator, ProgressBarHtmlGenerator>()
                 .AddTransient<ISmartIconListHtmlGenerator, SmartIconListHtmlGenerator>();
         }
     }
