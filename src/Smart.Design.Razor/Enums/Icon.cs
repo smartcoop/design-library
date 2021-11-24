@@ -57,6 +57,7 @@ namespace Smart.Design.Razor.Enums
         Github,
         Home,
         Instagram,
+        Link,
         Location,
         Menu,
         Message,
