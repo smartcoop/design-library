@@ -43,6 +43,10 @@ namespace Smart.Design.Razor.TagHelpers.Constants
 
         public const string SmartInputGroupTagName = "smart-input-group";
 
+        public const string SmartIconListItemTagName = "smart-icon-list-item";
+
+        public const string SmartIconListTagName = "smart-icon-list";
+
         public const string SmartInputTagName = "smart-input";
 
         public const string SmartInputTimeTagName = "smart-input-time";
