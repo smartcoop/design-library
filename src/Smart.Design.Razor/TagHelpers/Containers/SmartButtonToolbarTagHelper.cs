@@ -7,8 +7,8 @@ using Smart.Design.Razor.TagHelpers.Html;
 namespace Smart.Design.Razor.TagHelpers.Containers
 {
     /// <summary>
-    /// <see cref="ITagHelper"/> implementation of the smart design button toolbar.
-    /// Documentation is available <see href="https://design.smart.coop/development/docs/c-button-toolbar.html">here</see>
+    ///     <see cref="ITagHelper" /> implementation of the smart design button toolbar.
+    ///     Documentation is available <see href="https://design.smart.coop/development/docs/c-button-toolbar.html">here</see>
     /// </summary>
     [HtmlTargetElement(TagNames.SmartButtonToolbarTagName)]
     public class SmartButtonToolbarTagHelper : TagHelper
@@ -17,15 +17,15 @@ namespace Smart.Design.Razor.TagHelpers.Containers
 
         private readonly ISmartHtmlGenerator _smartHtmlGenerator;
 
+        public SmartButtonToolbarTagHelper(ISmartHtmlGenerator smartHtmlGenerator)
+        {
+            _smartHtmlGenerator = smartHtmlGenerator;
+        }
+
         [HtmlAttributeName(LayoutAttributeName)]
         public ButtonToolbarLayout Layout { get; set; }
 
         public bool IsCompact { get; set; }
-
-        public SmartButtonToolbarTagHelper (ISmartHtmlGenerator smartHtmlGenerator)
-        {
-            _smartHtmlGenerator = smartHtmlGenerator;
-        }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {

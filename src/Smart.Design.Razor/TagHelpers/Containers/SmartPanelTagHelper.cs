@@ -9,20 +9,20 @@ using Smart.Design.Razor.TagHelpers.Html;
 namespace Smart.Design.Razor.TagHelpers.Containers
 {
     /// <summary>
-    /// <see cref="ITagHelper" /> implementation of the smart design panel with a <c>header</c> attribute.
-    /// Documentation is available <see href="https://design.smart.coop/development/docs/c-panel.html">here</see>.
-    /// <para>
-    ///     <term>Remark</term> Inherits from <see cref="BaseTagHelper"/>.
-    /// </para>
+    ///     <see cref="ITagHelper" /> implementation of the smart design panel with a <c>header</c> attribute.
+    ///     Documentation is available <see href="https://design.smart.coop/development/docs/c-panel.html">here</see>.
+    ///     <para>
+    ///         <term>Remark</term> Inherits from <see cref="BaseTagHelper" />.
+    ///     </para>
     /// </summary>
     [HtmlTargetElement(TagNames.SmartPanelTagName, TagStructure = TagStructure.NormalOrSelfClosing)]
     public class SmartPanelTagHelper : BaseTagHelper
     {
-        public string Header { get; set; }
-
         public SmartPanelTagHelper(ISmartHtmlGenerator smartHtmlGenerator) : base(smartHtmlGenerator)
         {
         }
+
+        public string Header { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {

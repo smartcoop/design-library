@@ -17,18 +17,17 @@ namespace Smart.Design.Razor.TagHelpers.Elements
         private const string RowsAttributeName = "rows";
         private const string TextareaSizeAttributeName = "textarea-size";
 
-        [HtmlAttributeName(RowsAttributeName)]
-        public int? Rows { get; set; }
+        public SmartTextareaTagHelper(ISmartHtmlGenerator smartHtmlGenerator) : base(smartHtmlGenerator)
+        {
+        }
+
+        [HtmlAttributeName(RowsAttributeName)] public int? Rows { get; set; }
 
         [HtmlAttributeName(TextareaSizeAttributeName)]
         public TextAreaSize TextareaSize { get; set; }
 
         [HtmlAttributeName(AspForNameAttribute)]
         public ModelExpression For { get; set; }
-
-        public SmartTextareaTagHelper(ISmartHtmlGenerator smartHtmlGenerator) : base(smartHtmlGenerator)
-        {
-        }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {

@@ -1,17 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ViewRenderer.Core;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting.Internal;
 
 namespace Smart.Presentation.Mvc
 {
@@ -34,7 +26,7 @@ namespace Smart.Presentation.Mvc
             services.Configure();
             services.AddRazorViewToStringRenderer(options =>
             {
-                options.ContentRoot =_env.ContentRootPath;
+                options.ContentRoot = _env.ContentRootPath;
                 options.EmailsFolder = "templates";
             });
             services.AddControllersWithViews();
@@ -43,7 +35,6 @@ namespace Smart.Presentation.Mvc
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -54,6 +45,7 @@ namespace Smart.Presentation.Mvc
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -64,8 +56,8 @@ namespace Smart.Presentation.Mvc
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
             });
         }
     }

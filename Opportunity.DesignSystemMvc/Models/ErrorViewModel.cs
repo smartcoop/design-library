@@ -1,5 +1,3 @@
-using System;
-
 namespace Smart.Presentation.Mvc.Models
 {
     public class ErrorViewModel

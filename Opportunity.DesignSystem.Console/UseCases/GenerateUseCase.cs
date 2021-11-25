@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using Razor.Templating.Core;
 using Smart.Application.Console.Options;
 using TreeFormatter;
@@ -7,13 +5,13 @@ using TreeFormatter;
 namespace Smart.Application.Console.UseCases
 {
     /// <summary>
-    /// Generator html string from component name
+    ///     Generator html string from component name
     /// </summary>
     public class GenerateUseCase
     {
         private readonly GenerateOptions _options;
 
-        public GenerateUseCase( GenerateOptions options )
+        public GenerateUseCase(GenerateOptions options)
         {
             _options = options;
         }
@@ -21,11 +19,11 @@ namespace Smart.Application.Console.UseCases
         public string Run()
         {
             RazorTemplateEngine
-               .Initialize();
+                .Initialize();
 
             var html = RazorTemplateEngine
-                      .RenderAsync( $"/Views/Test/{_options.DesignElementName}.cshtml" )
-                      .Result;
+                .RenderAsync($"/Views/Test/{_options.DesignElementName}.cshtml")
+                .Result;
 
             return html.MinifyHtml().PrettifyHtml();
         }

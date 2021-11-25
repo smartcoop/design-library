@@ -5,20 +5,21 @@ using Smart.Design.Razor.TagHelpers.Constants;
 using Smart.Design.Razor.TagHelpers.Html;
 
 namespace Smart.Design.Razor.TagHelpers.FormGroups
-{    /// <summary>
-    /// <see cref="BaseSmartFormGroupTagHelper" /> implementation with a <see cref="SmartFormGroupInputTextTagHelper" />.
+{
+    /// <summary>
+    ///     <see cref="BaseSmartFormGroupTagHelper" /> implementation with a <see cref="SmartFormGroupInputTextTagHelper" />.
     /// </summary>
     [HtmlTargetElement(TagNames.SmartFormGroupInputText)]
     public class SmartFormGroupInputTextTagHelper : BaseSmartFormGroupTagHelper
     {
         private const string PlaceHolderAttributeName = "placeholder";
 
-        [HtmlAttributeName(PlaceHolderAttributeName)]
-        public string PlaceHolder { get; set; }
-
         public SmartFormGroupInputTextTagHelper(ISmartHtmlGenerator htmlGenerator) : base(htmlGenerator)
         {
         }
+
+        [HtmlAttributeName(PlaceHolderAttributeName)]
+        public string PlaceHolder { get; set; }
 
         public override TagBuilder GenerateFormGroupControl()
         {

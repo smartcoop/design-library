@@ -6,7 +6,7 @@ using Smart.Design.Razor.TagHelpers.Html;
 namespace Smart.Design.Razor.TagHelpers.Elements
 {
     /// <summary>
-    /// <see cref="ITagHelper" /> implementation of the smart design &lt;hr /&gt; element.
+    ///     <see cref="ITagHelper" /> implementation of the smart design &lt;hr /&gt; element.
     /// </summary>
     [HtmlTargetElement(TagNames.SmartHorizontalRuleTagName, TagStructure = TagStructure.NormalOrSelfClosing)]
     public class SmartHorizontalRuleTagHelper : TagHelper

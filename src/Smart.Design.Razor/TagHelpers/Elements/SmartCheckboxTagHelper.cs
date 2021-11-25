@@ -8,20 +8,20 @@ using Smart.Design.Razor.TagHelpers.Extensions;
 namespace Smart.Design.Razor.TagHelpers.Elements
 {
     /// <summary>
-    /// <see cref="ITagHelper" /> implementation of the smart design checkbox.
-    /// Documentation is available <see href="https://design.smart.coop/development/docs/c-checkbox.html">here</see>.
+    ///     <see cref="ITagHelper" /> implementation of the smart design checkbox.
+    ///     Documentation is available <see href="https://design.smart.coop/development/docs/c-checkbox.html">here</see>.
     /// </summary>
     [HtmlTargetElement(TagNames.SmartCheckboxTagName)]
     public class SmartCheckboxTagHelper : InputTagHelper
     {
         private const string LabelAttributeName = "label";
 
-        [HtmlAttributeName(LabelAttributeName)]
-        public string Label { get; set; }
-
         public SmartCheckboxTagHelper(IHtmlGenerator generator) : base(generator)
         {
         }
+
+        [HtmlAttributeName(LabelAttributeName)]
+        public string Label { get; set; }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {
@@ -38,10 +38,7 @@ namespace Smart.Design.Razor.TagHelpers.Elements
 
             var labelTag = new TagBuilder("label");
             labelTag.InnerHtml.AppendHtml(inputRadio);
-            if (!string.IsNullOrWhiteSpace(Label))
-            {
-                labelTag.InnerHtml.Append(Label);
-            }
+            if (!string.IsNullOrWhiteSpace(Label)) labelTag.InnerHtml.Append(Label);
 
             mainDiv.InnerHtml.AppendHtml(labelTag);
 

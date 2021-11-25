@@ -6,15 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="RazorLight" Version="1.1.0" />
-    <PackageReference Include="ViewRenderer.Core" Version="1.0.6" />
-    <PackageReference Include="Westwind.Web.Mvc" Version="2.850.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0"/>
+    <PackageReference Include="RazorLight" Version="1.1.0"/>
+    <PackageReference Include="ViewRenderer.Core" Version="1.0.6"/>
+    <PackageReference Include="Westwind.Web.Mvc" Version="2.850.0"/>
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Opportunity.DesignSystem.FluentApi\Opportunity.DesignSystem.FluentApi.csproj" />
-    <ProjectReference Include="..\src\Smart.Design.Razor\Smart.Design.Razor.csproj" />
+    <ProjectReference Include="..\Opportunity.DesignSystem.FluentApi\Opportunity.DesignSystem.FluentApi.csproj"/>
+    <ProjectReference Include="..\src\Smart.Design.Razor\Smart.Design.Razor.csproj"/>
   </ItemGroup>
 
   <ItemGroup>

@@ -10,7 +10,7 @@ using Smart.Design.Razor.TagHelpers.Html;
 namespace Smart.Design.Razor.TagHelpers.Containers
 {
     /// <summary>
-    /// <see cref="ITagHelper" /> implementation of a smart design &lt;form&gt;.
+    ///     <see cref="ITagHelper" /> implementation of a smart design &lt;form&gt;.
     /// </summary>
     [HtmlTargetElement(TagNames.SmartFormAttributeName)]
     public class SmartFormTagHelper : TagHelper
@@ -20,18 +20,16 @@ namespace Smart.Design.Razor.TagHelpers.Containers
         private readonly ISmartHtmlGenerator _generator;
         private readonly IHtmlGenerator _htmlGenerator;
 
-        [HtmlAttributeName(LayoutAttributeName)]
-        public FormLayout Layout {get; set;}
-
-        [HtmlAttributeNotBound]
-        [ViewContext]
-        public ViewContext ViewContext { get; set; }
-
         public SmartFormTagHelper(ISmartHtmlGenerator generator, IHtmlGenerator htmlGenerator)
         {
             _generator = generator;
             _htmlGenerator = htmlGenerator;
         }
+
+        [HtmlAttributeName(LayoutAttributeName)]
+        public FormLayout Layout { get; set; }
+
+        [HtmlAttributeNotBound] [ViewContext] public ViewContext ViewContext { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {

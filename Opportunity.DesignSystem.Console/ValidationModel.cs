@@ -6,7 +6,11 @@ namespace Smart.Application.Console
     public abstract class ValidationModel
     {
         public IEnumerable<ErrorModel> Errors { get; set; }
-        public bool IsValid() => !Errors.Any();
+
+        public bool IsValid()
+        {
+            return !Errors.Any();
+        }
     }
 
     public class ErrorModel

@@ -18,6 +18,12 @@ namespace Smart.Design.Razor.TagHelpers.Elements
 
         private readonly ValidationHtmlAttributeProvider _validationAttributeProvider;
 
+        public SmartRadioButtonTagHelper(ISmartHtmlGenerator smartHtmlGenerator,
+            ValidationHtmlAttributeProvider validationAttributeProvider) : base(smartHtmlGenerator)
+        {
+            _validationAttributeProvider = validationAttributeProvider;
+        }
+
         [HtmlAttributeName(AspForAttributeName)]
         public ModelExpression For { get; set; }
 
@@ -29,11 +35,6 @@ namespace Smart.Design.Razor.TagHelpers.Elements
 
         [HtmlAttributeName(CheckedAttributeName)]
         public bool Checked { get; set; }
-
-        public SmartRadioButtonTagHelper(ISmartHtmlGenerator smartHtmlGenerator, ValidationHtmlAttributeProvider validationAttributeProvider) : base(smartHtmlGenerator)
-        {
-            _validationAttributeProvider = validationAttributeProvider;
-        }
 
         public override void Process(TagHelperContext context, TagHelperOutput output)
         {

@@ -2,12 +2,12 @@
 <#@ assembly name="System.Core" #>
 <#@ assembly name="$(TargetPath)" #>
 <#@ output extension=".cshtml" #>
+<#@ import namespace="System.Collections" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.IO" #>
-<#@ import namespace="System.Text" #>
-<#@ import namespace="System.Collections" #>
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="System.Reflection" #>
+<#@ import namespace="System.Text" #>
 
 <#
     IEnumerable<string> componentNames;
@@ -19,11 +19,11 @@
     var fieldInfos = type.GetFields(
         BindingFlags.Public | BindingFlags.Static |
         BindingFlags.FlattenHierarchy);
-    
+
     foreach (var fi in fieldInfos)
         if (fi.IsLiteral && !fi.IsInitOnly)
             constants.Add(fi);
-    
+
     // Return an array of FieldInfos
     componentNames =
         ((FieldInfo[]) constants.ToArray(typeof(FieldInfo))).Select(v => v.GetRawConstantValue() as string).ToList();

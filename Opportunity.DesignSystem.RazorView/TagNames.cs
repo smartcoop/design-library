@@ -1,12 +1,10 @@
-
 namespace Smart.Razor.Templates
 {
     /// <summary>
-    /// Definition of every <see cref="TagHelperOutput.TagName"/> used by the RCL.
+    ///     Definition of every <see cref="TagHelperOutput.TagName" /> used by the RCL.
     /// </summary>
     public class TagName
     {
-
         public const string SmartAccordionTagName = "smart-accordion";
 
         public const string SmartButtonTagName = "smart-button";

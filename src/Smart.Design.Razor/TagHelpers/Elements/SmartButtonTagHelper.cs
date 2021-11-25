@@ -13,52 +13,44 @@ using Smart.Design.Razor.TagHelpers.Html;
 namespace Smart.Design.Razor.TagHelpers.Elements
 {
     /// <summary>
-    /// <see cref="ITagHelper" /> implementation of the smart design button with
-    /// <c>disabled</c>,
-    /// <c>leading-icon</c>,
-    /// <c>trailing-icon</c>,
-    /// <c>label</c>,
-    /// <c>button-type</c>,
-    /// <c>button-style</c>,
-    /// <c>is-block</c>,
-    /// <c>icon-only</c>,
-    /// attributes.
-    /// Documentation is available <see href="https://design.smart.coop/development/docs/c-button.html">here</see>.
-    /// <para>
-    ///     <term>Remark </term>
-    ///      Inherits from <see cref="BaseTagHelper"/>
-    /// </para>
+    ///     <see cref="ITagHelper" /> implementation of the smart design button with
+    ///     <c>disabled</c>,
+    ///     <c>leading-icon</c>,
+    ///     <c>trailing-icon</c>,
+    ///     <c>label</c>,
+    ///     <c>button-type</c>,
+    ///     <c>button-style</c>,
+    ///     <c>is-block</c>,
+    ///     <c>icon-only</c>,
+    ///     attributes.
+    ///     Documentation is available <see href="https://design.smart.coop/development/docs/c-button.html">here</see>.
+    ///     <para>
+    ///         <term>Remark </term>
+    ///         Inherits from <see cref="BaseTagHelper" />
+    ///     </para>
     /// </summary>
     [HtmlTargetElement(TagNames.SmartButtonTagName, TagStructure = TagStructure.NormalOrSelfClosing)]
     public class SmartButtonTagHelper : BaseTagHelper
     {
-        [HtmlAttributeName("disabled")]
-        public bool Disabled { get; set; }
-
-        [HtmlAttributeName("leading-icon")]
-        public Icon LeadingIcon { get; set; }
-
-        [HtmlAttributeName("trailing-icon")]
-        public Icon TrailingIcon { get; set; }
-
-        [HtmlAttributeName("label")]
-        public string Label { get; set; }
-
-        [HtmlAttributeName("button-type")]
-        public ButtonType Type { get; set; } = ButtonType.Button;
-
-        [HtmlAttributeName("button-style")]
-        public ButtonStyle Style { get; set; } = ButtonStyle.Primary;
-
-        [HtmlAttributeName("is-block")]
-        public bool IsBlock { get; set; }
-
-        [HtmlAttributeName("icon-only")]
-        public bool IconOnly { get; set; }
-
         public SmartButtonTagHelper(ISmartHtmlGenerator smartHtmlGenerator) : base(smartHtmlGenerator)
         {
         }
+
+        [HtmlAttributeName("disabled")] public bool Disabled { get; set; }
+
+        [HtmlAttributeName("leading-icon")] public Icon LeadingIcon { get; set; }
+
+        [HtmlAttributeName("trailing-icon")] public Icon TrailingIcon { get; set; }
+
+        [HtmlAttributeName("label")] public string Label { get; set; }
+
+        [HtmlAttributeName("button-type")] public ButtonType Type { get; set; } = ButtonType.Button;
+
+        [HtmlAttributeName("button-style")] public ButtonStyle Style { get; set; } = ButtonStyle.Primary;
+
+        [HtmlAttributeName("is-block")] public bool IsBlock { get; set; }
+
+        [HtmlAttributeName("icon-only")] public bool IconOnly { get; set; }
 
         public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
@@ -71,15 +63,9 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             output.AddClass(styleCssClass, HtmlEncoder.Default);
             output.Attributes.SetAttribute("type", Type.ToString().ToLowerInvariant());
 
-            if (Disabled)
-            {
-                output.Attributes.Add("disabled", "disabled");
-            }
+            if (Disabled) output.Attributes.Add("disabled", "disabled");
 
-            if (IsBlock)
-            {
-                output.AddClass("c-button--block", HtmlEncoder.Default);
-            }
+            if (IsBlock) output.AddClass("c-button--block", HtmlEncoder.Default);
 
             var buttonContent = new TagBuilder("span");
             buttonContent.AddCssClass("c-button__content");
@@ -124,12 +110,12 @@ namespace Smart.Design.Razor.TagHelpers.Elements
         {
             return Style switch
             {
-                ButtonStyle.Primary         => "c-button--primary",
-                ButtonStyle.Secondary       => "c-button--secondary",
-                ButtonStyle.Borderless      => "c-button--borderless",
-                ButtonStyle.Danger          => "c-button--danger",
+                ButtonStyle.Primary => "c-button--primary",
+                ButtonStyle.Secondary => "c-button--secondary",
+                ButtonStyle.Borderless => "c-button--borderless",
+                ButtonStyle.Danger => "c-button--danger",
                 ButtonStyle.DangerSecondary => "c-button--danger-secondary",
-                _                           => throw new NotImplementedException($"Style undefined for style {Style}")
+                _ => throw new NotImplementedException($"Style undefined for style {Style}")
             };
         }
     }
