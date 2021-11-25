@@ -4,6 +4,7 @@
 using System.Linq;
 using FluentValidation;
 using Opportunity.DesignSystem.Console.CommandOptions;
+using Opportunity.DesignSystem.RazorView;
 
 namespace Opportunity.DesignSystem.Console.Models.Validations
 {

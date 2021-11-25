@@ -2,6 +2,7 @@ using System;
 using System.CommandLine;
 using Opportunity.DesignSystem.Console.CommandOptions;
 using Opportunity.DesignSystem.Console.Models;
+using Opportunity.DesignSystem.RazorView;
 
 namespace Opportunity.DesignSystem.Console.UseCases
 {
