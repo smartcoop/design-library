@@ -1,7 +1,6 @@
-using System.Data;
 using CommandLine;
 
-namespace Opportunity.DesignSystem.Console.Options
+namespace Opportunity.DesignSystem.Console.CommandOptions
 {
     [Verb("generate", HelpText = "Generates html for a specific design element")]
     public class GenerateOptions

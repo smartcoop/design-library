@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.CommandLine;
 using System.Linq;
 using System.Threading.Tasks;
 using CommandLine;
@@ -12,7 +11,6 @@ using NLog;
 using NLog.Extensions.Logging;
 using Opportunity.DesignSystem.Console.Models;
 using Opportunity.DesignSystem.Console.Models.Validations;
-using Opportunity.DesignSystem.Console.Options;
 using Opportunity.DesignSystem.Console.UseCases;
 using Smart.Design.Razor.TagHelpers.Html;
 using LogLevel = Microsoft.Extensions.Logging.LogLevel;
@@ -26,34 +24,12 @@ namespace Opportunity.DesignSystem.Console
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
 
-        private static Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
-            using var host = CreateHostBuilder(args).Build();
-
-            CommandResponse result = Parser.Default.ParseArguments<ListOptions, GenerateOptions>(args)
-                .MapResult(
-                    (ListOptions optionArguments) =>
-                    {
-                        var listingUseCase = new ListingUseCase(optionArguments);
-                        return listingUseCase.Run();
-                    },
-                    (GenerateOptions optionArgument) =>
-                    {
-                        var validator = new GenerateOptionsValidator();
-                        var validationModel = validator.Validate(optionArgument);
-                        CommandResponse commandResponse = new();
-                        if (!validationModel.IsValid)
-                        {
-                            validationModel.Errors.ForEach(error =>
-                                commandResponse.AddError(new ValidationException(error.ErrorMessage)));
-                            return commandResponse;
-                        }
-                        var useCase = new GenerateUseCase(optionArgument);
-                        return useCase.Run();
-                    }, HandleParseError);
-
-            logger.Info(result.GetResponseMessage());
-            return host.RunAsync();
+            await CreateHostBuilder(args).Build().RunAsync();
+            CommandLineParser commandLineParser = new(args);
+            var commandResponse = commandLineParser.ExecuteCommandWithArguments();
+            logger.Info(commandResponse.GetResponseMessage());
         }
 
         private static IHostBuilder CreateHostBuilder(string[] args)
@@ -72,13 +48,5 @@ namespace Opportunity.DesignSystem.Console
                         })
                         .AddRazorTemplating();
                 });
-
-        private static CommandResponse HandleParseError(IEnumerable<Error> errors)
-        {
-            CommandResponse commandResponse = new();
-            errors.ToList().ForEach(error =>
-                commandResponse.AddError(new Exception(error.ToString())));
-            return commandResponse;
-        }
     }
 }

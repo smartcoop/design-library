@@ -1,6 +1,6 @@
 using CommandLine;
 
-namespace Opportunity.DesignSystem.Console.Options
+namespace Opportunity.DesignSystem.Console.CommandOptions
 {
     [Verb("list", HelpText = "Lists design elements")]
     public class ListingOptions

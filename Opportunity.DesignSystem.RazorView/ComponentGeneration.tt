@@ -27,7 +27,6 @@
     // Return an array of FieldInfos
     componentNames =
         ((FieldInfo[]) constants.ToArray(typeof(FieldInfo))).Select(v => v.GetRawConstantValue() as string).ToList();
-    // componentNames = new List<string> {"smart-accordion", "smart-input"};
 #>
 // This is generated code:
 

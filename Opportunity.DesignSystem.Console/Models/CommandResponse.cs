@@ -10,7 +10,7 @@ namespace Opportunity.DesignSystem.Console.Models
 {
     public class CommandResponse
     {
-        private bool IsSuccess => !Errors.Any();
+        public bool IsSuccess => !Errors.Any();
         private string SuccessMessage;
 
         public string GetResponseMessage()

@@ -3,7 +3,7 @@
 
 using System.Linq;
 using FluentValidation;
-using Opportunity.DesignSystem.Console.Options;
+using Opportunity.DesignSystem.Console.CommandOptions;
 
 namespace Opportunity.DesignSystem.Console.Models.Validations
 {

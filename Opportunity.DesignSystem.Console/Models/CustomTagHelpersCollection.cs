@@ -9,11 +9,12 @@ namespace Opportunity.DesignSystem.Console.Models
 {
     /// <summary>
     /// </summary>
-    public  class CustomTagHelperCollections
+    public class CustomTagHelperCollections
     {
-        public IEnumerable<string> Names => GetNamesFromTypeByReflection(typeof(TagNames)).ToList().Select(v => v.GetRawConstantValue() as string).ToList();
+        public IEnumerable<string> Names => GetNamesFromTypeByReflection(typeof(TagNames)).ToList()
+            .Select(v => v.GetRawConstantValue() as string).ToList();
 
-        private  IEnumerable<FieldInfo> GetNamesFromTypeByReflection(Type type)
+        private IEnumerable<FieldInfo> GetNamesFromTypeByReflection(Type type)
         {
             var constants = new ArrayList();
 

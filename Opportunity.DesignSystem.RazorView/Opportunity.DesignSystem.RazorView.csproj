@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <None Update="ComponentGeneration.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ComponentGeneration.cs</LastGenOutput>
     </None>
   </ItemGroup>
