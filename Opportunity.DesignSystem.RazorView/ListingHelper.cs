@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Smart.Design.Razor.TagHelpers.Constants;
 
-namespace Smart.Razor.Templates
+namespace Opportunity.DesignSystem.RazorView
 {
     /// <summary>
     /// </summary>

@@ -1,4 +1,4 @@
-namespace Smart.Application.Console
+namespace Opportunity.DesignSystem.Console
 {
     public enum CommandType
     {

@@ -5,7 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using ViewRenderer.Core;
 
-namespace Smart.Presentation.Mvc
+namespace Opportunity.DesignSystem.Mvc
 {
     public class Startup
     {

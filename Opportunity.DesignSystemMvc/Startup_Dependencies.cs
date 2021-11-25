@@ -2,7 +2,7 @@ using Definux.HtmlBuilder;
 using Microsoft.Extensions.DependencyInjection;
 using Smart.Design.Razor.TagHelpers.Html;
 
-namespace Smart.Presentation.Mvc
+namespace Opportunity.DesignSystem.Mvc
 {
     public static class StartupDependencies
     {

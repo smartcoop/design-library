@@ -1,4 +1,4 @@
-namespace Smart.Presentation.Mvc.Models
+namespace Opportunity.DesignSystem.Mvc.Models
 {
     public class ErrorViewModel
     {

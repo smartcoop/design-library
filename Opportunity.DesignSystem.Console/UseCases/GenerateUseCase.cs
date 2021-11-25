@@ -1,8 +1,8 @@
+using Opportunity.DesignSystem.Console.Options;
 using Razor.Templating.Core;
-using Smart.Application.Console.Options;
 using TreeFormatter;
 
-namespace Smart.Application.Console.UseCases
+namespace Opportunity.DesignSystem.Console.UseCases
 {
     /// <summary>
     ///     Generator html string from component name

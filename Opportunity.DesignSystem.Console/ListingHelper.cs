@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using Smart.Design.Razor.TagHelpers.Constants;
 
-namespace Smart.Application.Console
+namespace Opportunity.DesignSystem.Console
 {
     /// <summary>
     /// </summary>
@@ -28,7 +28,6 @@ namespace Smart.Application.Console
                 if (fi.IsLiteral && !fi.IsInitOnly)
                     constants.Add(fi);
 
-            // Return an array of FieldInfos
             return (FieldInfo[]) constants.ToArray(typeof(FieldInfo));
         }
     }

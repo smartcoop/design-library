@@ -1,6 +1,6 @@
 using CommandLine;
 
-namespace Smart.Application.Console.Options
+namespace Opportunity.DesignSystem.Console.Options
 {
     [Verb("generate", HelpText = "Generates html for a specific design element")]
     public class GenerateOptions

@@ -4,11 +4,11 @@ using Definux.HtmlBuilder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Smart.Design.Razor.Fluent.Components;
-using Smart.Presentation.Mvc.Models;
+using Opportunity.DesignSystem.FluentApi.Components;
+using Opportunity.DesignSystem.Mvc.Models;
 using ViewRenderer.Abstractions;
 
-namespace Smart.Presentation.Mvc.Controllers
+namespace Opportunity.DesignSystem.Mvc.Controllers
 {
     public class HomeController : Controller
     {

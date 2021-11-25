@@ -1,6 +1,6 @@
 using CommandLine;
 
-namespace Smart.Application.Console.Options
+namespace Opportunity.DesignSystem.Console.Options
 {
     [Verb("list", HelpText = "Lists design elements")]
     public class ListOptions

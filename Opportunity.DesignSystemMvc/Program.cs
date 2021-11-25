@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace Smart.Presentation.Mvc
+namespace Opportunity.DesignSystem.Mvc
 {
     public class Program
     {

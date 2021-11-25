@@ -1,7 +1,7 @@
 using System;
 using Definux.HtmlBuilder;
 
-namespace Smart.Design.Razor.Fluent.Components
+namespace Opportunity.DesignSystem.FluentApi.Components
 {
     public static class Component
     {

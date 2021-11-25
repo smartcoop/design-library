@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Smart.Application.Console
+namespace Opportunity.DesignSystem.Console
 {
     public abstract class ValidationModel
     {

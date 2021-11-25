@@ -1,4 +1,4 @@
-namespace Smart.Razor.Templates
+namespace Opportunity.DesignSystem.RazorView
 {
     /// <summary>
     ///     Definition of every <see cref="TagHelperOutput.TagName" /> used by the RCL.

@@ -1,6 +1,6 @@
-using Smart.Application.Console.Options;
+using Opportunity.DesignSystem.Console.Options;
 
-namespace Smart.Application.Console
+namespace Opportunity.DesignSystem.Console.UseCases
 {
     /// <summary>
     ///     Listing of available Components

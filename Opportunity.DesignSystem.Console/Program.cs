@@ -5,11 +5,11 @@ using CommandLine;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Smart.Application.Console.Options;
-using Smart.Application.Console.UseCases;
+using Opportunity.DesignSystem.Console.Options;
+using Opportunity.DesignSystem.Console.UseCases;
 using Smart.Design.Razor.TagHelpers.Html;
 
-namespace Smart.Application.Console
+namespace Opportunity.DesignSystem.Console
 {
     /// <summary>
     ///     CLI for generating html code from custom tag helpers
