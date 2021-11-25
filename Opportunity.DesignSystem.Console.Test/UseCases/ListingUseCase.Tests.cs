@@ -19,7 +19,6 @@ namespace Opportunity.DesignSystem.Console.Test.UseCases
         public void GenerateUseCase_WithValidArgument_IsResponseValid()
         {
             //Arrange
-
             Mock<ListingOptions> options = new();
             ListingUseCase useCase = new(options.Object);
             //Act

@@ -20,7 +20,6 @@ namespace Opportunity.DesignSystem.Console.Test.UseCases
         public void GenerateUseCase_WithValidArgument_IsResponseValid()
         {
             //Arrange
-
             var options = new Mock<GenerateOptions> {Object = {DesignElementName = "smart-accordion"}};
             GenerateUseCase useCase = new(options.Object);
             //Act
