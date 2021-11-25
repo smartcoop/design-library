@@ -42,7 +42,8 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             output.TagName = checkbox.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            output.ClearAndMergeAttributes(checkbox);
+            output.ClearAllAttributes();
+            output.MergeAttributes(checkbox);
 
             output.Content.SetHtmlContent(checkbox.InnerHtml);
         }

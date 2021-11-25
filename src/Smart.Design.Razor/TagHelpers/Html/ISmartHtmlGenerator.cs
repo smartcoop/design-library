@@ -1,11 +1,9 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.Enums;
-using Smart.Design.Razor.TagHelpers.Html.Options;
 
 #nullable enable
 namespace Smart.Design.Razor.TagHelpers.Html
@@ -54,7 +52,7 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <param name="label">The value of the label.</param>
         /// <param name="labelFor"></param>
         /// <returns>A instance of the &lt;label&gt;</returns>
-        TagBuilder GenerateFormGroupLabel(string label, string? labelFor);
+        TagBuilder GenerateFormGroupLabel(string label, string labelFor);
 
         /// <summary>
         /// Generate a &lt;div&gt; in which are grouped element of a form group.
@@ -89,11 +87,12 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// </summary>
         /// <param name="id">The id of the &lt;textarea&gt;</param>
         /// <param name="name">The name of the &lt;textarea&gt;</param>
+        /// <param name="value">The value of the &lt;textarea&gt;</param>
         /// <param name="rows">The number of rows of the &lt;textarea&gt;. This parameter is optional.</param>
         /// <param name="textareaSize"></param>
         /// <param name="for"></param>
         /// <returns>An instance of the &lt;textarea&gt;</returns>
-        TagBuilder GenerateSmartTextArea(string id, string name, int? rows, TextAreaSize textareaSize, ModelExpression @for);
+        TagBuilder GenerateSmartTextArea(string id, string name, TagHelperContent value, int? rows, TextAreaSize textareaSize, ModelExpression @for);
 
         /// <summary>
         /// Generate a div that represents the smart button toolbar.
@@ -159,122 +158,6 @@ namespace Smart.Design.Razor.TagHelpers.Html
         /// <returns>An instance of a form.</returns>
         TagBuilder GenerateForm(FormLayout layout, IHtmlContent content);
 
-        /// <summary>
-        /// Generates an &lt;input&gt; time compliant with smart design.
-        /// </summary>
-        /// <param name="id">Id attribute of the element.</param>
-        /// <param name="name">Name attribute of the element.</param>
-        /// <param name="value">The value of the input.</param>
-        /// <param name="for">The <see cref="ModelExpression"/> associated to the html element.</param>
-        /// <returns></returns>
-        TagBuilder GenerateInputTime(string id, string name, DateTime? value, ModelExpression @for);
-
-        /// <summary>
-        /// Generates an smart design input group.
-        /// See documentation <see href="https://design.smart.coop/development/docs/c-input-group.html">here</see>.
-        /// </summary>
-        /// <param name="viewContext"></param>
-        /// <param name="id">d of the &lt;input&gt; element.</param>
-        /// <param name="name">Name of the &lt;input&gt; element.</param>
-        /// <param name="placeholder">Placeholder of the &lt;input&gt; element.</param>
-        /// <param name="value">HTML value of the &lt;input&gt; element.</param>
-        /// <param name="for">ModelExpression associated with the component.</param>
-        /// <param name="alignment">The alignment of <paramref name="extraContent"/> or <paramref name="icon"/>. Can be at the start or beginning</param>
-        /// <param name="icon">An <see cref="Icon"/> that can be aligned at the start or the end of the input group.</param>
-        /// <param name="text"></param>
-        /// <returns>A instance of an input group component.</returns>
-        /// <remarks>There can be only either one icon or one extra content at a time.</remarks>
-        /// <exception><see cref="ArgumentException"/> if <paramref name="extraContent"/> and <paramref name="icon"/> are specified.</exception>
-        TagBuilder GenerateInputGroup(ViewContext viewContext,
-            string id,
-            string name,
-            string placeholder,
-            string value,
-            ModelExpression @for,
-            Alignment alignment,
-            Icon icon, string text);
-
-        TagBuilder GenerateFormGroupHelperText(string helperText);
-
-        /// <summary>
-        /// Generates a global banner widget compliant with smart design.
-        /// Documentation is available <see href="https://design.smart.coop/development/docs/c-global-banner.html">here</see>.
-        /// </summary>
-        /// <param name="globalBannerType">The style <see cref="GlobalBannerType">type</see> of the banner.</param>
-        /// <param name="label">The label displayed by the banner.</param>
-        /// <returns>A instance of a global banner</returns>
-        TagBuilder GenerateGlobalBanner(GlobalBannerType globalBannerType, string label);
-
-        /// <summary>
-        /// Generates an elevated card with shadows.
-        /// </summary>
-        /// <param name="elevation">Size of the elevation</param>
-        /// <returns>A instance of an elevator.</returns>
-        TagBuilder GenerateElevation(ElevationSize elevation);
-
-        /// <summary>
-        /// Generates a smart design alert stack.
-        /// Documentation is available <see href="https://design.smart.coop/development/docs/c-alert-stack.html">here</see>.
-        /// </summary>
-        /// <param name="icon">The leading icon of the alert.</param>
-        /// <param name="message">The message to be displayed.</param>
-        /// <returns></returns>
-        TagBuilder GenerateAlertStack(Icon icon, string message);
-
-        /// <summary>
-        /// Generates a smart design loader.
-        /// Documentation is available <see ref="https://design.smart.coop/development/docs/c-loader.html">here</see>.
-        /// </summary>
-        /// <param name="loading">The state of the component, i.e. loading or not.</param>
-        /// <returns>An instance of a smart design loader.</returns>
-        TagBuilder GenerateLoader(bool loading);
-
-        /// <summary>
-        /// Generates a smart design avatar.
-        /// </summary>
-        /// <param name="size"></param>
-        /// <param name="imageUrl"></param>
-        /// <param name="text">Associated text to the avatar</param>
-        /// <param name="icon"></param>
-        /// <param name="initial"></param>
-        /// <param name="link"></param>
-        /// <returns></returns>
-        TagBuilder GenerateAvatar(AvatarSize size, string imageUrl, string text, Icon icon, string initial, string link);
-
-        /// <summary>
-        /// Generates a smart design button.
-        /// </summary>
-        /// <param name="buttonOptions">Configuration of the smart design button properties.</param>
-        /// <returns>A task that represents the asynchronous generation of an instance of a smart design button.</returns>
-        Task<TagBuilder> GenerateSmartButton(SmartButtonOptions buttonOptions);
-
-        /// <summary>
-        /// Generate a empty &lt;nav&gt; element compliant with smart design tab whose purpose is containing smart design tab items.
-        /// </summary>
-        /// <param name="bordered">True if the tab items should be bordered.</param>
-        /// <returns>An instance of a empty smart design tab.</returns>
-        TagBuilder GenerateSmartTab(bool bordered);
-
-        /// <summary>
-        /// Generates a &lt;ul&gt; element whose purpose is containing smart design tab items.
-        /// </summary>
-        /// <returns>An instance of a &lt;ul&gt; element</returns>
-        TagBuilder GenerateSmartTabItemsContainer();
-
-        /// <summary>
-        /// Generate a smart design tab item.
-        /// </summary>
-        /// <param name="label">Label of the tab item.</param>
-        /// <param name="ref">Html reference to its html content.</param>
-        /// <returns>A instance of a smart design tab item.</returns>
-        TagBuilder GenerateSmartTabItem(string label, string @ref);
-
-        /// <summary>
-        /// Generates a smart design tab's section. A smart design tab's section is the content that is related to a smart design tab ite.
-        /// </summary>
-        /// <param name="id">Html id of the smart design tab section. The id should be matching of the smart design tab items.</param>
-        /// <returns>A instance of a smart design tab section.</returns>
-        TagBuilder GenerateSmartTabSection(string id);
     }
 #nullable disable
 }

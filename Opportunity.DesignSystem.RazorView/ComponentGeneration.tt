@@ -1,0 +1,48 @@
+<#@ template language="C#v3.5" debug="true" hostspecific="false" language="C#"   #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="$(TargetPath)" #>
+<#@ output extension=".cshtml" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.IO" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Reflection" #>
+
+<#
+    IEnumerable<string> componentNames;
+#>
+
+<#
+    var type = typeof(TagName);
+    var constants = new ArrayList();
+    var fieldInfos = type.GetFields(
+        BindingFlags.Public | BindingFlags.Static |
+        BindingFlags.FlattenHierarchy);
+    
+    foreach (var fi in fieldInfos)
+        if (fi.IsLiteral && !fi.IsInitOnly)
+            constants.Add(fi);
+    
+    // Return an array of FieldInfos
+    componentNames =
+        ((FieldInfo[]) constants.ToArray(typeof(FieldInfo))).Select(v => v.GetRawConstantValue() as string).ToList();
+    // componentNames = new List<string> {"smart-accordion", "smart-input"};
+#>
+// This is generated code:
+
+<#
+    // This code runs in the text template:
+    foreach (var componentName in componentNames)
+    {
+        var filePath = $"{Directory.GetCurrentDirectory()}/Views/{componentName}.cshtml";
+        var fileContent = $@"@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+                             @addTagHelper *,  Smart.Design.Razor
+                                <{componentName}> </{componentName}>";
+
+        var file = File.OpenWrite(filePath);
+        var buffer = Encoding.ASCII.GetBytes(fileContent);
+        file.Write(buffer, 0, buffer.Length);
+    }
+#>
+

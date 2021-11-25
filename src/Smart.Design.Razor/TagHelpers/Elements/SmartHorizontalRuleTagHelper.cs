@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Constants;
-using Smart.Design.Razor.TagHelpers.Extensions;
 using Smart.Design.Razor.TagHelpers.Html;
 
 namespace Smart.Design.Razor.TagHelpers.Elements
@@ -24,7 +23,7 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             var hr = _smartHtmlGenerator.GenerateHorizontalRule();
             output.TagName = hr.TagName;
             output.TagMode = TagMode.SelfClosing;
-            output.ClearAndMergeAttributes(hr);
+            output.MergeAttributes(hr);
         }
     }
 }

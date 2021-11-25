@@ -1,0 +1,10 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "handlebars.js@4.7.7",
+      "destination": "wwwroot\\lib\\handlebars.js"
+    }
+  ]
+}

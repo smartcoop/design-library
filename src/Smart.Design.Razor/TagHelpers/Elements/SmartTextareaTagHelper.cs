@@ -30,19 +30,19 @@ namespace Smart.Design.Razor.TagHelpers.Elements
         {
         }
 
-        public override void Process(TagHelperContext context, TagHelperOutput output)
+        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
-            var textarea = HtmlGenerator.GenerateSmartTextArea(Id, Name, Rows, TextareaSize, For);
+            output.ClearAllAttributes();
+
+            var directContent = await output.GetChildContentAsync();
+
+            var textarea = HtmlGenerator.GenerateSmartTextArea(Id, Name, directContent, Rows, TextareaSize, For);
 
             output.TagMode = TagMode.StartTagAndEndTag;
             output.TagName = textarea.TagName;
 
-            output.ClearAndMergeAttributes(textarea);
-
-            if (textarea.HasInnerHtml)
-            {
-                output.Content.SetHtmlContent(textarea.InnerHtml);
-            }
+            output.MergeAttributes(textarea);
+            output.Content.SetHtmlContent(textarea.InnerHtml);
         }
     }
 }

@@ -1,0 +1,13 @@
+﻿@{
+    string accordion = Model;
+}
+
+@Html.Raw( accordion )
+
+<smart-accordion  title="Custom Tag Helper"> Send back with a custom tag helper</smart-accordion>
+<div id="test"></div>
+
+
+
+<Test></Test>
+<smart-accordion-html><div slot="title">My New title</div> <div slot="content">My new content</div> </smart-accordion-html>

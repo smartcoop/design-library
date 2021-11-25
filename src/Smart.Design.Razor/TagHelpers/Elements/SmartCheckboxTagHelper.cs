@@ -49,7 +49,8 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             output.TagName = "div";
             output.TagMode = TagMode.StartTagAndEndTag;
 
-            output.ClearAndMergeAttributes(mainDiv);
+            output.ClearAllAttributes();
+            output.MergeAttributes(mainDiv);
 
             output.Content.SetHtmlContent(mainDiv.InnerHtml);
         }

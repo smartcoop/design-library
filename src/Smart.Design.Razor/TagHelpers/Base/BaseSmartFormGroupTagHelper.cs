@@ -2,7 +2,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using Smart.Design.Razor.TagHelpers.Extensions;
 using Smart.Design.Razor.TagHelpers.Html;
 
 namespace Smart.Design.Razor.TagHelpers.Base
@@ -59,10 +58,10 @@ namespace Smart.Design.Razor.TagHelpers.Base
         {
             var formGroup = HtmlGenerator.GenerateFormGroup(Id, Name, Label, HelperText, GenerateFormGroupControl());
 
+            output.Attributes.Clear();
             output.TagName = formGroup.TagName;
             output.TagMode = TagMode.StartTagAndEndTag;
-
-            output.ClearAndMergeAttributes(formGroup);
+            output.MergeAttributes(formGroup);
             output.Content.SetHtmlContent(formGroup.InnerHtml);
         }
     }
