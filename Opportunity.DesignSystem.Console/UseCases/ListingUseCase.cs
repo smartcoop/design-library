@@ -1,3 +1,6 @@
+using System;
+using System.CommandLine;
+using Opportunity.DesignSystem.Console.Models;
 using Opportunity.DesignSystem.Console.Options;
 
 namespace Opportunity.DesignSystem.Console.UseCases
@@ -17,11 +20,22 @@ namespace Opportunity.DesignSystem.Console.UseCases
             _options = options;
         }
 
-        public string Run()
+        public CommandResponse Run()
         {
-            return string.IsNullOrWhiteSpace(_options.DesignElementCategory)
-                ? string.Join('\n', ListingHelper.Run())
-                : $"list all of category {_options.DesignElementCategory}";
+            CommandResponse response = new();
+            try
+            {
+                var customTagHelperNames = new CustomTagHelperCollections().Names;
+                var componentNameListing = string.IsNullOrWhiteSpace(_options.DesignElementCategory)
+                    ? string.Join('\n', customTagHelperNames)
+                    : $"list all of category {_options.DesignElementCategory}";
+            }
+            catch (Exception e)
+            {
+                response.AddError(e);
+            }
+
+            return response;
         }
     }
 }

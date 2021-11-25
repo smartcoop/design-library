@@ -1,13 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.CommandLine;
 using System.Linq;
 using System.Threading.Tasks;
 using CommandLine;
+using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog;
+using NLog.Extensions.Logging;
+using Opportunity.DesignSystem.Console.Models;
+using Opportunity.DesignSystem.Console.Models.Validations;
 using Opportunity.DesignSystem.Console.Options;
 using Opportunity.DesignSystem.Console.UseCases;
 using Smart.Design.Razor.TagHelpers.Html;
+using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace Opportunity.DesignSystem.Console
 {
@@ -16,45 +24,61 @@ namespace Opportunity.DesignSystem.Console
     /// </summary>
     public class Program
     {
+        private static Logger logger = LogManager.GetCurrentClassLogger();
+
         private static Task Main(string[] args)
         {
             using var host = CreateHostBuilder(args).Build();
 
-            var result = Parser.Default.ParseArguments<ListOptions, GenerateOptions>(args)
-                .WithNotParsed(HandleParseError)
-                .WithParsed(options => System.Console.WriteLine("Ok"))
+            CommandResponse result = Parser.Default.ParseArguments<ListOptions, GenerateOptions>(args)
                 .MapResult(
-                    (ListOptions opts) =>
+                    (ListOptions optionArguments) =>
                     {
-                        var useCase = new ListingUseCase(opts);
-                        return useCase.Run();
+                        var listingUseCase = new ListingUseCase(optionArguments);
+                        return listingUseCase.Run();
                     },
-                    (GenerateOptions opts) =>
+                    (GenerateOptions optionArgument) =>
                     {
-                        var useCase = new GenerateUseCase(opts);
+                        var validator = new GenerateOptionsValidator();
+                        var validationModel = validator.Validate(optionArgument);
+                        CommandResponse commandResponse = new();
+                        if (!validationModel.IsValid)
+                        {
+                            validationModel.Errors.ForEach(error =>
+                                commandResponse.AddError(new ValidationException(error.ErrorMessage)));
+                            return commandResponse;
+                        }
+                        var useCase = new GenerateUseCase(optionArgument);
                         return useCase.Run();
-                    }, errs => "Can't parse options");
-            System.Console.WriteLine(result);
-            System.Console.ReadLine();
+                    }, HandleParseError);
 
+            logger.Info(result.GetResponseMessage());
             return host.RunAsync();
         }
 
         private static IHostBuilder CreateHostBuilder(string[] args)
-        {
-            return Host.CreateDefaultBuilder(args)
-                .ConfigureServices((_, services) =>
-                    services.AddTransient<ISmartHtmlGenerator, SmartHtmlGenerator>()
-                        .AddLogging(configure => configure.AddConsole())
-                        .Configure<LoggerFilterOptions>(options => options.MinLevel = LogLevel.Critical)
-                        .AddRazorTemplating());
-        }
+            => Host
+                .CreateDefaultBuilder(args)
+                .ConfigureServices(serviceCollection =>
+                {
+                    serviceCollection
+                        .AddTransient<ISmartHtmlGenerator, SmartHtmlGenerator>()
+                        .AddLogging(loggingBuilder =>
+                        {
+                            loggingBuilder
+                                .ClearProviders()
+                                .SetMinimumLevel(LogLevel.Debug)
+                                .AddNLog("nlog.config");
+                        })
+                        .AddRazorTemplating();
+                });
 
-        private static void HandleParseError(IEnumerable<Error> errs)
+        private static CommandResponse HandleParseError(IEnumerable<Error> errors)
         {
-            errs.ToList().ForEach(error =>
-                System.Console.WriteLine(
-                    $"{error.Tag} has {(error.StopsProcessing ? "stopped processing of the app" : "been ignored")}"));
+            CommandResponse commandResponse = new();
+            errors.ToList().ForEach(error =>
+                commandResponse.AddError(new Exception(error.ToString())));
+            return commandResponse;
         }
     }
 }

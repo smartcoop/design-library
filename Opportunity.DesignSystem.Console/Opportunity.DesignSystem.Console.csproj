@@ -10,16 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.9.0-preview1"/>
-    <PackageReference Include="Razor.Templating.Core" Version="1.6.0"/>
-    <PackageReference Include="Serilog" Version="2.10.0"/>
-    <PackageReference Include="Serilog.Sinks.Console" Version="4.0.0"/>
-    <PackageReference Include="System.CommandLine.DragonFruit" Version="0.3.0-alpha.21216.1"/>
-    <PackageReference Include="TreeFormatter" Version="1.0.2"/>
+    <PackageReference Include="CommandLineParser" Version="2.9.0-preview1" />
+    <PackageReference Include="FluentValidation" Version="10.3.4" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.0.0" />
+    <PackageReference Include="NLog" Version="4.7.12" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.7.4" />
+    <PackageReference Include="Razor.Templating.Core" Version="1.6.0" />
+    <PackageReference Include="System.CommandLine.DragonFruit" Version="0.3.0-alpha.21216.1" />
+    <PackageReference Include="TreeFormatter" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Opportunity.DesignSystem.RazorView\Opportunity.DesignSystem.RazorView.csproj"/>
+    <ProjectReference Include="..\Opportunity.DesignSystem.RazorView\Opportunity.DesignSystem.RazorView.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +31,9 @@
     <None Update="ComponentGeneration.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ComponentGeneration.cs</LastGenOutput>
+    </None>
+    <None Update="nlog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
@@ -41,7 +46,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}"/>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

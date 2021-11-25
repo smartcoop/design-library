@@ -1,3 +1,4 @@
+using System.Data;
 using CommandLine;
 
 namespace Opportunity.DesignSystem.Console.Options

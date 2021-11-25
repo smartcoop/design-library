@@ -1,4 +1,4 @@
-namespace Opportunity.DesignSystem.Console
+namespace Opportunity.DesignSystem.Console.Models.Enumerations
 {
     public enum CommandType
     {

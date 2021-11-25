@@ -5,18 +5,15 @@ using System.Linq;
 using System.Reflection;
 using Smart.Design.Razor.TagHelpers.Constants;
 
-namespace Opportunity.DesignSystem.Console
+namespace Opportunity.DesignSystem.Console.Models
 {
     /// <summary>
     /// </summary>
-    public static class ListingHelper
+    public  class CustomTagHelperCollections
     {
-        public static IEnumerable<string> Run()
-        {
-            return GetConstants(typeof(TagNames)).ToList().Select(v => v.GetRawConstantValue() as string).ToList();
-        }
+        public IEnumerable<string> Names => GetNamesFromTypeByReflection(typeof(TagNames)).ToList().Select(v => v.GetRawConstantValue() as string).ToList();
 
-        private static IEnumerable<FieldInfo> GetConstants(Type type)
+        private  IEnumerable<FieldInfo> GetNamesFromTypeByReflection(Type type)
         {
             var constants = new ArrayList();
 

@@ -1,3 +1,6 @@
+using System;
+using System.CommandLine;
+using Opportunity.DesignSystem.Console.Models;
 using Opportunity.DesignSystem.Console.Options;
 using Razor.Templating.Core;
 using TreeFormatter;
@@ -16,16 +19,27 @@ namespace Opportunity.DesignSystem.Console.UseCases
             _options = options;
         }
 
-        public string Run()
+        public CommandResponse Run()
         {
-            RazorTemplateEngine
-                .Initialize();
+            CommandResponse response = new();
+            try
+            {
+                RazorTemplateEngine
+                    .Initialize();
 
-            var html = RazorTemplateEngine
-                .RenderAsync($"/Views/Test/{_options.DesignElementName}.cshtml")
-                .Result;
+                var rawHtml = RazorTemplateEngine
+                    .RenderAsync($"/Views/{_options.DesignElementName}.cshtml")
+                    .Result;
 
-            return html.MinifyHtml().PrettifyHtml();
+                var formattedHtml = rawHtml.MinifyHtml().PrettifyHtml();
+                response.SetSuccessMessage($"raw html: \n {formattedHtml}");
+            }
+            catch (Exception e)
+            {
+                response.AddError(e);
+            }
+
+            return response;
         }
     }
 }
