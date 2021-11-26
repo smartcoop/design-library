@@ -10,8 +10,8 @@ using Smart.Design.Razor.TagHelpers.Extensions;
 namespace Smart.Design.Razor.TagHelpers.Elements
 {
     /// <summary>
-    ///     <see cref="ITagHelper" /> implementation of a smart design select.
-    ///     Documentation available <see href="https://design.smart.coop/development/docs/c-select.html">here</see>.
+    /// <see cref="ITagHelper"/> implementation of a smart design select.
+    /// Documentation available <see href="https://design.smart.coop/development/docs/c-select.html">here</see>.
     /// </summary>
     [HtmlTargetElement(TagNames.SmartSelectTagName)]
     public class SmartSelectTagHelper : SelectTagHelper
@@ -30,7 +30,10 @@ namespace Smart.Design.Razor.TagHelpers.Elements
 
             // Retrieving potential hardcoded <option> tags inside the <smart-select> tag.
             var extraOptions = await output.GetChildContentAsync();
-            if (!extraOptions.IsEmptyOrWhiteSpace) @select.InnerHtml.AppendHtml(extraOptions);
+            if (!extraOptions.IsEmptyOrWhiteSpace)
+            {
+                select.InnerHtml.AppendHtml(extraOptions);
+            }
 
             // output.PostContent hold generated <option> tags from property Items.
             var options = new HtmlContentBuilder();
@@ -44,8 +47,8 @@ namespace Smart.Design.Razor.TagHelpers.Elements
             output.Reinitialize(holder.TagName, TagMode.StartTagAndEndTag);
             output.Content.Clear();
             output.PostContent.SetHtmlContent(select);
-            output.ClearAllAttributes();
-            output.MergeAttributes(holder);
+
+            output.ClearAndMergeAttributes(holder);
         }
     }
 }

@@ -1,8 +1,8 @@
 namespace Smart.Design.Razor.Enums
 {
     /// <summary>
-    ///     Supported icons by smart design.
-    ///     We added <see cref="None" /> value by default to prevent having to set nullable icon attributes.
+    /// Supported icons by smart design.
+    /// We added <see cref="None"/> value by default to prevent having to set nullable icon attributes.
     /// </summary>
     public enum Icon
     {
@@ -57,6 +57,7 @@ namespace Smart.Design.Razor.Enums
         Github,
         Home,
         Instagram,
+        Link,
         Location,
         Menu,
         Message,

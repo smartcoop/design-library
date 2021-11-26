@@ -17,11 +17,8 @@ namespace Smart.Design.Razor.TagHelpers.Elements
         private const string RowsAttributeName = "rows";
         private const string TextareaSizeAttributeName = "textarea-size";
 
-        public SmartTextareaTagHelper(ISmartHtmlGenerator smartHtmlGenerator) : base(smartHtmlGenerator)
-        {
-        }
-
-        [HtmlAttributeName(RowsAttributeName)] public int? Rows { get; set; }
+        [HtmlAttributeName(RowsAttributeName)]
+        public int? Rows { get; set; }
 
         [HtmlAttributeName(TextareaSizeAttributeName)]
         public TextAreaSize TextareaSize { get; set; }
@@ -29,19 +26,23 @@ namespace Smart.Design.Razor.TagHelpers.Elements
         [HtmlAttributeName(AspForNameAttribute)]
         public ModelExpression For { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        public SmartTextareaTagHelper(ISmartHtmlGenerator smartHtmlGenerator) : base(smartHtmlGenerator)
         {
-            output.ClearAllAttributes();
+        }
 
-            var directContent = await output.GetChildContentAsync();
-
-            var textarea = HtmlGenerator.GenerateSmartTextArea(Id, Name, directContent, Rows, TextareaSize, For);
+        public override void Process(TagHelperContext context, TagHelperOutput output)
+        {
+            var textarea = HtmlGenerator.GenerateSmartTextArea(Id, Name, Rows, TextareaSize, For);
 
             output.TagMode = TagMode.StartTagAndEndTag;
             output.TagName = textarea.TagName;
 
-            output.MergeAttributes(textarea);
-            output.Content.SetHtmlContent(textarea.InnerHtml);
+            output.ClearAndMergeAttributes(textarea);
+
+            if (textarea.HasInnerHtml)
+            {
+                output.Content.SetHtmlContent(textarea.InnerHtml);
+            }
         }
     }
 }

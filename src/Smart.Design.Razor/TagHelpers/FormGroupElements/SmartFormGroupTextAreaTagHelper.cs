@@ -5,11 +5,10 @@ using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Constants;
 using Smart.Design.Razor.TagHelpers.Html;
 
-namespace Smart.Design.Razor.TagHelpers.FormGroups
+namespace Smart.Design.Razor.TagHelpers.FormGroupElements
 {
     /// <summary>
-    ///     <see cref="BaseSmartFormGroupTagHelper" /> implementation with a <see cref="SmartFormGroupInputGroup" />.
-    /// </summary>
+    /// <see cref="BaseSmartFormGroupTagHelper"/> implementation with a <see cref="SmartTextareaTagHelper" />.    /// </summary>
     [HtmlTargetElement(TagNames.SmartFormGroupTextArea)]
     public class SmartFormGroupTextAreaTagHelper : BaseSmartFormGroupTagHelper
     {
@@ -30,8 +29,7 @@ namespace Smart.Design.Razor.TagHelpers.FormGroups
 
         public override TagBuilder GenerateFormGroupControl()
         {
-            return HtmlGenerator.GenerateSmartTextArea(Id, Name, new DefaultTagHelperContent(), Rows, TextareaSize,
-                For);
+            return HtmlGenerator.GenerateSmartTextArea(Id, Name, Rows, TextareaSize, For);
         }
     }
 }
