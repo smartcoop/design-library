@@ -1,10 +1,9 @@
-﻿using System.IO;
 using System.Text;
 using Smart.Design.RazorView;
 
 
 CustomTagHelperCollections customTagHelperCollections = new();
-var directoyFileDestination = Path.GetFullPath(@"..\..\..\..\Smart.Design.RazorView\Views");
+var directoyFileDestination = Path.GetFullPath("..\\..\\..\\..\\Smart.Design.RazorView\\Views");
 foreach (var componentName in customTagHelperCollections.Names)
 {
     StringBuilder viewContentStringBuilder = new StringBuilder($"<{componentName}>")
