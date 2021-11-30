@@ -9,13 +9,26 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.Razor", "src\S
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{69E4812B-76AE-479C-914E-7A01B6BD14A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Design.Console", "src\Smart.Design.Console\Smart.Design.Console.csproj", "{364694F2-ECB6-42F1-BAB0-660262A90326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.Console", "src\Smart.Design.Console\Smart.Design.Console.csproj", "{364694F2-ECB6-42F1-BAB0-660262A90326}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Design.Console.Test", "src\Smart.Design.Console.Test\Smart.Design.Console.Test.csproj", "{F0633702-0BED-4A3C-A85D-F9F56DDD366C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.Console.Test", "src\Smart.Design.Console.Test\Smart.Design.Console.Test.csproj", "{F0633702-0BED-4A3C-A85D-F9F56DDD366C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Design.RazorView", "src\Smart.Design.RazorView\Smart.Design.RazorView.csproj", "{3832CA6E-A117-4BA5-87EF-0BC2E6B592DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.RazorView", "src\Smart.Design.RazorView\Smart.Design.RazorView.csproj", "{3832CA6E-A117-4BA5-87EF-0BC2E6B592DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smart.Design.ViewGenerator.Console", "src\Smart.Design.ViewGenerator.Console\Smart.Design.ViewGenerator.Console.csproj", "{641D53A1-45D6-4C17-B68F-567552A5B465}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.ViewGenerator.Console", "src\Smart.Design.ViewGenerator.Console\Smart.Design.ViewGenerator.Console.csproj", "{641D53A1-45D6-4C17-B68F-567552A5B465}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.CFA.Pages", "src\Smart.CFA.Pages\Smart.CFA.Pages.csproj", "{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C1DD7A90-48E5-489F-887F-BFB13F5EE485}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Reverse.Proxy", "Reverse.Proxy", "{F55A36CC-3A7C-4CFA-8283-9880A8DBA97A}"
+	ProjectSection(SolutionItems) = preProject
+		src\Reverse.Proxy\localhost.conf = src\Reverse.Proxy\localhost.conf
+		src\Reverse.Proxy\nginx.conf = src\Reverse.Proxy\nginx.conf
+		src\Reverse.Proxy\Nginx.Dockerfile = src\Reverse.Proxy\Nginx.Dockerfile
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,17 +100,43 @@ Global
 		{641D53A1-45D6-4C17-B68F-567552A5B465}.Release|x64.Build.0 = Release|Any CPU
 		{641D53A1-45D6-4C17-B68F-567552A5B465}.Release|x86.ActiveCfg = Release|Any CPU
 		{641D53A1-45D6-4C17-B68F-567552A5B465}.Release|x86.Build.0 = Release|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Debug|x64.Build.0 = Debug|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Debug|x86.Build.0 = Debug|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Release|x64.ActiveCfg = Release|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Release|x64.Build.0 = Release|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Release|x86.ActiveCfg = Release|Any CPU
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26}.Release|x86.Build.0 = Release|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Debug|x64.Build.0 = Debug|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Debug|x86.Build.0 = Debug|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Release|x64.ActiveCfg = Release|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Release|x64.Build.0 = Release|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Release|x86.ActiveCfg = Release|Any CPU
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A8E8CC0A-018E-43CF-BF9C-4176AA0F01BC} = {F468BEDF-34F9-493D-9E81-54F1B12907AF}
-		{69E4812B-76AE-479C-914E-7A01B6BD14A8} = {F468BEDF-34F9-493D-9E81-54F1B12907AF}
 		{364694F2-ECB6-42F1-BAB0-660262A90326} = {F468BEDF-34F9-493D-9E81-54F1B12907AF}
 		{F0633702-0BED-4A3C-A85D-F9F56DDD366C} = {69E4812B-76AE-479C-914E-7A01B6BD14A8}
 		{3832CA6E-A117-4BA5-87EF-0BC2E6B592DD} = {F468BEDF-34F9-493D-9E81-54F1B12907AF}
 		{641D53A1-45D6-4C17-B68F-567552A5B465} = {F468BEDF-34F9-493D-9E81-54F1B12907AF}
+		{A1BF9A7B-F4BC-4A83-99A5-8CBB9CB10E26} = {F468BEDF-34F9-493D-9E81-54F1B12907AF}
+		{DEDA8B84-5DA6-4E0E-86C9-FE0FD3F284C9} = {C1DD7A90-48E5-489F-887F-BFB13F5EE485}
+		{F55A36CC-3A7C-4CFA-8283-9880A8DBA97A} = {F468BEDF-34F9-493D-9E81-54F1B12907AF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C44C7D0E-5D67-4D3C-BCAE-E3FACE20E3F5}
