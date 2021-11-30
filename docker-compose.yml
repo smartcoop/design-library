@@ -1,0 +1,23 @@
+version: "3.9"
+
+services:
+
+  api:
+    depends_on:
+      - reverseproxy
+    build:
+      context: ./src/Smart.CFA.Pages
+    ports:
+      - "5000:5000"
+    hostname: backend
+    restart: always
+
+  reverseproxy:
+    build:
+      context: ./src/Reverse.Proxy
+      dockerfile: Nginx.Dockerfile
+    volumes:
+      - ./src/Reverse.Proxy/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "4000:4000"
+    restart: always
