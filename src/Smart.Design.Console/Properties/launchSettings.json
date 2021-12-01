@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Smart.Design.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "generate -n smart-accordion",
+      "hotReloadEnabled": false
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
