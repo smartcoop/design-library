@@ -17,7 +17,7 @@ namespace Smart.Design.Console
     {
         private readonly string[] _args;
 
-        public CommandLineParser(string[]  _args)
+        public CommandLineParser(string[] _args)
         {
             this._args = _args;
         }

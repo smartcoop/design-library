@@ -1,7 +1,9 @@
 using System;
+using Microsoft.Extensions.Logging;
 using Razor.Templating.Core;
 using Smart.Design.Console.CommandOptions;
 using Smart.Design.Console.Models;
+using Smart.Design.RazorView;
 using TreeFormatter;
 
 namespace Smart.Design.Console.UseCases
@@ -26,12 +28,12 @@ namespace Smart.Design.Console.UseCases
                 RazorTemplateEngine
                     .Initialize();
 
-                var rawHtml = RazorTemplateEngine
+                string rawHtml = RazorTemplateEngine
                     .RenderAsync($"/Views/{_options.DesignElementName}.cshtml")
                     .Result;
 
-                var formattedHtml = rawHtml.MinifyHtml().PrettifyHtml();
-                response.SetSuccessMessage($"raw html: \n {formattedHtml}");
+                string formattedHtml = rawHtml.MinifyHtml().PrettifyHtml();
+                response.SetSuccessMessage(formattedHtml);
             }
             catch (Exception e)
             {
