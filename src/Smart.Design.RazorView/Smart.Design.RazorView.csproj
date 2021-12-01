@@ -3,8 +3,7 @@
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <TargetFramework>net6.0</TargetFramework>
     <LangVersion>latestmajor</LangVersion>
-    <AssemblyName>Smart.Design.RazorView</AssemblyName>
-    <RootNamespace>Smart.Design.RazorView</RootNamespace>
+
     <!-- To revert to the old behaviour to produce separate Views assembly in .NET 6 https://github.com/dotnet/aspnetcore/issues/32172#issuecomment-859712936 -->
     <!--<UseRazorSourceGenerator>false</UseRazorSourceGenerator>-->
   </PropertyGroup>
@@ -14,22 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <_ContentIncludedByDefault Remove="Views\Home\Index.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Shared\Components\ExampleComponent\Default.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Shared\_Layout1.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Feature\ExampleViewWithoutViewModel.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Test\smart-accordion.cshtml" />
-    <_ContentIncludedByDefault Remove="Views\Test\smart-input.cshtml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Smart.Design.Razor\Smart.Design.Razor.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="ComponentGeneration.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ComponentGeneration.cs</LastGenOutput>
-    </None>
   </ItemGroup>
 </Project>
