@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+  <PropertyGroup>
+    <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
+    <TargetFramework>net6.0</TargetFramework>
+    <LangVersion>latestmajor</LangVersion>
+
+    <!-- To revert to the old behaviour to produce separate Views assembly in .NET 6 https://github.com/dotnet/aspnetcore/issues/32172#issuecomment-859712936 -->
+    <!--<UseRazorSourceGenerator>false</UseRazorSourceGenerator>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Smart.Design.Razor\Smart.Design.Razor.csproj" />
+  </ItemGroup>
+</Project>
