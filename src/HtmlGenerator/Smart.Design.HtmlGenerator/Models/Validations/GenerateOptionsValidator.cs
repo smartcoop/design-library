@@ -1,6 +1,3 @@
-// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-
 using System.Linq;
 using FluentValidation;
 using Smart.Design.HtmlGenerator.CommandOptions;
@@ -18,6 +15,6 @@ public class GenerateOptionsValidator : AbstractValidator<GenerateOptions>
                 var customTagHelpersCollection = new CustomTagHelperCollections();
                 return customTagHelpersCollection.Names.Contains(elementName);
             })
-            .WithMessage(errorMessage => "Can't find the name indicated among the existing design elements");
+            .WithMessage(errorMessage => "Can't find the name indicated among the existing design components");
     }
 }

@@ -11,10 +11,10 @@ namespace Smart.Design.RazorView
     /// </summary>
     public class CustomTagHelperCollections
     {
-        public IEnumerable<string> Names => GetNamesFromTypeByReflection(typeof(TagNames))
+        public IEnumerable<string> Names => GetNamesFromType(typeof(TagNames))
             .Select(v => v.GetRawConstantValue() as string);
 
-        private IEnumerable<FieldInfo> GetNamesFromTypeByReflection(Type type)
+        private IEnumerable<FieldInfo> GetNamesFromType(Type type)
         {
             var constants = new ArrayList();
 

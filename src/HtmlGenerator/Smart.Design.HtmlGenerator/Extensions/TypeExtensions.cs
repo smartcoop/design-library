@@ -28,7 +28,7 @@ public static class TypeExtensions
     /// <typeparam name="T">The type on which should be filtered the constant values.</typeparam>
     /// <param name="type">The type to introspect its consants.</param>
     /// <returns>An enumeration of</returns>
-    public static IEnumerable<T> GetConstantsValues<T>(this Type type) where T : class
+    public static IEnumerable<T> GetConstantValues<T>(this Type type) where T : class
     {
         var fieldInfos = GetConstants(type).Where(fieldInfo => fieldInfo.FieldType == typeof(T));
 

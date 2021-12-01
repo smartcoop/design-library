@@ -32,9 +32,9 @@ namespace Smart.Design.HtmlGenerator
         {
             var validator = new GenerateOptionsValidator();
             var validationModel = validator.Validate(generateOptions);
-            CommandResponse commandResponse = new();
             if (!validationModel.IsValid)
             {
+                CommandResponse commandResponse = new();
                 validationModel.Errors.ForEach(error =>
                     commandResponse.AddError(new ValidationException(error.ErrorMessage)));
                 return commandResponse;

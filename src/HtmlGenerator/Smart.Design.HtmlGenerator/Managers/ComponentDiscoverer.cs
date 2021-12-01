@@ -13,7 +13,7 @@ namespace Smart.Design.HtmlGenerator.Managers
         /// <returns>A list of Tag Helpers rendering Smart design components</returns>
         public List<string> GetAllTagHelperNames()
         {
-            var tagHelperNames = typeof(TagNames).GetConstantsValues<string>();
+            var tagHelperNames = typeof(TagNames).GetConstantValues<string>();
 
             return tagHelperNames.ToList();
         }

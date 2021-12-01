@@ -6,7 +6,7 @@ using Smart.Design.RazorView;
 namespace Smart.Design.HtmlGenerator.UseCases;
 
 /// <summary>
-/// Listing of available design elements
+/// Listing of available design components
 /// </summary>
 public class ListingUseCase
 {

@@ -7,7 +7,7 @@ using TreeFormatter;
 namespace Smart.Design.HtmlGenerator.UseCases;
 
 /// <summary>
-///     Generator of HTML string from design element name
+///     Generator of HTML string from design component name
 /// </summary>
 public class GenerateUseCase
 {

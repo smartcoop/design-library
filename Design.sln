@@ -12,11 +12,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateGenerator", "TemplateGenerator", "{D39A27E8-CA69-4E02-BA1B-CFBE63D3A111}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HtmlGenerator", "HtmlGenerator", "{D39A27E8-CA69-4E02-BA1B-CFBE63D3A111}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.HtmlGenerator", "src\TemplateGenerator\Smart.Design.HtmlGenerator\Smart.Design.HtmlGenerator.csproj", "{C368F796-EA72-4144-BDA4-186B138B563A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.HtmlGenerator", "src\HtmlGenerator\Smart.Design.HtmlGenerator\Smart.Design.HtmlGenerator.csproj", "{C368F796-EA72-4144-BDA4-186B138B563A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.Templates", "src\TemplateGenerator\Smart.Design.Templates\Smart.Design.Templates.csproj", "{023E7179-0BF0-4507-AC90-8C3D88C66E34}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Design.Templates", "src\HtmlGenerator\Smart.Design.Templates\Smart.Design.Templates.csproj", "{023E7179-0BF0-4507-AC90-8C3D88C66E34}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
