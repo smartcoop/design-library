@@ -7,5 +7,7 @@ namespace Smart.Design.Razor.TagHelpers.Constants;
 /// </summary>
 public static class TagNames
 {
+    public const string IconTagName = "smart-icon";
+
     public const string InputTagName = "smart-input";
 }
