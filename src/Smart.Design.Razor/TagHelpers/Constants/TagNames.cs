@@ -15,6 +15,8 @@ public static class TagNames
 
     public const string ContainerTagName = "smart-container";
 
+    public const string FormTagName = "smart-form";
+
     public const string GridColumnTagName = "smart-grid-column";
 
     public const string GridTagName = "smart-grid";
