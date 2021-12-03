@@ -14,4 +14,10 @@
     <PackageReference Include="CaseExtensions" Version="1.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\icons\*.svg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
