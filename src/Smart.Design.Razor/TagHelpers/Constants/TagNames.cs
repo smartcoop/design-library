@@ -25,6 +25,8 @@ public static class TagNames
 
     public const string IconTagName = "smart-icon";
 
+    public const string InputGroupTagName = "smart-input-group";
+
     public const string InputTagName = "smart-input";
 
     public const string InputTimeTagName = "smart-input-time";
