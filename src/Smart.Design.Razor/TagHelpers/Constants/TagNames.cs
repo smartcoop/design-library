@@ -24,4 +24,6 @@ public static class TagNames
     public const string InputTagName = "smart-input";
 
     public const string PanelTagName = "smart-panel";
+
+    public const string TextareaTagName = "smart-textarea";
 }
