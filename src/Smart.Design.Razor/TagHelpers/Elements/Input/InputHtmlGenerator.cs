@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Smart.Design.Razor.TagHelpers.Base;
@@ -20,7 +21,7 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
 
         if (!string.IsNullOrWhiteSpace(id))
         {
-            inputTextTagBuilder.Attributes[id] = id;
+            inputTextTagBuilder.Attributes["id"] = id;
         }
 
         if (!string.IsNullOrWhiteSpace(inputName))
@@ -43,5 +44,32 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         }
 
         return inputTextTagBuilder;
+    }
+
+    /// <inheritdoc />
+    public TagBuilder GenerateInputTime(string? id, string? name, DateTime? value, ModelExpression? @for)
+    {
+        var tagBuilder = new TagBuilder("input");
+
+        if (!string.IsNullOrWhiteSpace(id))
+        {
+            tagBuilder.Attributes.Add("id", id);
+        }
+
+        AddNameAttribute(tagBuilder, @for, name);
+
+        tagBuilder.AddCssClass("c-input");
+        tagBuilder.Attributes.Add("type", "time");
+
+        if (@for?.Model is DateTime modelValue)
+        {
+            tagBuilder.Attributes.Add("value", $"{modelValue:HH:mm}");
+        }
+        else if (value.HasValue)
+        {
+            tagBuilder.Attributes.Add("value", $"{value.Value:HH:mm}");
+        }
+
+        return tagBuilder;
     }
 }
