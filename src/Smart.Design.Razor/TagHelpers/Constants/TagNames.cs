@@ -27,6 +27,8 @@ public static class TagNames
 
     public const string PanelTagName = "smart-panel";
 
+    public const string RadioButtonTagName = "smart-radio";
+
     public const string TextareaTagName = "smart-textarea";
 
     #region Form Groups
