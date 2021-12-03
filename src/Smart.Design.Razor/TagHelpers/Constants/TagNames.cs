@@ -31,6 +31,10 @@ public static class TagNames
 
     public const string HorizontalRuleTagName = "smart-hr";
 
+    public const string IconListItemTagName = "smart-icon-list-item";
+
+    public const string IconListTagName = "smart-icon-list";
+
     public const string IconTagName = "smart-icon";
 
     public const string InputGroupTagName = "smart-input-group";
