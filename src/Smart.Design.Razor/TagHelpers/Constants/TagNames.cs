@@ -41,6 +41,10 @@ public static class TagNames
 
     #region Form Groups
 
+    public  const string FormGroupControlsTagName = "smart-formgroup-controls";
+
+    public const string FormGroupTagName = "smart-formgroup";
+
     public const string FormGroupInputTextTagName = "smart-form-group-input-text";
 
     public const string FormGroupInputGroupTagName = "smart-from-group-input-group";
