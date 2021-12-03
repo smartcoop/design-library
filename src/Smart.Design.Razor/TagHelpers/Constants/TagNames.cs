@@ -13,6 +13,8 @@ public static class TagNames
 
     public const string Avatar = "smart-avatar";
 
+    public const string BadgeTagName = "smart-badge";
+
     public const string ButtonTagName = "smart-button";
 
     public const string ButtonToolbarTagName = "smart-button-toolbar";
