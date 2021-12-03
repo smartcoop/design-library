@@ -9,6 +9,8 @@ public static class TagNames
 {
     public const string ButtonTagName = "smart-button";
 
+    public const string ButtonToolbarTagName = "smart-button-toolbar";
+
     public const string HorizontalRuleTagName = "smart-hr";
 
     public const string IconTagName = "smart-icon";
