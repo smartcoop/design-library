@@ -18,6 +18,7 @@ using Smart.Design.Razor.TagHelpers.IconList;
 using Smart.Design.Razor.TagHelpers.InputGroup;
 using Smart.Design.Razor.TagHelpers.Loader;
 using Smart.Design.Razor.TagHelpers.Panel;
+using Smart.Design.Razor.TagHelpers.ProgressBar;
 using Smart.Design.Razor.TagHelpers.Tabs;
 
 namespace Smart.Design.Razor.Extensions;
@@ -46,6 +47,7 @@ public static class DependencyRegistration
             .AddTransient<IRadioHtmlGenerator         , RadioHtmlGenerator>()
             .AddTransient<IHorizontalRuleHtmlGenerator, HorizontalRuleHtmlGenerator>()
             .AddTransient<IFormGroupHtmlGenerator     , FormGroupHtmlGenerator>()
-            .AddTransient<ICheckboxHtmlGenerator      , CheckboxHtmlGenerator>();
+            .AddTransient<ICheckboxHtmlGenerator      , CheckboxHtmlGenerator>()
+            .AddTransient<IProgressBarHtmlGenerator   , ProgressBarHtmlGenerator>();
     }
 }

@@ -49,6 +49,8 @@ public static class TagNames
 
     public const string RadioButtonTagName = "smart-radio";
 
+    public const string ProgressBar = "smart-progress-bar";
+
     public const string SelectTagName = "smart-select";
 
     public const string Tabs = "smart-tabs";
