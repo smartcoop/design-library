@@ -11,6 +11,8 @@ public static class TagNames
 
     public const string ButtonToolbarTagName = "smart-button-toolbar";
 
+    public const string ContainerTagName = "smart-container";
+
     public const string GridColumnTagName = "smart-grid-column";
 
     public const string GridTagName = "smart-grid";
