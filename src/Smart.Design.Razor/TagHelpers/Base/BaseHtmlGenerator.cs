@@ -14,7 +14,7 @@ public class BaseHtmlGenerator
     /// <param name="tagBuilder">The <see cref="TagBuilder"/> to which attribute name should be set.</param>
     /// <param name="modelExpression">A <see cref="ModelExpression" /> that can be associated to the <paramref name="tagBuilder" /></param>
     /// <param name="name">Value of the name attribute if specified.</param>
-    protected void AddNameAttribute(TagBuilder tagBuilder, ModelExpression? modelExpression, string name)
+    protected void AddNameAttribute(TagBuilder tagBuilder, ModelExpression? modelExpression, string? name)
     {
         var attributeName = GetAttributeName(name, modelExpression);
         if (!string.IsNullOrWhiteSpace(attributeName))
