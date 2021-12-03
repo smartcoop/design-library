@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Elements.Textarea;
 
-namespace Smart.Design.Razor.TagHelpers.FormGroups;
+namespace Smart.Design.Razor.TagHelpers.FormGroupElements;
 
 /// <summary>
-/// <see cref="BaseSmartFormGroupTagHelper"/> implementation with a <see cref="SmartTextareaTagHelper" />.
+/// <see cref="BaseSmartFormGroupTagHelper"/> implementation with a <see cref="TextareaTagHelper" />.
 /// </summary>
 [HtmlTargetElement(Constants.TagNames.FormGroupTextArea)]
 public class FormGroupTextAreaTagHelper : BaseSmartFormGroupTagHelper
