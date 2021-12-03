@@ -1,10 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Constants;
 using Smart.Design.Razor.TagHelpers.Elements.Input;
 
-namespace Smart.Design.Razor.TagHelpers.FormGroups;
+namespace Smart.Design.Razor.TagHelpers.FormGroupElements;
 
 /// <summary>
 /// <see cref="BaseSmartFormGroupTagHelper" /> implementation with a <see cref="FormGroupInputTextTagHelper" />.
