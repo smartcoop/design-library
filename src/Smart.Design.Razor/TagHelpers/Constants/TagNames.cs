@@ -7,6 +7,8 @@ namespace Smart.Design.Razor.TagHelpers.Constants;
 /// </summary>
 public static class TagNames
 {
+    public const string AccordionTagName = "smart-accordion";
+
     public const string AlertStack = "smart-alert-stack";
 
     public const string Avatar = "smart-avatar";
