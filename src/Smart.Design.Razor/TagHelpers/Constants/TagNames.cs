@@ -15,6 +15,8 @@ public static class TagNames
 
     public const string ContainerTagName = "smart-container";
 
+    public const string ElevationTagName = "smart-elevation";
+
     public const string FormTagName = "smart-form";
 
     public const string GlobalBannerTagName = "smart-banner";
