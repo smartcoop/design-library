@@ -12,4 +12,6 @@ public static class TagNames
     public const string IconTagName = "smart-icon";
 
     public const string InputTagName = "smart-input";
+
+    public const string PanelTagName = "smart-panel";
 }
