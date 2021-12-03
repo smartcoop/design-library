@@ -1,6 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Smart.Design.Razor.TagHelpers.Alert;
 using Smart.Design.Razor.TagHelpers.Avatar;
+using Smart.Design.Razor.TagHelpers.Badge;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.ButtonToolbar;
 using Smart.Design.Razor.TagHelpers.Container;
@@ -30,6 +31,7 @@ public static class DependencyRegistration
         return services
             .AddTransient<IAlertStackHtmlGenerator    , AlertStackHtmlGenerator>()
             .AddTransient<IAvatarHtmlGenerator        , AvatarHtmlGenerator>()
+            .AddTransient<IBadgeHtmlGenerator         , BadgeHtmlGenerator>()
             .AddTransient<IContainerHtmlGenerator     , ContainerHtmlGenerator>()
             .AddTransient<IInputHtmlGenerator         , InputHtmlGenerator>()
             .AddTransient<IElevationHtmlGenerator     , ElevationHtmlGenerator>()
