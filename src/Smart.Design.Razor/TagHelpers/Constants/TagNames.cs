@@ -27,6 +27,8 @@ public static class TagNames
 
     public const string InputTagName = "smart-input";
 
+    public const string InputTimeTagName = "smart-input-time";
+
     public const string PanelTagName = "smart-panel";
 
     public const string RadioButtonTagName = "smart-radio";
