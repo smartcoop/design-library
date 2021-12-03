@@ -47,6 +47,14 @@ public static class TagNames
 
     public const string SelectTagName = "smart-select";
 
+    public const string Tabs = "smart-tabs";
+
+    public const string TabsItem = "smart-tabs-item";
+
+    public const string TabsItems = "smart-tabs-items";
+
+    public const string TabsSection = "smart-tabs-section";
+
     public const string TextareaTagName = "smart-textarea";
 
     #region Form Groups
