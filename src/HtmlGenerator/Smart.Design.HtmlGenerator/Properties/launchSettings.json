@@ -1,0 +1,9 @@
+{
+  "Smart.Design.HtmlGenerator": {
+    "Smart.Design.Console": {
+      "commandName": "Project",
+      "commandLineArgs": "generate -n smart-accordion",
+      "hotReloadEnabled": false
+    }
+  }
+}
