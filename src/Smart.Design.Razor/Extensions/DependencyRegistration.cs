@@ -19,6 +19,7 @@ using Smart.Design.Razor.TagHelpers.IconList;
 using Smart.Design.Razor.TagHelpers.InputGroup;
 using Smart.Design.Razor.TagHelpers.Loader;
 using Smart.Design.Razor.TagHelpers.Panel;
+using Smart.Design.Razor.TagHelpers.Pill;
 using Smart.Design.Razor.TagHelpers.ProgressBar;
 using Smart.Design.Razor.TagHelpers.Tabs;
 
@@ -50,6 +51,7 @@ public static class DependencyRegistration
             .AddTransient<IHorizontalRuleHtmlGenerator, HorizontalRuleHtmlGenerator>()
             .AddTransient<IFormGroupHtmlGenerator     , FormGroupHtmlGenerator>()
             .AddTransient<ICheckboxHtmlGenerator      , CheckboxHtmlGenerator>()
-            .AddTransient<IProgressBarHtmlGenerator   , ProgressBarHtmlGenerator>();
+            .AddTransient<IProgressBarHtmlGenerator   , ProgressBarHtmlGenerator>()
+            .AddTransient<IPillHtmlGenerator          , PillHtmlHtmlGenerator>()
     }
 }
