@@ -11,6 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\art\Nuget.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CaseExtensions" Version="1.1.0" />
   </ItemGroup>
 
