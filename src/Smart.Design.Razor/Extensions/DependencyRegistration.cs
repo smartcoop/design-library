@@ -4,6 +4,7 @@ using Smart.Design.Razor.TagHelpers.Avatar;
 using Smart.Design.Razor.TagHelpers.Badge;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.ButtonToolbar;
+using Smart.Design.Razor.TagHelpers.Card;
 using Smart.Design.Razor.TagHelpers.Container;
 using Smart.Design.Razor.TagHelpers.Elements.Checkbox;
 using Smart.Design.Razor.TagHelpers.Elements.HorizontalRule;
@@ -53,5 +54,6 @@ public static class DependencyRegistration
             .AddTransient<ICheckboxHtmlGenerator      , CheckboxHtmlGenerator>()
             .AddTransient<IProgressBarHtmlGenerator   , ProgressBarHtmlGenerator>()
             .AddTransient<IPillHtmlGenerator          , PillHtmlHtmlGenerator>()
+            .AddTransient<ICardHtmlGenerator          , CardHtmlGenerator>();
     }
 }
