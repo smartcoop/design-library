@@ -1,7 +1,7 @@
 using System;
 using Smart.Design.HtmlGenerator.CommandOptions;
 using Smart.Design.HtmlGenerator.Models;
-using Smart.Design.RazorView;
+using Smart.Design.Templates;
 
 namespace Smart.Design.HtmlGenerator.UseCases;
 
@@ -25,7 +25,7 @@ public class ListingUseCase
         CommandResponse response = new();
         try
         {
-            var customTagHelperNames = new CustomTagHelperCollections().Names;
+            var customTagHelperNames = new CustomTagHelperCollections().GetAvailableViewsName();
             response.SetSuccessMessage(string.IsNullOrWhiteSpace(_options.DesignElementCategory)
                 ? string.Join('\n', customTagHelperNames)
                 : $"list all of category {_options.DesignElementCategory}");
