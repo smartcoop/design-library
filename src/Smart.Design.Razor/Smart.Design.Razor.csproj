@@ -4,6 +4,17 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <Company>Smart Coop</Company>
+    <Authors>Smart Coop</Authors>
+    <Description>Tag Helpers implementation of the Smart Design System. Official documentation can be seen at https://design.smart.coop.</Description>
+    <Copyright>BSD 2-Clause License</Copyright>
+    <PackageProjectUrl>https://design.smart.coop</PackageProjectUrl>
+    <PackageIcon>Nuget.png</PackageIcon>
+    <RepositoryUrl>https://github.com/smartcoop/design-cs</RepositoryUrl>
+    <PackageTags>Tag Helpers;TagHelpers;Smart Design</PackageTags>
+    <PackageLicenseExpression> BSD-2-Clause</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
