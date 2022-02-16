@@ -28,6 +28,13 @@ public class SelectTagHelper : Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelp
         select.MergeAttributes(output.Attributes);
         select.AddCssClass("c-select");
 
+        var name = output.Attributes["name"]?.Value?.ToString();
+
+        if (!string.IsNullOrWhiteSpace(name) && ViewContext.HasModelStateErrorsByKey(name))
+        {
+            select.AddCssClass("c-select--error");
+        }
+
         // Retrieving potential hardcoded <option> tags inside the <smart-select> tag.
         var extraOptions = await output.GetChildContentAsync();
         if (!extraOptions.IsEmptyOrWhiteSpace)

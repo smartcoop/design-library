@@ -33,7 +33,7 @@ public class TextareaTagHelper : BaseTagHelper
     {
         output.ClearAllAttributes();
 
-        var textarea = _textareaHtmlGenerator.GenerateSmartTextArea(Id, Name, Rows, TextareaSize, For);
+        var textarea = _textareaHtmlGenerator.GenerateSmartTextArea(ViewContext, Id, Name, Rows, TextareaSize, For);
 
         output.TagMode = TagMode.StartTagAndEndTag;
         output.TagName = textarea.TagName;

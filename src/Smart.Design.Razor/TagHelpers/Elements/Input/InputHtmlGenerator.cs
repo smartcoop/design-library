@@ -1,7 +1,9 @@
 using System;
+using System.Globalization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Smart.Design.Razor.TagHelpers.Base;
+using Smart.Design.Razor.TagHelpers.Extensions;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Input;
 
@@ -11,6 +13,11 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
     /// <inheritdoc />
     public TagBuilder GenerateInputText(ViewContext? viewContext, string? id, string? name, string? placeholder, object? value, ModelExpression? @for)
     {
+        if (viewContext is null)
+        {
+            throw new ArgumentNullException(nameof(viewContext), "A ViewContext must be supplied");
+        }
+
         var inputTextTagBuilder = new TagBuilder("input");
 
         var inputName = GetAttributeName(name, @for);
@@ -34,13 +41,20 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
             inputTextTagBuilder.Attributes["placeholder"] = placeholder;
         }
 
-        if (@for?.Model is string val)
+        // The value of the model has always precedence over the attribute value.
+        if (@for?.Model is not null)
         {
-            inputTextTagBuilder.Attributes["value"] = val;
+            inputTextTagBuilder.Attributes["value"] = Convert.ToString(@for.Model, CultureInfo.InvariantCulture);
         }
-        else if (value is string inputValue && !string.IsNullOrWhiteSpace(inputValue))
+        else if (value is not null)
         {
-            inputTextTagBuilder.Attributes["value"] = inputValue;
+            inputTextTagBuilder.Attributes["value"] = Convert.ToString(value, CultureInfo.InvariantCulture);
+        }
+
+        // If there are any errors for a named field, we add the CSS attribute.
+        if (!string.IsNullOrWhiteSpace(inputName) && viewContext?.HasModelStateErrorsByKey(inputName) is true)
+        {
+            inputTextTagBuilder.AddCssClass("c-input--error");
         }
 
         return inputTextTagBuilder;

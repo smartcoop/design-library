@@ -1,8 +1,9 @@
-﻿using System.Globalization;
+using System.Globalization;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Smart.Design.Razor.TagHelpers.Base;
+using Smart.Design.Razor.TagHelpers.Extensions;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Textarea;
 
@@ -10,7 +11,7 @@ public class TextareaHtmlGenerator : BaseHtmlGenerator, ITextareaHtmlGenerator
 {
 
     /// <inheritdoc />
-    public TagBuilder GenerateSmartTextArea(string? id, string? name, int? rows, TextAreaSize textareaSize, ModelExpression? @for)
+    public TagBuilder GenerateSmartTextArea(ViewContext? viewContext, string? id, string? name, int? rows, TextAreaSize textareaSize, ModelExpression? @for)
     {
         var textAreaTagBuilder = new TagBuilder("textarea");
         textAreaTagBuilder.AddCssClass("c-textarea");
@@ -20,7 +21,7 @@ public class TextareaHtmlGenerator : BaseHtmlGenerator, ITextareaHtmlGenerator
             textAreaTagBuilder.Attributes.Add("id", id);
         }
 
-        AddNameAttribute(textAreaTagBuilder, @for, name);
+        var textareaName = AddNameAttribute(textAreaTagBuilder, @for, name);
 
         if (rows.HasValue)
         {
@@ -35,6 +36,11 @@ public class TextareaHtmlGenerator : BaseHtmlGenerator, ITextareaHtmlGenerator
         if (@for?.Model is string content && !string.IsNullOrWhiteSpace(content))
         {
             textAreaTagBuilder.InnerHtml.SetHtmlContent(content);
+        }
+
+        if (!string.IsNullOrWhiteSpace(textareaName) && viewContext.HasModelStateErrorsByKey(textareaName))
+        {
+            textAreaTagBuilder.AddCssClass("c-textarea--error");
         }
 
         return textAreaTagBuilder;
