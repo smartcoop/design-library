@@ -23,6 +23,7 @@ using Smart.Design.Razor.TagHelpers.Panel;
 using Smart.Design.Razor.TagHelpers.Pill;
 using Smart.Design.Razor.TagHelpers.ProgressBar;
 using Smart.Design.Razor.TagHelpers.Tabs;
+using Smart.Design.Razor.TagHelpers.ValidationMessage;
 
 namespace Smart.Design.Razor.Extensions;
 
@@ -31,29 +32,30 @@ public static class DependencyRegistration
     public static IServiceCollection AddSmartDesign(this IServiceCollection services)
     {
         return services
-            .AddTransient<IAlertStackHtmlGenerator    , AlertStackHtmlGenerator>()
-            .AddTransient<IAvatarHtmlGenerator        , AvatarHtmlGenerator>()
-            .AddTransient<IBadgeHtmlGenerator         , BadgeHtmlGenerator>()
-            .AddTransient<IContainerHtmlGenerator     , ContainerHtmlGenerator>()
-            .AddTransient<IInputHtmlGenerator         , InputHtmlGenerator>()
-            .AddTransient<IElevationHtmlGenerator     , ElevationHtmlGenerator>()
-            .AddTransient<IFormHtmlGenerator          , FormHtmlGenerator>()
-            .AddTransient<IGlobalBannerHtmlGenerator  , GlobalBannerHtmlGenerator>()
-            .AddTransient<IGridHtmlGenerator          , GridHtmlGenerator>()
-            .AddTransient<IIconHtmlGenerator          , IconHtmlGenerator>()
-            .AddTransient<IIconListHtmlGenerator      , IconListHtmlGenerator>()
-            .AddTransient<IInputGroupHtmlGenerator    , InputGroupHtmlGenerator>()
-            .AddTransient<ILoaderHtmlGenerator        , LoaderHtmlGenerator>()
-            .AddTransient<IPanelHtmlGenerator         , PanelHtmlGenerator>()
-            .AddTransient<ITabsHtmlGenerator          , TabsHtmlGenerator>()
-            .AddTransient<IButtonToolbarHtmlGenerator , ButtonToolbarHtmlGenerator>()
-            .AddTransient<ITextareaHtmlGenerator      , TextareaHtmlGenerator>()
-            .AddTransient<IRadioHtmlGenerator         , RadioHtmlGenerator>()
-            .AddTransient<IHorizontalRuleHtmlGenerator, HorizontalRuleHtmlGenerator>()
-            .AddTransient<IFormGroupHtmlGenerator     , FormGroupHtmlGenerator>()
-            .AddTransient<ICheckboxHtmlGenerator      , CheckboxHtmlGenerator>()
-            .AddTransient<IProgressBarHtmlGenerator   , ProgressBarHtmlGenerator>()
-            .AddTransient<IPillHtmlGenerator          , PillHtmlHtmlGenerator>()
-            .AddTransient<ICardHtmlGenerator          , CardHtmlGenerator>();
+            .AddTransient<IAlertStackHtmlGenerator        , AlertStackHtmlGenerator>()
+            .AddTransient<IAvatarHtmlGenerator            , AvatarHtmlGenerator>()
+            .AddTransient<IBadgeHtmlGenerator             , BadgeHtmlGenerator>()
+            .AddTransient<IContainerHtmlGenerator         , ContainerHtmlGenerator>()
+            .AddTransient<IInputHtmlGenerator             , InputHtmlGenerator>()
+            .AddTransient<IElevationHtmlGenerator         , ElevationHtmlGenerator>()
+            .AddTransient<IFormHtmlGenerator              , FormHtmlGenerator>()
+            .AddTransient<IGlobalBannerHtmlGenerator      , GlobalBannerHtmlGenerator>()
+            .AddTransient<IGridHtmlGenerator              , GridHtmlGenerator>()
+            .AddTransient<IIconHtmlGenerator              , IconHtmlGenerator>()
+            .AddTransient<IIconListHtmlGenerator          , IconListHtmlGenerator>()
+            .AddTransient<IInputGroupHtmlGenerator        , InputGroupHtmlGenerator>()
+            .AddTransient<ILoaderHtmlGenerator            , LoaderHtmlGenerator>()
+            .AddTransient<IPanelHtmlGenerator             , PanelHtmlGenerator>()
+            .AddTransient<ITabsHtmlGenerator              , TabsHtmlGenerator>()
+            .AddTransient<IButtonToolbarHtmlGenerator     , ButtonToolbarHtmlGenerator>()
+            .AddTransient<ITextareaHtmlGenerator          , TextareaHtmlGenerator>()
+            .AddTransient<IRadioHtmlGenerator             , RadioHtmlGenerator>()
+            .AddTransient<IHorizontalRuleHtmlGenerator    , HorizontalRuleHtmlGenerator>()
+            .AddTransient<IFormGroupHtmlGenerator         , FormGroupHtmlGenerator>()
+            .AddTransient<ICheckboxHtmlGenerator          , CheckboxHtmlGenerator>()
+            .AddTransient<IProgressBarHtmlGenerator       , ProgressBarHtmlGenerator>()
+            .AddTransient<IPillHtmlGenerator              , PillHtmlHtmlGenerator>()
+            .AddTransient<ICardHtmlGenerator              , CardHtmlGenerator>()
+            .AddTransient<IValidationMessageHtmlGenerator , ValidationMessageHtmlHtmlGenerator>();
     }
 }
