@@ -18,6 +18,7 @@ using Smart.Design.Razor.TagHelpers.Grid;
 using Smart.Design.Razor.TagHelpers.Icon;
 using Smart.Design.Razor.TagHelpers.IconList;
 using Smart.Design.Razor.TagHelpers.InputGroup;
+using Smart.Design.Razor.TagHelpers.KeyValueList;
 using Smart.Design.Razor.TagHelpers.Loader;
 using Smart.Design.Razor.TagHelpers.Panel;
 using Smart.Design.Razor.TagHelpers.Pill;
@@ -56,6 +57,7 @@ public static class DependencyRegistration
             .AddTransient<IProgressBarHtmlGenerator       , ProgressBarHtmlGenerator>()
             .AddTransient<IPillHtmlGenerator              , PillHtmlHtmlGenerator>()
             .AddTransient<ICardHtmlGenerator              , CardHtmlGenerator>()
-            .AddTransient<IValidationMessageHtmlGenerator , ValidationMessageHtmlHtmlGenerator>();
+            .AddTransient<IValidationMessageHtmlGenerator , ValidationMessageHtmlHtmlGenerator>()
+            .AddTransient<IKeyValueListHtmlGenerator      , KeyValueListHtmlGenerator>();
     }
 }
