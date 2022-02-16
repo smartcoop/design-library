@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using Smart.Design.Razor.TagHelpers.ValidationMessage;
 
 namespace Smart.Design.Razor.TagHelpers.Base;
 
@@ -17,6 +18,8 @@ public abstract class BaseSmartFormGroupTagHelper : BaseTagHelper
     private const string HelperTextAttributeName = "helper-text";
     private const string LabelAttributeName = "label";
     private const string ValueAttributeName = "value";
+
+    private readonly IValidationMessageHtmlGenerator _validationMessageHtmlGenerator;
 
     protected readonly IFormGroupHtmlGenerator FormGroupHtmlGenerator;
 
@@ -34,9 +37,10 @@ public abstract class BaseSmartFormGroupTagHelper : BaseTagHelper
 
     public abstract TagBuilder GenerateFormGroupControl();
 
-    protected BaseSmartFormGroupTagHelper(IFormGroupHtmlGenerator formGroupHtmlGenerator)
+    protected BaseSmartFormGroupTagHelper(IFormGroupHtmlGenerator formGroupHtmlGenerator, IValidationMessageHtmlGenerator validationMessageHtmlGenerator)
     {
-        FormGroupHtmlGenerator = formGroupHtmlGenerator;
+        _validationMessageHtmlGenerator = validationMessageHtmlGenerator;
+        FormGroupHtmlGenerator      = formGroupHtmlGenerator;
     }
 
     public override void Init(TagHelperContext context)
@@ -58,12 +62,23 @@ public abstract class BaseSmartFormGroupTagHelper : BaseTagHelper
 
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        var formGroup = FormGroupHtmlGenerator.GenerateFormGroup(Id, Name, Label, HelperText, GenerateFormGroupControl());
+        var formGroupControl = GenerateFormGroupControl();
 
+        var formGroup = FormGroupHtmlGenerator.GenerateFormGroup(Id, Name, Label, HelperText, formGroupControl);
+
+        // Retrieves from ModelState potential errors and append them to the form group if there are any.
+        var validationMessages = _validationMessageHtmlGenerator.GenerateValidationMessage(ViewContext!, For);
+
+        if (validationMessages is not null)
+        {
+            formGroup.InnerHtml.AppendHtml(validationMessages);
+        }
         output.Attributes.Clear();
         output.TagName = formGroup.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
         output.MergeAttributes(formGroup);
+
+
         output.Content.SetHtmlContent(formGroup.InnerHtml);
     }
 }

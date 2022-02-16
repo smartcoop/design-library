@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Base;
-using Smart.Design.Razor.TagHelpers.Constants;
 using Smart.Design.Razor.TagHelpers.Elements.Input;
+using Smart.Design.Razor.TagHelpers.ValidationMessage;
+using TagNames = Smart.Design.Razor.TagHelpers.Constants.TagNames;
 
 namespace Smart.Design.Razor.TagHelpers.FormGroupElements;
 
@@ -18,7 +19,9 @@ public class FormGroupInputTextTagHelper : BaseSmartFormGroupTagHelper
     [HtmlAttributeName(PlaceHolderAttributeName)]
     public string? PlaceHolder { get; set; }
 
-    public FormGroupInputTextTagHelper(IFormGroupHtmlGenerator htmlGenerator, IInputHtmlGenerator inputHtmlGenerator) : base(htmlGenerator)
+    public FormGroupInputTextTagHelper(IFormGroupHtmlGenerator htmlGenerator,
+        IValidationMessageHtmlGenerator validationMessageHtmlGenerator,
+        IInputHtmlGenerator inputHtmlGenerator) : base(htmlGenerator, validationMessageHtmlGenerator)
     {
         _inputHtmlGenerator = inputHtmlGenerator;
     }

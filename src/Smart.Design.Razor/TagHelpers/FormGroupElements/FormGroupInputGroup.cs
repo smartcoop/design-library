@@ -2,9 +2,10 @@ using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Base;
-using Smart.Design.Razor.TagHelpers.Constants;
 using Smart.Design.Razor.TagHelpers.Icon;
 using Smart.Design.Razor.TagHelpers.InputGroup;
+using Smart.Design.Razor.TagHelpers.ValidationMessage;
+using TagNames = Smart.Design.Razor.TagHelpers.Constants.TagNames;
 
 namespace Smart.Design.Razor.TagHelpers.FormGroupElements;
 
@@ -32,7 +33,9 @@ public class FormGroupInputGroup : BaseSmartFormGroupTagHelper
     [HtmlAttributeName(AlignmentAttributeName)]
     public Alignment Alignment { get; set; }
 
-    public FormGroupInputGroup(IFormGroupHtmlGenerator htmlGenerator, IInputGroupHtmlGenerator inputGroupHtmlGenerator) : base(htmlGenerator)
+    public FormGroupInputGroup(IFormGroupHtmlGenerator htmlGenerator,
+        IValidationMessageHtmlGenerator validationMessageHtmlGenerator,
+        IInputGroupHtmlGenerator inputGroupHtmlGenerator) : base(htmlGenerator, validationMessageHtmlGenerator)
     {
         _inputGroupHtmlGenerator = inputGroupHtmlGenerator;
     }
