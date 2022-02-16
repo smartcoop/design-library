@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Elements.Textarea;
+using Smart.Design.Razor.TagHelpers.ValidationMessage;
 
 namespace Smart.Design.Razor.TagHelpers.FormGroupElements;
 
@@ -24,13 +25,15 @@ public class FormGroupTextAreaTagHelper : BaseSmartFormGroupTagHelper
     [HtmlAttributeName(RowsAttributeName)]
     public int? Rows { get; set; }
 
-    public FormGroupTextAreaTagHelper(IFormGroupHtmlGenerator htmlGenerator, ITextareaHtmlGenerator textareaHtmlGenerator) : base(htmlGenerator)
+    public FormGroupTextAreaTagHelper(IFormGroupHtmlGenerator htmlGenerator,
+        IValidationMessageHtmlGenerator validationMessageHtmlGenerator,
+        ITextareaHtmlGenerator textareaHtmlGenerator) : base(htmlGenerator, validationMessageHtmlGenerator)
     {
         _textareaHtmlGenerator = textareaHtmlGenerator;
     }
 
     public override TagBuilder GenerateFormGroupControl()
     {
-        return _textareaHtmlGenerator.GenerateSmartTextArea(Id, Name, Rows, TextareaSize, For);
+        return _textareaHtmlGenerator.GenerateSmartTextArea(ViewContext, Id, Name, Rows, TextareaSize, For);
     }
 }
