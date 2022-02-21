@@ -21,5 +21,5 @@ builder.Services.AddSmartDesign();
 
 Add to the &lt;head> tag of your layout the following line:
 ```html
-<link rel="stylesheet" href="https://design.smart.coop/css/main.css" />
+<link rel="stylesheet" href="_content/Smart.Design.Razor/css/main.css" />
 ```
