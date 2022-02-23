@@ -17,14 +17,10 @@ public class CardHtmlGenerator : ICardHtmlGenerator
     }
 
     /// <inheritdoc />
-    public TagBuilder GenerateCardBody(bool containsActions)
+    public TagBuilder GenerateCardBody()
     {
         var cardBody = new TagBuilder("div");
         cardBody.AddCssClass("c-card__body");
-        if (containsActions)
-        {
-            cardBody.AddCssClass("c-card__body--with-actions");
-        }
 
         return cardBody;
     }
@@ -43,19 +39,27 @@ public class CardHtmlGenerator : ICardHtmlGenerator
     }
 
     /// <inheritdoc />
-    public TagBuilder GenerateCarBodyAction()
+    public TagBuilder GenerateCardActions()
     {
-        var content = new TagBuilder("div");
-        content.AddCssClass("c-card__actions");
+        var actionsContainer = new TagBuilder("div");
+        actionsContainer.AddCssClass("c-card__actions");
 
-        return content;
+        return actionsContainer;
     }
 
-    public TagBuilder GenerateCardBodyContent()
+    /// <inheritdoc />
+    public TagBuilder GenerateCardImage(string? source)
     {
-        var content = new TagBuilder("div");
-        content.AddCssClass("c-card__content");
+        // An Smart design card is a <div> whose inner HTML is a <img>
+        var imageContainer = new TagBuilder("div");
+        imageContainer.AddCssClass("c-card__img");
 
-        return content;
+        var image = new TagBuilder("img");
+        image.Attributes["src"] = source;
+        image.Attributes["alt"] = "";
+
+        imageContainer.InnerHtml.AppendHtml(image);
+
+        return imageContainer;
     }
 }

@@ -8,7 +8,7 @@ namespace Smart.Design.Razor.TagHelpers.Card;
 /// A Smart Design card actions contains a set of action items, such as buttons.
 /// This containers must be a direct child of a <see cref="CardBodyTagHelper" />
 /// </summary>
-[HtmlTargetElement(TagNames.CardAction, ParentTag = TagNames.CardBody)]
+[HtmlTargetElement(TagNames.CardAction, ParentTag = TagNames.Card)]
 public class CardActionsTagHelper : TagHelper
 {
     private readonly ICardHtmlGenerator _cardHtmlGenerator;
@@ -20,7 +20,7 @@ public class CardActionsTagHelper : TagHelper
 
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        var action = _cardHtmlGenerator.GenerateCarBodyAction();
+        var action = _cardHtmlGenerator.GenerateCardActions();
 
         output.TagName = action.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;

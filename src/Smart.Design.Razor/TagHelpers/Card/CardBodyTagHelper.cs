@@ -7,15 +7,10 @@ namespace Smart.Design.Razor.TagHelpers.Card;
 /// <see cref="ITagHelper" /> implementation of the Smart Design card body.
 /// Documentation is available <see href="https://design.smart.coop/development/docs/c-card.html">here</see>.
 /// </summary>
-[HtmlTargetElement(TagNames.CardBody)]
+[HtmlTargetElement(TagNames.CardBody, ParentTag = TagNames.Card)]
 public class CardBodyTagHelper : TagHelper
 {
-    private const string ContainsActionAttributeName = "contains-actions";
-
     private readonly ICardHtmlGenerator _cardHtmlGenerator;
-
-    [HtmlAttributeName(ContainsActionAttributeName)]
-    public bool ContainsActions { get; set; }
 
     public CardBodyTagHelper(ICardHtmlGenerator cardHtmlGenerator)
     {
@@ -24,7 +19,7 @@ public class CardBodyTagHelper : TagHelper
 
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        var body = _cardHtmlGenerator.GenerateCardBody(ContainsActions);
+        var body = _cardHtmlGenerator.GenerateCardBody();
 
         output.TagName = body.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
