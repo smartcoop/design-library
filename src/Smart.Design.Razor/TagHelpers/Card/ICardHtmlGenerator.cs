@@ -11,29 +11,29 @@ public interface ICardHtmlGenerator
     TagBuilder GenerateCard();
 
     /// <summary>
-    /// Generates body of the Smart design card.
+    /// Generates the body of the Smart design card.
     /// </summary>
-    /// <param name="containsActions">Determines if the body has one or multiple action items. Those can be clickable items.</param>
     /// <returns>An instance of the Smart Design card body.</returns>
-    TagBuilder GenerateCardBody(bool containsActions);
+    TagBuilder GenerateCardBody();
 
     /// <summary>
-    /// Generates title of the Smart Design card.
+    /// Generates the title of the Smart Design card.
     /// </summary>
     /// <param name="text">The title.</param>
     /// <returns>An instance of the Smart Design title.</returns>
     TagBuilder GenerateCardTitle(string? text);
 
     /// <summary>
-    /// Generates a &lt;div&gt; whose purpose is containing action items inside a Smart Design card body.
-    /// An action item can be typically a button.
+    /// Generates the HTML of the Smart Design actions.
+    /// The Smart Design actions is a container holding elements that produces an action (i.e. buttons, anchors, etc.).
     /// </summary>
-    /// <returns>A instance of a action items container.</returns>
-    TagBuilder GenerateCarBodyAction();
+    /// <returns>An instance of the Smart Design card's actions.</returns>
+    TagBuilder GenerateCardActions();
 
     /// <summary>
-    /// Generates a &lt;div&gt; whose purpose is containing primary content of a Smart Design card.
+    /// Generates the html of a &lt;img&gt; for the Smart Design card.
     /// </summary>
-    /// <returns>An instance of the main content of a Smart design card body.</returns>
-    TagBuilder GenerateCardBodyContent();
+    /// <param name="source">The uri of the file.</param>
+    /// <returns>An instance of the Smart Card's image.</returns>
+    TagBuilder GenerateCardImage(string? source);
 }

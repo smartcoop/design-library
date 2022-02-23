@@ -10,5 +10,5 @@ public static class TagNames
 
     public const string CardAction = "smart-card-actions";
 
-    public const string CardContent = "smart-card-content";
+    public const string CardImage = "smart-card-image";
 }
