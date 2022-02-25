@@ -19,6 +19,8 @@ using Smart.Design.Razor.TagHelpers.Icon;
 using Smart.Design.Razor.TagHelpers.IconList;
 using Smart.Design.Razor.TagHelpers.InputGroup;
 using Smart.Design.Razor.TagHelpers.KeyValueList;
+using Smart.Design.Razor.TagHelpers.Layout;
+using Smart.Design.Razor.TagHelpers.Layout.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Loader;
 using Smart.Design.Razor.TagHelpers.MutedText;
 using Smart.Design.Razor.TagHelpers.Panel;
@@ -62,6 +64,7 @@ public static class DependencyRegistration
             .AddTransient<IValidationMessageHtmlGenerator , ValidationMessageHtmlHtmlGenerator>()
             .AddTransient<IKeyValueListHtmlGenerator      , KeyValueListHtmlGenerator>()
             .AddTransient<IMutedTextHtmlGenerator         , MutedTextHtmlGenerator>()
-            .AddTransient<ISpacerHtmlGenerator            , SpacerHtmlGenerator>();
+            .AddTransient<ISpacerHtmlGenerator            , SpacerHtmlGenerator>()
+            .AddTransient<IHtmlLayoutGenerator            , HtmlLayoutGenerator>();
     }
 }
