@@ -24,6 +24,7 @@ using Smart.Design.Razor.TagHelpers.MutedText;
 using Smart.Design.Razor.TagHelpers.Panel;
 using Smart.Design.Razor.TagHelpers.Pill;
 using Smart.Design.Razor.TagHelpers.ProgressBar;
+using Smart.Design.Razor.TagHelpers.Spacer;
 using Smart.Design.Razor.TagHelpers.Tabs;
 using Smart.Design.Razor.TagHelpers.ValidationMessage;
 
@@ -60,6 +61,7 @@ public static class DependencyRegistration
             .AddTransient<ICardHtmlGenerator              , CardHtmlGenerator>()
             .AddTransient<IValidationMessageHtmlGenerator , ValidationMessageHtmlHtmlGenerator>()
             .AddTransient<IKeyValueListHtmlGenerator      , KeyValueListHtmlGenerator>()
-            .AddTransient<IMutedTextHtmlGenerator         , MutedTextHtmlGenerator>();
+            .AddTransient<IMutedTextHtmlGenerator         , MutedTextHtmlGenerator>()
+            .AddTransient<ISpacerHtmlGenerator            , SpacerHtmlGenerator>();
     }
 }
