@@ -66,6 +66,7 @@ public static class DependencyRegistration
             .AddTransient<IKeyValueListHtmlGenerator      , KeyValueListHtmlGenerator>()
             .AddTransient<IMutedTextHtmlGenerator         , MutedTextHtmlGenerator>()
             .AddTransient<ISpacerHtmlGenerator            , SpacerHtmlGenerator>()
-            .AddTransient<IHtmlLayoutGenerator            , HtmlLayoutGenerator>();
+            .AddTransient<IHtmlLayoutGenerator            , HtmlLayoutGenerator>()
+            .AddTransient<IAlertHtmlGenerator             , AlertHtmlGenerator>();
     }
 }
