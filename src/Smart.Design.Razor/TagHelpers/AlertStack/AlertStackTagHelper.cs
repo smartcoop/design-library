@@ -5,7 +5,7 @@ using Smart.Design.Razor.TagHelpers.Constants;
 using Smart.Design.Razor.TagHelpers.Extensions;
 using Smart.Design.Razor.TagHelpers.Icon;
 
-namespace Smart.Design.Razor.TagHelpers.Alert;
+namespace Smart.Design.Razor.TagHelpers.AlertStack;
 
 [HtmlTargetElement(TagNames.AlertStack, TagStructure = TagStructure.NormalOrSelfClosing)]
 public class AlertStackTagHelper : TagHelper

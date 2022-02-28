@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Smart.Design.Razor.TagHelpers.Alert;
+using Smart.Design.Razor.TagHelpers.AlertStack;
 using Smart.Design.Razor.TagHelpers.Avatar;
 using Smart.Design.Razor.TagHelpers.Badge;
 using Smart.Design.Razor.TagHelpers.Base;
