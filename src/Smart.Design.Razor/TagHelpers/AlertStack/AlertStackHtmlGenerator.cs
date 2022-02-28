@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Razor.TagHelpers.Icon;
 
-namespace Smart.Design.Razor.TagHelpers.Alert;
+namespace Smart.Design.Razor.TagHelpers.AlertStack;
 
 public class AlertStackHtmlGenerator : IAlertStackHtmlGenerator
 {
