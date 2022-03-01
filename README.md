@@ -1,4 +1,4 @@
-# ![SmartDesign](art/Smart.logo.svg)
+# ![SmartDesign](art/Smart.logo.png)
 
 # Smart Design Razor
 This library is an implementation of the Smart Design with Tag Helpers.
