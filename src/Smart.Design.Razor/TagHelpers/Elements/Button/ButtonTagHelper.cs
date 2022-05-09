@@ -37,6 +37,7 @@ public class ButtonTagHelper : BaseTagHelper
 {
     private const string FormAction = "formaction";
 
+    private const string FormAttributeName = "form";
     private const string FragmentAttributeName = "asp-fragment";
     private const string PageAttributeName = "asp-page";
     private const string PageHandlerAttributeName = "asp-page-handler";
@@ -73,6 +74,12 @@ public class ButtonTagHelper : BaseTagHelper
 
     [HtmlAttributeName("icon-only")]
     public bool IconOnly { get; set; }
+
+    /// <summary>
+    /// The &lt;form&gt; element to associate the button with (its form owner). The value of this attribute must be the id of a <form> in the same document.
+    /// </summary>
+    [HtmlAttributeName(FormAttributeName)]
+    public string Form { get; set; }
 
     /// <summary>
     /// Gets or sets the URL fragment.
@@ -183,6 +190,11 @@ public class ButtonTagHelper : BaseTagHelper
             iconOnlyDiv.AddCssClass("u-sr-accessible");
             if (Label is not null)
                 iconOnlyDiv.InnerHtml.SetContent(Label);
+        }
+
+        if (!string.IsNullOrWhiteSpace(Form))
+        {
+            output.Attributes.Add(FormAttributeName, Form);
         }
 
         // If there is any custom handler specified we need to add its route to to the attribute formaction.
