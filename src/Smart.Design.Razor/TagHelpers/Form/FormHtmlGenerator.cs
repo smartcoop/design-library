@@ -6,10 +6,15 @@ namespace Smart.Design.Razor.TagHelpers.Form;
 public class FormHtmlGenerator : IFormHtmlGenerator
 {
     /// <inheritdoc />
-    public TagBuilder GenerateForm(FormLayout layout, IHtmlContent content)
+    public TagBuilder GenerateForm(string? id, FormLayout layout, IHtmlContent content, FormMethod method = default)
     {
         var form = new TagBuilder("form");
-        form.Attributes.Add("method", "post");
+        form.Attributes.Add("method", method.ToString().ToLowerInvariant());
+
+        if (!string.IsNullOrEmpty(id))
+        {
+            form.Attributes.Add("id", id);
+        }
 
         var formGroupLayout = new TagBuilder("div");
         formGroupLayout.AddCssClass("o-form-group-layout");

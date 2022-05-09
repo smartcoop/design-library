@@ -13,10 +13,14 @@ namespace Smart.Design.Razor.TagHelpers.Form;
 [HtmlTargetElement(TagNames.FormTagName)]
 public class FormTagHelper : BaseTagHelper
 {
+    private const string MethodAttributeName = "method";
     private const string LayoutAttributeName = "layout";
 
     private readonly IFormHtmlGenerator _generator;
     private readonly IHtmlGenerator _htmlGenerator;
+
+    [HtmlAttributeName(MethodAttributeName)]
+    public FormMethod Method { get; set; }
 
     [HtmlAttributeName(LayoutAttributeName)]
     public FormLayout Layout {get; set;}
@@ -35,7 +39,7 @@ public class FormTagHelper : BaseTagHelper
         var content = await output.GetChildContentAsync();
         content.AppendHtml(generateAntiforgery);
 
-        var form = _generator.GenerateForm(Layout, content);
+        var form = _generator.GenerateForm(Id, Layout, content, Method);
 
         output.MergeAttributes(form);
         output.TagName = form.TagName;
