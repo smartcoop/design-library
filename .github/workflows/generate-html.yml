@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Generate HTML
+
+on:
+  # When anything is pushed to the branch gh-html-generator the action is triggered
+  push:
+    branches: [ gh-pages-generator ]
+  
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v3
+      
+      - name: Setup .NET Core SDK
+        uses: actions/setup-dotnet@v2.1.0
+        with:
+          dotnet-version: 6.0.x
+      
+      - name: Restore dependencies
+        run: dotnet restore
+
+      - name: Run the generation
+        run:  |
+          dotnet run -c Release --project src/Smart.Design.Razor.HtmlGenerator/Smart.Design.Razor.HtmlGenerator.csproj
+          mkdir -p ./_site/
+
+      - name: Copy files to site folder
+        run: cp *.html _site/
+
+      - name: Add CNAME
+        run: echo design-cs.smartcoop.xyz > _site/CNAME
+      - name: Deploy to GitHub Pages
+
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
