@@ -1,0 +1,60 @@
+﻿<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Smart</title>
+    <link rel="stylesheet" href="https://design.smart.coop/css/main.css">
+
+</head>
+<body class="u-maximize-height u-overflow-hidden">
+<div class="c-app-layout">
+    <header class="u-position-relative">
+        <div class="c-navbar c-navbar--scrollable c-navbar--bordered-bottom">
+            <div class="c-toolbar">
+                <div class="c-toolbar__left">
+                    <div class="c-toolbar__item">
+                        <div class="c-brand c-brand--xsmall">
+                            <a href="/">
+                                <img src="https://design.smart.coop/images/logo.svg" alt="Smart">
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="c-toolbar__right">
+
+
+                    <div class="c-toolbar__item">
+                        <a class="c-user-navigation" href="#" data-menu="userMenu">
+                            <div class="c-avatar c-avatar--img">
+                                <img src="https://www.televag.com/images/images/i_individu.png" alt="avatar">
+                            </div>
+                        </a>
+                        <ul class="c-menu c-menu--large" id="userMenu">
+                            <li class="c-menu__item">
+                                <a class="c-menu__label" href="#">My profile</a>
+                            </li>
+                            <li class="c-menu__divider" role="presentational"></li>
+                            <li class="c-menu__item">
+                                <a class="c-menu__label" href="#">Sign out</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="u-maximize-width u-scroll-wrapper">
+        <div class="u-scroll-wrapper-body">
+            @RenderBody()
+        </div>
+    </main>
+</div>
+
+<script src="https://design.smart.coop/js/bundle-prototype.js"></script>
+<script src="https://design.smart.coop/js/bundle-client.js"></script>
+
+
+</body>
+</html>
