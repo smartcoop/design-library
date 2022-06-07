@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Smart.Design.Razor.Extensions;
-using Smart.Design.Razor.HtmlGenerator;
+using Smart.Design.Razor.Templates;
 
 IServiceCollection services = new ServiceCollection();
 

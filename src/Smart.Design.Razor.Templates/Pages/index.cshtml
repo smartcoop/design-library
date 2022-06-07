@@ -1,5 +1,6 @@
-﻿@using Smart.Design.Razor.Templates.Extensions
-@inject Smart.Design.Razor.HtmlGenerator.Templator Templator
+﻿@using Smart.Design.Razor.Templates
+@using Smart.Design.Razor.Templates.Extensions
+@inject Templator Templator
 @{
     var templates = Templator
         .GetPagePaths()

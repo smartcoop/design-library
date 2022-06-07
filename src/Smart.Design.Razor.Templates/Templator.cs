@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Razor.Templating.Core;
 
-namespace Smart.Design.Razor.HtmlGenerator;
+namespace Smart.Design.Razor.Templates;
 
 public class Templator
 {
@@ -13,7 +13,8 @@ public class Templator
     {
         "_ViewImports.cshtml",
         "_ViewStart.cshtml",
-        "_Layout.cshtml"
+        "_Layout.cshtml",
+        "_EmptyLayout.cshtml"
     };
 
     public Templator(ApplicationPartManager applicationPartManager)
