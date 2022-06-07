@@ -1,0 +1,12 @@
+﻿@inject Smart.Design.Razor.HtmlGenerator.Templator Templator
+@{
+    var html = Templator.GenerateIndexPage();
+}
+
+<smart-container size="Large">
+    <div class="c-display">
+        <h3>Templates</h3>
+        <p>Generated cshtml files using <a href="https://github.com/smartcoop/design-cs">Smart Design Razor library</a> </p>
+        @Html.Raw(html)
+    </div>
+</smart-container>

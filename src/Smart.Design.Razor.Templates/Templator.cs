@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Text;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Razor.Templating.Core;
@@ -64,13 +65,28 @@ public class Templator
             // Write the rendered output.
             var html = await RazorTemplateEngine.RenderAsync(templatePath);
             await File.WriteAllTextAsync(fileName, html);
-
-            // Open every templates in the browser.
-            // To remove once we start having too many templates.
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
-            {
-                Process.Start(@"explorer", fileName);
-            }
         }
+    }
+
+    public string GenerateIndexPage()
+    {
+        var templatePaths = GetPagePaths();
+
+        StringBuilder htmlBuilder = new StringBuilder(@"<ul>");
+
+        foreach (var path in templatePaths)
+        {
+            var name = GetTemplateName(path).Replace(".html", string.Empty);
+            htmlBuilder.Append("<li>");
+            htmlBuilder.Append("<a ");
+            htmlBuilder.Append($"href=\"/{name}\">");
+            htmlBuilder.Append(name);
+            htmlBuilder.Append("</a>");
+            htmlBuilder.Append("</li>");
+        }
+
+        htmlBuilder.Append("</ul>");
+
+        return htmlBuilder.ToString();
     }
 }
