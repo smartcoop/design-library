@@ -27,17 +27,18 @@ jobs:
         run: dotnet restore
 
       - name: Run the generation
-        run:  |
-          dotnet run -c Release --project src/Smart.Design.Razor.HtmlGenerator/Smart.Design.Razor.HtmlGenerator.csproj
-          mkdir -p ./_site/
+        run: dotnet run -c Release --project src/Smart.Design.Razor.HtmlGenerator/Smart.Design.Razor.HtmlGenerator.csproj
 
       - name: Copy files to site folder
-        run: cp *.html _site/
+        run: |
+          mkdir -p ./_site/
+          cp *.html _site/
+          cp -r wwwroot/* _site          
 
       - name: Add CNAME
         run: echo design-cs.smartcoop.xyz > _site/CNAME
+      
       - name: Deploy to GitHub Pages
-
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
