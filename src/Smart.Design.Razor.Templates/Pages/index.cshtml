@@ -1,12 +1,21 @@
-﻿@inject Smart.Design.Razor.HtmlGenerator.Templator Templator
+﻿@using Smart.Design.Razor.Templates.Extensions
+@inject Smart.Design.Razor.HtmlGenerator.Templator Templator
 @{
-    var html = Templator.GenerateIndexPage();
+    var templates = Templator
+        .GetPagePaths()
+        .Select(path => Templator.GetTemplateName(path))
+        .Where(name => !name.Contains("index"))
+        .ToList();
 }
-
 <smart-container size="Large">
     <div class="c-display">
         <h3>Templates</h3>
         <p>Generated cshtml files using <a href="https://github.com/smartcoop/design-cs">Smart Design Razor library</a> </p>
-        @Html.Raw(html)
+        <ul>
+            @foreach (var template in templates)
+            {
+                <li><a href="~/@template">@template.ToHumanReadable()</a></li>
+            }
+        </ul>
     </div>
 </smart-container>

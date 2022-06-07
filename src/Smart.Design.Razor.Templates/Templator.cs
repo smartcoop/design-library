@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Text;
+﻿using System.Text;
 using Microsoft.AspNetCore.Mvc.ApplicationParts;
 using Microsoft.AspNetCore.Mvc.Razor.Compilation;
 using Razor.Templating.Core;
@@ -37,7 +35,7 @@ public class Templator
     /// Retrieves the template' paths. We need them for the rendering.
     /// </summary>
     /// <returns></returns>
-    private string[] GetPagePaths()
+    public string[] GetPagePaths()
     {
         var feature = new ViewsFeature();
         _applicationPartManager.PopulateFeature(feature);
@@ -46,7 +44,7 @@ public class Templator
             .Select(descriptor => descriptor.RelativePath).ToArray();
     }
 
-    private string GetTemplateName(string templatePath)
+    public string GetTemplateName(string templatePath)
     {
         var fileInfo = new FileInfo(templatePath);
         var fileName = fileInfo.Name.Replace("cshtml", "html");
