@@ -24,6 +24,7 @@ using Smart.Design.Razor.TagHelpers.Layout;
 using Smart.Design.Razor.TagHelpers.Layout.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Loader;
 using Smart.Design.Razor.TagHelpers.MutedText;
+using Smart.Design.Razor.TagHelpers.Pagination;
 using Smart.Design.Razor.TagHelpers.Panel;
 using Smart.Design.Razor.TagHelpers.Pill;
 using Smart.Design.Razor.TagHelpers.ProgressBar;
@@ -67,6 +68,7 @@ public static class DependencyRegistration
             .AddTransient<IMutedTextHtmlGenerator         , MutedTextHtmlGenerator>()
             .AddTransient<ISpacerHtmlGenerator            , SpacerHtmlGenerator>()
             .AddTransient<IHtmlLayoutGenerator            , HtmlLayoutGenerator>()
-            .AddTransient<IAlertHtmlGenerator             , AlertHtmlGenerator>();
+            .AddTransient<IAlertHtmlGenerator             , AlertHtmlGenerator>()
+            .AddTransient<ISmartPaginationHtmlGenerator   , SmartPaginationHtmlGenerator>();
     }
 }
