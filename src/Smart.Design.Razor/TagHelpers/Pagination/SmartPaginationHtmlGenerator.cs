@@ -138,7 +138,7 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
     private void SetCurrentPageInPossibleInterval()
     {
         _currentPageNumber = _settings.PageNumber < 1
-            ? Math.Min(_settings.PageNumber, 1)
+            ? Math.Max(_settings.PageNumber, 1)
             : Math.Min(_settings.PageNumber, _settings.TotalPages);
     }
 
