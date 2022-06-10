@@ -9,6 +9,6 @@ public interface ISmartPaginationHtmlGenerator
     /// Generates a Smart Pagination component.
     /// </summary>
     /// <param name="settings">Settings to render the Smart Design Pagination.</param>
-    /// <returns>A instance that contains the HTML of the Smart Design Pagination.</returns>
+    /// <returns>An instance that contains the HTML of the Smart Design Pagination.</returns>
     public Task<TagBuilder> GenerateSmartPaginationAsync(PaginationSettings settings);
 }
