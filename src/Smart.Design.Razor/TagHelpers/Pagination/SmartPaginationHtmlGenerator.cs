@@ -163,6 +163,6 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
 
     private void ComputeStartIndex()
     {
-        _startIndex = Math.Max(_endIndex - _numberOfLinks + 1, 1);
+        _startIndex = Math.Max(_endIndex - (_numberOfLinks + 1), 1);
     }
 }
