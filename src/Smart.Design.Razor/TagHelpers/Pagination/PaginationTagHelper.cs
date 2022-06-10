@@ -10,7 +10,7 @@ namespace Smart.Design.Razor.TagHelpers.Pagination;
 /// Documentation is available <see href="https://design.smart.coop/development/docs/c-pagination.html">here</see>.
 /// </summary>
 [HtmlTargetElement(TagName)]
-public class PaginationHelper : TagHelper
+public class PaginationTagHelper : TagHelper
 {
     private const string TagName = "smart-pagination";
 
