@@ -1,0 +1,55 @@
+﻿<html class="u-maximize-height" dir="ltr" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>
+        Smart Design System
+    </title>
+    <link rel="stylesheet" href="~/css/main.css">
+</head>
+
+<body class="u-bg-gray-25">
+<header class="o-container-vertical">
+    <div class="o-container">
+        <div class="c-brand c-brand--small">
+            <a href="/">
+                <img src="logo.svg" alt="Smart">
+            </a>
+        </div>
+    </div>
+</header>
+<main class="o-container-vertical">
+    @RenderBody()
+</main>
+<footer id="footer">
+    <div class="o-container-vertical">
+        <div class="o-container">
+            <hr class="c-hr">
+            <div class="c-toolbar c-toolbar--auto">
+                <div class="c-toolbar__left">
+                    <div class="c-toolbar__item">
+                        <div class="o-flex o-flex--vertical-center">
+                            <span class="u-spacer-right-s">Don't have an account yet?</span>
+                            <a class="u-text-muted" href="">Sign up</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="c-toolbar__right">
+                    <ul class="c-bordered-list-horizontal c-bordered-list-horizontal--muted">
+                        <li>
+                            <a class="u-text-muted" href="#">Footer link</a>
+                        </li>
+                        <li>
+                            <a class="u-text-muted" href="#">Footer link</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="~/js/bundle-client.js"></script>
+</body>
+</html>
