@@ -14,7 +14,7 @@
 
   <ItemGroup>
 	  <PackageReference Include="Razor.Templating.Core" Version="1.7.0" />
-	  <PackageReference Include="Smart.Design.Razor" Version="1.0.21-rc" />
+	  <PackageReference Include="Smart.Design.Razor" Version="1.0.23-rc" />
   </ItemGroup>
 
   <ItemGroup>
