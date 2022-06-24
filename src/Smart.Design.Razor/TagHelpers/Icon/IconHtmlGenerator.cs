@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -9,6 +11,8 @@ namespace Smart.Design.Razor.TagHelpers.Icon;
 
 public class IconHtmlGenerator : IIconHtmlGenerator
 {
+    private static readonly Lazy<Dictionary<Image, string>> ImagesMappedWithTheirEmbeddedResourceName = new(MakeSvgDictionary);
+
     /// <inheritdoc />
     public TagBuilder GenerateIcon(Image image)
     {
@@ -63,17 +67,31 @@ public class IconHtmlGenerator : IIconHtmlGenerator
 
     private Stream? GetEmbeddedResourceStream(Image image)
     {
-        if (image == Image.None)
+        if (image == Image.None || !ImagesMappedWithTheirEmbeddedResourceName.Value.ContainsKey(image))
         {
             return null;
         }
 
         var currentAssembly = Assembly.GetExecutingAssembly();
-        var resourceFileName = currentAssembly.GetManifestResourceNames().FirstOrDefault(resourceName => resourceName.Contains(image.ToString().ToKebabCase()));
+        return currentAssembly.GetManifestResourceStream(ImagesMappedWithTheirEmbeddedResourceName.Value[image]);
+    }
 
-        if (string.IsNullOrWhiteSpace(resourceFileName))
-            return null;
+    private static Dictionary<Image, string> MakeSvgDictionary()
+    {
+        var imageMappedWithResourceNames = new Dictionary<Image, string>();
+        var iconResourceNames = Assembly.GetExecutingAssembly()
+            .GetManifestResourceNames().Where(name => name.StartsWith("Smart.Design.Razor.wwwroot.icons"));
 
-        return currentAssembly.GetManifestResourceStream(resourceFileName);
+        foreach (var iconResourceName in iconResourceNames)
+        {
+            var svgName = iconResourceName.Split(".")[^2];
+
+            if (Enum.TryParse<Image>(svgName.ToPascalCase(), true, out var @enum))
+            {
+                imageMappedWithResourceNames[@enum] = iconResourceName;
+            }
+        }
+
+        return imageMappedWithResourceNames;
     }
 }
