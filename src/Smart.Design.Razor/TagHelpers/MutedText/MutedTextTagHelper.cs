@@ -32,6 +32,6 @@ public class MutedTextTagHelper : TagHelper
         output.TagName = mutedText.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
         output.ClearAndMergeAttributes(mutedText);
-        output.Content.SetHtmlContent(mutedText);
+        output.Content.SetHtmlContent(mutedText.InnerHtml);
     }
 }
