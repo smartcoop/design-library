@@ -19,7 +19,7 @@ public class PaginationTagHelper : TagHelper
     [HtmlAttributeName("pagination-settings")]
     public PaginationSettings Settings { get; set; } = null!;
 
-    public PaginationHelper(ISmartPaginationHtmlGenerator smartPaginationHtmlGenerator)
+    public PaginationTagHelper(ISmartPaginationHtmlGenerator smartPaginationHtmlGenerator)
     {
         ArgumentNullException.ThrowIfNull(smartPaginationHtmlGenerator);
         _smartPaginationHtmlGenerator = smartPaginationHtmlGenerator;
