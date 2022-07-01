@@ -6,37 +6,43 @@ using Smart.Design.Razor.TagHelpers.Icon;
 
 namespace Smart.Design.Razor.TagHelpers.Pagination;
 
+/// <inheritdoc cref="ISmartPaginationHtmlGenerator"/>
 public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
 {
     private readonly IIconHtmlGenerator _iconHtmlGenerator;
 
-    private int _startIndex;
-    private int _endIndex;
+    private int _startPageNumber;
+    private int _endPageNumber;
     private int _currentPageNumber;
     private int _numberOfLinks;
     private int _numberOfLinksAroundCurrentPageNumberLink;
 
     private PaginationSettings _settings = null!;
 
+    /// <summary>
+    /// Instantiate a <see cref="SmartPaginationHtmlGenerator"/>.
+    /// </summary>
+    /// <param name="iconHtmlGenerator">A service that produces needed icon for the component.</param>
     public SmartPaginationHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
     {
         _iconHtmlGenerator = iconHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public async Task<TagBuilder> GenerateSmartPaginationAsync(PaginationSettings settings)
     {
         _settings = settings ?? throw new ArgumentNullException(nameof(settings));
         EnsureSettings();
-        ComputePaginationProperties();
+        ComputePaginationValues();
 
         var navBar = BuildNavBar();
         var ulContainer = BuildUlContainer();
 
         ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.ChevronLeft));
 
-        for (var index = _startIndex; index <= _endIndex; index++)
+        for (var pageNumber = _startPageNumber; pageNumber <= _endPageNumber; pageNumber++)
         {
-            ulContainer.InnerHtml.AppendHtml(MakePageLink(index));
+            ulContainer.InnerHtml.AppendHtml(GeneratePageLink(pageNumber));
         }
 
         ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.ChevronRight));
@@ -58,12 +64,49 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
         }
     }
 
-    private void ComputePaginationProperties()
+    private void ComputePaginationValues()
     {
-        PrepareData();
+        ComputePath();
+        ComputeCurrentPageNumber();
         ComputeNumberOfLinks();
-        ComputeEndIndex();
-        ComputeStartIndex();
+        ComputeEndPageNumber();
+        ComputeStartPageNumber();
+    }
+
+    private void ComputePath()
+    {
+        _settings.Path ??= string.Empty;
+    }
+
+    private void ComputeCurrentPageNumber()
+    {
+        _currentPageNumber = _settings.PageNumber < 1
+            ? 1
+            : Math.Min(_settings.PageNumber, _settings.TotalPages);
+    }
+
+    private void ComputeNumberOfLinks()
+    {
+        // This makes sure to have the same number of links around the current page link.
+        // Example: [4] [5] [6] [7] [8] [9] [10]. [7] being the current page number.
+        _numberOfLinks = _settings.NumberOfLinks % 2 == 0
+            ? _settings.NumberOfLinks + 1
+            : _settings.NumberOfLinks;
+
+        _numberOfLinksAroundCurrentPageNumberLink = _numberOfLinks / 2;
+    }
+    private void ComputeEndPageNumber()
+    {
+        _endPageNumber = _settings.PageNumber <= _numberOfLinksAroundCurrentPageNumberLink
+            ? _numberOfLinks
+            : _currentPageNumber + _numberOfLinksAroundCurrentPageNumberLink;
+
+        _endPageNumber = Math.Min(_endPageNumber, _settings.TotalPages);
+    }
+
+    private void ComputeStartPageNumber()
+    {
+        _startPageNumber = Math.Max(_endPageNumber - (_numberOfLinks + 1), 1);
     }
 
     private TagBuilder BuildUlContainer()
@@ -81,15 +124,15 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
         return navBar;
     }
 
-    private TagBuilder MakePageLink(int index)
+    private TagBuilder GeneratePageLink(int pageNumber)
     {
         var pageLink = MakePaginationItem();
-        pageLink.AddCssClass($"{(index == _settings.PageNumber ? "c-pagination__item--active" : string.Empty)}");
+        pageLink.AddCssClass($"{(pageNumber == _settings.PageNumber ? "c-pagination__item--active" : string.Empty)}");
 
         var anchorPageLink = new TagBuilder("a");
         anchorPageLink.AddCssClass("c-pagination__link");
-        anchorPageLink.Attributes["href"] = GetQueryString(index);
-        anchorPageLink.InnerHtml.Append(index.ToString());
+        anchorPageLink.Attributes["href"] = GetQueryString(pageNumber);
+        anchorPageLink.InnerHtml.Append(pageNumber.ToString());
 
         pageLink.InnerHtml.AppendHtml(anchorPageLink);
         return pageLink;
@@ -127,42 +170,5 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
     private string GetQueryString(int pageNumber)
     {
         return $"{_settings.Path!.TrimEnd('/')}?{_settings.PageNumberParameterName}={pageNumber}&{_settings.QueryString}";
-    }
-
-    private void PrepareData()
-    {
-        _settings.Path ??= string.Empty;
-        SetCurrentPageInPossibleInterval();
-    }
-
-    private void SetCurrentPageInPossibleInterval()
-    {
-        _currentPageNumber = _settings.PageNumber < 1
-            ? Math.Max(_settings.PageNumber, 1)
-            : Math.Min(_settings.PageNumber, _settings.TotalPages);
-    }
-
-    private void ComputeNumberOfLinks()
-    {
-        // This makes sure to have the same number of links around the current page link.
-        _numberOfLinks = _settings.NumberOfLinks % 2 == 0
-            ? _settings.NumberOfLinks + 1
-            : _settings.NumberOfLinks;
-
-        _numberOfLinksAroundCurrentPageNumberLink = _numberOfLinks / 2;
-    }
-
-    private void ComputeEndIndex()
-    {
-        _endIndex = _settings.PageNumber <= _numberOfLinksAroundCurrentPageNumberLink
-            ? _numberOfLinks
-            : _currentPageNumber + _numberOfLinksAroundCurrentPageNumberLink;
-
-        _endIndex = Math.Min(_endIndex, _settings.TotalPages);
-    }
-
-    private void ComputeStartIndex()
-    {
-        _startIndex = Math.Max(_endIndex - (_numberOfLinks + 1), 1);
     }
 }
