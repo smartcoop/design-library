@@ -78,7 +78,6 @@ public abstract class BaseSmartFormGroupTagHelper : BaseTagHelper
         output.TagMode = TagMode.StartTagAndEndTag;
         output.MergeAttributes(formGroup);
 
-
         output.Content.SetHtmlContent(formGroup.InnerHtml);
     }
 }
