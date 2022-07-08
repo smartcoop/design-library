@@ -6,6 +6,7 @@ namespace Smart.Design.Razor.TagHelpers.Base;
 
 /// <summary>
 /// Base <see cref="ITagHelper"/> class targeting html elements with an id and name attributes.
+/// Exposes ViewContext. 
 /// This class is abstract.
 /// </summary>
 public abstract class BaseTagHelper : TagHelper
