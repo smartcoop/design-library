@@ -5,7 +5,7 @@ namespace Smart.Design.Razor.TagHelpers.Base;
 public interface IFormGroupHtmlGenerator
 {
     /// <summary>
-    /// Generate a form group with its label and an empty controls container.
+    /// Generates a form group with its label and an empty controls container.
     /// </summary>
     /// <param name="id"></param>
     /// <param name="name"></param>
