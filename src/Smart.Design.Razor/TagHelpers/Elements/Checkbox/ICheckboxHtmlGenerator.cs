@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Checkbox;
 
+/// <summary>
+/// Contract for checkboxes HTML generator.
+/// </summary>
 public interface ICheckboxHtmlGenerator
 {
     /// <summary>
@@ -16,5 +19,12 @@ public interface ICheckboxHtmlGenerator
     /// <param name="checked">Determines if the checkbox should be checked.</param>
     /// <param name="for">Expression that describe the model associated to the element.</param>
     /// <returns>An instance of Smart Design checkbox.</returns>
-    public TagBuilder GenerateCheckbox(string? id, string? name, string? value, string? label, bool disabled, bool @checked, ModelExpression? @for);
+    public TagBuilder GenerateCheckbox(
+        string? id,
+        string? name,
+        string? value,
+        string? label,
+        bool disabled,
+        bool @checked,
+        ModelExpression? @for);
 }
