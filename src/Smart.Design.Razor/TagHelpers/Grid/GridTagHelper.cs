@@ -13,11 +13,16 @@ public class GridTagHelper : TagHelper
 {
     private readonly IGridHtmlGenerator _gridHtmlGenerator;
 
+    /// <summary>
+    /// Creates a new <see cref="GridTagHelper"/>.
+    /// </summary>
+    /// <param name="gridHtmlGenerator">The <see cref="IGridHtmlGenerator"/>.</param>
     public GridTagHelper(IGridHtmlGenerator gridHtmlGenerator)
     {
         _gridHtmlGenerator = gridHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         var grid = _gridHtmlGenerator.GenerateGrid();
