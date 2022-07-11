@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.HorizontalRule;
 
+/// <summary>
+/// Contract to generates horizontal rule HTMl.
+/// </summary>
 public interface IHorizontalRuleHtmlGenerator
 {
 

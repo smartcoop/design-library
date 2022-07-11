@@ -12,11 +12,16 @@ public class HorizontalRuleTagHelper : TagHelper
 {
     private readonly IHorizontalRuleHtmlGenerator _htmlGenerator;
 
+    /// <summary>
+    /// Creates a new <see cref="HorizontalRuleTagHelper"/>.
+    /// </summary>
+    /// <param name="htmlGenerator">The <see cref="IHorizontalRuleHtmlGenerator"/>.</param>
     public HorizontalRuleTagHelper(IHorizontalRuleHtmlGenerator htmlGenerator)
     {
         _htmlGenerator = htmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         var hr = _htmlGenerator.GenerateHorizontalRule();

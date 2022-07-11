@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.HorizontalRule;
 
+/// <summary>
+/// Generates HTML for Smart Design Horizontal Rules.
+/// </summary>
 public class HorizontalRuleHtmlGenerator : IHorizontalRuleHtmlGenerator
 {
 
