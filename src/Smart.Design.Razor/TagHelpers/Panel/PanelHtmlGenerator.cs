@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Panel;
 
+/// <inheritdoc cref="IPanelHtmlGenerator" />
 public class PanelHtmlGenerator : IPanelHtmlGenerator
 {
 
