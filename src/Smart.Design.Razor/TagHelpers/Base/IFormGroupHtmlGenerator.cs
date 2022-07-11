@@ -1,7 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Base;
 
+/// <summary>
+/// Contract for Form Group Generators.
+/// </summary>
 public interface IFormGroupHtmlGenerator
 {
     /// <summary>
@@ -37,5 +40,10 @@ public interface IFormGroupHtmlGenerator
     /// <returns> An instance of the &lt;div&gt;</returns>
     TagBuilder GenerateFormGroupControlsContainer();
 
+    /// <summary>
+    /// Generates a &lt;p&gt; that contains an helper text.
+    /// </summary>
+    /// <param name="helperText">The helper text.</param>
+    /// <returns>A <see cref="TagBuilder"/> instance of a helper text.</returns>
     TagBuilder GenerateFormGroupHelperText(string helperText);
 }

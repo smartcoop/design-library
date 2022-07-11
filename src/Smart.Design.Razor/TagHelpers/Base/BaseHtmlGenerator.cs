@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Smart.Design.Razor.TagHelpers.Base;
 
+/// <summary>
+/// Base class for HTML generators.
+/// </summary>
 public class BaseHtmlGenerator
 {
 
@@ -26,6 +29,12 @@ public class BaseHtmlGenerator
         return attributeName;
     }
 
+    /// <summary>
+    /// Gets the name of <see cref="ModelExpression"/> if defined or fallback to a given value.
+    /// </summary>
+    /// <param name="name">Value to fallback to.</param>
+    /// <param name="modelExpression">The <see cref="ModelExpression"/> associated to a bound property.</param>
+    /// <returns>The name of the current Tag Helper.</returns>
     protected string? GetAttributeName(string? name, ModelExpression? modelExpression)
     {
         return !string.IsNullOrWhiteSpace(modelExpression?.Name) ? modelExpression.Name : name;
