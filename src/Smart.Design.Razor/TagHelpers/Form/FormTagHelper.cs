@@ -33,13 +33,17 @@ public class FormTagHelper : BaseTagHelper
 
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
     {
-        // The framework checks if the form is sending an antiforgery token upon posting.
-        // Therefore we need to generate one.
-        var generateAntiforgery = _htmlGenerator.GenerateAntiforgery(ViewContext);
         var content = await output.GetChildContentAsync();
-        content.AppendHtml(generateAntiforgery);
 
         var form = _generator.GenerateForm(Id, Layout, content, Method);
+
+        if (Method == FormMethod.Post)
+        {
+            // The framework checks if the form is sending an antiforgery token upon posting.
+            // Therefore we need to generate one.
+            var antiforgery = _htmlGenerator.GenerateAntiforgery(ViewContext);
+            form.InnerHtml.AppendHtml(antiforgery);
+        }
 
         output.MergeAttributes(form);
         output.TagName = form.TagName;
