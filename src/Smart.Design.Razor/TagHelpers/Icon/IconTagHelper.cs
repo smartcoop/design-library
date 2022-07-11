@@ -18,11 +18,16 @@ public class IconTagHelper : TagHelper
     [HtmlAttributeName(IconAttributeName)]
     public Image Image { get; set; }
 
+    /// <summary>
+    /// Creates a new <see cref="IconTagHelper"/>.
+    /// </summary>
+    /// <param name="iconHtmlGenerator">The service that generates Smart Design Icons HTML.</param>
     public IconTagHelper(IIconHtmlGenerator iconHtmlGenerator)
     {
         _iconHtmlGenerator = iconHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
     {
         var icon = await _iconHtmlGenerator.GenerateIconAsync(Image);

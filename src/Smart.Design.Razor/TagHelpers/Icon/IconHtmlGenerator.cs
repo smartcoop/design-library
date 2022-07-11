@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Icon;
 
+/// <summary>
+/// Generates HTML to render Smart Design Icons.
+/// </summary>
 public class IconHtmlGenerator : IIconHtmlGenerator
 {
     private static readonly Lazy<Dictionary<Image, string>> ImagesMappedWithTheirEmbeddedResourceName = new(MakeSvgDictionary);
@@ -23,7 +26,7 @@ public class IconHtmlGenerator : IIconHtmlGenerator
             var svg = RetrieveSvgFromEmbeddedResources(image);
 
             // IHtmlContentBuilder.AppendHtml does nothing if the argument is null or empty.
-            iconDiv.InnerHtml.AppendHtml(svg);
+            iconDiv.InnerHtml.AppendHtml(svg!);
         }
 
         return iconDiv;
@@ -39,7 +42,7 @@ public class IconHtmlGenerator : IIconHtmlGenerator
             var svg = await RetrieveSvgFromEmbeddedResourcesAsync(image);
 
             // IHtmlContentBuilder.AppendHtml does nothing if the argument is null or empty.
-            iconDiv.InnerHtml.AppendHtml(svg);
+            iconDiv.InnerHtml.AppendHtml(svg!);
         }
 
         return iconDiv;
@@ -49,7 +52,9 @@ public class IconHtmlGenerator : IIconHtmlGenerator
     {
         var resourceStream = GetEmbeddedResourceStream(image);
         if (resourceStream is null)
+        {
             return null;
+        }
 
         using var streamReader = new StreamReader(resourceStream);
         return streamReader.ReadToEnd();
@@ -59,7 +64,9 @@ public class IconHtmlGenerator : IIconHtmlGenerator
     {
         var resourceStream = GetEmbeddedResourceStream(image);
         if (resourceStream is null)
+        {
             return null;
+        }
 
         using var streamReader = new StreamReader(resourceStream);
         return await streamReader.ReadToEndAsync();
@@ -79,8 +86,10 @@ public class IconHtmlGenerator : IIconHtmlGenerator
     private static Dictionary<Image, string> MakeSvgDictionary()
     {
         var imageMappedWithResourceNames = new Dictionary<Image, string>();
-        var iconResourceNames = Assembly.GetExecutingAssembly()
-            .GetManifestResourceNames().Where(name => name.StartsWith("Smart.Design.Razor.wwwroot.icons"));
+        var iconResourceNames = Assembly
+            .GetExecutingAssembly()
+            .GetManifestResourceNames()
+            .Where(name => name.StartsWith("Smart.Design.Razor.wwwroot.icons"));
 
         foreach (var iconResourceName in iconResourceNames)
         {
