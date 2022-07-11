@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Smart.Design.Razor.TagHelpers.ValidationMessage;
 
+/// <summary>
+/// Contract for a services that services HTML to render a Smart Design validation message.
+/// </summary>
 public interface IValidationMessageHtmlGenerator
 {
     /// <summary>
