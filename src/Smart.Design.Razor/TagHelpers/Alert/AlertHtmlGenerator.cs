@@ -6,10 +6,15 @@ using Smart.Design.Razor.TagHelpers.Icon;
 
 namespace Smart.Design.Razor.TagHelpers.Alert;
 
+/// <inheritdoc cref="IAlertHtmlGenerator" />
 public class AlertHtmlGenerator : IAlertHtmlGenerator
 {
     private readonly IIconHtmlGenerator _iconHtmlGenerator;
 
+    /// <summary>
+    /// Generates an <see cref="AlertHtmlGenerator"/>.
+    /// </summary>
+    /// <param name="iconHtmlGenerator">A services that services HTML to render icons.</param>
     public AlertHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
     {
         _iconHtmlGenerator = iconHtmlGenerator;
@@ -22,7 +27,13 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
     }
 
     /// <inheritdoc />
-    public async Task<TagBuilder> GenerateAlertAsync(string? title, List<string>? messages, AlertStyle alertStyle, Image icon, bool isClosable, bool isLight)
+    public async Task<TagBuilder> GenerateAlertAsync(
+        string? title,
+        List<string>? messages,
+        AlertStyle alertStyle,
+        Image icon,
+        bool isClosable,
+        bool isLight)
     {
         // This <div> is the main container of the component.
         var alert = new TagBuilder("div");
@@ -40,7 +51,7 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
         var iconDiv = await GetIconAsync(alertStyle, icon);
         alert.InnerHtml.AppendHtml(iconDiv);
 
-        // Next comes the body
+        // Next comes the body.
         var alertBody = new TagBuilder("div");
         alertBody.AddCssClass("c-alert__body");
         alert.InnerHtml.AppendHtml(alertBody);
