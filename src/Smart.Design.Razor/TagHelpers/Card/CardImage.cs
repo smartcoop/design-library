@@ -1,3 +1,4 @@
+using System.Threading;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Extensions;
 
@@ -10,7 +11,7 @@ namespace Smart.Design.Razor.TagHelpers.Card;
 [HtmlTargetElement(TagNames.CardImage, ParentTag = TagNames.Card)]
 public class CardImageTagHelper : TagHelper
 {
-    private const string SourceAttributeName = "surce";
+    private const string SourceAttributeName = "src";
 
     private readonly ICardHtmlGenerator _cardHtmlGenerator;
 
@@ -25,6 +26,7 @@ public class CardImageTagHelper : TagHelper
         _cardHtmlGenerator = cardHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         var cardImage = _cardHtmlGenerator.GenerateCardImage(Source);
