@@ -7,20 +7,36 @@ using Smart.Design.Razor.TagHelpers.Icon;
 
 namespace Smart.Design.Razor.TagHelpers.InputGroup;
 
+/// <inheritdoc cref="IInputGroupHtmlGenerator"/>
 public class InputGroupHtmlGenerator : IInputGroupHtmlGenerator
 {
     private readonly IIconHtmlGenerator _iconHtmlGenerator;
     private readonly IInputHtmlGenerator _inputHtmlGenerator;
 
+    /// <summary>
+    /// Creates a new <see cref="InputGroupHtmlGenerator"/>.
+    /// </summary>
+    /// <param name="iconHtmlGenerator">THe service that generates Smart Icons HTML.</param>
+    /// <param name="inputHtmlGenerator">The services that generates input HTML.</param>
     public InputGroupHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator, IInputHtmlGenerator inputHtmlGenerator)
     {
         _iconHtmlGenerator = iconHtmlGenerator;
         _inputHtmlGenerator = inputHtmlGenerator;
     }
 
-    public TagBuilder GenerateInputGroup(ViewContext? viewContext, string? id, string? name, string? placeholder, string? value, ModelExpression? @for,
-        Alignment alignment, Image icon, string? text)
+    /// <inheritdoc />
+    public TagBuilder GenerateInputGroup(
+        ViewContext? viewContext,
+        string? id,
+        string? name,
+        string? placeholder,
+        string? value,
+        ModelExpression? @for,
+        Alignment alignment,
+        Image icon,
+        string? text)
     {
+        // Root element.
         var inputGroup = new TagBuilder("div");
         inputGroup.AddCssClass("c-input-group");
 
