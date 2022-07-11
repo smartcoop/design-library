@@ -20,11 +20,16 @@ public class MutedTextTagHelper : TagHelper
     [HtmlAttributeName(TextAttributeName)]
     public string? Text { get; set; }
 
+    /// <summary>
+    /// Creates a new <see cref="MutedTextTagHelper"/>.
+    /// </summary>
+    /// <param name="mutedTextHtmlGenerator">The <see cref="IMutedTextHtmlGenerator"/>.</param>
     public MutedTextTagHelper(IMutedTextHtmlGenerator mutedTextHtmlGenerator)
     {
         _mutedTextHtmlGenerator = mutedTextHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         var mutedText = _mutedTextHtmlGenerator.GenerateMutedText(Text);
