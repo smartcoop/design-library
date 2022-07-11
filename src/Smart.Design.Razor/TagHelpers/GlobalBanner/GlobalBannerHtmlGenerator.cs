@@ -8,6 +8,10 @@ public class GlobalBannerHtmlGenerator : IGlobalBannerHtmlGenerator
 {
     private readonly IIconHtmlGenerator _iconHtmlGenerator;
 
+    /// <summary>
+    /// Creates a new <see cref="GlobalBannerHtmlGenerator"/>.
+    /// </summary>
+    /// <param name="iconHtmlGenerator">Services that will serve the HTML for icons.</param>
     public GlobalBannerHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
     {
         _iconHtmlGenerator = iconHtmlGenerator;
@@ -56,5 +60,4 @@ public class GlobalBannerHtmlGenerator : IGlobalBannerHtmlGenerator
 
         return globalBanner;
     }
-
 }
