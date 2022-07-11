@@ -25,7 +25,7 @@ public class ValidationMessageTagHelper : TagHelper
     public ModelExpression? For { get; set; }
 
     /// <summary>
-    /// Gets the <see cref="Microsoft.AspNetCore.Mvc.Rendering.ViewContext"/> of the executing view.
+    /// Gets or sets the <see cref="Microsoft.AspNetCore.Mvc.Rendering.ViewContext"/> of the executing view.
     /// </summary>
     [HtmlAttributeNotBound]
     [ViewContext]
