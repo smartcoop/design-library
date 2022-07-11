@@ -16,10 +16,15 @@ namespace Smart.Design.Razor.TagHelpers.Elements.Select;
 [HtmlTargetElement(TagNames.SelectTagName)]
 public class SelectTagHelper : Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper
 {
+    /// <summary>
+    /// Creates a new <see cref="SelectTagHelper"/>.
+    /// </summary>
+    /// <param name="generator">The <see cref="IHtmlGenerator"/>.</param>
     public SelectTagHelper(IHtmlGenerator generator) : base(generator)
     {
     }
 
+    /// <inheritdoc />
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
     {
         await base.ProcessAsync(context, output);
