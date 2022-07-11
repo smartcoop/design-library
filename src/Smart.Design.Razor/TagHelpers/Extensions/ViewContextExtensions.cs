@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Extensions;
 
+/// <summary>
+/// Defines extension methods on <see cref="ViewContext"/>.
+/// </summary>
 public static class ViewContextExtensions
 {
     /// <summary>
