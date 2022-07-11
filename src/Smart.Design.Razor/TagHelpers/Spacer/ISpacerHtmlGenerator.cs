@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Spacer;
 
+/// <summary>
+/// Contract interface to generate Smart Design Spacers.
+/// </summary>
 public interface ISpacerHtmlGenerator
 {
     /// <summary>
