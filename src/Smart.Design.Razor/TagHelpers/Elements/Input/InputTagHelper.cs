@@ -25,17 +25,28 @@ public class InputTagHelper : BaseTagHelper
     [HtmlAttributeName(PlaceholderAttributeName)]
     public string? Placeholder { get; set; }
 
+    /// <summary>
+    /// HTML Value of the Input.
+    /// </summary>
     [HtmlAttributeName(ValueAttributeName)]
     public string? Value { get; set; }
 
+    /// <summary>
+    /// Associated <see cref="ModelExpression"/> with the Input.
+    /// </summary>
     [HtmlAttributeName(AspForNameAttribute)]
     public ModelExpression? For { get; set; }
 
+    /// <summary>
+    /// Creates a new <see cref="InputTagHelper"/>.
+    /// </summary>
+    /// <param name="inputHtmlGenerator"></param>
     public InputTagHelper(IInputHtmlGenerator inputHtmlGenerator)
     {
         _inputHtmlGenerator = inputHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         base.Process(context, output);

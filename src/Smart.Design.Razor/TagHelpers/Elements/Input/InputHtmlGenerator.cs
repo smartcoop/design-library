@@ -7,6 +7,7 @@ using Smart.Design.Razor.TagHelpers.Extensions;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Input;
 
+/// <inheritdoc cref="IInputHtmlGenerator"/>
 public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
 {
 

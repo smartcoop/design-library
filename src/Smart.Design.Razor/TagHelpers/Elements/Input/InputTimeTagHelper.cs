@@ -9,6 +9,9 @@ using Smart.Design.Razor.TagHelpers.Extensions;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Input;
 
+/// <summary>
+/// <see cref="ITagHelper"/> implementation of the Smart Input time.
+/// </summary>
 [HtmlTargetElement(TagNames.InputTimeTagName, TagStructure = TagStructure.NormalOrSelfClosing)]
 public class InputTimeTagHelper : BaseTagHelper
 {
@@ -16,17 +19,28 @@ public class InputTimeTagHelper : BaseTagHelper
     private const string AspForAttributeName = "asp-for";
     private const string ValueAttributeName = "value";
 
+    /// <summary>
+    /// <see cref="ModelExpression"/> associated with the Input.
+    /// </summary>
     [HtmlAttributeName(AspForAttributeName)]
     public ModelExpression? For { get; set; }
 
+    /// <summary>
+    /// HTML Value of the Input.
+    /// </summary>
     [HtmlAttributeName(ValueAttributeName)]
     public string? Value { get; set; }
 
+    /// <summary>
+    /// Creates a new <see cref="InputTimeTagHelper"/>.
+    /// </summary>
+    /// <param name="smartHtmlGenerator">The <see cref="IInputHtmlGenerator"/>.</param>
     public InputTimeTagHelper(IInputHtmlGenerator smartHtmlGenerator)
     {
         _smartHtmlGenerator = smartHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         DateTime? dateTimeValue = null;

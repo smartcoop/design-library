@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Textarea;
 
+/// <summary>
+/// Generates HTL for Text Areas.
+/// </summary>
 public interface ITextareaHtmlGenerator
 {
     /// <summary>
@@ -15,5 +18,11 @@ public interface ITextareaHtmlGenerator
     /// <param name="textareaSize"></param>
     /// <param name="for"></param>
     /// <returns>An instance of the &lt;textarea&gt;</returns>
-    TagBuilder GenerateSmartTextArea(ViewContext? viewContext, string? id, string? name, int? rows, TextAreaSize textareaSize, ModelExpression? @for);
+    TagBuilder GenerateSmartTextArea(
+        ViewContext? viewContext,
+        string? id,
+        string? name,
+        int? rows,
+        TextAreaSize textareaSize,
+        ModelExpression? @for);
 }
