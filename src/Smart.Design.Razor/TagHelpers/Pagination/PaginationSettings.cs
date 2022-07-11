@@ -1,5 +1,8 @@
 namespace Smart.Design.Razor.TagHelpers.Pagination;
 
+/// <summary>
+/// Settings for rendering <see cref="PaginationTagHelper"/>.
+/// </summary>
 public class PaginationSettings
 {
     /// <summary>
