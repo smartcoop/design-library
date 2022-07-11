@@ -50,36 +50,61 @@ public class ButtonTagHelper : BaseTagHelper
     private readonly IIconHtmlGenerator _iconHtmlGenerator;
     private readonly IUrlHelperFactory _urlHelperFactory;
 
-
+    /// <summary>
+    /// Indicates if the button is disabled or not.
+    /// </summary>
     [HtmlAttributeName("disabled")]
     public bool Disabled { get; set; }
 
+    /// <summary>
+    /// Defines a leading icon (i.e. before the button's label).
+    /// </summary>
     [HtmlAttributeName("leading-icon")]
     public Image LeadingIcon { get; set; }
 
+    /// <summary>
+    /// Defines a trailing icon (i.e. after the button's label).
+    /// </summary>
     [HtmlAttributeName("trailing-icon")]
     public Image TrailingIcon { get; set; }
 
+    /// <summary>
+    /// The label of the button.
+    /// </summary>
     [HtmlAttributeName("label")]
     public string? Label { get; set; }
 
+    /// <summary>
+    /// Type attribute of the button.
+    /// Default is <see cref="ButtonType.Button"/>.
+    /// </summary>
     [HtmlAttributeName("button-type")]
     public ButtonType Type { get; set; } = ButtonType.Button;
 
+    /// <summary>
+    /// Style of the button.
+    /// See <see cref="ButtonStyle"/> for possible values.
+    /// </summary>
     [HtmlAttributeName("button-style")]
     public ButtonStyle Style { get; set; } = ButtonStyle.Primary;
 
+    /// <summary>
+    /// Determines if the button is a full width block button. The default state is <see langword="false"/>.
+    /// </summary>
     [HtmlAttributeName("is-block")]
     public bool IsBlock { get; set; }
 
+    /// <summary>
+    /// Determines if the button is an icon only. The default state is <see langword="false"/>.
+    /// </summary>
     [HtmlAttributeName("icon-only")]
     public bool IconOnly { get; set; }
 
     /// <summary>
-    /// The &lt;form&gt; element to associate the button with (its form owner). The value of this attribute must be the id of a <form> in the same document.
+    /// The &lt;form&gt; element to associate the button with (its form owner). The value of this attribute must be the id of a &lt;form&gt; in the same document.
     /// </summary>
     [HtmlAttributeName(FormAttributeName)]
-    public string Form { get; set; }
+    public string? Form { get; set; }
 
     /// <summary>
     /// Gets or sets the URL fragment.
@@ -118,6 +143,11 @@ public class ButtonTagHelper : BaseTagHelper
     [HtmlAttributeName(PageHandlerAttributeName)]
     public string? PageHandler { get; set; }
 
+    /// <summary>
+    /// Creates a new <see cref="ButtonTagHelper"/>.
+    /// </summary>
+    /// <param name="iconHtmlGenerator">The <see cref="IIconHtmlGenerator"/>.</param>
+    /// <param name="urlHelperFactory">The <see cref="IUrlHelperFactory"/>.</param>
     public ButtonTagHelper(IIconHtmlGenerator iconHtmlGenerator, IUrlHelperFactory urlHelperFactory)
     {
         _iconHtmlGenerator = iconHtmlGenerator;
@@ -167,7 +197,9 @@ public class ButtonTagHelper : BaseTagHelper
             var spanButtonLabelTagBuilder = new TagBuilder("span");
             spanButtonLabelTagBuilder.AddCssClass("c-button__label");
             if (Label is not null)
+            {
                 spanButtonLabelTagBuilder.InnerHtml.SetContent(Label);
+            }
 
             buttonContent.InnerHtml.AppendHtml(spanButtonLabelTagBuilder);
         }
@@ -189,7 +221,9 @@ public class ButtonTagHelper : BaseTagHelper
             var iconOnlyDiv = new TagBuilder("div");
             iconOnlyDiv.AddCssClass("u-sr-accessible");
             if (Label is not null)
+            {
                 iconOnlyDiv.InnerHtml.SetContent(Label);
+            }
         }
 
         if (!string.IsNullOrWhiteSpace(Form))
@@ -221,7 +255,9 @@ public class ButtonTagHelper : BaseTagHelper
         // Checks if a custom handler has been set.
         var hasCustomPageLink = Page != null || PageHandler != null;
         if (!hasCustomPageLink)
+        {
             return;
+        }
 
         RouteValueDictionary? routeValues = null;
         if (RouteValues is {Count: > 0})
