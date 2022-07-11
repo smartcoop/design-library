@@ -4,11 +4,14 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Smart.Design.Razor.TagHelpers.Extensions;
 
+/// <summary>
+/// Defines extension methods on <see cref="TagHelperOutput"/>.
+/// </summary>
 public static class TagHelperOutputExtensions
 {
     /// <summary>
-    /// Clear's all attribute of <paramref name="output"/> but keeps <c>class</c> attribute.
-    /// The <c>class</c> attribute is retrieved from <paramref name="context"/>
+    /// Clears every attributes of <paramref name="output"/> but keeps &lt;class&gt; attribute.
+    /// The &lt;class&gt; attribute is retrieved from <paramref name="context"/>.
     /// </summary>
     /// <param name="output">The <see cref="TagHelper"/> whose attributes will be erased and class attributes modified.</param>
     /// <param name="context">Context from which the class attributes will be copied into output's.</param>
@@ -16,21 +19,23 @@ public static class TagHelperOutputExtensions
     {
         output.Attributes.Clear();
         if (context.AllAttributes.ContainsName("class"))
+        {
             output.CopyHtmlAttribute("class", context);
+        }
     }
 
     /// <summary>
-    /// Removes all attributes of <see cref="TagHelperOutput"/>
+    /// Removes every attributes from <paramref name="output"/>.
     /// </summary>
-    /// <param name="output"></param>
+    /// <param name="output">The <see cref="TagHelperOutput"/> from which every attributes will be removed.</param>
     public static void ClearAllAttributes(this TagHelperOutput output)
     {
         output.Attributes.Clear();
     }
 
     /// <summary>
-    /// Clears all attributes of <paramref name="output" /> and merges the given <paramref name="tagBuilder"/>'s <see cref="TagBuilder.Attributes"/>
-    /// into the <paramref name="output"/>.
+    /// Clears every attributes from <paramref name="output" /> and merges the given <paramref name="tagBuilder"/>'s <see cref="TagBuilder.Attributes"/>
+    /// into <paramref name="output"/>.
     /// </summary>
     /// <param name="output">The <see cref="TagHelperOutput"/> this method extends.</param>
     /// <param name="tagBuilder">The <see cref="TagBuilder"/> to merge attributes from.</param>
