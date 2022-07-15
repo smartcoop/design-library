@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.GlobalBanner;
 
+/// <summary>
+/// Generates Smart Design Global Banner HTMl.
+/// </summary>
 public interface IGlobalBannerHtmlGenerator
 {
     /// <summary>

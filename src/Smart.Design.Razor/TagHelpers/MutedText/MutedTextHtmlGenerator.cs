@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.MutedText;
 
+/// <inheritdoc />
 public class MutedTextHtmlGenerator : IMutedTextHtmlGenerator
 {
+    /// <inheritdoc />
     public TagBuilder GenerateMutedText(string? text)
     {
         var mutedText = new TagBuilder("p");

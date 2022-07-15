@@ -18,18 +18,29 @@ public class ValidationMessageTagHelper : TagHelper
 
     private readonly IValidationMessageHtmlGenerator _validationMessageHtmlGenerator;
 
+    /// <summary>
+    /// <see cref="ModelExpression"/> associated to the bound property.
+    /// </summary>
     [HtmlAttributeName(ForAttributeName)]
     public ModelExpression? For { get; set; }
 
+    /// <summary>
+    /// Gets or sets the <see cref="Microsoft.AspNetCore.Mvc.Rendering.ViewContext"/> of the executing view.
+    /// </summary>
     [HtmlAttributeNotBound]
     [ViewContext]
     public ViewContext? ViewContext { get; set; }
 
+    /// <summary>
+    /// Creates a new <see cref="ValidationMessageTagHelper"/>.
+    /// </summary>
+    /// <param name="validationMessageHtmlGenerator">HTML generator for Smart Design validation messages.</param>
     public ValidationMessageTagHelper(IValidationMessageHtmlGenerator validationMessageHtmlGenerator)
     {
         _validationMessageHtmlGenerator = validationMessageHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Init(TagHelperContext context)
     {
         if (ViewContext is null)
@@ -43,6 +54,7 @@ public class ValidationMessageTagHelper : TagHelper
         }
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         // Doing so will render nothing.

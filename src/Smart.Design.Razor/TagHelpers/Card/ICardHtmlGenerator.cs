@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Card;
 
+/// <summary>
+/// Generates necessary HTML to render Smart Design Cards.
+/// </summary>
 public interface ICardHtmlGenerator
 {
     /// <summary>

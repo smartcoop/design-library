@@ -3,6 +3,9 @@ using Smart.Design.Razor.TagHelpers.Extensions;
 
 namespace Smart.Design.Razor.TagHelpers.Card;
 
+/// <summary>
+/// <see cref="ITagHelper"/> implementation of the Smart Design Card Title.
+/// </summary>
 [HtmlTargetElement(TagNames.CardTitle, TagStructure = TagStructure.NormalOrSelfClosing)]
 public class CardTitleTagHelper : TagHelper
 {
@@ -10,14 +13,22 @@ public class CardTitleTagHelper : TagHelper
 
     private readonly ICardHtmlGenerator _cardHtmlGenerator;
 
+    /// <summary>
+    /// Text to display inside the Smart Card Title.
+    /// </summary>
     [HtmlAttributeName(TextAttributeName)]
     public string? Text { get; set; }
 
+    /// <summary>
+    /// Creates a new <see cref="CardTitleTagHelper"/>.
+    /// </summary>
+    /// <param name="cardHtmlGenerator">The <see cref="ICardHtmlGenerator"/>.</param>
     public CardTitleTagHelper(ICardHtmlGenerator cardHtmlGenerator)
     {
         _cardHtmlGenerator = cardHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         var cardTitle = _cardHtmlGenerator.GenerateCardTitle(Text);

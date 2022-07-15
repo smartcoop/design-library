@@ -5,6 +5,9 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Checkbox;
 
+/// <summary>
+/// Generates HTML to render checkboxes.
+/// </summary>
 public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
 {
     /// <inheritdoc />
@@ -40,7 +43,9 @@ public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
             // If the associated model is a collection, the checkbox value should have been hardcoded in the HTML.
             if (!string.IsNullOrWhiteSpace(value) &&
                 typeof(IEnumerable).IsAssignableFrom(@for.ModelExplorer.ModelType))
+            {
                 checkbox.Attributes["value"] = value;
+            }
         }
         else if (!string.IsNullOrWhiteSpace(name))
         {
@@ -62,7 +67,9 @@ public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
         // The <label> element has two children: the checkbox followed by the label.
         labelDiv.InnerHtml.SetHtmlContent(checkbox);
         if (!string.IsNullOrWhiteSpace(label))
+        {
             labelDiv.InnerHtml.Append(label);
+        }
 
         rootDiv.InnerHtml.SetHtmlContent(labelDiv);
 

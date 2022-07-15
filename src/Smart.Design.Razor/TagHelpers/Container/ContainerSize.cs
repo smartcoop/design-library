@@ -5,7 +5,16 @@ namespace Smart.Design.Razor.TagHelpers.Container;
 /// </summary>
 public enum ContainerSize
 {
+    /// <summary>
+    /// Defines the size of a small container.
+    /// </summary>
     Small,
+    /// <summary>
+    /// Defines medium size of a container.
+    /// </summary>
     Medium,
+    /// <summary>
+    /// Defines large size of a container.
+    /// </summary>
     Large
 }

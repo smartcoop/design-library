@@ -5,6 +5,9 @@ using Smart.Design.Razor.TagHelpers.Icon;
 
 namespace Smart.Design.Razor.TagHelpers.Alert;
 
+/// <summary>
+/// Contract interface to generate HTML of Smart Alert.
+/// </summary>
 public interface IAlertHtmlGenerator
 {
     /// <summary>
@@ -20,7 +23,8 @@ public interface IAlertHtmlGenerator
     /// A task that represents the asynchronous operation.
     /// The task result is an instance of the Smart Design Alert.
     /// </returns>
-    public Task<TagBuilder> GenerateAlertAsync(string? title,
+    public Task<TagBuilder> GenerateAlertAsync(
+        string? title,
         List<string>? messages,
         AlertStyle alertStyle,
         Image icon,
@@ -40,7 +44,8 @@ public interface IAlertHtmlGenerator
     /// A task that represents the asynchronous operation.
     /// The task result is an instance of the Smart Design Alert.
     /// </returns>
-    public Task<TagBuilder> GenerateAlertAsync(string? title,
+    public Task<TagBuilder> GenerateAlertAsync(
+        string? title,
         string? message,
         AlertStyle alertStyle,
         Image icon,

@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Base;
 
+/// <summary>
+/// Generates Smart Design Form Groups HTML.
+/// </summary>
 public class FormGroupHtmlGenerator : BaseHtmlGenerator, IFormGroupHtmlGenerator
 {
     /// <inheritdoc />
@@ -21,7 +24,9 @@ public class FormGroupHtmlGenerator : BaseHtmlGenerator, IFormGroupHtmlGenerator
         var formGroupControlsContainer = GenerateFormGroupControlsContainer();
 
         if (controls is not null)
+        {
             formGroupControlsContainer.InnerHtml.AppendHtml(controls);
+        }
 
         if (!string.IsNullOrEmpty(helperText))
         {

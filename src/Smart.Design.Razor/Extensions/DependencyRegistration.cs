@@ -63,7 +63,7 @@ public static class DependencyRegistration
             .AddTransient<IProgressBarHtmlGenerator       , ProgressBarHtmlGenerator>()
             .AddTransient<IPillHtmlGenerator              , PillHtmlHtmlGenerator>()
             .AddTransient<ICardHtmlGenerator              , CardHtmlGenerator>()
-            .AddTransient<IValidationMessageHtmlGenerator , ValidationMessageHtmlHtmlGenerator>()
+            .AddTransient<IValidationMessageHtmlGenerator , ValidationMessageHtmlGenerator>()
             .AddTransient<IKeyValueListHtmlGenerator      , KeyValueListHtmlGenerator>()
             .AddTransient<IMutedTextHtmlGenerator         , MutedTextHtmlGenerator>()
             .AddTransient<ISpacerHtmlGenerator            , SpacerHtmlGenerator>()

@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Smart.Design.Razor.TagHelpers.Extensions;
 
+/// <summary>
+/// Defines extension methods on <see cref="TagBuilder"/>.
+/// </summary>
 public static class TagBuilderExtensions
 {
     /// <summary>

@@ -5,6 +5,9 @@ using Smart.Design.Razor.TagHelpers.Icon;
 
 namespace Smart.Design.Razor.TagHelpers.InputGroup;
 
+/// <summary>
+/// Generates HTML for the Smart Design input group.
+/// </summary>
 public interface IInputGroupHtmlGenerator
 {
     /// <summary>

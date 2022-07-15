@@ -12,11 +12,16 @@ public class CardTagHelper : TagHelper
 {
     private readonly ICardHtmlGenerator _cardHtmlGenerator;
 
+    /// <summary>
+    /// Creates a new <see cref="CardTagHelper"/>.
+    /// </summary>
+    /// <param name="cardHtmlGenerator">The <see cref="ICardHtmlGenerator"/>.</param>
     public CardTagHelper(ICardHtmlGenerator cardHtmlGenerator)
     {
         _cardHtmlGenerator = cardHtmlGenerator;
     }
 
+    /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         var card = _cardHtmlGenerator.GenerateCard();

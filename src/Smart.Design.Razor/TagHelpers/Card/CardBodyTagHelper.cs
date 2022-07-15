@@ -12,6 +12,10 @@ public class CardBodyTagHelper : TagHelper
 {
     private readonly ICardHtmlGenerator _cardHtmlGenerator;
 
+    /// <summary>
+    /// Creates a new <see cref="CardBodyTagHelper"/>.
+    /// </summary>
+    /// <param name="cardHtmlGenerator">The <see cref="ICardHtmlGenerator"/>.</param>
     public CardBodyTagHelper(ICardHtmlGenerator cardHtmlGenerator)
     {
         _cardHtmlGenerator = cardHtmlGenerator;

@@ -1,6 +1,12 @@
-﻿namespace Smart.Design.Razor.TagHelpers.MutedText;
+namespace Smart.Design.Razor.TagHelpers.MutedText;
 
+/// <summary>
+/// Defines tag names related to the Smart Muted Text.
+/// </summary>
 public class TagNames
 {
+    /// <summary>
+    /// Smart Muted Text tag name.
+    /// </summary>
     public const string MutedTextTagName = "smart-muted-text";
 }

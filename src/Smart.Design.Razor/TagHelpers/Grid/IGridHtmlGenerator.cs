@@ -2,6 +2,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Grid;
 
+/// <summary>
+/// Generates HTML for the Smart Design Grid.
+/// </summary>
 public interface IGridHtmlGenerator
 {
     /// <summary>
