@@ -71,7 +71,6 @@ public static class DependencyRegistration
             .AddTransient<IHtmlLayoutGenerator, HtmlLayoutGenerator>()
             .AddTransient<IAlertHtmlGenerator, AlertHtmlGenerator>()
             .AddTransient<ISmartPaginationHtmlGenerator, SmartPaginationHtmlGenerator>()
-            .AddTransient<IGridListHeaderGenerator, GridListHeaderGenerator>()
-            .AddTransient<IGridListBodyGenerator, GridListBodyGenerator>();
+            .AddTransient<IGridListHeaderGenerator, GridListHeaderGenerator>();
     }
 }

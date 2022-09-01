@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
@@ -20,20 +18,19 @@ namespace Smart.Design.Razor.TagHelpers.GridList;
 /// <see cref="ITagHelper" /> implementation of a Smart design &lt;grid-list&gt;.
 /// </summary>
 [HtmlTargetElement(TagNames.GridlistTagName)]
-// [RestrictChildren(TagNames.GridlistRowTagName)]
+[RestrictChildren(TagNames.GridlistRowTagName)]
 public class GridListTagHelper : BaseTagHelper
 {
     private readonly IGridListHeaderGenerator _listHeaderGenerator;
-    private readonly IGridListBodyGenerator _bodyGenerator;
+
+    /// <summary>
+    /// Title list of the different column of the table.
+    /// </summary>
     public List<string> Titles { get; set; }
-    public int? RowLength { get; set; }
 
-    public string ColumnSeparator { get; set; } = Environment.NewLine;
-
-    public GridListTagHelper(IGridListHeaderGenerator listHeaderGenerator, IGridListBodyGenerator bodyGenerator)
+    public GridListTagHelper(IGridListHeaderGenerator listHeaderGenerator)
     {
         _listHeaderGenerator = listHeaderGenerator;
-        _bodyGenerator = bodyGenerator;
     }
 
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -48,9 +45,10 @@ public class GridListTagHelper : BaseTagHelper
         table.AddCssClass("c-table c-table--styled js-data-table");
 
         table.InnerHtml.SetHtmlContent(_listHeaderGenerator.GenerateHeader(Titles));
-        var body = (await output.GetChildContentAsync()).GetContent();
-        table.InnerHtml.AppendHtml(_bodyGenerator.GenerateBody(RowLength ?? Titles.Count, body, ColumnSeparator));
+        var body = new TagBuilder("tbody");
+        body.InnerHtml.AppendHtml((await output.GetChildContentAsync()).GetContent());
 
+        table.InnerHtml.AppendHtml(body);
         padding.InnerHtml.AppendHtml(table);
         scroll.InnerHtml.AppendHtml(padding);
         wrapper.InnerHtml.AppendHtml(scroll);
@@ -60,74 +58,4 @@ public class GridListTagHelper : BaseTagHelper
         output.TagMode = TagMode.StartTagAndEndTag;
         output.Content.SetHtmlContent(wrapper.InnerHtml);
     }
-}
-
-public interface IGridListHeaderGenerator
-{
-    TagBuilder GenerateHeader(List<string> titles);
-}
-
-public class GridListHeaderGenerator : IGridListHeaderGenerator
-{
-    public TagBuilder GenerateHeader(List<string> titles)
-    {
-        var header = new TagBuilder("thead");
-        foreach (var title in titles)
-        {
-            var headerItemTagBuilder = GenerateHeaderItem(title);
-            header.InnerHtml.AppendHtml(headerItemTagBuilder);
-        }
-
-        return header;
-    }
-
-    private TagBuilder GenerateHeaderItem(string title)
-    {
-        var headerTitle = new TagBuilder("th");
-        headerTitle.InnerHtml.Append(title);
-        return headerTitle;
-    }
-}
-
-public class GridListBodyGenerator : IGridListBodyGenerator
-{
-    public TagBuilder GenerateBody(int rowLength, string? output, string columnSeparator)
-    {
-        var body = new TagBuilder("tbody");
-
-        if (!string.IsNullOrWhiteSpace(output))
-        {
-            var rowItems = new Queue<string>(output.Split(columnSeparator).Where(txt => !string.IsNullOrWhiteSpace(txt)));
-            var maxColumnNumber = Math.Max(1, rowItems.Count / rowLength);
-            for (var columnNumber = 0; columnNumber < maxColumnNumber; columnNumber++)
-            {
-                var rowTable = new TagBuilder("tr");
-                var maxRowNumber = Math.Max(rowLength, maxColumnNumber);
-                for (var rowNumber = 0; rowNumber < maxRowNumber; rowNumber++)
-                {
-                    var rowCell = new TagBuilder("td");
-                    if (rowNumber < rowLength && rowItems.TryDequeue(out var item))
-                    {
-                        rowCell.InnerHtml.AppendHtml(item.Trim());
-                    }
-                    else
-                    {
-                        var emptyDiv = new TagBuilder("div");
-                        rowCell.InnerHtml.AppendHtml(emptyDiv);
-                    }
-
-                    rowTable.InnerHtml.AppendHtml(rowCell);
-                }
-
-                body.InnerHtml.AppendHtml(rowTable);
-            }
-        }
-
-        return body;
-    }
-}
-
-public interface IGridListBodyGenerator
-{
-    TagBuilder GenerateBody(int rowLength, string? output, string columnSeparator);
 }
