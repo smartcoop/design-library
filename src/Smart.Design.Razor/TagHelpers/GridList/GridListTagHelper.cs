@@ -21,16 +21,16 @@ namespace Smart.Design.Razor.TagHelpers.GridList;
 [RestrictChildren(TagNames.GridlistRowTagName)]
 public class GridListTagHelper : BaseTagHelper
 {
-    private readonly IGridListHeaderGenerator _listHeaderGenerator;
+    private readonly IGridListHeaderGenerator _headerGenerator;
 
     /// <summary>
     /// Title list of the different column of the table.
     /// </summary>
     public List<string> Titles { get; set; }
 
-    public GridListTagHelper(IGridListHeaderGenerator listHeaderGenerator)
+    public GridListTagHelper(IGridListHeaderGenerator headerGenerator)
     {
-        _listHeaderGenerator = listHeaderGenerator;
+        _headerGenerator = headerGenerator;
     }
 
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
@@ -44,7 +44,7 @@ public class GridListTagHelper : BaseTagHelper
         var table = new TagBuilder("table");
         table.AddCssClass("c-table c-table--styled js-data-table");
 
-        table.InnerHtml.SetHtmlContent(_listHeaderGenerator.GenerateHeader(Titles));
+        table.InnerHtml.SetHtmlContent(_headerGenerator.GenerateHeader(Titles));
         var body = new TagBuilder("tbody");
         body.InnerHtml.AppendHtml((await output.GetChildContentAsync()).GetContent());
 

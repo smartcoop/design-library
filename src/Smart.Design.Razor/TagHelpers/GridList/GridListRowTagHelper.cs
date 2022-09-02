@@ -12,9 +12,9 @@ namespace Smart.Design.Razor.TagHelpers.GridList;
 
 /// <summary>
 /// <see cref="ITagHelper" /> Create the grid data in a table body.
-/// To use inside a <see cref="GridListTagHelper"/>.
+/// To use inside a <see cref="GridListTagHelper"/>
 /// </summary>
-[HtmlTargetElement(TagNames.GridlistRowTagName)]
+[HtmlTargetElement(TagNames.GridlistRowTagName, ParentTag = TagNames.GridlistTagName)]
 public class GridListRowTagHelper : BaseTagHelper
 {
     /// <summary>
@@ -31,7 +31,7 @@ public class GridListRowTagHelper : BaseTagHelper
 
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
     {
-        var body = new TagBuilder("tbody");
+        var rowData = new TagBuilder("tr");
         var rowContent = (await output.GetChildContentAsync()).GetContent();
         if (!string.IsNullOrWhiteSpace(rowContent))
         {
@@ -41,7 +41,6 @@ public class GridListRowTagHelper : BaseTagHelper
             var maxColumnNumber = Math.Max(1, rowItems.Count / rowLength);
             for (var columnNumber = 0; columnNumber < maxColumnNumber; columnNumber++)
             {
-                var rowTable = new TagBuilder("tr");
                 var maxRowNumber = Math.Max(rowLength, maxColumnNumber);
                 for (var rowNumber = 0; rowNumber < maxRowNumber; rowNumber++)
                 {
@@ -56,16 +55,14 @@ public class GridListRowTagHelper : BaseTagHelper
                         rowCell.InnerHtml.AppendHtml(emptyDiv);
                     }
 
-                    rowTable.InnerHtml.AppendHtml(rowCell);
+                    rowData.InnerHtml.AppendHtml(rowCell);
                 }
-
-                body.InnerHtml.AppendHtml(rowTable);
             }
         }
 
-        output.MergeAttributes(body);
-        output.TagName = body.TagName;
+        output.MergeAttributes(rowData);
+        output.TagName = rowData.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
-        output.Content.SetHtmlContent(body.InnerHtml);
+        output.Content.SetHtmlContent(rowData.InnerHtml);
     }
 }
