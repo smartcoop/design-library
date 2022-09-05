@@ -9,11 +9,7 @@ namespace Smart.Design.Razor.TagHelpers.GridList;
 /// </summary>
 public class GridListHeaderGenerator : IGridListHeaderGenerator
 {
-    /// <summary>
-    /// Generate a thead html tag with the <see cref="titles"/> of the columns
-    /// </summary>
-    /// <param name="titles">The title of the columns</param>
-    /// <returns></returns>
+    /// <inheritdoc/>>
     public TagBuilder GenerateHeader(List<string> titles)
     {
         var header = new TagBuilder("thead");
