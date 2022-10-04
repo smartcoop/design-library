@@ -14,17 +14,20 @@ public class TableOfContentGenerator : ITableOfContentGenerator
         var list = new TagBuilder("ol");
         list.AddCssClass("c-table-of-content__nav relativeWidth stickyPosition");
 
+        int i = 1;
         foreach (var title in titles)
         {
             var li = new TagBuilder("li");
 
             var link = new TagBuilder("a");
             link.AddCssClass("c-table-of-content__nav__item");
-            link.Attributes["href"] = "#";
+            link.Attributes["href"] = $"#section_{i}";
             link.InnerHtml.Append(title);
 
             li.InnerHtml.AppendHtml(link);
             list.InnerHtml.AppendHtml(li);
+
+            i++;
         }
 
         var div = new TagBuilder("div");
