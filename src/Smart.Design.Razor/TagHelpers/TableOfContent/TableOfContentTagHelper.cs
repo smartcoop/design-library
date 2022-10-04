@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Smart.Design.Razor.TagHelpers.TableOfContent;
 
 /// <summary>
-/// Implementation of an Smart design table of content.
+/// Implementation of a Smart design table of content.
 /// Documentation is available <see href="https://design.smart.coop/development/docs/c-table-of-content.html">here</see>.
 /// </summary>
 [HtmlTargetElement(TagNames.TableOfContentTagName)]

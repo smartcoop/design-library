@@ -6,6 +6,7 @@ using Smart.Design.Razor.TagHelpers.Badge;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.ButtonToolbar;
 using Smart.Design.Razor.TagHelpers.Card;
+using Smart.Design.Razor.TagHelpers.Citation;
 using Smart.Design.Razor.TagHelpers.Container;
 using Smart.Design.Razor.TagHelpers.Elements.Checkbox;
 using Smart.Design.Razor.TagHelpers.Elements.HorizontalRule;
@@ -73,6 +74,7 @@ public static class DependencyRegistration
             .AddTransient<IAlertHtmlGenerator, AlertHtmlGenerator>()
             .AddTransient<ISmartPaginationHtmlGenerator, SmartPaginationHtmlGenerator>()
             .AddTransient<IGridListHeaderGenerator, GridListHeaderGenerator>()
-            .AddTransient<ITableOfContentGenerator, TableOfContentGenerator>();
+            .AddTransient<ITableOfContentGenerator, TableOfContentGenerator>()
+            .AddTransient<ICitationGenerator, CitationGenerator>();
     }
 }
