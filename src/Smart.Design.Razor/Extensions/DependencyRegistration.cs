@@ -30,6 +30,7 @@ using Smart.Design.Razor.TagHelpers.Panel;
 using Smart.Design.Razor.TagHelpers.Pill;
 using Smart.Design.Razor.TagHelpers.ProgressBar;
 using Smart.Design.Razor.TagHelpers.Spacer;
+using Smart.Design.Razor.TagHelpers.TableOfContent;
 using Smart.Design.Razor.TagHelpers.Tabs;
 using Smart.Design.Razor.TagHelpers.ValidationMessage;
 
@@ -71,6 +72,7 @@ public static class DependencyRegistration
             .AddTransient<IHtmlLayoutGenerator, HtmlLayoutGenerator>()
             .AddTransient<IAlertHtmlGenerator, AlertHtmlGenerator>()
             .AddTransient<ISmartPaginationHtmlGenerator, SmartPaginationHtmlGenerator>()
-            .AddTransient<IGridListHeaderGenerator, GridListHeaderGenerator>();
+            .AddTransient<IGridListHeaderGenerator, GridListHeaderGenerator>()
+            .AddTransient<ITableOfContentGenerator, TableOfContentGenerator>();
     }
 }
