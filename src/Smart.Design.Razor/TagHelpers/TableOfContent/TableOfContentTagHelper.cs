@@ -15,7 +15,7 @@ namespace Smart.Design.Razor.TagHelpers.TableOfContent;
 [HtmlTargetElement(TagNames.TableOfContentTagName)]
 public class TableOfContentTagHelper : TagHelper
 {
-    private readonly ITableOfContentGenerator _tableOfContentGenerator;
+    private readonly ITableOfContentHtmlGenerator _tableOfContentGenerator;
 
     /// <summary>
     /// Title list of table of content items.
@@ -26,7 +26,7 @@ public class TableOfContentTagHelper : TagHelper
     /// Creates a new <see cref="TableOfContentTagHelper"/>.
     /// </summary>
     /// <param name="iconHtmlGenerator">The service that generates Smart Design table of content HTML.</param>
-    public TableOfContentTagHelper(ITableOfContentGenerator tableOfContentHtmlGenerator)
+    public TableOfContentTagHelper(ITableOfContentHtmlGenerator tableOfContentHtmlGenerator)
     {
         _tableOfContentGenerator = tableOfContentHtmlGenerator;
     }

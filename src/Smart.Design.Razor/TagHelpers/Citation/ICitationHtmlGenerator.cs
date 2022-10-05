@@ -5,7 +5,7 @@ namespace Smart.Design.Razor.TagHelpers.Citation;
 /// <summary>
 /// Generate citation component.
 /// </summary
-public interface ICitationGenerator
+public interface ICitationHtmlGenerator
 {
     /// <summary>
     /// Generates a citation paragraph with title and text from a <see cref="title"/> and a <see cref="content"/>

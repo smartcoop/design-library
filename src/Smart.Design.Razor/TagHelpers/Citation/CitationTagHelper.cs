@@ -15,7 +15,7 @@ namespace Smart.Design.Razor.TagHelpers.Citation;
 [HtmlTargetElement(TagNames.CitationTagName)]
 public class CitationTagHelper : TagHelper
 {
-    private readonly ICitationGenerator _citationGenerator;
+    private readonly ICitationHtmlGenerator _citationGenerator;
 
     /// <summary>
     /// Title of the citation.
@@ -31,7 +31,7 @@ public class CitationTagHelper : TagHelper
     /// Creates a new <see cref="CitationTagHelper"/>.
     /// </summary>
     /// <param name="citationGenerator">The service that generates Smart Design citation HTML.</param>
-    public CitationTagHelper(ICitationGenerator citationGenerator)
+    public CitationTagHelper(ICitationHtmlGenerator citationGenerator)
     {
         _citationGenerator = citationGenerator;
     }

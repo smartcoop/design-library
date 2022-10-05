@@ -7,7 +7,7 @@ namespace Smart.Design.Razor.TagHelpers.TableOfContent;
 /// Create the grid row  in a table header.
 /// To use in conjunction with <see cref="GridListTagHelper"/>
 /// </summary>
-public class TableOfContentGenerator : ITableOfContentGenerator
+public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
 {
     public TagBuilder GenerateListOfItems(List<string> titles)
     {

@@ -2,7 +2,7 @@ using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Citation;
-public class CitationGenerator : ICitationGenerator
+public class CitationHtmlGenerator : ICitationHtmlGenerator
 {
     public TagBuilder GenerateCitation(string title, string content)
     {

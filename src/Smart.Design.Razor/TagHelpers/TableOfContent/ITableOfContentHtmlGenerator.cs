@@ -6,7 +6,7 @@ namespace Smart.Design.Razor.TagHelpers.TableOfContent;
 /// <summary>
 /// Generate a table of content from a list of chapters.
 /// </summary>
-public interface ITableOfContentGenerator
+public interface ITableOfContentHtmlGenerator
 {
     /// <summary>
     /// Generate a numbered list of main chapters' titles from a <see cref="titles"/> list
