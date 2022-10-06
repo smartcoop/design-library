@@ -1,4 +1,3 @@
-using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Citation;
