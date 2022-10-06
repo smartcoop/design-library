@@ -32,7 +32,7 @@ public class TableOfContentTagHelper : TagHelper
     }
 
     /// <inheritdoc />
-    public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+    public override void  Process(TagHelperContext context, TagHelperOutput output)
     {
         var nav = new TagBuilder("nav");
         nav.AddCssClass("c-table-of-content-navigation fixed");
