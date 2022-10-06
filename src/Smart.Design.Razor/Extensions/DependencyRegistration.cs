@@ -6,6 +6,7 @@ using Smart.Design.Razor.TagHelpers.Badge;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.ButtonToolbar;
 using Smart.Design.Razor.TagHelpers.Card;
+using Smart.Design.Razor.TagHelpers.Citation;
 using Smart.Design.Razor.TagHelpers.Container;
 using Smart.Design.Razor.TagHelpers.Elements.Checkbox;
 using Smart.Design.Razor.TagHelpers.Elements.HorizontalRule;
@@ -30,6 +31,7 @@ using Smart.Design.Razor.TagHelpers.Panel;
 using Smart.Design.Razor.TagHelpers.Pill;
 using Smart.Design.Razor.TagHelpers.ProgressBar;
 using Smart.Design.Razor.TagHelpers.Spacer;
+using Smart.Design.Razor.TagHelpers.TableOfContent;
 using Smart.Design.Razor.TagHelpers.Tabs;
 using Smart.Design.Razor.TagHelpers.ValidationMessage;
 
@@ -71,6 +73,8 @@ public static class DependencyRegistration
             .AddTransient<IHtmlLayoutGenerator, HtmlLayoutGenerator>()
             .AddTransient<IAlertHtmlGenerator, AlertHtmlGenerator>()
             .AddTransient<ISmartPaginationHtmlGenerator, SmartPaginationHtmlGenerator>()
-            .AddTransient<IGridListHeaderGenerator, GridListHeaderGenerator>();
+            .AddTransient<IGridListHeaderGenerator, GridListHeaderGenerator>()
+            .AddTransient<ITableOfContentHtmlGenerator, TableOfContentHtmlGenerator>()
+            .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>();
     }
 }

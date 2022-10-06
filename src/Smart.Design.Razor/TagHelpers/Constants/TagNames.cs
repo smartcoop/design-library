@@ -21,6 +21,8 @@ public static class TagNames
 
     public const string CheckboxTagName = "smart-checkbox";
 
+    public const string CitationTagName = "smart-citation";
+
     public const string ContainerTagName = "smart-container";
 
     public const string ElevationTagName = "smart-elevation";
@@ -60,6 +62,8 @@ public static class TagNames
     public const string ProgressBar = "smart-progress-bar";
 
     public const string SelectTagName = "smart-select";
+
+    public const string TableOfContentTagName = "smart-table-of-content";
 
     public const string Tabs = "smart-tabs";
 
