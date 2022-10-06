@@ -25,8 +25,6 @@ public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
 
             li.InnerHtml.AppendHtml(link);
             list.InnerHtml.AppendHtml(li);
-
-            i++;
         }
 
         var div = new TagBuilder("div");
