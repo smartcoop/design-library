@@ -17,6 +17,7 @@ public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
       for(var i = 0 ; i < titles.Count; i++)
         {
             var li = new TagBuilder("li");
+
             var link = new TagBuilder("a");
             link.AddCssClass("c-table-of-content__nav__item");
             link.Attributes["href"] = $"#section_{i + 1}";
@@ -24,6 +25,8 @@ public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
 
             li.InnerHtml.AppendHtml(link);
             list.InnerHtml.AppendHtml(li);
+
+            i++;
         }
 
         var div = new TagBuilder("div");

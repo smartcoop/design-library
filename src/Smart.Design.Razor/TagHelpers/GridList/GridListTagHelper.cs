@@ -21,14 +21,14 @@ namespace Smart.Design.Razor.TagHelpers.GridList;
 [RestrictChildren(TagNames.GridlistRowTagName)]
 public class GridListTagHelper : BaseTagHelper
 {
-    private readonly IGridListHeaderGenerator _headerGenerator;
+    private readonly IGridListHeaderHtmlGenerator _headerGenerator;
 
     /// <summary>
     /// Title list of the different column of the table.
     /// </summary>
     public List<string> Titles { get; set; }
 
-    public GridListTagHelper(IGridListHeaderGenerator headerGenerator)
+    public GridListTagHelper(IGridListHeaderHtmlGenerator headerGenerator)
     {
         _headerGenerator = headerGenerator;
     }

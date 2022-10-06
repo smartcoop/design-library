@@ -7,7 +7,7 @@ namespace Smart.Design.Razor.TagHelpers.GridList;
 /// Create the grid row  in a table header.
 /// To use in conjunction with <see cref="GridListTagHelper"/>
 /// </summary>
-public class GridListHeaderGenerator : IGridListHeaderGenerator
+public class GridListHeaderHtmlGenerator : IGridListHeaderHtmlGenerator
 {
     /// <inheritdoc/>>
     public TagBuilder GenerateHeader(List<string> titles)
