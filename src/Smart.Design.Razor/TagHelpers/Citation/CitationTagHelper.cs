@@ -1,10 +1,6 @@
-using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Constants;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.TagHelpers;
-using System.Threading.Tasks;
 
 namespace Smart.Design.Razor.TagHelpers.Citation;
 
@@ -37,7 +33,7 @@ public class CitationTagHelper : TagHelper
     }
 
     /// <inheritdoc />
-    public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+    public override void Process(TagHelperContext context, TagHelperOutput output)
     {
         var citation = _citationGenerator.GenerateCitation(Title, Content);
 
