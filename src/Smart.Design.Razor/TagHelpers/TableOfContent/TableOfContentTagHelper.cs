@@ -24,7 +24,7 @@ public class TableOfContentTagHelper : TagHelper
     /// <summary>
     /// Creates a new <see cref="TableOfContentTagHelper"/>.
     /// </summary>
-    /// <param name="iconHtmlGenerator">The service that generates Smart Design table of content HTML.</param>
+    /// <param name="tableOfContentHtmlGenerator">The service that generates Smart Design table of content HTML.</param>
     public TableOfContentTagHelper(ITableOfContentHtmlGenerator tableOfContentHtmlGenerator)
     {
         _tableOfContentGenerator = tableOfContentHtmlGenerator;
