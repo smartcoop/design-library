@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Constants;
 
-namespace Smart.Design.Razor.TagHelpers.ButtonToolbar;
+namespace Smart.Design.Razor.TagHelpers.Buttons.ButtonToolbar;
 
 /// <summary>
 /// <see cref="ITagHelper"/> implementation of the Smart design button toolbar.
