@@ -1,3 +1,4 @@
+using System;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
@@ -7,7 +8,7 @@ using Smart.Design.Razor.TagHelpers.Constants;
 
 namespace Smart.Design.Razor.TagHelpers.Titles.PageTitle;
 
-[HtmlTargetElement(TagNames.PageTitleTagName)]
+[HtmlTargetElement(TagNames.PageTitleTagName, TagStructure = TagStructure.WithoutEndTag)]
 public class PageTitleTagHelper : TagHelper
 {
     private readonly IPageTitleHtmlGenerator _pageTitleGenerator;
@@ -15,7 +16,7 @@ public class PageTitleTagHelper : TagHelper
     /// <summary>
     /// Title of the page.
     /// </summary>
-    public string Title { get; set; }
+    public string Title { get; set; } = null!;
 
     /// <summary>
     /// Creates a new <see cref="PageTitleHtmlGenerator"/>.
@@ -29,14 +30,19 @@ public class PageTitleTagHelper : TagHelper
     /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        var pageTitleblock = new TagBuilder("div");
-        pageTitleblock.AddCssClass("c-navbar u-position-fixed main-title");
+        if (string.IsNullOrWhiteSpace(Title))
+        {
+            throw new MissingFieldException(nameof(PageTitleTagHelper), nameof(Title));
+        }
 
-        pageTitleblock.InnerHtml.SetHtmlContent(_pageTitleGenerator.GeneratePageTitleItem(Title));
+        var pageTitleBlock = new TagBuilder("div");
+        pageTitleBlock.AddCssClass("c-navbar u-position-fixed main-title");
 
-        output.MergeAttributes(pageTitleblock);
-        output.TagName = pageTitleblock.TagName;
+        pageTitleBlock.InnerHtml.SetHtmlContent(_pageTitleGenerator.GeneratePageTitleItem(Title));
+
+        output.MergeAttributes(pageTitleBlock);
+        output.TagName = pageTitleBlock.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
-        output.Content.SetHtmlContent(pageTitleblock.InnerHtml);
+        output.Content.SetHtmlContent(pageTitleBlock.InnerHtml);
     }
 }

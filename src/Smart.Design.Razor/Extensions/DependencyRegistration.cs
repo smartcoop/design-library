@@ -78,6 +78,5 @@ public static class DependencyRegistration
             .AddTransient<ITableOfContentHtmlGenerator, TableOfContentHtmlGenerator>()
             .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>()
             .AddTransient<IPageTitleHtmlGenerator, PageTitleHtmlGenerator>();
-
     }
 }
