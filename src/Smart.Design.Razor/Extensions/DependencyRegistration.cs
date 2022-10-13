@@ -80,6 +80,5 @@ public static class DependencyRegistration
             .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>()
             .AddTransient<IPageTitleHtmlGenerator, PageTitleHtmlGenerator>()
             .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>();
-
     }
 }
