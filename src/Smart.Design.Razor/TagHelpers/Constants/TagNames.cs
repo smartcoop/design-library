@@ -15,6 +15,8 @@ public static class TagNames
 
     public const string BadgeTagName = "smart-badge";
 
+    public const string ButtonBackToTopTagName = "smart-button-back-to-top";
+
     public const string ButtonTagName = "smart-button";
 
     public const string ButtonToolbarTagName = "smart-button-toolbar";
