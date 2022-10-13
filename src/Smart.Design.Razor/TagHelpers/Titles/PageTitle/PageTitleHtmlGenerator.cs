@@ -14,11 +14,11 @@ public class PageTitleHtmlGenerator : IPageTitleHtmlGenerator
         var div3 = new TagBuilder("div");
         div3.AddCssClass("c-toolbar__item");
 
-        var h1 = new TagBuilder("h1");
-        h1.AddCssClass("c-toolbar__title");
-        h1.InnerHtml.Append(title);
+        var h2 = new TagBuilder("h2");
+        h2.AddCssClass("c-toolbar__title");
+        h2.InnerHtml.Append(title);
 
-        div3.InnerHtml.AppendHtml(h1);
+        div3.InnerHtml.AppendHtml(h2);
         div2.InnerHtml.AppendHtml(div3);
         div1.InnerHtml.AppendHtml(div2);
 
