@@ -57,9 +57,11 @@ public static class TagNames
 
     public const string PanelTagName = "smart-panel";
 
-    public const string RadioButtonTagName = "smart-radio";
+    public const string PageTitleTagName = "smart-page-title";
 
     public const string ProgressBar = "smart-progress-bar";
+
+    public const string RadioButtonTagName = "smart-radio";
 
     public const string SelectTagName = "smart-select";
 
