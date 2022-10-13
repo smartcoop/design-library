@@ -4,8 +4,8 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Smart.Design.Razor.TagHelpers.TableOfContent;
 
 /// <summary>
-/// Create the grid row  in a table header.
-/// To use in conjunction with <see cref="GridListTagHelper"/>
+/// Create the table of content.
+/// To use in conjunction with <see cref="TableOfContentTagHelper"/>
 /// </summary>
 public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
 {
