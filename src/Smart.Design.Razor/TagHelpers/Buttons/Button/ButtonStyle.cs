@@ -1,4 +1,4 @@
-namespace Smart.Design.Razor.TagHelpers.Elements.Button;
+namespace Smart.Design.Razor.TagHelpers.Buttons.Button;
 
 /// <summary>
 /// Valid button style of a Smart design button.
