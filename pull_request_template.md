@@ -1,5 +1,3 @@
-# APPLICATION NAME
-
 [JIRA description](https://smartjira.atlassian.net/browse/XXXX)
 
 Text description/explanation  
@@ -13,9 +11,5 @@ Detailed list of changes/actions
 * xxx
 * xxx
 * xxx
-
-🚀 List of related applications to deploy when more than one
-
-🛑 Actions before deployment (scripts to run, database migration, seeds, etc...)
 
 💡 Useful resources
