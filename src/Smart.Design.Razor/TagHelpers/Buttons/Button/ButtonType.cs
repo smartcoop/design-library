@@ -1,4 +1,4 @@
-namespace Smart.Design.Razor.TagHelpers.Elements.Button;
+namespace Smart.Design.Razor.TagHelpers.Buttons.Button;
 
 public enum ButtonType
 {

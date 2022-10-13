@@ -14,9 +14,14 @@ public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
         var list = new TagBuilder("ol");
         list.AddCssClass("c-table-of-content__nav relativeWidth stickyPosition");
 
-      for(var i = 0 ; i < titles.Count; i++)
+        for (var i = 0; i < titles.Count; i++)
         {
             var li = new TagBuilder("li");
+
+            if (i == 0)
+            {
+                li.Attributes["aria-selected"] = "true";
+            }
 
             var link = new TagBuilder("a");
             link.AddCssClass("c-table-of-content__nav__item");

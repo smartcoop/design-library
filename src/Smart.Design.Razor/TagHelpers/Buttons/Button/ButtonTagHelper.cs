@@ -13,7 +13,7 @@ using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Constants;
 using Smart.Design.Razor.TagHelpers.Icon;
 
-namespace Smart.Design.Razor.TagHelpers.Elements.Button;
+namespace Smart.Design.Razor.TagHelpers.Buttons.Button;
 
 /// <summary>
 /// <see cref="ITagHelper" /> implementation of the Smart design button with

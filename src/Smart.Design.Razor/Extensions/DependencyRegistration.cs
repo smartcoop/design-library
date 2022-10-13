@@ -4,7 +4,8 @@ using Smart.Design.Razor.TagHelpers.AlertStack;
 using Smart.Design.Razor.TagHelpers.Avatar;
 using Smart.Design.Razor.TagHelpers.Badge;
 using Smart.Design.Razor.TagHelpers.Base;
-using Smart.Design.Razor.TagHelpers.ButtonToolbar;
+using Smart.Design.Razor.TagHelpers.Buttons.ButtonToolbar;
+using Smart.Design.Razor.TagHelpers.Buttons.ButtonBackToTop;
 using Smart.Design.Razor.TagHelpers.Card;
 using Smart.Design.Razor.TagHelpers.Citation;
 using Smart.Design.Razor.TagHelpers.Container;
@@ -77,6 +78,7 @@ public static class DependencyRegistration
             .AddTransient<IGridListHeaderHtmlGenerator, GridListHeaderHtmlGenerator>()
             .AddTransient<ITableOfContentHtmlGenerator, TableOfContentHtmlGenerator>()
             .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>()
-            .AddTransient<IPageTitleHtmlGenerator, PageTitleHtmlGenerator>();
+            .AddTransient<IPageTitleHtmlGenerator, PageTitleHtmlGenerator>()
+            .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>();
     }
 }

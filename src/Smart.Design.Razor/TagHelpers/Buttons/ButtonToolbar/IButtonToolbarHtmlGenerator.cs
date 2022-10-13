@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Smart.Design.Razor.TagHelpers.ButtonToolbar;
+namespace Smart.Design.Razor.TagHelpers.Buttons.ButtonToolbar;
 
 public interface IButtonToolbarHtmlGenerator
 {
