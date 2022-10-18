@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
@@ -19,7 +21,7 @@ public class SideMenuTagHelper : TagHelper
     /// <summary>
     /// Dictionnary of label and links items for the side menu
     /// </summary>
-    public Dictionary<string, string> LabelAndLinks { get; set; }
+    public Dictionary<string, string> LabelAndLinks { get; set; } = new();
 
     /// <summary>
     /// Creates a new <see cref="SideMenuTagHelper"/>.
@@ -33,6 +35,10 @@ public class SideMenuTagHelper : TagHelper
     /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
+        if (!LabelAndLinks.Any())
+        {
+            throw new ArgumentException($"{nameof(LabelAndLinks)} cannot be null or empty");
+        }
         var menu = new TagBuilder("div");
         menu.AddCssClass("c-app-layout-inner__sidebar u-position-fixed");
 

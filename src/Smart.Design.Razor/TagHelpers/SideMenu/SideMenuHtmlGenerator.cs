@@ -22,7 +22,7 @@ public class SideMenuHtmlGenerator : ISideMenuHtmlGenerator
 
             var link = new TagBuilder("a");
             link.AddCssClass("c-side-menu__link");
-            link.Attributes["href"] = $"{item.Value}";
+            link.Attributes["href"] = item.Value;
             link.InnerHtml.Append(item.Key);
 
             li.InnerHtml.AppendHtml(link);
