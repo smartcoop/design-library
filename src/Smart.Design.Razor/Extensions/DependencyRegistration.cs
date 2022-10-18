@@ -4,8 +4,8 @@ using Smart.Design.Razor.TagHelpers.AlertStack;
 using Smart.Design.Razor.TagHelpers.Avatar;
 using Smart.Design.Razor.TagHelpers.Badge;
 using Smart.Design.Razor.TagHelpers.Base;
-using Smart.Design.Razor.TagHelpers.Buttons.ButtonToolbar;
 using Smart.Design.Razor.TagHelpers.Buttons.ButtonBackToTop;
+using Smart.Design.Razor.TagHelpers.Buttons.ButtonToolbar;
 using Smart.Design.Razor.TagHelpers.Card;
 using Smart.Design.Razor.TagHelpers.Citation;
 using Smart.Design.Razor.TagHelpers.Container;
@@ -31,11 +31,12 @@ using Smart.Design.Razor.TagHelpers.Pagination;
 using Smart.Design.Razor.TagHelpers.Panel;
 using Smart.Design.Razor.TagHelpers.Pill;
 using Smart.Design.Razor.TagHelpers.ProgressBar;
+using Smart.Design.Razor.TagHelpers.SideMenu;
 using Smart.Design.Razor.TagHelpers.Spacer;
 using Smart.Design.Razor.TagHelpers.TableOfContent;
 using Smart.Design.Razor.TagHelpers.Tabs;
-using Smart.Design.Razor.TagHelpers.ValidationMessage;
 using Smart.Design.Razor.TagHelpers.Titles.PageTitle;
+using Smart.Design.Razor.TagHelpers.ValidationMessage;
 
 namespace Smart.Design.Razor.Extensions;
 
@@ -79,6 +80,7 @@ public static class DependencyRegistration
             .AddTransient<ITableOfContentHtmlGenerator, TableOfContentHtmlGenerator>()
             .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>()
             .AddTransient<IPageTitleHtmlGenerator, PageTitleHtmlGenerator>()
-            .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>();
+            .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>()
+            .AddTransient<ISideMenuHtmlGenerator, SideMenuHtmlGenerator>();
     }
 }

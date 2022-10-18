@@ -67,6 +67,8 @@ public static class TagNames
 
     public const string SelectTagName = "smart-select";
 
+    public const string SideMenuTagName = "smart-sidemenu";
+
     public const string TableOfContentTagName = "smart-table-of-content";
 
     public const string Tabs = "smart-tabs";
