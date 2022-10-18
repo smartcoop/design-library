@@ -26,7 +26,12 @@ public class ButtonBackToTopHtmlGenerator : IButtonBackToTopHtmlGenerator
 
         var svg = _iconHtmlGenerator.GenerateIcon(Image.ArrowUp);
 
+        var accessibility = new TagBuilder("div");
+        accessibility.AddCssClass("u-sr-accessible");
+        accessibility.InnerHtml.Append(label);
+
         span.InnerHtml.AppendHtml(svg);
+        span.InnerHtml.AppendHtml(accessibility);
         button.InnerHtml.AppendHtml(span);
 
         return button;
