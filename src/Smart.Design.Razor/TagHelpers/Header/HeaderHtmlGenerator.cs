@@ -37,7 +37,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return div1;
     }
 
-    private IHtmlContent GetDivLeftHtmlContent(string homePageUrl)
+    private static IHtmlContent GetDivLeftHtmlContent(string homePageUrl)
     {
         var divLeft1 = new TagBuilder("div");
         divLeft1.AddCssClass("c-toolbar__item");
@@ -59,7 +59,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divLeft1;
     }
 
-    private IHtmlContent GetDivRight1(string currentLanguage, Dictionary<string, string> languagesAndLink)
+    private static IHtmlContent GetDivRight1(string currentLanguage, Dictionary<string, string> languagesAndLink)
     {
         var divRight1 = new TagBuilder("div");
         divRight1.AddCssClass("c-toolbar__item");
@@ -84,11 +84,11 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         {
             var li = new TagBuilder("li");
             li.AddCssClass("c-menu__item");
-            li.InnerHtml.Append(item.Key);
 
             var href = new TagBuilder("a");
             href.AddCssClass("c-menu__label");
-            languageButton.Attributes["href"] = item.Value;
+            href.Attributes["href"] = item.Value;
+            href.InnerHtml.Append(item.Key);
 
             li.InnerHtml.AppendHtml(href);
             languageUl.InnerHtml.AppendHtml(li);
@@ -104,7 +104,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight1;
     }
 
-    private IHtmlContent GetDivRight2(string userName, string avatarPath, Dictionary<string, string> labelsAndLinks)
+    private static IHtmlContent GetDivRight2(string userName, string avatarPath, Dictionary<string, string> labelsAndLinks)
     {
         var divRight2 = new TagBuilder("div");
         divRight2.AddCssClass("c-toolbar__item");
@@ -112,6 +112,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var button = new TagBuilder("button");
         button.AddCssClass("c-user-navigation");
         button.Attributes["data-menu"] = "userMenu";
+        button.Attributes["href"] ="#";
 
         var divImage = new TagBuilder("div");
         divImage.AddCssClass("c-avatar c-avatar--img");
@@ -133,8 +134,39 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         menu.AddCssClass("c-menu c-menu--large");
         menu.Attributes["id"] = "userMenu";
 
+        var menuInfo = new TagBuilder("li");
+        menuInfo.AddCssClass("c - menu__info");
+
+        var divAvaterText = new TagBuilder("div");
+        divAvaterText.AddCssClass("c-avatar-and-text");
+
+        var divAvaterImg = new TagBuilder("div");
+        divAvaterImg.AddCssClass("c-avatar c-avatar--img");
+        var img = new TagBuilder("img");
+        img.Attributes["alt"] = "avatar";
+        divAvaterImg.InnerHtml.AppendHtml(img);
+
+        var divText = new TagBuilder("div");
+        divText.AddCssClass("c-avatar-and-text__text");
+        var text = new TagBuilder("p");
+        var strong = new TagBuilder("strong");
+        strong.InnerHtml.AppendHtml(userName.Substring(0, userName.IndexOf(" ")));
+        text.InnerHtml.Append("Signed in as ");
+        text.InnerHtml.AppendHtml(strong);
+        divText.InnerHtml.AppendHtml(text);
+
+        divAvaterText.InnerHtml.AppendHtml(divAvaterImg);
+        divAvaterText.InnerHtml.AppendHtml(divText);
+
+        menuInfo.InnerHtml.AppendHtml(divAvaterText);
+        menu.InnerHtml.AppendHtml(menuInfo);
+
         foreach (KeyValuePair<string, string> item in labelsAndLinks)
         {
+            var lineLi = new TagBuilder("li");
+            lineLi.AddCssClass("c-menu__divider");
+            lineLi.Attributes["role"] = "presentational";
+
             var li = new TagBuilder("li");
             li.AddCssClass("c-menu__item");
 
@@ -148,6 +180,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
             divider.Attributes["role"] = "presentational";
 
             li.InnerHtml.AppendHtml(linkMenu);
+            menu.InnerHtml.AppendHtml(lineLi);
             menu.InnerHtml.AppendHtml(li);
         }
 

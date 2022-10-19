@@ -22,7 +22,7 @@ public class HeaderTagHelper : TagHelper
     /// <summary>
     /// list of available languages
     /// </summary>
-    public Dictionary<string, string> languagesAndLinks { get; set; } = new Dictionary<string, string>();
+    public Dictionary<string, string> LanguagesAndLinks { get; set; } = new Dictionary<string, string>();
 
     /// <summary>
     /// Current interface language
@@ -56,9 +56,9 @@ public class HeaderTagHelper : TagHelper
     /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        if (!languagesAndLinks.Any())
+        if (!LanguagesAndLinks.Any())
         {
-            throw new ArgumentException($"{nameof(languagesAndLinks)} cannot be null or empty");
+            throw new ArgumentException($"{nameof(LanguagesAndLinks)} cannot be null or empty");
         }
 
         if (string.IsNullOrEmpty(UserName))
@@ -79,7 +79,7 @@ public class HeaderTagHelper : TagHelper
         var header = new TagBuilder("header");
         header.AddCssClass("u-position-fixed u-maximize-width");
 
-        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, languagesAndLinks, CurrentLanguage, UserName, AvatarPath, LabelsAndLinks));
+        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LanguagesAndLinks, CurrentLanguage, UserName, AvatarPath, LabelsAndLinks));
 
         output.MergeAttributes(header);
         output.TagName = header.TagName;
