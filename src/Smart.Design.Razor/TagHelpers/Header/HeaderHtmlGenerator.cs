@@ -137,7 +137,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var menuInfo = new TagBuilder("li");
         menuInfo.AddCssClass("c - menu__info");
 
-        var divAvaterText = new TagBuilder("div");
+        var divAvatarText = new TagBuilder("div");
         divAvaterText.AddCssClass("c-avatar-and-text");
 
         var divAvaterImg = new TagBuilder("div");
