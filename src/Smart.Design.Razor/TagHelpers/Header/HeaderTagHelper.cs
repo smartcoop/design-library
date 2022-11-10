@@ -40,7 +40,7 @@ public class HeaderTagHelper : TagHelper
     public string AvatarPath { get; set; }
 
     /// <summary>
-    /// Dictionnary of label and links items for the drop down menu
+    /// Dictionary of label and links items for the drop down menu
     /// </summary>
     public Dictionary<string, string> LabelsAndLinks { get; set; } = new Dictionary<string, string>();
 
