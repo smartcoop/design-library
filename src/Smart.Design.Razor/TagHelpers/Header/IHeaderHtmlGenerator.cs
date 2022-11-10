@@ -10,7 +10,7 @@ public interface IHeaderHtmlGenerator
 {
     /// <summary>
     /// Generate generic header with a <see cref="homePageUrl"/>, string a <see cref="languagesAndLinks"/> dictionary, a <see cref="currentLanguage"/> string,
-    /// a <see cref="userName"/> string,  a <see cref="avatarPath"/> string, <see cref="labelsAndLinks"/> dictionnary.
+    /// a <see cref="userName"/> string,  a <see cref="avatarPath"/> string, <see cref="labelsAndLinks"/> dictionary.
     /// </summary>
     /// <param name="homePageUrl"></param>
     /// <param name="languagesAndLinks"></param>
