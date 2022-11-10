@@ -3,7 +3,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 
 namespace Smart.Design.Razor.TagHelpers.Header;
-
+/// <summary>
+/// Generate the header component for a <see cref="HeaderTagHelper"/>
+/// </summary>
 public interface IHeaderHtmlGenerator
 {
     /// <summary>
