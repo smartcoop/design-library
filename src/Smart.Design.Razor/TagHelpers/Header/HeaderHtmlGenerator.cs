@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Header;
-
+    /// <inheritdoc/>
 public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 {
     /// <inheritdoc/>
