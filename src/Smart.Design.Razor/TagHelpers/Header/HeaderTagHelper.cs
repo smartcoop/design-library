@@ -45,9 +45,9 @@ public class HeaderTagHelper : TagHelper
     public Dictionary<string, string> LabelsAndLinks { get; set; } = new Dictionary<string, string>();
 
     // <summary>
-    /// Creates a new <see cref="SideMenuTagHelper"/>.
+    /// Creates a new <see cref="HeaderTagHelper"/>.
     /// </summary>
-    /// <param name="sideMenuHtmlGenerator">The service that generates Smart Design side menu with labels and navigation links.</param>
+    /// <param name="HeaderTagHelper">The service that generates the Smart Design header with logo and user's profile picture</param>
     public HeaderTagHelper(IHeaderHtmlGenerator headerHtmlGenerator)
     {
         _headerHtmlGenerator = headerHtmlGenerator;
