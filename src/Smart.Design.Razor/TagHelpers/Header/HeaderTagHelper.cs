@@ -37,7 +37,7 @@ public class HeaderTagHelper : TagHelper
     /// <summary>
     /// Path to the current user avatar
     /// </summary>
-    public string AvatarPath { get; set; }
+    public string AvatarPath { get; set; } = "~/unity/images/default_image.jpg";
 
     /// <summary>
     /// Dictionary of label and links items for the drop down menu
@@ -69,11 +69,6 @@ public class HeaderTagHelper : TagHelper
         if (!LabelsAndLinks.Any())
         {
             throw new ArgumentException($"{nameof(LabelsAndLinks)} cannot be null or empty");
-        }
-
-        if (string.IsNullOrEmpty(AvatarPath))
-        {
-            AvatarPath = "~/unity/images/default_image.jpg";
         }
 
         var header = new TagBuilder("header");
