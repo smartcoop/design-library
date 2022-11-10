@@ -30,9 +30,14 @@ public class HeaderTagHelper : TagHelper
     public string CurrentLanguage { get; set; }
 
     /// <summary>
-    /// Current user full name
+    /// Current user first name
     /// </summary>
-    public string UserName { get; set; }
+    public string FirstName { get; set; }
+
+    /// <summary>
+    /// Current user last name
+    /// </summary>
+    public string LastName { get; set; }
 
     /// <summary>
     /// Path to the current user avatar
@@ -61,9 +66,14 @@ public class HeaderTagHelper : TagHelper
             throw new ArgumentException($"{nameof(LanguagesAndLinks)} cannot be null or empty");
         }
 
-        if (string.IsNullOrEmpty(UserName))
+        if (string.IsNullOrEmpty(FirstName))
         {
-            throw new ArgumentException($"{nameof(UserName)} cannot be null or empty");
+            throw new ArgumentException($"{nameof(FirstName)} cannot be null or empty");
+        }
+
+        if (string.IsNullOrEmpty(LastName))
+        {
+            throw new ArgumentException($"{nameof(LastName)} cannot be null or empty");
         }
 
         if (!LabelsAndLinks.Any())
@@ -74,7 +84,7 @@ public class HeaderTagHelper : TagHelper
         var header = new TagBuilder("header");
         header.AddCssClass("u-position-fixed u-maximize-width");
 
-        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LanguagesAndLinks, CurrentLanguage, UserName, AvatarPath, LabelsAndLinks));
+        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LanguagesAndLinks, CurrentLanguage, FirstName, LastName, AvatarPath, LabelsAndLinks));
 
         output.MergeAttributes(header);
         output.TagName = header.TagName;

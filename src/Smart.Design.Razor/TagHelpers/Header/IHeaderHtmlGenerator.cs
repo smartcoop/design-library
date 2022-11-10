@@ -23,7 +23,8 @@ public interface IHeaderHtmlGenerator
                               Dictionary<string,
                               string> languagesAndLinks,
                               string currentLanguage,
-                              string userName,
+                              string firstName,
+                              string lastName,
                               string avatarPath,
                               Dictionary<string,
                               string> labelsAndLinks);

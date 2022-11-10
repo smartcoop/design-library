@@ -10,7 +10,8 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
     public TagBuilder GenerateHeader(string homePageUrl,
                                      Dictionary<string, string> languagesAndLinks,
                                      string currentLanguage,
-                                     string userName,
+                                     string firstName,
+                                     string lastName,
                                      string avatarPath,
                                      Dictionary<string, string> labelsAndLinks)
     {
@@ -28,7 +29,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         divRight.AddCssClass("c-toolbar__right");
 
         divRight.InnerHtml.AppendHtml(GetDivRight1(currentLanguage, languagesAndLinks));
-        divRight.InnerHtml.AppendHtml(GetDivRight2(userName, avatarPath, labelsAndLinks));
+        divRight.InnerHtml.AppendHtml(GetDivRight2(firstName, lastName, avatarPath, labelsAndLinks));
 
         div2.InnerHtml.AppendHtml(divLeft);
         div2.InnerHtml.AppendHtml(divRight);
@@ -104,7 +105,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight1;
     }
 
-    private static IHtmlContent GetDivRight2(string userName, string avatarPath, Dictionary<string, string> labelsAndLinks)
+    private static IHtmlContent GetDivRight2(string firstName, string lastName, string avatarPath, Dictionary<string, string> labelsAndLinks)
     {
         var divRight2 = new TagBuilder("div");
         divRight2.AddCssClass("c-toolbar__item");
@@ -125,7 +126,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         var fullName = new TagBuilder("p");
         fullName.AddCssClass("c-avatar-and-text__text");
-        fullName.InnerHtml.Append(userName);
+        fullName.InnerHtml.Append($"{firstName} {lastName}");
 
         button.InnerHtml.AppendHtml(divImage);
         button.InnerHtml.AppendHtml(fullName);
@@ -150,7 +151,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         divText.AddCssClass("c-avatar-and-text__text");
         var text = new TagBuilder("p");
         var strong = new TagBuilder("strong");
-        strong.InnerHtml.AppendHtml(userName.Substring(0, userName.IndexOf(" ")));
+        strong.InnerHtml.AppendHtml(firstName);
         text.InnerHtml.Append("Signed in as ");
         text.InnerHtml.AppendHtml(strong);
         divText.InnerHtml.AppendHtml(text);
