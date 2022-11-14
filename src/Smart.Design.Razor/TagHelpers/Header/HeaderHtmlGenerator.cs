@@ -139,7 +139,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         menuInfo.AddCssClass("c - menu__info");
 
         var divAvatarText = new TagBuilder("div");
-        divAvaterText.AddCssClass("c-avatar-and-text");
+        divAvatarText.AddCssClass("c-avatar-and-text");
 
         var divAvaterImg = new TagBuilder("div");
         divAvaterImg.AddCssClass("c-avatar c-avatar--img");
@@ -156,10 +156,10 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         text.InnerHtml.AppendHtml(strong);
         divText.InnerHtml.AppendHtml(text);
 
-        divAvaterText.InnerHtml.AppendHtml(divAvaterImg);
-        divAvaterText.InnerHtml.AppendHtml(divText);
+        divAvatarText.InnerHtml.AppendHtml(divAvaterImg);
+        divAvatarText.InnerHtml.AppendHtml(divText);
 
-        menuInfo.InnerHtml.AppendHtml(divAvaterText);
+        menuInfo.InnerHtml.AppendHtml(divAvatarText);
         menu.InnerHtml.AppendHtml(menuInfo);
 
         foreach (KeyValuePair<string, string> item in labelsAndLinks)
