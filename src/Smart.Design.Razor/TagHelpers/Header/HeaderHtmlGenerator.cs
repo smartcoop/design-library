@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Header;
-    /// <inheritdoc/>
+/// <inheritdoc/>
 public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 {
     /// <inheritdoc/>
@@ -29,7 +29,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         divRight.AddCssClass("c-toolbar__right");
 
         divRight.InnerHtml.AppendHtml(GetDivRight1(currentLanguage, languagesAndLinks));
-        divRight.InnerHtml.AppendHtml(GetDivRight2(firstName, lastName, avatarPath, labelsAndLinks));
+        divRight.InnerHtml.AppendHtml(GetDivRight2(currentLanguage, firstName, lastName, avatarPath, labelsAndLinks));
 
         div2.InnerHtml.AppendHtml(divLeft);
         div2.InnerHtml.AppendHtml(divRight);
@@ -105,7 +105,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight1;
     }
 
-    private static IHtmlContent GetDivRight2(string firstName, string lastName, string avatarPath, Dictionary<string, string> labelsAndLinks)
+    private static IHtmlContent GetDivRight2(string currentLanguage, string firstName, string lastName, string avatarPath, Dictionary<string, string> labelsAndLinks)
     {
         var divRight2 = new TagBuilder("div");
         divRight2.AddCssClass("c-toolbar__item");
@@ -113,7 +113,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var button = new TagBuilder("button");
         button.AddCssClass("c-user-navigation");
         button.Attributes["data-menu"] = "userMenu";
-        button.Attributes["href"] ="#";
+        button.Attributes["href"] = "#";
 
         var divImage = new TagBuilder("div");
         divImage.AddCssClass("c-avatar c-avatar--img");
@@ -152,7 +152,22 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var text = new TagBuilder("p");
         var strong = new TagBuilder("strong");
         strong.InnerHtml.AppendHtml(firstName);
-        text.InnerHtml.Append("Signed in as ");
+        switch (currentLanguage.ToLower())
+        {
+            case "fr":
+                text.InnerHtml.Append("Connecté en tant que ");
+                break;
+            case "nl":
+                text.InnerHtml.Append("Aangemeld als ");
+                break;
+            case "de":
+                text.InnerHtml.Append("Eingeloggt als ");
+                break;
+            default:
+                text.InnerHtml.Append("Signed in as ");
+                break;
+        }
+
         text.InnerHtml.AppendHtml(strong);
         divText.InnerHtml.AppendHtml(text);
 
