@@ -19,6 +19,7 @@ using Smart.Design.Razor.TagHelpers.Form;
 using Smart.Design.Razor.TagHelpers.GlobalBanner;
 using Smart.Design.Razor.TagHelpers.Grid;
 using Smart.Design.Razor.TagHelpers.GridList;
+using Smart.Design.Razor.TagHelpers.Header;
 using Smart.Design.Razor.TagHelpers.Icon;
 using Smart.Design.Razor.TagHelpers.IconList;
 using Smart.Design.Razor.TagHelpers.InputGroup;
@@ -81,6 +82,7 @@ public static class DependencyRegistration
             .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>()
             .AddTransient<IPageTitleHtmlGenerator, PageTitleHtmlGenerator>()
             .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>()
-            .AddTransient<ISideMenuHtmlGenerator, SideMenuHtmlGenerator>();
+            .AddTransient<ISideMenuHtmlGenerator, SideMenuHtmlGenerator>()
+            .AddTransient<IHeaderHtmlGenerator, HeaderHtmlGenerator>();
     }
 }

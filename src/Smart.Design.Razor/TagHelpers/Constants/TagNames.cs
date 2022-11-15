@@ -41,6 +41,8 @@ public static class TagNames
 
     public const string GridTagName = "smart-grid";
 
+    public const string HeaderTagName = "smart-header";
+
     public const string HorizontalRuleTagName = "smart-hr";
 
     public const string IconListItemTagName = "smart-icon-list-item";
