@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Smart.Design.Razor.TagHelpers.List;
+namespace Smart.Design.Razor.TagHelpers.GridList;
 
 /// <summary>
 /// Create the grid row  in a table header.

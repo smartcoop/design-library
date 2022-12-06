@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Smart.Design.Razor.TagHelpers.List;
+namespace Smart.Design.Razor.TagHelpers.GridList;
 
 /// <summary>
 /// Generate a header &lt;theadt&gt;.

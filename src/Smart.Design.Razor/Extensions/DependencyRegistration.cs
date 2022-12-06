@@ -18,7 +18,7 @@ using Smart.Design.Razor.TagHelpers.Elevation;
 using Smart.Design.Razor.TagHelpers.Form;
 using Smart.Design.Razor.TagHelpers.GlobalBanner;
 using Smart.Design.Razor.TagHelpers.Grid;
-using Smart.Design.Razor.TagHelpers.List;
+using Smart.Design.Razor.TagHelpers.GridList;
 using Smart.Design.Razor.TagHelpers.Header;
 using Smart.Design.Razor.TagHelpers.Icon;
 using Smart.Design.Razor.TagHelpers.IconList;
