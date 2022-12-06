@@ -165,7 +165,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         foreach (KeyValuePair<string, string> item in languagesAndLink)
         {
-            var li = GenerateLi(item.Value, item.Key);
+            var li = GenerateLi(item.Key, item.Value);
             languageUl.InnerHtml.AppendHtml(li);
         }
 
