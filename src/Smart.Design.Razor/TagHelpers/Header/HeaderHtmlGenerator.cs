@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using System.Globalization;
+using System.Threading;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Smart.Design.Razor.Resources;
 using Smart.Design.Razor.TagHelpers.Icon;
 
 namespace Smart.Design.Razor.TagHelpers.Header;
@@ -26,6 +29,9 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
                                      string avatarPath,
                                      Dictionary<string, string> labelsAndLinks)
     {
+        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(currentLanguage);
+        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(currentLanguage);
+
         var div1 = new TagBuilder("div");
         div1.AddCssClass("c-navbar");
 
@@ -39,9 +45,9 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var divRight = new TagBuilder("div");
         divRight.AddCssClass("c-toolbar__right");
 
-        divRight.InnerHtml.AppendHtml(GetDivRight1(currentLanguage));
-        divRight.InnerHtml.AppendHtml(GetDivRight2(currentLanguage, languagesAndLinks));
-        divRight.InnerHtml.AppendHtml(GetDivRight3(currentLanguage, fullNameWithTrigram, avatarPath, labelsAndLinks));
+        divRight.InnerHtml.AppendHtml(GetDivRight1());
+        divRight.InnerHtml.AppendHtml(GetDivRight2(languagesAndLinks));
+        divRight.InnerHtml.AppendHtml(GetDivRight3(fullNameWithTrigram, avatarPath, labelsAndLinks));
 
         div2.InnerHtml.AppendHtml(divLeft);
         div2.InnerHtml.AppendHtml(divRight);
@@ -72,34 +78,8 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divLeft1;
     }
 
-    private IHtmlContent GetDivRight1(string currentLanguage)
+    private IHtmlContent GetDivRight1()
     {
-        var helpTitle = "Help and Documentation";
-        var doc = "Documentation";
-        var questions = "Questions answers";
-        var contact = "Contact us";
-
-        switch (currentLanguage.ToLower())
-        {
-            case "fr":
-                helpTitle = "Aide et documentation";
-                questions = "Questions-réponses";
-                contact = "Contactez-nous";
-                break;
-            case "nl":
-                helpTitle = "Hulp en documentatie";
-                doc = "Documentatie";
-                questions = "Vragen-antwoorden";
-                contact = "Neem contact op";
-                break;
-            case "de":
-                helpTitle = "Hilfe und Dokumentation";
-                doc = "Dokumentation";
-                questions = "Fragen & Antworten";
-                contact = "kontaktiere uns";
-                break;
-        }
-
         var divRight1 = new TagBuilder("div");
         divRight1.AddCssClass("c-toolbar__item");
 
@@ -118,6 +98,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         var textHelp = new TagBuilder("p");
         textHelp.AddCssClass("u-hidden--mobile");
+        textHelp.InnerHtml.Append(Translations.Help);
         helpButton.InnerHtml.AppendHtml(textHelp);
 
         var helpUl = new TagBuilder("ul");
@@ -129,14 +110,14 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         var p = new TagBuilder("p");
         p.AddCssClass("c-menu__subline");
-        p.InnerHtml.Append(helpTitle);
+        p.InnerHtml.Append(Translations.HelpAndDocumentation);
 
         liMenuHelp.InnerHtml.AppendHtml(p);
         helpUl.InnerHtml.AppendHtml(liMenuHelp);
 
-        var liDocumentation = GenerateLi(doc, "https://guide.smart.coop/", Image.ExternalLink);
-        var liQuestion = GenerateLi(questions, "https://account.ubik.be/faq");
-        var liContact = GenerateLi(contact, "https://smartbe.be/fr/contact/");
+        var liDocumentation = GenerateLi(Translations.Documentation, "https://guide.smart.coop/", Image.ExternalLink);
+        var liQuestion = GenerateLi(Translations.QandA, "https://account.ubik.be/faq");
+        var liContact = GenerateLi(Translations.ContactUs, "https://smartbe.be/fr/contact/");
 
         helpUl.InnerHtml.AppendHtml(liDocumentation);
         helpUl.InnerHtml.AppendHtml(liQuestion);
@@ -151,7 +132,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight1;
     }
 
-    private IHtmlContent GetDivRight2(string currentLanguage, Dictionary<string, string> languagesAndLink)
+    private IHtmlContent GetDivRight2(Dictionary<string, string> languagesAndLink)
     {
         var divRight2 = new TagBuilder("div");
         divRight2.AddCssClass("c-toolbar__item");
@@ -165,7 +146,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var languageButton = new TagBuilder("button");
         languageButton.Attributes["type"] = "button";
         languageButton.Attributes["data-menu"] = "lang-switch";
-        languageButton.InnerHtml.Append(currentLanguage);
+        languageButton.InnerHtml.Append(Translations.CurrentLanguage);
 
         var languageUl = new TagBuilder("ul");
         languageUl.AddCssClass("c-menu c-menu--large");
@@ -176,21 +157,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         var p = new TagBuilder("p");
         p.AddCssClass("c-menu__subline");
-        switch (currentLanguage.ToLower())
-        {
-            case "fr":
-                p.InnerHtml.Append("Choix de la langue");
-                break;
-            case "nl":
-                p.InnerHtml.Append("Taalkeuze");
-                break;
-            case "de":
-                p.InnerHtml.Append("Wahl der Sprache");
-                break;
-            default:
-                p.InnerHtml.Append("Choice of language");
-                break;
-        }
+        p.InnerHtml.Append(Translations.LanguageChoice);
 
         liMenuInfo.InnerHtml.AppendHtml(p);
         languageUl.InnerHtml.AppendHtml(liMenuInfo);
@@ -211,27 +178,8 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight2;
     }
 
-    private IHtmlContent GetDivRight3(string currentLanguage, string fullNameWithTrigram, string avatarPath, Dictionary<string, string> labelsAndLinks)
+    private IHtmlContent GetDivRight3(string fullNameWithTrigram, string avatarPath, Dictionary<string, string> labelsAndLinks)
     {
-        var personelInfoTitle = "Personelles informations";
-        var signOut = "Sign out";
-        switch (currentLanguage.ToLower())
-        {
-            case "fr":
-                personelInfoTitle = "Informations personelles";
-                signOut = "Se déconnecter";
-                break;
-            case "nl":
-                personelInfoTitle = "Persoonlijke informatie";
-                signOut = "Uitloggen";
-                break;
-            case "de":
-                personelInfoTitle = "";
-                signOut = "Ausloggen";
-                break;
-        }
-
-
         var divRight3 = new TagBuilder("div");
         divRight3.AddCssClass("c-toolbar__item");
 
@@ -265,7 +213,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         var pInfo = new TagBuilder("p");
         pInfo.AddCssClass("c-menu__subline");
-        pInfo.InnerHtml.Append(personelInfoTitle);
+        pInfo.InnerHtml.Append(Translations.PersonalInformations);
 
         menuInfo.InnerHtml.AppendHtml(pInfo);
         menu.InnerHtml.AppendHtml(menuInfo);
@@ -288,7 +236,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         hrefSignOut.Attributes["href"] = "#";
         var svg = _iconHtmlGenerator.GenerateIcon(Image.SignOut);
         var span = new TagBuilder("span");
-        span.InnerHtml.Append(signOut);
+        span.InnerHtml.Append(Translations.SignOut);
 
         hrefSignOut.InnerHtml.AppendHtml(svg);
         hrefSignOut.InnerHtml.AppendHtml(span);
