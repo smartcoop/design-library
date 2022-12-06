@@ -76,6 +76,7 @@ public enum Image
     Search,
     Send,
     Settings,
+    SignOut,
     Table,
     Tag,
     ThreeRows,
