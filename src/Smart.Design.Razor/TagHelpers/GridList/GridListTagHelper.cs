@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Constants;
 
-namespace Smart.Design.Razor.TagHelpers.List;
+namespace Smart.Design.Razor.TagHelpers.GridList;
 
 /// <summary>
 /// <see cref="ITagHelper" /> implementation of a Smart design &lt;grid-list&gt;.
