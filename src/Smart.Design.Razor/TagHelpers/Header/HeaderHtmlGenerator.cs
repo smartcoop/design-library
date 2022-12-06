@@ -250,7 +250,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight3;
     }
 
-    private IHtmlContent GenerateLi(string innerHtml, string href, Image icon = 0)
+    private IHtmlContent GenerateLi(string innerHtml, string href, Image icon = Image.None)
     {
         var liItem = new TagBuilder("li");
         liItem.AddCssClass("c-menu__item");
@@ -258,7 +258,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         link.AddCssClass("c-menu__label");
         link.Attributes["href"] = href;
 
-        if (icon != 0)
+        if (icon != Image.None)
         {
             var svg = _iconHtmlGenerator.GenerateIcon(icon);
             var span = new TagBuilder("span");
