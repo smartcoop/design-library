@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
-    <Version>1.1.3</Version>
+    <Version>1.1.4</Version>
     <Company>Smart Coop</Company>
     <Authors>Smart Coop</Authors>
     <Description>Tag Helpers implementation of the Smart Design System. Official documentation can be seen at https://design.smart.coop.</Description>
