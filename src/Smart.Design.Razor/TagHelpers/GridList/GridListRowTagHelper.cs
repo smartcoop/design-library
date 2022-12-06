@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Razor.TagHelpers.Base;
 using Smart.Design.Razor.TagHelpers.Constants;
 
-namespace Smart.Design.Razor.TagHelpers.GridList;
+namespace Smart.Design.Razor.TagHelpers.List;
 
 /// <summary>
 /// <see cref="ITagHelper" /> Create the grid data in a table body.
