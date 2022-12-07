@@ -27,12 +27,12 @@ public class HeaderTagHelper : TagHelper
     /// <summary>
     /// Current interface language
     /// </summary>
-    public string CurrentLanguage { get; set; }
+    public string? TargetLanguage { get; set; }
 
     /// <summary>
-    /// Current user first,last name & trigram
+    /// Current user first, last name and trigram
     /// </summary>
-    public string FullNameWithTrigram { get; set; }
+    public string FullNameWithTrigram { get; set; } = null!;
 
     /// <summary>
     /// Path to the current user avatar
@@ -58,23 +58,23 @@ public class HeaderTagHelper : TagHelper
     {
         if (!LanguagesAndLinks.Any())
         {
-            throw new ArgumentException($"{nameof(LanguagesAndLinks)} cannot be null or empty");
+            throw new ArgumentException($"{nameof(LanguagesAndLinks)} cannot be empty");
         }
 
         if (string.IsNullOrEmpty(FullNameWithTrigram))
         {
-            throw new ArgumentException($"{nameof(FullNameWithTrigram)} cannot be null or empty");
+            throw new ArgumentException($"{nameof(FullNameWithTrigram)} cannot be empty");
         }
 
         if (!LabelsAndLinks.Any())
         {
-            throw new ArgumentException($"{nameof(LabelsAndLinks)} cannot be null or empty");
+            throw new ArgumentException($"{nameof(LabelsAndLinks)} cannot be empty");
         }
 
         var header = new TagBuilder("header");
         header.AddCssClass("u-position-fixed u-maximize-width");
 
-        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LanguagesAndLinks, CurrentLanguage, FullNameWithTrigram, AvatarPath, LabelsAndLinks));
+        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LanguagesAndLinks, TargetLanguage, FullNameWithTrigram, AvatarPath, LabelsAndLinks));
 
         output.MergeAttributes(header);
         output.TagName = header.TagName;

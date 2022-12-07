@@ -24,13 +24,15 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
     /// <inheritdoc/>
     public TagBuilder GenerateHeader(string homePageUrl,
                                      Dictionary<string, string> languagesAndLinks,
-                                     string currentLanguage,
+                                     string? targetLanguage,
                                      string fullNameWithTrigram,
                                      string avatarPath,
                                      Dictionary<string, string> labelsAndLinks)
     {
-        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(currentLanguage);
-        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(currentLanguage);
+        if (!string.IsNullOrEmpty(targetLanguage))
+        {
+            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(targetLanguage);
+        }
 
         var div1 = new TagBuilder("div");
         div1.AddCssClass("c-navbar");
@@ -115,9 +117,9 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         liMenuHelp.InnerHtml.AppendHtml(p);
         helpUl.InnerHtml.AppendHtml(liMenuHelp);
 
-        var liDocumentation = GenerateLi(Translations.Documentation, "https://guide.smart.coop/", Image.ExternalLink);
-        var liQuestion = GenerateLi(Translations.QandA, "https://account.ubik.be/faq");
-        var liContact = GenerateLi(Translations.ContactUs, "https://smartbe.be/fr/contact/");
+        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, "https://guide.smart.coop/", Image.ExternalLink);
+        var liQuestion = GenerateListItemWithBanner(Translations.QandA, "https://account.ubik.be/faq");
+        var liContact = GenerateListItemWithBanner(Translations.ContactUs, "https://smartbe.be/fr/contact/");
 
         helpUl.InnerHtml.AppendHtml(liDocumentation);
         helpUl.InnerHtml.AppendHtml(liQuestion);
@@ -165,7 +167,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         foreach (KeyValuePair<string, string> item in languagesAndLink)
         {
-            var li = GenerateLi(item.Key, item.Value);
+            var li = GenerateListItemWithBanner(item.Key, item.Value);
             languageUl.InnerHtml.AppendHtml(li);
         }
 
@@ -220,7 +222,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         foreach (KeyValuePair<string, string> item in labelsAndLinks)
         {
-            var li = GenerateLi(item.Key, item.Value);
+            var li = GenerateListItemWithBanner(item.Key, item.Value);
             menu.InnerHtml.AppendHtml(li);
         }
 
@@ -250,7 +252,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight3;
     }
 
-    private IHtmlContent GenerateLi(string innerHtml, string href, Image icon = Image.None)
+    private IHtmlContent GenerateListItemWithBanner(string innerHtml, string href, Image icon = Image.None)
     {
         var liItem = new TagBuilder("li");
         liItem.AddCssClass("c-menu__item");
