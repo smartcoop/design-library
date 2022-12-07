@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
@@ -17,6 +18,11 @@ public class PageTitleTagHelper : TagHelper
     /// Title of the page.
     /// </summary>
     public string Title { get; set; } = null!;
+
+    /// <summary>
+    /// Optional list of informations to display alonside the page title
+    /// </summary>
+    public List<string>? Infos { get; set; }
 
     /// <summary>
     /// Creates a new <see cref="PageTitleHtmlGenerator"/>.
@@ -38,7 +44,7 @@ public class PageTitleTagHelper : TagHelper
         var pageTitleBlock = new TagBuilder("div");
         pageTitleBlock.AddCssClass("c-navbar u-position-fixed main-title");
 
-        pageTitleBlock.InnerHtml.SetHtmlContent(_pageTitleGenerator.GeneratePageTitleItem(Title));
+        pageTitleBlock.InnerHtml.SetHtmlContent(_pageTitleGenerator.GeneratePageTitleItem(Title, Infos));
 
         output.MergeAttributes(pageTitleBlock);
         output.TagName = pageTitleBlock.TagName;
