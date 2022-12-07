@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Smart.Design.Razor.TagHelpers.Titles.PageTitle;
@@ -26,29 +28,32 @@ public class PageTitleHtmlGenerator : IPageTitleHtmlGenerator
 
         if (infos != null && infos.Any())
         {
-            var div3 = new TagBuilder("div");
-            div3.AddCssClass("c-toolbar__right");
-
-            var div3Child = new TagBuilder("div");
-            div3Child.AddCssClass("c-toolbar__item");
-
-            var line = new TagBuilder("p");
-            line.AddCssClass("text-muted");
-
-            for (int i = 0; i < infos.Count; i++)
-            {
-                if (i != 0)
-                {
-                    line.InnerHtml.Append(" - ");
-                }
-                line.InnerHtml.Append(infos[i]);
-            }
-
-            div3Child.InnerHtml.AppendHtml(line);
-            div3.InnerHtml.AppendHtml(div3Child);
-            div1.InnerHtml.AppendHtml(div3);
+            div1.InnerHtml.AppendHtml(GetInfos(infos));
         }
 
         return div1;
+    }
+
+    private IHtmlContent GetInfos(List<string> infos)
+    {
+        var div3 = new TagBuilder("div");
+        div3.AddCssClass("c-toolbar__right");
+
+        var div3Child = new TagBuilder("div");
+        div3Child.AddCssClass("c-toolbar__item");
+
+        var line = new TagBuilder("p");
+        line.AddCssClass("text-muted");
+
+        line.InnerHtml.Append(infos[0]);
+        for (int i = 1; i < infos.Count; i++)
+        {
+            line.InnerHtml.Append($"-{infos[i]}");
+        }
+
+        div3Child.InnerHtml.AppendHtml(line);
+        div3.InnerHtml.AppendHtml(div3Child);
+
+        return div3;
     }
 }

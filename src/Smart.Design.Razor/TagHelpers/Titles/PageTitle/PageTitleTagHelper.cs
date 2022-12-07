@@ -22,7 +22,7 @@ public class PageTitleTagHelper : TagHelper
     /// <summary>
     /// Optional list of informations to display alonside the page title
     /// </summary>
-    public List<string>? Infos { get; set; } = null!;
+    public List<string>? Infos { get; set; }
 
     /// <summary>
     /// Creates a new <see cref="PageTitleHtmlGenerator"/>.
