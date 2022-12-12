@@ -115,6 +115,15 @@ namespace Smart.Design.Razor.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string NotValidate {
+            get {
+                return ResourceManager.GetString("NotValidate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Personal informations.
         /// </summary>
         public static string PersonalInformations {
@@ -138,6 +147,15 @@ namespace Smart.Design.Razor.Resources {
         public static string SignOut {
             get {
                 return ResourceManager.GetString("SignOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Validate.
+        /// </summary>
+        public static string Validate {
+            get {
+                return ResourceManager.GetString("Validate", resourceCulture);
             }
         }
     }

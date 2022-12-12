@@ -135,6 +135,9 @@
   <data name="LanguageChoice" xml:space="preserve">
     <value>Language choice</value>
   </data>
+  <data name="NotValidate" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
   <data name="PersonalInformations" xml:space="preserve">
     <value>Personal informations</value>
   </data>
@@ -143,5 +146,8 @@
   </data>
   <data name="SignOut" xml:space="preserve">
     <value>Sign out</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Validate</value>
   </data>
 </root>
