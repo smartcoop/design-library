@@ -23,12 +23,16 @@ public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
             {
                 li.Attributes["aria-selected"] = "true";
             }
-
-            if (i == 0 || i == 1)
+   if (i == 0)
             {
+                li.Attributes["aria-selected"] = "true";
                 li.AddCssClass("not-numbered");
             }
 
+            else if (i == 1)
+            {
+                li.AddCssClass("not-numbered");
+            }
             var link = new TagBuilder("a");
             link.AddCssClass("c-table-of-content__nav__item");
             link.Attributes["href"] = $"#section_{i + 1}";
