@@ -11,6 +11,7 @@ public class AcceptanceCheckboxHtmlGenerator : IAcceptanceCheckboxHtmlGenerator
 {
     private readonly IIconHtmlGenerator _iconHtmlGenerator;
 
+    /// <inheritdoc/>
     public AcceptanceCheckboxHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
     {
         _iconHtmlGenerator = iconHtmlGenerator;
@@ -23,11 +24,11 @@ public class AcceptanceCheckboxHtmlGenerator : IAcceptanceCheckboxHtmlGenerator
         {
             Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(currentLanguage);
         }
-        var iconAndLabel = style switch
+         (Image Icon, string Label) iconAndLabel = style switch
         {
-            AcceptanceCheckboxStyle.Danger => new Tuple<Image, string>(Image.Close, Translations.NotValidate),
-            AcceptanceCheckboxStyle.Warning => new Tuple<Image, string>(Image.Check, Translations.Validate),
-            _ => new Tuple<Image, string>(Image.Check, Translations.Validate)
+            AcceptanceCheckboxStyle.Danger =>(Image.Close, Translations.NotValidate),
+            AcceptanceCheckboxStyle.Warning => (Image.Check, Translations.Validate),
+            _ => (Image.Check, Translations.Validate)
         };
         var divFlex = new TagBuilder("div");
         divFlex.AddCssClass("u-flex u-flex--twins o-flex--vertical-center");
@@ -59,10 +60,10 @@ public class AcceptanceCheckboxHtmlGenerator : IAcceptanceCheckboxHtmlGenerator
 
         var span = new TagBuilder("span");
         span.AddCssClass("c - button__content");
-        var icon = _iconHtmlGenerator.GenerateIcon(iconAndLabel.Item1);
+        var icon = _iconHtmlGenerator.GenerateIcon(iconAndLabel.Icon);
         var spanLabel = new TagBuilder("span");
         spanLabel.AddCssClass("c-button__label");
-        spanLabel.InnerHtml.Append(iconAndLabel.Item2);
+        spanLabel.InnerHtml.Append(iconAndLabel.Label);
 
         span.InnerHtml.AppendHtml(icon);
         span.InnerHtml.AppendHtml(spanLabel);
