@@ -42,7 +42,7 @@ public class AcceptanceCheckboxTagHelper : TagHelper
     {
         if (string.IsNullOrWhiteSpace(Label))
         {
-            throw new MissingFieldException(nameof(AcceptanceCheckboxTagHelper), nameof(Label));
+            throw new ArgumentException($"{nameof(Label)} cannot be empty");
         }
 
         var acceptanceCheckboxBlock = new TagBuilder("div");
