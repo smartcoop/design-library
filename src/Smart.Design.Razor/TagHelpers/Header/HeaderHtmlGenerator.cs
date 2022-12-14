@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
@@ -29,17 +30,14 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
                                      string avatarPath,
                                      Dictionary<string, string> labelsAndLinks)
     {
-        if (!string.IsNullOrEmpty(targetLanguage))
+        (string CultureCode, string Language) languageCulture = targetLanguage?.ToUpper() switch
         {
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(targetLanguage);
-        }
-
-        var language = (targetLanguage?.ToUpper()) switch
-        {
-            "FR" => "Français",
-            "NL" => "Nederlands",
-            _ => "English",
+            "FR" => ("FR", "Français"),
+            "NL" => ("NL", "Nederlands"),
+            _ => ("EN", "English")
         };
+        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(languageCulture.CultureCode);
+
         var div1 = new TagBuilder("div");
         div1.AddCssClass("c-navbar");
 
@@ -54,7 +52,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         divRight.AddCssClass("c-toolbar__right");
 
         divRight.InnerHtml.AppendHtml(GetDivRight1());
-        divRight.InnerHtml.AppendHtml(GetDivRight2(languagesAndLinks, language));
+        divRight.InnerHtml.AppendHtml(GetDivRight2(languagesAndLinks, languageCulture.Language));
         divRight.InnerHtml.AppendHtml(GetDivRight3(fullNameWithTrigram, avatarPath, labelsAndLinks));
 
         div2.InnerHtml.AppendHtml(divLeft);
@@ -162,7 +160,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         foreach (KeyValuePair<string, string> item in languagesAndLink)
         {
-            if (item.Key.ToUpper() == language.ToUpper())
+            if (string.Equals(item.Key, language, StringComparison.OrdinalIgnoreCase))
             {
                 var p = new TagBuilder("p");
                 p.AddCssClass("c-menu__info u-text-muted");
