@@ -44,7 +44,7 @@ public class AcceptanceCheckboxHtmlGenerator : IAcceptanceCheckboxHtmlGenerator
         var input = new TagBuilder("input");
         input.Attributes["type"] = "checkbox";
         input.Attributes["data-toggle"] = "disabled";
-        input.Attributes["data-switch-target"] = "c-button--warning";
+        input.Attributes["data-switch-target"] = $"c-button--{style.ToString().ToLowerInvariant()}";
         input.InnerHtml.Append(label);
 
         labelTag.InnerHtml.AppendHtml(input);

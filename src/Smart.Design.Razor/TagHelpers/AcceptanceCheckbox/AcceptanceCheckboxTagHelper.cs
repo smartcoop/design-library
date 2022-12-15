@@ -46,7 +46,8 @@ public class AcceptanceCheckboxTagHelper : TagHelper
         }
 
         var acceptanceCheckboxBlock = new TagBuilder("div");
-        acceptanceCheckboxBlock.AddCssClass($"c-panel--{Style.ToString().ToLowerInvariant()} u-padding-l u-padding-horizontal-xl c-panel--border-r-sm");
+        acceptanceCheckboxBlock.AddCssClass(ComputeStyleCssClass());
+        acceptanceCheckboxBlock.AddCssClass("u-padding-l u-padding-horizontal-xl c-panel--border-r-sm");
         acceptanceCheckboxBlock.Attributes["id"] = "acceptation";
 
         acceptanceCheckboxBlock.InnerHtml.SetHtmlContent(_acceptanceCheckboxGenerator.GenerateAcceptanceCheckbox(Label, Style, CurrentLanguage));
@@ -55,5 +56,15 @@ public class AcceptanceCheckboxTagHelper : TagHelper
         output.TagName = acceptanceCheckboxBlock.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
         output.Content.SetHtmlContent(acceptanceCheckboxBlock.InnerHtml);
+    }
+
+    private string ComputeStyleCssClass()
+    {
+        return Style switch
+        {
+            AcceptanceCheckboxStyle.Warning => "c-panel--yellow",
+            AcceptanceCheckboxStyle.Danger => "c-panel--red",
+            _ => throw new NotImplementedException($"Style undefined for style {Style}")
+        };
     }
 }
