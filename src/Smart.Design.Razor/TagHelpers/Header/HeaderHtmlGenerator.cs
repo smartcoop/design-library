@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Threading;
@@ -29,10 +30,13 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
                                      string avatarPath,
                                      Dictionary<string, string> labelsAndLinks)
     {
-        if (!string.IsNullOrEmpty(targetLanguage))
+        (string CultureCode, string Language) languageCulture = targetLanguage?.ToUpper() switch
         {
-            Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(targetLanguage);
-        }
+            "FR" => ("FR", "Français"),
+            "NL" => ("NL", "Nederlands"),
+            _ => ("EN", "English")
+        };
+        Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(languageCulture.CultureCode);
 
         var div1 = new TagBuilder("div");
         div1.AddCssClass("c-navbar");
@@ -48,7 +52,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         divRight.AddCssClass("c-toolbar__right");
 
         divRight.InnerHtml.AppendHtml(GetDivRight1());
-        divRight.InnerHtml.AppendHtml(GetDivRight2(languagesAndLinks));
+        divRight.InnerHtml.AppendHtml(GetDivRight2(languagesAndLinks, languageCulture.Language));
         divRight.InnerHtml.AppendHtml(GetDivRight3(fullNameWithTrigram, avatarPath, labelsAndLinks));
 
         div2.InnerHtml.AppendHtml(divLeft);
@@ -134,7 +138,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight1;
     }
 
-    private IHtmlContent GetDivRight2(Dictionary<string, string> languagesAndLink)
+    private IHtmlContent GetDivRight2(Dictionary<string, string> languagesAndLink, string language)
     {
         var divRight2 = new TagBuilder("div");
         divRight2.AddCssClass("c-toolbar__item");
@@ -154,21 +158,20 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         languageUl.AddCssClass("c-menu c-menu--large");
         languageUl.Attributes["id"] = "lang-switch";
 
-        var liMenuInfo = new TagBuilder("li");
-        liMenuInfo.AddCssClass("c-menu__info");
-
-        var p = new TagBuilder("p");
-        p.AddCssClass("c-menu__subline");
-        p.InnerHtml.Append(Translations.LanguageChoice);
-
-        liMenuInfo.InnerHtml.AppendHtml(p);
-        languageUl.InnerHtml.AppendHtml(liMenuInfo);
-
-
         foreach (KeyValuePair<string, string> item in languagesAndLink)
         {
-            var li = GenerateListItemWithBanner(item.Key, item.Value);
-            languageUl.InnerHtml.AppendHtml(li);
+            if (string.Equals(item.Key, language, StringComparison.OrdinalIgnoreCase))
+            {
+                var p = new TagBuilder("p");
+                p.AddCssClass("c-menu__info u-text-muted");
+                p.InnerHtml.Append(item.Key);
+                languageUl.InnerHtml.AppendHtml(p);
+            }
+            else
+            {
+                var li = GenerateListItemWithBanner(item.Key, item.Value);
+                languageUl.InnerHtml.AppendHtml(li);
+            }
         }
 
         languageLi.InnerHtml.AppendHtml(languageButton);

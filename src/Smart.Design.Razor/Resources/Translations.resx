@@ -132,9 +132,6 @@
   <data name="HelpAndDocumentation" xml:space="preserve">
     <value>Help and Documentation</value>
   </data>
-  <data name="LanguageChoice" xml:space="preserve">
-    <value>Language choice</value>
-  </data>
   <data name="PersonalInformations" xml:space="preserve">
     <value>Personal informations</value>
   </data>
