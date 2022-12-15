@@ -9,6 +9,7 @@ namespace Smart.Design.Razor.TagHelpers.TableOfContent;
 /// </summary>
 public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
 {
+    /// <inheritdoc/>
     public TagBuilder GenerateListOfItems(List<string> titles)
     {
         var list = new TagBuilder("ol");
@@ -21,6 +22,11 @@ public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
             if (i == 0)
             {
                 li.Attributes["aria-selected"] = "true";
+                li.AddCssClass("not-numbered");
+            }
+            else if (i == 1)
+            {
+                li.AddCssClass("not-numbered");
             }
 
             var link = new TagBuilder("a");
