@@ -1,5 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Smart.Design.Razor.TagHelpers.Alert;
+using Smart.Design.Razor.TagHelpers.AcceptanceCheckbox;
 using Smart.Design.Razor.TagHelpers.AlertStack;
 using Smart.Design.Razor.TagHelpers.Avatar;
 using Smart.Design.Razor.TagHelpers.Badge;
@@ -81,6 +82,7 @@ public static class DependencyRegistration
             .AddTransient<ITableOfContentHtmlGenerator, TableOfContentHtmlGenerator>()
             .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>()
             .AddTransient<IPageTitleHtmlGenerator, PageTitleHtmlGenerator>()
+            .AddTransient<IAcceptanceCheckboxHtmlGenerator, AcceptanceCheckboxHtmlGenerator>()
             .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>()
             .AddTransient<ISideMenuHtmlGenerator, SideMenuHtmlGenerator>()
             .AddTransient<IHeaderHtmlGenerator, HeaderHtmlGenerator>();

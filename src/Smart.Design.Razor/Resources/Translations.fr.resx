@@ -132,6 +132,9 @@
   <data name="HelpAndDocumentation" xml:space="preserve">
     <value>Aide et documentation</value>
   </data>
+  <data name="NotValidate" xml:space="preserve">
+    <value>Confirmer</value>
+  </data>
   <data name="PersonalInformations" xml:space="preserve">
     <value>Informations personnelles</value>
   </data>
@@ -140,5 +143,8 @@
   </data>
   <data name="SignOut" xml:space="preserve">
     <value>Se déconnecter</value>
+  </data>
+  <data name="Validate" xml:space="preserve">
+    <value>Valider</value>
   </data>
 </root>
