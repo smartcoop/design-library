@@ -103,17 +103,8 @@ namespace Smart.Design.Razor.Resources {
             get {
                 return ResourceManager.GetString("HelpAndDocumentation", resourceCulture);
             }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Language choice.
-        /// </summary>
-        public static string LanguageChoice {
-            get {
-                return ResourceManager.GetString("LanguageChoice", resourceCulture);
-            }
-        }
-        
+        }        
+                     
         /// <summary>
         ///   Looks up a localized string similar to Confirm.
         /// </summary>

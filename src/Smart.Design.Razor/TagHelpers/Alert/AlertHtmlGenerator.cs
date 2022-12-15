@@ -102,9 +102,9 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
 
     private void AddSingleMessage(List<string> messages, TagBuilder alertMessageContent)
     {
-        var messageParagraph = new TagBuilder("p");
-        messageParagraph.InnerHtml.Append(messages[0]);
-        alertMessageContent.InnerHtml.AppendHtml(messageParagraph);
+        var messageDiv = new TagBuilder("div");
+        messageDiv.InnerHtml.AppendHtml(messages[0]);
+        alertMessageContent.InnerHtml.AppendHtml(messageDiv);
     }
 
     private void AddMultipleMessages(List<string> messages, TagBuilder alertMessageContent)
