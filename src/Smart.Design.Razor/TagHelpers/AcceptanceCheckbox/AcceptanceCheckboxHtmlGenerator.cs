@@ -59,7 +59,7 @@ public class AcceptanceCheckboxHtmlGenerator : IAcceptanceCheckboxHtmlGenerator
         button.Attributes["disabled"] = "";
 
         var span = new TagBuilder("span");
-        span.AddCssClass("c - button__content");
+        span.AddCssClass("c-button__content");
         var icon = _iconHtmlGenerator.GenerateIcon(iconAndLabel.Icon);
         var spanLabel = new TagBuilder("span");
         spanLabel.AddCssClass("c-button__label");
