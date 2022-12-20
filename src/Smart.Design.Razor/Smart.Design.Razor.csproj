@@ -53,11 +53,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Update="Resources\Translations.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Translations.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
 
   <ItemGroup>

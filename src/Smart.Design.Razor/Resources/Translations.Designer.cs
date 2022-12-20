@@ -103,15 +103,6 @@ namespace Smart.Design.Razor.Resources {
             get {
                 return ResourceManager.GetString("HelpAndDocumentation", resourceCulture);
             }
-        }        
-                     
-        /// <summary>
-        ///   Looks up a localized string similar to Confirm.
-        /// </summary>
-        public static string NotValidate {
-            get {
-                return ResourceManager.GetString("NotValidate", resourceCulture);
-            }
         }
         
         /// <summary>
@@ -138,6 +129,15 @@ namespace Smart.Design.Razor.Resources {
         public static string SignOut {
             get {
                 return ResourceManager.GetString("SignOut", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirm.
+        /// </summary>
+        public static string ToConfirm {
+            get {
+                return ResourceManager.GetString("ToConfirm", resourceCulture);
             }
         }
         
