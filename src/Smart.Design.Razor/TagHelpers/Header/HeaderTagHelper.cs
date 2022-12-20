@@ -40,6 +40,11 @@ public class HeaderTagHelper : TagHelper
     public string AvatarPath { get; set; } = "~/unity/images/default_image.jpg";
 
     /// <summary>
+    /// Path to logout
+    /// </summary>
+    public string LogoutLink { get; set; } = null!;
+
+    /// <summary>
     /// Dictionary of label and links items for the drop down menu
     /// </summary>
     public Dictionary<string, string> LabelsAndLinks { get; set; } = new Dictionary<string, string>();
@@ -71,10 +76,15 @@ public class HeaderTagHelper : TagHelper
             throw new ArgumentException($"{nameof(LabelsAndLinks)} cannot be empty");
         }
 
+        if (!LogoutLink.Any())
+        {
+            throw new ArgumentException($"{nameof(LogoutLink)} cannot be empty");
+        }
+
         var header = new TagBuilder("header");
         header.AddCssClass("u-position-fixed u-maximize-width");
 
-        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LanguagesAndLinks, TargetLanguage, FullNameWithTrigram, AvatarPath, LabelsAndLinks));
+        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LanguagesAndLinks, TargetLanguage, FullNameWithTrigram, AvatarPath, LabelsAndLinks, LogoutLink));
 
         output.MergeAttributes(header);
         output.TagName = header.TagName;
