@@ -28,7 +28,8 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
                                      string? targetLanguage,
                                      string fullNameWithTrigram,
                                      string avatarPath,
-                                     Dictionary<string, string> labelsAndLinks)
+                                     Dictionary<string, string> labelsAndLinks,
+                                     string logoutLink)
     {
         (string CultureCode, string Language) languageCulture = targetLanguage?.ToUpper() switch
         {
@@ -53,7 +54,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         divRight.InnerHtml.AppendHtml(GetDivRight1());
         divRight.InnerHtml.AppendHtml(GetDivRight2(languagesAndLinks, languageCulture.Language));
-        divRight.InnerHtml.AppendHtml(GetDivRight3(fullNameWithTrigram, avatarPath, labelsAndLinks));
+        divRight.InnerHtml.AppendHtml(GetDivRight3(fullNameWithTrigram, avatarPath, labelsAndLinks, logoutLink));
 
         div2.InnerHtml.AppendHtml(divLeft);
         div2.InnerHtml.AppendHtml(divRight);
@@ -183,7 +184,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight2;
     }
 
-    private IHtmlContent GetDivRight3(string fullNameWithTrigram, string avatarPath, Dictionary<string, string> labelsAndLinks)
+    private IHtmlContent GetDivRight3(string fullNameWithTrigram, string avatarPath, Dictionary<string, string> labelsAndLinks, string logoutLink)
     {
         var divRight3 = new TagBuilder("div");
         divRight3.AddCssClass("c-toolbar__item");
@@ -238,7 +239,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         liSignOutText.AddCssClass("c-menu__item c-menu__item--danger");
         var hrefSignOut = new TagBuilder("a");
         hrefSignOut.AddCssClass("c-menu__label");
-        hrefSignOut.Attributes["href"] = "#";
+        hrefSignOut.Attributes["href"] = logoutLink;
         var svg = _iconHtmlGenerator.GenerateIcon(Image.SignOut);
         var span = new TagBuilder("span");
         span.InnerHtml.Append(Translations.SignOut);
