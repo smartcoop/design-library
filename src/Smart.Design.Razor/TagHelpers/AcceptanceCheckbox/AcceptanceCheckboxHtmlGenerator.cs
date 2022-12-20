@@ -26,7 +26,7 @@ public class AcceptanceCheckboxHtmlGenerator : IAcceptanceCheckboxHtmlGenerator
         }
          (Image Icon, string Label) iconAndLabel = style switch
         {
-            AcceptanceCheckboxStyle.Danger =>(Image.Close, Translations.NotValidate),
+            AcceptanceCheckboxStyle.Danger =>(Image.Close, Translations.ToConfirm),
             AcceptanceCheckboxStyle.Warning => (Image.Check, Translations.Validate),
             _ => (Image.Check, Translations.Validate)
         };

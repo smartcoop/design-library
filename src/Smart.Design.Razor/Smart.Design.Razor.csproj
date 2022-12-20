@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
-    <Version>1.1.8</Version>
+    <Version>1.1.9</Version>
     <Company>Smart Coop</Company>
     <Authors>Smart Coop</Authors>
     <Description>Tag Helpers implementation of the Smart Design System. Official documentation can be seen at https://design.smart.coop.</Description>
@@ -52,11 +52,6 @@
       <DependentUpon>Translations.fr.resx</DependentUpon>
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-    </Compile>
-    <Compile Update="Resources\Translations.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Translations.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
