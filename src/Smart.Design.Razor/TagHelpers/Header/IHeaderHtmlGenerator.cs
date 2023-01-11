@@ -9,10 +9,11 @@ namespace Smart.Design.Razor.TagHelpers.Header;
 public interface IHeaderHtmlGenerator
 {
     /// <summary>
-    /// Generate generic header with a <see cref="homePageUrl"/>, string a <see cref="languagesAndLinks"/> dictionary, a <see cref="targetLanguage"/> string?,
+    /// Generate generic header with a <see cref="homePageUrl"/> string, a <see cref="logoPath"/> string, a <see cref="languagesAndLinks"/> dictionary, a <see cref="targetLanguage"/> string?,
     /// a <see cref="fullNameWithTrigram"/> string,  a <see cref="avatarPath"/> string, <see cref="labelsAndLinks"/> dictionary , a <see cref="logoutLink"/> string.
     /// </summary>
     /// <param name="homePageUrl"></param>
+    /// <param name="logoPath"></param>
     /// <param name="languagesAndLinks"></param>
     /// <param name="targetLanguage"></param>
     /// <param name="fullNameWithTrigram"></param>
@@ -21,6 +22,7 @@ public interface IHeaderHtmlGenerator
     /// <param name="logoutLink"></param>
     /// <returns></returns>
     TagBuilder GenerateHeader(string homePageUrl,
+                              string logoPath,
                               Dictionary<string, string> languagesAndLinks,
                               string? targetLanguage,
                               string fullNameWithTrigram,

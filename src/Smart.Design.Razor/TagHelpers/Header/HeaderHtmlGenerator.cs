@@ -24,6 +24,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
     /// <inheritdoc/>
     public TagBuilder GenerateHeader(string homePageUrl,
+                                     string logoPath,
                                      Dictionary<string, string> languagesAndLinks,
                                      string? targetLanguage,
                                      string fullNameWithTrigram,
@@ -47,7 +48,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         var divLeft = new TagBuilder("div");
         divLeft.AddCssClass("c-toolbar__left");
-        divLeft.InnerHtml.AppendHtml(GetDivLeftHtmlContent(homePageUrl));
+        divLeft.InnerHtml.AppendHtml(GetDivLeftHtmlContent(homePageUrl, logoPath));
 
         var divRight = new TagBuilder("div");
         divRight.AddCssClass("c-toolbar__right");
@@ -63,7 +64,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return div1;
     }
 
-    private IHtmlContent GetDivLeftHtmlContent(string homePageUrl)
+    private IHtmlContent GetDivLeftHtmlContent(string homePageUrl, string logoPath)
     {
         var divLeft1 = new TagBuilder("div");
         divLeft1.AddCssClass("c-toolbar__item");
@@ -75,7 +76,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         linkLogo.Attributes["href"] = homePageUrl;
 
         var logo = new TagBuilder("img");
-        logo.Attributes["src"] = "/images/logo.svg";
+        logo.Attributes["src"] = logoPath;
         logo.Attributes["alt"] = "Smart";
 
         linkLogo.InnerHtml.AppendHtml(logo);
