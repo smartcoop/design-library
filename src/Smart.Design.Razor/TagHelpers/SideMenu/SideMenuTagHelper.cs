@@ -39,11 +39,8 @@ public class SideMenuTagHelper : TagHelper
         {
             throw new ArgumentException($"{nameof(LabelAndLinks)} cannot be null or empty");
         }
-        var menu = new TagBuilder("div");
-        menu.AddCssClass("c-app-layout-inner__sidebar u-position-fixed");
 
-        menu.InnerHtml.SetHtmlContent(_sideMenuHtmlGenerator.GenerateListOfItems(LabelAndLinks));
-
+        var menu = _sideMenuHtmlGenerator.GenerateListOfItems(LabelAndLinks);
         output.MergeAttributes(menu);
         output.TagName = menu.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
