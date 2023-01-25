@@ -9,8 +9,6 @@ public static class TagNames
 {
     public const string AccordionTagName = "smart-accordion";
 
-    public const string AcceptanceCheckboxTagName = "smart-acceptance-Checkbox";
-
     public const string AlertStack = "smart-alert-stack";
 
     public const string Avatar = "smart-avatar";
