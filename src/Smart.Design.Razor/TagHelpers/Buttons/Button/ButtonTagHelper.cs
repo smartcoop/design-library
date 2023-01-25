@@ -246,6 +246,7 @@ public class ButtonTagHelper : BaseTagHelper
             ButtonStyle.Borderless      => "c-button--borderless",
             ButtonStyle.Danger          => "c-button--danger",
             ButtonStyle.DangerSecondary => "c-button--danger-secondary",
+            ButtonStyle.Warning => "c-button--warning",
             _                           => throw new NotImplementedException($"Style undefined for style {Style}")
         };
     }
