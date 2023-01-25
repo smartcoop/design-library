@@ -24,5 +24,9 @@ public enum ButtonStyle
     /// <summary>
     /// Makes the button to be borderless.
     /// </summary>
-    Borderless
+    Borderless,
+    /// <summary>
+    /// Warning style of Smart Design Button.
+    /// </summary>
+    Warning
 }
