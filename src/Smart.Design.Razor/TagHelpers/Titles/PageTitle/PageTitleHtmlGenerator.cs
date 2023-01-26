@@ -45,10 +45,10 @@ public class PageTitleHtmlGenerator : IPageTitleHtmlGenerator
         var line = new TagBuilder("p");
         line.AddCssClass("text-muted");
 
-        line.InnerHtml.Append(infos[0]);
+        line.InnerHtml.AppendHtml(infos[0]);
         for (int i = 1; i < infos.Count; i++)
         {
-            line.InnerHtml.Append($"-{infos[i]}");
+            line.InnerHtml.AppendHtml($"-{infos[i]}");
         }
 
         div3Child.InnerHtml.AppendHtml(line);
