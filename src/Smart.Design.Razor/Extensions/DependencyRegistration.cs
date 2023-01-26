@@ -36,7 +36,6 @@ using Smart.Design.Razor.TagHelpers.SideMenu;
 using Smart.Design.Razor.TagHelpers.Spacer;
 using Smart.Design.Razor.TagHelpers.TableOfContent;
 using Smart.Design.Razor.TagHelpers.Tabs;
-using Smart.Design.Razor.TagHelpers.Titles.PageTitle;
 using Smart.Design.Razor.TagHelpers.ValidationMessage;
 
 namespace Smart.Design.Razor.Extensions;
@@ -80,7 +79,6 @@ public static class DependencyRegistration
             .AddTransient<IGridListHeaderHtmlGenerator, GridListHeaderHtmlGenerator>()
             .AddTransient<ITableOfContentHtmlGenerator, TableOfContentHtmlGenerator>()
             .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>()
-            .AddTransient<IPageTitleHtmlGenerator, PageTitleHtmlGenerator>()
             .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>()
             .AddTransient<ISideMenuHtmlGenerator, SideMenuHtmlGenerator>()
             .AddTransient<IHeaderHtmlGenerator, HeaderHtmlGenerator>();
