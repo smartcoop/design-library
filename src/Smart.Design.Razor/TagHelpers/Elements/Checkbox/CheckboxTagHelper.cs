@@ -1,3 +1,4 @@
+using System.Linq;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -64,7 +65,11 @@ public class CheckboxTagHelper : BaseTagHelper
     /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        var inputCheckbox = _checkboxHtmlGenerator.GenerateCheckbox(Id, Name, Value, Label, Disabled, Checked, For);
+        var attributeObjects = context.AllAttributes.ToList();
+        var properties = GetType().GetProperties().Select(p => p.Name.ToLower());
+        attributeObjects.RemoveAll(a => properties.Contains(a.Name));
+
+        var inputCheckbox = _checkboxHtmlGenerator.GenerateCheckbox(Id, Name, Value, Label, Disabled, Checked, For, attributeObjects);
 
         output.TagName = inputCheckbox.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;

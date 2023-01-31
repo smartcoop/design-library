@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Checkbox;
 
@@ -18,6 +20,7 @@ public interface ICheckboxHtmlGenerator
     /// <param name="disabled">State to indicate if the component should be disabled.</param>
     /// <param name="checked">Determines if the checkbox should be checked.</param>
     /// <param name="for">Expression that describe the model associated to the element.</param>
+    /// <param name="attributeObjects">All other attributes</param>
     /// <returns>An instance of Smart Design checkbox.</returns>
     public TagBuilder GenerateCheckbox(
         string? id,
@@ -26,5 +29,6 @@ public interface ICheckboxHtmlGenerator
         string? label,
         bool disabled,
         bool @checked,
-        ModelExpression? @for);
+        ModelExpression? @for,
+        List<TagHelperAttribute> attributeObjects);
 }
