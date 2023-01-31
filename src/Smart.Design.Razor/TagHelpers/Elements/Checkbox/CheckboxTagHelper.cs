@@ -69,7 +69,6 @@ public class CheckboxTagHelper : BaseTagHelper
         output.TagName = inputCheckbox.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
 
-        output.ClearAllAttributes();
         output.MergeAttributes(inputCheckbox);
 
         output.Content.SetHtmlContent(inputCheckbox.InnerHtml);
