@@ -28,5 +28,9 @@ public enum ButtonStyle
     /// <summary>
     /// Warning style of Smart Design Button.
     /// </summary>
-    Warning
+    Warning,
+    /// <summary>
+    /// highlight style of Smart Design Button.
+    /// </summary>
+    Highlight
 }
