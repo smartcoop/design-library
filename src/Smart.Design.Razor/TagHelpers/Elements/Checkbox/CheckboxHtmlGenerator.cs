@@ -66,12 +66,7 @@ public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
             checkbox.Attributes["checked"] = "checked";
         }
 
-        if(attributeObjects.Count > 0)
-        {
-            foreach (var attributeObject in attributeObjects) {
-                checkbox.Attributes[attributeObject.Name] = attributeObject.Value.ToString();
-            }
-        }
+        attributeObjects.ForEach(attribute => checkbox.Attributes[attribute.Name] = attribute.Value.ToString());
 
         // The <label> element has two children: the checkbox followed by the label.
         labelDiv.InnerHtml.SetHtmlContent(checkbox);
