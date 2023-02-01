@@ -1,7 +1,9 @@
 using System.Collections;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Razor.TagHelpers;
 
 namespace Smart.Design.Razor.TagHelpers.Elements.Checkbox;
 
@@ -11,7 +13,7 @@ namespace Smart.Design.Razor.TagHelpers.Elements.Checkbox;
 public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
 {
     /// <inheritdoc />
-    public TagBuilder GenerateCheckbox(string? id, string? name, string? value, string? label, bool disabled, bool @checked, ModelExpression? @for)
+    public TagBuilder GenerateCheckbox(string? id, string? name, string? value, string? label, bool disabled, bool @checked, ModelExpression? @for, List<TagHelperAttribute> attributeObjects)
     {
         // Root HTML element of the component is a div containing a label and an input.
         var rootDiv = new TagBuilder("div");
@@ -63,6 +65,8 @@ public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
         {
             checkbox.Attributes["checked"] = "checked";
         }
+
+        attributeObjects.ForEach(attribute => checkbox.Attributes[attribute.Name] = attribute.Value.ToString());
 
         // The <label> element has two children: the checkbox followed by the label.
         labelDiv.InnerHtml.SetHtmlContent(checkbox);
