@@ -53,7 +53,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var divRight = new TagBuilder("div");
         divRight.AddCssClass("c-toolbar__right");
 
-        divRight.InnerHtml.AppendHtml(GetDivRight1());
+        divRight.InnerHtml.AppendHtml(GetDivRight1(languageCulture.CultureCode));
         divRight.InnerHtml.AppendHtml(GetDivRight2(languagesAndLinks, languageCulture.Language));
         divRight.InnerHtml.AppendHtml(GetDivRight3(fullNameWithTrigram, avatarPath, labelsAndLinks, logoutLink));
 
@@ -86,7 +86,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divLeft1;
     }
 
-    private IHtmlContent GetDivRight1()
+    private IHtmlContent GetDivRight1(string language)
     {
         var divRight1 = new TagBuilder("div");
         divRight1.AddCssClass("c-toolbar__item");
@@ -123,9 +123,10 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         liMenuHelp.InnerHtml.AppendHtml(p);
         helpUl.InnerHtml.AppendHtml(liMenuHelp);
 
-        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, "https://guide.smart.coop/", Image.ExternalLink);
+        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, $"https://guide.smart.coop/{language.ToLower()}", Image.ExternalLink);
         var liQuestion = GenerateListItemWithBanner(Translations.QandA, "https://account.ubik.be/faq");
-        var liContact = GenerateListItemWithBanner(Translations.ContactUs, "https://smartbe.be/fr/contact/");
+        var languageUrl = language == "NL" ? language.ToLower() : string.Empty;
+        var liContact = GenerateListItemWithBanner(Translations.ContactUs, $"https://contact.smartbe.be/{languageUrl}");
 
         helpUl.InnerHtml.AppendHtml(liDocumentation);
         helpUl.InnerHtml.AppendHtml(liQuestion);
