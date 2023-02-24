@@ -7,11 +7,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Smart.Design.Showcase.WebApp/Smart.Design.Razor.Showcase.csproj", "src/Smart.Design.Showcase.WebApp/"]
-COPY ["src/Smart.Design.Razor/Smart.Design.Razor.csproj", "src/Smart.Design.Razor/"]
-RUN dotnet restore "src/Smart.Design.Showcase.WebApp/Smart.Design.Razor.Showcase.csproj"
+COPY ["./src/Smart.Design.Showcase.WebApp/Smart.Design.Razor.Showcase.csproj", "./src/Smart.Design.Showcase.WebApp/"]
+COPY ["./src/Smart.Design.Razor/Smart.Design.Razor.csproj", "./src/Smart.Design.Razor/"]
+RUN dotnet restore "./src/Smart.Design.Showcase.WebApp/Smart.Design.Razor.Showcase.csproj"
 COPY . .
-WORKDIR "/src/src/Smart.Design.Showcase.WebApp"
+WORKDIR "./src/src/Smart.Design.Showcase.WebApp"
 RUN dotnet build "Smart.Design.Razor.Showcase.csproj" -c Release -o /app/build
 
 FROM build AS publish
