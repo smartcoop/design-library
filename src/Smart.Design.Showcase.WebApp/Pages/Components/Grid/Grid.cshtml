@@ -1,0 +1,33 @@
+@page
+@model Smart.Design.Razor.Showcase.Pages.Components.Grid.Grid
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Grid";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+        </div>
+        <div class="br-content c-content">
+            <p>Documentation for Grid</p>
+        </div>
+        <div class="br-sample" id="component-01-c-button-primary">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Grid</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+            </div>
+            <div class="br-sample-footer">
+            </div>
+        </div>
+    </div>
+</div>
