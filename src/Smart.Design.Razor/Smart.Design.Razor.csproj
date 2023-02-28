@@ -14,8 +14,6 @@
     <RepositoryUrl>https://github.com/smartcoop/design-cs</RepositoryUrl>
     <PackageTags>Tag Helpers;TagHelpers;Smart Design</PackageTags>
     <PackageLicenseExpression> BSD-2-Clause</PackageLicenseExpression>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -30,10 +28,6 @@
 
   <ItemGroup>
     <None Include="..\..\art\Nuget.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-    <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
