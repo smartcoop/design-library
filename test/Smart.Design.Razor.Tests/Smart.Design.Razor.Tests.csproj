@@ -5,6 +5,10 @@
     <Nullable>enable</Nullable>
 
     <IsPackable>false</IsPackable>
+
+    <AssemblyName>Smart.Design.Library.Tests</AssemblyName>
+
+    <RootNamespace>Smart.Design.Library.Tests</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

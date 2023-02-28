@@ -1,0 +1,92 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Pagination.Pagination
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Pagination";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Incomplet</p>
+        </div>
+        <div class="br-content c-content">
+        </div>
+        <div class="br-sample" id="component-01-c-pagination">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Default</h3>
+                <a class="br-sample-header-link" href="#component-01-pagination">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                @{
+                    var Paginationsettings = new Library.TagHelpers.Pagination.PaginationSettings()
+                    {
+                        TotalPages = 105,
+                        PageNumber = 2,
+                        NumberOfLinks = 5,
+                        PageNumberParameterName = "current-page",
+                        QueryString = $"id=5"
+                    };
+                    <smart-pagination pagination-settings="@Paginationsettings"></smart-pagination>
+                }
+            </div>
+            <div class="br-sample-footer">
+            </div>
+        </div>
+        <div class="br-sample" id="component-02-c-pagination">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Pagination (many)</h3>
+                <a class="br-sample-header-link" href="#component-02-pagination">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <p class="c-menu__item--danger">Pagination (many) missing</p>
+            </div>
+            <div class="br-sample-footer">
+            </div>
+        </div>
+        <div class="br-sample" id="component-03-c-pagination">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Pagination (middle selection)</h3>
+                <a class="br-sample-header-link" href="#component-03-pagination">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <p class="c-menu__item--danger">Pagination (middle selection) missing</p>
+            </div>
+            <div class="br-sample-footer">
+            </div>
+        </div>
+        <div class="br-componentgroup-footer-wrapper">
+            <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for Input</h1>
+            <div class="br-content c-content">
+                <table class="c-table">
+                    <thead>
+                    <tr>
+                        <th>Parameters</th>
+                        <th>Type</th>
+                        <th>Possible values</th>
+                        <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>pagination-settings</td>
+                        <td>C# Model</td>
+                        <td>(voir TagHelper Pagination)</td>
+                        <td></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

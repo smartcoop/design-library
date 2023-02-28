@@ -1,0 +1,62 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+
+<div class="c-design-system-home-hero u-padding-vertical-xl">
+            <div class="o-grid">
+                <div class="o-grid-col-bp3-6">
+                    <div class="o-flex o-flex u-spacer-right-xl o-flex--vertical-center" style="height: 100%;">
+                        <div class="c-display u-spacer-right-xl">
+                            <h1>Build and design with Smart’s <i>Design Library</i></h1>
+                            <p class="u-spacer-right-xl">Create the best Smart experiences using reusable building blocks, built by and for the community.</p>
+                            <div class="u-spacer-top">
+                                <div class="c-alert c-alert--default">
+                                    <div class="o-svg-icon o-svg-icon-circle-information  ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z" fill="#595959" />
+                                            <path d="M12 10C12.5523 10 13 10.4477 13 11V17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17V11C11 10.4477 11.4477 10 12 10Z" fill="#595959" />
+                                            <path d="M13.5 7.5C13.5 8.32843 12.8284 9 12 9C11.1716 9 10.5 8.32843 10.5 7.5C10.5 6.67157 11.1716 6 12 6C12.8284 6 13.5 6.67157 13.5 7.5Z" fill="#595959" />
+                                        </svg>
+                                    </div>
+                                    <div class="c-alert__body">
+                                        <div class="c-alert__text">
+                                            <div class="c-alert__message">
+                                                <div class="c-content">
+                                                    <p>This is a reimplementation of the <a href="https://design.smart.coop/">smart design system</a> in <code>C#</code><br /><a asp-area="" asp-page="/DesignLibraryStory">Read more here</a></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-grid-col-bp3-6">
+                    <div class="c-design-system-home-illustration">
+                        <img src="~/images/illustration-form.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<div class="o-grid u-spacer-top-l">
+            <div class="o-grid-col-bp3-6">
+                <div class="c-panel u-spacer-bottom u-shadow-50">
+                    <div class="c-panel__body">
+                        <div class="c-display">
+                            <h3>HTML/CSS components</h3>
+                            <p>View our extensive library of copy-pastable HTML/CSS components.</p>
+                        </div>
+                <a class="c-button c-button--secondary" asp-area="" asp-page="/Components/_ComponentsIndex/ComponentsIndex">
+                            <span class="c-button__content">
+                                <span class="c-button__label">Go to components</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>

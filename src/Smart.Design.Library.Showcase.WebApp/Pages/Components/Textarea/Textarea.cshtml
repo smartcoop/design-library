@@ -1,0 +1,92 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Textarea.Textarea
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Textarea";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Incomplet</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Documentation for Textarea</p>
+            <p class="c-menu__item--danger">Labels are missing. See : <a href="https://design.smart.coop/development/docs/c-textarea.html">https://design.smart.coop/development/docs/c-textarea.html</a></p>
+            <p>A standard textarea. Use for multi-line text. Manipulate the height with the rows attribute or the following modifier parameter textareaSize: .<code>Small</code>, .<code>Medium</code>, .<code>Large</code>.<br />Optionally add a class of .autosize to autosize. This functionality relies on autosize.</p>
+        </div>
+        <div class="br-sample" id="component-01-c-textarea">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Textarea</h3>
+                <a class="br-sample-header-link" href="#component-01-c-textarea">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <smart-textarea id="textareaId" name="textareaName" rows="6" textarea-size="Small">Content of the textarea</smart-textarea>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-textarea id=\"textareaId\" name=\"textareaName\" rows=\"10\">Content of the textarea</smart-textarea>")</pre>
+            </div>
+        </div>
+        <div class="br-componentgroup-footer-wrapper">
+            <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for Textarea</h1>
+            <div class="br-content c-content">
+                <table class="c-table">
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Type</th>
+                            <th>Possible values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>string</td>
+                            <td>Id attribute of the element</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>string</td>
+                            <td>
+                                Name attribute of the element
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>rows</td>
+                            <td>int</td>
+                            <td>
+                                Number of rows. This parameter is optional.
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>textareaSize</td>
+                            <td>enum</td>
+                            <td><code>Unspecified</code> | <code>Small</code> | <code>Medium</code> | <code>Large</code></td>
+                            <td>Valid size of a Smart design textarea.</td>
+                        </tr>
+                        <tr>
+                            <td>for</td>
+                            <td>ModelExpression</td>
+                            <td></td>
+                            <td>??</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
