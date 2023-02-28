@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>10ae3d2d-ab90-4dbe-8ba6-9aa24184c9ce</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+    <AssemblyName>Smart.Design.Library.Showcase</AssemblyName>
+    <RootNamespace>Smart.Design.Library.Showcase</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smart.Design.Library\Smart.Design.Library.csproj" />
+  </ItemGroup>
+</Project>

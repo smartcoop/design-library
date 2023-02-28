@@ -7,17 +7,17 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Smart.Design.Showcase.WebApp/Smart.Design.Razor.Showcase.csproj", "src/Smart.Design.Showcase.WebApp/"]
+COPY ["src/Smart.Design.Library.Showcase.WebApp/Smart.Design.Library.Razor.Showcase.csproj", "src/Smart.Design.Library.Showcase.WebApp/"]
 COPY ["src/Smart.Design.Library/Smart.Design.Library.csproj", "src/Smart.Design.Library/"]
-RUN dotnet restore "src/Smart.Design.Showcase.WebApp/Smart.Design.Razor.Showcase.csproj"
+RUN dotnet restore "src/Smart.Design.Library.Showcase.WebApp/Smart.Design.Library.Showcase.csproj"
 COPY . .
-WORKDIR "/src/src/Smart.Design.Showcase.WebApp"
-RUN dotnet build "Smart.Design.Razor.Showcase.csproj" -c Release -o /app/build
+WORKDIR "/src/src/Smart.Design.Library.Showcase.WebApp"
+RUN dotnet build "Smart.Design.Library.Showcase.csproj" -c Release -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "Smart.Design.Razor.Showcase.csproj" -c Release -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "Smart.Design.Library.Showcase.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "Smart.Design.Razor.Showcase.dll"]
+ENTRYPOINT ["dotnet", "Smart.Design.Library.Showcase.dll"]
