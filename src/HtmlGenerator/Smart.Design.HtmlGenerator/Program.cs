@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using Smart.Design.HtmlGenerator;
 using Smart.Design.HtmlGenerator.Managers;
-using Smart.Design.Razor.Extensions;
+using Smart.Design.Library.Extensions;
 
 
 Host

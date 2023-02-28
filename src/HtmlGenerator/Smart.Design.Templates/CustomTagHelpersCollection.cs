@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using Smart.Design.Razor.TagHelpers.Constants;
+using Smart.Design.Library.TagHelpers.Constants;
 
 namespace Smart.Design.Templates;
 

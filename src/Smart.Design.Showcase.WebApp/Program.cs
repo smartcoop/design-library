@@ -1,4 +1,4 @@
-using Smart.Design.Razor.Extensions;
+using Smart.Design.Library.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

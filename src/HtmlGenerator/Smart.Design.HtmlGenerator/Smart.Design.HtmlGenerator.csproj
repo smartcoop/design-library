@@ -36,7 +36,7 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Smart.Design.Razor\Smart.Design.Razor.csproj" />
+    <ProjectReference Include="..\..\Smart.Design.Library\Smart.Design.Library.csproj" />
     <ProjectReference Include="..\Smart.Design.Templates\Smart.Design.Templates.csproj" />
   </ItemGroup>
 
