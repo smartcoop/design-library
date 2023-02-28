@@ -8,16 +8,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Reference Include="Microsoft.AspNetCore.Mvc.TagHelpers" />
-      <Reference Include="Microsoft.AspNetCore.Mvc.ViewFeatures">
-        <HintPath>..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\6.0.5\Microsoft.AspNetCore.Mvc.ViewFeatures.dll</HintPath>
-      </Reference>
-      <Reference Include="Microsoft.AspNetCore.Razor">
-        <HintPath>..\..\..\Program Files\dotnet\shared\Microsoft.AspNetCore.App\6.0.5\Microsoft.AspNetCore.Razor.dll</HintPath>
-      </Reference>
-    </ItemGroup>
-
-    <ItemGroup>
       <None Remove="SidePanel.cshtml" />
       <None Update="appsettings.json">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -26,6 +16,10 @@
 
     <ItemGroup>
       <PackageReference Include="HtmlBuilders" Version="6.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Smart.Design.Library\Smart.Design.Library.csproj" />
     </ItemGroup>
 
 </Project>
