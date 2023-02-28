@@ -1,0 +1,175 @@
+﻿@page
+@model Smart.Design.Razor.Showcase.Pages.Components.Alert.AlertModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Alert";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+
+    @await Html.PartialAsync("Shared/_ComponentList")
+
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complete</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Use alerts for messaging across the application. Alerts are the primary method to give a user feedback when they interact with the user interface. Provide the user with appropriate feedback to guide their actions.
+            This page documents the different types of alerts and skins.</p>
+        </div>
+
+        <div class="br-sample" id="component-01-c-alert-default">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Default</h3>
+            </div>
+            <div class="br-sample-content">
+                <smart-alert message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert icon=\"CircleInformation\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-02-c-alert-default-2-lines">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Default with 2 lines and closable</h3>
+            </div>
+            <div class="br-sample-content">
+                <smart-alert icon="CircleInformation" title="Alert title" message="Lorem, ipsum dolor sit amet consectetur adipisicing elit." is-closable="true"></smart-alert>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert icon=\"CircleInformation\" title=\"Alert title\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\" is-closable=\"true\"></smart-alert>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-03-c-alert-rich-text">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Alert with richtext</h3>
+            </div>
+            <div class="br-sample-content">
+                <smart-alert icon="CircleInformation" title="Alert title" message="
+                                            <ul>
+                                                <li>This is text for the first bullet.</li>
+                                                <li>This is text for the second bullet.</li>
+                                            </ul>"
+                    is-closable="true"></smart-alert>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert icon=\"CircleInformation\" title=\"Alert title\" message=\"<ul><li>This is text for the first bullet.</li><li>This is text for the second bullet.</li></ul>\" is-closable=\"true\"></smart-alert>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-04-c-alert-styles-light">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Styles</h3>
+            </div>
+            <div class="br-sample-documentation c-content">All the different styles for alerts: default, error, warning and success.</div>
+            <div class="br-sample-content">
+                <smart-alert style="Default" icon="CircleInformation"  message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+                <smart-alert style="Error" icon="CircleError" message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+                <smart-alert style="Warning" icon="Warning" message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+                <smart-alert style="Success" icon="CircleCheck" message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert style=\"Default\" icon=\"CircleInformation\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert style=\"Error\" icon=\"CircleError\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert style=\"Warning\" icon=\"Warning\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert style=\"Success\" icon=\"CircleCheck\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+            </div>
+        </div>
+
+         <div class="br-sample" id="component-05-c-alert-styles-light">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Styles light</h3>
+            </div>
+            <div class="br-sample-documentation c-content">A lighter version of the different skins for alerts: default, error, warning and success. The lighter version can be used when displaying larger amounts of content.</div>
+            <div class="br-sample-content">
+                <smart-alert style="Default" is-light="true" icon="CircleInformation"  message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+                <smart-alert style="Error" is-light="true" icon="CircleError" message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+                <smart-alert style="Warning" is-light="true" icon="Warning" message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+                <smart-alert style="Success" is-light="true" icon="CircleCheck" message="Lorem, ipsum dolor sit amet consectetur adipisicing elit."></smart-alert>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert style=\"Default\" is-light=\"true\" icon=\"CircleInformation\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert style=\"Error\" is-light=\"true\" icon=\"CircleError\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert style=\"Warning\" is-light=\"true\" icon=\"Warning\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-alert style=\"Success\" is-light=\"true\" icon=\"CircleCheck\" message=\"Lorem, ipsum dolor sit amet consectetur adipisicing elit.\"></smart-alert>")</pre>
+            </div>
+        </div>
+
+        <div class="br-componentgroup-footer-wrapper">
+                    <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for Alert</h1>
+                    <div class="br-content c-content">
+                        <table class="c-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameters</th>
+                                    <th>Type</th>
+                                    <th>Possible values</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>style</td>
+                                    <td>string</td>
+                                    <td><code>Default</code>, <code>Error</code>, <code>Warning</code>, <code>Success</code></td>
+                                    <td>Determines the style of the alert</td>
+                                </tr>
+                                <tr>
+                                    <td>title</td>
+                                    <td>string</td>
+                                    <td>
+                                        Any text
+                                    </td>
+                                    <td>The title of the Alert </td>
+                                </tr>
+                                <tr>
+                                    <td>message</td>
+                                    <td>string</td>
+                                    <td>
+                                        Any text including html (see rich text examples)
+                                    </td>
+                                    <td>The message of the Alert </td>
+                                </tr>
+                                <tr>
+                                    <td>icon</td>
+                                    <td>string</td>
+                                    <td>See <a href="/todo:addLinkToIconsWhenREady">icon style guide</a> for available icons.</td>
+                                    <td>Overrides the default icon with another icon. If not set, the icon will be related to the style.</td>
+                                </tr>
+                                <tr>
+                                    <td>is-light</td>
+                                    <td>boolean</td>
+                                    <td>
+                                        <code>true</code> or <i>(Default)</i> <code>false</code> 
+                                    </td>
+                                    <td>Determines if the component is rendering the light version or not.</td>
+                                </tr>
+                                <tr>
+                                    <td>is-closable</td>
+                                    <td>boolean</td>
+                                    <td>
+                                        <code>true</code> or <i>(Default)</i> <code>false</code> 
+                                    </td>
+                                    <td>Determines if the component is rendering a cross icon on the top right which allow users to close the Alert</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+    </div>
+</div>

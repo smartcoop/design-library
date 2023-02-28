@@ -1,0 +1,77 @@
+﻿@page
+@model Smart.Design.Razor.Showcase.Pages.Components.KeyValueListItem.KeyValueListItem
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Key value list item";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Done</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Item for a HTML description list </p>
+        </div>
+        <div class="br-sample" id="component-01-c-key-value">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Key value item</h3>
+                <a class="br-sample-header-link" href="#component-01-c-key-value-item">#</a>
+                
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>Key value list with Key value List items taghelper</p>
+                <p>See also the <a href="../KeyValueList/KeyValueList">Key value list component page</a></p>
+            </div>
+            <div class="br-sample-content">
+                    <smart-key-value-list-item label="label" value="value"></smart-key-value-list-item>             
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-key-value-list-item label=\"label\" value=\"value\"></smart-key-value-list-item>")</pre>
+            </div>            
+        </div>
+        <div class="br-componentgroup-footer-wrapper">
+            <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for key value</h1>
+            <div class="br-content c-content">
+                <table class="c-table">
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Type</th>
+                            <th>Possible values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>label</td>
+                            <td>string</td>
+                            <td>
+                                Describe a term/name in a description list item
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>value</td>
+                            <td>string</td>
+                            <td>
+                                Defines the associated term/name
+                            </td>
+                            <td></td>
+                        </tr>                        
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>
+>
