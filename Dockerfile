@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
-COPY ["src/Smart.Design.Library.Showcase.WebApp/Smart.Design.Library.Razor.Showcase.csproj", "src/Smart.Design.Library.Showcase.WebApp/"]
+COPY ["src/Smart.Design.Library.Showcase.WebApp/Smart.Design.Library.Showcase.csproj", "src/Smart.Design.Library.Showcase.WebApp/"]
 COPY ["src/Smart.Design.Library/Smart.Design.Library.csproj", "src/Smart.Design.Library/"]
 RUN dotnet restore "src/Smart.Design.Library.Showcase.WebApp/Smart.Design.Library.Showcase.csproj"
 COPY . .
