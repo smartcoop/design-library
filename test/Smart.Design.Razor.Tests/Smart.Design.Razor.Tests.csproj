@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Smart.Design.Razor\Smart.Design.Razor.csproj" />
+    <ProjectReference Include="..\..\src\Smart.Design.Library\Smart.Design.Library.csproj" />
   </ItemGroup>
 
 </Project>

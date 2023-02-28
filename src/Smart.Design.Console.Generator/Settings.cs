@@ -33,5 +33,5 @@ public class Template
 public class DesignLibrary
 {
     public string RootDirectory { get; set; } = "../../../..";
-    public string ComponentPath { get; set; } = "design-cs/src/Smart.Design.Razor/TagHelpers";
+    public string ComponentPath { get; set; } = "design-cs/src/Smart.Design.Library/TagHelpers";
 }
