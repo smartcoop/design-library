@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.Spacer.Spacer
 @{
     ViewData["MainTitle"] = "Components documentation";
@@ -7,6 +7,7 @@
 
 <div class="u-padding-bottom-l">
     <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
+    <p class="u-text-danger"><b>Status:</b> Not needed, can be deleted as component in DL, but need to be documented.</p>
 </div>
 
 
@@ -17,7 +18,23 @@
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
         </div>
         <div class="br-content c-content">
-            <p>Documentation for Spacer</p>
+            <p>Spacer are just css classes that can be applied to any html tag. This is just adding margin-top attribute to the element.</p>
+            <p>Available spacing sizes:<p>
+                <ol>
+                    <li>Default : 0</li>
+                    <li>ExtraSmall : 0.4rem</li>
+                    <li>Small : 0.8rem</li>
+                    <li>Large : 2.4rem</li>
+                    <li>ExtraLarge : 3.2rem</li>
+                </ol>
+            <p>Available spacing direction:<p>
+                <ol>
+                    <li>All : margin</li>
+                    <li>Top : margin-top</li>
+                    <li>Bottom : margin-bottom</li>
+                    <li>Left : margin-left</li>
+                    <li>Right : margin-right</li>
+                </ol>
         </div>
         <div class="br-sample" id="component-01-c-button-primary">
             <div class="br-sample-header br-sample-clearfix">
@@ -25,8 +42,29 @@
             </div>
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
+                <div style="border:2px solid #B3B3B3">
+                    <smart-spacer Top="Default">I have a Default/top space</smart-spacer>
+                </div>
+                <div style="border:2px solid #666666">
+                    <smart-spacer Top="ExtraSmall">I have a ExtraSmall/top space</smart-spacer>
+                </div>
+                <div style="border:2px solid #B3B3B3">
+                    <smart-spacer Left="Small">I have a Small/Left space</smart-spacer>
+                </div>
+                <div style="border:2px solid #666666">
+                    <smart-spacer All="Large">I have a Large/All space</smart-spacer>
+                </div>
+                <div style="border:2px solid #B3B3B3">
+                    <smart-spacer Bottom="ExtraLarge">I have a ExtraLarge/Bottom space</smart-spacer>
+                </div>
             </div>
             <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-spacer Top=\"Default\" > I have a Default / Top space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-spacer Top=\"ExtraSmall\" > I have a ExtraSmall / Top space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-spacer Left=\"Small\" > I have a Small / Left space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-spacer All=\"Large\" > I have a Large / All space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-spacer Bottom=\"ExtraLarge\" > I have a ExtraLarge / Bottom space</smart-spacer>")</pre>
             </div>
         </div>
     </div>
