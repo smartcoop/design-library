@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.Checkbox.Checkbox
 @{
     ViewData["MainTitle"] = "Components documentation";
@@ -15,15 +15,56 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Incomplete</p>
         </div>
         <div class="br-content c-content">
             <p>Documentation for Checkbox</p>
         </div>
-        <div class="br-sample" id="component-01-c-button-primary">
+
+        <div class="br-sample" id="component-01-c-checkbox">
             <div class="br-sample-header br-sample-clearfix">
                 <h3 class="br-sample-heading c-h3">Checkbox</h3>
             </div>
-            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-documentation c-content">
+                <p>This component needs to be part of a <a asp-page="../FormGroup/FormGroup"><code>@("<smart-formgroup>")</code> component</a>.  </p>
+                <p class="u-text-danger">Checkbox type indeterminate is missing (see DS)</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-formgroup label="Label">
+                    <smart-checkbox value="value" name="name" label="Checkbox"></smart-checkbox>
+                    <smart-checkbox value="value" checked name="name" label="Checkbox checked"></smart-checkbox>
+                    <smart-checkbox value="value" disabled name="name" label="Checkbox"></smart-checkbox>
+                    <smart-checkbox value="value" disabled checked name="name" label="Checkbox disabled"></smart-checkbox>
+                </smart-formgroup>
+            </div>
+            <div class="br-sample-footer">
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox value=\"value\" name=\"name\" label=\"Checkbox\"></smart-checkbox>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox value=\"value\" checked name=\"name\" label=\"Checkbox checked\"></smart-checkbox>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox value=\"value\" disabled name=\"name\" label=\"Checkbox\"></smart-checkbox>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox value=\"value\" disabled checked name=\"name\" label=\"Checkbox disabled\"></smart-checkbox>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-checkbox-inline">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Checkbox inline</h3>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p class="u-text-danger">Checkbox inline is missing (see DS)</p>
+            </div>
+            <div class="br-sample-content">
+            </div>
+            <div class="br-sample-footer">
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-checkbox-nesting">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Checkbox nesting</h3>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p class="u-text-danger">Checkbox nesting is missing (see DS)</p>
+            </div>
             <div class="br-sample-content">
             </div>
             <div class="br-sample-footer">
