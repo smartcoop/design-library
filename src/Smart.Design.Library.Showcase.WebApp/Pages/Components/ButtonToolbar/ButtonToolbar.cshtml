@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.ButtonToolbar.ButtonToolbar
 @{
     ViewData["MainTitle"] = "Components documentation";
@@ -15,18 +15,86 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p class="u-text-danger"><b>Status:</b> wrong integration</p>
         </div>
         <div class="br-content c-content">
-            <p>Documentation for Button toolbar</p>
+            <p>This component request other components to be used. This is called <a href="TODO: add a page to explain nesting">nesting</a>.</p>
+            <p>This is used to wrap the <a href="../Button/Button">Buttons components
+                </a> inside a toolbar (icon-only)</p>
         </div>
-        <div class="br-sample" id="component-01-c-button-primary">
+        <div class="br-sample" id="component-01-c-button-toolbar">
             <div class="br-sample-header br-sample-clearfix">
                 <h3 class="br-sample-heading c-h3">Button toolbar</h3>
             </div>
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
+                <smart-button-toolbar>
+                    <smart-button button-style="Secondary" leading-icon="Remove" icon-only label="Remove"></smart-button>
+                    <smart-button button-style="Secondary" leading-icon="Add" icon-only label="Add"></smart-button>
+                </smart-button-toolbar>
             </div>
             <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-button-toolbar><smart-button button-style=\"Secondary\" leading-icon=\"Remove\" icon-only label=\"Remove\"></smart-button><smart-button button-style=\"Secondary\" leading-icon=\"Add\" icon-only label=\"Add\"></smart-button></smart-button-toolbar>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-button-toolbar-compact">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button toolbar (compact)</h3>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>Add a <code>.c-button-toolbar--compact</code> class to move the buttons into each other.</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-button-toolbar is-compact>
+                    <smart-button button-style="Secondary" leading-icon="Remove" icon-only label="Remove"></smart-button>
+                    <smart-button button-style="Secondary" leading-icon="Add" icon-only label="Add"></smart-button>
+                </smart-button-toolbar>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-button-toolbar is-compact><smart-button button-style=\"Secondary\" leading-icon=\"Remove\" icon-only label=\"Remove\"></smart-button><smart-button button-style=\"Secondary\" leading-icon=\"Add\" icon-only label=\"Add\"></smart-button></smart-button-toolbar>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-button-toolbar-compact-3">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button toolbar (compact)</h3>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>Example with 3 buttons</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-button-toolbar is-compact>
+                    <smart-button button-style="Primary" leading-icon="Remove" icon-only label="Remove"></smart-button>
+                    <smart-button button-style="Secondary" leading-icon="Edit" icon-only label="Edit"></smart-button>
+                    <smart-button button-style="Secondary" leading-icon="Add" icon-only label="Add"></smart-button>
+                </smart-button-toolbar>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-button-toolbar is-compact><smart-button button-style=\"Primary\" leading-icon=\"Remove\" icon-only label=\"Remove\"><smart-button button-style=\"Secondary\" leading-icon=\"Edit\" icon-only label=\"Edit\"></smart-button></smart-button><smart-button button-style=\"Secondary\" leading-icon=\"Add\" icon-only label=\"Add\"></smart-button></smart-button-toolbar>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-button-toolbar-vertical">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button toolbar vertical</h3>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p class="u-text-danger">! <code>.c-button-toolbar--compact</code> is missing</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-button-toolbar layout="Vertical">
+                    <smart-button button-style="Primary" leading-icon="Remove" icon-only label="Remove"></smart-button>
+                    <smart-button button-style="Secondary" leading-icon="Edit" icon-only label="Edit"></smart-button>
+                    <smart-button button-style="Secondary" leading-icon="Add" icon-only label="Add"></smart-button>
+                </smart-button-toolbar>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-button-toolbar layout=\"Vertical\" >< smart - button button - style =\"Primary\" leading-icon=\"Remove\" icon-only label=\"Remove\"><smart-button button-style=\"Secondary\" leading-icon=\"Edit\" icon-only label=\"Edit\"></smart-button></smart-button><smart-button button-style=\"Secondary\" leading-icon=\"Add\" icon-only label=\"Add\"></smart-button></smart-button-toolbar>")</pre>
             </div>
         </div>
     </div>
