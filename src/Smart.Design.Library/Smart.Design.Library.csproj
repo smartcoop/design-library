@@ -42,10 +42,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Resources\Translations.fr.Designer.cs">
-      <DependentUpon>Translations.fr.resx</DependentUpon>
+    <Compile Update="Resources\Translations.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
+      <DependentUpon>Translations.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
