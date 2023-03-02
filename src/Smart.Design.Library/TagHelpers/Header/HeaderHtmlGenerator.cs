@@ -123,7 +123,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         liMenuHelp.InnerHtml.AppendHtml(p);
         helpUl.InnerHtml.AppendHtml(liMenuHelp);
 
-        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, $"https://guide.smart.coop/{language.ToLower()}", Image.ExternalLink);
+        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, $"https://guide.smart.coop/version2/{language.ToLower()}", Image.ExternalLink);
         var liQuestion = GenerateListItemWithBanner(Translations.QandA, "https://account.ubik.be/faq");
         var languageUrl = language == "NL" ? language.ToLower() : string.Empty;
         var liContact = GenerateListItemWithBanner(Translations.ContactUs, $"https://contact.smartbe.be/{languageUrl}");
