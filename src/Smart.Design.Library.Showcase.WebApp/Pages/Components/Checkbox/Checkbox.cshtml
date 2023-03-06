@@ -17,6 +17,7 @@
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
             <p><b>Status:</b> Incomplete</p>
         </div>
+
         <div class="br-content c-content">
             <p>Documentation for Checkbox</p>
         </div>
@@ -66,9 +67,103 @@
                 <p class="u-text-danger">Checkbox nesting is missing (see DS)</p>
             </div>
             <div class="br-sample-content">
+                <smart-checkbox id="checkbox1" name="checkbox1" label="Checkbox"></smart-checkbox><br/>
+                <smart-checkbox id="checkbox2" name="checkbox2" label="Checkbox checked" checked="true"></smart-checkbox><br/>
+                <smart-checkbox id="checkbox3" name="checkbox3" label="Checkbox disabled" disabled="true"></smart-checkbox><br/>
+                <smart-checkbox id="checkbox4" name="checkbox4" label="Checkbox checked and disabled" checked="true" disabled="true"></smart-checkbox><br/>
+                <smart-checkbox id="checkbox5" name="checkbox4" label="Checkbox with a value" value="'some value'"></smart-checkbox>
             </div>
+
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox id=\"checkbox1\" name=\"checkbox1\" label=\"Checkbox\"></smart-checkbox>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox id=\"checkbox2\" name=\"checkbox2\" label=\"Checkbox Checked\" checked=\"true\"></smart-checkbox>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox id=\"checkbox3\" name=\"checkbox3\" label=\"Checkbox disabled\" disabled=\"true\"></smart-checkbox>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox id=\"checkbox4\" name=\"checkbox4\" label=\"Checkbox checked and disabled\" checked=\"true\" disabled=\"true\"></smart-checkbox>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-checkbox id=\"checkbox4\" name=\"checkbox4\" label=\"Checkbox with a value\" value=\"'some value'\"></smart-checkbox>")</pre>
+
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-02-c-checkbox-inline">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Checkbox (inline)</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                Incomplete
+            </div>
+
             <div class="br-sample-footer">
             </div>
         </div>
+
+        <div class="br-sample" id="component-02-c-checkbox-nested">
+                    <div class="br-sample-header br-sample-clearfix">
+                        <h3 class="br-sample-heading c-h3">Checkbox nesting</h3>
+                    </div>
+                    <div class="br-sample-documentation c-content"></div>
+                    <div class="br-sample-content">
+                        Incomplete
+                    </div>
+
+                    <div class="br-sample-footer">
+                    </div>
+                </div>
+
+        <div class="br-componentgroup-footer-wrapper">
+                    <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for Checkbox</h1>
+                    <div class="br-content c-content">
+                        <table class="c-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameters</th>
+                                    <th>Type</th>
+                                    <th>Possible values</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>string</td>
+                                    <td>Any text</td>
+                                    <td>Represent the HTML id of the component</td>
+                                </tr>
+                                <tr>
+                                    <td>name</td>
+                                    <td>string</td>
+                                    <td>Any string</td>
+                                    <td>Represent the HTML name of the component </td>
+                                </tr>
+                                <tr>
+                                    <td>Label</td>
+                                    <td>string</td>
+                                    <td>Any text</td>
+                                    <td>The text next to the checkbox</td>
+                                </tr>
+                                <tr>
+                                    <td>checked</td>
+                                    <td>boolean</td>
+                                    <td><code>true</code> <code>false</code></td>
+                                    <td>Determine if the checkbox is checked or not</td>
+                                </tr>
+                                <tr>
+                                    <td>disabled</td>
+                                    <td>boolean</td>
+                                    <td><code>true</code> <code>false</code></td>
+                                    <td>Determine if the checkbox is disabled or not</td>
+                                </tr>
+                                <tr>
+                                    <td>value</td>
+                                    <td>boolean</td>
+                                    <td><code>true</code> <code>false</code></td>
+                                    <td>Represent the model which is bind to the state of the checbox</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
     </div>
 </div>
