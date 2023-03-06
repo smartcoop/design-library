@@ -15,6 +15,7 @@
     <PackageTags>Tag Helpers;TagHelpers;Smart Design</PackageTags>
     <PackageLicenseExpression> BSD-2-Clause</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageId>Smart.Design.Razor</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
