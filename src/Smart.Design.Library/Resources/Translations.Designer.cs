@@ -9,6 +9,9 @@
 //------------------------------------------------------------------------------
 
 namespace Smart.Design.Library.Resources {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -65,7 +68,16 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("ContactUs", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://contact.smartbe.be.
+        /// </summary>
+        public static string ContactUsUrl {
+            get {
+                return ResourceManager.GetString("ContactUsUrl", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to English.
         /// </summary>
@@ -83,7 +95,16 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("Documentation", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://guide.smart.coop/version2/en.
+        /// </summary>
+        public static string DocumentationUrl {
+            get {
+                return ResourceManager.GetString("DocumentationUrl", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Help.
         /// </summary>
@@ -119,7 +140,16 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("QandA", resourceCulture);
             }
         }
-
+        
+        /// <summary>
+        ///   Looks up a localized string similar to https://account.ubik.be/faq.
+        /// </summary>
+        public static string QandAUrl {
+            get {
+                return ResourceManager.GetString("QandAUrl", resourceCulture);
+            }
+        }
+        
         /// <summary>
         ///   Looks up a localized string similar to Sign out.
         /// </summary>
