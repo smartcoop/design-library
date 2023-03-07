@@ -120,11 +120,17 @@
   <data name="ContactUs" xml:space="preserve">
     <value>Contact us</value>
   </data>
+  <data name="ContactUsUrl" xml:space="preserve">
+    <value>https://contact.smartbe.be</value>
+  </data>
   <data name="CurrentLanguage" xml:space="preserve">
     <value>English</value>
   </data>
   <data name="Documentation" xml:space="preserve">
     <value>Documentation</value>
+  </data>
+  <data name="DocumentationUrl" xml:space="preserve">
+    <value>https://guide.smart.coop/version2/en</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
@@ -137,6 +143,9 @@
   </data>
   <data name="QandA" xml:space="preserve">
     <value>Questions and Answers</value>
+  </data>
+  <data name="QandAUrl" xml:space="preserve">
+    <value>https://account.ubik.be/faq</value>
   </data>
   <data name="SignOut" xml:space="preserve">
     <value>Sign out</value>

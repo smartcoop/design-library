@@ -120,11 +120,17 @@
   <data name="ContactUs" xml:space="preserve">
     <value>Neem contact op</value>
   </data>
+  <data name="ContactUsUrl" xml:space="preserve">
+    <value>https://contact.smartbe.be/nl</value>
+  </data>
   <data name="CurrentLanguage" xml:space="preserve">
     <value>Nederlands</value>
   </data>
   <data name="Documentation" xml:space="preserve">
     <value>Documentatie</value>
+  </data>
+  <data name="DocumentationUrl" xml:space="preserve">
+    <value>https://guide.smart.coop/version2/nl</value>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Hulp</value>
@@ -137,6 +143,9 @@
   </data>
   <data name="QandA" xml:space="preserve">
     <value>Vragen-antwoorden</value>
+  </data>
+  <data name="QandAUrl" xml:space="preserve">
+    <value>https://account.ubik.be/faq</value>
   </data>
   <data name="SignOut" xml:space="preserve">
     <value>Uitloggen</value>
