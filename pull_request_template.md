@@ -1,4 +1,4 @@
-#[Design/Library] or [Design/Showcase] {Tag}
+# [Library/Showcase]-{TagName}
 
 [JIRA description](https://smartjira.atlassian.net/browse/XXXX)
 
