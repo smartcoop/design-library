@@ -1,6 +1,6 @@
 # ![SmartDesign](art/Smart.logo.png)
 
-# Smart Design Razor
+# Smart Design Library
 This solution contains a C# UI web kit and a web project showcasing the various components it contains.
 
 ## Installation
