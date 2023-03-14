@@ -2,12 +2,48 @@
 @model Smart.Design.Library.Showcase.Pages.Components.BaseSmartFormGroup.BaseSmartFormGroup
 @{
     ViewData["MainTitle"] = "Components documentation";
-    ViewData["ComponentTitle"] = "Base smart form group";
+    ViewData["ComponentTitle"] = "Form group";
 }
 
 <div class="u-padding-bottom-l">
     <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
 </div>
+
+
+<style>
+    #component-docs{
+        padding-left: 0;
+    }
+
+    #component-docs a {
+        background: #FFF;
+        border: none;
+        display: block;
+    }
+
+    #component-docs .title {
+        display: block;
+        padding: .8rem 1.6rem .8rem 0;
+        color: #333;
+        text-decoration: underline;
+    }
+
+    #component-docs .title .c-status-pill {
+        margin-left: .75rem;
+        position: relative;
+        top: -1px;
+    }
+
+    #component-docs img {
+        background: #F2F2F2;
+        display: block;
+    }
+
+    #component-docs a:hover {
+        border-color: #000;
+    }
+</style>
+
 
 
 <div class="o-grid">
@@ -18,22 +54,157 @@
             <p><b>Status:</b> Wrong integration</p>
         </div>
         <div class="br-content c-content">
-            <p>This is linked with the forms elements. It is containing the label</p>
-            <p>Naming is wrong</p>
-            <p>TODO: Check if this is needed and how to use it with text field and other forms elements</p>
-        </div>
-        <div class="br-sample" id="component-01-c-baseFormGroup">
+            <p>This page is documenting the base code for creating forms</p>
+
+            <ul id="component-docs" class="o-card-grid">
+                <a class="c-card" asp-page="../Input/Input">
+                     <img src="~/images/component-illustrations/input.png" alt="">
+                     <h4 class="c-h4 title">Input</h4>
+                 </a>
+                <a class="c-card" asp-page="../InputGroup/InputGroup">
+                    <img src="~/images/component-illustrations/input.png" alt="">
+                    <h4 class="c-h4 title">Input Group</h4>
+                </a>
+                <a class="c-card" asp-page="../InputTime/InputTime">
+                    <img src="~/images/component-illustrations/input.png" alt="">
+                    <h4 class="c-h4 title">Input time</h4>
+                </a>
+                <a class="c-card" asp-page="../RadioButton/RadioButton">
+                     <img src="~/images/component-illustrations/radio-button.png" alt="">
+                     <h4 class="c-h4 title">Radio button</h4>
+                 </a>
+                <a class="c-card" asp-page="../Checkbox/Checkbox">
+                     <img src="~/images/component-illustrations/checkbox.png" alt="">
+                     <h4 class="c-h4 title">Checkbox</h4>
+                 </a>
+                <a class="c-card" asp-page="../Select/Select">
+                     <img src="~/images/component-illustrations/select.png" alt="">
+                     <h4 class="c-h4 title">Select</h4>
+                 </a>
+                <a class="c-card" asp-page="../FileUpload/FileUpload">
+                    <img src="~/images/component-illustrations/select.png" alt="">
+                    <h4 class="c-h4 title">File input</h4>
+                </a>
+                <a class="c-card" asp-page="../Textarea/Textarea">
+                    <img src="~/images/component-illustrations/select.png" alt="">
+                    <h4 class="c-h4 title">Textarea</h4>
+                </a>
+            </ul>
+    </div>
+        <div class="br-sample" id="component-01-c-form">
             <div class="br-sample-header br-sample-clearfix">
-                <h3 class="br-sample-heading c-h3">Base smart form group</h3>
+                <h3 class="br-sample-heading c-h3">Form</h3>
             </div>
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
-                
+                <smart-form action="POST">
+                    <smart-formgroup label="Label" helper-text="This is a helper text" >
+                        <smart-input name="inputName" id="textFieldId" placeholder="The placeholder" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Checkbox label">
+                        <smart-checkbox id="checkbox1" name="checkbox1" label="Value 1"></smart-checkbox>
+                        <smart-checkbox id="checkbox2" name="checkbox2" label="Value 2" checked="true"></smart-checkbox>
+                        <smart-checkbox id="checkbox3" name="checkbox3" label="Value 3"></smart-checkbox>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Label" helper-text="This is a helper text">
+                          <smart-textarea name="inputName" rows="5" textarea-size="Large"></smart-textarea>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Label" helper-text="This is a helper text">
+                        <smart-input name="theInput" id="textFieldId" placeholder="The placeholder" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Label">
+                        <smart-input-group id="textInputgroupId" name="InputgroupName" placeholder="The placeholder" value="" align="End" icon="Percent"></smart-input-group>
+                    </smart-formgroup>
+
+                </smart-form>
             </div>
             <div class="br-sample-footer">
                 <b>C# Code: </b>
-                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-formgroup></smart-formgroup>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-form action=\"POST\">")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-form">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Form Horizontal</h3>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p class="u-text-danger">Some style issues</p>
+                <p class="u-text-danger">placeholder not well displayed</p>
+                <p class="u-text-danger">Not enough space after each chekbox value. + how wome here it is nested ? See checkbox page</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-form action="POST" layout="Horizontal">
+                    <smart-formgroup label="Label" helper-text="This is a helper text">
+                        <smart-input name="inputName" id="textFieldId" placeholder="The placeholder" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Checkbox label">
+                        <smart-checkbox id="checkbox1" name="checkbox1" label="Value 1"></smart-checkbox>
+                        <smart-checkbox id="checkbox2" name="checkbox2" label="Value 2" checked="true"></smart-checkbox>
+                        <smart-checkbox id="checkbox3" name="checkbox3" label="Value 3"></smart-checkbox>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Label" helper-text="This is a helper text">
+                        <smart-textarea name="inputName" rows="5" textarea-size="Large"></smart-textarea>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Label" helper-text="This is a helper text">
+                        <smart-input name="theInput" id="textFieldId" placeholder="The placeholder" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Label">
+                        <smart-input-group id="textInputgroupId" name="InputgroupName" placeholder="The placeholder" value="" align="End" icon="Percent"></smart-input-group>
+                    </smart-formgroup>
+
+                </smart-form>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-form action=\"POST\"  layout=\"Horizontal\"> ")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-form">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Form Inline</h3>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p class="u-text-danger">Some style issues:</p>
+                <p class="u-text-danger">placeholder not well displayed</p>
+                <p class="u-text-danger">Sould be 2 columns only</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-form action="POST" layout="Inline">
+                    <smart-formgroup label="Label" helper-text="This is a helper text">
+                        <smart-input name="inputName" id="textFieldId" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Label" helper-text="This is a helper text">
+                        <smart-input name="theInput" id="textFieldId" placeholder="The placeholder" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Checkbox label">
+                        <smart-checkbox id="checkbox1" name="checkbox1" label="Value 1"></smart-checkbox>
+                        <smart-checkbox id="checkbox2" name="checkbox2" label="Value 2" checked="true"></smart-checkbox>
+                        <smart-checkbox id="checkbox3" name="checkbox3" label="Value 3"></smart-checkbox>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Label" helper-text="This is a helper text">
+                        <smart-input name="inputName" id="textFieldId" value=""></smart-input>
+                    </smart-formgroup>
+                </smart-form>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-form action=\"POST\"  layout=\"Inline\">")</pre>
             </div>
         </div>
     </div>
 </div>
+
+
