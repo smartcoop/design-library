@@ -123,9 +123,9 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         liMenuHelp.InnerHtml.AppendHtml(p);
         helpUl.InnerHtml.AppendHtml(liMenuHelp);
 
-        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, Translations.DocumentationUrl, Image.ExternalLink);
+        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, Translations.DocumentationUrl, Image.ExternalLink, true);
         var liQuestion = GenerateListItemWithBanner(Translations.QandA, Translations.QandAUrl);
-        var liContact = GenerateListItemWithBanner(Translations.ContactUs, Translations.ContactUsUrl);
+        var liContact = GenerateListItemWithBanner(Translations.ContactUs, Translations.ContactUsUrl, Image.None, true);
 
         helpUl.InnerHtml.AppendHtml(liDocumentation);
         helpUl.InnerHtml.AppendHtml(liQuestion);
@@ -257,12 +257,13 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight3;
     }
 
-    private IHtmlContent GenerateListItemWithBanner(string innerHtml, string href, Image icon = Image.None)
+    private IHtmlContent GenerateListItemWithBanner(string innerHtml, string href, Image icon = Image.None, bool isBlankTarget = false)
     {
         var liItem = new TagBuilder("li");
         liItem.AddCssClass("c-menu__item");
         var link = new TagBuilder("a");
         link.AddCssClass("c-menu__label");
+        link.Attributes["target"] = isBlankTarget ? "_blank" : "_self";
         link.Attributes["href"] = href;
 
         if (icon != Image.None)
