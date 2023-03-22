@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.Grid.Grid
 @{
     ViewData["MainTitle"] = "Components documentation";
@@ -15,6 +15,7 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p class="c-menu__item--danger"><b>Status:</b> Incomplet</p>
         </div>
         <div class="br-content c-content">
             <p>Documentation for Grid</p>
@@ -23,10 +24,83 @@
             <div class="br-sample-header br-sample-clearfix">
                 <h3 class="br-sample-heading c-h3">Grid</h3>
             </div>
-            <div class="br-sample-documentation c-content"></div>
-            <div class="br-sample-content">
+            <div class="br-sample-documentation c-content">
+                <div class="br-sample-documentation c-content ">
+                    <p>12 columns based grid for easily layouting forms and other components. This uses flexbox internally.</p>
+                    <p class="c-menu__item--danger">Static (column which is adapted to its content) and Flex (column filling the remaining space) are missing. </p>
+                    <p>See : <a href="https://design.smart.coop/development/docs/o-grid.html">https://design.smart.coop/development/docs/o-grid.html</a></p>
+                </div>
             </div>
-            <div class="br-sample-footer">
+            <div class="br-styleguide">
+                <div class="br-sample-content" id="component-01-o-grid">
+                    <smart-grid>
+                        <smart-grid-column width="12">12</smart-grid-column>
+                        <smart-grid-column width="12">12</smart-grid-column>
+                        <smart-grid-column width="6">6</smart-grid-column>
+                        <smart-grid-column width="6">6</smart-grid-column>
+                        <smart-grid-column width="6">6</smart-grid-column>
+                        <smart-grid-column width="6">6</smart-grid-column>
+                        <smart-grid-column width="4">4</smart-grid-column>
+                        <smart-grid-column width="4">4</smart-grid-column>
+                        <smart-grid-column width="4">4</smart-grid-column>
+                        <smart-grid-column width="4">4</smart-grid-column>
+                        <smart-grid-column width="4">4</smart-grid-column>
+                        <smart-grid-column width="4">4</smart-grid-column>
+                        <smart-grid-column width="3">3</smart-grid-column>
+                        <smart-grid-column width="3">3</smart-grid-column>
+                        <smart-grid-column width="3">3</smart-grid-column>
+                        <smart-grid-column width="3">3</smart-grid-column>
+                        <smart-grid-column width="3">3</smart-grid-column>
+                        <smart-grid-column width="3">3</smart-grid-column>
+                        <smart-grid-column width="3">3</smart-grid-column>
+                        <smart-grid-column width="3">3</smart-grid-column>
+                        <smart-grid-column width="2">2</smart-grid-column>
+                        <smart-grid-column width="2">2</smart-grid-column>
+                        <smart-grid-column width="2">2</smart-grid-column>
+                        <smart-grid-column width="2">2</smart-grid-column>
+                        <smart-grid-column width="2">2</smart-grid-column>
+                        <smart-grid-column width="2">2</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                        <smart-grid-column width="1">1</smart-grid-column>
+                    </smart-grid>
+                 </div>
+                <div class="br-sample-footer">
+                    <b>C# Code: </b>
+                    <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-grid><smart-grid-column width=\"12\">12</smart-grid-column><smart-grid-column width=\"12\">12</smart-grid-column><smart-grid-column width=\"6\">6</smart-grid-column><smart-grid-column width=\"6\">6</smart-grid-column><smart-grid-column width=\"6\">6</smart-grid-column><smart-grid-column width=\"6\">6</smart-grid-column><smart-grid-column width=\"4\">4</smart-grid-column><smart-grid-column width=\"4\">4</smart-grid-column><smart-grid-column width=\"4\">4</smart-grid-column><smart-grid-column width=\"4\">4</smart-grid-column><smart-grid-column width=\"4\">4</smart-grid-column><smart-grid-column width=\"4\">4</smart-grid-column><smart-grid-column width=\"3\">3</smart-grid-column><smart-grid-column width=\"3\">3</smart-grid-column><smart-grid-column width=\"3\">3</smart-grid-column><smart-grid-column width=\"3\">3</smart-grid-column><smart-grid-column width=\"3\">3</smart-grid-column><smart-grid-column width=\"3\">3</smart-grid-column><smart-grid-column width=\"3\">3</smart-grid-column><smart-grid-column width=\"3\">3</smart-grid-column><smart-grid-column width=\"2\">2</smart-grid-column><smart-grid-column width=\"2\">2</smart-grid-column><smart-grid-column width=\"2\">2</smart-grid-column><smart-grid-column width=\"2\">2</smart-grid-column><smart-grid-column width=\"2\">2</smart-grid-column><smart-grid-column width=\"2\">2</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column><smart-grid-column width=\"1\">1</smart-grid-column></smart-grid>")</pre>
+                </div>
+            </div>
+            <div class="br-componentgroup-footer-wrapper">
+                <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for Grid</h1>
+                <div class="br-content c-content">
+                    <table class="c-table">
+                        <thead>
+                            <tr>
+                                <th>Parameters</th>
+                                <th>Type</th>
+                                <th>Possible values</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>width</td>
+                                <td>int</td>
+                                <td>Working with the "smart-grid-column" Tag Helper</td>
+                                <td></td>
+                            </tr>                            
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
