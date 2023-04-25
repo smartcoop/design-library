@@ -610,6 +610,10 @@ abbr[title] {
 }
 
 @media (min-width: 600px) {
+    .o-flex-bp1-m {
+        display: flex;
+    }
+
     .o-flex--col-reverse-bp1-m {
         flex-direction: column-reverse;
     }
@@ -624,12 +628,20 @@ abbr[title] {
         display: flex;
     }
 
+    .o-block-bp2 {
+        display: block;
+    }
+
     .o-flex--col-reverse-bp2 {
         flex-direction: column-reverse;
     }
 }
 
 @media (min-width: 900px) {
+    .o-flex-bp3 {
+        display: flex;
+    }
+
     .o-flex--horizontal-bp3 {
         flex-direction: row;
     }
@@ -5724,6 +5736,7 @@ c-table-of-content
             z-index: 11;
             position: relative;
             counter-increment: none;
+            counter-increment: li;
         }
 
             .c-table-of-content-navigation .c-table-of-content__nav li:before {
@@ -5756,15 +5769,7 @@ c-table-of-content
                     transition: color 0.1s cubic-bezier(0, 0.99, 0.31, 1);
                 }
 
-            .c-table-of-content-navigation .c-table-of-content__nav li.not-numbered a {
-                padding-left: 1rem;
-            }
-
-            .c-table-of-content-navigation .c-table-of-content__nav li:not(.not-numbered) {
-                counter-increment: li;
-            }
-
-                .c-table-of-content-navigation .c-table-of-content__nav li:not(.not-numbered) a:before {
+                .c-table-of-content-navigation .c-table-of-content__nav li a:before {
                     content: counter(li) ".  ";
                 }
 
@@ -6267,7 +6272,7 @@ c-table-of-content
         justify-content: flex-start;
     }
 
-@media (min-width: 700px) {
+@media (min-width: 900px) {
     .main-title .c-toolbar {
         display: flex;
         height: 6.4rem;
@@ -6319,6 +6324,10 @@ c-table-of-content
     .c-toolbar__right .c-toolbar__item {
         margin-left: 1.6rem;
     }
+
+        .c-toolbar__right .c-toolbar__item:first-child {
+            margin-left: 0;
+        }
 
         .c-toolbar__right .c-toolbar__item:only-child {
             margin: 0;
@@ -6767,6 +6776,10 @@ c-table-of-content
  * ===
  * Set of generic helping classes
  */
+.u-t-align-right {
+    text-align: right;
+}
+
 .u-maximize-height {
     height: 100% !important;
 }
