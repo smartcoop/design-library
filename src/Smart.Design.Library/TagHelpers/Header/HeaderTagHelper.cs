@@ -22,7 +22,7 @@ public class HeaderTagHelper : TagHelper
     /// <summary>
     /// Path to the current user avatar
     /// </summary>
-    public string LogoPath { get; set; } = "/unity/images/logo.svg";
+    public string LogoPath { get; set; } = "~/_content/Smart.Design.Library/images/logo.svg";
 
     /// <summary>
     /// list of available languages
@@ -42,7 +42,7 @@ public class HeaderTagHelper : TagHelper
     /// <summary>
     /// Path to the current user avatar
     /// </summary>
-    public string AvatarPath { get; set; } = "/unity/images/default_image.svg";
+    public string AvatarPath { get; set; } = "~/_content/Smart.Design.Library/images/default_image.svg";
 
     /// <summary>
     /// Path to logout
