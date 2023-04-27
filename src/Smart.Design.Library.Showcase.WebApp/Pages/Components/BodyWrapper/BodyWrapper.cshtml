@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.BodyWrapper.BodyWrapper
 @{
     ViewData["MainTitle"] = "Components documentation";
@@ -7,6 +7,7 @@
 
 <div class="u-padding-bottom-l">
     <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
+    <p><b>Status:</b> Unclear ?</p>
 </div>
 
 
@@ -17,16 +18,19 @@
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
         </div>
         <div class="br-content c-content">
-            <p>Documentation for Body wrapper</p>
+            <p>Is it still usefull to keep a taghelper for this or do we keep using raw html ?</p>
         </div>
-        <div class="br-sample" id="component-01-c-button-primary">
+        <div class="br-sample" id="component-01-c-bodyWrapper">
             <div class="br-sample-header br-sample-clearfix">
                 <h3 class="br-sample-heading c-h3">Body wrapper</h3>
             </div>
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
+                <smart-body-wrapper>test</smart-body-wrapper>
             </div>
             <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-body-wrapper>test</smart-body-wrapper>")</pre>
             </div>
         </div>
     </div>

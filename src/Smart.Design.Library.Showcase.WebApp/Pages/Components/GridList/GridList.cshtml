@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.GridList.GridList
 @{
     ViewData["MainTitle"] = "Components documentation";
@@ -15,18 +15,36 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Caution</p>
         </div>
         <div class="br-content c-content">
             <p>Documentation for Grid list</p>
+            <p class="c-menu__item--danger">This TagHelper is not Smart Design compliant. It doesn't create a grid, but a table...</p>
         </div>
         <div class="br-sample" id="component-01-c-button-primary">
             <div class="br-sample-header br-sample-clearfix">
                 <h3 class="br-sample-heading c-h3">Grid list</h3>
+                
             </div>
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
+                @{
+                    var list = new List<string>
+                { "Label col 1", "Label col 2", "Label col 3", "Label col 4" };
+                }
+                <smart-gridlist titles=@list>
+                    <smart-gridlist-row column-separator="~" row-length="4">
+                        Row 1-1~Row 1-2~Row 1-3~Row 1-4
+                    </smart-gridlist-row>
+                    <smart-gridlist-row column-separator="~" row-length="4">
+                        Row 2-1~Row 2-2~Row 2-3~Row 2-4
+                    </smart-gridlist-row>
+                </smart-gridlist>
             </div>
             <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("@{var list = new List<string>{\"Label col 1\", \"Label col 2\", \"Label col 3\", \"Label col 4\" };}")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-gridlist titles=@list><smart-gridlist-row column-separator=\"~\" row-length=\"4\">Row 1-1~Row 1-2~Row 1-3~Row 1-4</smart-gridlist-row><smart-gridlist-row column-separator=\"~\" row-length=\"4\">Row 2-1~Row 2-2~Row 2-3~Row 2-4</smart-gridlist-row></smart-gridlist>")</pre>
             </div>
         </div>
     </div>

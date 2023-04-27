@@ -1,4 +1,4 @@
-@page
+﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.Select.Select
 @{
     ViewData["MainTitle"] = "Components documentation";
@@ -15,19 +15,44 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Incomplet</p>
         </div>
         <div class="br-content c-content">
-            <p>Documentation for Select</p>
-        </div>
-        <div class="br-sample" id="component-01-c-button-primary">
-            <div class="br-sample-header br-sample-clearfix">
-                <h3 class="br-sample-heading c-h3">Select</h3>
+            <div class="br-sample-documentation c-content c-menu__item--danger">
+                <p>Option tags must be in C# as a child of smart-select Tag. </p>
             </div>
-            <div class="br-sample-documentation c-content"></div>
+        </div>
+        <div class="br-sample" id="component-01-c-select">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Text select</h3>
+                <a class="br-sample-header-link" href="#component-01-c-select">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>A standard select HTML element.</p>
+            </div>
             <div class="br-sample-content">
+                <smart-select>
+                    <option>Option A</option>
+                    <option>Option B</option>
+                    <option>Option C</option>
+                    <option>Option D</option>
+                </smart-select>
             </div>
             <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-select></smart-select>")</pre>
             </div>
+            <div class="br-sample" id="component-02-c-select">
+                <div class="br-sample-header br-sample-clearfix">
+                    <h3 class="br-sample-heading c-h3">Select with optgroups</h3>
+                    <a class="br-sample-header-link" href="#component-02-c-select">#</a>
+                </div>
+                <div class="br-sample-content">
+                    <p class="c-menu__item--danger">Select with optgroups missing</p>
+                </div>
+                <div class="br-sample-footer">
+                </div>
+            </div>      
         </div>
     </div>
 </div>

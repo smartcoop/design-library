@@ -39,6 +39,9 @@
                 }
             </div>
             <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("@{var Paginationsettings = new Library.TagHelpers.Pagination.PaginationSettings(){TotalPages = 105, PageNumber = 2,NumberOfLinks = 5,  PageNumberParameterName=\"current-page\", QueryString = $\"id=5\"};")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-pagination pagination-settings=\"@Paginationsettings\"></smart-pagination>")</pre>
             </div>
         </div>
         <div class="br-sample" id="component-02-c-pagination">
@@ -81,7 +84,23 @@
                     <tr>
                         <td>pagination-settings</td>
                         <td>C# Model</td>
-                        <td>(voir TagHelper Pagination)</td>
+                            <td>
+                                public class PaginationSettings
+                                {<br /><br />
+                                     /// Extra query string that should be add to the URI of page links.<br />
+                                public string? QueryString { get; set; }<br /><br />
+                                    /// Relative URL path of the resource.<br />
+                                public string? Path { get; set; }<br /><br />
+                                    /// The query string parameter name for current page number value.<br />
+                                public string PageNumberParameterName { get; set; } = null!;<br /><br />
+                                    /// The current page value.<br />
+                                public int PageNumber { get; set; }<br /><br />
+                                    /// The total pages count.<br />
+                                public int TotalPages { get; set; }<br /><br />
+                                    /// The number of page links to display.<br />
+                                public int NumberOfLinks { get; set; }<br /><br />
+                                }
+                            </td>
                         <td></td>
                     </tr>
                     </tbody>
