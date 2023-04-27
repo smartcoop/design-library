@@ -22,11 +22,6 @@ public class TableOfContentHtmlGenerator : ITableOfContentHtmlGenerator
             if (i == 0)
             {
                 li.Attributes["aria-selected"] = "true";
-                li.AddCssClass("not-numbered");
-            }
-            else if (i == 1)
-            {
-                li.AddCssClass("not-numbered");
             }
 
             var link = new TagBuilder("a");
