@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
-    <Version>1.4.1</Version>
+    <Version>1.4.2</Version>
     <Company>Smart Coop</Company>
     <Authors>Smart Coop</Authors>
     <Description>Tag Helpers implementation of the Smart Design System. Official documentation can be seen at https://design-showcase.smartbe.be/ </Description>
@@ -32,7 +32,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="README.md" Pack="true" PackagePath="\"/>
+    <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
   <ItemGroup>

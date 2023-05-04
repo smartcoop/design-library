@@ -89,7 +89,7 @@
    ========================================================================== */
 /* Generic: CSS reset, box-sizing, global CSS tweaks
    ========================================================================== */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -1424,7 +1424,7 @@ abbr[title] {
     }
 
     .c-content ul li, .c-content ol li {
-        margin-bottom: .8rem;
+        margin-bottom: 1rem;
         position: relative;
     }
 
@@ -1439,26 +1439,48 @@ abbr[title] {
         width: .8rem;
         height: .8rem;
         top: .8rem;
-        left: -2.4rem;
+        left: -1.8rem;
         border-radius: 100%;
-        background-color: #333333;
+        background-color: #808080;
     }
 
 .c-content ol {
-    padding-left: 1.2rem;
+    padding-left: 2rem;
+    counter-reset: li;
 }
 
-    .c-content ol li {
-        counter-increment: li;
+    .c-content ol ol {
+        padding-left: 3.4rem;
+        margin: 1rem 0;
     }
 
-        .c-content ol li:before {
-            content: counter(li) ".  ";
-            position: relative;
-            display: inline-block;
-            width: 1.8rem;
-            left: -.8rem;
-            font-weight: bold;
+        .c-content ol ol li:before {
+            left: -3.4rem;
+        }
+
+    .c-content ol li:before {
+        counter-increment: li;
+        content: counters(li, ".") ".";
+        color: #808080;
+        font-weight: 400;
+        position: absolute;
+        display: inline-block;
+        width: 1.8rem;
+        left: -2rem;
+    }
+
+    .c-content ol ul {
+        padding-left: 3.4rem;
+        margin: 1rem 0;
+    }
+
+        .c-content ol ul li:before {
+            content: "";
+            width: .8rem;
+            height: .8rem;
+            background-color: #808080;
+            border-radius: .4rem;
+            left: -1.8rem;
         }
 
 /* ==========================================================================
