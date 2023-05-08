@@ -66,6 +66,7 @@ public enum Image
     Location,
     Menu,
     Message,
+    Logo,
     OptionsHorizontal,
     Package,
     Pen,

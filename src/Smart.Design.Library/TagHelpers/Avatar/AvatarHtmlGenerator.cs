@@ -6,11 +6,11 @@ namespace Smart.Design.Library.TagHelpers.Avatar;
 
 public class AvatarHtmlGenerator : IAvatarHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
-    public AvatarHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    public AvatarHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc />
@@ -41,7 +41,7 @@ public class AvatarHtmlGenerator : IAvatarHtmlGenerator
 
         if (icon != Image.None)
         {
-            var iconHtml = _iconHtmlGenerator.GenerateIcon(icon);
+            var iconHtml = _imageHtmlGenerator.GenerateIcon(icon);
             avatar.InnerHtml.AppendHtml(iconHtml);
         }
 

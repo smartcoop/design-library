@@ -7,11 +7,11 @@ namespace Smart.Design.Library.TagHelpers.AlertStack;
 
 public class AlertStackHtmlGenerator : IAlertStackHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
-    public AlertStackHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    public AlertStackHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     public async Task<TagBuilder> GenerateAlertStackAsync(Image icon, string? message)
@@ -26,7 +26,7 @@ public class AlertStackHtmlGenerator : IAlertStackHtmlGenerator
         var li = new TagBuilder("li");
         li.AddCssClass("c-alert c-alert--dark");
 
-        var trailingIcon = await _iconHtmlGenerator.GenerateIconAsync(icon).ConfigureAwait(false);
+        var trailingIcon = await _imageHtmlGenerator.GenerateIconAsync(icon).ConfigureAwait(false);
 
         var messageContainer = new TagBuilder("div");
         messageContainer.AddCssClass("c-alert__body");

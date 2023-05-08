@@ -4,16 +4,16 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
-    <Version>1.4.3</Version>
+    <Version>1.5.0</Version>
     <Company>Smart Coop</Company>
     <Authors>Smart Coop</Authors>
-    <Description>Tag Helpers implementation of the Smart Design System. Official documentation can be seen at https://design-showcase.smartbe.be/ </Description>
+    <Description>Tag Helpers implementation of the Smart Design System. Official documentation can be seen at https://design-showcase.smartbe.be/</Description>
     <Copyright>BSD 2-Clause License</Copyright>
     <PackageProjectUrl>https://design.smart.coop</PackageProjectUrl>
     <PackageIcon>Nuget.png</PackageIcon>
     <RepositoryUrl>https://github.com/smartcoop/design-cs</RepositoryUrl>
     <PackageTags>Tag Helpers;TagHelpers;Smart Design</PackageTags>
-    <PackageLicenseExpression> BSD-2-Clause</PackageLicenseExpression>
+    <PackageLicenseExpression>BSD-2-Clause</PackageLicenseExpression>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
@@ -40,9 +40,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\images\" />
+    <Content Remove="wwwroot\images\logo.svg" />
+    <EmbeddedResource Include="wwwroot\images\*.svg" />
   </ItemGroup>
-
+  
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
   <ItemGroup>
     <Compile Update="Resources\Translations.Designer.cs">
       <DesignTime>True</DesignTime>

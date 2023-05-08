@@ -12,7 +12,7 @@ namespace Smart.Design.Library.TagHelpers.Icon;
 [HtmlTargetElement(TagNames.IconTagName)]
 public class IconTagHelper : TagHelper
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
     private const string IconAttributeName = "icon";
 
     [HtmlAttributeName(IconAttributeName)]
@@ -21,16 +21,16 @@ public class IconTagHelper : TagHelper
     /// <summary>
     /// Creates a new <see cref="IconTagHelper"/>.
     /// </summary>
-    /// <param name="iconHtmlGenerator">The service that generates Smart Design Icons HTML.</param>
-    public IconTagHelper(IIconHtmlGenerator iconHtmlGenerator)
+    /// <param name="imageHtmlGenerator">The service that generates Smart Design Icons HTML.</param>
+    public IconTagHelper(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc />
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
     {
-        var icon = await _iconHtmlGenerator.GenerateIconAsync(Image);
+        var icon = await _imageHtmlGenerator.GenerateIconAsync(Image);
 
         output.ClearAndMergeAttributes(icon);
 

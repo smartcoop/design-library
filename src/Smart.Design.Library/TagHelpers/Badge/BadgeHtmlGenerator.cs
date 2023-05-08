@@ -7,11 +7,11 @@ namespace Smart.Design.Library.TagHelpers.Badge;
 
 public class BadgeHtmlGenerator : IBadgeHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
-    public BadgeHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    public BadgeHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     public TagBuilder GenerateSmartBadge(BadgeStyle style, Image icon, BadgeSize size, string? title = default, string? subline = null)
@@ -24,7 +24,7 @@ public class BadgeHtmlGenerator : IBadgeHtmlGenerator
             badge.AddCssClass($"c-badge--{size.ToString().ToLowerInvariant()}");
 
         // When rendering a Smart design badge, the icon has precedence over the style.
-        var badgeIcon = _iconHtmlGenerator.GenerateIcon(icon is not Image.None ? icon : IconByBadgeStyle(style));
+        var badgeIcon = _imageHtmlGenerator.GenerateIcon(icon is not Image.None ? icon : IconByBadgeStyle(style));
         badge.InnerHtml.AppendHtml(badgeIcon);
 
         // No point going any further if there is no text associated to the badge.

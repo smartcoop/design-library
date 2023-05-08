@@ -10,17 +10,17 @@ namespace Smart.Design.Library.TagHelpers.InputGroup;
 /// <inheritdoc cref="IInputGroupHtmlGenerator"/>
 public class InputGroupHtmlGenerator : IInputGroupHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
     private readonly IInputHtmlGenerator _inputHtmlGenerator;
 
     /// <summary>
     /// Creates a new <see cref="InputGroupHtmlGenerator"/>.
     /// </summary>
-    /// <param name="iconHtmlGenerator">THe service that generates Smart Icons HTML.</param>
+    /// <param name="imageHtmlGenerator">THe service that generates Smart Icons HTML.</param>
     /// <param name="inputHtmlGenerator">The services that generates input HTML.</param>
-    public InputGroupHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator, IInputHtmlGenerator inputHtmlGenerator)
+    public InputGroupHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator, IInputHtmlGenerator inputHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
         _inputHtmlGenerator = inputHtmlGenerator;
     }
 
@@ -57,7 +57,7 @@ public class InputGroupHtmlGenerator : IInputGroupHtmlGenerator
 
             if (icon is not Image.None)
             {
-                var svgIcon = _iconHtmlGenerator.GenerateIcon(icon);
+                var svgIcon = _imageHtmlGenerator.GenerateIcon(icon);
                 group.InnerHtml.SetHtmlContent(svgIcon);
             }
             else if (text is not null)

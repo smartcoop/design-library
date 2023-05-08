@@ -9,7 +9,7 @@ namespace Smart.Design.Library.TagHelpers.Pagination;
 /// <inheritdoc cref="ISmartPaginationHtmlGenerator"/>
 public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
     private int _startPageNumber;
     private int _endPageNumber;
@@ -22,10 +22,10 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
     /// <summary>
     /// Instantiate a <see cref="SmartPaginationHtmlGenerator"/>.
     /// </summary>
-    /// <param name="iconHtmlGenerator">A service that produces needed icon for the component.</param>
-    public SmartPaginationHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    /// <param name="imageHtmlGenerator">A service that produces needed icon for the component.</param>
+    public SmartPaginationHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc />
@@ -152,7 +152,7 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
 
         var span = new TagBuilder("span");
         span.AddCssClass("c-button__content");
-        span.InnerHtml.AppendHtml(await _iconHtmlGenerator.GenerateIconAsync(chevron));
+        span.InnerHtml.AppendHtml(await _imageHtmlGenerator.GenerateIconAsync(chevron));
 
         chevronLink.InnerHtml.AppendHtml(span);
         paginationItem.InnerHtml.AppendHtml(chevronLink);

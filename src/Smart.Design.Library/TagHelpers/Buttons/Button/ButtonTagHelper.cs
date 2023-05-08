@@ -47,7 +47,7 @@ public class ButtonTagHelper : BaseTagHelper
 
     private IDictionary<string, string>? _routeValues;
 
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
     private readonly IUrlHelperFactory _urlHelperFactory;
 
     /// <summary>
@@ -146,11 +146,11 @@ public class ButtonTagHelper : BaseTagHelper
     /// <summary>
     /// Creates a new <see cref="ButtonTagHelper"/>.
     /// </summary>
-    /// <param name="iconHtmlGenerator">The <see cref="IIconHtmlGenerator"/>.</param>
+    /// <param name="imageHtmlGenerator">The <see cref="IImageHtmlGenerator"/>.</param>
     /// <param name="urlHelperFactory">The <see cref="IUrlHelperFactory"/>.</param>
-    public ButtonTagHelper(IIconHtmlGenerator iconHtmlGenerator, IUrlHelperFactory urlHelperFactory)
+    public ButtonTagHelper(IImageHtmlGenerator imageHtmlGenerator, IUrlHelperFactory urlHelperFactory)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
         _urlHelperFactory = urlHelperFactory;
     }
 
@@ -187,7 +187,7 @@ public class ButtonTagHelper : BaseTagHelper
         // If a leading icon is specified it needs to be added as the first child of the container.
         if (LeadingIcon != Image.None)
         {
-            var leadingIcon = await _iconHtmlGenerator.GenerateIconAsync(LeadingIcon);
+            var leadingIcon = await _imageHtmlGenerator.GenerateIconAsync(LeadingIcon);
             buttonContent.InnerHtml.AppendHtml(leadingIcon);
         }
 
@@ -208,7 +208,7 @@ public class ButtonTagHelper : BaseTagHelper
         // Obviously a trailing icon needs to be set.
         if (TrailingIcon != Image.None && !IconOnly)
         {
-            var trailingIcon = await _iconHtmlGenerator.GenerateIconAsync(TrailingIcon);
+            var trailingIcon = await _imageHtmlGenerator.GenerateIconAsync(TrailingIcon);
             buttonContent.InnerHtml.AppendHtml(trailingIcon);
         }
 

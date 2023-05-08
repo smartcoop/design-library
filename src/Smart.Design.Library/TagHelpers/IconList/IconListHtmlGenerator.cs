@@ -7,11 +7,11 @@ namespace Smart.Design.Library.TagHelpers.IconList;
 
 public class IconListHtmlGenerator : IIconListHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
-    public IconListHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    public IconListHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc />
@@ -30,7 +30,7 @@ public class IconListHtmlGenerator : IIconListHtmlGenerator
         var li = new TagBuilder("li");
         li.AddCssClass("c-icon-list__item");
 
-        var htmlIcon = await _iconHtmlGenerator.GenerateIconAsync(icon);
+        var htmlIcon = await _imageHtmlGenerator.GenerateIconAsync(icon);
         li.InnerHtml.AppendHtml(htmlIcon);
 
         var messageSpan = new TagBuilder("span");

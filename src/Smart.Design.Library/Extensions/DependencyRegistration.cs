@@ -54,7 +54,7 @@ public static class DependencyRegistration
             .AddTransient<IFormHtmlGenerator, FormHtmlGenerator>()
             .AddTransient<IGlobalBannerHtmlGenerator, GlobalBannerHtmlGenerator>()
             .AddTransient<IGridHtmlGenerator, GridHtmlGenerator>()
-            .AddTransient<IIconHtmlGenerator, IconHtmlGenerator>()
+            .AddTransient<IImageHtmlGenerator, ImageHtmlGenerator>()
             .AddTransient<IIconListHtmlGenerator, IconListHtmlGenerator>()
             .AddTransient<IInputGroupHtmlGenerator, InputGroupHtmlGenerator>()
             .AddTransient<ILoaderHtmlGenerator, LoaderHtmlGenerator>()
