@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Pagination;
 
@@ -38,14 +39,14 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
         var navBar = BuildNavBar();
         var ulContainer = BuildUlContainer();
 
-        ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.ChevronLeft));
+        ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.Image.ChevronLeft));
 
         for (var pageNumber = _startPageNumber; pageNumber <= _endPageNumber; pageNumber++)
         {
             ulContainer.InnerHtml.AppendHtml(GeneratePageLink(pageNumber));
         }
 
-        ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.ChevronRight));
+        ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.Image.ChevronRight));
 
         navBar.InnerHtml.AppendHtml(ulContainer);
         return navBar;
@@ -138,14 +139,14 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
         return pageLink;
     }
 
-    private async Task<IHtmlContent> GetChevronLinkAsync(Image chevron)
+    private async Task<IHtmlContent> GetChevronLinkAsync(Image.Image chevron)
     {
         var paginationItem = MakePaginationItem();
         var chevronLink = new TagBuilder("a");
         chevronLink.AddCssClass("c-button c-button--borderless c-button--icon");
-        chevronLink.Attributes["href"] = GetQueryString(chevron == Image.ChevronLeft ? _currentPageNumber - 1 : _currentPageNumber + 1);
+        chevronLink.Attributes["href"] = GetQueryString(chevron == Image.Image.ChevronLeft ? _currentPageNumber - 1 : _currentPageNumber + 1);
 
-        if (chevron == Image.ChevronLeft && _currentPageNumber <= 1 || chevron == Image.ChevronRight && _currentPageNumber >= _settings.TotalPages)
+        if (chevron == Image.Image.ChevronLeft && _currentPageNumber <= 1 || chevron == Image.Image.ChevronRight && _currentPageNumber >= _settings.TotalPages)
         {
             chevronLink.Attributes["disabled"] = "disabled";
         }

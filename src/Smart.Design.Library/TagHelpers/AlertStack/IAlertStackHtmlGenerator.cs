@@ -13,5 +13,5 @@ public interface IAlertStackHtmlGenerator
     /// <param name="icon">The leading icon of the alert.</param>
     /// <param name="message">The message to be displayed.</param>
     /// <returns></returns>
-    Task<TagBuilder> GenerateAlertStackAsync(Image icon, string? message);
+    Task<TagBuilder> GenerateAlertStackAsync(Image.Image icon, string? message);
 }

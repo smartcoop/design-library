@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Buttons.ButtonBackToTop;
 
@@ -24,7 +25,7 @@ public class ButtonBackToTopHtmlGenerator : IButtonBackToTopHtmlGenerator
         var span = new TagBuilder("span");
         span.AddCssClass("c-button__content");
 
-        var svg = _imageHtmlGenerator.GenerateIcon(Image.ArrowUp);
+        var svg = _imageHtmlGenerator.GenerateIcon(Image.Image.ArrowUp);
 
         var accessibility = new TagBuilder("div");
         accessibility.AddCssClass("u-sr-accessible");

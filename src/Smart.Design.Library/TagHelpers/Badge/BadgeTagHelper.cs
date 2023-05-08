@@ -27,7 +27,7 @@ public class BadgeTagHelper : TagHelper
     public BadgeStyle Style { get; set; }
 
     [HtmlAttributeName(IconAttributeName)]
-    public Image Icon { get; set; }
+    public Image.Image Icon { get; set; }
 
     [HtmlAttributeName(SublineAttributeName)]
     public string? Subline { get; set; }

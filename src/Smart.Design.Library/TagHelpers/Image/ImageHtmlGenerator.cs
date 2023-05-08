@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using CaseExtensions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Smart.Design.Library.TagHelpers.Icon;
+namespace Smart.Design.Library.TagHelpers.Image;
 
 /// <summary>
 /// Generates HTML to render Smart Design Icons.

@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.AlertStack;
 
@@ -14,7 +15,7 @@ public class AlertStackHtmlGenerator : IAlertStackHtmlGenerator
         _imageHtmlGenerator = imageHtmlGenerator;
     }
 
-    public async Task<TagBuilder> GenerateAlertStackAsync(Image icon, string? message)
+    public async Task<TagBuilder> GenerateAlertStackAsync(Image.Image icon, string? message)
     {
         var mainDiv = new TagBuilder("div");
         mainDiv.Attributes.Add("style", "position: relative; width: 100%; height: 100%; min-height: 220px;");

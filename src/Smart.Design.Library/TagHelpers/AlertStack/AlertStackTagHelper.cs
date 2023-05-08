@@ -16,7 +16,7 @@ public class AlertStackTagHelper : TagHelper
     private readonly IAlertStackHtmlGenerator _alertStackHtmlGenerator;
 
     [HtmlAttributeName(IconAttributeName)]
-    public Image Icon { get; set; }
+    public Image.Image Icon { get; set; }
 
     [HtmlAttributeName(MessageAttributeName)]
     public string? Message { get; set; }

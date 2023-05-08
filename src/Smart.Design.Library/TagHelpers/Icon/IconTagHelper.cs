@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Library.TagHelpers.Constants;
 using Smart.Design.Library.TagHelpers.Extensions;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Icon;
 
@@ -16,7 +17,7 @@ public class IconTagHelper : TagHelper
     private const string IconAttributeName = "icon";
 
     [HtmlAttributeName(IconAttributeName)]
-    public Image Image { get; set; }
+    public Image.Image Image { get; set; }
 
     /// <summary>
     /// Creates a new <see cref="IconTagHelper"/>.

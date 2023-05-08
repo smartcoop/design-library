@@ -15,5 +15,5 @@ public interface IAvatarHtmlGenerator
     /// <param name="initial"></param>
     /// <param name="link"></param>
     /// <returns>An instance of a Smart design avatar.</returns>
-    TagBuilder GenerateAvatar(AvatarSize size, string? imageUrl, string? text, Image icon, string? initial, string? link);
+    TagBuilder GenerateAvatar(AvatarSize size, string? imageUrl, string? text, Image.Image icon, string? initial, string? link);
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Alert;
 
@@ -21,7 +22,7 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
     }
 
     /// <inheritdoc />
-    public Task<TagBuilder> GenerateAlertAsync(string? title, string? message, AlertStyle alertStyle, Image icon, bool isClosable, bool isLight)
+    public Task<TagBuilder> GenerateAlertAsync(string? title, string? message, AlertStyle alertStyle, Image.Image icon, bool isClosable, bool isLight)
     {
         return GenerateAlertAsync(title, new List<string>() { message ?? string.Empty }, alertStyle, icon, isClosable, isLight);
     }
@@ -31,7 +32,7 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
         string? title,
         List<string>? messages,
         AlertStyle alertStyle,
-        Image icon,
+        Image.Image icon,
         bool isClosable,
         bool isLight)
     {
@@ -125,20 +126,20 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
         return "c-alert--" + alertStyle.ToString().ToLowerInvariant();
     }
 
-    private async Task<TagBuilder> GetIconAsync(AlertStyle alertStyle, Image icon)
+    private async Task<TagBuilder> GetIconAsync(AlertStyle alertStyle, Image.Image icon)
     {
         // If an icon is specified then it overrides default behaviour.
-        if (icon is not Image.None)
+        if (icon is not Image.Image.None)
         {
             return await _imageHtmlGenerator.GenerateIconAsync(icon);
         }
 
         return alertStyle switch
         {
-            AlertStyle.Default => await _imageHtmlGenerator.GenerateIconAsync(Image.CircleInformation),
-            AlertStyle.Error   => await _imageHtmlGenerator.GenerateIconAsync(Image.CircleError),
-            AlertStyle.Warning => await _imageHtmlGenerator.GenerateIconAsync(Image.Warning),
-            AlertStyle.Success => await _imageHtmlGenerator.GenerateIconAsync(Image.CircleCheck),
+            AlertStyle.Default => await _imageHtmlGenerator.GenerateIconAsync(Image.Image.CircleInformation),
+            AlertStyle.Error   => await _imageHtmlGenerator.GenerateIconAsync(Image.Image.CircleError),
+            AlertStyle.Warning => await _imageHtmlGenerator.GenerateIconAsync(Image.Image.Warning),
+            AlertStyle.Success => await _imageHtmlGenerator.GenerateIconAsync(Image.Image.CircleCheck),
             _                  =>
                 throw new ArgumentOutOfRangeException(nameof(alertStyle), alertStyle, $"Unknown handling for {alertStyle}")
         };
@@ -156,7 +157,7 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
         var span = new TagBuilder("span");
         span.AddCssClass("c-button__content");
 
-        span.InnerHtml.AppendHtml(await _imageHtmlGenerator.GenerateIconAsync(Image.Close));
+        span.InnerHtml.AppendHtml(await _imageHtmlGenerator.GenerateIconAsync(Image.Image.Close));
 
         var accessible = new TagBuilder("div");
         accessible.AddCssClass("u-sr-accessible");

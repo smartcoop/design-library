@@ -33,5 +33,5 @@ public interface IInputGroupHtmlGenerator
         string? value,
         ModelExpression? @for,
         Alignment alignment,
-        Image icon, string? text);
+        Image.Image icon, string? text);
 }

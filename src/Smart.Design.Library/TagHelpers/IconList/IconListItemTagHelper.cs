@@ -15,7 +15,7 @@ public class IconListItemTagHelper : TagHelper
     private readonly IIconListHtmlGenerator _iconListHtmlGenerator;
 
     [HtmlAttributeName(IconAttributeName)]
-    public Image Icon { get; set; }
+    public Image.Image Icon { get; set; }
 
     [HtmlAttributeName(LabelAttributeName)]
     public string? Label { get; set; }

@@ -1,7 +1,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Smart.Design.Library.TagHelpers.Icon;
+namespace Smart.Design.Library.TagHelpers.Image;
 
 public interface IImageHtmlGenerator
 {

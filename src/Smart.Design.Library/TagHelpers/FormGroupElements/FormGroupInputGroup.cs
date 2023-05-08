@@ -25,7 +25,7 @@ public class FormGroupInputGroup : BaseSmartFormGroupTagHelper
     public string? Placeholder { get; set; }
 
     [HtmlAttributeName(IconAttributeName)]
-    public Image Icon { get; set; }
+    public Image.Image Icon { get; set; }
 
     [HtmlAttributeName(GroupedTextAttributeName)]
     public string? GroupedText { get; set; }
@@ -44,7 +44,7 @@ public class FormGroupInputGroup : BaseSmartFormGroupTagHelper
     {
         base.Init(context);
 
-        if (!string.IsNullOrWhiteSpace(GroupedText) && Icon != Image.None)
+        if (!string.IsNullOrWhiteSpace(GroupedText) && Icon != Image.Image.None)
         {
             throw new InvalidOperationException("input group cannot have and icon and a grouped text set");
         }

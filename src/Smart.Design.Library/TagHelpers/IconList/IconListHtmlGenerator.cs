@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.IconList;
 
@@ -24,7 +25,7 @@ public class IconListHtmlGenerator : IIconListHtmlGenerator
     }
 
     /// <inheritdoc />
-    public async Task<TagBuilder> GenerateIconListItemAsync(Image icon, string? label)
+    public async Task<TagBuilder> GenerateIconListItemAsync(Image.Image icon, string? label)
     {
         // An Smart design icon item has an icon and a label.
         var li = new TagBuilder("li");

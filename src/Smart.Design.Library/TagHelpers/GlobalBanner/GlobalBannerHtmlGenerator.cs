@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.GlobalBanner;
 
@@ -25,7 +26,7 @@ public class GlobalBannerHtmlGenerator : IGlobalBannerHtmlGenerator
         globalBanner.AddCssClass($"c-global-banner c-global-banner--{extraClass}");
 
         // Leading icon can be either info a info or a warning.
-        var leadIcon = globalBannerType == GlobalBannerType.Info ? _imageHtmlGenerator.GenerateIcon(Image.CircleInformation) : _imageHtmlGenerator.GenerateIcon(Image.Warning);
+        var leadIcon = globalBannerType == GlobalBannerType.Info ? _imageHtmlGenerator.GenerateIcon(Image.Image.CircleInformation) : _imageHtmlGenerator.GenerateIcon(Image.Image.Warning);
 
         // Label is the inner html of a paragraph inside a div.
         var labelDiv = new TagBuilder("div");
@@ -43,7 +44,7 @@ public class GlobalBannerHtmlGenerator : IGlobalBannerHtmlGenerator
         // Content of the button
         var spanContent = new TagBuilder("span");
         spanContent.AddCssClass("c-button__content");
-        var closeIcon = _imageHtmlGenerator.GenerateIcon(Image.Close);
+        var closeIcon = _imageHtmlGenerator.GenerateIcon(Image.Image.Close);
         spanContent.InnerHtml.AppendHtml(closeIcon);
 
         // Accessibility

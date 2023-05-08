@@ -19,5 +19,5 @@ public interface IIconListHtmlGenerator
     /// <param name="icon">The leading <see cref="Icon"/> of the item</param>
     /// <param name="label">The item's label.</param>
     /// <returns>An instance of an Smart design icon list item.</returns>
-    Task<TagBuilder> GenerateIconListItemAsync(Image icon, string? label);
+    Task<TagBuilder> GenerateIconListItemAsync(Image.Image icon, string? label);
 }
