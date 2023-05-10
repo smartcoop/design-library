@@ -1,18 +1,18 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Buttons.ButtonBackToTop;
 
 public class ButtonBackToTopHtmlGenerator : IButtonBackToTopHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
     /// <summary>
     /// </summary>
-    /// <param name="iconHtmlGenerator"></param>
-    public ButtonBackToTopHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    /// <param name="imageHtmlGenerator"></param>
+    public ButtonBackToTopHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc />
@@ -24,7 +24,7 @@ public class ButtonBackToTopHtmlGenerator : IButtonBackToTopHtmlGenerator
         var span = new TagBuilder("span");
         span.AddCssClass("c-button__content");
 
-        var svg = _iconHtmlGenerator.GenerateIcon(Image.ArrowUp);
+        var svg = _imageHtmlGenerator.GenerateIcon(Image.Image.ArrowUp);
 
         var accessibility = new TagBuilder("div");
         accessibility.AddCssClass("u-sr-accessible");

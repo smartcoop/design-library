@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 using CaseExtensions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Smart.Design.Library.TagHelpers.Icon;
+namespace Smart.Design.Library.TagHelpers.Image;
 
 /// <summary>
-/// Generates HTML to render Smart Design Icons.
+/// Generates HTML to render images from svg.
 /// </summary>
-public class IconHtmlGenerator : IIconHtmlGenerator
+public class ImageHtmlGenerator : IImageHtmlGenerator
 {
-    private static readonly Lazy<Dictionary<Image, string>> ImagesMappedWithTheirEmbeddedResourceName = new(MakeSvgDictionary);
+    private static readonly Lazy<Dictionary<Image, string>> ImagesMappedWithTheirEmbeddedResourceName = new(MakeImagesSvgDictionary);
 
     /// <inheritdoc />
     public TagBuilder GenerateIcon(Image image)
@@ -40,6 +40,20 @@ public class IconHtmlGenerator : IIconHtmlGenerator
         if (image != Image.None)
         {
             var svg = await RetrieveSvgFromEmbeddedResourcesAsync(image);
+
+            // IHtmlContentBuilder.AppendHtml does nothing if the argument is null or empty.
+            iconDiv.InnerHtml.AppendHtml(svg!);
+        }
+
+        return iconDiv;
+    }
+
+    public TagBuilder GenerateImage(Image image)
+    {
+        var iconDiv = new TagBuilder("div");
+        if (image != Image.None)
+        {
+            var svg = RetrieveSvgFromEmbeddedResources(image);
 
             // IHtmlContentBuilder.AppendHtml does nothing if the argument is null or empty.
             iconDiv.InnerHtml.AppendHtml(svg!);
@@ -83,13 +97,14 @@ public class IconHtmlGenerator : IIconHtmlGenerator
         return currentAssembly.GetManifestResourceStream(ImagesMappedWithTheirEmbeddedResourceName.Value[image]);
     }
 
-    private static Dictionary<Image, string> MakeSvgDictionary()
+    private static Dictionary<Image, string> MakeImagesSvgDictionary()
     {
         var imageMappedWithResourceNames = new Dictionary<Image, string>();
         var iconResourceNames = Assembly
             .GetExecutingAssembly()
             .GetManifestResourceNames()
-            .Where(name => name.StartsWith("Smart.Design.Library.wwwroot.icons"));
+            .Where(name => name.StartsWith("Smart.Design.Library.wwwroot.icons")
+                || name.StartsWith("Smart.Design.Library.wwwroot.images"));
 
         foreach (var iconResourceName in iconResourceNames)
         {

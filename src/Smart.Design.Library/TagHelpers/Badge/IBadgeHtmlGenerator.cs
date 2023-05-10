@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
 
 namespace Smart.Design.Library.TagHelpers.Badge;
 
@@ -14,5 +13,5 @@ public interface IBadgeHtmlGenerator
     /// <param name="title">Title of the badge if set.</param>
     /// <param name="subline">Subline of the badge if set.</param>
     /// <returns>An instance of a Smart design badge.</returns>
-    public TagBuilder GenerateSmartBadge(BadgeStyle style, Image icon, BadgeSize size, string? title = default, string? subline = null);
+    public TagBuilder GenerateSmartBadge(BadgeStyle style, Image.Image icon, BadgeSize size, string? title = default, string? subline = null);
 }

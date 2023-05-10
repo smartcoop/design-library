@@ -27,7 +27,7 @@ public class AvatarTagHelper : TagHelper
     public AvatarSize Size { get; set; } = AvatarSize.Medium;
 
     [HtmlAttributeName(IconAttributeName)]
-    public Image Icon { get; set; }
+    public Image.Image Icon { get; set; }
 
     [HtmlAttributeName(ImageUrlAttributeName)]
     public string? ImageUrl { get; set; }
@@ -48,7 +48,7 @@ public class AvatarTagHelper : TagHelper
 
     public override void Init(TagHelperContext context)
     {
-        if (Icon != Image.None && !string.IsNullOrWhiteSpace(ImageUrl))
+        if (Icon != Image.Image.None && !string.IsNullOrWhiteSpace(ImageUrl))
         {
             throw new InvalidOperationException($"Properties {nameof(Icon)} and {nameof(ImageUrl)} cannot be set at the same time.");
         }

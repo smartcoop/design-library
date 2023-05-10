@@ -20,8 +20,8 @@ using Smart.Design.Library.TagHelpers.GlobalBanner;
 using Smart.Design.Library.TagHelpers.Grid;
 using Smart.Design.Library.TagHelpers.GridList;
 using Smart.Design.Library.TagHelpers.Header;
-using Smart.Design.Library.TagHelpers.Icon;
 using Smart.Design.Library.TagHelpers.IconList;
+using Smart.Design.Library.TagHelpers.Image;
 using Smart.Design.Library.TagHelpers.InputGroup;
 using Smart.Design.Library.TagHelpers.KeyValueList;
 using Smart.Design.Library.TagHelpers.Layout;
@@ -54,7 +54,7 @@ public static class DependencyRegistration
             .AddTransient<IFormHtmlGenerator, FormHtmlGenerator>()
             .AddTransient<IGlobalBannerHtmlGenerator, GlobalBannerHtmlGenerator>()
             .AddTransient<IGridHtmlGenerator, GridHtmlGenerator>()
-            .AddTransient<IIconHtmlGenerator, IconHtmlGenerator>()
+            .AddTransient<IImageHtmlGenerator, ImageHtmlGenerator>()
             .AddTransient<IIconListHtmlGenerator, IconListHtmlGenerator>()
             .AddTransient<IInputGroupHtmlGenerator, InputGroupHtmlGenerator>()
             .AddTransient<ILoaderHtmlGenerator, LoaderHtmlGenerator>()

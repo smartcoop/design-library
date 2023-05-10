@@ -1,20 +1,20 @@
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Avatar;
 
 public class AvatarHtmlGenerator : IAvatarHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
-    public AvatarHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    public AvatarHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc />
-    public TagBuilder GenerateAvatar(AvatarSize size, string? imageUrl, string? text, Image icon, string? initial, string? link)
+    public TagBuilder GenerateAvatar(AvatarSize size, string? imageUrl, string? text, Image.Image icon, string? initial, string? link)
     {
         var avatar = new TagBuilder("div");
         var avatarClass = $"c-avatar c-avatar--{size.ToString().ToLowerInvariant()}";
@@ -39,9 +39,9 @@ public class AvatarHtmlGenerator : IAvatarHtmlGenerator
             avatar.InnerHtml.AppendHtml(image);
         }
 
-        if (icon != Image.None)
+        if (icon != Image.Image.None)
         {
-            var iconHtml = _iconHtmlGenerator.GenerateIcon(icon);
+            var iconHtml = _imageHtmlGenerator.GenerateIcon(icon);
             avatar.InnerHtml.AppendHtml(iconHtml);
         }
 

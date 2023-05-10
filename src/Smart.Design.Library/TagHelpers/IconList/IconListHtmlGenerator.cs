@@ -1,17 +1,17 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.IconList;
 
 public class IconListHtmlGenerator : IIconListHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
-    public IconListHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    public IconListHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc />
@@ -24,13 +24,13 @@ public class IconListHtmlGenerator : IIconListHtmlGenerator
     }
 
     /// <inheritdoc />
-    public async Task<TagBuilder> GenerateIconListItemAsync(Image icon, string? label)
+    public async Task<TagBuilder> GenerateIconListItemAsync(Image.Image icon, string? label)
     {
         // An Smart design icon item has an icon and a label.
         var li = new TagBuilder("li");
         li.AddCssClass("c-icon-list__item");
 
-        var htmlIcon = await _iconHtmlGenerator.GenerateIconAsync(icon);
+        var htmlIcon = await _imageHtmlGenerator.GenerateIconAsync(icon);
         li.InnerHtml.AppendHtml(htmlIcon);
 
         var messageSpan = new TagBuilder("span");

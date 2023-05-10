@@ -2,14 +2,14 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Pagination;
 
 /// <inheritdoc cref="ISmartPaginationHtmlGenerator"/>
 public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
     private int _startPageNumber;
     private int _endPageNumber;
@@ -22,10 +22,10 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
     /// <summary>
     /// Instantiate a <see cref="SmartPaginationHtmlGenerator"/>.
     /// </summary>
-    /// <param name="iconHtmlGenerator">A service that produces needed icon for the component.</param>
-    public SmartPaginationHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    /// <param name="imageHtmlGenerator">The service which serves images as svg html tag.</param>
+    public SmartPaginationHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc />
@@ -38,14 +38,14 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
         var navBar = BuildNavBar();
         var ulContainer = BuildUlContainer();
 
-        ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.ChevronLeft));
+        ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.Image.ChevronLeft));
 
         for (var pageNumber = _startPageNumber; pageNumber <= _endPageNumber; pageNumber++)
         {
             ulContainer.InnerHtml.AppendHtml(GeneratePageLink(pageNumber));
         }
 
-        ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.ChevronRight));
+        ulContainer.InnerHtml.AppendHtml(await GetChevronLinkAsync(Image.Image.ChevronRight));
 
         navBar.InnerHtml.AppendHtml(ulContainer);
         return navBar;
@@ -138,21 +138,21 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
         return pageLink;
     }
 
-    private async Task<IHtmlContent> GetChevronLinkAsync(Image chevron)
+    private async Task<IHtmlContent> GetChevronLinkAsync(Image.Image chevron)
     {
         var paginationItem = MakePaginationItem();
         var chevronLink = new TagBuilder("a");
         chevronLink.AddCssClass("c-button c-button--borderless c-button--icon");
-        chevronLink.Attributes["href"] = GetQueryString(chevron == Image.ChevronLeft ? _currentPageNumber - 1 : _currentPageNumber + 1);
+        chevronLink.Attributes["href"] = GetQueryString(chevron == Image.Image.ChevronLeft ? _currentPageNumber - 1 : _currentPageNumber + 1);
 
-        if (chevron == Image.ChevronLeft && _currentPageNumber <= 1 || chevron == Image.ChevronRight && _currentPageNumber >= _settings.TotalPages)
+        if (chevron == Image.Image.ChevronLeft && _currentPageNumber <= 1 || chevron == Image.Image.ChevronRight && _currentPageNumber >= _settings.TotalPages)
         {
             chevronLink.Attributes["disabled"] = "disabled";
         }
 
         var span = new TagBuilder("span");
         span.AddCssClass("c-button__content");
-        span.InnerHtml.AppendHtml(await _iconHtmlGenerator.GenerateIconAsync(chevron));
+        span.InnerHtml.AppendHtml(await _imageHtmlGenerator.GenerateIconAsync(chevron));
 
         chevronLink.InnerHtml.AppendHtml(span);
         paginationItem.InnerHtml.AppendHtml(chevronLink);

@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Routing;
 using Smart.Design.Library.TagHelpers.Base;
 using Smart.Design.Library.TagHelpers.Constants;
 using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Buttons.Button;
 
@@ -47,7 +48,7 @@ public class ButtonTagHelper : BaseTagHelper
 
     private IDictionary<string, string>? _routeValues;
 
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
     private readonly IUrlHelperFactory _urlHelperFactory;
 
     /// <summary>
@@ -60,13 +61,13 @@ public class ButtonTagHelper : BaseTagHelper
     /// Defines a leading icon (i.e. before the button's label).
     /// </summary>
     [HtmlAttributeName("leading-icon")]
-    public Image LeadingIcon { get; set; }
+    public Image.Image LeadingIcon { get; set; }
 
     /// <summary>
     /// Defines a trailing icon (i.e. after the button's label).
     /// </summary>
     [HtmlAttributeName("trailing-icon")]
-    public Image TrailingIcon { get; set; }
+    public Image.Image TrailingIcon { get; set; }
 
     /// <summary>
     /// The label of the button.
@@ -146,11 +147,11 @@ public class ButtonTagHelper : BaseTagHelper
     /// <summary>
     /// Creates a new <see cref="ButtonTagHelper"/>.
     /// </summary>
-    /// <param name="iconHtmlGenerator">The <see cref="IIconHtmlGenerator"/>.</param>
+    /// <param name="imageHtmlGenerator">The <see cref="IImageHtmlGenerator"/>.</param>
     /// <param name="urlHelperFactory">The <see cref="IUrlHelperFactory"/>.</param>
-    public ButtonTagHelper(IIconHtmlGenerator iconHtmlGenerator, IUrlHelperFactory urlHelperFactory)
+    public ButtonTagHelper(IImageHtmlGenerator imageHtmlGenerator, IUrlHelperFactory urlHelperFactory)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
         _urlHelperFactory = urlHelperFactory;
     }
 
@@ -185,9 +186,9 @@ public class ButtonTagHelper : BaseTagHelper
         buttonContent.AddCssClass("c-button__content");
 
         // If a leading icon is specified it needs to be added as the first child of the container.
-        if (LeadingIcon != Image.None)
+        if (LeadingIcon != Image.Image.None)
         {
-            var leadingIcon = await _iconHtmlGenerator.GenerateIconAsync(LeadingIcon);
+            var leadingIcon = await _imageHtmlGenerator.GenerateIconAsync(LeadingIcon);
             buttonContent.InnerHtml.AppendHtml(leadingIcon);
         }
 
@@ -206,9 +207,9 @@ public class ButtonTagHelper : BaseTagHelper
 
         // We cannot put a a trailing icon if IconOnly attribute is set to true.
         // Obviously a trailing icon needs to be set.
-        if (TrailingIcon != Image.None && !IconOnly)
+        if (TrailingIcon != Image.Image.None && !IconOnly)
         {
-            var trailingIcon = await _iconHtmlGenerator.GenerateIconAsync(TrailingIcon);
+            var trailingIcon = await _imageHtmlGenerator.GenerateIconAsync(TrailingIcon);
             buttonContent.InnerHtml.AppendHtml(trailingIcon);
         }
 

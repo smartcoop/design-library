@@ -5,32 +5,31 @@ using System.Threading;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Library.Resources;
-using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Header;
+
 /// <inheritdoc/>
 public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 {
-
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
     /// <summary>
     /// </summary>
-    /// <param name="iconHtmlGenerator"></param>
-    public HeaderHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    /// <param name="imageHtmlGenerator"></param>
+    public HeaderHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     /// <inheritdoc/>
     public TagBuilder GenerateHeader(string homePageUrl,
-                                     string logoPath,
-                                     Dictionary<string, string> languagesAndLinks,
-                                     string? targetLanguage,
-                                     string fullNameWithTrigram,
-                                     string avatarPath,
-                                     Dictionary<string, string> labelsAndLinks,
-                                     string logoutLink)
+        Dictionary<string, string> languagesAndLinks,
+        string? targetLanguage,
+        string fullNameWithTrigram,
+        string avatarPath,
+        Dictionary<string, string> labelsAndLinks,
+        string logoutLink)
     {
         (string CultureCode, string Language) languageCulture = targetLanguage?.ToUpper() switch
         {
@@ -48,7 +47,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
 
         var divLeft = new TagBuilder("div");
         divLeft.AddCssClass("c-toolbar__left");
-        divLeft.InnerHtml.AppendHtml(GetDivLeftHtmlContent(homePageUrl, logoPath));
+        divLeft.InnerHtml.AppendHtml(GetDivLeftHtmlContent(homePageUrl));
 
         var divRight = new TagBuilder("div");
         divRight.AddCssClass("c-toolbar__right");
@@ -64,7 +63,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return div1;
     }
 
-    private IHtmlContent GetDivLeftHtmlContent(string homePageUrl, string logoPath)
+    private IHtmlContent GetDivLeftHtmlContent(string homePageUrl)
     {
         var divLeft1 = new TagBuilder("div");
         divLeft1.AddCssClass("c-toolbar__item");
@@ -75,9 +74,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var linkLogo = new TagBuilder("a");
         linkLogo.Attributes["href"] = homePageUrl;
 
-        var logo = new TagBuilder("img");
-        logo.Attributes["src"] = logoPath;
-        logo.Attributes["alt"] = "Smart";
+        var logo = _imageHtmlGenerator.GenerateImage(Image.Image.Logo);
 
         linkLogo.InnerHtml.AppendHtml(logo);
         divLeft2.InnerHtml.AppendHtml(linkLogo);
@@ -101,7 +98,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         helpButton.Attributes["type"] = "button";
         helpButton.Attributes["data-menu"] = "help";
 
-        var svg = _iconHtmlGenerator.GenerateIcon(Image.CircleHelp);
+        var svg = _imageHtmlGenerator.GenerateIcon(Image.Image.CircleHelp);
         helpButton.InnerHtml.AppendHtml(svg);
 
         var textHelp = new TagBuilder("p");
@@ -123,9 +120,9 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         liMenuHelp.InnerHtml.AppendHtml(p);
         helpUl.InnerHtml.AppendHtml(liMenuHelp);
 
-        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, Translations.DocumentationUrl, Image.ExternalLink, true);
+        var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, Translations.DocumentationUrl, Image.Image.ExternalLink, true);
         var liQuestion = GenerateListItemWithBanner(Translations.QandA, Translations.QandAUrl);
-        var liContact = GenerateListItemWithBanner(Translations.ContactUs, Translations.ContactUsUrl, Image.None, true);
+        var liContact = GenerateListItemWithBanner(Translations.ContactUs, Translations.ContactUsUrl, Image.Image.None, true);
 
         helpUl.InnerHtml.AppendHtml(liDocumentation);
         helpUl.InnerHtml.AppendHtml(liQuestion);
@@ -241,7 +238,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var hrefSignOut = new TagBuilder("a");
         hrefSignOut.AddCssClass("c-menu__label");
         hrefSignOut.Attributes["href"] = logoutLink;
-        var svg = _iconHtmlGenerator.GenerateIcon(Image.SignOut);
+        var svg = _imageHtmlGenerator.GenerateIcon(Image.Image.SignOut);
         var span = new TagBuilder("span");
         span.InnerHtml.Append(Translations.SignOut);
 
@@ -257,7 +254,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         return divRight3;
     }
 
-    private IHtmlContent GenerateListItemWithBanner(string innerHtml, string href, Image icon = Image.None, bool isBlankTarget = false)
+    private IHtmlContent GenerateListItemWithBanner(string innerHtml, string href, Image.Image icon = Image.Image.None, bool isBlankTarget = false)
     {
         var liItem = new TagBuilder("li");
         liItem.AddCssClass("c-menu__item");
@@ -266,9 +263,9 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         link.Attributes["target"] = isBlankTarget ? "_blank" : "_self";
         link.Attributes["href"] = href;
 
-        if (icon != Image.None)
+        if (icon != Image.Image.None)
         {
-            var svg = _iconHtmlGenerator.GenerateIcon(icon);
+            var svg = _imageHtmlGenerator.GenerateIcon(icon);
             var span = new TagBuilder("span");
             span.InnerHtml.Append(innerHtml);
             link.InnerHtml.AppendHtml(svg);

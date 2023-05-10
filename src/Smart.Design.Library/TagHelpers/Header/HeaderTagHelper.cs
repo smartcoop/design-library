@@ -20,11 +20,6 @@ public class HeaderTagHelper : TagHelper
     public string HomePageUrl { get; set; }
 
     /// <summary>
-    /// Path to the current user avatar
-    /// </summary>
-    public string LogoPath { get; set; } = "~/_content/Smart.Design.Library/images/logo.svg";
-
-    /// <summary>
     /// list of available languages
     /// </summary>
     public Dictionary<string, string> LanguagesAndLinks { get; set; } = new Dictionary<string, string>();
@@ -42,7 +37,7 @@ public class HeaderTagHelper : TagHelper
     /// <summary>
     /// Path to the current user avatar
     /// </summary>
-    public string AvatarPath { get; set; } = "~/_content/Smart.Design.Library/images/default_image.svg";
+    public string AvatarPath { get; set; } = "~/images/default_image.svg";
 
     /// <summary>
     /// Path to logout
@@ -89,7 +84,7 @@ public class HeaderTagHelper : TagHelper
         var header = new TagBuilder("header");
         header.AddCssClass("u-position-fixed u-maximize-width");
 
-        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LogoPath, LanguagesAndLinks, TargetLanguage, FullNameWithTrigram, AvatarPath, LabelsAndLinks, LogoutLink));
+        header.InnerHtml.SetHtmlContent(_headerHtmlGenerator.GenerateHeader(HomePageUrl, LanguagesAndLinks, TargetLanguage, FullNameWithTrigram, AvatarPath, LabelsAndLinks, LogoutLink));
 
         output.MergeAttributes(header);
         output.TagName = header.TagName;

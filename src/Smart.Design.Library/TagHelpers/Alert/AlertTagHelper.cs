@@ -35,7 +35,7 @@ public class AlertTagHelper : TagHelper
     /// Icon to override the default one.
     /// </summary>
     [HtmlAttributeName(IconAttributeName)]
-    public Image Icon { get; set; }
+    public Image.Image Icon { get; set; }
 
     /// <summary>
     /// Determines if the alert has a lighter, more neutral skin. The default state is <see langword="false" />.

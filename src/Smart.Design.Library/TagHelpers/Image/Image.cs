@@ -1,8 +1,8 @@
-namespace Smart.Design.Library.TagHelpers.Icon;
+namespace Smart.Design.Library.TagHelpers.Image;
 
 /// <summary>
-/// Supported icons by Smart design.
-/// We added <see cref="None"/> value by default to prevent having to set nullable icon attributes.
+/// Supported images by Smart design.
+/// We added <see cref="None"/> value by default to prevent having to set nullable image attributes.
 /// </summary>
 public enum Image
 {
@@ -66,6 +66,7 @@ public enum Image
     Location,
     Menu,
     Message,
+    Logo,
     OptionsHorizontal,
     Package,
     Pen,

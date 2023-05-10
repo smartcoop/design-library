@@ -12,7 +12,6 @@ public interface IHeaderHtmlGenerator
     /// a <see cref="fullNameWithTrigram"/> string,  a <see cref="avatarPath"/> string, <see cref="labelsAndLinks"/> dictionary , a <see cref="logoutLink"/> string.
     /// </summary>
     /// <param name="homePageUrl"></param>
-    /// <param name="logoPath"></param>
     /// <param name="languagesAndLinks"></param>
     /// <param name="targetLanguage"></param>
     /// <param name="fullNameWithTrigram"></param>
@@ -21,7 +20,6 @@ public interface IHeaderHtmlGenerator
     /// <param name="logoutLink"></param>
     /// <returns></returns>
     TagBuilder GenerateHeader(string homePageUrl,
-                              string logoPath,
                               Dictionary<string, string> languagesAndLinks,
                               string? targetLanguage,
                               string fullNameWithTrigram,

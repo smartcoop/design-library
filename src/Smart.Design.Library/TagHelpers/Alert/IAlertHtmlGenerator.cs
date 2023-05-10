@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Alert;
 
@@ -27,7 +27,7 @@ public interface IAlertHtmlGenerator
         string? title,
         List<string>? messages,
         AlertStyle alertStyle,
-        Image icon,
+        Image.Image icon,
         bool isClosable,
         bool isLight);
 
@@ -48,7 +48,7 @@ public interface IAlertHtmlGenerator
         string? title,
         string? message,
         AlertStyle alertStyle,
-        Image icon,
+        Image.Image icon,
         bool isClosable,
         bool isLight);
 }

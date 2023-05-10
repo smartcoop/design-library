@@ -1,7 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
-using Smart.Design.Library.TagHelpers.Icon;
 
 namespace Smart.Design.Library.TagHelpers.InputGroup;
 
@@ -33,5 +32,5 @@ public interface IInputGroupHtmlGenerator
         string? value,
         ModelExpression? @for,
         Alignment alignment,
-        Image icon, string? text);
+        Image.Image icon, string? text);
 }

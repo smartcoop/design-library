@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Library.TagHelpers.Base;
 using Smart.Design.Library.TagHelpers.Constants;
 using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Accordion;
 
@@ -20,12 +21,12 @@ namespace Smart.Design.Library.TagHelpers.Accordion;
 [HtmlTargetElement(TagNames.AccordionTagName, TagStructure = TagStructure.NormalOrSelfClosing)]
 public class AccordionTagHelper : TagHelper
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
     private const string TitleAttributeName = "title";
 
-    public AccordionTagHelper(IIconHtmlGenerator iconHtmlGenerator)
+    public AccordionTagHelper(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
     [HtmlAttributeName(TitleAttributeName)]
@@ -63,7 +64,7 @@ public class AccordionTagHelper : TagHelper
         var toolbarButtonContent = new TagBuilder("span");
         toolbarButtonContent.AddCssClass("c-button__content");
 
-        var trailingIcon = await _iconHtmlGenerator.GenerateIconAsync(Image.ChevronRight);
+        var trailingIcon = await _imageHtmlGenerator.GenerateIconAsync(Image.Image.ChevronRight);
         toolbarButtonContent.InnerHtml.AppendHtml(trailingIcon);
 
         var accordionTitle = new TagBuilder("span");

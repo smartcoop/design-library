@@ -1,20 +1,20 @@
 using System;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
+using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Badge;
 
 public class BadgeHtmlGenerator : IBadgeHtmlGenerator
 {
-    private readonly IIconHtmlGenerator _iconHtmlGenerator;
+    private readonly IImageHtmlGenerator _imageHtmlGenerator;
 
-    public BadgeHtmlGenerator(IIconHtmlGenerator iconHtmlGenerator)
+    public BadgeHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
-        _iconHtmlGenerator = iconHtmlGenerator;
+        _imageHtmlGenerator = imageHtmlGenerator;
     }
 
-    public TagBuilder GenerateSmartBadge(BadgeStyle style, Image icon, BadgeSize size, string? title = default, string? subline = null)
+    public TagBuilder GenerateSmartBadge(BadgeStyle style, Image.Image icon, BadgeSize size, string? title = default, string? subline = null)
     {
         var badge = new TagBuilder("div");
         badge.AddCssClass($"c-badge c-badge--{style.ToString().ToLowerInvariant()}");
@@ -24,7 +24,7 @@ public class BadgeHtmlGenerator : IBadgeHtmlGenerator
             badge.AddCssClass($"c-badge--{size.ToString().ToLowerInvariant()}");
 
         // When rendering a Smart design badge, the icon has precedence over the style.
-        var badgeIcon = _iconHtmlGenerator.GenerateIcon(icon is not Image.None ? icon : IconByBadgeStyle(style));
+        var badgeIcon = _imageHtmlGenerator.GenerateIcon(icon is not Image.Image.None ? icon : IconByBadgeStyle(style));
         badge.InnerHtml.AppendHtml(badgeIcon);
 
         // No point going any further if there is no text associated to the badge.
@@ -67,15 +67,15 @@ public class BadgeHtmlGenerator : IBadgeHtmlGenerator
         return badgeAndText;
     }
 
-    private Image IconByBadgeStyle(BadgeStyle style)
+    private Image.Image IconByBadgeStyle(BadgeStyle style)
     {
         return style switch
         {
-            BadgeStyle.Default => Image.CircleInformation,
-            BadgeStyle.Error   => Image.Close,
-            BadgeStyle.Success => Image.Check,
-            BadgeStyle.Help    => Image.CircleHelp,
-            BadgeStyle.Warning => Image.Warning,
+            BadgeStyle.Default => Image.Image.CircleInformation,
+            BadgeStyle.Error   => Image.Image.Close,
+            BadgeStyle.Success => Image.Image.Check,
+            BadgeStyle.Help    => Image.Image.CircleHelp,
+            BadgeStyle.Warning => Image.Image.Warning,
             _                  => throw new ArgumentOutOfRangeException(nameof(style), style, $"No preset badge style for style {style}")
         };
     }

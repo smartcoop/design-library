@@ -54,7 +54,7 @@ public class InputGroupTagHelper : BaseTagHelper
     /// Icon of the Input group.
     /// </summary>
     [HtmlAttributeName(IconAttributeName)]
-    public Image Icon { set; get; }
+    public Image.Image Icon { set; get; }
 
     /// <summary>
     /// Placeholder of the input group.
@@ -71,7 +71,7 @@ public class InputGroupTagHelper : BaseTagHelper
     /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        if (!string.IsNullOrWhiteSpace(GroupedText) && Icon != Image.None)
+        if (!string.IsNullOrWhiteSpace(GroupedText) && Icon != Image.Image.None)
         {
             throw new InvalidOperationException("input group cannot have and icon and a grouped text set");
         }
