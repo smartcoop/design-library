@@ -5,7 +5,6 @@ using System.Threading;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Smart.Design.Library.Resources;
-using Smart.Design.Library.TagHelpers.Icon;
 using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Header;

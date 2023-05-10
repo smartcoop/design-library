@@ -2,7 +2,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Library.TagHelpers.Constants;
 using Smart.Design.Library.TagHelpers.Extensions;
-using Smart.Design.Library.TagHelpers.Icon;
 
 namespace Smart.Design.Library.TagHelpers.IconList;
 

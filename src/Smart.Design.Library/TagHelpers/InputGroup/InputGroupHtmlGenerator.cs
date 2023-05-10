@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Smart.Design.Library.TagHelpers.Elements.Input;
-using Smart.Design.Library.TagHelpers.Icon;
 using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.InputGroup;
@@ -17,8 +16,8 @@ public class InputGroupHtmlGenerator : IInputGroupHtmlGenerator
     /// <summary>
     /// Creates a new <see cref="InputGroupHtmlGenerator"/>.
     /// </summary>
-    /// <param name="imageHtmlGenerator">THe service that generates Smart Icons HTML.</param>
-    /// <param name="inputHtmlGenerator">The services that generates input HTML.</param>
+    /// <param name="imageHtmlGenerator">The service which serves images as svg html tag.</param>
+    /// <param name="inputHtmlGenerator">The services which generates input HTML.</param>
     public InputGroupHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator, IInputHtmlGenerator inputHtmlGenerator)
     {
         _imageHtmlGenerator = imageHtmlGenerator;

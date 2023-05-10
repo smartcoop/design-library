@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Smart.Design.Library.TagHelpers.Image;
 
 /// <summary>
-/// Generates HTML to render Smart Design Icons.
+/// Generates HTML to render images from svg.
 /// </summary>
 public class ImageHtmlGenerator : IImageHtmlGenerator
 {
@@ -104,7 +104,7 @@ public class ImageHtmlGenerator : IImageHtmlGenerator
             .GetExecutingAssembly()
             .GetManifestResourceNames()
             .Where(name => name.StartsWith("Smart.Design.Library.wwwroot.icons")
-            || name.StartsWith("Smart.Design.Library.wwwroot.images"));
+                || name.StartsWith("Smart.Design.Library.wwwroot.images"));
 
         foreach (var iconResourceName in iconResourceNames)
         {
@@ -118,7 +118,4 @@ public class ImageHtmlGenerator : IImageHtmlGenerator
 
         return imageMappedWithResourceNames;
     }
-
-
-
 }

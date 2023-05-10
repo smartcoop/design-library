@@ -20,7 +20,6 @@ using Smart.Design.Library.TagHelpers.GlobalBanner;
 using Smart.Design.Library.TagHelpers.Grid;
 using Smart.Design.Library.TagHelpers.GridList;
 using Smart.Design.Library.TagHelpers.Header;
-using Smart.Design.Library.TagHelpers.Icon;
 using Smart.Design.Library.TagHelpers.IconList;
 using Smart.Design.Library.TagHelpers.Image;
 using Smart.Design.Library.TagHelpers.InputGroup;

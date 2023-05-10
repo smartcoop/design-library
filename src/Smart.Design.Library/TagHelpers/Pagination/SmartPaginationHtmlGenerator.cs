@@ -2,7 +2,6 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
 using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Pagination;
@@ -23,7 +22,7 @@ public class SmartPaginationHtmlGenerator : ISmartPaginationHtmlGenerator
     /// <summary>
     /// Instantiate a <see cref="SmartPaginationHtmlGenerator"/>.
     /// </summary>
-    /// <param name="imageHtmlGenerator">A service that produces needed icon for the component.</param>
+    /// <param name="imageHtmlGenerator">The service which serves images as svg html tag.</param>
     public SmartPaginationHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
         _imageHtmlGenerator = imageHtmlGenerator;

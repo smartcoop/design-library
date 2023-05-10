@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Library.TagHelpers.Constants;
-using Smart.Design.Library.TagHelpers.Icon;
 
 namespace Smart.Design.Library.TagHelpers.Header;
 

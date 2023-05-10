@@ -2,7 +2,6 @@ using System;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Library.TagHelpers.Base;
-using Smart.Design.Library.TagHelpers.Icon;
 using Smart.Design.Library.TagHelpers.InputGroup;
 using Smart.Design.Library.TagHelpers.ValidationMessage;
 using TagNames = Smart.Design.Library.TagHelpers.Constants.TagNames;

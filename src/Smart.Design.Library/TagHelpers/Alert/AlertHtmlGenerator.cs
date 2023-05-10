@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Smart.Design.Library.TagHelpers.Icon;
 using Smart.Design.Library.TagHelpers.Image;
 
 namespace Smart.Design.Library.TagHelpers.Alert;
@@ -15,7 +14,7 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
     /// <summary>
     /// Generates an <see cref="AlertHtmlGenerator"/>.
     /// </summary>
-    /// <param name="imageHtmlGenerator">A services that services HTML to render icons.</param>
+    /// <param name="imageHtmlGenerator">A services that services HTML to render images.</param>
     public AlertHtmlGenerator(IImageHtmlGenerator imageHtmlGenerator)
     {
         _imageHtmlGenerator = imageHtmlGenerator;
