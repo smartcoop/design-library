@@ -1,4 +1,55 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.SubscriptionModel
 @{
+    ViewData["Title"] = "Subscription page";
 }
+
+<main class="o-container-vertical">
+
+
+
+    <div class="o-container o-container--small">
+
+
+        <div class="u-spacer-bottom-xl">
+            <smart-alert message="Pour une utilisation optimale des services que Smart met à votre disposition, il est vivement souhaitable et recommandé de participer à une session Smart : mode d’emploi." is-closable="false"></smart-alert>
+        </div>
+
+        <div class="c-panel u-shadow-50">
+
+            <div class="c-panel__body u-padding-vertical-l u-padding-bottom">
+
+                <h3 class="c-h2 u-spacer-bottom-xl">Vos données personnelles</h3>
+
+                <smart-form id="test">
+
+                    <div class="o-grid">
+                        <div class="o-grid-col-6">
+                            <smart-form-group-input-text label="Nom" placeholder="placehodler"></smart-form-group-input-text>
+                        </div>
+                        <div class="o-grid-col-6">
+                            <smart-form-group-input-text label="Prénom" placeholder="placehodler"></smart-form-group-input-text>
+                        </div>
+                    </div>
+
+                    <smart-formgroup label="Sexe">
+                        <smart-select placeholder="Choisir">
+                            <option>M</option>
+                            <option>F</option>
+                        </smart-select>
+                    </smart-formgroup>
+
+
+
+                    <smart-formgroup label="Date de naissance">
+                        <smart-input-group id="textInputgroupId" name="InputgroupName" placeholder="__/__/____" value="" align="End" icon="Calendar"></smart-input-group>
+                        </smart-formgroup>
+
+                    
+
+
+                </smart-form>
+            </div>
+        </div>
+    </div>
+</main>
