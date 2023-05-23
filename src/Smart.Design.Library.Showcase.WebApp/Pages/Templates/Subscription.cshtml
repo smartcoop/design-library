@@ -12,7 +12,7 @@
 
 
         <div class="u-spacer-bottom-xl">
-            <smart-alert message="Pour une utilisation optimale des services que Smart met à votre disposition, il est vivement souhaitable et recommandé de participer à une session Smart : mode d’emploi." is-closable="false"></smart-alert>
+            <smart-alert title="Session d'informations" message="<p>Pour une utilisation optimale des services que Smart met à votre disposition, il est vivement souhaitable et recommandé de participer à une session Smart : <a href='https://guide.smart.coop/'>mode d’emploi.</a></p>" is-closable="false"></smart-alert>
         </div>
 
         <div class="c-panel u-shadow-50">
@@ -25,25 +25,64 @@
 
                     <div class="o-grid">
                         <div class="o-grid-col-6">
-                            <smart-form-group-input-text label="Nom" placeholder="placehodler"></smart-form-group-input-text>
+                            <smart-formgroup label="Nom">
+                                <smart-input-group id="firstname" name="firstname" placeholder="John"></smart-input-group>
+                            </smart-formgroup>
                         </div>
                         <div class="o-grid-col-6">
-                            <smart-form-group-input-text label="Prénom" placeholder="placehodler"></smart-form-group-input-text>
+                            <smart-formgroup label="Prénom">
+                                <smart-input-group id="lastname" name="lastname" placeholder="Doe"></smart-input-group>
+                            </smart-formgroup>
                         </div>
                     </div>
 
+
+
                     <smart-formgroup label="Sexe">
-                        <smart-select placeholder="Choisir">
+                        <smart-select>
                             <option>M</option>
                             <option>F</option>
                         </smart-select>
                     </smart-formgroup>
 
+                    <smart-formgroup label="Langue">
+                        <smart-select>
+                            <option>Français</option>
+                            <option>Néerlandais</option>
+                            <option>Allemand</option>
+                            <option>Anglais</option>
+                        </smart-select>
+                    </smart-formgroup>
 
+                    <smart-formgroup label="Email">
+                        <smart-input-group id="email" name="email" placeholder="youremail@email.com" value="" align="End" icon="Email"></smart-input-group>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Numéro de téléphone">
+                        <smart-input-group id="phone-number" name="phone-number" placeholder="____ ______" value=""></smart-input-group>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Numéro de GSM">
+                        <smart-input-group id="mobile-phone-number" name="InputgroupName" placeholder="____ ______" value=""></smart-input-group>
+                    </smart-formgroup>
 
                     <smart-formgroup label="Date de naissance">
-                        <smart-input-group id="textInputgroupId" name="InputgroupName" placeholder="__/__/____" value="" align="End" icon="Calendar"></smart-input-group>
-                        </smart-formgroup>
+                        <smart-input-group id="birthdate" name="InputgroupName" placeholder="__/__/____" value="" align="End" icon="Calendar"></smart-input-group>
+                    </smart-formgroup>
+
+                    <smart-hr></smart-hr>
+
+                    <h2 class="c-h2">Adresse Courrier</h2>
+
+                    <div class="u-spacer-bottom">
+                        <smart-radio name="same_address" id="same_adress" label="Mon adresse courrier est la même que mon adresse officielle" value="same_adress" checked="true"></smart-radio>
+                    </div>
+                    <div class="u-spacer-bottom-xl">
+                        <smart-radio name="same_address" id="same_address1" label="Mon adresse courrier est différente de mon adresse officielle" value="same_address" checked="false"></smart-radio>
+                    </div>
+                    <div class="u-spacer-top-l u-spacer-bottom-s">
+                        <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
+                    </div>
 
                     
 
