@@ -36,8 +36,6 @@
                         </div>
                     </div>
 
-
-
                     <smart-formgroup label="Sexe">
                         <smart-select>
                             <option>M</option>
@@ -70,6 +68,68 @@
                         <smart-input-group id="birthdate" name="InputgroupName" placeholder="__/__/____" value="" align="End" icon="Calendar"></smart-input-group>
                     </smart-formgroup>
 
+                    <smart-formgroup label="Ville de naissance">
+                        <smart-input-group id="birth-town" name="InputgroupName" value=""></smart-input-group>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Etat civil">
+                        <smart-select>
+                            <option>Marié.e</option>
+                            <option>Célibataire</option>
+                        </smart-select>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Nationalité">
+                        <smart-select>
+                            <option>Belge</option>
+                            <option>Espagnol</option>
+                            <option>Neptunien</option>
+                        </smart-select>
+                    </smart-formgroup>
+
+                    <smart-hr></smart-hr>
+
+                    <h3 class="c-h2 u-spacer-bottom-xl">Adresse Officielle</h3>
+
+                    <div class="o-grid">
+                        <div class="o-grid-col-6">
+                            <smart-formgroup label="Rue">
+                                <smart-input-group id="street" name="street" placeholder="rue du joli bois"></smart-input-group>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-3">
+                            <smart-formgroup label="Numéro">
+                                <smart-input-group id="number" name="number" placeholder="44"></smart-input-group>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-3">
+                            <smart-formgroup label="Boîte">
+                                <smart-input-group id="box" name="mail-box" placeholder="3"></smart-input-group>
+                            </smart-formgroup>
+                        </div>
+                    </div>
+
+                    <div class="o-grid">
+                        <div class="o-grid-col-4">
+                            <smart-formgroup label="Code postal">
+                                <smart-input-group id="zip-code" name="zip-code" placeholder="4000"></smart-input-group>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-8">
+                            <smart-formgroup label="Ville">
+                                <smart-input-group id="city" name="city" placeholder="Liège"></smart-input-group>
+                            </smart-formgroup>
+                        </div>
+                    </div>
+
+                    <smart-formgroup label="Pays">
+                        <smart-select>
+                            <option>Belgique</option>
+                            <option>Espagne</option>
+                            <option>Neptune</option>
+                        </smart-select>
+                    </smart-formgroup>
+
                     <smart-hr></smart-hr>
 
                     <h2 class="c-h2">Adresse Courrier</h2>
@@ -80,13 +140,22 @@
                     <div class="u-spacer-bottom-xl">
                         <smart-radio name="same_address" id="same_address1" label="Mon adresse courrier est différente de mon adresse officielle" value="same_address" checked="false"></smart-radio>
                     </div>
+
+                    <h3 class="c-h2 u-spacer-bottom-xl">Vos données professionnelles</h3>
+
+                    <smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e ,artiste et chômeur n'est pas une fonction). Voir le registre des métiers." label="Fonctions principales">
+                        <smart-input-group id="professionals-activities" name="InputgroupName" value=""></smart-input-group>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Pourcentage de précompte professionnel par défaut">
+                        <smart-input-group id="default-withholding-tax-percentage" name="InputgroupName" placeholder="" value="" align="End" grouped-text="%"></smart-input-group>
+                    </smart-formgroup>
+
+                    <h3 class="c-h2 u-spacer-bottom-xl">Votre carte d'identité</h3>
+
                     <div class="u-spacer-top-l u-spacer-bottom-s">
                         <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
                     </div>
-
-                    
-
-
                 </smart-form>
             </div>
         </div>
