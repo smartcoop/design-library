@@ -17,6 +17,35 @@ namespace Smart.Design.Library.TagHelpers.Elements.Select;
 public class SelectTagHelper : Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper
 {
     /// <summary>
+    /// Id HTML attribute name.
+    /// </summary>
+    protected const string IdAttributeName = "id";
+
+    /// <summary>
+    /// Name HTML attribute name.
+    /// </summary>
+    protected const string NameAttributeName = "name";
+
+    /// <summary>
+    /// Gets or Sets the Id of the underlying Tag Helper.
+    /// </summary>
+    [HtmlAttributeName(IdAttributeName)]
+    public string? Id { get; set; }
+
+    /// <summary>
+    /// Gets or sets the name of the underlying Tag Helper.
+    /// </summary>
+    [HtmlAttributeName(NameAttributeName)]
+    public string? Name { get; set; }
+
+    /// <summary>
+    /// Get or sets the <see cref="Microsoft.AspNetCore.Mvc.Rendering.ViewContext"/> of the executing view.
+    /// </summary>
+    [HtmlAttributeNotBound]
+    [ViewContext]
+    public ViewContext? ViewContext { get; set; }
+
+    /// <summary>
     /// Creates a new <see cref="SelectTagHelper"/>.
     /// </summary>
     /// <param name="generator">The <see cref="IHtmlGenerator"/>.</param>
@@ -32,6 +61,10 @@ public class SelectTagHelper : Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelp
         var select = new TagBuilder("select");
         select.MergeAttributes(output.Attributes);
         select.AddCssClass("c-select");
+
+        if (Id is not null) {
+            select.Attributes.Add("id", Id.ToString());
+        }
 
         var name = output.Attributes["name"]?.Value?.ToString();
 
