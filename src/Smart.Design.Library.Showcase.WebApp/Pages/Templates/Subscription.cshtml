@@ -21,7 +21,7 @@
 
                 <h3 class="c-h2 u-spacer-bottom-xl">Vos données personnelles</h3>
 
-                <smart-form id="test">
+                <smart-form id="Subscription">
 
                     <div class="o-grid">
                         <div class="o-grid-col-6">
@@ -37,7 +37,7 @@
                     </div>
 
                     <smart-formgroup label="Sexe">
-                        <smart-select>
+                        <smart-select name="sexe" id="someid">
                             <option>M</option>
                             <option>F</option>
                         </smart-select>
@@ -154,6 +154,37 @@
                     </smart-formgroup>
 
                     <h3 class="c-h2 u-spacer-bottom-xl">Votre carte d'identité</h3>
+
+                    <smart-formgroup  label="Numéro de registre national ou inscription au registre des étrangers">
+                        <smart-input id="numero_national" name="numero_national" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="N° carte identité">
+                        <smart-input id="numero_ci" name="numero_ci" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <div class="u-spacer-bottom-xl">
+                        <smart-alert title="Envoi obligatoire" message="<p>Veuillez envoyer <strong>une copie de votre carte d'identité (recto & verso)</strong> en annexe à la fin des 3 étapes de ce formulaire</p>" is-closable="false"></smart-alert>
+                    </div>
+
+                    <smart-hr></smart-hr>
+
+                    <h3 class="c-h2 u-spacer-bottom-xl">Vos données bancaires</h3>
+
+                    <smart-formgroup label="Numéro IBAN de votre compte bacaire personnel">
+                        <smart-input id="numero_iban" name="numero_iban" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <div class="u-spacer-bottom-xl">
+                        <smart-alert title="Envoi obligatoire" message="<p>Veuillez envoyer <strong>une copie de votre carte bancaire</strong> en annexe à la fin des 3 étapes de ce formulaire</p>" is-closable="false"></smart-alert>
+                    </div>
+
+                    <smart-hr></smart-hr>
+
+                    <div class="u-spacer-bottom-xl">
+                        <smart-radio name="autorisation" id="autorisation" label="J'autorise Smart à transmettre mes données à des tiers, à des fins professionnelles uniquement." value="same_address" checked="false"></smart-radio>
+                    </div>
+                    <p>En savoir plus ? <a href="mailto:autoriteprotectiondonnees.be">autoriteprotectiondonnees.be</a></p>
 
                     <div class="u-spacer-top-l u-spacer-bottom-s">
                         <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
