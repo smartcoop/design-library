@@ -1,0 +1,235 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Templates.SubscriptionTelerikModel
+@{
+    ViewData["Title"] = "Subscription page with Telerik UI";
+}
+
+<main class="o-container-vertical">
+
+    <div class="o-container o-container--small">
+
+        <div class="u-spacer-bottom-xl">
+            <smart-alert title="Telerik UI" message="<p>This page uses <a href='https://www.telerik.com/aspnet-core-ui' target='_blank'>Telerik UI for ASP.NET Core</a></p>" is-closable="false"></smart-alert>
+        </div>
+
+        <div class="u-spacer-bottom-xl">
+            <smart-alert title="Session d'informations" message="<p>Pour une utilisation optimale des services que Smart met à votre disposition, il est vivement souhaitable et recommandé de participer à une session Smart : <a href='https://guide.smart.coop/'>mode d’emploi.</a></p>" is-closable="false"></smart-alert>
+        </div>
+
+        <div class="c-panel u-shadow-50">
+
+            <div class="c-panel__body u-padding-vertical-l u-padding-bottom">
+
+                <h3 class="c-h2 u-spacer-bottom-xl">Vos données personnelles</h3>
+
+                <smart-form id="subscription">
+
+                    <div class="o-grid">
+                        <div class="o-grid-col-6">
+                            <smart-formgroup label="Nom">
+                                <smart-input id="subscriptionFirstname" name="subscriptionFirstname" placeholder="John"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-6">
+                            <smart-formgroup label="Prénom">
+                                <smart-input id="subscriptionLastname" name="subscriptionLastname" placeholder="Doe"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                    </div>
+
+                    <smart-formgroup label="Sexe">
+                        <smart-select id="subscriptionSexe" name="subscriptionSexe">
+                            <option>M</option>
+                            <option>F</option>
+                        </smart-select>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Langue">
+                        <smart-select id="subscriptionLanguage" name="subscriptionLanguage">
+                            <option value="F">Français</option>
+                            <option value="N">Néerlandais</option>
+                            <!--<option>Allemand</option>
+                            <option>Anglais</option>-->
+                        </smart-select>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Email">
+                        <smart-input-group id="subscriptionEmail" name="subscriptionEmail" placeholder="youremail@email.com" value="" align="End" icon="Email"></smart-input-group>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Numéro de téléphone">
+                        <smart-input id="subscriptionPhone" name="subscriptionPhone" placeholder="____ ______" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Numéro de GSM">
+                        <smart-input id="subscriptionMobile" name="subscriptionMobile" placeholder="____ ______" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Date de naissance">
+                        <smart-input-group id="subscriptionBirthdate" name="subscriptionBirthdate" placeholder="__/__/____" value="" align="End" icon="Calendar"></smart-input-group>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Ville de naissance">
+                        <smart-input id="subscriptionBirthTown" name="subscriptionBirthTown" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Etat civil">
+                        <smart-select id="subscriptionCivilStatus" name="subscriptionCivilStatus">
+                            <option>Marié.e</option>
+                            <option>Célibataire</option>
+                        </smart-select>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Nationalité">
+                        <smart-select id="subscriptionNatinonality" name="subscriptionNatinonality">
+                            <option>Belge</option>
+                            <option>Espagnol</option>
+                            <option>Neptunien</option>
+                        </smart-select>
+                    </smart-formgroup>
+
+                    <smart-hr></smart-hr>
+
+                    <h3 class="c-h2 u-spacer-bottom-xl">Adresse Officielle</h3>
+
+                    <div class="o-grid">
+                        <div class="o-grid-col-6">
+                            <smart-formgroup label="Rue">
+                                <smart-input id="subscriptionStreet" name="subscriptionStreet" placeholder="rue du joli bois"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-3">
+                            <smart-formgroup label="Numéro">
+                                <smart-input id="subscriptionNumStreet" name="subscriptionNumStreet" placeholder="44"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-3">
+                            <smart-formgroup label="Boîte">
+                                <smart-input id="subscriptionBox" name="subscriptionBox" placeholder="3"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                    </div>
+
+                    <div class="o-grid">
+                        <div class="o-grid-col-4">
+                            <smart-formgroup label="Code postal">
+                                <smart-input id="subscriptionZip" name="subscriptionZip" placeholder="4000"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-8">
+                            <smart-formgroup label="Ville">
+                                <smart-input id="subscriptionCity" name="subscriptionCity" placeholder="Liège"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                    </div>
+
+                    <smart-formgroup label="Pays">
+                        <smart-select id="subscriptionCountry" name="subscriptionCountry">
+                            <option>Belgique</option>
+                            <option>Espagne</option>
+                            <option>Neptune</option>
+                        </smart-select>
+                    </smart-formgroup>
+
+                    <smart-hr></smart-hr>
+
+                    <h2 class="c-h2">Adresse Courrier</h2>
+
+                    <div class="u-spacer-bottom">
+                        <smart-radio id="subscriptionSameAddress" name="subscriptionSameAddress" label="Mon adresse courrier est la même que mon adresse officielle" value="same_adress" checked="true"></smart-radio>
+                    </div>
+                    <div class="u-spacer-bottom-xl">
+                        <smart-radio id="subscriptionAnotherAddress" name="subscriptionAnotherAddress" label="Mon adresse courrier est différente de mon adresse officielle" value="same_address" checked="false"></smart-radio>
+                    </div>
+
+                    <!--- BO Bloc à ne faire apparaître que lorsque  le radio subscriptionAnotherAddress est ON-->
+                        <div class="o-grid">
+                            <div class="o-grid-col-6">
+                                <smart-formgroup label="Rue">
+                                    <smart-input id="subscriptionStreet2" name="subscriptionStreet2" placeholder="rue du joli bois"></smart-input>
+                                </smart-formgroup>
+                            </div>
+                            <div class="o-grid-col-3">
+                                <smart-formgroup label="Numéro">
+                                    <smart-input data-pristine-required-message="Error Message" id="subscriptionNumStreet2" name="subscriptionNumStreet2" placeholder="44"></smart-input>
+                                </smart-formgroup>
+                            </div>
+                            <div class="o-grid-col-3">
+                                <smart-formgroup label="Boîte">
+                                    <smart-input id="subscriptionBox2" name="subscriptionBo2x" placeholder="3"></smart-input>
+                                </smart-formgroup>
+                            </div>
+                        </div>
+
+                        <div class="o-grid">
+                            <div class="o-grid-col-4">
+                                <smart-formgroup label="Code postal">
+                                    <smart-input id="subscriptionZip2" name="subscriptionZip2" placeholder="4000"></smart-input>
+                                </smart-formgroup>
+                            </div>
+                            <div class="o-grid-col-8">
+                                <smart-formgroup label="Ville">
+                                    <smart-input id="subscriptionCity2" name="subscriptionCity2" placeholder="Liège"></smart-input>
+                                </smart-formgroup>
+                            </div>
+                        </div>
+
+                        <smart-formgroup label="Pays">
+                            <smart-select id="subscriptionCountry2" name="subscriptionCountry2">
+                                <option>Belgique</option>
+                                <option>Espagne</option>
+                                <option>Neptune</option>
+                            </smart-select>
+                        </smart-formgroup>
+                    <!--- EO Bloc -->
+                    <h3 class="c-h2 u-spacer-bottom-xl">Vos données professionnelles</h3>
+
+                    <smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e ,artiste et chômeur n'est pas une fonction). Voir le registre des métiers." label="Fonctions principales">
+                        <smart-input id="subscriptionFunction" name="subscriptionFunction" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="Pourcentage de précompte professionnel par défaut">
+                        <smart-input-group id="subscriptionWitholding" name="subscriptionWitholding" placeholder="" value="" align="End" grouped-text="%"></smart-input-group>
+                    </smart-formgroup>
+
+                    <h3 class="c-h2 u-spacer-bottom-xl">Votre carte d'identité</h3>
+
+                    <smart-formgroup label="Numéro de registre national ou inscription au registre des étrangers">
+                        <smart-input id="subscriptionNumNat" name="subscriptionNumNat" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <smart-formgroup label="N° carte identité">
+                        <smart-input id="subscriptionNumCI" name="subscriptionNumCI" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <div class="u-spacer-bottom-xl">
+                        <smart-alert title="Envoi obligatoire" message="<p>Veuillez envoyer <strong>une copie de votre carte d'identité (recto & verso)</strong> en annexe à la fin des 3 étapes de ce formulaire</p>" is-closable="false"></smart-alert>
+                    </div>
+
+                    <smart-hr></smart-hr>
+
+                    <h3 class="c-h2 u-spacer-bottom-xl">Vos données bancaires</h3>
+
+                    <smart-formgroup label="Numéro IBAN de votre compte bancaire personnel">
+                        <smart-input id="subscriptionNumIban" name="subscriptionNumIban" value=""></smart-input>
+                    </smart-formgroup>
+
+                    <div class="u-spacer-bottom-xl">
+                        <smart-alert title="Envoi obligatoire" message="<p>Veuillez envoyer <strong>une copie de votre carte bancaire</strong> en annexe à la fin des 3 étapes de ce formulaire</p>" is-closable="false"></smart-alert>
+                    </div>
+
+                    <smart-hr></smart-hr>
+
+                    <div class="u-spacer-bottom-xl">
+                        <smart-radio id="subscriptionAutorisation" name="subscriptionAutorisation" label="J'autorise Smart à transmettre mes données à des tiers, à des fins professionnelles uniquement." value="same_address" checked="false"></smart-radio>
+                    </div>
+                    <p>En savoir plus ? <a href="mailto:autoriteprotectiondonnees.be">autoriteprotectiondonnees.be</a></p>
+
+                    <div class="u-spacer-top-l u-spacer-bottom-s">
+                        <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
+                    </div>
+                </smart-form>
+            </div>
+        </div>
+    </div>
+</main>
