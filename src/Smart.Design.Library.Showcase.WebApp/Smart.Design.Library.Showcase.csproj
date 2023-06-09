@@ -12,6 +12,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Telerik.UI.for.AspNet.Core.Trial" Version="2023.2.606" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Smart.Design.Library\Smart.Design.Library.csproj" />
   </ItemGroup>
 </Project>
