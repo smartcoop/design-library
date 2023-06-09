@@ -27,7 +27,8 @@
                     <div class="o-grid">
                         <div class="o-grid-col-6">
                             <smart-formgroup label="Nom">
-                                <smart-input id="subscriptionFirstname" name="subscriptionFirstname" placeholder="John"></smart-input>
+                                @*Telerik*@
+                                <kendo-textbox name="textbox" placeholder="First Name"></kendo-textbox>
                             </smart-formgroup>
                         </div>
                         <div class="o-grid-col-6">
@@ -37,11 +38,19 @@
                         </div>
                     </div>
 
+                    @*Telerik*@
+                    @{
+                        var genders = new List<SelectListItem> {
+                            new SelectListItem() {Text = "M", Value = "M"},
+                            new SelectListItem() {Text = "F", Value = "F"}
+                        };
+                    }
                     <smart-formgroup label="Sexe">
-                        <smart-select id="subscriptionSexe" name="subscriptionSexe">
-                            <option>M</option>
-                            <option>F</option>
-                        </smart-select>
+                        <kendo-dropdownlist name="subscriptionSexe"
+                            datatextfield="Text"
+                            datavaluefield="Value"
+                            bind-to="genders">
+                        </kendo-dropdownlist>
                     </smart-formgroup>
 
                     <smart-formgroup label="Langue">
