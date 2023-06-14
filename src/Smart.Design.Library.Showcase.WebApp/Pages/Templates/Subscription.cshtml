@@ -4,6 +4,24 @@
     ViewData["Title"] = "Subscription page";
 }
 
+<style>
+    .icon-help .o-svg-icon {
+        display: inline;
+    }
+
+    .icon-help svg {
+        vertical-align: middle;
+        max-width: 2.4rem;
+        max-height: 2.4rem;
+        display: inline;
+        color: #666;
+    }
+
+    .c-select {
+        padding: 0.4rem 2.8rem 0.4rem 0.8rem;
+    }
+</style>
+
 <main class="o-container-vertical">
 
     <div class="o-container o-container--small">
@@ -139,52 +157,72 @@
                     </div>
 
                     <!--- BO Bloc à ne faire apparaître que lorsque  le radio subscriptionAnotherAddress est ON-->
-                        <div class="o-grid">
-                            <div class="o-grid-col-6">
-                                <smart-formgroup label="Rue">
-                                    <smart-input id="subscriptionStreet2" name="subscriptionStreet2" placeholder="rue du joli bois"></smart-input>
-                                </smart-formgroup>
-                            </div>
-                            <div class="o-grid-col-3">
-                                <smart-formgroup label="Numéro">
-                                    <smart-input data-pristine-required-message="Error Message" id="subscriptionNumStreet2" name="subscriptionNumStreet2" placeholder="44"></smart-input>
-                                </smart-formgroup>
-                            </div>
-                            <div class="o-grid-col-3">
-                                <smart-formgroup label="Boîte">
-                                    <smart-input id="subscriptionBox2" name="subscriptionBo2x" placeholder="3"></smart-input>
-                                </smart-formgroup>
-                            </div>
+                    <div class="o-grid">
+                        <div class="o-grid-col-6">
+                            <smart-formgroup label="Rue">
+                                <smart-input id="subscriptionStreet2" name="subscriptionStreet2" placeholder="rue du joli bois"></smart-input>
+                            </smart-formgroup>
                         </div>
-
-                        <div class="o-grid">
-                            <div class="o-grid-col-4">
-                                <smart-formgroup label="Code postal">
-                                    <smart-input id="subscriptionZip2" name="subscriptionZip2" placeholder="4000"></smart-input>
-                                </smart-formgroup>
-                            </div>
-                            <div class="o-grid-col-8">
-                                <smart-formgroup label="Ville">
-                                    <smart-input id="subscriptionCity2" name="subscriptionCity2" placeholder="Liège"></smart-input>
-                                </smart-formgroup>
-                            </div>
+                        <div class="o-grid-col-3">
+                            <smart-formgroup label="Numéro">
+                                <smart-input data-pristine-required-message="Error Message" id="subscriptionNumStreet2" name="subscriptionNumStreet2" placeholder="44"></smart-input>
+                            </smart-formgroup>
                         </div>
+                        <div class="o-grid-col-3">
+                            <smart-formgroup label="Boîte">
+                                <smart-input id="subscriptionBox2" name="subscriptionBo2x" placeholder="3"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                    </div>
 
-                        <smart-formgroup label="Pays">
-                            <smart-select id="subscriptionCountry2" name="subscriptionCountry2">
-                                <option>Belgique</option>
-                                <option>Espagne</option>
-                                <option>Neptune</option>
-                            </smart-select>
-                        </smart-formgroup>
+                    <div class="o-grid">
+                        <div class="o-grid-col-4">
+                            <smart-formgroup label="Code postal">
+                                <smart-input id="subscriptionZip2" name="subscriptionZip2" placeholder="4000"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-8">
+                            <smart-formgroup label="Ville">
+                                <smart-input id="subscriptionCity2" name="subscriptionCity2" placeholder="Liège"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                    </div>
+
+                    <smart-formgroup label="Pays">
+                        <smart-select id="subscriptionCountry2" name="subscriptionCountry2">
+                            <option>Belgique</option>
+                            <option>Espagne</option>
+                            <option>Neptune</option>
+                        </smart-select>
+                    </smart-formgroup>
                     <!--- EO Bloc -->
                     <h3 class="c-h2 u-spacer-bottom-xl">Vos données professionnelles</h3>
 
-                    <smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e ,artiste et chômeur n'est pas une fonction). Voir le registre des métiers." label="Fonctions principales">
+                    <smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e ,artiste et chômeur n'est pas une fonction). Voir le registre des métiers.">
+                        <label class="o-form-group__label">
+                            Fonctions principales
+                            <span data-tooltip="tooltip-function" data-tooltip-placement="top" class="icon-help">
+                                <smart-icon icon="CircleHelp"></smart-icon>
+                            </span>
+                        </label>
+                        <div class="c-tooltip" id="tooltip-function" role="tooltip">
+                            Fonction Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
+                            <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
+                        </div>
                         <smart-input id="subscriptionFunction" name="subscriptionFunction" value=""></smart-input>
                     </smart-formgroup>
 
-                    <smart-formgroup label="Pourcentage de précompte professionnel par défaut">
+                    <smart-formgroup>
+                        <label class="o-form-group__label">
+                            Pourcentage de précompte professionnel par défaut
+                            <span data-tooltip="tooltip-witholding" data-tooltip-placement="top" class="icon-help">
+                                <smart-icon icon="CircleHelp"></smart-icon>
+                            </span>
+                        </label>
+                        <div class="c-tooltip" id="tooltip-witholding" role="tooltip">
+                            Précompte Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
+                            <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
+                        </div>
                         <smart-input-group id="subscriptionWitholding" name="subscriptionWitholding" placeholder="" value="" align="End" grouped-text="%"></smart-input-group>
                     </smart-formgroup>
 
