@@ -35,78 +35,116 @@
                 <smart-form id="subscription">
                     <div class="o-grid">
                         <div class="o-grid-col-6">
-                            <smart-formgroup label="Nom">
+                            <div class="o-form-group">
+                                <label class="o-form-group__label">Nom</label>
                                 <kendo-textbox name="FirstName" placeholder="First Name"></kendo-textbox>
-                            </smart-formgroup>
+                            </div>
                         </div>
                         <div class="o-grid-col-6">
-                            <smart-formgroup label="Prénom">
+                            <div class="o-form-group">
+                                <label class="o-form-group__label">Prénom</label>
                                 <kendo-textbox name="LastName" placeholder="Last Name"></kendo-textbox>
-                            </smart-formgroup>
+                            </div>
                         </div>
                     </div>
 
-                    <smart-formgroup label="Sexe">
+                    <div class="o-form-group">
+                        <label class="o-form-group__label">Sexe</label>
                         <kendo-dropdownlist name="Genders"
                                             datatextfield="Text"
                                             datavaluefield="Value"
                                             bind-to="genders">
                         </kendo-dropdownlist>
-                    </smart-formgroup>
+                    </div>
 
-                    <smart-formgroup label="Langue">
+                    <div class="o-form-group">
+                        <label class="o-form-group__label">Langue</label>
                         <kendo-dropdownlist name="Languages"
                                             datatextfield="Text"
                                             datavaluefield="Value"
                                             bind-to="languages">
                         </kendo-dropdownlist>
-                    </smart-formgroup>
+                    </div>
 
-                    <smart-formgroup label="Email">
+                    <div class="o-form-group">
+                        <label class="o-form-group__label">Email</label>
                         @(Html.Kendo()
                             .TextBox()
                             .Name("Email")
                             .HtmlAttributes(new { placeholder = "Email", required = "required", type = "email", data_email_msg = "Email format is not valid" })
                             )
-                    </smart-formgroup>
+                    </div>
 
-                    <smart-formgroup label="Numéro de téléphone">
+                    <div class="u-spacer-bottom-l u-spacer-top-s">
+                        <div class="c-alert c-alert--default">
+                            <div class="o-svg-icon o-svg-icon-circle-information">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12Z" fill="#595959"></path>
+                                    <path d="M12 10C12.5523 10 13 10.4477 13 11V17C13 17.5523 12.5523 18 12 18C11.4477 18 11 17.5523 11 17V11C11 10.4477 11.4477 10 12 10Z" fill="#595959"></path>
+                                    <path d="M13.5 7.5C13.5 8.32843 12.8284 9 12 9C11.1716 9 10.5 8.32843 10.5 7.5C10.5 6.67157 11.1716 6 12 6C12.8284 6 13.5 6.67157 13.5 7.5Z" fill="#595959"></path>
+                                </svg>
+                            </div><div class="c-alert__body"><div class="c-alert__text"><h4 class="c-h4">Envoi obligatoire</h4><div class="c-alert__message"><div class="c-content"><div><p>Veuillez envoyer <strong>une copie de votre carte bancaire</strong> en annexe à la fin des 3 étapes de ce formulaire</p></div></div></div></div></div>
+                        </div>
+                    </div>
+
+                    <hr class="c-hr">
+
+                    <div class="o-form-group">
+                        <label class="o-form-group__label">Numéro de téléphone</label>
                         @(Html.Kendo()
                             .MaskedTextBox()
                             .Name("Phone")
                             .Mask("(000) 00 00 00")
                             .HtmlAttributes(new { required = "required" })
                             )
-                    </smart-formgroup>
+                    </div>
 
-                    <smart-formgroup label="Numéro de GSM">
+                    <div class="o-form-group">
+                        <label class="o-form-group__label">Numéro de GSM</label>
                         @(Html.Kendo()
                             .MaskedTextBox()
                             .Name("MobilePhone")
                             .Mask("(0000) 00 00 00")
                             .HtmlAttributes(new { required = "required" })
                             )
-                    </smart-formgroup>
+                    </div>
 
-                    <smart-formgroup label="Date de naissance">
+                    <div class="o-form-group">
+                        <label class="o-form-group__label">Date de naissance</label>
                         @(Html.Kendo()
                             .DatePicker()
                             .Name("DateOfBirth")
                             .HtmlAttributes(new { style = "width: 100%", title = "datepicker" })
                             )
-                    </smart-formgroup>
+                    </div>
 
-                    <div class="u-spacer-top-l u-spacer-bottom-s">
-                        @* <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button> *@
+                    <div class="o-form-group u-flex u-flex--bp2-col u-flex--twins u-spacer-top-l">
+                        @(Html.Kendo()
+                            .Button()
+                            .Name("Back")
+                            .Icon("arrow-left")
+                            .Content("Retour")
+                            )
                         @(Html.Kendo()
                             .Button()
                             .Name("Submit")
+                            .ThemeColor(ThemeColor.Primary)
                             .Icon("arrow-right")
                             .Content("Finaliser ma demande d’inscription")
                             )
                     </div>
+
                 </smart-form>
             </div>
+
+            <script>
+                $(function () {
+
+                    var container = $("#subscription");
+
+                    container.kendoValidator();
+                });
+            </script>
         </div>
     </div>
 </main>
