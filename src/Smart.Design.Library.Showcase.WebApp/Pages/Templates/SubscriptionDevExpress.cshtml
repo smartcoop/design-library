@@ -1,0 +1,100 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Templates.SubscriptionDevExpressModel
+@{
+    ViewData["Title"] = "Subscription page - DevExpress";
+}
+
+<style>
+    .tooltip-icon-help .o-svg-icon {
+        display: inline;
+    }
+
+    .tooltip-icon-help svg {
+        vertical-align: middle;
+        max-width: 2.4rem;
+        max-height: 2.4rem;
+        display: inline;
+        color: #666;
+    }
+
+    .c-select {
+        padding: 0.4rem 2.8rem 0.4rem 0.8rem;
+    }
+</style>
+
+<header class="o-container-vertical c-navbar c-navbar--white c-navbar--entry">
+    <div class="o-container o-container--small">
+        <div class="o-grid">
+            <div class="o-grid-col-6">
+                <div class="c-brand c-brand--small">
+                    <a href="/home?lang=FR">
+                        <img src="~/images/logo.svg" alt="Smart">
+                    </a>
+                </div>
+            </div>
+
+            <div class="o-grid-col-6">
+                <ul class="c-pill-navigation">
+                    <li class="c-pill-navigation__item c-pill-navigation__item--has-child-menu u-spacer-left-auto">
+                        <button type="button" data-menu="lang-switch" data-menu-samewidth="true">
+                            Fran&#231;ais
+                        </button>
+                        <ul class="c-menu c-menu--large" id="lang-switch">
+                            <li class="c-menu__item">
+                                <p class="c-menu__info u-text-muted">Fran&#231;ais</p>
+                            </li>
+                            <li class="c-menu__item">
+                                <a class="c-menu__label" href="?lang=NL">Nederlands</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="o-container-vertical">
+
+    <div class="o-container o-container--small">
+
+        <div class="u-spacer-bottom-xl">
+            <smart-alert title="Session d'informations" message="<p>This page uses DevExpress components</a></p>" is-closable="false"></smart-alert>
+        </div>
+
+        <div class="c-panel u-shadow-50">
+
+            <div class="c-panel__body u-padding-vertical-l u-padding-bottom">
+
+                <h3 class="c-h2 u-spacer-bottom-s">Vos données personnelles</h3>
+
+                <smart-form id="subscription">
+
+                    <div class="o-grid">
+                        <div class="o-grid-col-6">
+                            <smart-formgroup label="Nom">
+                                <smart-input id="subscriptionFirstname" name="subscriptionFirstname" placeholder="John"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                        <div class="o-grid-col-6">
+                            <smart-formgroup label="Prénom">
+                                <smart-input id="subscriptionLastname" name="subscriptionLastname" placeholder="Doe"></smart-input>
+                            </smart-formgroup>
+                        </div>
+                    </div>
+
+                    <smart-formgroup label="Sexe">
+                        <smart-select id="subscriptionSexe" name="subscriptionSexe">
+                            <option>M</option>
+                            <option>F</option>
+                        </smart-select>
+                    </smart-formgroup>
+
+                    <div class="u-spacer-top-l u-spacer-bottom-s">
+                        <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
+                    </div>
+                </smart-form>
+            </div>
+        </div>
+    </div>
+</main>
