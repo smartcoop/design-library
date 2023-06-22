@@ -1,8 +1,10 @@
 ﻿@page
-@model Smart.Design.Library.Showcase.Pages.Templates.SubscriptionDevExpressModel
+@model ValidationTestViewModel
 @{
     ViewData["Title"] = "Subscription page - DevExpress";
 }
+
+@using Smart.Design.Library.Showcase.ViewModels
 
 <style>
     .tooltip-icon-help .o-svg-icon {
@@ -68,32 +70,75 @@
 
                 <h3 class="c-h2 u-spacer-bottom-s">Vos données personnelles</h3>
 
-                <smart-form id="subscription">
+                @using (Html.BeginForm())
+                {
+                    using (Html.DevExtreme().ValidationGroup())
+                    {
+                        @Html.AntiForgeryToken()
 
-                    <div class="o-grid">
-                        <div class="o-grid-col-6">
-                            <smart-formgroup label="Nom">
-                                <smart-input id="subscriptionFirstname" name="subscriptionFirstname" placeholder="John"></smart-input>
-                            </smart-formgroup>
-                        </div>
-                        <div class="o-grid-col-6">
-                            <smart-formgroup label="Prénom">
-                                <smart-input id="subscriptionLastname" name="subscriptionLastname" placeholder="Doe"></smart-input>
-                            </smart-formgroup>
-                        </div>
+                        @(
+                            Html.DevExtreme().Form<ValidationTestViewModel>()
+                            @*.OnInitialized("onInitialized")*@
+                            .ShowValidationSummary(true)
+                            .Items(items =>
+                            {
+                                @*items.AddGroup()
+                                .Caption("Test Group")
+                                .Items(groupItems =>
+                                {
+                                    groupItems.AddSimpleFor(m => m.FirstName);
+                                });*@
+
+                                items.AddSimpleFor(m => m.FirstName);
+
+                                items.AddSimpleFor(m => m.Search);
+
+                                items.AddButton()
+                                .HorizontalAlignment(HorizontalAlignment.Right)
+                                .ButtonOptions(b => b.Text("Submit")
+                                .Type(ButtonType.Success)
+                                .UseSubmitBehavior(true)
+                                );
+
+                            })
+                            .FormData(Model)
+                            )
+                    }
+                }
+
+                @*<div class="o-grid">
+                    <div class="o-grid-col-6">
+                        <smart-formgroup label="Nom">
+                            <smart-input id="subscriptionFirstname" name="subscriptionFirstname" placeholder="John"></smart-input>
+                        </smart-formgroup>
+                        @(Html.DevExtreme()
+                            .TextBoxFor(m => m.FirstName)
+                            .Placeholder("First name")
+                            )
                     </div>
-
-                    <smart-formgroup label="Sexe">
-                        <smart-select id="subscriptionSexe" name="subscriptionSexe">
-                            <option>M</option>
-                            <option>F</option>
-                        </smart-select>
-                    </smart-formgroup>
-
-                    <div class="u-spacer-top-l u-spacer-bottom-s">
-                        <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
+                    <div class="o-grid-col-6">
+                        <smart-formgroup label="Prénom">
+                            <smart-input id="subscriptionLastname" name="subscriptionLastname" placeholder="Doe"></smart-input>
+                        </smart-formgroup>
                     </div>
-                </smart-form>
+                </div>
+
+                <smart-formgroup label="Sexe">
+                    <smart-select id="subscriptionSexe" name="subscriptionSexe">
+                        <option>M</option>
+                        <option>F</option>
+                    </smart-select>
+                </smart-formgroup>
+
+                <div class="u-spacer-top-l u-spacer-bottom-s">
+                    <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
+                    <br />
+                    <br />
+                    @(Html.DevExtreme()
+                        .Button()
+                        .Text("Submit")
+                        )
+                </div>*@
             </div>
         </div>
     </div>
