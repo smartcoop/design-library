@@ -1,0 +1,65 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.ViewModels.ValidationTestViewModel;
+@using Kendo.Mvc.UI
+@addTagHelper *, Kendo.Mvc
+
+@{
+    ViewData["Title"] = "Validation Test";
+}
+
+<main class="o-container-vertical">
+
+    <div class="o-container o-container--small">
+        
+        <form id="ticketsForm" class="k-form k-form-vertical" kendo-validator="true">
+            <div id="validation-summary"></div>
+
+            <ul class="k-form-group">
+                <li class="k-form-field">
+                    <label for="fullname" class="k-form-label">First name</label>
+                    <span class="k-form-field-wrap">
+                        @(Html.Kendo()
+                            .TextBoxFor(m => m.FirstName)
+                            .HtmlAttributes(new { placeholder = "First name" })
+                            )
+                    </span>
+                </li>
+                <li class="k-form-field">
+                    <label for="search" class="k-form-label">Movie</label>
+                    <span class="k-form-field-wrap">
+                        @(Html.Kendo()
+                            .TextBoxFor(m => m.Search)
+                            .HtmlAttributes(new { type = "search", placeholder = "Search" })
+                            )
+                        <span class="k-invalid-msg" data-for="search"></span>
+                    </span>
+                </li>
+                <li class="k-form-buttons">
+                    @(Html.Kendo().Button()
+                        .Name("Submit")
+                        .HtmlAttributes(new { type = "submit" })
+                        .Content("Submit")
+                        )
+                </li>
+            </ul>
+        </form>
+    </div>
+</main>
+
+<script>
+    $("#ticketsForm").kendoValidator({
+        validationSummary: true
+    });
+
+    var validator = $("#ticketsForm").data("kendoValidator");
+
+    $("#ticketsForm").submit(function (event) {
+            event.preventDefault();
+
+            if (validator.validate()) {
+                alert('Form submitted');
+            } else {
+                alert('Not valid!');
+            }
+        });
+</script>
