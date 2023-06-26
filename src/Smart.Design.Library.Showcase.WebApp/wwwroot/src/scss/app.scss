@@ -1,0 +1,131 @@
+// ---------
+// By Marcel Pirnay © Smart
+// V1: 06-2023
+
+/* Settings: preprocessor variables, colors, global settings
+   ========================================================================== */
+
+@import "1-settings/s-colors";
+@import "1-settings/s-fonts";
+@import "1-settings/s-variables";
+
+/* Generic: CSS reset, box-sizing, global CSS tweaks
+   ========================================================================== */
+
+@import "reset";
+
+/* Elements: element selectors, CMS-generated content
+   ========================================================================== */
+
+@import "2-elements/e-base";
+
+/* Objects: layout-related CSS, grid, SVG icons frame, flexbox classes
+   ========================================================================== */
+
+@import "3-objects/o-container";
+@import "3-objects/o-card-grid";
+@import "3-objects/o-flex";
+@import "3-objects/o-form-group";
+@import "3-objects/o-grid";
+@import "3-objects/o-svg-icon";
+
+
+/* Content styling (styling for base html elements)
+   + helpers for article style content
+   ========================================================================== */
+
+@import "4-components/c-content";
+@import "4-components/c-display";
+@import "4-components/c-content-display";
+@import "4-components/c-video-wrapper";
+@import "4-components/c-figure";
+
+/* Components: separately styled components (buttons, form inputs, toolbars...)
+   ========================================================================== */
+
+@import "4-components/c-accordion";
+@import "4-components/c-alert";
+@import "4-components/c-alert-skins";
+@import "4-components/c-alert-stack";
+@import "4-components/c-app-layout";
+@import "4-components/c-avatar";
+@import "4-components/c-avatar-and-text";
+@import "4-components/c-badge";
+@import "4-components/c-blank-slate";
+@import "4-components/c-bordered-list";
+@import "4-components/c-bordered-list-horizontal";
+@import "4-components/c-brand";
+@import "4-components/c-button";
+@import "4-components/c-button-group";
+@import "4-components/c-button-skins";
+@import "4-components/c-button-toolbar";
+@import "4-components/c-card";
+@import "4-components/c-checkbox-radio";
+@import "4-components/c-citation";
+@import "4-components/c-dialog";
+@import "4-components/c-err-page";
+@import "4-components/c-file-attachment";
+@import "4-components/c-file-upload";
+// @import "4-components/c-filter-pill"; // not in use for now, moved to styleguide-customizations.scss
+@import "4-components/c-form-help-text";
+@import "4-components/c-global-banner";
+@import "4-components/c-hr";
+// @import "4-components/c-icon-list"; // not in use for now, moved to styleguide-customizations.scss
+@import "4-components/c-input";
+@import "4-components/c-input-with-icon";
+@import "4-components/c-key-value";
+@import "4-components/c-menu";
+@import "4-components/c-navbar";
+@import "4-components/c-or";
+@import "4-components/c-pagination";
+@import "4-components/c-pagination-simple";
+@import "4-components/c-panel";
+@import "4-components/c-pill-navigation";
+@import "4-components/c-popover";
+@import "4-components/c-file-attachment";
+@import "4-components/c-file-upload";
+// @import "4-components/c-progress-bar"; // not in use for now, moved to styleguide-customizations.scss
+@import "4-components/c-select";
+@import "4-components/c-select-custom";
+@import "4-components/c-side-menu";
+@import "4-components/c-loader";
+@import "4-components/c-link";
+@import "4-components/c-status-pill";
+@import "4-components/c-table-of-content";
+@import "4-components/c-table";
+@import "4-components/c-tabs";
+@import "4-components/c-textarea";
+@import "4-components/c-toolbar";
+@import "4-components/c-toolbar-title";
+@import "4-components/c-tooltip";
+@import "4-components/c-user-navigation";
+// @import "4-components/c-wizard"; // not in use for now, moved to styleguide-customizations.scss
+
+/* Components specific to design system website
+   ========================================================================== */
+
+@import "4-components/c-avatar-and-text-list";
+@import "4-components/c-blog-article";
+@import "4-components/c-blog-article-list";
+@import "4-components/c-design-system-nav";
+@import "4-components/c-navbar-components";
+
+/* Utilities: specific helper classes, overrides
+   ========================================================================== */
+
+@import "5-utilities/u-scroll-wrapper";
+@import "5-utilities/u-bg";
+@import "5-utilities/u-generic";
+@import "5-utilities/u-spacer";
+@import "5-utilities/u-shadow";
+@import "5-utilities/u-text";
+@import "5-utilities/u-themes";
+
+
+@import "_p-dynamic-dashboard";
+
+@import "_v-htmx";
+
+@media print {
+	@import "_print";
+}

@@ -1,0 +1,25 @@
+# Apache
+.htaccess
+.htpasswd
+
+# WordPress
+wp-config.php
+*.sql
+
+# Node.js
+node_modules/
+
+# Logfiles and tempfiles
+/log/*
+!/log/.keep
+/tmp
+*.log
+
+# Other unneeded files
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
