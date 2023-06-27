@@ -1,14 +1,19 @@
-@page
+﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.Header.Header
 @{
     ViewData["MainTitle"] = "Components documentation";
     ViewData["ComponentTitle"] = "Header";
-}
 
+}
 <div class="u-padding-bottom-l">
     <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
 </div>
-
+<!--Some style to override the position:fixed of the header-->
+<style>
+    header.u-position-fixed {
+        position: sticky !important
+    }
+</style>
 
 <div class="o-grid">
     @await Html.PartialAsync("Shared/_ComponentList")
@@ -17,7 +22,17 @@
             <h1 class="br-componentgroup-header c-d-h2">@ViewData["ComponentTitle"]</h1>
         </div>
         <div class="br-content c-content">
-            <p>Documentation for Header</p>
+            <p>This smart-header TagHelper a header with :
+                <ul>
+                    <li>the smart Logo linked to /home</li>
+                    <li>a block Help with 3 links on hover</li>
+                    <li>a switcher language</li>
+                    <li>the user's trigram</li>
+                    <li>The user's Fullname'</li>
+                    <li>a block Help with 3 links on hover</li>
+                 </ul>
+                
+             </p>
         </div>
         <div class="br-sample" id="component-01-c-button-primary">
             <div class="br-sample-header br-sample-clearfix">
@@ -25,8 +40,82 @@
             </div>
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
+                @{
+                    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>{
+                {
+                "French", "?SelectedMenu=French"
+                },{
+                "Dutch", "?SelectedMenu=Dutch"
+                }
+                };
+                    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>{
+                {
+                "Item 1", ""
+                },{
+                "Item 2", ""
+                }
+                };
+
+                }
+
+                <div class="c-app-layout">
+                    <smart-header home-page-url="" languages-and-links="@languagesAndLink" full-name-with-trigram="John Doe DOJ"
+                                  avatar-path="https://smartbe.be" labels-and-links="@labelsAndLinks" target-language="fr" logout-link="/logout.aspx"></smart-header>
+                </div>
+
             </div>
             <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-header home-page-url=\"\" languages-and-links=\"@languagesAndLink\" full-name-with-trigram=\"John Doe DOJ\" avatar-path=\"https://smartbe.be\" labels-and-links=\"@labelsAndLinks\" target-language=\"fr\" logout-link= \"/logout.aspx\"></smart-header>")</pre>
+            </div>
+            <div class="br-componentgroup-footer-wrapper">
+                <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for Header</h1>
+                <div class="br-content c-content">
+                    <table class="c-table">
+                        <thead>
+                            <tr>
+                                <th>Parameters</th>
+                                <th>Type</th>
+                                <th>Possible values</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>languagesAndLinks *</td>
+                                <td>Dictionary string, string</td>
+                                <td></td>
+                                <td>Represents the language menu</td>
+                            </tr>
+                            <tr>
+                                <td>targetLanguage</td>
+                                <td>string?</td>
+                                <td></td>
+                                <td>Represents the language</td>
+                            </tr>
+                            <tr>
+                                <td>avatarPath *</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>the path for the trigram</td>
+                            </tr>
+                            <tr>
+                                <td>labelsAndLinks *</td>
+                                <td>Dictionary string, string</td>
+                                <td>
+                                </td>
+                                <td>Represents the language menu</td>
+                            </tr>
+                            <tr>
+                                <td>logoutLink *</td>
+                                <td>string</td>
+                                <td>Relative URL</td>
+                                <td>the link to logout</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
             </div>
         </div>
     </div>
