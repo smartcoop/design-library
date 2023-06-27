@@ -38,6 +38,7 @@ using Smart.Design.Library.TagHelpers.Spacer;
 using Smart.Design.Library.TagHelpers.TableOfContent;
 using Smart.Design.Library.TagHelpers.Tabs;
 using Smart.Design.Library.TagHelpers.ValidationMessage;
+using Smart.Design.Library.TagHelpers.Header.NotLoggedInHeader;
 
 namespace Smart.Design.Library.Extensions;
 
@@ -83,6 +84,7 @@ public static class DependencyRegistration
             .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>()
             .AddTransient<ISideMenuHtmlGenerator, SideMenuHtmlGenerator>()
             .AddTransient<IBoxHtmlGenerator, BoxHtmlGenerator>()
+            .AddTransient<INotLoggedInHeaderHtmlGenerator, NotLoggedInHeaderHtmlGenerator>()
             .AddTransient<IHeaderHtmlGenerator, HeaderHtmlGenerator>();
     }
 }
