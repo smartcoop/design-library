@@ -13,19 +13,36 @@ namespace Smart.Design.Library.TagHelpers.Header.NotLoggedInHeader;
 [HtmlTargetElement(TagNames.NotLoggedInHeaderTagName)]
 public class NotLoggedInHeaderTagHelper : TagHelper
 {
+    private readonly INotLoggedInHeaderHtmlGenerator _notLoggedInHeaderHtmlGenerator;
     public string HomePageUrl { get; set; }
 
     public Dictionary<string, string> LanguagesAndLinks { get; set; } = new Dictionary<string, string>();
 
     public string? TargetLanguage { get; set; }
 
+
+
+
+    public NotLoggedInHeaderTagHelper(INotLoggedInHeaderHtmlGenerator notLoggedInHeaderHtmlGenerator)
+    {
+        _notLoggedInHeaderHtmlGenerator = notLoggedInHeaderHtmlGenerator;
+    }
+
+
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
 
-
+        if (!LanguagesAndLinks.Any())
+        {
+            throw new ArgumentException($"{nameof(LanguagesAndLinks)} cannot be empty");
+        }
 
         var header = new TagBuilder("header");
         header.AddCssClass("u-position-fixed u-maximize-width");
-        
+        header.InnerHtml.SetHtmlContent(_notLoggedInHeaderHtmlGenerator.GenerateNotLoggedInHeader(HomePageUrl, LanguagesAndLinks, TargetLanguage));
+        output.MergeAttributes(header);
+        output.TagName = header.TagName;
+        output.TagMode = TagMode.StartTagAndEndTag;
+        output.Content.SetHtmlContent(header.InnerHtml);
     }
 }
