@@ -43,6 +43,8 @@ public static class TagNames
 
     public const string HeaderTagName = "smart-header";
 
+    public const string NotLoggedInHeaderTagName = "smart-not-logged-in-header";
+
     public const string HorizontalRuleTagName = "smart-hr";
 
     public const string IconListItemTagName = "smart-icon-list-item";
