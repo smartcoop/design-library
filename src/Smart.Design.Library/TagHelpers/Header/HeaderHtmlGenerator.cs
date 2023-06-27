@@ -23,13 +23,7 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
     }
 
     /// <inheritdoc/>
-    public TagBuilder GenerateHeader(string homePageUrl,
-        Dictionary<string, string> languagesAndLinks,
-        string? targetLanguage,
-        string fullNameWithTrigram,
-        string avatarPath,
-        Dictionary<string, string> labelsAndLinks,
-        string logoutLink)
+    public TagBuilder GenerateHeader(string homePageUrl,Dictionary<string, string> languagesAndLinks,string? targetLanguage,string fullNameWithTrigram,string avatarPath,Dictionary<string, string> labelsAndLinks,string logoutLink)
     {
         (string CultureCode, string Language) languageCulture = targetLanguage?.ToUpper() switch
         {
