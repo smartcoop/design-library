@@ -17,7 +17,6 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
         _imageHtmlGenerator = imageHtmlGenerator;
     }
 
-
     public TagBuilder GenerateNotLoggedInHeader(string homePageUrl, Dictionary<string, string> languagesAndLinks, string? targetLanguage)
     {
 
@@ -38,15 +37,12 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
 
         var divLeft = new TagBuilder("div");
         divLeft.AddCssClass("c-toolbar__left");
-        divLeft.InnerHtml.AppendHtml(GetDivLeftHtmlContent(homePageUrl));
 
         var divRight = new TagBuilder("div");
         divRight.AddCssClass("c-toolbar__right");
 
-        //divRight.InnerHtml.AppendHtml(GetDivRight1(languageCulture.CultureCode));
-        //divRight.InnerHtml.AppendHtml(GetDivRight2(languagesAndLinks, languageCulture.Language));
-        //divRight.InnerHtml.AppendHtml(GetDivRight3(fullNameWithTrigram, avatarPath, labelsAndLinks, logoutLink));
-
+        divLeft.InnerHtml.AppendHtml(GetDivLeftHtmlContent(homePageUrl));
+        divRight.InnerHtml.AppendHtml(SetLanguageMenu(languagesAndLinks, languageCulture.Language));
         div2.InnerHtml.AppendHtml(divLeft);
         div2.InnerHtml.AppendHtml(divRight);
         div1.InnerHtml.AppendHtml(div2);
@@ -72,5 +68,75 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
         divLeft1.InnerHtml.AppendHtml(divLeft2);
 
         return divLeft1;
+    }
+
+    private IHtmlContent SetLanguageMenu(Dictionary<string, string> languagesAndLink, string language)
+    {
+        var languageMenu = new TagBuilder("div");
+        languageMenu.AddCssClass("c-toolbar__item");
+
+        var languageList = new TagBuilder("ul");
+        languageList.AddCssClass("c-pill-navigation");
+
+        var languageLi = new TagBuilder("li");
+        languageLi.AddCssClass("c-pill-navigation__item c-pill-navigation__item--has-child-menu");
+
+        var languageButton = new TagBuilder("button");
+        languageButton.Attributes["type"] = "button";
+        languageButton.Attributes["data-menu"] = "lang-switch";
+        languageButton.InnerHtml.Append(Translations.CurrentLanguage);
+
+        var languageUl = new TagBuilder("ul");
+        languageUl.AddCssClass("c-menu c-menu--large");
+        languageUl.Attributes["id"] = "lang-switch";
+
+        foreach (KeyValuePair<string, string> item in languagesAndLink)
+        {
+            if (string.Equals(item.Key, language, StringComparison.OrdinalIgnoreCase))
+            {
+                var p = new TagBuilder("p");
+                p.AddCssClass("c-menu__info u-text-muted");
+                p.InnerHtml.Append(item.Key);
+                languageUl.InnerHtml.AppendHtml(p);
+            }
+            else
+            {
+                var li = GenerateListItemWithBanner(item.Key, item.Value);
+                languageUl.InnerHtml.AppendHtml(li);
+            }
+        }
+
+        languageLi.InnerHtml.AppendHtml(languageButton);
+        languageLi.InnerHtml.AppendHtml(languageUl);
+        languageList.InnerHtml.AppendHtml(languageLi);
+        languageMenu.InnerHtml.AppendHtml(languageList);
+
+        return languageMenu;
+    }
+
+    private IHtmlContent GenerateListItemWithBanner(string innerHtml, string href, Image.Image icon = Image.Image.None, bool isBlankTarget = false)
+    {
+        var liItem = new TagBuilder("li");
+        liItem.AddCssClass("c-menu__item");
+        var link = new TagBuilder("a");
+        link.AddCssClass("c-menu__label");
+        link.Attributes["target"] = isBlankTarget ? "_blank" : "_self";
+        link.Attributes["href"] = href;
+
+        if (icon != Image.Image.None)
+        {
+            var svg = _imageHtmlGenerator.GenerateIcon(icon);
+            var span = new TagBuilder("span");
+            span.InnerHtml.Append(innerHtml);
+            link.InnerHtml.AppendHtml(svg);
+            link.InnerHtml.AppendHtml(span);
+        }
+        else
+        {
+            link.InnerHtml.Append(innerHtml);
+        }
+
+        liItem.InnerHtml.AppendHtml(link);
+        return liItem;
     }
 }
