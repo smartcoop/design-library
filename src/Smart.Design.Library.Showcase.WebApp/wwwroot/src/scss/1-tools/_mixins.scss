@@ -1,0 +1,46 @@
+// ---------
+// 1-tools
+// Mixins
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+}
+
+// Text selection
+@mixin text-selection($color-selection, $color-selection-bg) {
+  ::-moz-selection { // sass-lint:disable-line no-vendor-prefixes
+    background: $color-selection-bg;
+    color: $color-selection;
+    text-shadow: none;
+  }
+
+  ::selection {
+    background: $color-selection-bg;
+    color: $color-selection;
+    text-shadow: none;
+  }
+}
+
+@mixin box-shadow($shadow...) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;       
+          box-shadow: $shadow;
+}
+
+
+//Placeholders
+//Usage:
+//@include placeholder;
+@mixin placeholder {
+  // sass-lint:disable no-vendor-prefixes
+  ::-webkit-input-placeholder {@content}
+  :-moz-placeholder           {@content}
+  ::-moz-placeholder          {@content}
+  :-ms-input-placeholder      {@content}
+}
+
+

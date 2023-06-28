@@ -1,0 +1,138 @@
+/* ==========================================================================
+    Object: Flex
+    ---
+    Object to make a container use flexbox
+   ========================================================================== */
+
+/* Variables
+   ========================================================================== */
+
+$o-flex-gutter-width: 0.8rem !default;
+
+/* Utility classes
+   ========================================================================== */
+
+.o-flex {
+  display: flex;
+}
+
+.o-flex--col-reverse {
+  flex-direction: column-reverse;
+}
+
+@media (min-width: $g-bp1-m) { // 600
+  .o-flex-bp1-m  {
+    display: flex;
+  }
+  .o-flex--col-reverse-bp1-m {
+    flex-direction: column-reverse;
+  }
+  .o-flex--horizontal-bp1-m {
+    flex-direction: row;
+  }
+}
+@media (min-width: $g-bp2) { // 700
+  .o-flex-bp2 {
+    display: flex;
+  }
+  .o-block-bp2 {
+    display: block;
+  }
+  .o-flex--col-reverse-bp2 {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (min-width: $g-bp3) {
+  .o-flex-bp3 {
+    display: flex;
+  }
+  .o-flex--horizontal-bp3 {
+    flex-direction: row;
+  }
+}
+
+.o-flex-inline {
+  display: inline-flex;
+}
+
+.o-flex--vertical {
+  flex-direction: column;
+}
+
+.o-flex--horizontal {
+  flex-direction: row;
+}
+
+.o-flex--reverse { // same in o-grid + u-generic. To factorize
+  flex-direction: row-reverse;
+}
+// reverse on mobile
+.o-flex--reverse-mobile {
+  @media (max-width: $g-bp2) {
+    flex-direction: row-reverse;
+  }
+}
+
+.o-flex--vertical-center {
+  align-items: center;
+}
+
+.o-flex--horizontal-center {
+  justify-content: center;
+}
+
+.o-flex--center {
+  justify-content: center;
+  align-items: center;
+}
+
+.o-flex--justify-between {
+  justify-content: space-between;
+}
+
+.o-flex--justify-around {
+  justify-content: space-around;
+}
+
+.o-flex--justify-end {
+  justify-content: flex-end;
+}
+
+.o-flex--align-start {
+  align-items: flex-start;
+}
+
+.o-flex--align-baseline {
+  align-items: baseline;
+}
+.o-flex--wrap {
+  flex-wrap: wrap;
+}
+
+.o-flex--spaced {
+  & > *:not(:last-child) {
+    margin-right: $o-flex-gutter-width;
+  }
+}
+
+.o-flex--spaced-wide {
+  & > *:not(:last-child) {
+    margin-right: $o-flex-gutter-width * 2;
+  }
+}
+
+/* Flexible items
+   ========================================================================== */
+
+.o-flex__item {
+  flex: 1;
+}
+
+.o-flex__item--shrink {
+  flex: 0 1 0%;
+}
+
+.o-flex__item--auto {
+  flex: 1 0 auto;
+}
