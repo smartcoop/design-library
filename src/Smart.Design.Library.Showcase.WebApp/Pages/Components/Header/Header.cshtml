@@ -5,6 +5,23 @@
     ViewData["ComponentTitle"] = "Header";
 
 }
+@{
+    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>{
+                {
+                "French", "?SelectedMenu=French"
+                },{
+                "Dutch", "?SelectedMenu=Dutch"
+                }
+                };
+    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>{
+                {
+                "Item 1", ""
+                },{
+                "Item 2", ""
+                }
+                };
+
+}
 <div class="u-padding-bottom-l">
     <h1 class="c-d-h2">@ViewData["MainTitle"]</h1>
 </div>
@@ -23,41 +40,22 @@
         </div>
         <div class="br-content c-content">
             <p>
-                This smart-header TagHelper a header with :
+                This are 2 smart-header TagHelper :
                 <ul>
-                    <li>the smart Logo linked to /home</li>
-                    <li>a block Help with 3 links on hover</li>
-                    <li>a switcher language</li>
-                    <li>the user's trigram</li>
-                    <li>The user's Fullname'</li>
-                    <li>a block Help with 3 links on hover</li>
+                    <li>One when the user is logged in</li>
+                    <li>The other when the user is not logged in</li>
                 </ul>
+
 
             </p>
         </div>
         <div class="br-sample" id="component-01-c-button-primary">
             <div class="br-sample-header br-sample-clearfix">
-                <h3 class="br-sample-heading c-h3">Header</h3>
+                <h3 class="br-sample-heading c-h3">Header when user is logged in</h3>
             </div>
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
-                @{
-                    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>{
-                {
-                "French", "?SelectedMenu=French"
-                },{
-                "Dutch", "?SelectedMenu=Dutch"
-                }
-                };
-                    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>{
-                {
-                "Item 1", ""
-                },{
-                "Item 2", ""
-                }
-                };
 
-                }
 
                 <div class="c-app-layout">
                     <smart-header home-page-url="" languages-and-links="@languagesAndLink" full-name-with-trigram="John Doe DOJ"
@@ -68,21 +66,6 @@
                 <b>C# Code: </b>
                 <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-header home-page-url=\"\" languages-and-links=\"@languagesAndLink\" full-name-with-trigram=\"John Doe DOJ\" avatar-path=\"https://smartbe.be\" labels-and-links=\"@labelsAndLinks\" target-language=\"fr\" logout-link= \"/logout.aspx\"></smart-header>")</pre>
             </div>
-
-            <div class="br-sample-header br-sample-clearfix">
-                <h3 class="br-sample-heading c-h3">Header when user is not logged in</h3>
-            </div>
-            <div class="br-sample-content">
-                <div class="c-app-layout">
-                    <smart-not-logged-in-header home-page-url="https://smartbe.be" languages-and-links="@languagesAndLink" target-language="fr"></smart-not-logged-in-header>
-                </div>
-
-            </div>
-            <div class="br-sample-footer">
-                <b>C# Code: </b>
-                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-header home-page-url=\"\" languages-and-links=\"@languagesAndLink\" target-language=\"fr\"></smart-header>")</pre>
-            </div>
-
             <div class="br-componentgroup-footer-wrapper">
                 <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for Header</h1>
                 <div class="br-content c-content">
@@ -96,6 +79,12 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td>homePageUrl *</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>Represents the link to "Home"</td>
+                            </tr>
                             <tr>
                                 <td>languagesAndLinks *</td>
                                 <td>Dictionary string, string</td>
@@ -129,7 +118,55 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="br-sample-header br-sample-clearfix u-spacer-top-xl">
+                <h3 class="br-sample-heading c-h3">Header when user is not logged in</h3>
+            </div>
+            <div class="br-sample-content">
+                <div class="c-app-layout">
+                    <smart-not-logged-in-header home-page-url="https://smartbe.be" languages-and-links="@languagesAndLink" target-language="fr"></smart-not-logged-in-header>
+                </div>
 
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-header home-page-url=\"\" languages-and-links=\"@languagesAndLink\" target-language=\"fr\"></smart-header>")</pre>
+            </div>
+
+            <div class="br-componentgroup-footer-wrapper">
+                <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for Not logged In Header</h1>
+                <div class="br-content c-content">
+                    <table class="c-table">
+                        <thead>
+                            <tr>
+                                <th>Parameters</th>
+                                <th>Type</th>
+                                <th>Possible values</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>homePageUrl *</td>
+                                <td>string</td>
+                                <td></td>
+                                <td>Represents the link to "Home"</td>
+                            </tr>
+                            <tr>
+                                <td>languagesAndLinks *</td>
+                                <td>Dictionary string, string</td>
+                                <td></td>
+                                <td>Represents the language menu</td>
+                            </tr>
+                            <tr>
+                                <td>targetLanguage</td>
+                                <td>string?</td>
+                                <td></td>
+                                <td>Represents the language</td>
+                            </tr>                            
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
