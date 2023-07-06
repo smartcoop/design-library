@@ -14,4 +14,8 @@
   <ItemGroup>
     <ProjectReference Include="..\Smart.Design.Library\Smart.Design.Library.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\src\images\content\" />
+  </ItemGroup>
 </Project>
