@@ -135,7 +135,7 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
             }
             else
             {
-                inputTelTagBuilder.Attributes["placeholder"] = phoneType == PhoneType.Fix ? "fix" : "mobile";
+                inputTelTagBuilder.Attributes["placeholder"] = phoneType == PhoneType.Landline ? "landline" : "mobile";
             }
         }
 
@@ -151,7 +151,7 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
 
         if (phoneType.HasValue)
         {
-            var pattern = phoneType == PhoneType.Fix ?
+            var pattern = phoneType == PhoneType.Landline ?
                 "^(0|\\+)(\\d{1,4}|\\d{2,3}\\(\\d{1,3}\\)|\\d{2,3}\\s\\d{1,4}|\\d{2,3}\\.\\d{1,4}|\\d{2,3}-\\d{1,4})$" :
                 "^(?:\\+|00)(?:(?:[1-9]\\d{0,3}(?:\\(\\d{1,4}\\))?)|\\d{1,4})(?:[-.]?\\d{1,4}){0,5}<\\d$";
             inputTelTagBuilder.Attributes["pattern"] = pattern;

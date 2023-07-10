@@ -8,9 +8,9 @@ namespace Smart.Design.Library.TagHelpers.Tabs;
 public class TabSectionTagHelper : TagHelper
 {
     private readonly ITabsHtmlGenerator _smartHtmlGenerator;
-    private const string IdAttributeName = "id";
+    private const string NameAttributeId = "id";
 
-    [HtmlAttributeName(IdAttributeName)]
+    [HtmlAttributeName(NameAttributeId)]
     public string? Id { get; set; }
 
     public TabSectionTagHelper(ITabsHtmlGenerator smartHtmlGenerator)
