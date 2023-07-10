@@ -19,7 +19,7 @@ public class SelectTagHelper : Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelp
     /// <summary>
     /// Id HTML attribute name.
     /// </summary>
-    protected const string IdAttributeName = "id";
+    protected const string NameAttributeId = "id";
 
     /// <summary>
     /// Name HTML attribute name.
@@ -29,7 +29,7 @@ public class SelectTagHelper : Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelp
     /// <summary>
     /// Gets or Sets the Id of the underlying Tag Helper.
     /// </summary>
-    [HtmlAttributeName(IdAttributeName)]
+    [HtmlAttributeName(NameAttributeId)]
     public string? Id { get; set; }
 
     /// <summary>

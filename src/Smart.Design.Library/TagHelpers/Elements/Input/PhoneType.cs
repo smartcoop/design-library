@@ -1,4 +1,4 @@
-﻿namespace Smart.Design.Library.TagHelpers.Elements.Input;
+namespace Smart.Design.Library.TagHelpers.Elements.Input;
 
 /// <summary>
 /// The phone type of an input of type tel.
@@ -11,8 +11,8 @@ public enum PhoneType
     Mobile,
 
     /// <summary>
-    /// Fix phone.
+    /// Landline phone.
     /// </summary>
-    Fix,
+    Landline,
 
 }

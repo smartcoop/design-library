@@ -49,9 +49,9 @@ public interface IInputHtmlGenerator
     /// <param name="phoneType">Phone type is the type of the phone you want. Fix or mobile.</param>
     /// <param name="maxLength">The maximum lenght of the input.</param>
     /// <param name="minLength">The minimum length of the input.</param>
-    /// <param name="pattern">The pattern that the value must comply with of the input.</param>
-    /// <param name="readOnly">The attribute dermine if the input can be modified.</param>
-    /// <param name="size">The size attribute is a numeric value indicating how many characters wide the input field should be..</param>
+    /// <param name="pattern">The pattern with which the value of the input must comply.</param>
+    /// <param name="readOnly">The attribute determine if the input can be modified.</param>
+    /// <param name="size">The size attribute is a numeric value indicating how many characters wide the input field should be.</param>
     /// <param name="for">The <see cref="ModelExpression"/> associated to the html element.</param>
     /// <returns></returns>
     TagBuilder GenerateInputTel(

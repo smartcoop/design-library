@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Library.TagHelpers.Base;
@@ -39,7 +39,7 @@ public class InputTelTagHelper: BaseTagHelper
     public string? Placeholder { get; set; }
 
     /// <summary>
-    /// Phone type is the type of the phone you want. Fix or mobile.
+    /// Phone type is the type of the phone you want. Landline or mobile.
     /// </summary>
     [HtmlAttributeName(PhoneTypeAttributeName)]
     public PhoneType? PhoneType { get; set; }

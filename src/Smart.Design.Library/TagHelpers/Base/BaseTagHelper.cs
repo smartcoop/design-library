@@ -14,7 +14,7 @@ public abstract class BaseTagHelper : TagHelper
     /// <summary>
     /// Id HTML attribute name.
     /// </summary>
-    protected const string IdAttributeName = "id";
+    protected const string NameAttributeId = "id";
 
     /// <summary>
     /// Name HTML attribute name.
@@ -24,7 +24,7 @@ public abstract class BaseTagHelper : TagHelper
     /// <summary>
     /// Gets or Sets the Id of the underlying Tag Helper.
     /// </summary>
-    [HtmlAttributeName(IdAttributeName)]
+    [HtmlAttributeName(NameAttributeId)]
     public string? Id { get; set; }
 
     /// <summary>
