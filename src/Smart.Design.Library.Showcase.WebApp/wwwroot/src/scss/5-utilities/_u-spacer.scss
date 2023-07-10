@@ -199,6 +199,12 @@ $g-spacer-unit: 0.8rem !default;
   padding-bottom: $g-spacer-unit !important;
 }
 
+
+.u-padding-vertical-m {
+	padding-top: $g-spacer-unit * 1.5 !important;
+	padding-bottom: $g-spacer-unit * 1.5 !important;
+}
+
 .u-padding-vertical {
   padding-top: $g-spacer-unit * 2 !important;
   padding-bottom: $g-spacer-unit * 2 !important;

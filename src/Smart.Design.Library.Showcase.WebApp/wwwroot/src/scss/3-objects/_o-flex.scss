@@ -16,6 +16,10 @@ $o-flex-gutter-width: 0.8rem !default;
   display: flex;
 }
 
+.o-block{
+	display: block !important;
+}
+
 .o-flex--col-reverse {
   flex-direction: column-reverse;
 }
@@ -53,7 +57,7 @@ $o-flex-gutter-width: 0.8rem !default;
 }
 
 .o-flex-inline {
-  display: inline-flex;
+  display: inline-flex !important;
 }
 
 .o-flex--vertical {

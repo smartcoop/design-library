@@ -50,7 +50,7 @@ $c-panel-border-radius: $g-border-radius-medium !default;
 .c-panel__header {
   display: flex;
   align-items: center;
-  height: 5.6rem;
+  /*height: 5.6rem;*/
   padding: 0 $c-panel-padding-horizontal;
   background:  $color-white;
   border-radius: $g-border-radius-medium $g-border-radius-medium 0 0;
