@@ -6,8 +6,6 @@
 
 <main class="o-container-vertical">
 
-    <script src="~/js/pristine.js" type="text/javascript"></script>
-
     <div class="o-container o-container--small">
 
         <div class="u-spacer-bottom-xl">
@@ -25,12 +23,12 @@
                     <div class="o-grid">
                         <div class="o-grid-col-6">
                             <smart-formgroup label="Nom*">
-                                <smart-input required data-pristine-required-message="Le nom est requis" id="firstname" name="firstname" placeholder="John"></smart-input>
+                                <smart-input required id="firstname" name="firstname" placeholder="John"></smart-input>
                             </smart-formgroup>
                         </div>
                         <div class="o-grid-col-6">
                             <smart-formgroup label="Prénom*">
-                                <smart-input required data-pristine-required-message="Le Prénom est requis" id="lastname" name="lastname" placeholder="Doe"></smart-input>
+                                <smart-input required id="lastname" name="lastname" placeholder="Doe"></smart-input>
                             </smart-formgroup>
                         </div>
                     </div>
@@ -98,7 +96,7 @@
                         </div>
                         <div class="o-grid-col-3">
                             <smart-formgroup label="Numéro">
-                                <smart-input data-pristine-required-message="Error Message" id="number" name="number" placeholder="44"></smart-input>
+                                <smart-input id="number" name="number" placeholder="44"></smart-input>
                             </smart-formgroup>
                         </div>
                         <div class="o-grid-col-3">
@@ -197,39 +195,6 @@
                         <smart-button button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
                     </div>
                 </smart-form>
-
-                <script>
-                    window.onload = function () {
-
-                        var form = document.getElementById("subscription");
-
-                        console.log(form);
-
-                        let config = {
-                            // class of the parent element where the error/success class is added
-                            classTo: 'o-form-group',
-                            errorClass: 'o-form-group--error',
-                            successClass: 'has-success',
-                            // class of the parent element where error text element is appended
-                            errorTextParent: 'o-form-group',
-                            // type of element to create for the error text
-                            errorTextTag: 'div',
-                            // class of the error text element
-                            errorTextClass: 'c-form-help-text--error'
-                        };
-
-                        // create the pristine instance
-                        var pristine = new Pristine(form, config, true);
-
-                        form.addEventListener('submit', function (e) {
-                            e.preventDefault();
-
-                            // check if the form is valid
-                            var valid = pristine.validate(); // returns true or false
-
-                        });
-                    };
-                </script>
 
             </div>
         </div>
