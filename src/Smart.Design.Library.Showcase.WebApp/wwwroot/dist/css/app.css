@@ -5064,7 +5064,7 @@ header .c-navbar .c-toolbar, header.c-navbar .c-toolbar {
 }
 
 .c-panel__body + .c-panel__body {
-  border-top: 1px solid #D9D9D9;
+  border-top: 1px solid #F2F2F2;
 }
 
 .c-panel__header {
@@ -5078,7 +5078,7 @@ header .c-navbar .c-toolbar, header.c-navbar .c-toolbar {
   padding: 0 2.4rem;
   background: #FFFFFF;
   border-radius: 1rem 1rem 0 0;
-  border-bottom: 1px solid #D9D9D9;
+  border-bottom: 2px solid #F2F2F2;
 }
 
 .c-panel__title {

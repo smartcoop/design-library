@@ -9,7 +9,7 @@ $c-panel-padding-all: 2.4rem !default;
 $c-panel-padding-all-mobile: 2.2rem !default;
 $c-panel-padding-horizontal: 2.4rem !default;
 $c-panel-padding-vertical: 2.4rem !default;
-$c-panel-border-color: $color-gray-150 !default;
+$c-panel-border-color: $color-gray-50 !default;
 $c-panel-border-radius: $g-border-radius-medium !default;
 
 /* Standard component construction
@@ -54,7 +54,7 @@ $c-panel-border-radius: $g-border-radius-medium !default;
   padding: 0 $c-panel-padding-horizontal;
   background:  $color-white;
   border-radius: $g-border-radius-medium $g-border-radius-medium 0 0;
-  border-bottom: 1px solid $c-panel-border-color;
+  border-bottom: 2px solid $c-panel-border-color;
 }
 
 .c-panel__title {
