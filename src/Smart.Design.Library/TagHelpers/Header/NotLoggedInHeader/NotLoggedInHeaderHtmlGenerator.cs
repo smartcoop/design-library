@@ -29,22 +29,26 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
         Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(languageCulture.CultureCode);
 
 
-        var div1 = new TagBuilder("div");
-        div1.AddCssClass("c-navbar");
+        var div1 = new TagBuilder("header");
+        div1.AddCssClass("o-container-vertical c-navbar c-navbar--white c-navbar--entry");
 
         var div2 = new TagBuilder("div");
-        div2.AddCssClass("c-toolbar");
+        div2.AddCssClass("o-container o-container--small");
+
+        var div3 = new TagBuilder("div");
+        div3.AddCssClass("o-grid");
 
         var divLeft = new TagBuilder("div");
-        divLeft.AddCssClass("c-toolbar__left");
+        divLeft.AddCssClass("o-grid-col-6");
 
         var divRight = new TagBuilder("div");
-        divRight.AddCssClass("c-toolbar__right");
+        divRight.AddCssClass("o-grid-col-6");
 
         divLeft.InnerHtml.AppendHtml(GetDivLeftHtmlContent(homePageUrl));
         divRight.InnerHtml.AppendHtml(SetLanguageMenu(languagesAndLinks, languageCulture.Language));
-        div2.InnerHtml.AppendHtml(divLeft);
-        div2.InnerHtml.AppendHtml(divRight);
+        div3.InnerHtml.AppendHtml(divLeft);
+        div3.InnerHtml.AppendHtml(divRight);
+        div2.InnerHtml.AppendHtml(div3);
         div1.InnerHtml.AppendHtml(div2);
 
         return div1;
@@ -56,7 +60,7 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
         divLeft1.AddCssClass("c-toolbar__item");
 
         var divLeft2 = new TagBuilder("div");
-        divLeft2.AddCssClass("c-brand c-brand--xsmall");
+        divLeft2.AddCssClass("c-brand c-brand--small");
 
         var linkLogo = new TagBuilder("a");
         linkLogo.Attributes["href"] = homePageUrl;
