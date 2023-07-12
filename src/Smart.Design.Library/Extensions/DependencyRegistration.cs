@@ -13,6 +13,7 @@ using Smart.Design.Library.TagHelpers.Elements.Checkbox;
 using Smart.Design.Library.TagHelpers.Elements.HorizontalRule;
 using Smart.Design.Library.TagHelpers.Elements.Input;
 using Smart.Design.Library.TagHelpers.Elements.Radio;
+using Smart.Design.Library.TagHelpers.Elements.Select;
 using Smart.Design.Library.TagHelpers.Elements.Textarea;
 using Smart.Design.Library.TagHelpers.Elevation;
 using Smart.Design.Library.TagHelpers.Form;
@@ -83,6 +84,7 @@ public static class DependencyRegistration
             .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>()
             .AddTransient<ISideMenuHtmlGenerator, SideMenuHtmlGenerator>()
             .AddTransient<IHeaderHtmlGenerator, HeaderHtmlGenerator>()
+            .AddTransient<ISelectHtmlGenerator, SelectHtmlGenerator>()
             .AddTransient<INotLoggedInHeaderHtmlGenerator, NotLoggedInHeaderHtmlGenerator>();
     }
 }
