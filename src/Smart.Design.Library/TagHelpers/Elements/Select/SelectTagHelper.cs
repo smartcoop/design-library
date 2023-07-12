@@ -1,9 +1,11 @@
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
+using Smart.Design.Library.TagHelpers.Base;
 using Smart.Design.Library.TagHelpers.Constants;
 using Smart.Design.Library.TagHelpers.Extensions;
 
@@ -14,17 +16,23 @@ namespace Smart.Design.Library.TagHelpers.Elements.Select;
 /// Documentation available <see href="https://design.smart.coop/development/docs/c-select.html">here</see>.
 /// </summary>
 [HtmlTargetElement(TagNames.SelectTagName)]
-public class SelectTagHelper : Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelper
+public class SelectTagHelper : BaseTagHelper
 {
+    private readonly ISelectHtmlGenerator _iSelectHtmlGenerator;
+
     /// <summary>
     /// Id HTML attribute name.
     /// </summary>
-    protected const string NameAttributeId = "id";
+    private const string NameAttributeId = "id";
 
     /// <summary>
     /// Name HTML attribute name.
     /// </summary>
-    protected const string NameAttributeName = "name";
+    private const string NameAttributeName = "name";
+
+    private const string ItemsAttributeName = "items";
+
+    private const string AspForNameAttribute   = "asp-for";
 
     /// <summary>
     /// Gets or Sets the Id of the underlying Tag Helper.
@@ -46,53 +54,39 @@ public class SelectTagHelper : Microsoft.AspNetCore.Mvc.TagHelpers.SelectTagHelp
     public ViewContext? ViewContext { get; set; }
 
     /// <summary>
+    /// <see cref="ModelExpression"/> for the tag helper.
+    /// </summary>
+    [HtmlAttributeName(AspForNameAttribute)]
+    public ModelExpression? For { get; set; }
+
+    /// <summary>
+    /// HTML items of the select.
+    /// </summary>
+    [HtmlAttributeName(ItemsAttributeName)]
+    public Dictionary<string, string>? Items { get; set; }
+
+    /// <summary>
     /// Creates a new <see cref="SelectTagHelper"/>.
     /// </summary>
-    /// <param name="generator">The <see cref="IHtmlGenerator"/>.</param>
-    public SelectTagHelper(IHtmlGenerator generator) : base(generator)
+    /// <param name="selectHtmlGenerator">The <see cref="ISelectHtmlGenerator"/>.</param>
+    public SelectTagHelper(ISelectHtmlGenerator iSelectHtmlGenerator)
     {
+        _iSelectHtmlGenerator = iSelectHtmlGenerator;
     }
 
     /// <inheritdoc />
     public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
     {
-        await base.ProcessAsync(context, output);
+        base.Process(context, output);
 
-        var select = new TagBuilder("select");
-        select.MergeAttributes(output.Attributes);
-        select.AddCssClass("c-select");
+        var select = _iSelectHtmlGenerator.GenerateSelect(ViewContext, Id, Name, Items, For);
 
-        if (Id is not null) {
-            select.Attributes.Add("id", Id.ToString());
-        }
+        output.TagName = select.TagName;
+        output.TagMode = TagMode.StartTagAndEndTag;
 
-        var name = output.Attributes["name"]?.Value?.ToString();
-
-        if (!string.IsNullOrWhiteSpace(name) && ViewContext.HasModelStateErrorsByKey(name))
-        {
-            select.AddCssClass("c-select--error");
-        }
-
-        // Retrieving potential hardcoded <option> tags inside the <smart-select> tag.
-        var extraOptions = await output.GetChildContentAsync();
-        if (!extraOptions.IsEmptyOrWhiteSpace)
-        {
-            select.InnerHtml.AppendHtml(extraOptions);
-        }
-
-        // output.PostContent hold generated <option> tags from property Items.
-        var options = new HtmlContentBuilder();
-        output.PostContent.MoveTo(options);
-        select.InnerHtml.AppendHtml(options);
-
-        var holder = new TagBuilder("div");
-        holder.AddCssClass("c-select-holder");
-        holder.InnerHtml.AppendHtml(select);
-
-        output.Reinitialize(holder.TagName, TagMode.StartTagAndEndTag);
-        output.Content.Clear();
-        output.PostContent.SetHtmlContent(select);
         output.ClearAllAttributes();
-        output.MergeAttributes(holder);
+        output.MergeAttributes(select);
+
+        output.Content.SetHtmlContent(select.InnerHtml);
     }
 }
