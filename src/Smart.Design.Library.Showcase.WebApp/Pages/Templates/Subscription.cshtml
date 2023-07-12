@@ -1,7 +1,16 @@
 ﻿@page
+@using Microsoft.AspNetCore.Http.Features
 @model Smart.Design.Library.Showcase.Pages.Templates.SubscriptionModel
 @{
     ViewData["Title"] = "Subscription page";
+}
+@{
+
+    Dictionary<string, string> items = new Dictionary<string, string>{
+        { "Item 1", "value1" },
+        { "Item 2", "value2"}
+    };
+
 }
 <!-- This styles will be added in the next package in main.css-->
 <style>
@@ -83,18 +92,12 @@
                     </div>
 
                     <smart-formgroup label="Sexe">
-                        <smart-select id="sexe" name="sexe">
-                            <option></option>
-                            <option>Masculin</option>
-                            <option>Féminin</option>
+                        <smart-select id="sexe" name="sexe" items="@items">
                         </smart-select>
                     </smart-formgroup>
 
                     <smart-formgroup label="Langue">
-                        <smart-select id="language" name="language">
-                            <option></option>
-                            <option value="F">Français</option>
-                            <option value="N">Néerlandais</option>
+                        <smart-select id="language" name="language" items="@items">
                         </smart-select>
                     </smart-formgroup>
 
@@ -119,19 +122,12 @@
                     </smart-formgroup>
 
                     <smart-formgroup label="Etat civil">
-                        <smart-select id="civilStatus" name="civilStatus">
-                            <option></option>
-                            <option>Marié.e</option>
-                            <option>Célibataire</option>
+                        <smart-select id="civilStatus" name="civilStatus" items="@items">
                         </smart-select>
                     </smart-formgroup>
 
                     <smart-formgroup label="Nationalité">
-                        <smart-select id="natinonality" name="natinonality">
-                            <option></option>
-                            <option>Belge</option>
-                            <option>Espagnol</option>
-                            <option>Neptunien</option>
+                        <smart-select id="natinonality" name="natinonality" items="@items">
                         </smart-select>
                     </smart-formgroup>
 
@@ -157,25 +153,21 @@
                         </div>
                     </div>
 
-                    <div class="o-grid">
-                        <div class="o-grid-col-4">
-                            <smart-formgroup label="Code postal">
-                                <smart-input id="zip" name="zip"></smart-input>
-                            </smart-formgroup>
-                        </div>
-                        <div class="o-grid-col-8">
-                            <smart-formgroup label="Ville">
-                                <smart-input id="city" name="city"></smart-input>
-                            </smart-formgroup>
-                        </div>
+                <div class="o-grid">
+                    <div class="o-grid-col-4">
+                        <smart-formgroup label="Code postal">
+                            <smart-input id="zip" name="zip"></smart-input>
+                        </smart-formgroup>
                     </div>
+                    <div class="o-grid-col-8">
+                        <smart-formgroup label="Ville">
+                            <smart-input id="city" name="city"></smart-input>
+                        </smart-formgroup>
+                    </div>
+                </div>
 
-                    <smart-formgroup label="Pays">
-                        <smart-select id="country" name="country">
-                            <option></option>
-                            <option>Belgique</option>
-                            <option>Espagne</option>
-                            <option>Neptune</option>
+                <smart-formgroup label="Pays">
+                        <smart-select id="country" name="country" items="@items">
                         </smart-select>
                     </smart-formgroup>
 
@@ -223,11 +215,7 @@
                         </div>
 
                         <smart-formgroup label="Pays">
-                            <smart-select id="anotherCountry" name="anotherCountry">
-                                <option></option>
-                                <option>Belgique</option>
-                                <option>Espagne</option>
-                                <option>Neptune</option>
+                            <smart-select id="anotherCountry" name="anotherCountry" items="@items">
                             </smart-select>
                         </smart-formgroup>
 
