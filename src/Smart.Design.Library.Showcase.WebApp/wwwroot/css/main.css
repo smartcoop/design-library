@@ -89,7 +89,7 @@
    ========================================================================== */
 /* Generic: CSS reset, box-sizing, global CSS tweaks
    ========================================================================== */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -2837,8 +2837,9 @@ a.link--sup:not(.c-button) {
     }
 
     .c-button--highlights:hover, .c-button--highlights.c-button--hover {
-        background: #1A1A1A;
+        background: #FFFFFF;
         border-color: #000000;
+        color: #000000;
     }
 
     .c-button--highlights:active, .c-button--highlights.c-button--active {
