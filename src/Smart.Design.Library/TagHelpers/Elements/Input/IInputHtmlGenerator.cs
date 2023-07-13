@@ -38,6 +38,8 @@ public interface IInputHtmlGenerator
     /// <returns></returns>
     TagBuilder GenerateInputTime(string? id, string? name, DateTime? value, ModelExpression? @for);
 
+    TagBuilder GenerateInputNumber(string? id, string? name, int? value, ModelExpression? @for);
+
     /// <summary>
     /// Generates an &lt;input[type='tel']&gt; compliant with Smart design.
     /// </summary>
