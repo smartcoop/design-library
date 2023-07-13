@@ -190,7 +190,7 @@
                         <smart-radio id="anotherAddress" name="subscriptionAddressChoice" label="Mon adresse courrier est différente de mon adresse officielle" value="another_address" checked="false"></smart-radio>
                     </div>
                     <!--- BO Bloc à ne faire apparaître que lorsque le radio subscriptionAnotherAddress est ON-->
-                    <div id="blocAnotherAdress">
+                    <div id="blocAnotherAdress" style="display:none;">
                         <div class="o-grid">
                             <div class="o-grid-col-6">
                                 <smart-formgroup label="Rue">
@@ -317,3 +317,43 @@
         </div>
     </div>
 </main>
+
+<script>
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            // call on next available tick
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+
+    function SameAddress() {
+        // reset inputs value in blocAnotherAdress fields
+        ResetAnotherAddressFields();
+        // hide blocAnotherAdress
+        document.getElementById('blocAnotherAdress').style.display = 'none';
+    }
+
+    function AnotherAddress() {
+        // show blocAnotherAdress
+        document.getElementById('blocAnotherAdress').style.display = 'block';
+    }
+
+    function ResetAnotherAddressFields() {
+        // clear all values in blocAnotherAdress inputs
+        document.getElementById('anotherStreet').value = "";
+        document.getElementById('anotherNumber').value = "";
+        document.getElementById('anotherBox').value = "";
+        document.getElementById('anotherZip').value = "";
+        document.getElementById('anotherCity').value = "";
+        document.getElementById('anotherCountry').value = "";
+    }
+
+    docReady(function () {
+        // add click event on sameAddress and anotherAddress
+        document.getElementById("sameAddress").addEventListener("click", SameAddress);
+        document.getElementById("anotherAddress").addEventListener("click", AnotherAddress);
+    });
+</script>
