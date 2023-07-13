@@ -89,6 +89,23 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         return tagBuilder;
     }
 
+    public TagBuilder GenerateInputNumber(string? id, string? name, int? value, ModelExpression? @for)
+    {
+        var tagBuilder = new TagBuilder("input");
+
+        if (!string.IsNullOrWhiteSpace(id))
+        {
+            tagBuilder.Attributes.Add("id", id);
+        }
+
+        AddNameAttribute(tagBuilder, @for, name);
+        tagBuilder.AddCssClass("c-input");
+        tagBuilder.Attributes.Add("type", "number");
+        tagBuilder.Attributes.Add("value", $"{value}");
+
+        return tagBuilder;
+    }
+
     /// <inheritdoc />
     public TagBuilder GenerateInputTel(
         ViewContext? viewContext,

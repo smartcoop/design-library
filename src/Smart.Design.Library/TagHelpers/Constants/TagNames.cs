@@ -59,6 +59,8 @@ public static class TagNames
 
     public const string InputTimeTagName = "smart-input-time";
 
+    public const string InputNumberTagName = "smart-input-number";
+
     public const string InputTelName = "smart-input-phone";
 
     public const string InputEmailName = "smart-input-email";
