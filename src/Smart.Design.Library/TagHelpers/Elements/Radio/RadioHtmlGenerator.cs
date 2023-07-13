@@ -18,6 +18,7 @@ public class RadioHtmlGenerator : IRadioHtmlGenerator
         var inputRadioTagBuilder = new TagBuilder("input");
         inputRadioTagBuilder.Attributes.Add("name", radioName);
         inputRadioTagBuilder.Attributes.Add("type", "radio");
+        inputRadioTagBuilder.Attributes.Add("id", id);
 
         if (@checked)
         {
