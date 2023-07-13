@@ -38,7 +38,7 @@ public class NotLoggedInHeaderTagHelper : TagHelper
         }
 
         var header = new TagBuilder("header");
-        header.AddCssClass("u-position-fixed u-maximize-width");
+        header.AddCssClass("o-container-vertical c-navbar c-navbar--white c-navbar--entry");
         header.InnerHtml.SetHtmlContent(_notLoggedInHeaderHtmlGenerator.GenerateNotLoggedInHeader(HomePageUrl, LanguagesAndLinks, TargetLanguage));
         output.MergeAttributes(header);
         output.TagName = header.TagName;

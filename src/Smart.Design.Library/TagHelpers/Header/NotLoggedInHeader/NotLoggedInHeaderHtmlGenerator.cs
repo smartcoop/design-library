@@ -29,9 +29,6 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
         Thread.CurrentThread.CurrentUICulture = CultureInfo.CreateSpecificCulture(languageCulture.CultureCode);
 
 
-        var div1 = new TagBuilder("header");
-        div1.AddCssClass("o-container-vertical c-navbar c-navbar--white c-navbar--entry");
-
         var div2 = new TagBuilder("div");
         div2.AddCssClass("o-container o-container--small");
 
@@ -49,15 +46,13 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
         div3.InnerHtml.AppendHtml(divLeft);
         div3.InnerHtml.AppendHtml(divRight);
         div2.InnerHtml.AppendHtml(div3);
-        div1.InnerHtml.AppendHtml(div2);
 
-        return div1;
+        return div2;
     }
 
     private IHtmlContent GetDivLeftHtmlContent(string homePageUrl)
     {
-        var divLeft1 = new TagBuilder("div");
-        divLeft1.AddCssClass("c-toolbar__item");
+
 
         var divLeft2 = new TagBuilder("div");
         divLeft2.AddCssClass("c-brand c-brand--small");
@@ -69,26 +64,24 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
 
         linkLogo.InnerHtml.AppendHtml(logo);
         divLeft2.InnerHtml.AppendHtml(linkLogo);
-        divLeft1.InnerHtml.AppendHtml(divLeft2);
 
-        return divLeft1;
+        return divLeft2;
     }
 
     private IHtmlContent SetLanguageMenu(Dictionary<string, string> languagesAndLink, string language)
     {
-        var languageMenu = new TagBuilder("div");
-        languageMenu.AddCssClass("c-toolbar__item");
+
 
         var languageList = new TagBuilder("ul");
         languageList.AddCssClass("c-pill-navigation");
-
-        var languageLi = new TagBuilder("li");
-        languageLi.AddCssClass("c-pill-navigation__item c-pill-navigation__item--has-child-menu");
 
         var languageButton = new TagBuilder("button");
         languageButton.Attributes["type"] = "button";
         languageButton.Attributes["data-menu"] = "lang-switch";
         languageButton.InnerHtml.Append(Translations.CurrentLanguage);
+
+        var languageLi = new TagBuilder("li");
+        languageLi.AddCssClass("c-pill-navigation__item c-pill-navigation__item--has-child-menu u-spacer-left-auto");
 
         var languageUl = new TagBuilder("ul");
         languageUl.AddCssClass("c-menu c-menu--large");
@@ -113,9 +106,8 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
         languageLi.InnerHtml.AppendHtml(languageButton);
         languageLi.InnerHtml.AppendHtml(languageUl);
         languageList.InnerHtml.AppendHtml(languageLi);
-        languageMenu.InnerHtml.AppendHtml(languageList);
 
-        return languageMenu;
+        return languageList;
     }
 
     private IHtmlContent GenerateListItemWithBanner(string innerHtml, string href, Image.Image icon = Image.Image.None, bool isBlankTarget = false)
