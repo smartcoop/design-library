@@ -1,8 +1,20 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.SubscriptionModel
+
 @{
     ViewData["Title"] = "Subscription page";
 }
+
+@{
+    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>{
+                {
+                "French", "?SelectedMenu=French"
+                },{
+                "Dutch", "?SelectedMenu=Dutch"
+                }
+                };
+}
+
 <!-- This styles will be added in the next package in main.css-->
 <style>
     .icon-help .o-svg-icon {
@@ -21,38 +33,8 @@
         padding: 0.4rem 2.8rem 0.4rem 0.8rem;
     }
 </style>
-<!-- A Tag Helper : smart-not-logged-in-header is in WIP -->
-<header class="o-container-vertical c-navbar c-navbar--white c-navbar--entry">
-    <div class="o-container o-container--small">
-        <div class="o-grid">
-            <div class="o-grid-col-6">
-                <div class="c-brand c-brand--small">
-                    <a href="/home?lang=FR">
-                        <img src="~/images/logo.svg" alt="Smart">
-                    </a>
-                </div>
-            </div>
 
-            <div class="o-grid-col-6">
-                <ul class="c-pill-navigation">
-                    <li class="c-pill-navigation__item c-pill-navigation__item--has-child-menu u-spacer-left-auto">
-                        <button type="button" data-menu="lang-switch" data-menu-samewidth="true">
-                            Fran&#231;ais
-                        </button>
-                        <ul class="c-menu c-menu--large" id="lang-switch">
-                            <li class="c-menu__item">
-                                <p class="c-menu__info u-text-muted">Fran&#231;ais</p>
-                            </li>
-                            <li class="c-menu__item">
-                                <a class="c-menu__label" href="?lang=NL">Nederlands</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
+<smart-not-logged-in-header home-page-url="" languages-and-links="@languagesAndLink" target-language="fr"></smart-not-logged-in-header>
 
 <main class="o-container-vertical">
 
@@ -184,10 +166,10 @@
                     <h2 class="c-h2 u-spacer-bottom-l">Adresse Courrier</h2>
 
                     <div class="u-spacer-bottom">
-                        <smart-radio id="sameAddress" name="subscriptionAddressChoice" label="Mon adresse courrier est la même que mon adresse officielle" value="same_adress" checked="true"></smart-radio>
+                        <smart-radio id="sameAddress" name="subscriptionAddressChoice" label="Mon adresse courrier <strong>est la même</strong> que mon adresse officielle" value="same_adress" checked="true"></smart-radio>
                     </div>
                     <div class="u-spacer-bottom-xl">
-                        <smart-radio id="anotherAddress" name="subscriptionAddressChoice" label="Mon adresse courrier est différente de mon adresse officielle" value="another_address" checked="false"></smart-radio>
+                        <smart-radio id="anotherAddress" name="subscriptionAddressChoice" label="Mon adresse courrier <strong>est différente</strong> de mon adresse officielle" value="another_address" checked="false"></smart-radio>
                     </div>
                     <!--- BO Bloc à ne faire apparaître que lorsque le radio subscriptionAnotherAddress est ON-->
                     <div id="blocAnotherAdress" style="display:none;">
@@ -235,9 +217,9 @@
                     <!--- EO Bloc -->
                     <smart-hr></smart-hr>
 
-                    <h3 class="c-h2 u-spacer-bottom-xl">Vos données professionnelles</h3>
+                    <h3 class="c-h2 u-spacer-bottom-s">Vos données professionnelles</h3>
 
-                    <smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e ,artiste et chômeur n'est pas une fonction). Voir le registre des métiers.">
+                    <smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e, artiste et chômeur n'est pas une fonction). Voir le registre des métiers.">
                         <label class="o-form-group__label">
                             Fonctions principales
                             <span data-tooltip="tooltip-function" data-tooltip-placement="top" class="icon-help">
@@ -262,8 +244,10 @@
                             Précompte Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
                             <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
                         </div>
-                        <smart-input-group id="witholding" name="witholding" placeholder="" value="" align="End" grouped-text="%"></smart-input-group>
+                        <smart-input-number id="witholding" name="witholding"  value=""></smart-input-number>
                     </smart-formgroup>
+
+                    <smart-hr></smart-hr>
 
                     <h3 class="c-h2 u-spacer-bottom-s">Votre carte d'identité</h3>
 
@@ -283,7 +267,7 @@
 
                     <h3 class="c-h2 u-spacer-bottom-s">Vos données bancaires</h3>
 
-                    <smart-formgroup label="Numéro IBAN de votre compte bacaire personnel">
+                    <smart-formgroup label="Numéro IBAN de votre compte bancaire personnel">
                         <smart-input id="numIban" name="numIban" value=""></smart-input>
                     </smart-formgroup>
 
