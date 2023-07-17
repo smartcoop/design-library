@@ -37,9 +37,14 @@ public class RadioHtmlGenerator : IRadioHtmlGenerator
             inputRadioTagBuilder.Attributes.Add("value", value);
         }
 
+        if (!string.IsNullOrWhiteSpace(id))
+        {
+            inputRadioTagBuilder.Attributes["id"] = id;
+        }
+
         var labelTagBuilder = new TagBuilder("label");
         labelTagBuilder.InnerHtml.AppendHtml(inputRadioTagBuilder);
-        labelTagBuilder.InnerHtml.Append(label!);
+        labelTagBuilder.InnerHtml.AppendHtml("<span>"+label+"</span>");
 
         inputRadioContainer.InnerHtml.AppendHtml(labelTagBuilder);
 
