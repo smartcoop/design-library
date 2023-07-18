@@ -53,7 +53,6 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
     private IHtmlContent GetDivLeftHtmlContent(string homePageUrl)
     {
 
-
         var divLeft2 = new TagBuilder("div");
         divLeft2.AddCssClass("c-brand c-brand--small");
 
@@ -70,7 +69,6 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
 
     private IHtmlContent SetLanguageMenu(Dictionary<string, string> languagesAndLink, string language)
     {
-
 
         var languageList = new TagBuilder("ul");
         languageList.AddCssClass("c-pill-navigation");

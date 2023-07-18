@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
 using Smart.Design.Library.TagHelpers.Base;
 using Smart.Design.Library.TagHelpers.Constants;
@@ -7,7 +7,7 @@ using Smart.Design.Library.TagHelpers.Extensions;
 namespace Smart.Design.Library.TagHelpers.Elements.Input;
 
 /// <summary>
-/// <see cref="ITagHelper" /> implementation of the Smart design &lt;input&gt; with <c>asp-for</c>, <c>placeholder</c>, <c>value</c> attributes.
+/// <see cref="ITagHelper" /> Implementation of the Smart design <input> with <c>asp-for</c>, <c>placeholder</c>, <c>value</c> attributes.
 /// Documentation is available <see href="https://design.smart.coop/development/docs/c-input.html">here</see>.
 /// <para>
 /// <term>Remark</term>This class inherits from <see cref="BaseTagHelper" />

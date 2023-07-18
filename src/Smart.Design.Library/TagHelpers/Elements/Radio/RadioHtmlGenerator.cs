@@ -44,7 +44,7 @@ public class RadioHtmlGenerator : IRadioHtmlGenerator
 
         var labelTagBuilder = new TagBuilder("label");
         labelTagBuilder.InnerHtml.AppendHtml(inputRadioTagBuilder);
-        labelTagBuilder.InnerHtml.AppendHtml("<span>"+label+"</span>");
+        labelTagBuilder.InnerHtml.AppendHtml($"<span>{label}</span>");
 
         inputRadioContainer.InnerHtml.AppendHtml(labelTagBuilder);
 

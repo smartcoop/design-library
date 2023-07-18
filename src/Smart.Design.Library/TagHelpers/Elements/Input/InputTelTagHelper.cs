@@ -33,7 +33,7 @@ public class InputTelTagHelper: BaseTagHelper
     public string? Value { get; set; }
 
     /// <summary>
-    /// HTML placeboder of the value of the Input.
+    /// HTML placeholder for the value of the Input.
     /// </summary>
     [HtmlAttributeName(PlaceholderAttributeName)]
     public string? Placeholder { get; set; }

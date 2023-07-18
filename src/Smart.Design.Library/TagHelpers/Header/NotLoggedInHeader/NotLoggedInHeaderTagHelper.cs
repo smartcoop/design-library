@@ -20,15 +20,10 @@ public class NotLoggedInHeaderTagHelper : TagHelper
 
     public string? TargetLanguage { get; set; }
 
-
-
-
     public NotLoggedInHeaderTagHelper(INotLoggedInHeaderHtmlGenerator notLoggedInHeaderHtmlGenerator)
     {
         _notLoggedInHeaderHtmlGenerator = notLoggedInHeaderHtmlGenerator;
     }
-
-
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
 

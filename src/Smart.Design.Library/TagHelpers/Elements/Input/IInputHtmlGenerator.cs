@@ -41,7 +41,7 @@ public interface IInputHtmlGenerator
     TagBuilder GenerateInputNumber(string? id, string? name, int? value, ModelExpression? @for);
 
     /// <summary>
-    /// Generates an &lt;input[type='tel']&gt; compliant with Smart design.
+    /// Generates an <input[type='tel'>; compliant with Smart design.
     /// </summary>
     /// /// <param name="viewContext">A <see cref="ViewContext"/> instance for the current scope.</param>
     /// <param name="id">Id attribute of the element.</param>
@@ -89,7 +89,7 @@ public interface IInputHtmlGenerator
         ModelExpression? @for);
 
     /// <summary>
-    /// Generates a &lt;input[type='date']&gt; compliant with Smart design guidelines.
+    /// Generates a <input[type='date']> compliant with Smart design guidelines.
     /// </summary>
     /// <param name="viewContext">A <see cref="ViewContext"/> instance for the current scope.</param>
     /// <param name="id">Id of the element</param>
