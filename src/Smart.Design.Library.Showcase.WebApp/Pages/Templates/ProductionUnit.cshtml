@@ -47,7 +47,7 @@
     },{
      "Nos conditions d'utilisations", "~/unity/curu"
     },{
-     "Vos unités de production","/unityProduction"
+     "Vos Unité de Production","/unityProduction"
     }
     };
     Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>{
@@ -63,6 +63,11 @@
      "Activités et projets","/projets"
     },{
      "Formateurs associés","/u/cfa/home"
+    }
+    };
+    Dictionary<string, string> LabelAndValue = new Dictionary<string, string>{
+    {
+    "Titulaire: ", "678362 - Marcel Pirnay"
     }
     };
 }
@@ -91,82 +96,20 @@
                         <div class="3in1 u-spacer-bottom-xl">
                             <h2 class="c-h3">Outil 3en1</h2>
                             <div class="3in1__list">
-                                <div class="c-panel c-panel--border-r-sm">
-                                    <div class="c-panel__header u-padding-vertical-m">
-                                        <h3 class="c-panel__title">
-                                            <span>Référence: </span>
-                                            <span>BE-SMART-134278137</span>
-                                        </h3>
-                                    </div>
-                                    <div class="c-panel__body u-padding-vertical">
-                                        <p><span>Titulaire: </span><span>678362 - Marcel Pirnay</span></p>
-                                    </div>
-                                </div>
+                                <smart-box label-title="Référence: " title="9823109831"
+                                       label-and-values="@LabelAndValue"></smart-box>
                             </div>
                         </div>
                         <div class="activite u-spacer-bottom-xl">
                             <h2 class="c-h3">Outil Activité</h2>
                             <div class="activite__list o-card-grid-l">
-                                <div class="c-panel c-panel--border-r-sm">
-                                    <div class="c-panel__header o-block u-padding-vertical-m">
-                                        <h3 class="c-panel__title">
-                                            <span>Référence: </span>
-                                            <span>1000109831</span>
-                                        </h3>
-                                        <p>Expérience activités lorem ipsum CDI</p>
-                                    </div>
-                                    <div class="c-panel__body u-padding-vertical">
-                                        <p class="u-spacer-bottom-xs"><span>Titulaire: </span><span>678362 - Marcel Pirnay</span></p>
-                                    </div>
-                                </div>
-                                <div class="c-panel c-panel--border-r-sm">
-                                    <div class="c-panel__header o-block u-padding-vertical-m">
-                                         <h3 class="c-panel__title">
-                                            <span>Référence: </span>
-                                            <span>2000909831</span>
-                                         </h3>
-                                         <p>Expérience activités lorem ipsum CDI</p>
-                                    </div>
-                                    <div class="c-panel__body u-padding-vertical">
-                                        <p class="u-spacer-bottom-xs"><span>Titulaire: </span><span>678362 - Marcel Pirnay</span></p>
-                                    </div>
-                                </div>
-                                <div class="c-panel c-panel--border-r-sm">
-                                    <div class="c-panel__header o-block u-padding-vertical-m">
-                                         <h3 class="c-panel__title">
-                                            <span>Référence: </span>
-                                            <span>9823109831</span>
-                                         </h3>
-                                         <p>Expérience activités lorem ipsum CDI</p>
-                                    </div>
-                                    <div class="c-panel__body u-padding-vertical">
-                                        <p class="u-spacer-bottom-xs"><span>Titulaire: </span><span>678362 - Marcel Pirnay</span></p>
-                                    </div>
-                                </div>
-                                <div class="c-panel c-panel--border-r-sm">
-                                    <div class="c-panel__header o-block u-padding-vertical-m">
-                                         <h3 class="c-panel__title">
-                                            <span>Référence: </span>
-                                            <span>9823109831</span>
-                                         </h3>
-                                         <p>Expérience activités lorem ipsum CDI</p>
-                                    </div>
-                                    <div class="c-panel__body u-padding-vertical">
-                                        <p class="u-spacer-bottom-xs"><span>Titulaire: </span><span>678362 - Marcel Pirnay</span></p>
-                                    </div>
-                                </div>
-                                <div class="c-panel c-panel--border-r-sm">
-                                    <div class="c-panel__header o-block u-padding-vertical-m">
-                                        <h3 class="c-panel__title">
-                                            <span>Référence: </span>
-                                            <span>9823109831</span>
-                                        </h3>
-                                        <p>Expérience activités lorem ipsum CDI</p>
-                                    </div>
-                                    <div class="c-panel__body u-padding-vertical">
-                                        <p class="u-spacer-bottom-xs"><span>Titulaire: </span><span>678362 - Marcel Pirnay</span></p>
-                                    </div>
-                                </div>
+                                <smart-box label-title="Référence: " title="9823109831"
+                                           sub-title="Expérience activités lorem ipsum CDI" label-and-values="@LabelAndValue"></smart-box>
+                                <smart-box label-title="Référence: " title="9823109831"
+                                           sub-title="Expérience activités lorem ipsum CDI" label-and-values="@LabelAndValue"></smart-box>
+                                <smart-box label-title="Référence: " title="9823109831"
+                                           sub-title="Expérience activités lorem ipsum CDI" label-and-values="@LabelAndValue"></smart-box>
+
                             </div>
                         </div>
                     </div>
