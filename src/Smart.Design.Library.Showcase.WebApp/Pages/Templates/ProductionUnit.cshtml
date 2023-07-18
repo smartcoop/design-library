@@ -1,0 +1,120 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Templates.ProductionUnitModel
+@{
+    ViewData["Title"] = "Production unit page";
+}
+
+<style>
+    #header, #footer {
+        display: none !important;
+    }
+    main.o-container{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .c-app-layout{
+        min-height: 100vh;
+    }
+
+</style>
+
+
+@{
+    var list = new List<string> { "preambule", "les parties", "Droit et attribution de compétence", "deux", "trois" };
+    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>{
+    {
+    "Français", "Link/Français"
+    },{
+    "English", "Link/English"
+    },{
+    "Nederlands", "Link/Nederlands"
+    },{
+    "De", "chemin"
+    }
+    };
+
+    string currentLanguage = "nl";
+    string fullNameWithTrigram = "céline Marique (mag)";
+    string avatarPath = "imageAvater";
+
+    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>{
+    {
+    "Vos informations personnelles", "/Info"
+    },{
+    "Vos documents", "/documents"
+    },{
+     "Votre compte", "/Votre compte"
+    },{
+     "Nos conditions d'utilisations", "~/unity/curu"
+    },{
+     "Vos Unité de Production","/unityProduction"
+    }
+    };
+    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>{
+    {
+    "Home", "/home"
+    },{
+    "Prestations en cours", "/PedingPrestations"
+    },{
+     "Nouvelle prestation", "/NewPrestation"
+    },{
+     "Simulation", "/Simulation"
+    },{
+     "Activités et projets","/projets"
+    },{
+     "Formateurs associés","/u/cfa/home"
+    }
+    };
+    Dictionary<string, string> LabelAndValue = new Dictionary<string, string>{
+    {
+    "Titulaire: ", "678362 - Marcel Pirnay"
+    }
+    };
+}
+
+<div class="c-app-layout">
+    <smart-header home-page-url="/home" labels-and-links="@labelsAndLinks" languages-and-links="@languagesAndLink" full-name-with-trigram=@fullNameWithTrigram
+                  avatar-path="@avatarPath" target-language="@currentLanguage" logout-link="/logout.aspx"></smart-header>
+
+    <main class="u-maximize-width">
+        <div class="c-app-layout-inner">
+            <div class="c-app-layout-inner__sidebar u-position-fixed">
+                <smart-sidemenu label-and-links="SideMenuLabelsAndLinks"></smart-sidemenu>
+            </div>
+            <div class="c-app-layout-inner__content">
+                <div class="c-navbar u-position-fixed main-title">
+                    <div class="c-toolbar">
+                        <div class="c-toolbar__left">
+                            <div class="c-toolbar__item">
+                                <h1 class="c-toolbar__title">Vos Unités de Production</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-container o-container--large">
+                    <div class="o-container-vertical--padding-small u-position-relative">
+                        <div class="3in1 u-spacer-bottom-xl">
+                            <h2 class="c-h3">Outil 3en1</h2>
+                            <div class="3in1__list">
+                                <smart-box label-title="Référence: " title="9823109831"
+                                       label-and-values="@LabelAndValue"></smart-box>
+                            </div>
+                        </div>
+                        <div class="activite u-spacer-bottom-xl">
+                            <h2 class="c-h3">Outil Activité</h2>
+                            <div class="activite__list o-card-grid-l">
+                                <smart-box label-title="Référence: " title="9823109831"
+                                           sub-title="Expérience activités lorem ipsum CDI" label-and-values="@LabelAndValue"></smart-box>
+                                <smart-box label-title="Référence: " title="9823109831"
+                                           sub-title="Expérience activités lorem ipsum CDI" label-and-values="@LabelAndValue"></smart-box>
+                                <smart-box label-title="Référence: " title="9823109831"
+                                           sub-title="Expérience activités lorem ipsum CDI" label-and-values="@LabelAndValue"></smart-box>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>

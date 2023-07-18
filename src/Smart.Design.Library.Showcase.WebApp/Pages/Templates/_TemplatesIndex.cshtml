@@ -1,0 +1,39 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Templates._TemplatesIndexModel
+@{
+    ViewData["Title"] = "Templats page";
+}
+
+<main class="o-container-vertical">
+
+    <div class="o-container o-container--small">
+
+        <div class="c-display">
+            <h2>Templates</h2>
+            <p>You can reference the following templates to see how to use the components in practice.</p>
+            <span class="c-status-pill c-status-pill--success">
+                <span class="c-status-pill__circle"></span>
+                <span class="c-status-pill__label">Done</span>
+            </span>
+            <ul>
+                <li>
+                    <a asp-page="./ProductionUnit">Unité de production</a>
+                </li>
+            </ul>
+            <span class="c-status-pill c-status-pill--warning">
+                <span class="c-status-pill__circle"></span>
+                <span class="c-status-pill__label">Work in progress</span>
+            </span>
+            <ul class="u-spacer-top-l">
+                <li>
+                    <a asp-page="./Confirmation">Confirmation</a>
+                </li>
+                <li>
+                    <a asp-page="./Subscription">Subscription</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</main>
