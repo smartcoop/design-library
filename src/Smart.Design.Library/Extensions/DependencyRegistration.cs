@@ -4,6 +4,8 @@ using Smart.Design.Library.TagHelpers.AlertStack;
 using Smart.Design.Library.TagHelpers.Avatar;
 using Smart.Design.Library.TagHelpers.Badge;
 using Smart.Design.Library.TagHelpers.Base;
+using Smart.Design.Library.TagHelpers.box;
+using Smart.Design.Library.TagHelpers.Box;
 using Smart.Design.Library.TagHelpers.Buttons.ButtonBackToTop;
 using Smart.Design.Library.TagHelpers.Buttons.ButtonToolbar;
 using Smart.Design.Library.TagHelpers.Card;
@@ -81,6 +83,7 @@ public static class DependencyRegistration
             .AddTransient<ICitationHtmlGenerator, CitationHtmlGenerator>()
             .AddTransient<IButtonBackToTopHtmlGenerator, ButtonBackToTopHtmlGenerator>()
             .AddTransient<ISideMenuHtmlGenerator, SideMenuHtmlGenerator>()
+            .AddTransient<IBoxHtmlGenerator, BoxHtmlGenerator>()
             .AddTransient<IHeaderHtmlGenerator, HeaderHtmlGenerator>();
     }
 }
