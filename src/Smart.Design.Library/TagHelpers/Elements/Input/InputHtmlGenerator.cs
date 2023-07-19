@@ -89,7 +89,7 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         return tagBuilder;
     }
 
-    public TagBuilder GenerateInputNumber(string? id, string? name, int? value, ModelExpression? @for)
+    public TagBuilder GenerateInputNumber(string? id, string? name, double? value, string? placeholder, ModelExpression? @for)
     {
         var tagBuilder = new TagBuilder("input");
 
@@ -97,7 +97,10 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         {
             tagBuilder.Attributes.Add("id", id);
         }
-
+        if (!string.IsNullOrWhiteSpace(placeholder))
+        {
+            tagBuilder.Attributes["placeholder"] = placeholder;
+        }
         AddNameAttribute(tagBuilder, @for, name);
         tagBuilder.AddCssClass("c-input");
         tagBuilder.Attributes.Add("type", "number");
