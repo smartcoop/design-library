@@ -13,12 +13,16 @@ public class InputNumberTagHelper : BaseTagHelper
     private readonly IInputHtmlGenerator _smartHtmlGenerator;
     private const string AspForAttributeName = "asp-for";
     private const string ValueAttributeName = "value";
+    private const string PlaceholderAttributeName = "placeholder";
 
     [HtmlAttributeName(AspForAttributeName)]
     public ModelExpression? For { get; set; }
 
     [HtmlAttributeName(ValueAttributeName)]
-    public int? Value { get; set; }
+    public double? Value { get; set; }
+
+    [HtmlAttributeName(PlaceholderAttributeName)]
+    public string? Placeholder { get; set; }
 
     public InputNumberTagHelper(IInputHtmlGenerator smartHtmlGenerator)
     {
@@ -27,7 +31,7 @@ public class InputNumberTagHelper : BaseTagHelper
 
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        var inputNumber = _smartHtmlGenerator.GenerateInputNumber(Id, Name, Value, For);
+        var inputNumber = _smartHtmlGenerator.GenerateInputNumber(Id, Name, Value,Placeholder, For);
         output.TagName = inputNumber.TagName;
         output.TagMode = TagMode.SelfClosing;
         output.ClearAllAttributes();
