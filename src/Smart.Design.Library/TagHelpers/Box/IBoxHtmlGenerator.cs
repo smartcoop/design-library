@@ -4,17 +4,17 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Smart.Design.Library.TagHelpers.Box;
 
 /// <summary>
-/// Generate a box with a title, sub title and list of labels and values.
+/// Generates a box with a title, subtitle and list of labels and values.
 /// </summary>
 public interface IBoxHtmlGenerator
 {
     /// <summary>
-    /// Generate a list of value from a <see cref="labelAndLinks"/> dictionnary
+    /// Generate a list of values from a <see cref="labelsAndValues"/> dictionnary
     /// </summary>
-    /// <param name="labelTitle">The label of title</param>
+    /// <param name="titleLabel">The label of title</param>
     /// <param name="title">The title</param>
-    /// <param name="subTitle">The sub title</param>
-    /// <param name="labelAndLinks">The list of lables and a values</param>
+    /// <param name="subtitle">The sub title</param>
+    /// <param name="labelsAndValues">The list of lables and a values</param>
     /// <returns></returns>
-    TagBuilder GenerateListOfItems(string labelTitle, string title, string? subTitle, Dictionary<string, string> labelAndValues);
+    TagBuilder GenerateListOfItems(string titleLabel, string title, string? subtitle, Dictionary<string, string> labelsAndValues);
 }

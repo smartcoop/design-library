@@ -10,7 +10,7 @@ namespace Smart.Design.Library.TagHelpers.Box;
 public class BoxHtmlGenerator : IBoxHtmlGenerator
 {
     /// <inheritdoc/>
-    public TagBuilder GenerateListOfItems(string labelTitle, string title, string? subTitle, Dictionary<string, string> labelAndValues)
+    public TagBuilder GenerateListOfItems(string titleLabel, string title, string? subtitle, Dictionary<string, string> labelsAndValues)
     {
         var div = new TagBuilder("div");
         div.AddCssClass("c-panel c-panel--border-r-sm");
@@ -20,26 +20,26 @@ public class BoxHtmlGenerator : IBoxHtmlGenerator
 
         var h3 = new TagBuilder("h3");
         h3.AddCssClass("c-panel__title");
-        var labelTitleSpan = new TagBuilder("span");
-        labelTitleSpan.InnerHtml.Append(labelTitle);
+        var titleLabelSpan = new TagBuilder("span");
+        titleLabelSpan.InnerHtml.Append(titleLabel);
         var titleSpan = new TagBuilder("span");
         titleSpan.InnerHtml.Append(title);
 
-        h3.InnerHtml.AppendHtml(labelTitleSpan);
+        h3.InnerHtml.AppendHtml(titleLabelSpan);
         h3.InnerHtml.AppendHtml(titleSpan);
         divHeader.InnerHtml.AppendHtml(h3);
 
-        if (!string.IsNullOrEmpty(subTitle))
+        if (!string.IsNullOrEmpty(subtitle))
         {
             var p = new TagBuilder("p");
-            p.InnerHtml.Append(subTitle);
+            p.InnerHtml.Append(subtitle);
             divHeader.InnerHtml.AppendHtml(p);
         }
 
         var divBody = new TagBuilder("div");
         divBody.AddCssClass("c-panel__body u-padding-vertical");
 
-        foreach (var item in labelAndValues)
+        foreach (var item in labelsAndValues)
         {
             var p = new TagBuilder("p");
             p.AddCssClass("u-spacer-bottom-xs");

@@ -20,10 +20,10 @@
             <p>
                 Documentation for Box
                 <ul>
-                    <li>The label of title</li>
+                    <li>The label for the title</li>
                     <li>The title</li>
-                    <li>A sub title (optional)</li>
-                    <li>A List for label and value in body of box</li>
+                    <li>A subtitle (optional)</li>
+                    <li>A Dictionnary of labels and values for the content of the box</li>
                 </ul>
             </p>
         </div>
@@ -34,19 +34,19 @@
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
                 @{
-                    Dictionary<string, string> LabelAndValue = new Dictionary<string, string>
+                    Dictionary<string, string> LabelsAndValues = new Dictionary<string, string>
                     {
                         {
-                        "Titulaire: ", "678362 - Marcel Pirnay"
+                            "Titulaire: ", "678362 - John Doe"
                         }
                     };
                 }
-                <smart-box label-title="Référence: " title="9823109831"
-                           sub-title="Expérience activités lorem ipsum CDI" label-and-values="@LabelAndValue"></smart-box>
+                <smart-box title-label="Référence: " title="9823109831"
+                           subtitle="Expérience activités lorem ipsum CDI" labels-and-values="@LabelsAndValues"></smart-box>
             </div>
             <div class="br-sample-footer">
                  <b>C# Code: </b>
-                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-box label-title=\"Référence: \" title=\"9823109831\" sub-title=\"Expérience activités lorem ipsum CDI\" label-and-values=\"@LabelAndValue\"></smart-box>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-box title-label=\"Référence: \" title=\"9823109831\" subtitle=\"Expérience activités lorem ipsum CDI\" labels-and-values=\"@LabelAndValue\"></smart-box>")</pre>
             </div>
             <div class="br-componentgroup-footer-wrapper">
                 <h1 class="br-componentgroup-footer c-d-h2">Possible parameters for box</h1>
@@ -57,33 +57,33 @@
                                 <th>Parameters</th>
                                 <th>Type</th>
                                 <th>Possible values</th>
-                                <th>Description</th>
+                                <th>Descriptions</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>LabelTitle *</td>
+                                <td>TitleLabel *</td>
                                 <td>string</td>
                                 <td></td>
-                                <td>The label of title</td>
+                                <td>The label for the title</td>
                             </tr>
                             <tr>
                                 <td>Title *</td>
                                 <td>string</td>
                                 <td></td>
-                                <td>The title</td>
+                                <td>The box title</td>
                             </tr>
                             <tr>
-                                <td>SubTitle</td>
+                                <td>Subtitle</td>
                                 <td>string</td>
                                 <td></td>
-                                <td>The sub title</td>
+                                <td>The subtitle</td>
                             </tr>
                             <tr>
-                                <td>LabelAndValue *</td>
+                                <td>LabelsAndValues *</td>
                                 <td>Dictionary string, string</td>
                                 <td></td>
-                                <td>Represents the language menu</td>
+                                <td>Represents the content</td>
                             </tr>
                         </tbody>
                     </table>

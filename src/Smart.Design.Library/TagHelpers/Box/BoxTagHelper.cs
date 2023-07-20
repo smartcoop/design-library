@@ -16,9 +16,9 @@ public class BoxTagHelper : TagHelper
     private readonly IBoxHtmlGenerator _BoxHtmlGenerator;
 
     /// <summary>
-    /// The label of title
+    /// The box title label
     /// </summary>
-    public string LabelTitle { get; set; } = null!;
+    public string TitleLabel { get; set; } = null!;
 
     /// <summary>
     /// The title
@@ -26,14 +26,14 @@ public class BoxTagHelper : TagHelper
     public string Title { get; set; } = null!;
 
     /// <summary>
-    /// The sub title
+    /// The subtitle
     /// </summary>
-    public string? SubTitle { get; set; }
+    public string? Subtitle { get; set; }
 
     /// <summary>
-    /// Dictionnary of label and Value items for the box
+    /// Dictionnary of labels and values for the content of the box
     /// </summary>
-    public Dictionary<string, string> LabelAndValues { get; set; } = new();
+    public Dictionary<string, string> LabelsAndValues { get; set; } = new();
 
     /// <summary>
     /// Creates a new <see cref="BoxTagHelper"/>.
@@ -47,20 +47,20 @@ public class BoxTagHelper : TagHelper
     /// <inheritdoc />
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        if (string.IsNullOrEmpty(LabelTitle))
+        if (string.IsNullOrEmpty(TitleLabel))
         {
-            throw new ArgumentException($"{nameof(LabelTitle)} cannot be empty");
+            throw new ArgumentException($"{nameof(TitleLabel)} cannot be empty");
         }
         if (string.IsNullOrEmpty(Title))
         {
             throw new ArgumentException($"{nameof(Title)} cannot be empty");
         }
-        if (!LabelAndValues.Any())
+        if (!LabelsAndValues.Any())
         {
-            throw new ArgumentException($"{nameof(LabelAndValues)} cannot be null or empty");
+            throw new ArgumentException($"{nameof(LabelsAndValues)} cannot be null or empty");
         }
 
-        var box = _BoxHtmlGenerator.GenerateListOfItems(LabelTitle, Title, SubTitle, LabelAndValues);
+        var box = _BoxHtmlGenerator.GenerateListOfItems(TitleLabel, Title, Subtitle, LabelsAndValues);
         output.MergeAttributes(box);
         output.TagName = box.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
