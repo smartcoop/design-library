@@ -16,7 +16,7 @@ public class BoxHtmlGenerator : IBoxHtmlGenerator
         div.AddCssClass("c-panel c-panel--border-r-sm");
 
         var divHeader = new TagBuilder("div");
-        divHeader.AddCssClass("c-panel__header o-block u-padding-vertical-m");
+        divHeader.AddCssClass("c-panel__header c-panel__header-box o-block u-padding-vertical-m");
 
         var h3 = new TagBuilder("h3");
         h3.AddCssClass("c-panel__title");
