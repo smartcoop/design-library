@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Razor.TagHelpers;
-using Smart.Design.Library.TagHelpers.box;
 using Smart.Design.Library.TagHelpers.Constants;
 
 namespace Smart.Design.Library.TagHelpers.Box;

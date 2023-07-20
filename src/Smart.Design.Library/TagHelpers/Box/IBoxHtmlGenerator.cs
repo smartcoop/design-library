@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace Smart.Design.Library.TagHelpers.box;
+namespace Smart.Design.Library.TagHelpers.Box;
 
 /// <summary>
 /// Generate a box with a title, sub title and list of labels and values.
