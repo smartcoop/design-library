@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
-    <Version>1.5.4</Version>
+    <Version>2.0.0</Version>
     <Company>Smart Coop</Company>
     <Authors>Smart Coop</Authors>
     <Description>Tag Helpers implementation of the Smart Design System. Official documentation can be seen at https://design-showcase.smartbe.be/</Description>
@@ -43,7 +43,7 @@
     <Content Remove="wwwroot\images\logo.svg" />
     <EmbeddedResource Include="wwwroot\images\*.svg" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
