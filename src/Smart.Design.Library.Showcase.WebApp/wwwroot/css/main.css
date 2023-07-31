@@ -89,7 +89,7 @@
    ========================================================================== */
 /* Generic: CSS reset, box-sizing, global CSS tweaks
    ========================================================================== */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -4113,99 +4113,125 @@ c-file-attachment-list
 /* Component
 ========================================================================== */
 .c-file-attachment-list {
-  margin: -0.4rem;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap; }
-  .c-file-attachment-list .c-file-attachment {
-    margin: 0.4rem; }
-    .c-file-attachment-list .c-file-attachment a {
-      overflow: hidden; }
+    margin: -0.4rem;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+    .c-file-attachment-list .c-file-attachment {
+        margin: 0.4rem;
+    }
+
+        .c-file-attachment-list .c-file-attachment a {
+            overflow: hidden;
+        }
 
 .c-file-attachment a {
-  background: #F2F2F2;
-  display: inline-flex;
-  align-items: center;
-  padding: 0.6rem 1.6rem 0.6rem 1rem;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  border-radius: 4rem;
-  color: #333333;
-  text-decoration: none;
-  width: 100%;
-  align-items: center; }
-  .c-file-attachment a:hover {
-    background-color: #E5E5E5; }
+    background: #F2F2F2;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.6rem 1.6rem 0.6rem 1rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
+    border-radius: 4rem;
+    color: #333333;
+    text-decoration: none;
+    width: 100%;
+    align-items: center;
+}
+
+    .c-file-attachment a:hover {
+        background-color: #E5E5E5;
+    }
 
 .c-file-attachment__icon {
-  background: #FFFFFF;
-  border-radius: 2.8rem;
-  padding: 0.4rem; }
-  .c-file-attachment__icon .o-svg-icon {
-    width: 2rem;
-    height: 2rem; }
+    background: #FFFFFF;
+    border-radius: 2.8rem;
+    padding: 0.4rem;
+}
+
+    .c-file-attachment__icon .o-svg-icon {
+        width: 2rem;
+        height: 2rem;
+    }
 
 .c-file-attachment__name {
-  margin-left: .6rem;
-  transition: color .2s ease-in-out; }
+    margin-left: .6rem;
+    transition: color .2s ease-in-out;
+}
 
 /* ==========================================================================
   c-file-upload
    ========================================================================== */
 .c-file-upload {
-  background: transparent;
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center; }
-  .c-file-upload .c-progress-bar {
-    width: 60%; }
+    background: transparent;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 
-.c-file-upload input[type="file"] {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.0001; }
+    .c-file-upload .c-progress-bar {
+        width: 60%;
+    }
 
-.c-file-upload input[type="file"]:focus:not([disabled]) ~ .c-file-upload__content {
-  outline: 0;
-  border-color: transparent;
-  box-shadow: inset 0 0 0 0.1rem #1267FB; }
+    .c-file-upload input[type="file"] {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0.0001;
+    }
 
-.c-file-upload input[type="file"]:hover:not([disabled]) ~ .c-file-upload__content {
-  background-color: #F9F9F9; }
+        .c-file-upload input[type="file"]:focus:not([disabled]) ~ .c-file-upload__content {
+            outline: 0;
+            border-color: transparent;
+            box-shadow: inset 0 0 0 0.1rem #1267FB;
+        }
+
+        .c-file-upload input[type="file"]:hover:not([disabled]) ~ .c-file-upload__content {
+            background-color: #F9F9F9;
+        }
 
 .c-file-upload--gray-25 .c-file-upload__content {
-  background-color: #F9F9F9; }
+    background-color: #F9F9F9;
+}
 
 .c-file-upload--error .c-file-upload__content {
-  border-color: #FF4054; }
+    border-color: #FF4054;
+}
 
 .c-file-upload__content {
-  border: 0.1rem dashed #B3B3B3;
-  border-radius: 0.3rem;
-  width: 100%;
-  padding: 3rem;
-  height: 100%;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  min-height: 12rem; }
-  .c-file-upload__content .c-button {
-    position: relative; }
+    border: 0.1rem dashed #B3B3B3;
+    border-radius: 0.3rem;
+    width: 100%;
+    padding: 3rem;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    min-height: 12rem;
+}
+
+    .c-file-upload__content .c-button {
+        position: relative;
+    }
 
 .c-file-upload__status {
-  margin-bottom: 1.6rem;
-  display: flex;
-  align-items: center; }
-  .c-file-upload__status span + .o-svg-icon {
-    margin-left: 0.4rem; }
+    margin-bottom: 1.6rem;
+    display: flex;
+    align-items: center;
+}
+
+    .c-file-upload__status span + .o-svg-icon {
+        margin-left: 0.4rem;
+    }
 
 /* ==========================================================================
   c-form-help-text
@@ -4213,46 +4239,62 @@ c-file-attachment-list
   Help text + Errors on forms
    ========================================================================== */
 .c-form-help-text {
-  color: #808080;
-  display: block;
-  font-size: 1.4rem;
-  margin-top: 0.6rem; }
+    color: #808080;
+    display: block;
+    font-size: 1.4rem;
+    margin-top: 0.6rem;
+}
 
 .c-form-help-text--error {
-  color: #FF4054; }
+    color: #FF4054;
+}
 
 .c-form-help-text + .c-form-help-text {
-  margin-top: 0.4rem; }
+    margin-top: 0.4rem;
+}
 
 /* ==========================================================================
   Component: Global banner
    ========================================================================== */
 .c-global-banner {
-  padding: .6rem 2.4rem;
-  position: relative;
-  min-height: 4rem;
-  display: flex;
-  align-items: center; }
-  .c-global-banner.c-global-banner--default {
-    background-color: #1267FB;
-    color: #FFFFFF; }
-    .c-global-banner.c-global-banner--default .c-button--icon,
-    .c-global-banner.c-global-banner--default .o-svg-icon {
-      color: #FFFFFF; }
-  .c-global-banner.c-global-banner--warning {
-    background-color: #F4C95D; }
-    .c-global-banner.c-global-banner--warning .o-svg-icon {
-      color: #595959; }
-  .c-global-banner .o-svg-icon {
-    margin-right: 1.6rem;
-    flex-shrink: 0; }
-  .c-global-banner .c-button--icon {
-    position: absolute;
-    right: 1.2rem;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    height: 2.4rem; }
+    padding: .6rem 2.4rem;
+    position: relative;
+    min-height: 4rem;
+    display: flex;
+    align-items: center;
+}
+
+    .c-global-banner.c-global-banner--default {
+        background-color: #1267FB;
+        color: #FFFFFF;
+    }
+
+        .c-global-banner.c-global-banner--default .c-button--icon,
+        .c-global-banner.c-global-banner--default .o-svg-icon {
+            color: #FFFFFF;
+        }
+
+    .c-global-banner.c-global-banner--warning {
+        background-color: #F4C95D;
+    }
+
+        .c-global-banner.c-global-banner--warning .o-svg-icon {
+            color: #595959;
+        }
+
+    .c-global-banner .o-svg-icon {
+        margin-right: 1.6rem;
+        flex-shrink: 0;
+    }
+
+    .c-global-banner .c-button--icon {
+        position: absolute;
+        right: 1.2rem;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 2.4rem;
+    }
 
 /* ==========================================================================
   Component: hr
@@ -5026,12 +5068,14 @@ header .c-navbar, header.c-navbar {
 }
 
 .c-panel--green {
-  background-color: #ECF9F6;
-  border-radius: 1rem; }
+    background-color: #ECF9F6;
+    border-radius: 1rem;
+}
 
 .c-panel--red {
-  background-color: #FEE7E9;
-  border-radius: 1rem; }
+    background-color: #FEE7E9;
+    border-radius: 1rem;
+}
 
 .c-panel--border-r-sm {
     border-radius: 0.4rem !important;
@@ -5712,20 +5756,25 @@ c-file-attachment-list
 /* Default size
    ========================================================================== */
 .c-link__label {
-  display: inline-block; }
+    display: inline-block;
+}
 
 .c-link .o-svg-icon {
-  margin-bottom: -.2rem;
-  display: inline-block;
-  height: 1.8rem;
-  width: 1.8rem; }
+    margin-bottom: -.2rem;
+    display: inline-block;
+    height: 1.8rem;
+    width: 1.8rem;
+}
 
 .c-link .c-button {
-  padding: 0.2rem;
-  margin: -.2rem 0 0 .3rem; }
-  .c-link .c-button__content {
+    padding: 0.2rem;
+    margin: -.2rem 0 0 .3rem;
+}
+
+.c-link .c-button__content {
     height: 1.8rem;
-    width: 1.8rem; }
+    width: 1.8rem;
+}
 
 /* ==========================================================================
   Component: Status Pill
@@ -5812,12 +5861,15 @@ c-file-attachment-list
     }
 
 .c-status-pill--client {
-  border: 0.1rem solid #FDFAE8;
-  background: #FDFAE8;
-  color: #3a3200;
-  font-weight: bold; }
-  .c-status-pill--client .c-status-pill__circle {
-    background: #3a3200; }
+    border: 0.1rem solid #FDFAE8;
+    background: #FDFAE8;
+    color: #3a3200;
+    font-weight: bold;
+}
+
+    .c-status-pill--client .c-status-pill__circle {
+        background: #3a3200;
+    }
 
 /* ==========================================================================
 c-table-of-content
@@ -7145,10 +7197,12 @@ c-table-of-content
 }
 
 .dev-env .c-app-layout-inner__sidebar {
-  top: 10.6rem; }
+    top: 10.6rem;
+}
 
 .dev-env .c-app-layout-inner__content {
-  margin-top: 10.2rem; }
+    margin-top: 10.2rem;
+}
 
 /* ==========================================================================
   Utility: spacing
@@ -7579,28 +7633,44 @@ c-table-of-content
 /* Theme for clients in beige
    ========================================================================== */
 .theme-clients .c-panel {
-  background-color: #FDFAE8; }
-  .theme-clients .c-panel p {
-    color: #524602; }
-    .theme-clients .c-panel p.c-body-2 {
-      color: #3a3200; }
+    background-color: #FDFAE8;
+}
+
+    .theme-clients .c-panel p {
+        color: #524602;
+    }
+
+        .theme-clients .c-panel p.c-body-2 {
+            color: #3a3200;
+        }
 
 .theme-clients .c-button--primary {
-  background: #D3C677;
-  border-color: #D3C677;
-  color: #524602; }
-  .theme-clients .c-button--primary svg * {
-    fill: #524602; }
-  .theme-clients .c-button--primary:hover, .theme-clients .c-button--primary.c-button--hover {
-    background: #c4b554;
-    border-color: #c4b554; }
-  .theme-clients .c-button--primary:active, .theme-clients .c-button--primary.c-button--active {
-    background: #af9d2d;
-    border-color: #af9d2d; }
-  .theme-clients .c-button--primary:focus {
-    outline: #8AB5FF auto 1px; }
-  .theme-clients .c-button--primary:focus:not(:focus-visible) {
-    outline: none; }
+    background: #D3C677;
+    border-color: #D3C677;
+    color: #524602;
+}
+
+    .theme-clients .c-button--primary svg * {
+        fill: #524602;
+    }
+
+    .theme-clients .c-button--primary:hover, .theme-clients .c-button--primary.c-button--hover {
+        background: #c4b554;
+        border-color: #c4b554;
+    }
+
+    .theme-clients .c-button--primary:active, .theme-clients .c-button--primary.c-button--active {
+        background: #af9d2d;
+        border-color: #af9d2d;
+    }
+
+    .theme-clients .c-button--primary:focus {
+        outline: #8AB5FF auto 1px;
+    }
+
+        .theme-clients .c-button--primary:focus:not(:focus-visible) {
+            outline: none;
+        }
 
 /* Vendor
   3rd party code
@@ -7809,46 +7879,105 @@ c-table-of-content
 }
 
 @media print {
-  /* ==========================================================================
+    /* ==========================================================================
   Print Stylesheet for Smart
   ---
    ========================================================================== */
-  .c-app-layout-inner__sidebar, .c-button {
-    display: none !important; }
-  .c-app-layout-inner__sidebar + .c-app-layout-inner__content {
-    margin-left: 0 !important;
-    margin-top: 0 !important; }
-    .c-app-layout-inner__sidebar + .c-app-layout-inner__content .c-navbar.main-title {
-      left: 0 !important; }
-  .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar {
-    top: 0 !important; }
-  .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title + div, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar + div {
-    margin-top: 0 !important; }
-  .c-app-layout-inner__content .c-navbar, header .c-navbar, header.c-navbar {
-    border: none !important; }
-  .c-navbar.main-title {
-    box-shadow: none; }
-  .main-title .c-toolbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; }
-  .c-table-of-content {
-    padding: 0;
-    display: block; }
-  .c-table-of-content-navigation {
-    border-left: 4px solid black;
-    border-radius: 0;
-    padding-left: 1rem;
-    margin-bottom: 3rem; }
-  .c-table-of-content__content__item.active p.c-body-2:first-child {
-    color: black; }
-  .u-position-fixed, .c-app-layout-inner__sidebar, .c-app-layout-inner__sidebar {
-    position: relative !important; }
-  .main-title .c-toolbar .c-toolbar__right .c-button, .main-title .c-toolbar .c-toolbar__right .c-link {
-    display: none !important; }
-  header .c-toolbar__right {
-    display: none !important; }
-  .c-alert, .c-panel--green, .c-panel--yellow {
-    display: none !important; } }
+    .c-app-layout-inner__sidebar, .c-button {
+        display: none !important;
+    }
 
-/*# sourceMappingURL=main.css.map */
+        .c-app-layout-inner__sidebar + .c-app-layout-inner__content {
+            margin-left: 0 !important;
+            margin-top: 0 !important;
+        }
+
+            .c-app-layout-inner__sidebar + .c-app-layout-inner__content .c-navbar.main-title {
+                left: 0 !important;
+            }
+
+    .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar {
+        top: 0 !important;
+    }
+
+        .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title + div, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar + div {
+            margin-top: 0 !important;
+        }
+
+    .c-app-layout-inner__content .c-navbar, header .c-navbar, header.c-navbar {
+        border: none !important;
+    }
+
+    .c-navbar.main-title {
+        box-shadow: none;
+    }
+
+    .main-title .c-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .c-table-of-content {
+        padding: 0;
+        display: block;
+    }
+
+    .c-table-of-content-navigation {
+        border-left: 4px solid black;
+        border-radius: 0;
+        padding-left: 1rem;
+        margin-bottom: 3rem;
+    }
+
+    .c-table-of-content__content__item.active p.c-body-2:first-child {
+        color: black;
+    }
+
+    .u-position-fixed, .c-app-layout-inner__sidebar, .c-app-layout-inner__sidebar {
+        position: relative !important;
+    }
+
+    .main-title .c-toolbar .c-toolbar__right .c-button, .main-title .c-toolbar .c-toolbar__right .c-link {
+        display: none !important;
+    }
+
+    header .c-toolbar__right {
+        display: none !important;
+    }
+
+    .c-alert, .c-panel--green, .c-panel--yellow {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+  Styles spécifiques à la page ProductionUnit
+    (ils seront intégrés dans les .scss files dans le prochain package)
+  ---
+   ========================================================================== */
+.c-panel__header-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    height: auto;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    border-bottom: 2px solid #F2F2F2;
+}
+
+.o-card-grid-l {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 2.4rem 2.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(35.6rem, 1fr));
+}
+
+.o-block {
+    display: block !important;
+}
+
+.u-padding-vertical-m {
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
+}
