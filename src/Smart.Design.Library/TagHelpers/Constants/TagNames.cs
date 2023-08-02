@@ -45,6 +45,8 @@ public static class TagNames
 
     public const string HeaderTagName = "smart-header";
 
+    public const string NotLoggedInHeaderTagName = "smart-not-logged-in-header";
+
     public const string HorizontalRuleTagName = "smart-hr";
 
     public const string IconListItemTagName = "smart-icon-list-item";
@@ -58,6 +60,14 @@ public static class TagNames
     public const string InputTagName = "smart-input";
 
     public const string InputTimeTagName = "smart-input-time";
+
+    public const string InputNumberTagName = "smart-input-number";
+
+    public const string InputTelName = "smart-input-phone";
+
+    public const string InputEmailName = "smart-input-email";
+
+    public const string InputDateName = "smart-input-date";
 
     public const string LoaderTagName = "smart-loader";
 
