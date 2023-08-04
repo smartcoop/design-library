@@ -1,8 +1,8 @@
 /* ==========================================================================
-  c-err-page
+  c-error-page
    ========================================================================== */
 
-.c-err-page {
+.c-error-page {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -14,7 +14,7 @@
 
 }
 
-.c-err-page__code {
+.c-error-page__code {
   font-size: 1.8rem;
   font-weight: 500;
   color: $color-gray-600;
@@ -22,14 +22,14 @@
 
 }
 
-.c-err-page__title {
+.c-error-page__title {
   color: $g-headings-color;
   font-size: 2.2rem;
   font-weight: 500;
   margin: 0 0 0.8rem;
 }
 
-.c-err-page__desc + .c-button,
+.c-error-page__desc + .c-button,
 .c-err-page__desc + .c-button-toolbar {
   margin-top: 2.4rem;
 }

@@ -1,11 +1,5 @@
 import '../scss/app.scss';
 
-/*import './navigation.js';
-
-import './updateBodyClasses.js';
-
-import './barba.js';*/
-
 import "./modules/accordion";
 import "./modules/close-alert";
 import "./modules/close-global-banner";
