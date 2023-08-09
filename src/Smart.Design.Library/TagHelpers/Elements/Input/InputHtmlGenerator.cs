@@ -1,6 +1,5 @@
 using System;
 using System.Globalization;
-using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Smart.Design.Library.TagHelpers.Base;
@@ -169,13 +168,15 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
             inputTelTagBuilder.Attributes["value"] = Convert.ToString(value, CultureInfo.InvariantCulture);
         }
 
-        if (phoneType.HasValue)
+        // To uncomment when javascript handling will be started.
+        /*if (phoneType.HasValue && (!String.IsNullOrWhiteSpace(@for?.Model?.ToString()) || !String.IsNullOrWhiteSpace(value?.ToString())))
         {
             var pattern = phoneType == PhoneType.Landline ?
-                "^(0|\\+)(\\d{1,4}|\\d{2,3}\\(\\d{1,3}\\)|\\d{2,3}\\s\\d{1,4}|\\d{2,3}\\.\\d{1,4}|\\d{2,3}-\\d{1,4})$" :
+                "^(?:(?:\\+32|0)(?:\\d ?){1,2}(?:[1-9][0-9]|4[89])) ?\\d{2}(?: ?\\d{2}){1,2}$" :
                 "^(?:\\+|00)(?:(?:[1-9]\\d{0,3}(?:\\(\\d{1,4}\\))?)|\\d{1,4})(?:[-.]?\\d{1,4}){0,5}<\\d$";
+
             inputTelTagBuilder.Attributes["pattern"] = pattern;
-        }
+        }*/
 
         // if (maxLength.HasValue)
         // {
