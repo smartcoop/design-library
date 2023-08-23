@@ -57,53 +57,53 @@
                     <div class="o-grid">
                         <div class="o-grid-col-6">
                             <smart-formgroup label="Nom">
-                                <smart-input id="lastname" name="lastname" asp-for="@Model.subscription.lastName"></smart-input>
+                                <smart-input id="lastname" name="lastname" asp-for="@Model.Subscription.LastName"></smart-input>
                             </smart-formgroup>
                         </div>
                         <div class="o-grid-col-6">
                             <smart-formgroup label="Prénom">
-                                <smart-input id="firstname" name="firstname" asp-for="@Model.subscription.firstName"></smart-input>
+                                <smart-input id="firstname" name="firstname" asp-for="@Model.Subscription.FirstName"></smart-input>
                             </smart-formgroup>
                         </div>
                     </div>
 
                     <smart-formgroup label="Sexe">
-                        <smart-select id="sexe" name="sexe" items="@items" asp-for="@Model.subscription.sexe">
+                        <smart-select id="sexe" name="sexe" items="@items" asp-for="@Model.Subscription.Gender">
                         </smart-select>
                     </smart-formgroup>
 
                     <smart-formgroup label="Langue">
-                        <smart-select id="language" name="language" items="@languagesAndLink" asp-for="@Model.subscription.language">
+                        <smart-select id="language" name="language" items="@languagesAndLink" asp-for="@Model.Subscription.Language">
                         </smart-select>
                     </smart-formgroup>
 
                     <smart-formgroup label="Adresse email">
-                        <smart-input-email id="email" name="email" placeholder="youremail@email.com" asp-for="@Model.subscription.email"></smart-input-email>
+                        <smart-input-email id="email" name="email" placeholder="youremail@email.com" asp-for="@Model.Subscription.Email"></smart-input-email>
                     </smart-formgroup>
 
                     <smart-formgroup label="Numéro de téléphone">
-                        <smart-input-phone phoneType="TagHelpers.Elements.Input.PhoneType.Landline" id="phone-landline" name="phoneLandline" placeholder="____ ______" asp-for="@Model.subscription.landLine"></smart-input-phone>
+                        <smart-input-phone phoneType="TagHelpers.Elements.Input.PhoneType.Landline" id="phone-landline" name="phoneLandline" placeholder="____ ______" asp-for="@Model.Subscription.LandLine"></smart-input-phone>
                     </smart-formgroup>
 
                     <smart-formgroup label="Numéro de GSM">
-                        <smart-input-phone phoneType="TagHelpers.Elements.Input.PhoneType.Mobile" id="phone-mobile" name="phoneMobile" placeholder="____ ______" asp-for="@Model.subscription.mobile"></smart-input-phone>
+                        <smart-input-phone phoneType="TagHelpers.Elements.Input.PhoneType.Mobile" id="phone-mobile" name="phoneMobile" placeholder="____ ______" asp-for="@Model.Subscription.Mobile"></smart-input-phone>
                     </smart-formgroup>
 
                     <smart-formgroup label="Date de naissance">
-                        <smart-input-date id="birthDate" name="birthDate" asp-for="@Model.subscription.birthDate"></smart-input-date>
+                        <smart-input-date id="birthDate" name="birthDate" asp-for="@Model.Subscription.BirthDate"></smart-input-date>
                     </smart-formgroup>
 
                     <smart-formgroup label="Ville de naissance">
-                        <smart-input id="birthTown" name="birthTown" asp-for="@Model.subscription.birthTown"></smart-input>
+                        <smart-input id="birthTown" name="birthTown" asp-for="@Model.Subscription.BirthTown"></smart-input>
                     </smart-formgroup>
 
                     <smart-formgroup label="Etat civil">
-                        <smart-select id="civilStatus" name="civilStatus" items="@items" asp-for="@Model.subscription.civilStatus">
+                        <smart-select id="civilStatus" name="civilStatus" items="@items" asp-for="@Model.Subscription.CivilStatus">
                         </smart-select>
                     </smart-formgroup>
 
                     <smart-formgroup label="Nationalité">
-                        <smart-select id="natinonality" name="natinonality" items="@items" asp-for="@Model.subscription.nationality">
+                        <smart-select id="natinonality" name="natinonality" items="@items" asp-for="@Model.Subscription.Nationality">
                         </smart-select>
                     </smart-formgroup>
 
@@ -114,17 +114,17 @@
                     <div class="o-grid">
                         <div class="o-grid-col-6">
                             <smart-formgroup label="Rue">
-                                <smart-input id="street" name="street" asp-for="@Model.subscription.officialAddress.street"></smart-input>
+                                <smart-input id="street" name="street" asp-for="@Model.Subscription.OfficialAddress.Street"></smart-input>
                             </smart-formgroup>
                         </div>
                         <div class="o-grid-col-3">
                             <smart-formgroup label="Numéro">
-                                <smart-input id="numberStreet" name="numberStreet" asp-for="@Model.subscription.officialAddress.number"></smart-input>
+                                <smart-input id="numberStreet" name="numberStreet" asp-for="@Model.Subscription.OfficialAddress.Number"></smart-input>
                             </smart-formgroup>
                         </div>
                         <div class="o-grid-col-3">
                             <smart-formgroup label="Boîte">
-                                <smart-input id="boxStreet" name="boxStreet" asp-for="@Model.subscription.officialAddress.boxStreet"></smart-input>
+                                <smart-input id="boxStreet" name="boxStreet" asp-for="@Model.Subscription.OfficialAddress.BoxStreet"></smart-input>
                             </smart-formgroup>
                         </div>
                     </div>
@@ -132,18 +132,18 @@
                 <div class="o-grid">
                     <div class="o-grid-col-4">
                         <smart-formgroup label="Code postal">
-                            <smart-input id="zip" name="zip" asp-for="@Model.subscription.officialAddress.zipCode"></smart-input>
+                            <smart-input id="zip" name="zip" asp-for="@Model.Subscription.OfficialAddress.ZipCode"></smart-input>
                         </smart-formgroup>
                     </div>
                     <div class="o-grid-col-8">
                         <smart-formgroup label="Ville">
-                            <smart-input id="city" name="city" asp-for="@Model.subscription.officialAddress.city"></smart-input>
+                            <smart-input id="city" name="city" asp-for="@Model.Subscription.OfficialAddress.City"></smart-input>
                         </smart-formgroup>
                     </div>
                 </div>
 
                 <smart-formgroup label="Pays">
-                        <smart-select id="country" name="country" items="@items" asp-for="@Model.subscription.officialAddress.country">
+                        <smart-select id="country" name="country" items="@items" asp-for="@Model.Subscription.OfficialAddress.Country">
                         </smart-select>
                     </smart-formgroup>
 
@@ -162,17 +162,17 @@
                         <div class="o-grid">
                             <div class="o-grid-col-6">
                                 <smart-formgroup label="Rue">
-                                    <smart-input id="anotherStreet" name="anotherStreet" asp-for="@Model.subscription.shippingAddress.street"></smart-input>
+                                    <smart-input id="anotherStreet" name="anotherStreet" asp-for="@Model.Subscription.ShippingAddress.Street"></smart-input>
                                 </smart-formgroup>
                             </div>
                             <div class="o-grid-col-3">
                                 <smart-formgroup label="Numéro">
-                                    <smart-input id="anotherNumber" name="anotherNumber" asp-for="@Model.subscription.shippingAddress.number"></smart-input>
+                                    <smart-input id="anotherNumber" name="anotherNumber" asp-for="@Model.Subscription.ShippingAddress.Number"></smart-input>
                                 </smart-formgroup>
                             </div>
                             <div class="o-grid-col-3">
                                 <smart-formgroup label="Boîte">
-                                    <smart-input id="anotherBox" name="anotherBox" asp-for="@Model.subscription.shippingAddress.boxStreet"></smart-input>
+                                    <smart-input id="anotherBox" name="anotherBox" asp-for="@Model.Subscription.ShippingAddress.BoxStreet"></smart-input>
                                 </smart-formgroup>
                             </div>
                         </div>
@@ -180,18 +180,18 @@
                         <div class="o-grid">
                             <div class="o-grid-col-4">
                                 <smart-formgroup label="Code postal">
-                                    <smart-input id="anotherZip" name="anotherZip" asp-for="@Model.subscription.shippingAddress.zipCode"></smart-input>
+                                    <smart-input id="anotherZip" name="anotherZip" asp-for="@Model.Subscription.ShippingAddress.ZipCode"></smart-input>
                                 </smart-formgroup>
                             </div>
                             <div class="o-grid-col-8">
                                 <smart-formgroup label="Ville">
-                                    <smart-input id="anotherCity" name="anotherCity" asp-for="@Model.subscription.shippingAddress.city"></smart-input>
+                                    <smart-input id="anotherCity" name="anotherCity" asp-for="@Model.Subscription.ShippingAddress.City"></smart-input>
                                 </smart-formgroup>
                             </div>
                         </div>
 
                         <smart-formgroup label="Pays">
-                            <smart-select id="anotherCountry" name="anotherCountry" items="@items" asp-for="@Model.subscription.shippingAddress.country">
+                            <smart-select id="anotherCountry" name="anotherCountry" items="@items" asp-for="@Model.Subscription.ShippingAddress.Country">
                             </smart-select>
                         </smart-formgroup>
 
@@ -226,17 +226,17 @@
                             Précompte Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
                             <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
                         </div>
-                        <smart-input-number id="witholding" name="witholding" placeholder="11,11" asp-for="@Model.subscription.withholding"></smart-input-number>
+                        <smart-input-number id="witholding" name="witholding" placeholder="11,11" asp-for="@Model.Subscription.Withholding"></smart-input-number>
                     </smart-formgroup>
 
                     <h3 class="c-h2 u-spacer-bottom-s">Votre carte d'identité</h3>
 
                     <smart-formgroup label="Numéro de registre national ou inscription au registre des étrangers">
-                        <smart-input id="numNat" name="numNat" asp-for="@Model.subscription.registerIdNumber"></smart-input>
+                        <smart-input id="numNat" name="numNat" asp-for="@Model.Subscription.RegisterIdNumber"></smart-input>
                     </smart-formgroup>
 
                     <smart-formgroup label="N° carte identité">
-                        <smart-input id="numCI" name="numCI" asp-for="@Model.subscription.idCardNumber"></smart-input>
+                        <smart-input id="numCI" name="numCI" asp-for="@Model.Subscription.IdCardNumber"></smart-input>
                     </smart-formgroup>
 
                     <div class="u-spacer-bottom-xl">
@@ -248,7 +248,7 @@
                     <h3 class="c-h2 u-spacer-bottom-s">Vos données bancaires</h3>
 
                     <smart-formgroup label="Numéro IBAN de votre compte bancaire personnel">
-                        <smart-input id="numIban" name="numIban" asp-for="@Model.subscription.iban"></smart-input>
+                        <smart-input id="numIban" name="numIban" asp-for="@Model.Subscription.Iban"></smart-input>
                     </smart-formgroup>
 
                     <div class="u-spacer-bottom-xl">
@@ -258,7 +258,7 @@
                     <smart-hr></smart-hr>
 
                     <div class="u-spacer-bottom-xl">
-                        <smart-checkbox id="subscriptionAutorisation" name="subscriptionAutorisation" label="J'autorise Smart à transmettre mes données à des tiers, à des fins professionnelles uniquement." asp-for="@Model.subscription.subscriptionApproval" checked="false"></smart-checkbox>
+                        <smart-checkbox id="subscriptionAutorisation" name="subscriptionAutorisation" label="J'autorise Smart à transmettre mes données à des tiers, à des fins professionnelles uniquement." asp-for="@Model.Subscription.SubscriptionApproval" checked="false"></smart-checkbox>
                     </div>
                     <p>
                         En savoir plus ?

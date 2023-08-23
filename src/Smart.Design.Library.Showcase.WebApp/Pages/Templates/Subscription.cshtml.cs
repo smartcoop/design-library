@@ -10,44 +10,44 @@ namespace Smart.Design.Library.Showcase.Pages.Templates;
 
 public class Subscription
 {
-    public string lastName { get; set; }
-    public string firstName { get; set; }
-    public string sexe { get; set; }
-    public string language { get; set; }
-    public string email { get; set; }
+    public string LastName { get; set; }
+    public string FirstName { get; set; }
+    public string Gender { get; set; }
+    public string Language { get; set; }
+    public string Email { get; set; }
     [PhoneNumberValidation(PhoneType.Landline)]
-    public string? landLine { get; set; }
+    public string? LandLine { get; set; }
     [PhoneNumberValidation(PhoneType.Mobile)]
-    public string mobile { get; set; }
-    public DateTime birthDate{ get; set; }
-    public string birthTown{ get; set; }
-    public string civilStatus{ get; set; }
-    public string nationality{ get; set; }
-    public Address? officialAddress{ get; set; }
-    public Address? shippingAddress{ get; set; }
-    public int withholding{ get; set; }
-    public string registerIdNumber{ get; set; }
-    public string idCardNumber{ get; set; }
-    public string iban{ get; set; }
-    public string subscriptionApproval{ get; set; }
+    public string Mobile { get; set; }
+    public DateTime BirthDate{ get; set; }
+    public string BirthTown{ get; set; }
+    public string CivilStatus{ get; set; }
+    public string Nationality{ get; set; }
+    public Address? OfficialAddress{ get; set; }
+    public Address? ShippingAddress{ get; set; }
+    public double Withholding{ get; set; }
+    public string RegisterIdNumber{ get; set; }
+    public string IdCardNumber{ get; set; }
+    public string Iban{ get; set; }
+    public Boolean SubscriptionApproval{ get; set; }
 
 }
 
 public class Address
 {
-    public string? street { get; set; }
-    public string? number { get; set; }
-    public string? boxStreet { get; set; }
-    public string? zipCode { get; set; }
-    public string? city { get; set; }
-    public string? country { get; set; }
+    public string? Street { get; set; }
+    public string? Number { get; set; }
+    public string? BoxStreet { get; set; }
+    public string? ZipCode { get; set; }
+    public string? City { get; set; }
+    public string? Country { get; set; }
 }
 
 
 public class SubscriptionModel : PageModel
 {
     [BindProperty]
-    public Subscription subscription { get; set; }
+    public Subscription Subscription { get; set; }
 
     public void OnGet()
     {
