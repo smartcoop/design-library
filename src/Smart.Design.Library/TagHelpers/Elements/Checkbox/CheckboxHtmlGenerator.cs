@@ -72,7 +72,7 @@ public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
         labelDiv.InnerHtml.SetHtmlContent(checkbox);
         if (!string.IsNullOrWhiteSpace(label))
         {
-            labelDiv.InnerHtml.Append(label);
+            labelDiv.InnerHtml.AppendHtml(label);
         }
 
         rootDiv.InnerHtml.SetHtmlContent(labelDiv);
