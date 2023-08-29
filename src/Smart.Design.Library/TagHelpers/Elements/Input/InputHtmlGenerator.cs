@@ -104,6 +104,7 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         tagBuilder.AddCssClass("c-input");
         tagBuilder.Attributes.Add("type", "number");
         tagBuilder.Attributes.Add("value", $"{value}");
+        tagBuilder.Attributes.Add("step", "0.01");
 
         return tagBuilder;
     }
