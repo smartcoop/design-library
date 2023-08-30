@@ -30,6 +30,8 @@ public class SelectTagHelper : BaseTagHelper
     /// </summary>
     private const string NameAttributeName = "name";
 
+    private const string NameDefaultValueLabel = "defautValueLabel";
+
     private const string ItemsAttributeName = "items";
 
     private const string AspForNameAttribute   = "asp-for";
@@ -45,6 +47,12 @@ public class SelectTagHelper : BaseTagHelper
     /// </summary>
     [HtmlAttributeName(NameAttributeName)]
     public string? Name { get; set; }
+
+    /// <summary>
+    /// Gets or sets the default value label of the underlying Tag Helper.
+    /// </summary>
+    [HtmlAttributeName(NameDefaultValueLabel)]
+    public string? DefaultValueLabel { get; set; }
 
     /// <summary>
     /// Get or sets the <see cref="Microsoft.AspNetCore.Mvc.Rendering.ViewContext"/> of the executing view.
@@ -79,7 +87,7 @@ public class SelectTagHelper : BaseTagHelper
     {
         base.Process(context, output);
 
-        var select = _iSelectHtmlGenerator.GenerateSelect(ViewContext, Id, Name, Items, For);
+        var select = _iSelectHtmlGenerator.GenerateSelect(ViewContext, Id, Name, DefaultValueLabel, Items, For);
 
         output.TagName = select.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;
