@@ -107,19 +107,11 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var liMenuHelp = new TagBuilder("li");
         liMenuHelp.AddCssClass("c-menu__info");
 
-        var p = new TagBuilder("p");
-        p.AddCssClass("c-menu__subline");
-        p.InnerHtml.Append(Translations.HelpAndDocumentation);
-
-        liMenuHelp.InnerHtml.AppendHtml(p);
-        helpUl.InnerHtml.AppendHtml(liMenuHelp);
 
         var liDocumentation = GenerateListItemWithBanner(Translations.Documentation, Translations.DocumentationUrl, Image.Image.ExternalLink, true);
-        var liQuestion = GenerateListItemWithBanner(Translations.QandA, Translations.QandAUrl);
         var liContact = GenerateListItemWithBanner(Translations.ContactUs, Translations.ContactUsUrl, Image.Image.None, true);
 
         helpUl.InnerHtml.AppendHtml(liDocumentation);
-        helpUl.InnerHtml.AppendHtml(liQuestion);
         helpUl.InnerHtml.AppendHtml(liContact);
 
         helpLi.InnerHtml.AppendHtml(helpButton);
@@ -209,12 +201,6 @@ public class HeaderHtmlGenerator : IHeaderHtmlGenerator
         var menuInfo = new TagBuilder("li");
         menuInfo.AddCssClass("c-menu__info");
 
-        var pInfo = new TagBuilder("p");
-        pInfo.AddCssClass("c-menu__subline");
-        pInfo.InnerHtml.Append(Translations.PersonalInformations);
-
-        menuInfo.InnerHtml.AppendHtml(pInfo);
-        menu.InnerHtml.AppendHtml(menuInfo);
 
         foreach (KeyValuePair<string, string> item in labelsAndLinks)
         {
