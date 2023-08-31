@@ -67,13 +67,22 @@
                         </div>
                     </div>
 
-                    <smart-formgroup label="Sexe">
-                        <smart-select id="sexe" name="sexe" items="@items" asp-for="@Model.Subscription.Gender">
+                    <smart-formgroup label="Genre">
+                        <smart-select
+                            id="gender"
+                            name="gender"
+                            items="@items"
+                            asp-for="@Model.Subscription.Gender">
                         </smart-select>
                     </smart-formgroup>
 
                     <smart-formgroup label="Langue">
-                        <smart-select id="language" name="language" items="@languagesAndLink" asp-for="@Model.Subscription.Language">
+                        <smart-select
+                            id="language"
+                            name="language"
+                            defautValueLabel="Sélectionner une langue"
+                            items="@languagesAndLink"
+                            asp-for="@Model.Subscription.Language">
                         </smart-select>
                     </smart-formgroup>
 
@@ -98,12 +107,21 @@
                     </smart-formgroup>
 
                     <smart-formgroup label="Etat civil">
-                        <smart-select id="civilStatus" name="civilStatus" items="@items" asp-for="@Model.Subscription.CivilStatus">
+                        <smart-select
+                            id="civilStatus"
+                            name="civilStatus"
+                            defautValueLabel="Sélectionner un état civil"
+                            items="@items"
+                            asp-for="@Model.Subscription.CivilStatus">
                         </smart-select>
                     </smart-formgroup>
 
                     <smart-formgroup label="Nationalité">
-                        <smart-select id="natinonality" name="natinonality" items="@items" asp-for="@Model.Subscription.Nationality">
+                        <smart-select
+                            id="natinonality"
+                            name="natinonality"
+                            items="@items"
+                            asp-for="@Model.Subscription.Nationality">
                         </smart-select>
                     </smart-formgroup>
 
@@ -143,7 +161,12 @@
                 </div>
 
                 <smart-formgroup label="Pays">
-                        <smart-select id="country" name="country" items="@items" asp-for="@Model.Subscription.OfficialAddress.Country">
+                    <smart-select
+                        id="country"
+                        name="country"
+                        defautValueLabel="Sélectionner un pays"
+                        items="@items"
+                        asp-for="@Model.Subscription.OfficialAddress.Country">
                         </smart-select>
                     </smart-formgroup>
 
@@ -191,7 +214,11 @@
                         </div>
 
                         <smart-formgroup label="Pays">
-                            <smart-select id="anotherCountry" name="anotherCountry" items="@items" asp-for="@Model.Subscription.ShippingAddress.Country">
+                            <smart-select
+                                id="anotherCountry"
+                                name="anotherCountry"
+                                items="@items"
+                                asp-for="@Model.Subscription.ShippingAddress.Country">
                             </smart-select>
                         </smart-formgroup>
 

@@ -14,6 +14,7 @@ namespace Smart.Design.Library.TagHelpers.Elements.Select
             ViewContext? viewContext,
             string? id,
             string? name,
+            string? defaultValueLabel,
             Dictionary<string, string>? items,
             ModelExpression? @for)
         {
@@ -42,8 +43,11 @@ namespace Smart.Design.Library.TagHelpers.Elements.Select
 
             if (items != null)
             {
+                var defaultLabel = defaultValueLabel != null ? defaultValueLabel : "Choisir une valeur";
                 var noOptionTagBuilder = new TagBuilder("option");
-                noOptionTagBuilder.InnerHtml.AppendHtml("Choisir une valeur");
+                noOptionTagBuilder.InnerHtml.AppendHtml(defaultLabel);
+                noOptionTagBuilder.Attributes.Add("disabled", "true");
+                noOptionTagBuilder.Attributes.Add("selected", "true");
                 selectTagBuilder.InnerHtml.AppendHtml(noOptionTagBuilder);
                 foreach (var item in items)
                 {

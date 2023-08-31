@@ -10,6 +10,7 @@ public interface ISelectHtmlGenerator
         ViewContext? viewContext,
         string? id,
         string? name,
+        string? defaultValueLabel,
         Dictionary<string, string>? items,
         ModelExpression? @for);
 }
