@@ -23,15 +23,15 @@ namespace Smart.Design.Library.Resources {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class Translations {
-
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
         internal Translations() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
@@ -45,7 +45,7 @@ namespace Smart.Design.Library.Resources {
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
@@ -59,7 +59,7 @@ namespace Smart.Design.Library.Resources {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Contact us.
         /// </summary>
@@ -86,9 +86,9 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("CurrentLanguage", resourceCulture);
             }
         }
-
+        
         /// <summary>
-        ///   Looks up a localized string similar to Documentation.
+        ///   Looks up a localized string similar to Guide d’utilisation.
         /// </summary>
         public static string Documentation {
             get {
@@ -113,7 +113,7 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("Help", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Help and Documentation.
         /// </summary>
@@ -122,7 +122,7 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("HelpAndDocumentation", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Personal informations.
         /// </summary>
@@ -131,7 +131,7 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("PersonalInformations", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Questions and Answers.
         /// </summary>
@@ -158,7 +158,7 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("SignOut", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Confirm.
         /// </summary>
@@ -167,7 +167,7 @@ namespace Smart.Design.Library.Resources {
                 return ResourceManager.GetString("ToConfirm", resourceCulture);
             }
         }
-
+        
         /// <summary>
         ///   Looks up a localized string similar to Validate.
         /// </summary>
