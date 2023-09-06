@@ -88,9 +88,15 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         return tagBuilder;
     }
 
-    public TagBuilder GenerateInputNumber(string? id, string? name, double? value, string? placeholder, ModelExpression? @for)
+    public TagBuilder GenerateInputNumber(ViewContext? viewContext, string? id, string? name, double? value, string? placeholder, ModelExpression? @for)
     {
         var tagBuilder = new TagBuilder("input");
+        var inputName = GetAttributeName(name, @for);
+
+        AddNameAttribute(tagBuilder, @for, name);
+        tagBuilder.AddCssClass("c-input");
+        tagBuilder.Attributes.Add("type", "number");
+        tagBuilder.Attributes.Add("step", "0.01");
 
         if (!string.IsNullOrWhiteSpace(id))
         {
@@ -100,12 +106,22 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         {
             tagBuilder.Attributes["placeholder"] = placeholder;
         }
-        AddNameAttribute(tagBuilder, @for, name);
-        tagBuilder.AddCssClass("c-input");
-        tagBuilder.Attributes.Add("type", "number");
-        tagBuilder.Attributes.Add("value", $"{value}");
-        tagBuilder.Attributes.Add("step", "0.01");
 
+        // The value of the model has always precedence over the attribute value.
+        if (@for?.Model is not null)
+        {
+            tagBuilder.Attributes["value"] = Convert.ToString(@for.Model, CultureInfo.InvariantCulture);
+        }
+        else if (value is not null)
+        {
+            tagBuilder.Attributes["value"] = Convert.ToString(value, CultureInfo.InvariantCulture);
+        }
+
+        // If there are any errors for a named field, we add the CSS attribute.
+        if (!string.IsNullOrWhiteSpace(inputName) && viewContext?.HasModelStateErrorsByKey(inputName) is true)
+        {
+            tagBuilder.AddCssClass("c-input--error");
+        }
         return tagBuilder;
     }
 

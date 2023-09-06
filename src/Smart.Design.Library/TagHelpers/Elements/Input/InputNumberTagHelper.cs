@@ -1,3 +1,6 @@
+using System.Globalization;
+using System.Threading;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.TagHelpers;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Razor.TagHelpers;
@@ -15,6 +18,13 @@ public class InputNumberTagHelper : BaseTagHelper
     private const string ValueAttributeName = "value";
     private const string PlaceholderAttributeName = "placeholder";
 
+    /// <summary>
+    /// Get or sets the <see cref="Microsoft.AspNetCore.Mvc.Rendering.ViewContext"/> of the executing view.
+    /// </summary>
+    [HtmlAttributeNotBound]
+    [ViewContext]
+    public ViewContext? ViewContext { get; set; }
+
     [HtmlAttributeName(AspForAttributeName)]
     public ModelExpression? For { get; set; }
 
@@ -31,9 +41,13 @@ public class InputNumberTagHelper : BaseTagHelper
 
     public override void Process(TagHelperContext context, TagHelperOutput output)
     {
-        var inputNumber = _smartHtmlGenerator.GenerateInputNumber(Id, Name, Value,Placeholder, For);
+        base.Process(context, output);
+
+        var inputNumber = _smartHtmlGenerator.GenerateInputNumber(ViewContext, Id, Name, Value,Placeholder, For);
+
         output.TagName = inputNumber.TagName;
         output.TagMode = TagMode.SelfClosing;
+
         output.ClearAllAttributes();
         output.MergeAttributes(inputNumber);
     }
