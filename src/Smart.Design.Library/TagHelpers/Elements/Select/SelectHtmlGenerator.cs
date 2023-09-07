@@ -54,6 +54,13 @@ namespace Smart.Design.Library.TagHelpers.Elements.Select
                     var optionTagBuilder = new TagBuilder("option");
                     optionTagBuilder.Attributes.Add("value", item.Value);
                     optionTagBuilder.InnerHtml.AppendHtml(item.Key);
+
+                    // Check if the current option should be selected based on the model's value
+                    if (@for != null && @for.Model != null && item.Value == @for.Model.ToString())
+                    {
+                        optionTagBuilder.Attributes.Add("selected", "true");
+                    }
+
                     selectTagBuilder.InnerHtml.AppendHtml(optionTagBuilder);
                 }
             }
@@ -62,7 +69,7 @@ namespace Smart.Design.Library.TagHelpers.Elements.Select
             // If there are any errors for a named field, we add the CSS attribute.
             if (!string.IsNullOrWhiteSpace(selectName) && viewContext?.HasModelStateErrorsByKey(selectName) is true)
             {
-                selectTagBuilder.AddCssClass("c-input--error");
+                selectTagBuilder.AddCssClass("c-select--error");
             }
 
             divSelectTagBuilder.InnerHtml.AppendHtml(selectTagBuilder);
