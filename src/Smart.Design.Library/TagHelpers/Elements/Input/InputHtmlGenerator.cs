@@ -314,13 +314,14 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
             inputDate.Attributes["placeholder"] = "dd/MM/yyyy";
         }
 
+        // Convert the date value to the ISO date format (yyyy-MM-dd) for the value attribute
         if (@for?.Model is DateTime modelValue)
         {
-            inputDate.Attributes.Add("value", $"{modelValue:dd/MM/yyyy}");
+            inputDate.Attributes.Add("value", modelValue.ToString("yyyy-MM-dd"));
         }
         else if (value.HasValue)
         {
-            inputDate.Attributes.Add("value", $"{value.Value:dd/MM/yyy}");
+            inputDate.Attributes.Add("value", value.Value.ToString("yyyy-MM-dd"));
         }
 
         // If there are any errors for a named field, we add the CSS attribute.
