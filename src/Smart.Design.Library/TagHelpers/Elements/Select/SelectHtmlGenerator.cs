@@ -15,6 +15,7 @@ namespace Smart.Design.Library.TagHelpers.Elements.Select
             string? id,
             string? name,
             string? defaultValueLabel,
+            bool? required,
             Dictionary<string, string>? items,
             ModelExpression? @for)
         {
@@ -39,6 +40,11 @@ namespace Smart.Design.Library.TagHelpers.Elements.Select
             if (!string.IsNullOrWhiteSpace(selectName))
             {
                 selectTagBuilder.Attributes["name"] = selectName;
+            }
+
+            if (required == true)
+            {
+                selectTagBuilder.Attributes.Add("required", "true");
             }
 
             if (items != null)

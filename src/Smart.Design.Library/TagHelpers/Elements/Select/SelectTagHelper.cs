@@ -36,6 +36,8 @@ public class SelectTagHelper : BaseTagHelper
 
     private const string AspForNameAttribute   = "asp-for";
 
+    private const string RequiredNameAttribute   = "required";
+
     /// <summary>
     /// Gets or Sets the Id of the underlying Tag Helper.
     /// </summary>
@@ -74,6 +76,12 @@ public class SelectTagHelper : BaseTagHelper
     public Dictionary<string, string>? Items { get; set; }
 
     /// <summary>
+    /// Gets or sets the default value label of the underlying Tag Helper.
+    /// </summary>
+    [HtmlAttributeName(RequiredNameAttribute)]
+    public bool? Required { get; set; }
+
+    /// <summary>
     /// Creates a new <see cref="SelectTagHelper"/>.
     /// </summary>
     /// <param name="selectHtmlGenerator">The <see cref="ISelectHtmlGenerator"/>.</param>
@@ -87,7 +95,7 @@ public class SelectTagHelper : BaseTagHelper
     {
         base.Process(context, output);
 
-        var select = _iSelectHtmlGenerator.GenerateSelect(ViewContext, Id, Name, DefaultValueLabel, Items, For);
+        var select = _iSelectHtmlGenerator.GenerateSelect(ViewContext, Id, Name, DefaultValueLabel, Required, Items, For);
 
         output.TagName = select.TagName;
         output.TagMode = TagMode.StartTagAndEndTag;

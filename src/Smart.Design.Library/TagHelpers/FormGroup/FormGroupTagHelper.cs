@@ -12,12 +12,16 @@ public class FormGroupTagHelper : TagHelper
     private readonly IFormGroupHtmlGenerator _formGroupHtmlGenerator;
     private const string LabelAttributeName = "label";
     private const string HelperTextAttributeName = "helper-text";
+    private const string RequiredAttributeName = "required";
 
     [HtmlAttributeName(HelperTextAttributeName)]
     public string? HelperText { get; set; }
 
     [HtmlAttributeName(LabelAttributeName)]
     public string? Label { get; set; }
+
+    [HtmlAttributeName(RequiredAttributeName)]
+    public bool? Required { get; set; }
 
     public FormGroupTagHelper(IFormGroupHtmlGenerator formGroupHtmlGenerator)
     {
@@ -33,7 +37,7 @@ public class FormGroupTagHelper : TagHelper
 
         output.MergeAttributes(formGroup);
 
-        output.PreContent.SetHtmlContent(_formGroupHtmlGenerator.GenerateFormGroupLabel(Label, null));
+        output.PreContent.SetHtmlContent(_formGroupHtmlGenerator.GenerateFormGroupLabel(Label, null, Required));
 
         if (!string.IsNullOrWhiteSpace(HelperText))
         {

@@ -9,14 +9,14 @@ namespace Smart.Design.Library.TagHelpers.Base;
 public class FormGroupHtmlGenerator : BaseHtmlGenerator, IFormGroupHtmlGenerator
 {
     /// <inheritdoc />
-    public TagBuilder GenerateFormGroup(string? id, string? name, string? label, string? helperText, TagBuilder? controls)
+    public TagBuilder GenerateFormGroup(string? id, string? name, string? label, string? helperText, bool? required, TagBuilder? controls)
     {
         var formGroup = GenerateFormGroup();
 
         // We allow whitespace in case the developer wants actually to generate the <label> element.
         if (!string.IsNullOrEmpty(label))
         {
-            var formGroupLabel = GenerateFormGroupLabel(label, id);
+            var formGroupLabel = GenerateFormGroupLabel(label, id, required);
             formGroup.InnerHtml.AppendHtml(formGroupLabel);
         }
 
@@ -48,13 +48,23 @@ public class FormGroupHtmlGenerator : BaseHtmlGenerator, IFormGroupHtmlGenerator
     }
 
     /// <inheritdoc />
-    public TagBuilder GenerateFormGroupLabel(string? label, string? labelFor)
+    public TagBuilder GenerateFormGroupLabel(string? label, string? labelFor, bool? required)
     {
         var labelTagBuilder = new TagBuilder("label");
         labelTagBuilder.AddCssClass("o-form-group__label");
+
         if (!string.IsNullOrWhiteSpace(label))
         {
             labelTagBuilder.InnerHtml.Append(label);
+
+            // Add an asterisk (*) if 'required' is true
+            if (required == true)
+            {
+                var requiredSpan = new TagBuilder("span");
+                requiredSpan.AddCssClass("required-asterisk");
+                requiredSpan.InnerHtml.Append(" *");
+                labelTagBuilder.InnerHtml.AppendHtml(requiredSpan);
+            }
         }
 
         if (!string.IsNullOrWhiteSpace(labelFor))
