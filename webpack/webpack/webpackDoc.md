@@ -62,7 +62,7 @@ Une fois ceci fait coller les textes suivants dans les fichiers créés :
 
 **package.json:**
 
-```
+```json
 {
   "author": "JAD",
   "name": "webpack Smart design-library",
@@ -96,7 +96,7 @@ Il contient des champs comme le nom, la version, la description, les scripts, le
 ___
 **webpack.config.js:**
 
-```
+```js
 const webpack = require("webpack");
 const path = require("path");
 
@@ -113,7 +113,7 @@ module.exports = config;
 *Le fichier webpack.config.js sert à configurer les options de webpack, il permet de gérer la gestion des entrées, des sorties, des loaders, des plugins, etc.*
 ___
 **index.html:**
-```
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,7 +129,7 @@ ___
 ```
 
 **index.js:**
-```
+```js
 document.write("Je débute avec Webpack !");
 document.write("<br/>Je suis le fichier d'index");
 ```
@@ -147,6 +147,69 @@ Le code JS à l’intérieure est celui de notre fichier index.js minifié.
 On peut maintenant ouvrir la page public/index.html pour visionner le résultat.
 
 ___
+
+### Installation de Babel.
+
+Babel est un transpileur JavaScript qui permet de convertir du code JavaScript moderne en code JavaScript plus ancien, afin que ce dernier puisse être exécuté sur des navigateurs plus anciens
+D'abord les dépendances.
+
+```sh
+npm install --save-dev babel-loader babel-core
+```
+
+Une fois les dépendances installées nous devons ajouter les ligne suivante dans le fichier **webpack.config.js:**
+
+```js
+module: {
+rules: [{
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {  loader: "babel-loader",  },
+        },],
+},
+```
+Le fichier **webpack.config.js** doit ressembler à ceci maintenant:
+```js
+const webpack = require("webpack");
+const path = require("path");
+
+let config = {
+    entry: "./src/index.js",
+    output: {
+        path: path.resolve(__dirname, "./public"),
+        filename: "./bundle.js"
+    },
+    module: {
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/, //exclude les node modules pour n utiliser que babel
+            use: {  loader: "babel-loader",  },
+        },],
+    },
+}
+
+module.exports = config;
+```
+Maintenant, nous allons devoir indiquer à Babel qu’il doit utiliser le preset (pré-réglage) ES2015. Pour ce faire, entrez la commande suivante :
+```sh
+npm install --save-dev babel-preset-env
+```
+Maintenant créez un fichier **.babelrc** à la racine de votre projet et ajoutez-y le code suivant :
+```JSON
+{
+ "presets": [
+  ["env", {
+     "targets": {
+     "browsers": ["last 2 versions", "safari >= 7"]
+    }
+  }]
+ ]
+}
+```
+Nous pouvons des maintenant utiliser Babel pour générer notre fichiers de librairie .js.
+
+___
+
 
 ## commandes utiles
 

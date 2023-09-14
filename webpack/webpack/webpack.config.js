@@ -6,7 +6,14 @@ let config = {
     output: {
         path: path.resolve(__dirname, "./public"),
         filename: "./bundle.js"
-    }
+    },
+    module: {
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/, //exclude les node modules pour n utiliser que babel
+            use: {  loader: "babel-loader",  },
+        },],
+    },
 }
 
 module.exports = config;
