@@ -252,6 +252,66 @@ Nous pouvons de cette façon compiler autant de fichier .js que nous le désiron
 
 ___
 
+### Configurer le css.
+
+Tout d’abord, vous devez installer un chargeur CSS et un chargeur de style dans vos dépendances de développement :
+```sh
+npm install --save-dev css-loader style-loader
+```
+Vous pouvez utiliser les deux chargeurs pour tous les fichiers css dans votre configuration Webpack.
+
+Ajoutez dans dans le fichier **webpack.config.json** leslignes suivantes:
+```js
+test: /\.(css)$/,
+use: ['style-loader', 'css-loader'],
+```
+Vous devez avoir un fichier **webpack.config.json** qui ressemble à ceci :
+```js
+const webpack = require("webpack");
+const path = require("path");
+
+let config = {
+    entry: ['./src/index.js', './src/joelle.js', './src/meli.js'],
+    output: {
+        path: path.resolve(__dirname, "./public"),
+        filename: "./bundle.js"
+    },
+    module: {
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/, //exclude les node modules pour n utiliser que babel
+            use: {  loader: "babel-loader",  },
+
+            test: /\.(css)$/,
+            use: ['style-loader', 'css-loader'],
+        },],
+    },
+}
+
+module.exports = config;
+```
+
+Dans le répertoire assts/stylesheets/ créer le fichier **style.css**.
+
+Copier dedans les lignes suivantes :
+```css
+h1 {
+  color: red;
+}
+```
+Editer le fichier **index.js** et ajouter la ligne suivante au début du fichier:
+```js
+import '../assets/stylesheets/style.css'
+```
+Il suffit maintenant de relancer notre commande :
+```sh
+npm run dev
+```
+Puis de vérifier notre **index.html** pour voir que le CSS est bien chargé et actif dans notre page.
+
+
+___
+
 ## commandes utiles
 
 ```- npm -v``` : Donne la version actuelle de npm.
