@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 let config = {
     entry: ['./src/index.js', './src/joelle.js', './src/meli.js'],
@@ -14,9 +15,13 @@ let config = {
             use: {  loader: "babel-loader",  },
 
             test: /\.(css)$/,
-            use: ['style-loader', 'css-loader'],
+            use: [MiniCssExtractPlugin.loader, 'css-loader'],
         },],
     },
+    plugins: [
+        new MiniCssExtractPlugin()
+
+    ],
 }
 
 module.exports = config;

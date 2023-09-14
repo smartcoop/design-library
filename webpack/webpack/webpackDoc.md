@@ -231,7 +231,7 @@ document.write("<hr/>");
 ```
 
 Nous nous retrouvons maintenant avec trois fichiers .js en entrée, chacun affichant une phrase qui lui est propre.
-Nous allons modifier le fichier **webpack.config.json** pour que ls trois fichiers soit compiler en un seule, pour ce faire nous allons utiliser un tableau.
+Nous allons modifier le fichier **webpack.config.js** pour que ls trois fichiers soit compiler en un seule, pour ce faire nous allons utiliser un tableau.
 
 Notre ligne entry :
 ```js
@@ -260,12 +260,12 @@ npm install --save-dev css-loader style-loader
 ```
 Vous pouvez utiliser les deux chargeurs pour tous les fichiers css dans votre configuration Webpack.
 
-Ajoutez dans dans le fichier **webpack.config.json** leslignes suivantes:
+Ajoutez dans dans le fichier **webpack.config.js** leslignes suivantes:
 ```js
 test: /\.(css)$/,
 use: ['style-loader', 'css-loader'],
 ```
-Vous devez avoir un fichier **webpack.config.json** qui ressemble à ceci :
+Vous devez avoir un fichier **webpack.config.js** qui ressemble à ceci :
 ```js
 const webpack = require("webpack");
 const path = require("path");
@@ -309,8 +309,84 @@ npm run dev
 ```
 Puis de vérifier notre **index.html** pour voir que le CSS est bien chargé et actif dans notre page.
 
+___
+
+
+### Générer un fichier CSS.
+
+Tout comme nous l’avons déjà fait pour le java-script nous pouvons créer un fichier unique pour accueillir le CSS de notre projet.
+
+Tout d’abord nous allons ajouter la référence vers notre unique fichier dans la page **index.html:**
+```html
+<head>
+    <link rel="stylesheet" href="main.css">
+    <title>Hello webpack</title>
+</head>
+```
+Installer le plugin nécessaire à la création du fichier :
+```sh
+npm install --save-dev mini-css-extract-plugin
+```
+Ajouter enfin ces lignes au fichier **webpack.config.js:**
+```js
+use: [MiniCssExtractPlugin.loader, 'css-loader'],
+```
+à la place de:
+```js
+use: ['style-loader', 'css-loader'],
+```
+Au début du fichier ajouter une nouvelle constante:
+```js
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+```
+Créer une section plugin:
+```js
+plugins: [
+    new MiniCssExtractPlugin()
+
+],
+```
+Vous devez avoir un fichier **webpack.config.js** qui ressemble à ceci :
+```js
+const webpack = require("webpack");
+const path = require("path");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+let config = {
+    entry: ['./src/index.js', './src/joelle.js', './src/meli.js'],
+    output: {
+        path: path.resolve(__dirname, "./public"),
+        filename: "./bundle.js"
+    },
+    module: {
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/, //exclude les node modules pour n utiliser que babel
+            use: {  loader: "babel-loader",  },
+
+            test: /\.(css)$/,
+            use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        },],
+    },
+    plugins: [
+        new MiniCssExtractPlugin()
+
+    ],
+}
+
+module.exports = config;
+```
+Il suffit maintenant de relancer notre commande :
+```sh
+npm run dev
+```
+Puis de vérifier notre **index.html** pour voir que le CSS est bien chargé et actif dans notre page.
+On trouvera également le fichier **main.css** dans le répertoire public.
 
 ___
+
+
+
 
 ## commandes utiles
 
