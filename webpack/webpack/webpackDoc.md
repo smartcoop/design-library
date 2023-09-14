@@ -310,8 +310,6 @@ npm run dev
 Puis de vérifier notre **index.html** pour voir que le CSS est bien chargé et actif dans notre page.
 
 ___
-
-
 ### Générer un fichier CSS.
 
 Tout comme nous l’avons déjà fait pour le java-script nous pouvons créer un fichier unique pour accueillir le CSS de notre projet.
@@ -384,6 +382,53 @@ Puis de vérifier notre **index.html** pour voir que le CSS est bien chargé et 
 On trouvera également le fichier **main.css** dans le répertoire public.
 
 ___
+### Compiler du SCSS en un fichier CSS.
+
+Le SCSS permet de créer des variables, des imbrications, des mixins, des héritages et d’autres éléments qui aident à écrire du CSS robuste et facile à maintenir. Le SCSS est transformé en CSS normal lorsqu’il est traité par un compilateur.
+
+Nous allons maintenant installer les dépendances nécessaires :
+```sh
+npm i --save-dev sass-loader node-sass autoprefixer postcss-loader
+```
+Après cela nous créons un fichier **postcss.config.js** et nous ajoutons le contenu suivant :
+```js
+module.exports = {
+    plugins: [
+        require("autoprefixer")
+    ]
+}
+```
+Il faut maintenant mettre à jour le fichier **webpack.config.js** pour que les fichiers SCSS soient compilés avec les fichiers CSS dans le **main.css**.
+
+Remplacer la ligne suivante:
+```js
+test: /\.(css)$/,
+use: [MiniCssExtractPlugin.loader, 'css-loader'],
+```
+par:
+```js
+test: /\.((c|sa|sc)ss)$/i,
+use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader'],
+```
+
+Il reste maintenant à éditer le fichier **index.js** en ajoutant la ligne suivante pour charger le fichier SCSS:
+```js
+require("../assets/stylesheets/styles.scss");
+```
+Créons maintenant le fichier **styles.scss** dans le répertoire stylesheet/ et ajoutons le texte suivant :
+```scss
+$midnight-blue : #2c3e50;
+
+body {
+  background-color: $midnight-blue;
+  color:white;
+}
+```
+Nous pouvons tester le résultat en tapant la commande habituelle :
+```sh
+npm run dev
+```
+
 
 
 

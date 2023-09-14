@@ -14,8 +14,8 @@ let config = {
             exclude: /node_modules/, //exclude les node modules pour n utiliser que babel
             use: {  loader: "babel-loader",  },
 
-            test: /\.(css)$/,
-            use: [MiniCssExtractPlugin.loader, 'css-loader'],
+            test: /\.((c|sa|sc)ss)$/i,
+            use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader', 'postcss-loader'],
         },],
     },
     plugins: [
