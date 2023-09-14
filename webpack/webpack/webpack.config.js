@@ -2,7 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 
 let config = {
-    entry: "./src/index.js",
+    entry: ['./src/index.js', './src/joelle.js', './src/meli.js'],
     output: {
         path: path.resolve(__dirname, "./public"),
         filename: "./bundle.js"

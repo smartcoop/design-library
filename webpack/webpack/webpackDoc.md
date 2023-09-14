@@ -87,7 +87,7 @@ Une fois ceci fait coller les textes suivants dans les fichiers créés :
   }
 }
 ```
- *Le fichier package.json sert à définir les informations et les dépendances d’un projet qui utilise webpack.
+*Le fichier package.json sert à définir les informations et les dépendances d’un projet qui utilise webpack.
 Il contient des champs comme le nom, la version, la description, les scripts, les auteurs, les licences, etc.*
 
 *Il permet aussi de spécifier les modules dont le projet a besoin pour fonctionner, nous pouvons voir la dépendence webpack,webpack-cli,webpack-dev-server que nous avons installé précédemment.*
@@ -210,6 +210,47 @@ Nous pouvons des maintenant utiliser Babel pour générer notre fichiers de libr
 
 ___
 
+### Utiliser de multiples fichiers java-script.
+Commençons par modifier notre fichier actuel **index.js:**
+```js
+document.write("Je suis fichier js d'index");
+document.write("<hr/>");
+```
+Ensuite créons deux nouveaux fichier .js :
+
+**joelle.js:**
+```js
+document.write("Je suis le fichier js de Joelle");
+document.write("<hr/>");
+```
+
+**meli.js**
+```js
+document.write("Je suis le fichier js de Mélissa);
+document.write("<hr/>");
+```
+
+Nous nous retrouvons maintenant avec trois fichiers .js en entrée, chacun affichant une phrase qui lui est propre.
+Nous allons modifier le fichier **webpack.config.json** pour que ls trois fichiers soit compiler en un seule, pour ce faire nous allons utiliser un tableau.
+
+Notre ligne entry :
+```js
+entry: "./src/index.js",
+```
+Va être remplacée par celle-ci :
+```js
+entry: ['./src/index.js', './src/joelle.js', './src/meli.js'],
+```
+
+Il suffit maintenant de relancer notre commande :
+```sh
+npm run dev
+```
+Puis de vérifier notre **index.html** pour voir que le message de chaque fichier .js est bien présent sur la page.
+
+Nous pouvons de cette façon compiler autant de fichier .js que nous le désirons webpack agrégera et minifiera le code pour nous.
+
+___
 
 ## commandes utiles
 

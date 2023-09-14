@@ -1,1 +1,2 @@
-﻿document.write("Je débute avec Webpack !");
+﻿document.write("Je suis fichier js d'index");
+document.write("<hr/>");
