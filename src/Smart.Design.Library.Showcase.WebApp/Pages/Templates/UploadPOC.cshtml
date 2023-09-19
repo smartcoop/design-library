@@ -1,0 +1,58 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Templates.UploadPOCModel
+@using Kendo.Mvc.UI
+
+@{
+}
+
+<div style="background-color:lightgray; padding: 50px;">
+
+    <h2></h2>
+
+    <div class="c-panel">
+        <div class="c-panel__header">
+            <div class="c-toolbar">
+                <div class="c-toolbar__left">
+                    <h2 class="c-panel__title">Single upload</h2>
+                </div>
+            </div>
+        </div>
+        <div class="c-panel__body">
+            <div class="c-content">
+                <form method="post" action='@Url.Action("Submit")'>
+                    <div class="o-flex">
+                        <div class="demo-section" style="width: 50%; padding: 20px;">
+                            @(Html.Kendo().Upload()
+                                .Name("files")
+                                .HtmlAttributes(new { aria_label = "files" })
+                                )
+                            <p style="padding-top: 1em; text-align: right">
+                                <button type="submit" class="k-button k-button-solid-primary k-button-solid k-button-md k-rounded-md">Submit</button>
+                            </p>
+                        </div>
+                        <div class="demo-section" style="width: 50%; padding: 20px;">
+
+                            @(Html.Kendo().Upload()
+                                .Name("files2")
+                                .Async(a =>
+                                a.SaveUrl("./UploadPOC?handler=Save")
+                                .RemoveUrl("./UploadPOC?handler=Remove")
+                                )
+                                .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
+                                .Validation(validation => validation.MaxFileSize(2000000))
+                                )
+                        </div>
+
+                        <div>
+
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+</div>
