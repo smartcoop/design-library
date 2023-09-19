@@ -1,13 +1,13 @@
-# Webpack documentation
-
-## Cadre
+![N|Solid](https://webpack.github.io/assets/logo.png)
 
 ## Description
 
-## Instalation
+**Webpack** est un **module bundler** open-source pour JavaScript. Son objectif principal est de **regrouper les fichiers JavaScript** pour une utilisation dans un navigateur, mais il est également capable de **transformer, regrouper ou empaqueter** presque n'importe quelle ressource ou actif¹²³. Vous pouvez l'utiliser pour compiler des modules JavaScript et générer des actifs statiques représentant ces modules⁴.
 ___
-### Prérequis :
-Prérequis : Il sera nécessaire d’installer Node et NPM préalablement avant de lancer l’installation de WebPack.
+## Instalation
+
+### Prérequis:
+Prérequis : Il sera nécessaire d’installer Node préalablement avant de lancer l’installation de WebPack.
 - https://nodejs.org/en
 
 NODE.JS est nécessaire car il nous donne accès à NPM son gestionnaire de paquets. C’est NPM qui va nous installer WEBPACK et ses dépendences.
@@ -22,7 +22,7 @@ npm init -y
 
 Ceci va créer dans le répertoire un fichier **package.json**. Si le fichier n’est pas créé immédiatement il suffira de le créer manuellement.
 
-Le fichier **package.json** est un fichier qui sert à stocker une représentation exacte des dépendances installées dans le projet à un moment donné. Il permet de garantir que les installations suivantes produiront la même arborescence de dépendances, quelles que soient les mises à jour des packages intermédiaires. Il est donc utile pour assurer la stabilité et la reproductibilité du projet, ainsi que pour optimiser le temps d’installation des dépendances1.
+Le fichier **package.json** est un fichier qui sert à stocker une représentation exacte des dépendances installées dans le projet à un moment donné. Il permet de garantir que les installations suivantes produiront la même arborescence de dépendances, quelles que soient les mises à jour des packages intermédiaires. Il est donc utile pour assurer la stabilité et la reproductibilité du projet, ainsi que pour optimiser le temps d’installation des dépendances.
 
 Le fichier **package-lock.json** est généré automatiquement par npm lorsqu’on modifie le fichier package.json ou le dossier node_modules. Il n’est pas nécessaire de le modifier manuellement.
 
@@ -41,6 +41,7 @@ ___
 
 ### Création des fichiers.
 
+The answer is 42
 Ensuite, vous allez devoir créez 2 dossiers (public contenant 2 fichiers : index.html, bundle.js et src contenant 1 fichier index.js) et 1 fichier webpack.config.js à la racine.
 
 Si vous avez un terminal de commande linux comme CMDER exécutez la commande suivante :
@@ -87,7 +88,7 @@ Une fois ceci fait coller les textes suivants dans les fichiers créés :
   }
 }
 ```
-*Le fichier package.json sert à définir les informations et les dépendances d’un projet qui utilise webpack.
+*Le fichier **package.json** sert à définir les informations et les dépendances d’un projet qui utilise webpack.
 Il contient des champs comme le nom, la version, la description, les scripts, les auteurs, les licences, etc.*
 
 *Il permet aussi de spécifier les modules dont le projet a besoin pour fonctionner, nous pouvons voir la dépendence webpack,webpack-cli,webpack-dev-server que nous avons installé précédemment.*
@@ -428,11 +429,4 @@ Nous pouvons tester le résultat en tapant la commande habituelle :
 ```sh
 npm run dev
 ```
-
-
-
-
-
-## commandes utiles
-
-```- npm -v``` : Donne la version actuelle de npm.
+---
