@@ -12,6 +12,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pages\Templates\kendo-ui-license.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Pages\Templates\kendo-ui-license.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Telerik.UI.for.AspNet.Core.Trial" Version="2023.2.606" />
   </ItemGroup>
 

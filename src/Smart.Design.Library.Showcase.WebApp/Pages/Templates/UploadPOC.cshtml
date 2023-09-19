@@ -13,40 +13,32 @@
         <div class="c-panel__header">
             <div class="c-toolbar">
                 <div class="c-toolbar__left">
-                    <h2 class="c-panel__title">Single upload</h2>
+                    <h1 class="c-panel__title">Uploads</h1>
                 </div>
             </div>
         </div>
         <div class="c-panel__body">
             <div class="c-content">
-                <form method="post" action='@Url.Action("Submit")'>
+                <form method="post">
                     <div class="o-flex">
-                        <div class="demo-section" style="width: 50%; padding: 20px;">
-                            @(Html.Kendo().Upload()
-                                .Name("files")
-                                .HtmlAttributes(new { aria_label = "files" })
-                                )
-                            <p style="padding-top: 1em; text-align: right">
-                                <button type="submit" class="k-button k-button-solid-primary k-button-solid k-button-md k-rounded-md">Submit</button>
-                            </p>
-                        </div>
-                        <div class="demo-section" style="width: 50%; padding: 20px;">
-
-                            @(Html.Kendo().Upload()
-                                .Name("files2")
-                                .Async(a =>
-                                a.SaveUrl("./UploadPOC?handler=Save")
-                                .RemoveUrl("./UploadPOC?handler=Remove")
-                                )
-                                .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
-                                .Validation(validation => validation.MaxFileSize(2000000))
-                                )
-                        </div>
-
-                        <div>
-
-
-
+                        @for (int i = 0; i < 6; i++)
+                        {
+                            <h2 class="c-panel__title">Upload @i</h2>
+                            <div class="demo-section" style="width: 50%; flex: 1 50%; padding: 20px;">
+                                @(Html.Kendo()
+                                    .Upload()
+                                    .Name("files" + i)
+                                    .HtmlAttributes(new { aria_label = "files" + i })
+                                    .Multiple(i % 2 == 0)
+                                    )
+                            </div>
+                        }
+                        <br />
+                        <br />
+                        <p style="padding-top: 1em; text-align: right">
+                            <button type="submit" class="k-button k-button-solid-primary k-button-solid k-button-md k-rounded-md">Submit</button>
+                        </p>
+                    </div>
                 </form>
             </div>
         </div>
