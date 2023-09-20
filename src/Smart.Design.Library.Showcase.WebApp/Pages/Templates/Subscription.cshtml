@@ -67,12 +67,13 @@
                         </div>
                     </div>
 
-                    <smart-formgroup label="Genre">
+                    <smart-formgroup label="Genre" required="true">
                         <smart-select
                             id="gender"
                             name="gender"
                             items="@items"
-                            asp-for="@Model.Subscription.Gender">
+                            asp-for="@Model.Subscription.Gender"
+                            required="true">
                         </smart-select>
                     </smart-formgroup>
 
@@ -82,11 +83,12 @@
                             name="language"
                             defautValueLabel="Sélectionner une langue"
                             items="@languagesAndLink"
-                            asp-for="@Model.Subscription.Language">
+                            asp-for="@Model.Subscription.Language"
+                            required="true">
                         </smart-select>
                     </smart-formgroup>
 
-                    <smart-formgroup label="Adresse email">
+                    <smart-formgroup label="Adresse email" required="true">
                         <smart-input-email id="email" name="email" placeholder="youremail@email.com" asp-for="@Model.Subscription.Email"></smart-input-email>
                     </smart-formgroup>
 
@@ -112,7 +114,8 @@
                             name="civilStatus"
                             defautValueLabel="Sélectionner un état civil"
                             items="@items"
-                            asp-for="@Model.Subscription.CivilStatus">
+                            asp-for="@Model.Subscription.CivilStatus"
+                            required="true">
                         </smart-select>
                     </smart-formgroup>
 

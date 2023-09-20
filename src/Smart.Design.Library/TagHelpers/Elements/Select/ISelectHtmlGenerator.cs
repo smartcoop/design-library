@@ -11,6 +11,7 @@ public interface ISelectHtmlGenerator
         string? id,
         string? name,
         string? defaultValueLabel,
+        bool? required,
         Dictionary<string, string>? items,
         ModelExpression? @for);
 }

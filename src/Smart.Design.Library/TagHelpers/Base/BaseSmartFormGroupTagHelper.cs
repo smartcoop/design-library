@@ -18,6 +18,7 @@ public abstract class BaseSmartFormGroupTagHelper : BaseTagHelper
     private const string HelperTextAttributeName = "helper-text";
     private const string LabelAttributeName = "label";
     private const string ValueAttributeName = "value";
+    private const string RequiredAttributeName = "required";
 
     private readonly IValidationMessageHtmlGenerator _validationMessageHtmlGenerator;
 
@@ -50,6 +51,12 @@ public abstract class BaseSmartFormGroupTagHelper : BaseTagHelper
     /// </summary>
     [HtmlAttributeName(ForAttributeName)]
     public ModelExpression? For { get; set; }
+
+    /// <summary>
+    /// Form group's required attribute.
+    /// </summary>
+    [HtmlAttributeName(RequiredAttributeName)]
+    public bool? Required { get; set; }
 
     /// <summary>
     /// Generates the HTML to be put inside the from group controls &lt;div&gt;.
@@ -91,7 +98,7 @@ public abstract class BaseSmartFormGroupTagHelper : BaseTagHelper
     {
         var formGroupControl = GenerateFormGroupControl();
 
-        var formGroup = FormGroupHtmlGenerator.GenerateFormGroup(Id, Name, Label, HelperText, formGroupControl);
+        var formGroup = FormGroupHtmlGenerator.GenerateFormGroup(Id, Name, Label, HelperText, Required, formGroupControl);
 
         // Retrieves from ModelState potential errors and append them to the form group if there are any.
         var validationMessages = _validationMessageHtmlGenerator.GenerateValidationMessage(ViewContext!, For);
