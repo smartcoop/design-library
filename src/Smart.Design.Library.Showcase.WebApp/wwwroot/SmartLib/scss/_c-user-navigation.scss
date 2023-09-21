@@ -1,0 +1,43 @@
+/* ==========================================================================
+  c-user-navigation
+   ========================================================================== */
+
+.c-user-navigation {
+  display: flex;
+  align-items: center;
+  padding: .4rem 2.4rem .4rem .4rem;
+  color: $color-semantic-body-text;
+  position: relative;
+  appearance: none;
+  background: none;
+  border: none;
+  margin: 0;
+  margin-right: -.6rem;
+  border-radius: 30px;
+  cursor: pointer;
+
+  .c-avatar {
+    margin-right: 0.4rem;
+  }
+
+  &:after {
+    pointer-events: none;
+    content: ' ';
+    position: absolute;
+    right: 1rem;
+    top: 1.8rem;
+    width: 0;
+    height: 0;
+    border-width: 1rem;
+    border: 0.5rem solid $color-gray-500;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: $color-gray-25;
+  }
+}
