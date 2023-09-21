@@ -9,4 +9,5 @@ import "./modules/menu";
 import "./modules/navbar-components";
 import "./modules/popper-popover";
 import "./modules/popper-tooltip";
+import "./modules/table-of-content";
 import "./modules/tabs";
