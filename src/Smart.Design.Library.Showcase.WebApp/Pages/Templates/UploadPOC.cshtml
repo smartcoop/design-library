@@ -23,6 +23,12 @@
                             </div>
                         </span>
                     </button>
+                    @(Html.Kendo()
+                        .Button()
+                        .Name("Back")
+                        .Icon("arrow-left")
+                        .Content("Retour")
+                        )
                 </div>
             </div>
         </div>
@@ -41,14 +47,52 @@
                         </p>
                     </div>
                 </div>
-                <form method="post">
-                    <div class="o-flex">
-                        <div >
-                            <h4 class="ch-4">Nom du document</h4>
-                            <p>Cliquez pour uploder</p>
+                <form>
+                    <div class="o-flex-bp3 o-flex--wrap">
+                        <div class="dropdown_zone dropdown_zone_1">
+                            <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document*</h4>
+                            <p class="u-m-0 u-text-center"><small>Cliquez pour uploader.</small> <small>réf: <b>1397813.PRS.01</b></small></p>
                             @(Html.Kendo().Upload()
                                 .Name("files1")
-                                .DropZone(".dropZoneElemen1t")
+                                .DropZone(".dropdown_zone_1")
+                                .Async(a => a
+                                .Save("Chunk_Upload_Save", "Upload")
+                                .Remove("Chunk_Upload_Remove", "Upload")
+                                .AutoUpload(true)
+                                .ChunkSize(11000)
+                                )
+                                .Validation(validation =>
+                                    {
+                                        validation.MaxFileSize(20000000);
+                                    })
+                             )
+                        </div>
+                        <div class="dropdown_zone dropdown_zone_2">
+                            <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
+                            <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
+
+                            @(Html.Kendo().Upload()
+                                .Name("files2")
+                                .DropZone(".dropdown_zone_2")
+                                .Async(a => a
+                                .Save("Chunk_Upload_Save", "Upload")
+                                .Remove("Chunk_Upload_Remove", "Upload")
+                                .AutoUpload(true)
+                                .ChunkSize(11000)
+                                )
+                                .Validation(validation =>
+                                    {
+                                        validation.MaxFileSize(20000000);
+                                    })
+                             )
+                        </div>
+                        <div class="dropdown_zone dropdown_zone_3">
+                            <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document*</h4>
+                            <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
+
+                            @(Html.Kendo().Upload()
+                                .Name("files3")
+                                .DropZone(".dropdown_zone_3")
                                 .Async(a => a
                                 .Save("Chunk_Upload_Save", "Upload")
                                 .Remove("Chunk_Upload_Remove", "Upload")
@@ -61,29 +105,154 @@
                                 })
                                 )
                         </div>
-                    </div>
-                     
-                        <div class="c-panel--yellow u-padding-l c-panel--border-r-sm" id="acceptation">
-                            <div class="o-flex-bp1-m o-block-bp2 o-flex-bp3 u-flex--twins o-flex--vertical-center">
-                                <div class="u-spacer-right-s">
-                                    <p>Uploadez les documents obligatoires* et signés* pour pouvoir valider</p>
-                                </div>
-                                <div class="u-t-align-right">
-                                    <button type="submit" class="c-button c-button--warning" href="http://localhost:3000/examples/template-examples/terms-and-conditions--after-acceptation.html" disabled="">
-                                        <span class="c-button__content">
-                                            <div class="o-svg-icon o-svg-icon-check  ">
-                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <path d="M20.6644 5.25259C21.0772 5.61951 21.1143 6.25158 20.7474 6.66436L10.0808 18.6644C9.89099 18.8779 9.61898 19 9.33334 19C9.04771 19 8.7757 18.8779 8.58593 18.6644L3.2526 12.6644C2.88568 12.2516 2.92286 11.6195 3.33565 11.2526C3.74843 10.8857 4.3805 10.9229 4.74742 11.3356L9.33334 16.4948L19.2526 5.33564C19.6195 4.92285 20.2516 4.88567 20.6644 5.25259Z" fill="#595959"></path>
-                                                </svg>
-                                            </div>
-                                            <span class="c-button__label">Confirmer</span>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="dropdown_zone dropdown_zone_4">
+                            <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
+                            <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
+
+                            @(Html.Kendo().Upload()
+                                .Name("files4")
+                                .DropZone(".dropdown_zone_4")
+                                .Async(a => a
+                                .Save("Chunk_Upload_Save", "Upload")
+                                .Remove("Chunk_Upload_Remove", "Upload")
+                                .AutoUpload(true)
+                                .ChunkSize(11000)
+                                )
+                                .Validation(validation =>
+                                {
+                                    validation.MaxFileSize(20000000);
+                                })
+                                )
                         </div>
+                        <div class="dropdown_zone dropdown_zone_5">
+                            <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
+                            <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
+
+                            @(Html.Kendo().Upload()
+                                .Name("files5")
+                                .DropZone(".dropdown_zone_5")
+                                .Async(a => a
+                                .Save("Chunk_Upload_Save", "Upload")
+                                .Remove("Chunk_Upload_Remove", "Upload")
+                                .AutoUpload(true)
+                                .ChunkSize(11000)
+                                )
+                                .Validation(validation =>
+                                {
+                                    validation.MaxFileSize(20000000);
+                                })
+                                )
+                        </div>
+                        <div class="dropdown_zone dropdown_zone_5">
+                            <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
+                            <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
+
+                            @(Html.Kendo().Upload()
+                                .Name("files6")
+                                .DropZone(".dropdown_zone_6")
+                                .Async(a => a
+                                .Save("Chunk_Upload_Save", "Upload")
+                                .Remove("Chunk_Upload_Remove", "Upload")
+                                .AutoUpload(true)
+                                .ChunkSize(11000)
+                                )
+                                .Validation(validation =>
+                                {
+                                    validation.MaxFileSize(20000000);
+                                })
+                                )
+                        </div>
+                   
+                    </div>
+
+                    <p><small>*documents obligatoire. Tous les documents uploadés doivent être signés.</small></p>
+
+                    <div class="c-panel--yellow u-padding-l c-panel--border-r-sm u-spacer-top-l" id="acceptation">
+                                <div class="o-flex-bp1-m o-block-bp2 o-flex-bp3 u-flex--twins o-flex--vertical-center">
+                                    <div class="u-spacer-right-s">
+                                        <p>Uploadez les documents obligatoires* et signés* pour pouvoir valider</p>
+                                    </div>
+                                    <div class="u-t-align-right">
+                                        <button type="submit" class="c-button c-button--warning" href="http://localhost:3000/examples/template-examples/terms-and-conditions--after-acceptation.html" disabled="">
+                                            <span class="c-button__content">
+                                                <div class="o-svg-icon o-svg-icon-check  ">
+                                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M20.6644 5.25259C21.0772 5.61951 21.1143 6.25158 20.7474 6.66436L10.0808 18.6644C9.89099 18.8779 9.61898 19 9.33334 19C9.04771 19 8.7757 18.8779 8.58593 18.6644L3.2526 12.6644C2.88568 12.2516 2.92286 11.6195 3.33565 11.2526C3.74843 10.8857 4.3805 10.9229 4.74742 11.3356L9.33334 16.4948L19.2526 5.33564C19.6195 4.92285 20.2516 4.88567 20.6644 5.25259Z" fill="#595959"></path>
+                                                    </svg>
+                                                </div>
+                                                <span class="c-button__label">Confirmer</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                    </div>
 
                 </form>
             </div>
         </div>
     </div>
+
+    <style>
+        .dropdown_zone{
+            border: 1px dashed #B3B3B3;
+            padding: 20px;
+            width: 100%;
+            margin-top: 12px;
+            border-top-right-radius: 0;
+            border-bottom-rigth-radius: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 4px;
+        }
+
+        @@media screen and (min-width: 900px) {
+            .dropdown_zone {
+                width: 50%;
+                 border-bottom-right-radius: 0;
+                 border-top-right-radius: 0;
+        }
+
+            .dropdown_zone + .dropdown_zone:nth-child(2n+2) {
+                border-left: none;
+            }
+
+            .dropdown_zone:nth-child(2n+2) {
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+            }
+        }
+
+        .k-upload .k-dropzone, .k-upload .k-upload-dropzone{
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        .k-upload{
+            border: none;
+        }
+
+        .k-upload .k-upload-files, .k-upload .k-file{
+            border: none;
+        }
+
+        .k-button.k-button-solid-base{
+            background-image: none;
+        }
+        .k-button.k-button-md {
+            padding-top: .7rem;
+            padding-bottom: .7rem;
+            padding-right: 1.6rem;
+            padding-left: 1.6rem;
+            height: 38px;
+        }
+        .k-upload-status{
+            margin-left: 1.6rem;
+        }
+        .k-upload .k-upload-files .k-file{
+            border: none;
+            margin-bottom: .4rem;
+        }
+    </style>
