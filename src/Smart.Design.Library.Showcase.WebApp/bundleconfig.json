@@ -1,0 +1,21 @@
+[
+  {
+    "outputFileName": "wwwroot/SmartLib/js/smart-bundle.js",
+    "inputFiles": [
+      "wwwroot/SmartLib/js/modules/accordion.js",
+      "wwwroot/SmartLib/js/modules/close-alert.js",
+      "wwwroot/SmartLib/js/modules/close-global-banner.js",
+      "wwwroot/SmartLib/js/modules/copy-btn.js",
+      "wwwroot/SmartLib/js/modules/design-system-website-mobile-menu.js",
+      /*"wwwroot/SmartLib/js/modules/dialogs.js",*/
+      "wwwroot/SmartLib/js/modules/input-password.js",
+      /*"wwwroot/SmartLib/js/modules/menu.js",*/
+      "wwwroot/SmartLib/js/modules/navbar-components.js",
+      /*"wwwroot/SmartLib/js/modules/popper-popover.js",*/
+      /* "wwwroot/SmartLib/js/modules/popper-tooltip.js",*/
+      "wwwroot/SmartLib/js/modules/tabs.js",
+      "wwwroot/SmartLib/js/modules/table-of-content.js",
+      "wwwroot/SmartLib/js/modules/util.js"
+    ]
+  }
+]
