@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Design Library - @ViewData["Title"]</title>
-    <link rel="stylesheet" href="~/css/main.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SmartLib/css/smart-main.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ElementsForShowcase/prototype.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ElementsForShowcase/styleguide-customizations.css" asp-append-version="true" />
 </head>
@@ -77,12 +77,10 @@
         </div>
     </footer>
 
-    @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
-    @*<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>*@
-    <script src="~/js/bundle-client-min.js" asp-append-version="true"></script>
+    <script type="module" src="~/SmartLib/js/bundle-client.js" asp-append-version="true"></script>
+    <script type="module" src="~/SmartLib/js/smart-modules/table-of-content.js" asp-append-version="true"></script>
+    @*<script type="module" src="~/SmartLib/js/smart-bundle.js" asp-append-version="true"></script>*@
     <script src="~/ElementsForShowcase/bundle-prototype.js" asp-append-version="true"></script>
-    @*<script type="text/javascript" src="~/_content/Smart.Design.Library/js/bundle-client.js"></script>*@
-    @*<script type="text/javascript" src="~/_content/Smart.Design.Library/js/bundle-prototype.js"></script>*@
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
