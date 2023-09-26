@@ -4,188 +4,209 @@
  * Set of generic helping classes
  */
 
-.u-t-align-right{
-  text-align: right;
+.u-t-align-right {
+    text-align: right;
 }
 
 .u-maximize-height {
-  height: 100% !important;
+    height: 100% !important;
 }
 
 .u-maximize-width {
-  width: 100% !important;
+    width: 100% !important;
 }
 
 .u-float-right {
-  float: right !important;
+    float: right !important;
 }
 
 .u-center-m {
-  margin: 0 auto !important;
+    margin: 0 auto !important;
 }
 
 .u-nowrap {
-  white-space: nowrap !important;
+    white-space: nowrap !important;
 }
 
 .u-position-relative {
-  position: relative !important;
+    position: relative !important;
 }
 
 @media (min-width: $g-bp2) {
-  .u-position-fixed {
-    position: fixed !important;
-    z-index: 60;
-  }
-  header.u-position-fixed {
-    z-index: 65;
-  }
+    .u-position-fixed {
+        position: fixed !important;
+        z-index: 60;
+    }
+
+    header.u-position-fixed {
+        z-index: 65;
+    }
 }
 
 .u-position-absolute {
-  position: absolute !important;
+    position: absolute !important;
 }
 
 .u-hidden {
-  display: none !important;
-}
-
-.u-hidden--mobile{
-  display: none !important;
-  @media (min-width: $g-bp2) {
-    display: block !important;
-  }
-}
-
-.u-hidden--dsktp{
-  display: block !important;
-  @media (min-width: $g-bp2) {
     display: none !important;
-  }
 }
 
-.u-inline-block{
-  display: inline-block !important;
+.u-hidden--mobile {
+    display: none !important;
+
+    @media (min-width: $g-bp2) {
+        display: block !important;
+    }
+}
+
+.u-hidden--dsktp {
+    display: block !important;
+
+    @media (min-width: $g-bp2) {
+        display: none !important;
+    }
+}
+
+.u-inline-block {
+    display: inline-block !important;
 }
 
 .u-opacity-50 {
-  opacity: 0.5;
+    opacity: 0.5;
 }
 
 .u-scroll {
-  overflow: auto !important;
-  -webkit-overflow-scrolling: touch;
+    overflow: auto !important;
+    -webkit-overflow-scrolling: touch;
 }
 
 .u-scroll-vertical {
-  overflow-y: auto !important;
-  -webkit-overflow-scrolling: touch;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
 }
 
 .u-overflow-hidden,
 .u-kill-scroll {
-  overflow: hidden !important;
+    overflow: hidden !important;
 }
 
 .u-m0 {
-  margin: 0 !important;
+    margin: 0 !important;
 }
 
 .u-sr-accessible {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
 }
 
 .u-sr-accessible-table-cell {
-  display: flex; // Take out of regular table context
-  position: absolute;
-  left: -10000px;
-  top: -10000px;
-  width: 0;
-  height: 1px;
-  overflow: hidden;
-  padding: 0 !important;
-  background: #FFF;
-  margin: 0 !important;
+    display: flex; // Take out of regular table context
+    position: absolute;
+    left: -10000px;
+    top: -10000px;
+    width: 0;
+    height: 1px;
+    overflow: hidden;
+    padding: 0 !important;
+    background: #FFF;
+    margin: 0 !important;
 }
 
 .u-limit-width {
-  max-width: 60rem;
+    max-width: 60rem;
 }
 
 .u-text-editable {
-  border-bottom: 1px dotted #666;
-  cursor: pointer;
+    border-bottom: 1px dotted #666;
+    cursor: pointer;
 }
 
 .u-remove-link-styling a,
 .u-remove-link-styling {
-  color: $color-semantic-body-text;
+    color: $color-semantic-body-text;
 }
 
 .u-border-top {
-  border-top: 1px solid $color-semantic-border;
+    border-top: 1px solid $color-semantic-border;
 }
 
 .u-border-bottom {
-  border-bottom: 1px solid $color-semantic-border;
+    border-bottom: 1px solid $color-semantic-border;
 }
 
 .u-border-left {
-  border-left: 1px solid $color-semantic-border;
+    border-left: 1px solid $color-semantic-border;
 }
 
 .u-border-right {
-  border-right: 1px solid $color-semantic-border;
+    border-right: 1px solid $color-semantic-border;
 }
 
 // Sticky footer with flexbox
 // https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-3
 
 .u-body-flex {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
-.u-flex{
-  display: flex;
-  &--twins{
-    justify-content: space-between;
-  }
-  &--bp2-col{
-    flex-direction: column;
-    @media (min-width: $g-bp2) {
-      flex-direction: row;
+.u-flex {
+    display: flex;
+
+    &--twins {
+        justify-content: space-between;
     }
-  }
-  &--bp2-column-reverse{ // same in o-grid. To factorize
-    @media (max-width: $g-bp2) {
-      flex-direction: column-reverse;
+
+    &--bp2-col {
+        flex-direction: column;
+
+        @media (min-width: $g-bp2) {
+            flex-direction: row;
+        }
     }
-  }
+
+    &--bp2-column-reverse { // same in o-grid. To factorize
+        @media (max-width: $g-bp2) {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 .u-content-flex {
-  flex: 1 0 auto;
+    flex: 1 0 auto;
 }
 
 .u-footer-flex {
-  flex-shrink: 0;
+    flex-shrink: 0;
 }
 
 .u-link-muted {
-  color: inherit;
+    color: inherit;
 }
 
-.dev-env{
-  .c-app-layout-inner__sidebar{
-    top: 10.6rem;
-  }
-  .c-app-layout-inner__content{
-    margin-top: 10.2rem;
-  }
+.dev-env {
+    .c-app-layout-inner__sidebar {
+        top: 10.6rem;
+    }
+
+    .c-app-layout-inner__content {
+        margin-top: 10.2rem;
+    }
+}
+
+// Generic backgrund
+.bckg-gray {
+    background-color: $color-gray-25 !important;
+}
+
+.bckg-gray-50 {
+    background-color: $color-gray-50 !important;
+}
+
+.bckg-yellow {
+    background-color: $color-yellow-150 !important;
 }
