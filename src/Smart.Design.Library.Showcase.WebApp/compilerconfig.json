@@ -2,5 +2,9 @@
   {
     "outputFile": "wwwroot/SmartLib/css/smart-main.css",
     "inputFile": "wwwroot/SmartLib/scss/main.scss"
+  },
+  {
+    "outputFile": "wwwroot/SmartLib/js/smart-modules/table-of-content.es5.js",
+    "inputFile": "wwwroot/SmartLib/js/smart-modules/table-of-content.js"
   }
 ]
