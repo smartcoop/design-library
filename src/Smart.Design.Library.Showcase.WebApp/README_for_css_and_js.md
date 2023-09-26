@@ -1,4 +1,4 @@
-﻿# Instalation des extentions.
+﻿# Installation des extentions.
 
 ![N|Solid](https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/bundlerminifier/2.8.396/1535134367605/Microsoft.VisualStudio.Services.Icons.Default) **Bundler & Minifier**
 
@@ -42,7 +42,7 @@ https://marketplace.visualstudio.com/items?itemName=Failwyn.WebCompiler64
 
 # Utilisation des extensions dans Showcase
 
-Les fichiers de configuration (Smart.Design.Library.Showcase/bundleconfig.json et Smart.Design.Library.Showcase/compilerconfig.json) sont déjà présents dans la solution Smart.Design.Library.
+Les fichiers de configuration (Smart.Design.Library.Showcase/bundleconfig.json et Smart.Design.Library.Showcase/compilerconfig.json) sont déjà présents dans la solution Smart.Design.Library.Showcase.
 
 ### Génération du CSS final ###  
  Faire un click droit sur  
