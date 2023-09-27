@@ -47,7 +47,7 @@ Les fichiers de configuration (Smart.Design.Library.Showcase/bundleconfig.json e
 ### Génération du CSS final ###  
  Faire un click droit sur  
  **Smart.Design.Library.Showcase/SmartLib/scss/main.scss**  
- et choisir **Web Compiler / Compile File** pour générer le CSS final  
+ et choisir **Web Compiler / Re-compile file** pour regénérer le CSS final  
  Smart.Design.Library.Showcase/SmartLib/css/smart-main.css et sa minification **Smart.Design.Library.Showcase/SmartLib/css/smart-main.css**.  
  Cela comprendra les derniers ajouts/modifications css.
 

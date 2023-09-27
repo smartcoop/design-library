@@ -2,9 +2,5 @@
   {
     "outputFile": "wwwroot/SmartLib/css/smart-main.css",
     "inputFile": "wwwroot/SmartLib/scss/main.scss"
-  },
-  {
-    "outputFile": "wwwroot/ElementsForShowcase/styleguide-customizations.css",
-    "inputFile": "wwwroot/SmartLib/scss/styleguide-customizations.scss"
   }
 ]
