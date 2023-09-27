@@ -1,9 +1,9 @@
 # Création d'un NUGET package design-library.
 
-## Création du fichier main.css. 
+## Création du fichier main.css.
 
 Le fichier **main.css** est un bundle contenant l’entièreté du css minifié.
-Celui-ci est généré à partir du fichier : 
+Celui-ci est généré à partir du fichier :
 *\Smart.Design.Library.Showcase.WebApp\wwwroot\SmartLib\scss\main.scss*
 
 Celui-ci peut être compiler avec Web compiler 2022+. Le fichier se retrouvera dans le répertoire :
@@ -18,7 +18,7 @@ ___
 
 ## Création du NUGET package.
 
-Dans le projet DL il faut faire un clic droit sur le projet aller à propriétés=>packages. Dans la rubrique package version il faut entrer le nouveau numéro de version.
+Dans le projet SmartDesignLibrary il faut faire un clic droit sur le projet aller à propriétés=>packages. Dans la rubrique package version il faut entrer le nouveau numéro de version.
 
 La version doit être aussi mise à jour dans le fichier Smart.Design.library.csproj sinon une erreur surviendra durant la compilation.
 Au-dessus de l’onglet de la gestion de package il y’a une checkbox « generate nuget package on build ». Elle doit être cochée.
