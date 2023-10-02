@@ -1,0 +1,21 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Templates.TelerikDemoModel
+@using Kendo.Mvc.UI
+@{
+    ViewData["Title"] = "UploadIndex";
+}
+
+@inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+@Html.AntiForgeryToken()
+
+<h1>UploadIndex</h1>
+
+@(Html.Kendo().Upload()
+    .Name("files")
+    .Async(a =>
+        a.SaveUrl("./TelerikDemo?handler=Save")
+        .RemoveUrl("./TelerikDemo?handler=Remove")
+    )
+    .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
+    .Validation(validation => validation.MaxFileSize(2000000))
+)
