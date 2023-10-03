@@ -44,23 +44,38 @@ https://marketplace.visualstudio.com/items?itemName=Failwyn.WebCompiler64
 
 Les fichiers de configuration (Smart.Design.Library.Showcase/bundleconfig.json et Smart.Design.Library.Showcase/compilerconfig.json) sont déjà présents dans la solution Smart.Design.Library.Showcase.
 
-### Génération du CSS final ###  
- Faire un click droit sur  
- **Smart.Design.Library.Showcase/SmartLib/scss/main.scss**  
- et choisir **Web Compiler / Re-compile file** pour regénérer le CSS final  
- Smart.Design.Library.Showcase/SmartLib/css/smart-main.css et sa minification **Smart.Design.Library.Showcase/SmartLib/css/smart-main.css**.  
+### Génération du CSS final ###
+ Faire un click droit sur
+ **Smart.Design.Library.Showcase/SmartLib/scss/main.scss**
+ et choisir **Web Compiler / Re-compile file** pour regénérer le CSS final
+ Smart.Design.Library.Showcase/SmartLib/css/smart-main.css et sa minification **Smart.Design.Library.Showcase/SmartLib/css/smart-main.css**.
  Cela comprendra les derniers ajouts/modifications css.
 
- Il suffira de copier le contenu de ce fichier minifié (Smart.Design.Library.Showcase/SmartLib/css/smart-main.min.css) dans :  
+ Il suffira de copier le contenu de ce fichier minifié (Smart.Design.Library.Showcase/SmartLib/css/smart-main.min.css) dans :
 **Smart.Design.Library/css/smart-main.min.css**
 
 
-### Génération du JS final ###  
- Faire un click droit sur l'ensemble des fichiers du dossier  
- **Smart.Design.Library.Showcase/SmartLib/js/smart-modules**  
- et choisir **Bundler & Minifier / Bundle and Minify** Files pour générer le js final  
- Smart.Design.Library.Showcase/SmartLib/js/smart-modules/smart-bundle.js et sa minification **Smart.Design.Library.Showcase/SmartLib/js/smart-bundle.min.js**.  
+### Génération du JS final ###
+ Faire un click droit sur l'ensemble des fichiers du dossier
+ **Smart.Design.Library.Showcase/SmartLib/js/smart-modules**
+ et choisir **Bundler & Minifier / Bundle and Minify** Files pour générer le js final
+ Smart.Design.Library.Showcase/SmartLib/js/smart-modules/smart-bundle.js et sa minification **Smart.Design.Library.Showcase/SmartLib/js/smart-bundle.min.js**.
  Cela comprendra les derniers ajouts/modifications js.
 
- Il suffira de copier le contenu de ce fichier minifié (Smart.Design.Library.Showcase/SmartLib/js/smart-bundle.min.js) dans :  
+ Il suffira de copier le contenu de ce fichier minifié (Smart.Design.Library.Showcase/SmartLib/js/smart-bundle.min.js) dans :
 **Smart.Design.Library/js/smart-main.min.css**
+
+___
+
+![N|Solid](https://ms-vsliveshare.gallerycdn.vsassets.io/extensions/ms-vsliveshare/vsls-vs-2022/1.0.5883.0/1692650871758/Microsoft.VisualStudio.Services.Icons.Default) **Live share 2022**
+
+Permet de visionner en temp réel les modifications faites les fichiers html et css directement dans le navigateur.
+
+**NB : Cette extension est installée de base avec visual-studio.**
+
+### liens utiles:
+https://marketplace.visualstudio.com/items?itemName=MS-vsliveshare.vsls-vs-2022
+
+Il suffit de modifier le html ou le css de votre projet et d’attendre. La page du navigateur va se mettre à jour tout seule.
+
+___
