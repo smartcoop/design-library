@@ -25,12 +25,6 @@
                         </div>
                     </span>
                 </button>
-                @*@(Html.Kendo()
-                .Button()
-                .Name("Back")
-                .Icon("arrow-left")
-                .Content("Retour")
-                )*@
             </div>
         </div>
     </div>
@@ -58,7 +52,7 @@
                             .Upload()
                             .Name("files1")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save")
+                            a.SaveUrl("./TelerikDemo?handler=Save1")
                             .RemoveUrl("./TelerikDemo?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
@@ -71,11 +65,11 @@
                             .Upload()
                             .Name("files2")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save")
+                            a.SaveUrl("./TelerikDemo?handler=Save2")
                             .RemoveUrl("./TelerikDemo?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
-                            .Validation(validation => validation.MaxFileSize(2000)))
+                            .Validation(validation => validation.MaxFileSize(2000000)))
                     </div>
                     <div class="dropdown_zone dropdown_zone_3">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document*</h4>
@@ -84,7 +78,7 @@
                             .Upload()
                             .Name("files3")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save")
+                            a.SaveUrl("./TelerikDemo?handler=Save3")
                             .RemoveUrl("./TelerikDemo?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
@@ -97,7 +91,7 @@
                             .Upload()
                             .Name("files4")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save")
+                            a.SaveUrl("./TelerikDemo?handler=Save4")
                             .RemoveUrl("./TelerikDemo?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
@@ -110,7 +104,7 @@
                             .Upload()
                             .Name("files5")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save")
+                            a.SaveUrl("./TelerikDemo?handler=Save5")
                             .RemoveUrl("./TelerikDemo?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
@@ -123,7 +117,7 @@
                             .Upload()
                             .Name("files6")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save")
+                            a.SaveUrl("./TelerikDemo?handler=Save6")
                             .RemoveUrl("./TelerikDemo?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
