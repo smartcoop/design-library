@@ -44,6 +44,8 @@ public interface IInputHtmlGenerator
         string? name,
         double? value,
         string? placeholder,
+        double? min,
+        double? Max,
         ModelExpression? @for);
 
     /// <summary>

@@ -17,6 +17,8 @@ public class InputNumberTagHelper : BaseTagHelper
     private const string AspForAttributeName = "asp-for";
     private const string ValueAttributeName = "value";
     private const string PlaceholderAttributeName = "placeholder";
+    private const string MinAttributeName = "min";
+    private const string MaxAttributeName = "max";
 
     /// <summary>
     /// Get or sets the <see cref="Microsoft.AspNetCore.Mvc.Rendering.ViewContext"/> of the executing view.
@@ -34,6 +36,12 @@ public class InputNumberTagHelper : BaseTagHelper
     [HtmlAttributeName(PlaceholderAttributeName)]
     public string? Placeholder { get; set; }
 
+    [HtmlAttributeName(MinAttributeName)]
+    public double? Min { get; set; }
+
+    [HtmlAttributeName(MaxAttributeName)]
+    public double? Max { get; set; }
+
     public InputNumberTagHelper(IInputHtmlGenerator smartHtmlGenerator)
     {
         _smartHtmlGenerator = smartHtmlGenerator;
@@ -43,7 +51,7 @@ public class InputNumberTagHelper : BaseTagHelper
     {
         base.Process(context, output);
 
-        var inputNumber = _smartHtmlGenerator.GenerateInputNumber(ViewContext, Id, Name, Value,Placeholder, For);
+        var inputNumber = _smartHtmlGenerator.GenerateInputNumber(ViewContext, Id, Name, Value,Placeholder, Min, Max, For);
 
         output.TagName = inputNumber.TagName;
         output.TagMode = TagMode.SelfClosing;
