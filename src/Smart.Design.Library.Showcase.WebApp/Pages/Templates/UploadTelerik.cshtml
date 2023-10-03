@@ -1,8 +1,8 @@
 ﻿@page
-@model Smart.Design.Library.Showcase.Pages.Templates.TelerikDemoModel
+@model Smart.Design.Library.Showcase.Pages.Templates.UploadTelerikModel
 @using Kendo.Mvc.UI
 @{
-    ViewData["Title"] = "Telerik Demo";
+    ViewData["Title"] = "Upload POC";
 }
 
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
@@ -52,8 +52,8 @@
                             .Upload()
                             .Name("files1")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save1")
-                            .RemoveUrl("./TelerikDemo?handler=Remove")
+                            a.SaveUrl("./UploadTelerik?handler=Save1")
+                            .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
                             .Validation(validation => validation.MaxFileSize(2000000)))
@@ -65,8 +65,8 @@
                             .Upload()
                             .Name("files2")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save2")
-                            .RemoveUrl("./TelerikDemo?handler=Remove")
+                            a.SaveUrl("./UploadTelerik?handler=Save2")
+                            .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
                             .Validation(validation => validation.MaxFileSize(2000000)))
@@ -78,8 +78,8 @@
                             .Upload()
                             .Name("files3")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save3")
-                            .RemoveUrl("./TelerikDemo?handler=Remove")
+                            a.SaveUrl("./UploadTelerik?handler=Save3")
+                            .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
                             .Validation(validation => validation.MaxFileSize(2000000)))
@@ -91,8 +91,8 @@
                             .Upload()
                             .Name("files4")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save4")
-                            .RemoveUrl("./TelerikDemo?handler=Remove")
+                            a.SaveUrl("./UploadTelerik?handler=Save4")
+                            .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
                             .Validation(validation => validation.MaxFileSize(2000000)))
@@ -104,8 +104,8 @@
                             .Upload()
                             .Name("files5")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save5")
-                            .RemoveUrl("./TelerikDemo?handler=Remove")
+                            a.SaveUrl("./UploadTelerik?handler=Save5")
+                            .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
                             .Validation(validation => validation.MaxFileSize(2000000)))
@@ -117,8 +117,8 @@
                             .Upload()
                             .Name("files6")
                             .Async(a =>
-                            a.SaveUrl("./TelerikDemo?handler=Save6")
-                            .RemoveUrl("./TelerikDemo?handler=Remove")
+                            a.SaveUrl("./UploadTelerik?handler=Save6")
+                            .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
                             .Validation(validation => validation.MaxFileSize(2000000)))

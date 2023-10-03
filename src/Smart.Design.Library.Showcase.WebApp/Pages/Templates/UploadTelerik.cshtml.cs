@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Smart.Design.Library.Showcase.Pages.Templates;
 
-public class TelerikDemoModel : PageModel
+public class UploadTelerikModel : PageModel
 {
     // 6 upload functions are defined here because I coundn't find a way to use the same function for all controls
     // The parameter name needs to be the same as the control or the files will not be passed to the function
