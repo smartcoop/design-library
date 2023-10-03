@@ -88,7 +88,7 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         return tagBuilder;
     }
 
-    public TagBuilder GenerateInputNumber(ViewContext? viewContext, string? id, string? name, double? value, string? placeholder, ModelExpression? @for)
+    public TagBuilder GenerateInputNumber(ViewContext? viewContext, string? id, string? name, double? value, string? placeholder, double? min, double? max, ModelExpression? @for)
     {
         var tagBuilder = new TagBuilder("input");
         var inputName = GetAttributeName(name, @for);
@@ -105,6 +105,16 @@ public class InputHtmlGenerator : BaseHtmlGenerator, IInputHtmlGenerator
         if (!string.IsNullOrWhiteSpace(placeholder))
         {
             tagBuilder.Attributes["placeholder"] = placeholder;
+        }
+
+        if (min is not null)
+        {
+            tagBuilder.Attributes["min"] = Convert.ToString(min, CultureInfo.InvariantCulture);
+        }
+
+        if (max is not null)
+        {
+            tagBuilder.Attributes["max"] = Convert.ToString(max, CultureInfo.InvariantCulture);
         }
 
         // The value of the model has always precedence over the attribute value.
