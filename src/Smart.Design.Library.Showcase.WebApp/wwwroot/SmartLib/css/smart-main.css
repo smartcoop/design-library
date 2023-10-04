@@ -5226,8 +5226,18 @@ c-table-of-content
   background-color: #FFFFFF;
 }
 .c-table thead tr {
-  background-color: #FFFFFF;
+  background-color: transparent;
   color: #000000;
+}
+.c-table thead tr th {
+  background-color: #FFFFFF;
+}
+.c-table thead tr td.disabled, .c-table thead tr th.disabled {
+  border: none;
+  background-color: transparent;
+}
+.c-table thead tr td.disabled + th, .c-table thead tr th.disabled + th {
+  border-top-left-radius: 0.4rem;
 }
 .c-table th, .c-table td {
   text-align: left;
@@ -5235,7 +5245,7 @@ c-table-of-content
 .c-table td,
 .c-table th {
   text-align: left;
-  padding: 0.8rem 0;
+  padding: 0.8rem;
   vertical-align: middle;
   position: relative;
 }
@@ -5243,89 +5253,82 @@ c-table-of-content
   font-weight: 500;
 }
 
-.c-table--styled th {
+.c-table--bordered th {
   font-weight: 500;
   height: 5.6rem;
   border-bottom: 2px solid #F2F2F2;
   vertical-align: middle;
 }
-.c-table--styled tbody th {
+.c-table--bordered tbody th {
   background: none;
   vertical-align: middle;
   height: inherit;
 }
-.c-table--styled tbody tr:last-child th {
+.c-table--bordered tbody tr:last-child th {
   border: none;
 }
-.c-table--styled thead th {
+.c-table--bordered thead th {
   border-right: 2px;
   border-style: solid;
   border-color: #F2F2F2;
 }
-.c-table--styled thead th:first-child {
+.c-table--bordered thead th:first-child {
   border-top-left-radius: 0.4rem;
 }
-.c-table--styled thead th:last-child {
+.c-table--bordered thead th:last-child {
   border-top-right-radius: 0.4rem;
   border-right: 0;
 }
-.c-table--styled tfoot td,
-.c-table--styled tfoot th {
+.c-table--bordered tfoot td,
+.c-table--bordered tfoot th {
   border-top: 2px solid #F2F2F2;
   border-bottom: none;
   font-weight: 500;
 }
-.c-table--styled td {
+.c-table--bordered td {
   border-right: 2px;
   border-style: solid;
   border-color: #F2F2F2;
   border-bottom: 2px solid #F2F2F2;
 }
-.c-table--styled td.border-top-left-r {
+.c-table--bordered td.border-top-left-r {
   border-top-left-radius: 0.4rem;
 }
-.c-table--styled td.border-bottom-left-r {
+.c-table--bordered td.border-bottom-left-r {
   border-bottom-left-radius: 0.4rem;
 }
-.c-table--styled td:last-child {
+.c-table--bordered td:last-child {
   border-right: 0;
 }
-.c-table--styled thead tr {
+.c-table--bordered thead tr {
   background-color: transparent;
 }
-.c-table--styled thead tr th {
+.c-table--bordered thead tr th {
   background-color: white;
 }
-.c-table--styled thead tr td.disabled, .c-table--styled thead tr th.disabled {
-  border: none;
-  background-color: transparent;
-}
-.c-table--styled thead tr td.disabled + th, .c-table--styled thead tr th.disabled + th {
-  border-top-left-radius: 0.4rem;
-}
-.c-table--styled tr:last-child td {
+.c-table--bordered tr:last-child td {
   border-bottom: none;
 }
-.c-table--styled .dotted {
+.c-table--bordered .dotted {
   border-right: none;
   border-right: 2px dashed white;
 }
-.c-table--styled .dotted-bottom {
+.c-table--bordered .dotted-bottom {
   border-bottom: none;
   border-bottom: 2px dashed white;
 }
-.c-table--styled td,
-.c-table--styled th {
+.c-table--bordered td,
+.c-table--bordered th {
   text-align: left;
   padding: 1.2rem 1rem;
   position: relative;
 }
-.c-table--styled td .c-button,
-.c-table--styled th .c-button {
+.c-table--bordered td .c-button,
+.c-table--bordered th .c-button {
   margin-bottom: -0.8rem;
   margin-top: -0.8rem;
 }
-.c-table--styled td input[type=checkbox] {
+.c-table--bordered td input[type=checkbox] {
   margin: 0 auto;
 }
 
