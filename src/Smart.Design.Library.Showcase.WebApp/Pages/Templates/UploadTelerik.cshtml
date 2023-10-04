@@ -3,6 +3,7 @@
 @using Kendo.Mvc.UI
 @{
     ViewData["Title"] = "Upload POC";
+    Layout = "~/Pages/Shared/_LayoutApp.cshtml";
 }
 
 @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
@@ -47,7 +48,7 @@
                 <div class="o-flex-bp3 o-flex--wrap">
                     <div class="dropdown_zone dropdown_zone_1">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document*</h4>
-                        <p class="u-m-0 u-text-center"><small>Cliquez pour uploader.</small> <small>réf: <b>1397813.PRS.01</b></small></p>
+                        <p class="u-m-0 u-text-center"><small>réf: <b>1397813.PRS.01</b></small></p>
                         @(Html.Kendo()
                             .Upload()
                             .Name("files1")
@@ -60,7 +61,6 @@
                     </div>
                     <div class="dropdown_zone dropdown_zone_2">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
-                        <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
                         @(Html.Kendo()
                             .Upload()
                             .Name("files2")
@@ -73,7 +73,6 @@
                     </div>
                     <div class="dropdown_zone dropdown_zone_3">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document*</h4>
-                        <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
                         @(Html.Kendo()
                             .Upload()
                             .Name("files3")
@@ -86,7 +85,6 @@
                     </div>
                     <div class="dropdown_zone dropdown_zone_4">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
-                        <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
                         @(Html.Kendo()
                             .Upload()
                             .Name("files4")
@@ -99,7 +97,6 @@
                     </div>
                     <div class="dropdown_zone dropdown_zone_5">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
-                        <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
                         @(Html.Kendo()
                             .Upload()
                             .Name("files5")
@@ -112,7 +109,6 @@
                     </div>
                     <div class="dropdown_zone dropdown_zone_6">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
-                        <p class="u-m-0 u-text-center"><small>Cliquez pour uploader</small></p>
                         @(Html.Kendo()
                             .Upload()
                             .Name("files6")
