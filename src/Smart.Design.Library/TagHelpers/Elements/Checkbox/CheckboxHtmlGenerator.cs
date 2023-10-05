@@ -21,6 +21,7 @@ public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
 
         // HTML label contains the checkbox.
         var labelDiv = new TagBuilder("label");
+        var labelSpan = new TagBuilder("span");
         var checkbox = new TagBuilder("input")
         {
             TagRenderMode = TagRenderMode.SelfClosing,
@@ -68,12 +69,15 @@ public class CheckboxHtmlGenerator : ICheckboxHtmlGenerator
 
         attributeObjects.ForEach(attribute => checkbox.Attributes[attribute.Name] = attribute.Value.ToString());
 
-        // The <label> element has two children: the checkbox followed by the label.
-        labelDiv.InnerHtml.SetHtmlContent(checkbox);
+
         if (!string.IsNullOrWhiteSpace(label))
         {
-            labelDiv.InnerHtml.AppendHtml(label);
+            labelSpan.InnerHtml.SetHtmlContent(label);
         }
+
+        // The <label> element has two children: the checkbox followed by the label.
+        labelDiv.InnerHtml.SetHtmlContent(checkbox);
+        labelDiv.InnerHtml.AppendHtml(labelSpan);
 
         rootDiv.InnerHtml.SetHtmlContent(labelDiv);
 
