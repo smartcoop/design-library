@@ -53,11 +53,16 @@
                             .Upload()
                             .Name("files1")
                             .Async(a =>
-                            a.SaveUrl("./UploadTelerik?handler=Save1")
-                            .RemoveUrl("./UploadTelerik?handler=Remove")
+                                a.SaveUrl("./UploadTelerik?handler=Save1")
+                                .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
-                            .Validation(validation => validation.MaxFileSize(2000000)))
+                            .Validation(validation => validation.MaxFileSize(200000))
+                            .Events(events => events
+                                .Upload("onUploadSinglefileOnly")
+                                .Remove("onRemoveSinglefileOnly")
+                            )
+                         )
                     </div>
                     <div class="dropdown_zone dropdown_zone_2">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
@@ -69,7 +74,7 @@
                             .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
-                            .Validation(validation => validation.MaxFileSize(2000000)))
+                            .Validation(validation => validation.MaxFileSize(200000)))
                     </div>
                     <div class="dropdown_zone dropdown_zone_3">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document*</h4>
@@ -81,7 +86,7 @@
                             .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
-                            .Validation(validation => validation.MaxFileSize(2000000)))
+                            .Validation(validation => validation.MaxFileSize(200000)))
                     </div>
                     <div class="dropdown_zone dropdown_zone_4">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
@@ -93,7 +98,7 @@
                             .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
-                            .Validation(validation => validation.MaxFileSize(2000000)))
+                            .Validation(validation => validation.MaxFileSize(200000)))
                     </div>
                     <div class="dropdown_zone dropdown_zone_5">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
@@ -105,7 +110,7 @@
                             .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
-                            .Validation(validation => validation.MaxFileSize(2000000)))
+                            .Validation(validation => validation.MaxFileSize(200000)))
                     </div>
                     <div class="dropdown_zone dropdown_zone_6">
                         <h4 class="ch-4 u-spacer-bottom-xs u-text-center">Nom du document</h4>
@@ -117,12 +122,13 @@
                             .RemoveUrl("./UploadTelerik?handler=Remove")
                             )
                             .Validation(validation => validation.AllowedExtensions(new string[] { ".jpg", ".png", ".jpeg" }))
-                            .Validation(validation => validation.MaxFileSize(2000000)))
+                            .Validation(validation => validation.MaxFileSize(200000)))
                     </div>
 
                 </div>
 
                 <p><small>*documents obligatoire. Tous les documents uploadés doivent être signés.</small></p>
+                <p><small>Types de fichiers acceptés: <b>.pdf</b>, <b>.jpg</b>, <b>.png</b>. Poid maximal par fichier: <b>25 Mb</b>.</small></p>
 
                 <div class="c-panel--yellow u-padding-l c-panel--border-r-sm u-spacer-top-l" id="acceptation">
                     <div class="o-flex-bp1-m o-block-bp2 o-flex-bp3 u-flex--twins o-flex--vertical-center">
@@ -148,6 +154,17 @@
     </div>
 </div>
 
+<script>
+    function onUploadSinglefileOnly(e) {
+        // Hide button after upload (for single file upload only)
+        $(e.sender.element.get(0)).parent().find(".k-button").hide();
+    }
+    function onRemoveSinglefileOnly(e) {
+        // Show button again (for single file upload only)
+        $(e.sender.element.get(0)).parent().find(".k-button").show();
+    }
+</script>
+
 <style>
     .dropdown_zone {
         border: 1px dashed #B3B3B3;
@@ -155,7 +172,7 @@
         width: 100%;
         margin-top: 12px;
         border-top-right-radius: 0;
-        border-bottom-rigth-radius: 0;
+        border-bottom-right-radius: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -169,30 +186,32 @@
             border-top-right-radius: 0;
         }
 
-            .dropdown_zone + .dropdown_zone:nth-child(2n+2) {
+        .dropdown_zone + .dropdown_zone:nth-child(2n+2) {
                 border-left: none;
-            }
+        }
 
-            .dropdown_zone:nth-child(2n+2) {
-                border-top-right-radius: 4px;
-                border-bottom-right-radius: 4px;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
-            }
+        .dropdown_zone:nth-child(2n+2) {
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
     }
 
     .k-upload .k-dropzone, .k-upload .k-upload-dropzone {
         justify-content: center;
         background-color: transparent;
+        display: block;
+        text-align: center;
     }
 
     .k-upload {
         border: none;
     }
 
-        .k-upload .k-upload-files, .k-upload .k-file {
-            border: none;
-        }
+    .k-upload .k-upload-files, .k-upload .k-file {
+        border: none;
+    }
 
     .k-button.k-button-solid-base {
         background-image: none;
@@ -207,7 +226,43 @@
     }
 
     .k-upload-status {
-        margin-left: 1.6rem;
+        margin-left: .4rem;
+    }
+
+    .k-upload .k-upload-files .k-file{
+        align-items: center;
+    }
+
+    .k-dropzone-hint {
+        top: .6rem;
+    }
+
+    .k-upload .k-upload-files .k-file-info{
+        margin-left: .6rem;
+    }
+
+    .k-upload .k-progressbar {
+        left: 1.2rem;
+        right: 2.8rem;
+    }
+
+    .k-file-icon-wrapper .k-icon-xxl.k-svg-icon {
+        width: 2.8rem;
+        height: 2.8rem;
+        
+    }
+
+    .k-file-success .k-file-icon-wrapper .k-icon-xxl.k-svg-icon {
+        width: 3.6rem;
+        height: 3.6rem;
+        padding: .7rem;
+        background-color: #1267FB;
+        border-radius: 100%;
+       
+    }
+
+    .k-file-icon-wrapper .k-icon-xxl.k-svg-icon svg{
+        fill: white;
     }
 
     .k-upload .k-upload-files .k-file {
