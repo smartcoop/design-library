@@ -1,0 +1,111 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Container.Container
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Container";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complet</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Use the container object to control the maximum width on the horizontal axis, and the spacing on the vertical axis.</p>
+
+            <p>Combine a <code>o-container-vertical</code> div with a child <code>smart-container</code> Tag Helper to create clear and defined content sections with consistent spacing.</p>
+
+        </div>
+        <div class="br-sample" id="component-01-c-container-small">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Small container</h3>
+                <a class="br-sample-header-link" href="#component-01-c-container-small">#</a>
+            </div>
+            <div class="br-sample-content">
+                <smart-container size="Small">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis molestie, fermentum enim tincidunt, tempus erat. In feugiat ac magna in condimentum. In hac habitasse platea dictumst. Phasellus aliquet eu massa porttitor scelerisque. In eget arcu in nisl egestas efficitur.</p>
+                </smart-container>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML and C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">
+@("<smart-container size=\"Small\">")
+    @("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis molestie, fermentum enim tincidunt, tempus erat.")
+        @("In feugiat ac magna in condimentum. In hac habitasse platea dictumst. Phasellus aliquet eu massa porttitor scelerisque.")
+        @("In eget arcu in nisl egestas efficitur.</p>")
+@("</smart-container>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-02-c-container-medium">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Medium container</h3>
+                <a class="br-sample-header-link" href="#component-02-c-container-medium">#</a>
+            </div>
+            <div class="br-sample-content">
+                <smart-container size="Medium">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis molestie, fermentum enim tincidunt, tempus erat. In feugiat ac magna in condimentum. In hac habitasse platea dictumst. Phasellus aliquet eu massa porttitor scelerisque. In eget arcu in nisl egestas efficitur.</p>
+                </smart-container>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML and C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">
+                    @("<smart-container size=\"Medium\">")
+    @("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis molestie, fermentum enim tincidunt, tempus erat.")
+        @("In feugiat ac magna in condimentum. In hac habitasse platea dictumst. Phasellus aliquet eu massa porttitor scelerisque.")
+        @("In eget arcu in nisl egestas efficitur.</p>")
+@("</smart-container>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-03-c-container-large">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Large container</h3>
+                <a class="br-sample-header-link" href="#component-03-c-container-large">#</a>
+            </div>
+            <div class="br-sample-content">
+                <smart-container size="Large">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis molestie, fermentum enim tincidunt, tempus erat. In feugiat ac magna in condimentum. In hac habitasse platea dictumst. Phasellus aliquet eu massa porttitor scelerisque. In eget arcu in nisl egestas efficitur.</p>
+                </smart-container>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML and C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">
+                    @("<smart-container size=\"Large\">")
+    @("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec felis molestie, fermentum enim tincidunt, tempus erat.")
+        @("In feugiat ac magna in condimentum. In hac habitasse platea dictumst. Phasellus aliquet eu massa porttitor scelerisque.")
+        @("In eget arcu in nisl egestas efficitur.</p>")
+@("</smart-container>")</pre>
+            </div>
+        </div>
+
+        <div class="br-componentgroup-footer-wrapper">
+            <h1 class="br-componentgroup-footer c-h2">Possible parameters for Container</h1>
+            <div class="br-content c-content">
+                <table class="c-table">
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Type</th>
+                            <th>Possible values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>size</td>
+                            <td>string</td>
+                            <td><code>Small</code> <code>Medium</code> <code>Large</code></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

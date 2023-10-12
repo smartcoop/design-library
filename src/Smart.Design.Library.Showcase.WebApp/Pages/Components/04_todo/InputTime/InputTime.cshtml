@@ -1,0 +1,78 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.InputTime.InputTime
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Input time";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complet </p>
+        </div>
+        <div class="br-sample" id="component-01-c-input">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Input time</h3>
+                <a class="br-sample-header-link" href="#component-01-c-input">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>A standard input time. Use for add some time (format = hours less than 24 : minutes less than 60).</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-input-time name="InputTimeName" id="inputTimeId" value=""></smart-input-time>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-input-time name=\"InputTimeName\" id=\"inputTimeId\" value=\"\" ></smart-input-time>")</pre>
+            </div>
+
+        </div>
+        <div class="br-componentgroup-footer-wrapper">
+            <h1 class="br-componentgroup-footer c-h2">Possible parameters for Input time</h1>
+            <div class="br-content c-content">
+                <table class="c-table">
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Type</th>
+                            <th>Possible values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>string</td>
+                            <td>Id attribute of the element</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>string</td>
+                            <td>
+                                Name attribute of the element
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>value</td>
+                            <td>string</td>
+                            <td>
+                                Value of the input
+                            </td>
+                            <td>Format = hh:mm (hh less than 24 et mm less than 60)</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

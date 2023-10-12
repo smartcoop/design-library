@@ -1,0 +1,23 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.CardActions.CardActions
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Card actions";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+        </div>
+        <div class="br-content c-content">
+            <p>Working with the <a href="/Components/Card/Card">Tag Helper Card</a></p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,527 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Colors.colorsModel
+@{
+}
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complete (not a taghelper, but doesnt need to be one)</p>
+        </div>
+        <div class="br-content c-content">
+            <p class="u-text-danger">Document color usage (with comm ?)</p>
+        </div>
+        <div class="br-sample" id="component-01-icons">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Icon list</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <h4>Base</h4>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FFFFFF"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-white</div>
+                            <div class="swatch-value">#FFFFFF</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F9F9F9"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-25</div>
+                            <div class="swatch-value">#F9F9F9</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F2F2F2"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-50</div>
+                            <div class="swatch-value">#F2F2F2</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #E5E5E5"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-100</div>
+                            <div class="swatch-value">#E5E5E5</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #D9D9D9"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-150</div>
+                            <div class="swatch-value">#D9D9D9</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #CCCCCC"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-200</div>
+                            <div class="swatch-value">#CCCCCC</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #B3B3B3"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-300</div>
+                            <div class="swatch-value">#B3B3B3</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #999999"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-400</div>
+                            <div class="swatch-value">#999999</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #808080"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-500</div>
+                            <div class="swatch-value">#808080</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #666666"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-600</div>
+                            <div class="swatch-value">#666666</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #595959"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-650</div>
+                            <div class="swatch-value">#595959</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #333333"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-800</div>
+                            <div class="swatch-value">#333333</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #1A1A1A"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-gray-900</div>
+                            <div class="swatch-value">#1A1A1A</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #000000"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-black</div>
+                            <div class="swatch-value">#000000</div>
+                        </div>
+                    </li>
+                </ul>
+                <h4>Reds</h4>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FEE7E9"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-red-50</div>
+                            <div class="swatch-value">#FEE7E9</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FFB0B9"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-red-150</div>
+                            <div class="swatch-value">#FFB0B9</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FF8F9A"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-red-300</div>
+                            <div class="swatch-value">#FF8F9A</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FF6979"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-red-400</div>
+                            <div class="swatch-value">#FF6979</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FF4054"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-red-600</div>
+                            <div class="swatch-value">#FF4054</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #B32D3B"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-red-700</div>
+                            <div class="swatch-value">#B32D3B</div>
+                        </div>
+                    </li>
+                </ul>
+                <h4>Yellows</h4>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FCF7E8"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-50</div>
+                            <div class="swatch-value">#FCF7E8</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FBE8B6"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-150</div>
+                            <div class="swatch-value">#FBE8B6</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F8DB94"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-300</div>
+                            <div class="swatch-value">#F8DB94</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F7D682"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-400</div>
+                            <div class="swatch-value">#F7D682</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F4C95D"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-500</div>
+                            <div class="swatch-value">#F4C95D</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FFBC1A"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-600</div>
+                            <div class="swatch-value">#FFBC1A</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #E2A40C"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-650</div>
+                            <div class="swatch-value">#E2A40C</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #C28D0A"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-800</div>
+                            <div class="swatch-value">#C28D0A</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #6B4F0A"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-yellow-900</div>
+                            <div class="swatch-value">#6B4F0A</div>
+                        </div>
+                    </li>
+                </ul>
+                <h4>Greens</h4>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #ECF9F6"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-green-50</div>
+                            <div class="swatch-value">#ECF9F6</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #ADDACF"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-green-200</div>
+                            <div class="swatch-value">#ADDACF</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #85C8B8"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-green-300</div>
+                            <div class="swatch-value">#85C8B8</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #33A388"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-green-400</div>
+                            <div class="swatch-value">#33A388</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #00A57D"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-green-500</div>
+                            <div class="swatch-value">#00A57D</div>
+                        </div>
+                    </li>
+                </ul>
+                <h4>Blues</h4>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F3F7FE"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-25</div>
+                            <div class="swatch-value">#F3F7FE</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #E7EFFE"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-50</div>
+                            <div class="swatch-value">#E7EFFE</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #CEE0FF"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-150</div>
+                            <div class="swatch-value">#CEE0FF</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #A7C8FF"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-300</div>
+                            <div class="swatch-value">#A7C8FF</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #8AB5FF"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-400</div>
+                            <div class="swatch-value">#8AB5FF</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #4085FB"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-500</div>
+                            <div class="swatch-value">#4085FB</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #1267FB"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-600</div>
+                            <div class="swatch-value">#1267FB</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #154EB1"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-650</div>
+                            <div class="swatch-value">#154EB1</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #154EB1"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-blue-700</div>
+                            <div class="swatch-value">#154EB1</div>
+                        </div>
+                    </li>
+                </ul>
+                <h4>Purples</h4>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F3F7FE"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-purple-25</div>
+                            <div class="swatch-value">#F3F7FE</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #CFC1FF"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-purple-50</div>
+                            <div class="swatch-value">#CFC1FF</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #B7A1F1"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-purple-150</div>
+                            <div class="swatch-value">#B7A1F1</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #A081E3"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-purple-200</div>
+                            <div class="swatch-value">#A081E3</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #8861D5"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-purple-300</div>
+                            <div class="swatch-value">#8861D5</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #7141C7"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-purple-500</div>
+                            <div class="swatch-value">#7141C7</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #4202AB"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-purple-900</div>
+                            <div class="swatch-value">#4202AB</div>
+                        </div>
+                    </li>
+                </ul>
+                <h4>Beiges</h4>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FDFAE8"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-beige-50</div>
+                            <div class="swatch-value">#FDFAE8</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #D3C677"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-beige-500</div>
+                            <div class="swatch-value">#D3C677</div>
+                        </div>
+                    </li>
+                </ul>
+                <h4>Light greens</h4>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #ECFFF5"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-lightgreen-50</div>
+                            <div class="swatch-value">#ECFFF5</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #BBFBC5"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-lightgreen-500</div>
+                            <div class="swatch-value">#BBFBC5</div>
+                        </div>
+                    </li>
+                </ul>
+                <h4>Semantic colors</h4>
+                <p class="u-text-danger">Is it used ?</p>
+                <ul class="br-color-swatch-list">
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FF4054"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-primary</div>
+                            <div class="swatch-value">#FF4054</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #000000"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-header-text</div>
+                            <div class="swatch-value">#000000</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #333333"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-body-text</div>
+                            <div class="swatch-value">#333333</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #595959"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-icon</div>
+                            <div class="swatch-value">#595959</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #808080"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-muted-text</div>
+                            <div class="swatch-value">#808080</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #D4D4D4"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-input-border</div>
+                            <div class="swatch-value">#D4D4D4</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #E5E5E5"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-border</div>
+                            <div class="swatch-value">#E5E5E5</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #999999"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-disabled</div>
+                            <div class="swatch-value">#999999</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F2F2F2"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-background</div>
+                            <div class="swatch-value">#F2F2F2</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #FF4054"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-error</div>
+                            <div class="swatch-value">#FF4054</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #00A57D"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-success</div>
+                            <div class="swatch-value">#00A57D</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: #F4C95D"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-warning</div>
+                            <div class="swatch-value">#F4C95D</div>
+                        </div>
+                    </li>
+                    <li class="br-color-swatch-item">
+                        <div class="br-color-swatch-preview" style="background-color: black"></div>
+                        <div class="br-color-swatch-data">
+                            <div class="swatch-name">$color-semantic-link</div>
+                            <div class="swatch-value">$color-black</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+

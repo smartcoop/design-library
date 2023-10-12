@@ -1,0 +1,87 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Wizard.WizardModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Wizard";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h1">@ViewData["MainTitle"]</h1>
+</div>
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complet</p>
+        </div>
+
+        <div class="br-sample" id="component-01-c-wizard">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Default Wizard</h3>
+            </div>
+                        
+            <div class="br-sample-content">
+                <nav class="c-wizard c-wizard--bordered">
+                    <ul>
+                        <li>
+                            <a class="c-wizard__item c-wizard--complete" href="#">
+                                <div class="c-wizard__indicator"></div>
+                                <div class="c-wizard__label">Step 1</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="c-wizard__item c-wizard--active" href="#">
+                                <div class="c-wizard__indicator">2</div>
+                                <div class="c-wizard__label">Step 2</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="c-wizard__item" href="#">
+                                <div class="c-wizard__indicator">3</div>
+                                <div class="c-wizard__label">Step 3</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="c-wizard__item" href="#">
+                                <div class="c-wizard__indicator">4</div>
+                                <div class="c-wizard__label">Step 4</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="c-wizard__item" href="#">
+                                <div class="c-wizard__indicator">5</div>
+                                <div class="c-wizard__label">Step 5</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<nav class=\"c-wizard c-wizard--bordered\">")
+    @("<ul>")
+        @("<li>")
+            @("<a class=\"c-wizard__item c-wizard--complete\" href=\"#\">")
+                @("<div class=\"c-wizard__indicator\"></div>")
+                @("<div class=\"c-wizard__label\">Step 1</div>")
+            @("</a>")
+        @("</li>")
+        @("<li>")
+            @("<a class=\"c-wizard__item c-wizard--active\" href=\"#\">")
+                @("<div class=\"c-wizard__indicator\">2</div>")
+                @("<div class=\"c-wizard__label\">Step 2</div>")
+            @("</a>")
+        @("</li>")
+        @("<!-- Other items 3, 4, 5 -->")
+    @("</ul>")
+@("</nav>")</pre>
+            </div>
+
+        </div>
+    </div>
+</div>

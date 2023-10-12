@@ -1,0 +1,155 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Avatar.Avatar
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Avatar";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complete</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Documentation for Avatar</p>
+        </div>
+
+        <div class="br-sample" id="component-01-c-avatar-default">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Small Default with initials</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <smart-avatar initials="JD" size="Small" link="/"></smart-avatar>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-avatar initials=\"JD\" size=\"Small\" link=\"/\"></smart-avatar>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-avatar-sizes">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Sizes with icon</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <smart-avatar icon="User" size="Small" link="/"></smart-avatar>
+                <smart-avatar icon="User" size="Medium" link="/"></smart-avatar>
+                <smart-avatar icon="User" size="Large" link="/"></smart-avatar>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-avatar icon=\"User\" size=\"Small\" link=\"/\"></smart-avatar>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-avatar icon=\"User\" size=\"Medium\" link=\"/\"></smart-avatar>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-avatar icon=\"User\" size=\"Large\" link=\"/\"></smart-avatar>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-avatar-images">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Images</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <smart-avatar imageUrl="/images/avatars/1.jpg" size="Medium" link="/"></smart-avatar>
+                <smart-avatar imageUrl="/images/avatars/2.jpg" size="Medium" link="/"></smart-avatar>
+                <smart-avatar imageUrl="/images/avatars/3.jpg" size="Medium" link="/"></smart-avatar>
+                <smart-avatar imageUrl="/images/avatars/4.jpg" size="Medium" link="/"></smart-avatar>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-avatar  imageUrl=\"/images/avatars/yourImage.jpg\" size=\"Medium\" link=\"/\"></smart-avatar>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-01-c-avatar-text-and-link">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Text and link</h3>
+            </div>
+            <div class="br-sample-documentation c-content">Link refer to a URL</div>
+            <div class="br-sample-content">
+                <smart-avatar initials="JD" text="John Doe"></smart-avatar>
+                <br />
+                <smart-avatar imageUrl="/images/avatars/2.jpg" text="John Doe" link="/"></smart-avatar>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-avatar initials=\"JD\" text=\"John Doe\"></smart-avatar>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-avatar imageUrl=\"/images/avatars/2.jpg\" text=\"John Doe\" link=\"/\"></smart-avatar>")</pre>
+            </div>
+        </div>
+
+        <div class="br-componentgroup-footer-wrapper">
+            <h1 class="br-componentgroup-footer c-h2">Possible parameters for Avatar</h1>
+            <div class="br-content c-content">
+                <table class="c-table">
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Type</th>
+                            <th>Possible values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>initials</td>
+                            <td>string</td>
+                            <td>2 capital letters</td>
+                            <td>Represent the initials of the user</td>
+                        </tr>
+                        <tr>
+                            <td>size</td>
+                            <td>string</td>
+                            <td>
+                                <code>Small</code>, <code>Medium</code>, <code>Large</code>
+                            </td>
+                            <td>Determines the size of the Avatar</td>
+                        </tr>
+                        <tr>
+                            <td>Text</td>
+                            <td>string</td>
+                            <td>
+                                Any text
+                            </td>
+                            <td>The text on the right</td>
+                        </tr>
+                        <tr>
+                            <td>Link</td>
+                            <td>string</td>
+                            <td>
+                                URL
+                            </td>
+                            <td>The link where the avatar point to</td>
+                        </tr>
+                        <tr>
+                            <td>imageUrl</td>
+                            <td>string</td>
+                            <td>
+                                Relative URL
+                            </td>
+                            <td>URL path to the user profile picture</td>
+                        </tr>
+                        <tr>
+                            <td>icon</td>
+                            <td>string</td>
+                            <td>Recommended Icon: <code>User</code>. See <a href="/todo:addLinkToIconsWhenREady">icon style guide</a> for available icons.</td>
+                            <td>Set the icon inside the circle</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>

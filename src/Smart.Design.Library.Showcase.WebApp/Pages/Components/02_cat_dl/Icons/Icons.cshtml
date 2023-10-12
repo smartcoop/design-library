@@ -1,0 +1,278 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Icons.IconsModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Icons";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Incomplete</p>
+        </div>
+        <div class="br-content c-content">
+            <p class="u-text-danger">195 icons in DS. Only 78 in DL</p>
+            <p>
+                The SVG icon system is based on directly embedding SVG files into the markup. Within Bedrock, we use Pug to render these SVG's instead of having to inline them. You can either inline them, or build a solution that does it for you.
+
+                The SVG content should be contained in a .o-svg-icon div that also get an icon-specific class based on its name (for example: .o-svg-icon.o-svg-icon-add. This allows us to style and colorize specific icons.
+
+                The Smart icon set is based on Mono icons. The source SVG files can be found <a href="https://github.com/smartcoop/design/tree/main/content/icons">here.</a>
+            </p>
+        </div>
+        <div class="br-sample" id="component-01-icons">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Icon list</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="c-styleguide-svg-icons">
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Add"></smart-icon><p>Add</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Archive"></smart-icon><p>Archive</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ArrowDown"></smart-icon><p>ArrowDown</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ArrowLeft"></smart-icon><p>ArrowLeft</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ArrowLeftUp"></smart-icon><p>ArrowLeftUp</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ArrowLeftDown"></smart-icon><p>ArrowLeftDown</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ArrowRight"></smart-icon><p>ArrowRight</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ArrowRightUp"></smart-icon><p>ArrowRightUp</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ArrowRightDown"></smart-icon><p>ArrowRightDown</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ArrowUp"></smart-icon><p>ArrowUp</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Attachment"></smart-icon><p>Attachment</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="BarChartAlt"></smart-icon><p>BarChartAlt</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="BarChart"></smart-icon><p>BarChart</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Bills"></smart-icon><p>Bills</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Calendar"></smart-icon><p>Calendar</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Call"></smart-icon><p>Call</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CaretDown"></smart-icon><p>CaretDown</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CaretLeftRight"></smart-icon><p>CaretLeftRight</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CaretLeft"></smart-icon><p>CaretLeft</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CaretRight"></smart-icon><p>CaretRight</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CaretUpDown"></smart-icon><p>CaretUpDown</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CaretUp"></smart-icon><p>CaretUp</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Check"></smart-icon><p>Check</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ChevronDown"></smart-icon><p>ChevronDown</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ChevronLeft"></smart-icon><p>ChevronLeft</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ChevronRight"></smart-icon><p>ChevronRight</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ChevronUp"></smart-icon><p>ChevronUp</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CircleAdd"></smart-icon><p>CircleAdd</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CircleCheck"></smart-icon><p>CircleCheck</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CircleError"></smart-icon><p>CircleError</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CircleHelp"></smart-icon><p>CircleHelp</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CircleInformation"></smart-icon><p>CircleInformation</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="CirclePercent"></smart-icon><p>CirclePercent</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ClipboardList"></smart-icon><p>ClipboardList</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Clock"></smart-icon><p>Clock</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Close"></smart-icon><p>Close</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ContactBook"></smart-icon><p>ContactBook</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Copy"></smart-icon><p>Copy</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Delete"></smart-icon><p>Delete</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="DocumentEmpty"></smart-icon><p>DocumentEmpty</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="DocumentMissing"></smart-icon><p>DocumentMissing</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Document"></smart-icon><p>Document</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Download"></smart-icon><p>Download</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="EditAlt"></smart-icon><p>EditAlt</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Edit"></smart-icon><p>Edit</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Email"></smart-icon><p>Email</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ExternalLink"></smart-icon><p>ExternalLink</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="EyeOff"></smart-icon><p>EyeOff</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Eye"></smart-icon><p>Eye</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Facebook"></smart-icon><p>Facebook</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Favorite"></smart-icon><p>Favorite</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Filter"></smart-icon><p>Filter</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Github"></smart-icon><p>Github</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Home"></smart-icon><p>Home</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Instagram"></smart-icon><p>Instagram</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Link"></smart-icon><p>Link</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Location"></smart-icon><p>Location</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Menu"></smart-icon><p>Menu</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Message"></smart-icon><p>Message</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="OptionsHorizontal"></smart-icon><p>OptionsHorizontal</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Package"></smart-icon><p>Package</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Pen"></smart-icon><p>Pen</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Percent"></smart-icon><p>Percent</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Print"></smart-icon><p>Print</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Remove"></smart-icon><p>Remove</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Save"></smart-icon><p>Save</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Search"></smart-icon><p>Search</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Send"></smart-icon><p>Send</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Settings"></smart-icon><p>Settings</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="SignOut"></smart-icon><p>SignOut</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Table"></smart-icon><p>Table</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Tag"></smart-icon><p>Tag</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="ThreeRows"></smart-icon><p>ThreeRows</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Timer"></smart-icon><p>Timer</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Twitter"></smart-icon><p>Twitter</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="User"></smart-icon><p>User</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Users"></smart-icon><p>Users</p>
+                    </div>
+                    <div class="c-styleguide-svg-icon">
+                        <smart-icon icon="Warning"></smart-icon><p>Warning</p>
+                    </div>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>Code example: </b> <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-icon icon=\"Add\"></smart-icon>")</pre>
+            </div>
+        </div>
+    </div>
+</div>

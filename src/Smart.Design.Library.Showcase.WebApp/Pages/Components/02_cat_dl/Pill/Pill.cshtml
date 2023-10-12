@@ -1,0 +1,144 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Pill.Pill
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Pill";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complete</p>
+        </div>
+        <div class="br-content c-content">
+            <div class="br-sample-documentation c-content">
+            </div>
+        </div>
+        <div class="br-sample" id="component-01-c-status-pill">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Pill Default</h3>
+                <a class="br-sample-header-link" href="#component-01-c-status-pill">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p></p>
+            </div>
+            <div class="br-sample-content">
+                <smart-pill label="Default" status="Default" with-circle="true"></smart-pill>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                    <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-pill label=\"Default\" status=\"Default\" with-circle=\"true\"></smart-pill>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-02-c-status-pill">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Pill Pending</h3>
+                <a class="br-sample-header-link" href="#component-02-c-status-pill">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p></p>
+            </div>
+            <div class="br-sample-content">
+                <smart-pill label="Pending" status="Pending" with-circle="true"></smart-pill>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-pill label=\"Pending\" status=\"Pending\" with-circle=\"true\"></smart-pill>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-03-c-status-pill">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Pill Success</h3>
+                <a class="br-sample-header-link" href="#component-03-c-status-pill">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p></p>
+            </div>
+            <div class="br-sample-content">
+                <smart-pill label="Success" status="Success" with-circle="true"></smart-pill>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-pill label=\"Success\" status=\"Success\" with-circle=\"true\"></smart-pill>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-04-c-status-pill">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Pill Danger</h3>
+                <a class="br-sample-header-link" href="#component-04-c-status-pill">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p></p>
+            </div>
+            <div class="br-sample-content">
+                <smart-pill label="Danger" status="Danger" with-circle="true"></smart-pill>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-pill label=\"Danger\" status=\"Danger\" with-circle=\"true\"></smart-pill>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-05-c-status-pill">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Pill Warning</h3>
+                <a class="br-sample-header-link" href="#component-05-c-status-pill">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p></p>
+            </div>
+            <div class="br-sample-content">
+                <smart-pill label="Warning" status="Warning" with-circle="true"></smart-pill>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-pill label=\"Warning\" status=\"Warning\" with-circle=\"true\"></smart-pill>")</pre>
+            </div>
+        </div>
+        <div class="br-componentgroup-footer-wrapper">
+            <h1 class="br-componentgroup-footer c-h2">Possible parameters for Pill</h1>
+            <div class="br-content c-content">
+                <table class="c-table">
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Type</th>
+                            <th>Possible values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>label</td>
+                            <td>string</td>
+                            <td>Label for the pill</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Status</td>
+                            <td>string</td>
+                            <td><code>Default</code> <code>Pending</code> <code>Success</code> <code>Danger</code> <code>Warning</code></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>with-circle</td>
+                            <td>boolean</td>
+                            <td><code>true</code> <code>false</code></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
