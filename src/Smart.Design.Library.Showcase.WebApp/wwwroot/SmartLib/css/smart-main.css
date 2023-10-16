@@ -5320,7 +5320,6 @@ c-table-of-content
 .c-table--bordered td,
 .c-table--bordered th {
   text-align: left;
-  padding: 1.2rem 1rem;
   position: relative;
 }
 .c-table--bordered td .c-button,
