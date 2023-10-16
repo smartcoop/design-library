@@ -62,7 +62,7 @@ $c-table-border-radius: $g-border-radius-medium !default;
     }
 }
 
-.c-table--bordered {
+.c-table--bordered, .c-table--styled {
 
     th {
         font-weight: 500;
@@ -128,8 +128,6 @@ $c-table-border-radius: $g-border-radius-medium !default;
         th {
             background-color: white;
         }
-
-       
     }
 
     tr:last-child {
@@ -151,7 +149,6 @@ $c-table-border-radius: $g-border-radius-medium !default;
     td,
     th {
         text-align: left;
-        padding: 1.2rem 1rem;
         position: relative;
     }
 
