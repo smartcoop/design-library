@@ -756,7 +756,12 @@ abbr[title] {
     flex: none;
 }
 
-.o-form-group-layout--standard .o-form-group__label--with-helper {
+    .o-form-group-layout--standard label.o-form-group__label .c-tooltip-icon,
+    .o-form-group-layout--standard .o-form-group__label label .c-tooltip-icon {
+        margin-left: .4rem;
+    }
+
+.o-form-group-layout--standard label.o-form-group__label--with-helper {
     display: flex;
     align-items: center;
 }
@@ -1278,6 +1283,18 @@ abbr[title] {
     height: 2rem;
 }
 
+.icon-help .o-svg-icon {
+    display: inline;
+}
+
+.icon-help svg {
+    vertical-align: middle;
+    max-width: 2.4rem;
+    max-height: 2.4rem;
+    display: inline;
+    color: #666;
+}
+
 /**
  * Color Variations
  * ---
@@ -1305,10 +1322,9 @@ abbr[title] {
   c-content
   ---
   Usage: wrap a .c-content class around content to turn it into rich text.
-
-  .c-h1, .c-h2, .c-body-1, c-body 2
+  This is used in production app.
   ---
-  Usage: use these classes to style individual components like their rich text equivalent
+  Usage: This is used in production app.
    ========================================================================== */
 .c-h1, .c-h2, .c-h3, .c-h4,
 .c-content h1,
@@ -1391,6 +1407,12 @@ abbr[title] {
 .c-content p {
     margin: 1.5rem 0;
     line-height: 1.65em;
+}
+
+.c-content small {
+    font-size: 1.3rem;
+    margin: 1.6rem 0;
+    line-height: 1.72;
 }
 
 .c-content dl {
@@ -1483,163 +1505,6 @@ abbr[title] {
             border-radius: .4rem;
             left: -1.8rem;
         }
-
-/* ==========================================================================
-  c-display
-  ---
-  Usage: wrap a .c-display class around content to turn it into rich text.
-  Similar to .c-content, but meant for a reading context.
-
-   ========================================================================== */
-.c-display {
-    font-size: 1.8rem;
-    line-height: 1.72;
-}
-
-    .c-d-h1, .c-d-h2, .c-d-h3, .c-d-h4,
-    .c-display h1,
-    .c-display h2,
-    .c-display h3,
-    .c-display h4 {
-        color: #1A1A1A;
-    }
-
-    .c-d-h1, .c-display h1,
-    .c-d-h2, .c-display h2,
-    .c-d-h3, .c-display h3,
-    .c-d-h4, .c-display h4 {
-        font-family: "Inter UI", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    .c-d-h1, .c-display h1 {
-        font-size: 3.8rem;
-        margin: 4.8rem 0 3.2rem;
-        line-height: 1.25;
-        font-weight: 700;
-    }
-
-    .c-d-h2, .c-display h2 {
-        font-size: 3rem;
-        margin: 4.8rem 0 2.4rem;
-        line-height: 1.36;
-        font-weight: 600;
-    }
-
-    .c-d-h3, .c-display h3 {
-        font-size: 2.6rem;
-        margin: 3.2rem 0 1.8rem;
-        line-height: 1.36;
-        font-weight: 600;
-    }
-
-    .c-d-h4, .c-display h4 {
-        font-size: 2.2rem;
-        margin: 2.4rem 0 1.6rem;
-        line-height: 1.36;
-        font-weight: 600;
-    }
-
-        .c-d-h1:first-child,
-        .c-d-h2:first-child,
-        .c-d-h3:first-child,
-        .c-d-h4:first-child,
-        .c-display h1:first-child,
-        .c-display h2:first-child,
-        .c-display h3:first-child,
-        .c-display h4:first-child {
-            margin-top: 0;
-        }
-
-.c-d-body-1 {
-    font-size: 1.8rem;
-    margin: 1.8rem 0;
-}
-
-.c-d-body-2 {
-    font-size: 1.6rem;
-    margin: 1.6rem 0;
-    line-height: 1.72;
-}
-
-.c-display p {
-    margin: 1.8rem 0;
-}
-
-.c-display small {
-    font-size: 1.6rem;
-    margin: 1.6rem 0;
-    line-height: 1.72;
-}
-
-.c-display .c-sidenote {
-    color: #808080;
-    display: block;
-    font-size: 1.4rem;
-    line-height: 1.6;
-    margin: 1.6rem 0;
-}
-
-@media (min-width: 1200px) {
-    .c-display .c-sidenote {
-        float: right;
-        clear: right;
-        width: 32rem;
-        margin: 0 -32rem 0 0;
-        padding: 0 2.4rem;
-        position: relative;
-        vertical-align: baseline;
-    }
-}
-
-.c-display a {
-    text-decoration: none;
-    color: #1267FB;
-    border-bottom: 0.1rem solid rgba(18, 103, 251, 0.33);
-}
-
-.c-display ul, .c-display ol {
-    padding-left: 3.2rem;
-    margin: 1.8rem 0;
-}
-
-    .c-display ul ul, .c-display ul ol, .c-display ol ul, .c-display ol ol {
-        margin: 0;
-    }
-
-    .c-display ul h1, .c-display ul h2, .c-display ul h3, .c-display ul h4, .c-display ul h5, .c-display ol h1, .c-display ol h2, .c-display ol h3, .c-display ol h4, .c-display ol h5 {
-        margin-left: -3rem;
-    }
-
-.c-display ul {
-    list-style: disc;
-}
-
-.c-display ol {
-    list-style: decimal;
-}
-
-.c-display pre {
-    margin: 1.6rem 0;
-}
-
-.c-display figure {
-    margin: 3.2rem 0;
-}
-
-    .c-display figure img {
-        border: 0.1rem solid #E5E5E5;
-    }
-
-.c-display figcaption {
-    color: #808080;
-    font-size: 1.4rem;
-}
-
-.c-display hr {
-    margin: 3.2rem 0;
-    border: none;
-    border-bottom: 1px solid #D9D9D9;
-}
 
 /* ==========================================================================
   Shared styles between c-display and c-content
@@ -2101,6 +1966,7 @@ Component: app layout
 
 .c-app-layout-inner {
     height: 100%;
+    overflow-x: auto;
 }
 
 @media (max-width: 699px) {
@@ -5988,13 +5854,20 @@ c-table-of-content
     border: none;
 }
 
-.c-table--styled thead th:first-child {
-    border-top-left-radius: 0.4rem;
+.c-table--styled thead th {
+    border-right: 2px;
+    border-style: solid;
+    border-color: #F2F2F2;
 }
 
-.c-table--styled thead th:last-child {
-    border-top-right-radius: 0.4rem;
-}
+    .c-table--styled thead th:first-child {
+        border-top-left-radius: 0.4rem;
+    }
+
+    .c-table--styled thead th:last-child {
+        border-top-right-radius: 0.4rem;
+        border-right: 0;
+    }
 
 .c-table--styled tfoot td,
 .c-table--styled tfoot th {
@@ -6004,17 +5877,59 @@ c-table-of-content
 }
 
 .c-table--styled td {
-    border-bottom: 0.1rem solid #F2F2F2;
+    border-right: 2px;
+    border-style: solid;
+    border-color: #F2F2F2;
+    border-bottom: 2px solid #F2F2F2;
 }
+
+    .c-table--styled td.border-top-left-r {
+        border-top-left-radius: 0.4rem;
+    }
+
+    .c-table--styled td.border-bottom-left-r {
+        border-bottom-left-radius: 0.4rem;
+    }
+
+    .c-table--styled td:last-child {
+        border-right: 0;
+    }
+
+.c-table--styled thead tr {
+    background-color: transparent;
+}
+
+    .c-table--styled thead tr th {
+        background-color: white;
+    }
+
+        .c-table--styled thead tr td.disabled, .c-table--styled thead tr th.disabled {
+            border: none;
+            background-color: transparent;
+        }
+
+            .c-table--styled thead tr td.disabled + th, .c-table--styled thead tr th.disabled + th {
+                border-top-left-radius: 0.4rem;
+            }
 
 .c-table--styled tr:last-child td {
     border-bottom: none;
 }
 
+.c-table--styled .dotted {
+    border-right: none;
+    border-right: 2px dashed white;
+}
+
+.c-table--styled .dotted-bottom {
+    border-bottom: none;
+    border-bottom: 2px dashed white;
+}
+
 .c-table--styled td,
 .c-table--styled th {
     text-align: left;
-    padding: 1.2rem 1.6rem;
+    padding: 1.2rem 1rem;
     position: relative;
 }
 
@@ -6578,13 +6493,17 @@ c-table-of-content
    ========================================================================== */
 .c-tooltip {
     display: none;
-    background: rgba(0, 0, 0, 0.65);
+    background: rgba(0, 0, 0, 0.75);
     color: #FFF;
     padding: .8rem 1.2rem;
     font-size: 1.3rem;
     border-radius: 0.4rem;
     max-width: 24rem;
     z-index: 1;
+}
+
+.c-tooltip-icon {
+    display: inline-block;
 }
 
 .c-tooltip--size-m {
@@ -6605,22 +6524,22 @@ c-table-of-content
 
 .c-tooltip[data-popper-placement^='top'] > .c-tooltip__arrow {
     filter: none;
-    border-top-color: rgba(0, 0, 0, 0.65);
+    border-top-color: rgba(0, 0, 0, 0.75);
 }
 
 .c-tooltip[data-popper-placement^='bottom'] > .c-tooltip__arrow {
     filter: none;
-    border-bottom-color: rgba(0, 0, 0, 0.65);
+    border-bottom-color: rgba(0, 0, 0, 0.75);
 }
 
 .c-tooltip[data-popper-placement^='left'] > .c-tooltip__arrow {
     filter: none;
-    border-left-color: rgba(0, 0, 0, 0.65);
+    border-left-color: rgba(0, 0, 0, 0.75);
 }
 
 .c-tooltip[data-popper-placement^='right'] > .c-tooltip__arrow {
     filter: none;
-    border-right-color: rgba(0, 0, 0, 0.65);
+    border-right-color: rgba(0, 0, 0, 0.75);
 }
 
 /* ==========================================================================
@@ -7072,6 +6991,18 @@ c-table-of-content
 
 .dev-env .c-app-layout-inner__content {
     margin-top: 10.2rem;
+}
+
+.bckg-gray {
+    background-color: #F9F9F9 !important;
+}
+
+.bckg-gray-50 {
+    background-color: #F2F2F2 !important;
+}
+
+.bckg-yellow {
+    background-color: #FBE8B6 !important;
 }
 
 /* ==========================================================================
@@ -7670,35 +7601,3 @@ c-table-of-content
 }
 
 /*# sourceMappingURL=main.css.map */
-
-
-/* ==========================================================================
-  Styles spécifiques à la page ProductionUnit
-    (ils seront intégrés dans les .scss files dans le prochain package)
-  ---
-   ========================================================================== */
-.c-panel__header-box {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    height: auto;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    border-bottom: 2px solid #F2F2F2;
-}
-
-.o-card-grid-l {
-    display: grid;
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
-    gap: 2.4rem 2.4rem;
-    grid-template-columns: repeat(auto-fit, minmax(35.6rem, 1fr));
-}
-
-.o-block {
-    display: block !important;
-}
-
-.u-padding-vertical-m {
-    padding-top: 1.2rem !important;
-    padding-bottom: 1.2rem !important;
-}
