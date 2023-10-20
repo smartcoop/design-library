@@ -61,6 +61,7 @@
                             .Events(events => events
                                 .Upload("onUploadSinglefileOnly")
                                 .Remove("onRemoveSinglefileOnly")
+                                .Success("onSuccess")
                             )
                          )
                     </div>
@@ -159,9 +160,15 @@
         // Hide button after upload (for single file upload only)
         $(e.sender.element.get(0)).parent().find(".k-button").hide();
     }
+    
     function onRemoveSinglefileOnly(e) {
         // Show button again (for single file upload only)
         $(e.sender.element.get(0)).parent().find(".k-button").show();
+    }
+    
+    function onSuccess(e){
+        console.log('onSuccess!');
+        console.log(e.response.fileId);
     }
 </script>
 

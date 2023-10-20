@@ -1,6 +1,7 @@
 using System.Net.Http.Headers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json.Linq;
 
 namespace Smart.Design.Library.Showcase.Pages.Templates;
 
@@ -58,7 +59,11 @@ public class UploadTelerikModel : PageModel
         }
 
         // Return an empty string to signify success
-        return Content(string.Empty);
+        var result = new JObject
+        {
+            ["fileId"] = $"ServerId_{Guid.NewGuid()}"
+        };
+        return Content(result.ToString(), "application/json");
     }
 
     // We only need 1 remove function because the parameter name is not linked to the control name
