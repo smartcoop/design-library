@@ -5253,6 +5253,83 @@ c-table-of-content
   font-weight: 500;
 }
 
+.c-table--styled th {
+  font-weight: 500;
+  height: 5.6rem;
+  border-bottom: 2px solid #F2F2F2;
+  vertical-align: middle;
+}
+.c-table--styled tbody th {
+  background: none;
+  vertical-align: middle;
+  height: inherit;
+}
+.c-table--styled tbody tr:last-child th {
+  border: none;
+}
+.c-table--styled thead th:first-child {
+  border-top-left-radius: 0.4rem;
+}
+.c-table--styled thead th:last-child {
+  border-top-right-radius: 0.4rem;
+}
+.c-table--styled tfoot td,
+.c-table--styled tfoot th {
+  border-top: 2px solid #F2F2F2;
+  border-bottom: none;
+  font-weight: 500;
+}
+.c-table--styled td {
+  border-bottom: 0.1rem solid #F2F2F2;
+}
+.c-table--styled tr:last-child td {
+  border-bottom: none;
+}
+.c-table--styled td,
+.c-table--styled th {
+  text-align: left;
+  padding: 1.2rem 1.6rem;
+  position: relative;
+}
+.c-table--styled td .c-button,
+.c-table--styled th .c-button {
+  margin-bottom: -0.8rem;
+  margin-top: -0.8rem;
+}
+.c-table--styled td input[type=checkbox] {
+  margin: 0 auto;
+}
+
+.c-table--big {
+  border-collapse: separate;
+  border-spacing: 0 1.2rem;
+}
+.c-table--big td {
+  border-bottom: none;
+  padding: 1.8rem 2rem;
+}
+.c-table--big thead th {
+  border: none;
+  padding: 0.5rem 2rem;
+  height: 2rem;
+}
+.c-table--big thead th:first-child {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.c-table--big thead th:last-child {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.c-table--big tbody tr td:first-child {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+.c-table--big tbody tr td:last-child {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
 .c-table--bordered th {
   font-weight: 500;
   height: 5.6rem;
