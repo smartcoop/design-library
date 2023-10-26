@@ -5908,13 +5908,16 @@ c-table-of-content
    ========================================================================== */
 .c-tooltip {
   display: none;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(0, 0, 0, 0.75);
   color: #FFF;
   padding: 0.8rem 1.2rem;
   font-size: 1.3rem;
   border-radius: 0.4rem;
   max-width: 24rem;
   z-index: 1;
+}
+.c-tooltip-icon {
+  display: inline-block;
 }
 
 .c-tooltip--size-m {
@@ -5935,22 +5938,22 @@ c-table-of-content
 
 .c-tooltip[data-popper-placement^=top] > .c-tooltip__arrow {
   filter: none;
-  border-top-color: rgba(0, 0, 0, 0.65);
+  border-top-color: rgba(0, 0, 0, 0.75);
 }
 
 .c-tooltip[data-popper-placement^=bottom] > .c-tooltip__arrow {
   filter: none;
-  border-bottom-color: rgba(0, 0, 0, 0.65);
+  border-bottom-color: rgba(0, 0, 0, 0.75);
 }
 
 .c-tooltip[data-popper-placement^=left] > .c-tooltip__arrow {
   filter: none;
-  border-left-color: rgba(0, 0, 0, 0.65);
+  border-left-color: rgba(0, 0, 0, 0.75);
 }
 
 .c-tooltip[data-popper-placement^=right] > .c-tooltip__arrow {
   filter: none;
-  border-right-color: rgba(0, 0, 0, 0.65);
+  border-right-color: rgba(0, 0, 0, 0.75);
 }
 
 /* ==========================================================================
