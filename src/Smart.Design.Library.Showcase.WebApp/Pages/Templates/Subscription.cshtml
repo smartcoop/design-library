@@ -21,7 +21,7 @@
 <!-- This styles will be added in the next package in main.css-->
 <style>
     .icon-help .o-svg-icon {
-        display: inline;
+        display: inline-block;
     }
 
     .icon-help svg {
@@ -228,7 +228,7 @@
 
                     <h3 class="c-h2 u-spacer-bottom-s">Vos données professionnelles</h3>
 
-                    <smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e, artiste et chômeur n'est pas une fonction). Voir le registre des métiers.">
+                    <smart-formgroup helper-text="Discipline(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e, artiste et chômeur n'est pas une fonction). Voir le registre des métiers.">
                         <label class="o-form-group__label">
                             Fonctions principales
                             <span data-tooltip="tooltip-function" data-tooltip-placement="top" class="icon-help">
@@ -236,7 +236,7 @@
                             </span>
                         </label>
                         <div class="c-tooltip" id="tooltip-function" role="tooltip">
-                            Fonction Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
+                            Discipline(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e, artiste et chômeur n'est pas une fonction). Voir le registre des métiers.
                             <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
                         </div>
                         <smart-input id="function" name="function" value=""></smart-input>
@@ -250,7 +250,7 @@
                             </span>
                         </label>
                         <div class="c-tooltip" id="tooltip-witholding" role="tooltip">
-                            Précompte Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
+                            Message d'explication pour le pourcentage de précompte professionnel.
                             <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
                         </div>
                         <smart-input-number min="11.11"  max="100" id="witholding" name="witholding" value="11.11" asp-for="@Model.Subscription.Withholding"></smart-input-number>
