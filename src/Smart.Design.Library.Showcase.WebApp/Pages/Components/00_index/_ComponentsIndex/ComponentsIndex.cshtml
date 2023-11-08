@@ -12,15 +12,44 @@
     @await Html.PartialAsync("Shared/_ComponentList")
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
-            <h1 class="br-componentgroup-header c-d-h2">Browse the list on the left</h1>
         </div>
-        <div class="br-content c-content">
-            <p>TODO:</p>
-            <ul>
-                <li>Create a Layout for the component page</li>
-                <li>Create a Layout for the list (submenu) on the left</li>
-                <li>Dynamically list the components in the list (submenu) on the left</li>
-            </ul>
+        <div class="br-content c-content u-spacer">
+            <div class="title u-spacer">
+                <h2 class="c-h2">Comment documenter un composant ?</h2>
+            </div>
+            <div class="o-flex dynamic-dashboard--grid">
+                <div class="u-spacer">
+                    <h3 class="c-h3">Si celui ci n’est pas un composant C-Sharp</h3>
+                    <ol>
+                        <li>Déplacer la page du composant du dossier <code>04_todo</code> vers le dossier <code>03_cat_ds</code></li>
+                        <li>Copier/coller* le code HTML de la page correspondante sur le site du design system: https://design.smart.coop/ en inspectant la page dans la console</li>
+                        <li>Retirer le code pug.</li>
+                        <li>Remplacer le titre dans la variable <code>ViewData["ComponentTitle"]</code></li>
+                    </ol>
+                    <p class="c-body-2">*Lors du copié/collé, attention à bien respecter l’indentation des balises pour ne pas casser la mise en page</p>
+
+                </div>
+                <div class="u-spacer">
+                    <h3 class="c-h3">Si celui ci est un composant C-Sharp</h3>
+
+                    <ol>
+                        <li>Déplacer la page du composant du dossier <code>04_todo</code> vers le dossier <code>02_cat_dl</code></li>
+                        <li>Copier/coller* le code HTML de la page correspondante sur le site du design system: https://design.smart.coop/ en inspectant la page dans la console</li>
+                        <li>Retirer le code pug.</li>
+                        <li>Vérifier si chaque variante du composant à bien été intégrée dans le composant DL. Si ce n'est pas le cas, insérer un warning de ce type:</li>
+                        <p class="br-sample-documentation c-content c-menu__item--danger">This is missing</p>
+                        <p class="br-sample-documentation c-content c-menu__item--danger">This is not well implemented</p>
+                        <li>Documenter l'utilisation du composant DL. Ex: @("<smart-button label=\"Button Label\"></smart-button>")</li>
+                        <li>Remplacer le titre dans la variable <code>ViewData["ComponentTitle"]</code></li>
+                    </ol>
+                    <p class="c-body-2">*Lors du copié/collé, attention à bien respecter l’indentation des balises pour ne pas casser la mise en page</p>
+                </div>
+            </div>
+            
+
+            
+
+            
         </div>
     </div>
 </div>
