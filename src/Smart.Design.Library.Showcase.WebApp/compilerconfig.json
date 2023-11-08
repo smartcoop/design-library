@@ -6,5 +6,13 @@
   {
     "outputFile": "wwwroot/ElementsForShowcase/styleguide-customizations.css",
     "inputFile": "wwwroot/SmartLib/scss/styleguide-customizations.scss"
+  },
+  {
+    "outputFile": "wwwroot/SmartLib/scss/_c-tooltip.css",
+    "inputFile": "wwwroot/SmartLib/scss/_c-tooltip.scss"
+  },
+  {
+    "outputFile": "wwwroot/SmartLib/scss/_c-select.css",
+    "inputFile": "wwwroot/SmartLib/scss/_c-select.scss"
   }
 ]

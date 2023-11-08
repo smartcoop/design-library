@@ -1,4 +1,4 @@
-﻿# Installation des extentions.
+# Installation des extentions.
 
 ![N|Solid](https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/bundlerminifier/2.8.396/1535134367605/Microsoft.VisualStudio.Services.Icons.Default) **Bundler & Minifier**
 

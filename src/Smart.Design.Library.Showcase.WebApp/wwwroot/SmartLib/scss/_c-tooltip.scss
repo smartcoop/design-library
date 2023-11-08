@@ -21,6 +21,17 @@ $c-tooltip-bg: rgba(0,0,0,0.65) !default;
   z-index: 1;
 }
 
+.c-tooltip--icon {
+    display: inline-block;
+    svg {
+        vertical-align: middle;
+        max-width: 2.4rem;
+        max-height: 2.4rem;
+        display: inline;
+        color: #666;
+    }
+}
+
 .c-tooltip--size-m {
   min-width: 24rem;
 }
