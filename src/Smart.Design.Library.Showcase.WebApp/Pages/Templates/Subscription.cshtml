@@ -157,10 +157,10 @@
                     <h2 class="c-h2 u-spacer-bottom-l">Adresse Courrier</h2>
 
                     <div class="u-spacer-bottom">
-                        <smart-radio id="sameAddress" name="subscriptionAddressChoice" label="Mon adresse courrier <strong>est la même</strong> que mon adresse officielle" value="same_adress" checked="true"></smart-radio>
+                        <smart-radio id="sameAddress" name="SameAddress" label="Mon adresse courrier <strong>est la même</strong> que mon adresse officielle" value="true"  checked="@Model.SameAddress"></smart-radio>
                     </div>
                     <div class="u-spacer-bottom-xl">
-                        <smart-radio id="anotherAddress" name="subscriptionAddressChoice" label="Mon adresse courrier <strong>est différente</strong> de mon adresse officielle" value="another_address" checked="false"></smart-radio>
+                        <smart-radio id="anotherAddress" name="SameAddress" label="Mon adresse courrier <strong>est différente</strong> de mon adresse officielle" value="false" checked="!@Model.SameAddress" ></smart-radio>
                     </div>
                     <!--- BO Bloc à ne faire apparaître que lorsque le radio subscriptionAnotherAddress est ON-->
                     <div id="blocAnotherAdress" style="display:none;">
@@ -325,8 +325,17 @@
     }
 
     docReady(function () {
+        var sameAddress = document.getElementById("sameAddress");
+        var anotherAddress = document.getElementById("anotherAddress");
+
         // add click event on sameAddress and anotherAddress
-        document.getElementById("sameAddress").addEventListener("click", SameAddress);
-        document.getElementById("anotherAddress").addEventListener("click", AnotherAddress);
+        sameAddress.addEventListener("click", SameAddress);
+        anotherAddress.addEventListener("click", AnotherAddress);
+
+        if (sameAddress.checked) {
+            SameAddress();
+        } else {
+            AnotherAddress()
+        }
     });
 </script>

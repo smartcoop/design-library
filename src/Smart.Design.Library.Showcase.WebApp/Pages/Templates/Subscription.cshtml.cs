@@ -49,11 +49,19 @@ public class SubscriptionModel : PageModel
     [BindProperty]
     public Subscription Subscription { get; set; }
 
+    [BindProperty]
+    public bool SameAddress { get; set; }
+
+
     public void OnGet()
     {
+        SameAddress = true;
     }
+
     public async Task<ActionResult> OnPostAsync()
     {
+        SameAddress = Request.Form.ContainsKey("sameAddress") && bool.Parse(Request.Form["sameAddress"]);
+
         if (!ModelState.IsValid)
         {
             ModelState.AddModelError(string.Empty, "error");
