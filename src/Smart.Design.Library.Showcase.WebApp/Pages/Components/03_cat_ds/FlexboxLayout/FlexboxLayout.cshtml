@@ -1,0 +1,208 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components._03_cat_ds.FlexboxLayout.FlexboxLayoutModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "FlexboxLayout";
+}
+
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complet</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Flexbox helper classes enable you to quickly layout items in relation to each other.</p>
+            <h4 id="parent-element-classes">Parent element classes</h4>
+            <ul>
+                <li>
+                    <code>.o-flex</code>
+                </li>
+                <li>
+                    <code>.o-flex--vertical</code>
+                </li>
+                <li>
+                    <code>.o-flex--horizontal</code>
+                </li>
+                <li>
+                    <code>.o-flex--vertical-center</code>
+                </li>
+                <li>
+                    <code>.o-flex--horizontal-center</code>
+                </li>
+                <li>
+                    <code>.o-flex--center</code>
+                </li>
+                <li>
+                    <code>.o-flex--justify-between</code>
+                </li>
+                <li>
+                    <code>.o-flex--spaced</code>u-flex--twins
+                </li>
+                <li>
+                    <code>.o-flex--spaced-wide</code>
+                </li>
+                
+            </ul>
+            <h4 id="child-element-classes">Child element classes</h4>
+            <ul>
+                <li>
+                    <code>.o-flex__item</code>
+                </li>
+                <li>
+                    <code>.o-flex__item--shrink</code>
+                </li>
+            </ul>
+        </div>
+        <div class="br-sample" id="component-01-c-wizard">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Flexbox Layout Horizontal</h3>
+            </div>
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Horizontal</h3>
+                <a class="br-sample-header-link" href="#component-01-o-flex-horizontal">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="o-flex" style="height: 100px;">
+                    <div style="background-color: green; width: 200px; height: 100px;"></div>
+                    <div class="o-flex__item" style="background-color: red; height: 150px;"></div>
+                    <div style="background-color: blue; width: 200px; height: 50px;"></div>
+                </div>
+            </div>
+            
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"o-flex\" style=\"height: 100px;\">")
+    @("<div style=\"background-color: green; width:200px; height: 100px;\"></div>")
+    @("<div class=\"o-flex__item\" style=\"background-color: red; height: 150px;\"></div>")
+    @("<div style=\"background-color: blue; width: 200px; height: 50px;\"></div>")
+@("</div>")</pre>
+            </div>
+        </div>
+
+
+        <div class="br-sample" id="component-02-c-flex-vertical">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Flex vertical</h3>
+                <a class="br-sample-header-link" href="#component-02-c-flex-vertical">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="o-flex o-flex--vertical" style="height: 400px;">
+                    <div style="background-color: green; width: 200px; height: 100px;"></div>
+                    <div class="o-flex__item" style="background-color: red; width: 300px; height: 150px;"></div>
+                    <div style="background-color: blue; width: 200px; height: 50px;"></div>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"o-flex o-flex--vertical\" style=\"height: 400px;\">")
+    @("<div style=\"background-color: green; width: 200px; height: 100px;\"></div>")
+    @("<div class=\"o-flex__item\" style=\"background-color: red; width: 300px; height: 150px;\"></div>")
+    @("<div style=\"background-color: blue; width: 200px; height: 50px;\"></div>")
+@("</div>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-03-c-flex-centering">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Flex centering</h3>
+                <a class="br-sample-header-link" href="#component-03-c-flex-centering">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="o-flex o-flex--center" style="height: 100px;">
+                    <div style="background-color: green; width: 200px; height: 100px;"></div>
+                    <div class="o-flex__item" style="background-color: red; height: 150px;"></div>
+                    <div style="background-color: blue; width: 200px; height: 50px;"></div>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"o-flex o-flex--center\" style=\"height: 100px;\">")
+    @("<div style=\"background-color: green; width: 200px; height: 100px;\"></div>")
+    @("<div class=\"o-flex__item\" style=\"background-color: red; height: 150px;\"></div>")
+    @("<div style=\"background-color: blue; width: 200px; height: 50px;\"></div>")
+@("</div>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-04-c-flex-classes">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">All flex classes</h3>
+                <a class="br-sample-header-link" href="#component-04-c-flex-classes">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <pre class="br-sample-markup br-sample-markup-html"><code>
+.o-flex { display: flex; }
+
+.o-flex--col-reverse { flex-direction: column-reverse; }
+
+media (min-width: 600px) {
+    .o-flex-bp1-m { display: flex; }
+
+    .o-flex--col-reverse-bp1-m { flex-direction: column-reverse; }
+
+    .o-flex--horizontal-bp1-m { flex-direction: row; }
+}
+
+media (min-width: 700px) {
+    .o-flex-bp2 { display: flex; }
+
+    .o-block-bp2 { display: block; }
+
+    .o-flex--col-reverse-bp2 { flex-direction: column-reverse; }
+}
+
+media (min-width: 900px) {
+    .o-flex-bp3 { display: flex; }
+
+    .o-flex--horizontal-bp3 { flex-direction: row; }
+}
+
+.o-flex-inline { display: inline-flex; }
+
+.o-flex--vertical { flex-direction: column; }
+
+.o-flex--horizontal { flex-direction: row; }
+
+.o-flex--reverse { flex-direction: row-reverse }
+
+media (max-width: 700px) {
+    .o-flex--reverse-mobile { flex-direction: row-reverse; }
+}
+
+.o-flex--vertical-center { align-items: center; }
+
+.o-flex--horizontal-center { justify-content: center; }
+
+.o-flex--center {
+    justify-content: center;
+    align-items: center;
+}
+
+.o-flex--justify-between { justify-content: space-between; }
+
+.o-flex--justify-around { justify-content: space-around; }
+
+.o-flex--justify-end { justify-content: flex-end; }
+
+.o-flex--align-start { align-items: flex-start; }
+
+.o-flex--align-baseline { align-items: baseline; }
+
+.o-flex--wrap { flex-wrap: wrap; }</code></pre>
+            </div>
+        </div>
+        
+    </div>
+</div>

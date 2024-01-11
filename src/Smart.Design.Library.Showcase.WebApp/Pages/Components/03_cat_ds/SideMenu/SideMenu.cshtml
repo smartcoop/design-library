@@ -1,0 +1,73 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Table.TableModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "SideMenu";
+}
+@{
+  Dictionary<string, string>
+    LabelAndLinks = new Dictionary<string, string>
+        {
+            {
+            "Item1", "Item1"
+            },{
+            "Item2", "Item2"
+            },{
+            "Item3", "Item3"
+            }
+    };
+}
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complet</p>
+        </div>
+
+        <div class="br-sample" id="component-01-c-SideMenu">
+
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Side menu</h3>
+            </div>
+            <p>
+                A Helper SideMenu tag exists but causes errors, and doesn't handle active elements. You should therefore use the HTML version below.
+            </p>
+            <div class="br-sample-content">
+                <ul class="c-side-menu">
+                    <li class="c-side-menu__item c-side-menu__item--active">
+                        <a class="c-side-menu__link" href="#">Item</a>
+                    </li>
+                    <li class="c-side-menu__item">
+                        <a class="c-side-menu__link" href="#">Item</a>
+                    </li>
+                    <li class="c-side-menu__item">
+                        <a class="c-side-menu__link" href="#">Item</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<ul class=\"c-side-menu\">")
+    @("<li class=\"c-side-menu__item c-side-menu__item--active\">")
+        @("<a class=\"c-side-menu__link\"href =\"#\">Item</a>")
+    @("</li>")
+    @("<li class=\"c-side-menu__item c-side-menu__item--active\">")
+        @("<a class=\"c-side-menu__link\"href =\"#\">Item</a>")
+    @("</li>")
+    @("<li class=\"c-side-menu__item c-side-menu__item--active\">")
+        @("<a class=\"c-side-menu__link\"href =\"#\">Item</a>")
+    @("</li>")
+@("</ul>")</pre>
+            </div>
+            
+        </div>
+    </div>
+</div>

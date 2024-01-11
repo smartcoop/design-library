@@ -1,0 +1,168 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Input.Input
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Input";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Incomplet</p>
+        </div>
+        <div class="br-content c-content">
+            <p>A text input</p>
+            <div class="br-sample-documentation c-content c-menu__item--danger">
+                <p>Labels are missing. See : <a href="https://design.smart.coop/development/docs/c-input.html">https://design.smart.coop/development/docs/c-input.html</a></p>
+                <p>Type password is missing</p>
+            </div>
+        </div>
+        <div class="br-sample" id="component-01-c-input">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Text input</h3>
+                <a class="br-sample-header-link" href="#component-01-c-input">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>A standard text input. Use for single line text.</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-input name="InputName" id="textFieldId" placeholder="The placeholder" value=""></smart-input>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-input name=\"InputName\" id=\"textFieldId\" placeholder=\"The placeholder\" value=\"\" ></smart-input>")</pre>
+            </div>
+
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Numeric input</h3>
+                <a class="br-sample-header-link" href="#component-03-c-input">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>A standard numeric input. Use for single numeric value.</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-input-number name="numericName" id="numericFieldId" placeholder="11,11"></smart-input-number>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-input-number name=\"InputName\" id=\"textFieldId\" value=\"\" placeholder=\"11,11\"></smart-input-number>")</pre>
+            </div>
+
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Date input</h3>
+                <a class="br-sample-header-link" href="#component-04-c-input">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>A standard input. Use for date value.</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-input-date name="dateName" id="dateFieldId"></smart-input-date>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-input-date name=\"InputName\" id=\"textFieldId\" value=\"\" ></smart-input-date>")</pre>
+            </div>
+
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Tel input</h3>
+                <a class="br-sample-header-link" href="#component-05-c-input">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>A standard Tel input. Use for phone value.</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-input-phone name="phoneName" id="phoneFieldId"></smart-input-phone>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-input-phone name=\"InputName\" id=\"textFieldId\" value=\"\" ></smart-input-tel>")</pre>
+            </div>
+
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Email input</h3>
+                <a class="br-sample-header-link" href="#component-03-c-input">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>A standard Email input. Use for email value.</p>
+            </div>
+            <div class="br-sample-content">
+                <smart-input-number name="emailName" id="emailFieldId"></smart-input-number>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-input-email name=\"InputName\" id=\"textFieldId\" value=\"\" ></smart-input-email>")</pre>
+            </div>
+
+            <div class="br-sample" id="component-02-c-input">
+                <div class="br-sample-header br-sample-clearfix">
+                    <h3 class="br-sample-heading c-h3">Disabled text Input</h3>
+                    <a class="br-sample-header-link" href="#component-02-c-input">#</a>
+                </div>
+                <div class="br-sample-content">
+                    <p class="c-menu__item--danger">Disabled text Input missing</p>
+                </div>
+                <div class="br-sample-footer">
+                </div>
+            </div>
+        </div>
+        <div class="br-componentgroup-footer-wrapper">
+            <h1 class="br-componentgroup-footer c-h2">Possible parameters for Input</h1>
+            <div class="br-content c-content">
+                <table class="c-table">
+                    <thead>
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Type</th>
+                            <th>Possible values</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>id</td>
+                            <td>string</td>
+                            <td>Id attribute of the element</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>name</td>
+                            <td>string</td>
+                            <td>
+                                Name attribute of the element
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>value</td>
+                            <td>string</td>
+                            <td>
+                                Value of the input
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>placeholder</td>
+                            <td>string</td>
+                            <td>Placeholder of the input.</td>
+                            <td>Describes the expected value of an input field.</td>
+                        </tr>
+                        <tr>
+                            <td>for</td>
+                            <td>ModelExpression</td>
+                            <td></td>
+                            <td>The ModelExpression associated to the html element.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,134 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Tabs.TabsModel    
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Tabs";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complet</p>
+        </div>
+
+        <div class="br-sample-documentation c-content">
+            <p>See a real exemple on our prototypes pages <a href="https://design.smart.coop/prototypes/new-desk/detachment-item.html" target="_blank">here</a>.</p>
+        </div>
+
+        <div class="br-sample" id="component-01-c-Tabs">
+
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Tabs (with sections)</h3>
+            </div>
+
+            <div class="br-sample-content">
+                <nav class="c-tabs">
+                    <ul>
+                        <li>
+                            <a class="c-tabs__item" href="#section1">Item</a>
+                        </li>
+                        <li>
+                            <a class="c-tabs__item" href="#section2">Item</a>
+                        </li>
+                        <li>
+                            <a class="c-tabs__item" href="#section3">Item</a>
+                        </li>
+                        <li>
+                            <a class="c-tabs__item" href="#section4">Item</a>
+                        </li>
+                        <li>
+                            <a class="c-tabs__item" href="#section5">Item</a>
+                        </li>
+                    </ul>
+                    <div class="c-tabs__section" id="section1">
+                        <p>a tab</p>
+                    </div>
+                    <div class="c-tabs__section" id="section2">
+                        <p>another tab</p>
+                    </div>
+                    <div class="c-tabs__section" id="section3">
+                        <p>a third tab</p>
+                    </div>
+                    <div class="c-tabs__section" id="section4">
+                        <p>a fourth tab</p>
+                    </div>
+                    <div class="c-tabs__section" id="section5">
+                        <p>a fifth tab</p>
+                    </div>
+                </nav>
+            </div>
+
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<nav class=\"c-tabs\">")
+    @("<ul>")
+        @("<li>")
+            @("<a class=\"c-tabs__item\" href=\"#section1\">Item</a>")
+        @("</li>")
+        @("<li>")
+            @("<a class=\"c-tabs__item\" href=\"#section2\">Item</a>")
+        @("</li>")
+        @("<!-- Other LI 3, 4, 5... -->")
+    @("</ul>")
+    @("<div class=\"c-tabs__section\" id=\"section1\">")
+        @("<p>a tab</p>")
+    @("</div>")
+    @("<div class=\"c-tabs__section\" id=\"section2\">")
+        @("<p>another tab</p>")
+    @("</div>")
+    @("<!-- Other Sections 3, 4, 5... -->")
+@("</nav>")</pre>
+            </div>
+        </div>
+
+        <div class="br-sample" id="component-02-c-Tabs">
+
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Tabs (border bottom)</h3>
+            </div>
+
+            <div class="br-sample-content">
+                <nav class="c-tabs c-tabs--border-bottom">
+                    <ul>
+                        <li>
+                            <a class="c-tabs__item" href="#" aria-selected="true">Item</a>
+                        </li>
+                        <li>
+                            <a class="c-tabs__item" href="#">Item</a>
+                        </li>
+                        <li>
+                            <a class="c-tabs__item" href="#">Item</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<nav class=\"c-tabs c-tabs--border-bottom\">")
+    @("<ul>")
+        @("<li>")
+            @("<a class=\"c-tabs__item\" href=\"#\" aria-selected=\"true\">Item</a>")
+        @("</li>")
+        @("<li>")
+            @("<a class=\"c-tabs__item\" href=\"#\">Item</a>")
+        @("</li>")
+        @("<li>")
+            @("<a class=\"c-tabs__item\" href=\"#\" > Item</a>")
+        @("</li>")
+    @("</ul>")
+@("</nav>")</pre>
+            </div>
+        </div>
+
+    </div>
+</div>

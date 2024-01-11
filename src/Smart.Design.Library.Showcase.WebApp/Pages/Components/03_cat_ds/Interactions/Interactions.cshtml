@@ -1,0 +1,632 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Interactions.InteractionsModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Interactions";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complet</p>
+            
+        </div>
+        <p>You can make use of utility classes to quickly make minor style changes.</p>
+        <div class="br-sample" id="component-01-c-interactions">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Toggle element class by clocking buttons group</h3>
+                <a class="br-sample-header-link" href="#component-01-u-interactions-table">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>This interaction toggles any buttons between different states.</p>
+                <p>
+                    To toggle a button toolbar between primary and secondary button states, just add <code>data-toggle="<i>big</i>" data-switch-target="<i>c-table</i>"</code> to both buttons, and automatically, by pressing the buttons, you will toggle the target element <code>c-table</code> with the class combining the two attributes <code>c-table--big</code>
+                </p>
+            </div>
+
+            <div class="br-sample-content">
+                <div class="u-bg-gray-50">
+                    <div class="u-padding-vertical u-padding">
+                        <div class="c-toolbar__item">
+                            <div class="c-button-toolbar c-button-toolbar--compact">
+                                <button class="c-button c-button--primary c-button--icon" type="button" data-toggle="big" data-switch-target="c-table">
+                                    <span class="c-button__content">
+                                        <div class="o-svg-icon o-svg-icon-reorder  ">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z" fill="#0D0D0D" />
+                                            </svg>
+                                        </div>
+                                        <div class="u-sr-accessible">
+                                            Table view
+                                        </div>
+                                    </span>
+                                </button>
+                                <button class="c-button c-button--secondary c-button--icon" type="button" data-toggle="big" data-switch-target="c-table">
+                                    <span class="c-button__content">
+                                        <div class="o-svg-icon o-svg-icon-two-rows  ">
+                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M19 3a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm0 6V5H5v4h14zm0 4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14zm0 6v-4H5v4h14z" fill="#0D0D0D" />
+                                            </svg>
+                                        </div>
+                                        <div class="u-sr-accessible">
+                                            Grid view
+                                        </div>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="u-padding">
+                        <table class="c-table c-table--styled js-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nom de la formation</th>
+                                    <th>Contact</th>
+                                    <th>Matière(s)</th>
+                                    <th>Status</th>
+                                    <th>
+                                        <!-- Actions-->
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Structurer son activité avec le business Model Canvas</td>
+                                    <td>example@site.com</td>
+                                    <td>Economie / Marketing</td>
+                                    <td>
+                                        <span class="c-status-pill c-status-pill--default">
+                                            <span class="c-status-pill__circle"></span>
+                                            <span class="c-status-pill__label">Brouillon</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="c-button-toolbar">
+                                            <button class="c-button c-button--borderless c-button--icon" type="button" data-menu-placement="bottom-end" data-menu="dropdownMenu-0">
+                                                <span class="c-button__content">
+                                                    <div class="o-svg-icon o-svg-icon-options-horizontal  ">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="#595959" />
+                                                            <path d="M6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14Z" fill="#595959" />
+                                                            <path d="M18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z" fill="#595959" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="u-sr-accessible">
+                                                        More options
+                                                    </div>
+                                                </span>
+                                            </button>
+                                            <ul class="c-menu" id="dropdownMenu-0">
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-edit  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-delete  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-add  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Add more</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Structurer son activité avec le business Model Canvas</td>
+                                    <td>example@site.com</td>
+                                    <td>Economie / Marketing</td>
+                                    <td>
+                                        <span class="c-status-pill c-status-pill--default">
+                                            <span class="c-status-pill__circle"></span>
+                                            <span class="c-status-pill__label">Brouillon</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="c-button-toolbar">
+                                            <button class="c-button c-button--borderless c-button--icon" type="button" data-menu-placement="bottom-end" data-menu="dropdownMenu-1">
+                                                <span class="c-button__content">
+                                                    <div class="o-svg-icon o-svg-icon-options-horizontal  ">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="#595959" />
+                                                            <path d="M6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14Z" fill="#595959" />
+                                                            <path d="M18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z" fill="#595959" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="u-sr-accessible">
+                                                        More options
+                                                    </div>
+                                                </span>
+                                            </button>
+                                            <ul class="c-menu" id="dropdownMenu-1">
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-edit  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-delete  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-add  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Add more</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Structurer son activité avec le business Model Canvas</td>
+                                    <td>example@site.com</td>
+                                    <td>Economie / Marketing</td>
+                                    <td>
+                                        <span class="c-status-pill c-status-pill--default">
+                                            <span class="c-status-pill__circle"></span>
+                                            <span class="c-status-pill__label">Brouillon</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="c-button-toolbar">
+                                            <button class="c-button c-button--borderless c-button--icon" type="button" data-menu-placement="bottom-end" data-menu="dropdownMenu-2">
+                                                <span class="c-button__content">
+                                                    <div class="o-svg-icon o-svg-icon-options-horizontal  ">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="#595959" />
+                                                            <path d="M6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14Z" fill="#595959" />
+                                                            <path d="M18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z" fill="#595959" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="u-sr-accessible">
+                                                        More options
+                                                    </div>
+                                                </span>
+                                            </button>
+                                            <ul class="c-menu" id="dropdownMenu-2">
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-edit  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-delete  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-add  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Add more</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Structurer son activité avec le business Model Canvas</td>
+                                    <td>example@site.com</td>
+                                    <td>Economie / Marketing</td>
+                                    <td>
+                                        <span class="c-status-pill c-status-pill--default">
+                                            <span class="c-status-pill__circle"></span>
+                                            <span class="c-status-pill__label">Brouillon</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="c-button-toolbar">
+                                            <button class="c-button c-button--borderless c-button--icon" type="button" data-menu-placement="bottom-end" data-menu="dropdownMenu-3">
+                                                <span class="c-button__content">
+                                                    <div class="o-svg-icon o-svg-icon-options-horizontal  ">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="#595959" />
+                                                            <path d="M6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14Z" fill="#595959" />
+                                                            <path d="M18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z" fill="#595959" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="u-sr-accessible">
+                                                        More options
+                                                    </div>
+                                                </span>
+                                            </button>
+                                            <ul class="c-menu" id="dropdownMenu-3">
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-edit  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-delete  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-add  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Add more</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Structurer son activité avec le business Model Canvas</td>
+                                    <td>example@site.com</td>
+                                    <td>Economie / Marketing</td>
+                                    <td>
+                                        <span class="c-status-pill c-status-pill--default">
+                                            <span class="c-status-pill__circle"></span>
+                                            <span class="c-status-pill__label">Brouillon</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="c-button-toolbar">
+                                            <button class="c-button c-button--borderless c-button--icon" type="button" data-menu-placement="bottom-end" data-menu="dropdownMenu-4">
+                                                <span class="c-button__content">
+                                                    <div class="o-svg-icon o-svg-icon-options-horizontal  ">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="#595959" />
+                                                            <path d="M6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14Z" fill="#595959" />
+                                                            <path d="M18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z" fill="#595959" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="u-sr-accessible">
+                                                        More options
+                                                    </div>
+                                                </span>
+                                            </button>
+                                            <ul class="c-menu" id="dropdownMenu-4">
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-edit  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-delete  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-add  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Add more</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Structurer son activité avec le business Model Canvas</td>
+                                    <td>example@site.com</td>
+                                    <td>Economie / Marketing</td>
+                                    <td>
+                                        <span class="c-status-pill c-status-pill--default">
+                                            <span class="c-status-pill__circle"></span>
+                                            <span class="c-status-pill__label">Brouillon</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="c-button-toolbar">
+                                            <button class="c-button c-button--borderless c-button--icon" type="button" data-menu-placement="bottom-end" data-menu="dropdownMenu-5">
+                                                <span class="c-button__content">
+                                                    <div class="o-svg-icon o-svg-icon-options-horizontal  ">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="#595959" />
+                                                            <path d="M6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14Z" fill="#595959" />
+                                                            <path d="M18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z" fill="#595959" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="u-sr-accessible">
+                                                        More options
+                                                    </div>
+                                                </span>
+                                            </button>
+                                            <ul class="c-menu" id="dropdownMenu-5">
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-edit  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-delete  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-add  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Add more</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Structurer son activité avec le business Model Canvas</td>
+                                    <td>example@site.com</td>
+                                    <td>Economie / Marketing</td>
+                                    <td>
+                                        <span class="c-status-pill c-status-pill--default">
+                                            <span class="c-status-pill__circle"></span>
+                                            <span class="c-status-pill__label">Brouillon</span>
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <div class="c-button-toolbar">
+                                            <button class="c-button c-button--borderless c-button--icon" type="button" data-menu-placement="bottom-end" data-menu="dropdownMenu-6">
+                                                <span class="c-button__content">
+                                                    <div class="o-svg-icon o-svg-icon-options-horizontal  ">
+                                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 14C13.1046 14 14 13.1046 14 12C14 10.8954 13.1046 10 12 10C10.8954 10 10 10.8954 10 12C10 13.1046 10.8954 14 12 14Z" fill="#595959" />
+                                                            <path d="M6 14C7.10457 14 8 13.1046 8 12C8 10.8954 7.10457 10 6 10C4.89543 10 4 10.8954 4 12C4 13.1046 4.89543 14 6 14Z" fill="#595959" />
+                                                            <path d="M18 14C19.1046 14 20 13.1046 20 12C20 10.8954 19.1046 10 18 10C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14Z" fill="#595959" />
+                                                        </svg>
+                                                    </div>
+                                                    <div class="u-sr-accessible">
+                                                        More options
+                                                    </div>
+                                                </span>
+                                            </button>
+                                            <ul class="c-menu" id="dropdownMenu-6">
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-edit  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Edit</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-delete  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Delete</span>
+                                                    </a>
+                                                </li>
+                                                <li class="c-menu__item">
+                                                    <a class="c-menu__label" href="#">
+                                                        <div class="o-svg-icon o-svg-icon-add  ">
+                                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959" />
+                                                            </svg>
+                                                        </div>
+                                                        <span>Add more</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="br-sample-header br-sample-clearfix">
+            <h3 class="br-sample-heading c-h3">Toggle disabled state onclick</h3>
+            <a class="br-sample-header-link" href="#component-02-u-interactions-disabled">#</a>
+        </div>
+        <div class="br-sample-documentation c-content">
+            <p>This interaction toggles hte <code>disabled</code> state on another element by clicking the initial one.</p>
+            <p>
+                To toggle a the <code>disabled</code> attribute of an element, just add <code>data-toggle="<i>disabled</i>" data-switch-target="<i>target-element-classname</i>"</code>, and automatically, by pressing the element, you will toggle the disabled state of the element <code>target-element-classname</code>
+            </p>
+        </div>
+
+        <div class="br-sample-content">
+            <div class="u-padding-xl">
+                <div class="c-panel--yellow u-padding-l u-padding-horizontal-xl c-panel--border-r-sm" id="acceptation">
+                    <div class="u-flex u-flex--twins o-flex--vertical-center">
+                        <div>
+                            <div class="c-checkbox-group">
+                                <div class="c-checkbox">
+                                    <label>
+                                        <input type="checkbox" data-toggle="disabled" data-switch-target="c-button--warning" />J’accepte le contrat d’utilisation
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="c-button c-button--warning" type="button" disabled="disabled">
+                                <span class="c-button__content">
+                                    <div class="o-svg-icon o-svg-icon-check  ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M20.6644 5.25259C21.0772 5.61951 21.1143 6.25158 20.7474 6.66436L10.0808 18.6644C9.89099 18.8779 9.61898 19 9.33334 19C9.04771 19 8.7757 18.8779 8.58593 18.6644L3.2526 12.6644C2.88568 12.2516 2.92286 11.6195 3.33565 11.2526C3.74843 10.8857 4.3805 10.9229 4.74742 11.3356L9.33334 16.4948L19.2526 5.33564C19.6195 4.92285 20.2516 4.88567 20.6644 5.25259Z" fill="#595959" />
+                                        </svg>
+                                    </div>
+                                    <span class="c-button__label">Valider</span>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="br-sample-header br-sample-clearfix">
+            <h3 class="br-sample-heading c-h3">Scroll to</h3>
+            <a class="br-sample-header-link" href="#component-03-u-interactions-scroll-to">#</a>
+        </div>
+        <div class="br-sample-documentation c-content">
+            <p>This interaction scroll to an specific element by clicking the initial one</p>
+            <p>To add the interaction, simply add <code>data-scroll-to data-scroll-target-id="id-of-the-target-element"</code> to the initial element. This will automatically scroll the page to the <code>#id-of-the-target-element</code> element. The scroll effect will be smooth.</p>
+        </div>
+
+        <div class="br-sample-content">
+            <div class="u-bg-gray-50">
+                <div class="u-padding-vertical u-padding">
+                    <div class="c-toolbar__item">
+                        <div class="c-button-toolbar c-button-toolbar--compact">
+                            <button class="c-button c-button--primary c-button--icon" type="button" data-toggle="big" data-switch-target="c-table">
+                                <span class="c-button__content">
+                                    <div class="o-svg-icon o-svg-icon-reorder  ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M4 6a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1zm0 4a1 1 0 0 1 1-1h14a1 1 0 1 1 0 2H5a1 1 0 0 1-1-1z" fill="#0D0D0D" />
+                                        </svg>
+                                    </div>
+                                    <div class="u-sr-accessible">
+                                        Table view
+                                    </div>
+                                </span>
+                            </button>
+                            <button class="c-button c-button--secondary c-button--icon" type="button" data-toggle="big" data-switch-target="c-table">
+                                <span class="c-button__content">
+                                    <div class="o-svg-icon o-svg-icon-two-rows  ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M19 3a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zm0 6V5H5v4h14zm0 4a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14zm0 6v-4H5v4h14z" fill="#0D0D0D" />
+                                        </svg>
+                                    </div>
+                                    <div class="u-sr-accessible">
+                                        Grid view
+                                    </div>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Copy to clipboard button</h3>
+                <a class="br-sample-header-link" href="#component-04-u-interactions-copy-btn">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>This interaction copy a text into the navigator clipboard by clicking a button</p>
+                <p>To add the interaction, add <code>data-action="copy" data-action-trad="copied" data-copy-content="#ref"</code> to the element that trigger the <i>"copy"</i> action where <code>#ref</code> is referring to the ID of the element where the text will be copied from</p>
+                <p>The <code>data-action-trad="copied"</code> is used to add the "copied" word after the text once the <code>#ref</code> content is well copied in the clipboard.</p>
+            </div>
+
+            <div class="br-sample-content">
+                <div class="o-flex o-flex--vertical-center">
+                    <p class="u-m-t-0 u-m-b-0 u-text-bold" id="ref">SmartBE-050-623</p>
+                    <button class="c-button c-button--primary c-button--small c-button--icon u-spacer-left-xs" type="button" data-action="copy" data-action-trad="copied" data-copy-content="#ref" data-tooltip="tooltip-2" data-tooltip-placement="left">
+                        <span class="c-button__content">
+                            <div class="o-svg-icon o-svg-icon-copy">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M2 4C2 3.46957 2.21071 2.96086 2.58579 2.58579C2.96086 2.21071 3.46957 2 4 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V8H20C20.5304 8 21.0391 8.21071 21.4142 8.58579C21.7893 8.96086 22 9.46957 22 10V20C22 20.5304 21.7893 21.0391 21.4142 21.4142C21.0391 21.7893 20.5304 22 20 22H10C9.46957 22 8.96086 21.7893 8.58579 21.4142C8.21071 21.0391 8 20.5304 8 20V16H4C3.46957 16 2.96086 15.7893 2.58579 15.4142C2.21071 15.0391 2 14.5304 2 14V4ZM10 16V20H20V10H16V14C16 14.5304 15.7893 15.0391 15.4142 15.4142C15.0391 15.7893 14.5304 16 14 16H10ZM14 14V4H4V14H14Z" fill="#595959" />
+                                </svg>
+                            </div>
+                            <div class="u-sr-accessible">
+                                Copier la référence client
+                            </div>
+                        </span>
+                    </button>
+                    <div class="c-tooltip" id="tooltip-2" role="tooltip">
+                        <span>Copy to clipboard</span>
+                        <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

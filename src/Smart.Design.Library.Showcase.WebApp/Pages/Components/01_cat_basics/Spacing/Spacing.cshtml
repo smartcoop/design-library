@@ -1,0 +1,152 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components._01_cat_basics.Spacing.SpacingModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Spacing";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complet</p>
+        </div>
+        <p>You can make use of utility classes to quickly make minor style changes.</p>
+        
+        <div class="br-sample" id="component-01-c-wizard">
+            <div class="br-sample-header br-sample-clearfix ">
+                <h3 class="br-sample-heading c-h3">Spacers</h3>
+                <div class="br-content c-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>All sides</th>
+                                <th>Left</th>
+                                <th>Right</th>
+                                <th>Top</th>
+                                <th>Bottom</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <code>.u-spacer</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-left</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-right</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-top</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-bottom</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.u-spacer-s</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-left-s</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-right-s</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-top-s</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-bottom-s</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.u-spacer-l</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-left-l</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-right-l</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-top-l</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-bottom-l</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <code>.u-spacer-xl</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-left-xl</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-right-xl</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-top-xl</code>
+                                </td>
+                                <td>
+                                    <code>.u-spacer-bottom-xl</code>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+                        
+            <div class="br-sample-content">
+                <div class="u-spacer-bottom" style="background: red; width: 50px; height: 50px;"></div>
+                <div class="u-spacer-left" style="background: red; width: 50px; height: 50px;"></div>
+            </div>
+            
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">@("<div class=\"u-spacer-bottom\" style=\"background: red; width: 50px; height: 50px;\"></div> <div class=\"u-spacer-left\" style=\"background: red; width: 50px; height: 50px;\"></div>")</pre>
+            </div>
+            <div class="u-spacer-top-xl"></div>
+            <div class="br-sample-documentation c-content">This componant existing also in C#</div>
+            <div class="br-sample-content">
+                <div style="border:2px solid #DDD">
+                    <smart-spacer Top="Default">I have a Default/top space</smart-spacer>
+                </div>
+                <smart-spacer Top="ExtraSmall"></smart-spacer>
+                <div style="border:2px solid #DDD">
+                    <smart-spacer Top="ExtraSmall">I have a ExtraSmall/top space</smart-spacer>
+                </div>
+                <smart-spacer Top="ExtraSmall"></smart-spacer>
+                <div style="border:2px solid #DDD">
+                    <smart-spacer Left="Small">I have a Small/Left space</smart-spacer>
+                </div>
+                <smart-spacer Top="ExtraSmall"></smart-spacer>
+                <div style="border:2px solid #DDD">
+                    <smart-spacer All="Large">I have a Large/All space</smart-spacer>
+                </div>
+                <smart-spacer Top="ExtraSmall"></smart-spacer>
+                <div style="border:2px solid #DDD">
+                    <smart-spacer Bottom="ExtraLarge">I have a ExtraLarge/Bottom space</smart-spacer>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>C# Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer Top=\"Default\" > I have a Default / Top space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer Top=\"ExtraSmall\" > I have a ExtraSmall / Top space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer Left=\"Small\" > I have a Small / Left space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer All=\"Large\" > I have a Large / All space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer Bottom=\"ExtraLarge\" > I have a ExtraLarge / Bottom space</smart-spacer>")</pre>
+            </div>
+        </div>
+    </div>
+</div>

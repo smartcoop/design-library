@@ -1,0 +1,36 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.FormGroupInputText.FormGroupInputText
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Form group input text";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Deprecated</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Documentation for Form group input text</p>
+            <p class="u-text-danger">This is a copy of using < smart-formgroup > and < smart-input >. Please don't use it anymore.</p>
+        </div>
+        <div class="br-sample" id="component-01-c-button-primary">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Form group input text</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <smart-form-group-input-text label="label" placeholder="placehodler" helper-text="Helper text"></smart-form-group-input-text>
+            </div>
+            <div class="br-sample-footer">
+            </div>
+        </div>
+    </div>
+</div>
