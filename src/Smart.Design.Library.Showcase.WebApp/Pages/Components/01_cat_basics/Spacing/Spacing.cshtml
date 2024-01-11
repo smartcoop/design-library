@@ -108,44 +108,60 @@
             </div>
                         
             <div class="br-sample-content">
-                <div class="u-spacer-bottom" style="background: red; width: 50px; height: 50px;"></div>
-                <div class="u-spacer-left" style="background: red; width: 50px; height: 50px;"></div>
+                <div style="border:2px solid red">
+                    <div class="u-spacer-top">I have a Default / Top space</div>
+                </div>
+                <div style="border:2px solid red">
+                    <div class="u-spacer-top-xs">I have a ExtraSmall / Tp space</div>
+                </div>
+                <div style="border:2px solid red">
+                    <div class="u-spacer-left-s">I have a Small / Left space</div>
+                </div>
+                <div style="border:2px solid red">
+                    <div class="u-spacer-l">I have a Large / All space</div>
+                </div>
+                <div style="border:2px solid red">
+                    <div class="u-spacer-bottom-xl">I have a ExtraLarge / Bottom space</div>
+                </div>
+            </div>
+
+            <div class="br-sample-documentation c-content">
+                <p>*Default is not working with C# code</p>
+            </div>
+
+            <div class="br-sample-content">
+                <div style="border:2px solid red">
+                    <smart-spacer Top="Default">I have a Default / Top space*</smart-spacer>
+                </div>
+                <div style="border:2px solid red">
+                    <smart-spacer Top="ExtraSmall">I have a ExtraSmall / Top space</smart-spacer>
+                </div>
+                <div style="border:2px solid red">
+                    <smart-spacer Left="Small">I have a Small / Left space</smart-spacer>
+                </div>
+                <div style="border:2px solid red">
+                    <smart-spacer All="Large">I have a Large / All space</smart-spacer>
+                </div>
+                <div style="border:2px solid red">
+                    <smart-spacer Bottom="ExtraLarge">I have a ExtraLarge / Bottom space</smart-spacer>
+                </div>
             </div>
             
             <div class="br-sample-footer">
                 <b>HTML Code: </b>
-                <pre class="br-sample-markup br-sample-markup-html">@("<div class=\"u-spacer-bottom\" style=\"background: red; width: 50px; height: 50px;\"></div> <div class=\"u-spacer-left\" style=\"background: red; width: 50px; height: 50px;\"></div>")</pre>
-            </div>
-            <div class="u-spacer-top-xl"></div>
-            <div class="br-sample-documentation c-content">This componant existing also in C#</div>
-            <div class="br-sample-content">
-                <div style="border:2px solid #DDD">
-                    <smart-spacer Top="Default">I have a Default/top space</smart-spacer>
-                </div>
-                <smart-spacer Top="ExtraSmall"></smart-spacer>
-                <div style="border:2px solid #DDD">
-                    <smart-spacer Top="ExtraSmall">I have a ExtraSmall/top space</smart-spacer>
-                </div>
-                <smart-spacer Top="ExtraSmall"></smart-spacer>
-                <div style="border:2px solid #DDD">
-                    <smart-spacer Left="Small">I have a Small/Left space</smart-spacer>
-                </div>
-                <smart-spacer Top="ExtraSmall"></smart-spacer>
-                <div style="border:2px solid #DDD">
-                    <smart-spacer All="Large">I have a Large/All space</smart-spacer>
-                </div>
-                <smart-spacer Top="ExtraSmall"></smart-spacer>
-                <div style="border:2px solid #DDD">
-                    <smart-spacer Bottom="ExtraLarge">I have a ExtraLarge/Bottom space</smart-spacer>
-                </div>
-            </div>
-            <div class="br-sample-footer">
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"u-spacer-top\">I have a Default / Top space</div>")
+@("<div class=\"u-spacer-top-xs\">I have a Default / Top space</div>")
+@("<div class=\"u-spacer-left-s\">I have a Default / Top space</div>")
+@("<div class=\"u-spacer-l\">I have a Default / Top space</div>")
+@("<div class=\"u-spacer-bottom-xl\">I have a Default / Bottom space</div>")</pre>
                 <b>C# Code: </b>
-                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer Top=\"Default\" > I have a Default / Top space</smart-spacer>")</pre>
-                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer Top=\"ExtraSmall\" > I have a ExtraSmall / Top space</smart-spacer>")</pre>
-                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer Left=\"Small\" > I have a Small / Left space</smart-spacer>")</pre>
-                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer All=\"Large\" > I have a Large / All space</smart-spacer>")</pre>
-                <pre class="br-sample-markup br-sample-markup-html">@("<smart-spacer Bottom=\"ExtraLarge\" > I have a ExtraLarge / Bottom space</smart-spacer>")</pre>
+                <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-spacer Top=\"Default\" > I have a Default / Top space</smart-spacer>")
+@("<smart-spacer Top=\"Default\" >I have a Default / Top space</smart-spacer>")
+@("<smart-spacer Top=\"ExtraSmall\" >I have a ExtraSmall / Top space</smart-spacer>")
+@("<smart-spacer Left=\"Small\" >I have a Small / Left space</smart-spacer>")
+@("<smart-spacer All=\"Large\"  I have a Large / ALL space</smart-spacer>")
+@("<smart-spacer Bottom=\"ExtraLarge\" > I have a ExtraLarge / Bottom space</smart-spacer>")</pre>
             </div>
         </div>
     </div>
