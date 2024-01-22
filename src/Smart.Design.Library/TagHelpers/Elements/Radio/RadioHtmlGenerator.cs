@@ -20,21 +20,21 @@ public class RadioHtmlGenerator : IRadioHtmlGenerator
         inputRadioTagBuilder.Attributes.Add("type", "radio");
         inputRadioTagBuilder.Attributes.Add("id", id);
 
-        if (@checked)
-        {
-            inputRadioTagBuilder.Attributes.Add("checked", "checked");
-        }
 
         var modelValue = Convert.ToString(@for?.Model, CultureInfo.CurrentCulture);
 
-        if (modelValue != null &&
-            string.Equals(modelValue, value, StringComparison.OrdinalIgnoreCase))
+        if (@for?.Model is not null)
         {
-            inputRadioTagBuilder.Attributes.Add("checked", "checked");
+            inputRadioTagBuilder.Attributes["value"] = Convert.ToString(@for.Model, CultureInfo.InvariantCulture);
         }
-        else if (!string.IsNullOrWhiteSpace(value))
+        else if (value is not null)
         {
-            inputRadioTagBuilder.Attributes.Add("value", value);
+            inputRadioTagBuilder.Attributes["value"] = Convert.ToString(value, CultureInfo.InvariantCulture);
+        }
+
+        if (@checked)
+        {
+            inputRadioTagBuilder.Attributes["checked"] = "checked";
         }
 
         if (!string.IsNullOrWhiteSpace(id))
