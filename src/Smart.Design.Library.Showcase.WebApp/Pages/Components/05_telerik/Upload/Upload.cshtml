@@ -1,4 +1,6 @@
 ﻿@page
+@using Kendo.Mvc.TagHelpers
+@using Kendo.Mvc.UI
 @model Smart.Design.Library.Showcase.Pages.Components._05_telerik.Upload.UploadModel
 @{
     ViewData["MainTitle"] = "Components documentation";
@@ -31,9 +33,17 @@
                         </p>
                         TODO: KENDO component fom telerik
 
+                        @(Html.Kendo()
+                            .Upload()
+                            .Name("contracts")
+                            .DropZone(".dropdown_zone_1")
+                            .Multiple(true)
+                            .Validation(validation => validation.AllowedExtensions(new string[] { "jpg", "png", "jpeg", "pdf" }))
+                            .Validation(validation => validation.MaxFileSize(2000000))
+                            )
                         <div id="table_body_DocTypeInvoiceRequest" class="uploaded__list">
 
-                            
+
                                 <hr class="c-hr u-spacer-s u-m-r-0 u-m-t-0 u-m-l-0" />
                                 <div class="uploaded__item o-flex u-flex--twins o-flex--vertical-center">
                                     <div class="o-flex o-flex--vertical-center">
