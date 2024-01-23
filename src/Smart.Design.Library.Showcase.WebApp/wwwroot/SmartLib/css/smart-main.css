@@ -2220,14 +2220,25 @@ Component: app layout
   height: 100%;
   width: 100%;
 }
-
-.c-brand--small {
-  height: 3.6rem;
+.c-brand svg {
+  width: 74px;
+}
+.c-brand--xsmall {
+  height: auto;
+  margin-top: 2px;
 }
 
-.c-brand--xsmall {
-  height: 2.6rem;
-  margin-top: -4px;
+@media (min-width: 700px) {
+  .c-brand svg {
+    width: 124px;
+  }
+  .c-brand--xsmall {
+    height: 2.6rem;
+    margin-top: -4px;
+  }
+}
+.c-brand--small {
+  height: 3.6rem;
 }
 
 /* ==========================================================================
@@ -4496,7 +4507,7 @@ header .c-navbar .c-toolbar, header.c-navbar .c-toolbar {
 }
 
 .c-pill-navigation__item--has-child-menu > button {
-  padding: 0.8rem 2.6rem 0.8rem 1rem;
+  padding: 0.8rem 2.2rem 0.8rem 0.8rem;
   appearance: none;
   background: none;
   border: none;
@@ -4526,6 +4537,11 @@ header .c-navbar .c-toolbar, header.c-navbar .c-toolbar {
   border-radius: 0.3rem;
 }
 
+@media (min-width: 700px) {
+  .c-pill-navigation__item--has-child-menu > button {
+    padding: 0.8rem 2.6rem 0.8rem 1rem;
+  }
+}
 /* ==========================================================================
   c-popover
  ========================================================================== */
@@ -5794,7 +5810,7 @@ c-table-of-content
   justify-content: flex-end;
 }
 .c-toolbar__right .c-toolbar__item {
-  margin-left: 1.6rem;
+  margin-left: 0.4rem;
 }
 .c-toolbar__right .c-toolbar__item:first-child {
   margin-left: 0;
@@ -5901,6 +5917,11 @@ c-table-of-content
   .c-toolbar.c-toolbar--drop-columns-low-mq .c-toolbar__right .c-toolbar__item {
     margin-left: 0;
     margin-right: 1.6rem;
+  }
+}
+@media (min-width: 700px) {
+  .c-toolbar__right .c-toolbar__item {
+    margin-left: 1.6rem;
   }
 }
 @media (min-width: 1040px) {
