@@ -1,36 +1,35 @@
- $o-form-group-label-font-weight: 500 !default;
+/* ==========================================================================
+  Component: Form group
+  ---
+  Wrapping component for a label and an input control
+   ========================================================================== */
 
-Group within a form that defines a layout ========================================================================== */
+/* Variables
+   ========================================================================== */
+
+$o-form-group-spacing: $g-base-font-size;
+$c-input-label-color: $color-semantic-header-text;
+$o-form-group-spacer-unit: 0.8rem !default;
+$o-form-group-label-font-weight: 500 !default;
+
+/* o-form-group
+   Group within a form that defines a layout
+   ========================================================================== */
+
+
+
 .o-form-group-layout--standard {
+
     .o-form-group {
         margin-bottom: $o-form-group-spacer-unit*2;
     }
 
-.o-form-group-layout--standard {
-.o-form-group__controls {
-flex: 1 1 auto;
-}
-
-.o-form-group {
-margin-bottom: $o-form-group-spacer-unit*2;
-}
-
-label.o-form-group__label, .o-form-group__label label {
-padding: $o-form-group-spacing/2 0;
-color: $c-input-label-color;
-font-size: $g-base-font-size;
-font-weight: $o-form-group-label-font-weight;
-display: block;
-flex: none;
-
     .o-form-group__controls {
-    flex: 1 1 auto;
-
-    .c-tooltip-icon {
-        margin-left: .4rem;
+        flex: 1 1 auto;
     }
 
-    label.o-form-group__label, .o-form-group__label label {
+    label.o-form-group__label,
+    .o-form-group__label label {
         padding: $o-form-group-spacing/2 0;
         color: $c-input-label-color;
         font-size: $g-base-font-size;
@@ -41,36 +40,25 @@ flex: none;
         .c-tooltip-icon {
             margin-left: .4rem;
         }
-
-        label {
-            .c-tooltip-icon {
-                margin-left: .4rem;
-            }
-        }
     }
 
     label.o-form-group__label--with-helper {
         display: flex;
         align-items: center;
     }
-
-    .o-form-group__label--with-helper {
-        display: flex;
-        align-items: center;
-    }
 }
-/* o-form-horizontal @@ -53,97 +57,97 @@ $o-form-group-label-font-weight: 500 !default;
-    ========================================================================== */
+
+/* o-form-horizontal
+   Affect form groups
+   ========================================================================== */
+
 .o-form-group-layout--horizontal {
     .o-form-group {
         margin-bottom: 1.2rem;
     }
 
-    .o-form-group {
-        margin-bottom: 1.2rem;
-    }
-
-    label.o-form-group__label, .o-form-group__label label {
+    label.o-form-group__label,
+    .o-form-group__label label {
         padding: 0.6rem 0;
         color: $c-input-label-color;
         font-weight: $o-form-group-label-font-weight;
@@ -80,13 +68,6 @@ flex: none;
     .o-form-group__label--with-helper {
         display: flex;
         align-items: center;
-    }
-
-    label.o-form-group__label, .o-form-group__label label {
-        padding: 0.6rem 0;
-        color: $c-input-label-color;
-        font-weight: $o-form-group-label-font-weight;
-        display: block;
     }
 
     .o-form-group__controls {
@@ -95,142 +76,74 @@ flex: none;
         align-items: flex-start;
     }
 
-    .o-form-group__label--with-helper {
+    @media(min-width: $g-bp1) {
+        .o-form-group {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .o-form-group__controls--full-width {
+            flex: 1 1 auto;
+        }
+
+        .o-form-group__label {
+            width: 45%;
+            max-width: 25rem;
+            flex: 0 0 auto;
+        }
+    }
+}
+
+.o-form-group-layout--horizontal-long {
+    .o-form-group__label {
+        width: 65%;
+        color: $c-input-label-color;
+    }
+}
+
+.o-form-group-layout--horizontal-short {
+    .o-form-group__label {
+        width: 35%;
+        max-width: 16rem;
+    }
+}
+
+.o-form-group-layout--inline {
+    display: flex;
+
+    .o-form-group__label {
+        white-space: nowrap;
+    }
+
+    .o-form-group {
         display: flex;
+        flex: 1 0 auto;
         align-items: center;
+        margin-left: .8rem;
 
-        @media(min-width: $g-bp1) {
-            .o-form-group {
-                display: flex;
-                align-items: flex-start;
-            }
+        &:first-child {
+            margin: 0;
+        }
 
-            .o-form-group__controls {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
+        .o-form-group__controls {
+            flex: 1 1 auto;
+        }
 
-                .o-form-group__controls--full-width {
-                    flex: 1 1 auto;
-                }
+        .c-button {
+            height: 100%;
+        }
+    }
 
-                @media(min-width: $g-bp1) {
-                    .o-form-group {
-                        display: flex;
-                        align-items: flex-start;
-                    }
+    .o-form-group__label {
+        font-weight: $o-form-group-label-font-weight;
+        margin-right: .8rem;
+    }
 
-                    .o-form-group__controls--full-width {
-                        flex: 1 1 auto;
-                    }
+    .o-form-group--inline-grow {
+        flex: 1 0 auto;
+    }
 
-                    .o-form-group__label {
-                        width: 45%;
-                        max-width: 25rem;
-                        flex: 0 0 auto;
-                    }
-
-                    .o-form-group__label {
-                        width: 45%;
-                        max-width: 25rem;
-                        flex: 0 0 auto;
-                    }
-                }
-            }
-
-            .o-form-group-layout--horizontal-long {
-                .o-form-group__label {
-                    width: 65%;
-                    color: $c-input-label-color;
-                }
-
-                .o-form-group__label {
-                    width: 65%;
-                    color: $c-input-label-color;
-                }
-            }
-
-            .o-form-group-layout--horizontal-short {
-                .o-form-group__label {
-                    width: 35%;
-                    max-width: 16rem;
-                }
-
-                .o-form-group__label {
-                    width: 35%;
-                    max-width: 16rem;
-                }
-            }
-
-            .o-form-group-layout--inline {
-                display: flex;
-
-                .o-form-group__label {
-                    white-space: nowrap;
-                }
-
-                .o-form-group {
-                    display: flex;
-                    flex: 1 0 auto;
-                    align-items: center;
-                    margin-left: .8rem;
-
-                    .o-form-group__label {
-                        white-space: nowrap;
-
-                        &:first-child {
-                            margin: 0;
-                        }
-
-                        .o-form-group {
-                            display: flex;
-                            flex: 1 0 auto;
-                            align-items: center;
-                            margin-left: .8rem;
-
-                            &:first-child {
-                                margin: 0;
-                            }
-
-                            .o-form-group__controls {
-                                flex: 1 1 auto;
-                            }
-
-                            .c-button {
-                                height: 100%;
-                            }
-
-                            .o-form-group__controls {
-                                flex: 1 1 auto;
-                            }
-
-                            .o-form-group__label {
-                                font-weight: $o-form-group-label-font-weight;
-                                margin-right: .8rem;
-
-                                .c-button {
-                                    height: 100%;
-                                }
-                            }
-
-                            .o-form-group--inline-grow {
-                                flex: 1 0 auto;
-                            }
-
-                            .o-form-group__label {
-                                font-weight: $o-form-group-label-font-weight;
-                                margin-right: .8rem;
-                            }
-
-                            .o-form-group--inline-shrink {
-                                flex: 0 1 auto;
-                            }
-
-                            .o-form-group--inline-grow {
-                                flex: 1 0 auto;
-                            }
-
-                            .o-form-group--inline-shrink {
-                                flex: 0 1 auto;
-                            }
-                        }
+    .o-form-group--inline-shrink {
+        flex: 0 1 auto;
+    }
+}

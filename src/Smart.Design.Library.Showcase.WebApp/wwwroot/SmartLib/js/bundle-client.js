@@ -1,32 +1,33 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
-require("./modules/accordion");
+require("./mono-modules/accordion.js");
 
-require("./modules/close-alert");
+require("./mono-modules/close-alert.js");
 
-require("./modules/close-global-banner");
+require("./mono-modules/close-global-banner.js");
 
-require("./modules/copy-btn");
+require("./mono-modules/copy-btn.js");
 
-require("./modules/design-system-website-mobile-menu");
+require("./mono-modules/design-system-website-mobile-menu.js");
 
-require("./modules/dialogs");
+require("./mono-modules/dialogs.js");
 
-require("./modules/input-password.js");
+require("./mono-modules/input-password.js");
 
-require("./modules/menu");
+require("./mono-modules/menu");
 
-require("./modules/navbar-components");
+require("./mono-modules/navbar-components");
 
-require("./modules/popper-popover");
+require("./mono-modules/popper-popover");
 
-require("./modules/popper-tooltip");
+require("./mono-modules/popper-tooltip");
 
-require("./modules/tabs");
+require("./mono-modules/tabs");
 
-},{"./modules/accordion":2,"./modules/close-alert":3,"./modules/close-global-banner":4,"./modules/copy-btn":5,"./modules/design-system-website-mobile-menu":6,"./modules/dialogs":7,"./modules/input-password.js":8,"./modules/menu":9,"./modules/navbar-components":10,"./modules/popper-popover":11,"./modules/popper-tooltip":12,"./modules/tabs":13}],2:[function(require,module,exports){
+},{"./mono-modules/accordion":2,"./mono-modules/close-alert":3,"./mono-modules/close-global-banner":4,"./mono-modules/copy-btn":5,"./mono-modules/design-system-website-mobile-menu":6,"./mono-modules/dialogs":7,"./mono-modules/input-password.js":8,"./mono-modules/menu":9,"./mono-modules/navbar-components":10,"./mono-modules/popper-popover":11,"./mono-modules/popper-tooltip":12,"./mono-modules/tabs":13}],2:[function(require,module,exports){
 "use strict";
+
 
 /* Accordion
    ========================================================================== */

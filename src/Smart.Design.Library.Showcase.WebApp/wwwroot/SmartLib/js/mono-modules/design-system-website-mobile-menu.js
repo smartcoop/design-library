@@ -6,6 +6,7 @@ const htmlElement = document.querySelector('html');
 const mobileNavigationOpenButton = document.querySelector('#c-design-system-nav-open');
 const mobileNavigationCloseButton = document.querySelector('#c-design-system-nav-close');
 const mobileMenu = document.querySelector('.c-design-system-nav__mobile');
+console.log("mobile-menu");
 
 const handleMenuOpen = function handleMenuOpen(e) {
   e.preventDefault();
