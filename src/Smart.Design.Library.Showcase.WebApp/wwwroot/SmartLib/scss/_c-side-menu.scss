@@ -74,6 +74,41 @@
   }
 }
 
-c-side-menu__sublist{
+.c-side-menu__subtitle {
+    text-decoration: none;
+    padding: 1.2rem 2.4rem;
+    color: $color-semantic-body-text;
+    align-items: center;
+    display: flex;
+    position: relative;
+
+    &:hover,
+    &:focus {
+        background: $color-gray-25;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .o-svg-icon {
+        transform: rotate(0deg);
+        transition: transform .2s ease;
+    }
+
+    &.active {
+        color: $color-semantic-muted-text;
+
+        .o-svg-icon {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.c-side-menu__sublist {
     display: none;
+
+    .c-side-menu__link {
+        padding-left: 3.8rem;
+    }
 }

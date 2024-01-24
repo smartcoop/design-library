@@ -13,6 +13,8 @@ class Subltitle {
         function myFunc(e) {
             var sublist = e.currentTarget.nextElementSibling;
             sublist.classList.toggle("open");
+            e.currentTarget.classList.toggle("active");
+            slideToggle(sublist);
         }
     }
 }
@@ -37,7 +39,7 @@ if (ww < 700) {
 function openSideMenu(e) {
     e.preventDefault();
     e.currentTarget.classList.toggle("open");
-    slideToggle(side_menu, 600);
+    slideToggle(side_menu);
     /* Do we need to close the menu after link is clicked in sidemenu ? */
 }
 
