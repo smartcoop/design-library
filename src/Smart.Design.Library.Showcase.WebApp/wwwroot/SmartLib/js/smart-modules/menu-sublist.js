@@ -11,6 +11,8 @@ class Subltitle {
         function myFunc(e) {
             var sublist = e.currentTarget.nextElementSibling;
             sublist.classList.toggle("open");
+            e.currentTarget.classList.toggle("active");
+            slideToggle(sublist);
         }
     }
 }
