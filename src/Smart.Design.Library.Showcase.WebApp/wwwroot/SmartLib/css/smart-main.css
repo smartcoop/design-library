@@ -1758,20 +1758,31 @@ Component: app layout
 }
 
 .c-app-layout-inner__sidebar {
+  display: none;
+  top: 53px;
+  background-color: #FFFFFF;
   width: 100%;
-  position: relative;
-  top: 2px;
+  position: absolute;
+  z-index: 11111;
   flex: 0 0 auto;
   padding: 1.8rem;
   margin-top: 0;
-  background-color: #FFFFFF;
-  height: 100%;
+  border-bottom-right-radius: 0.6rem;
+  border-bottom-left-radius: 0.6rem;
+  box-shadow: 0 3px 2px rgba(242, 242, 242, 0.4);
 }
 @media (min-width: 700px) {
   .c-app-layout-inner__sidebar {
+    display: block;
     top: 6.4rem;
     border-top-right-radius: 0.6rem;
     width: 30rem;
+    position: relative;
+    z-index: inherit;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    box-shadow: none;
+    height: 100%;
   }
 }
 @media (min-width: 1040px) {
@@ -1832,7 +1843,7 @@ Component: app layout
     top: 6.2rem;
   }
   .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title + div, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar + div {
-    margin-top: 12.4rem;
+    margin-top: 6.2rem;
   }
   .c-app-layout-inner__content .c-navbar.u-position-fixed.collapsing + div, .c-app-layout-inner__content .c-navbar.collapsing.c-app-layout-inner__sidebar + div {
     margin-top: 20.4rem;
@@ -1848,6 +1859,12 @@ Component: app layout
   }
   .c-app-layout-inner__content .c-navbar .c-toolbar {
     height: 6.2rem;
+  }
+  .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar {
+    top: 6.2rem;
+  }
+  .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title + div, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar + div {
+    margin-top: 12.4rem;
   }
   .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title + div, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar + div, .c-app-layout-inner__content .c-navbar.u-position-fixed.collapsing + div, .c-app-layout-inner__content .c-navbar.collapsing.c-app-layout-inner__sidebar + div {
     margin-top: 7rem;

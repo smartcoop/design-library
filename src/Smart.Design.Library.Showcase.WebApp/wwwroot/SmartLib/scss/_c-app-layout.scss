@@ -28,27 +28,40 @@ Component: app layout
 }
 
 .c-app-layout-inner__sidebar {
-  @extend .u-position-fixed;
-  width: 100%;
-  position: relative;
-  top: 2px;
-  flex: 0 0 auto;
-  padding: 1.8rem;
-  margin-top: 0;
-  background-color: $color-white;
-  height: 100%;
+    display: none;
+    top: 53px;
+    @extend .u-position-fixed;
+    background-color: $color-white;
+    width: 100%;
+    position: absolute;
+    z-index: 11111;
+    flex: 0 0 auto;
+    padding: 1.8rem;
+    margin-top: 0;
+    border-bottom-right-radius: .6rem;
+    border-bottom-left-radius: .6rem;
+    box-shadow: 0 3px 2px transparentize($color-gray-50, .60);
 
-  @media (min-width: $g-bp2) {
-    top: 6.4rem;
-    border-top-right-radius: .6rem;
-    width: $g-sidebar-width-m;
-  }
-  @media (min-width: $g-bp3-m) {
-    padding: 2.4rem;
-  }
-  @media (min-width: $g-bp4) {
-    width: $g-sidebar-width-l;
-  }
+    @media (min-width: $g-bp2) {
+        display: block;
+        top: 6.4rem;
+        border-top-right-radius: .6rem;
+        width: $g-sidebar-width-m;
+        position: relative;
+        z-index: inherit;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        box-shadow: none;
+        height: 100%;
+    }
+
+    @media (min-width: $g-bp3-m) {
+        padding: 2.4rem;
+    }
+
+    @media (min-width: $g-bp4) {
+        width: $g-sidebar-width-l;
+    }
 }
 
 .c-app-layout-inner__sidebar + .c-app-layout-inner__content {
@@ -75,50 +88,65 @@ Component: app layout
 }
 
 .c-app-layout-inner__content {
-  margin-top: .2rem;
-  width: 100%;
-  height: 100%;
-  flex: 1;
-  .c-navbar{
-    height: auto;
-    border-top: 2px solid $color-gray-50;
-    border-bottom: 2px solid $color-gray-50;
+    margin-top: .2rem;
+    width: 100%;
+    height: 100%;
+    flex: 1;
 
-    .c-toolbar{
-      // height: 6.4rem;
-      background: white;
-    }
-  }
-  @media (min-width: $g-bp2) {
-    margin-top: 6.2rem;
-    .c-navbar{
+    .c-navbar {
+        height: auto;
+        border-top: 2px solid $color-gray-50;
+        border-bottom: 2px solid $color-gray-50;
 
-      &.u-position-fixed.main-title{
-        top: 6.2rem;
-        & + div{
-          margin-top: 12.4rem;
+        .c-toolbar {
+            // height: 6.4rem;
+            background: white;
         }
-      }
-      &.u-position-fixed.collapsing{
-        & + div{
-          margin-top: 20.4rem;
-        }
-      }
     }
-  }
-  @media (min-width: $g-bp3-m) {
-    margin-top: 6.2rem;
-    .c-navbar{
-      padding-left: 0;
-      position: fixed;
-      .c-toolbar{
-        height: 6.2rem;
-      }
-      &.u-position-fixed.main-title, &.u-position-fixed.collapsing{
-        & + div{
-          margin-top: 7rem;
+
+    @media (min-width: $g-bp2) {
+        margin-top: 6.2rem;
+
+        .c-navbar {
+            &.u-position-fixed.main-title {
+                top: 6.2rem;
+
+                & + div {
+                    margin-top: 6.2rem;
+                }
+            }
+
+            &.u-position-fixed.collapsing {
+                & + div {
+                    margin-top: 20.4rem;
+                }
+            }
         }
-      }
     }
-  }
+
+    @media (min-width: $g-bp3-m) {
+        margin-top: 6.2rem;
+
+        .c-navbar {
+            padding-left: 0;
+            position: fixed;
+
+            .c-toolbar {
+                height: 6.2rem;
+            }
+
+            &.u-position-fixed.main-title {
+                top: 6.2rem;
+                & + div {
+                    margin-top: 12.4rem;
+                }
+            }
+
+            &.u-position-fixed.main-title, &.u-position-fixed.collapsing {
+                & + div {
+                    margin-top: 7rem;
+                }
+            }
+        }
+    }
 }
