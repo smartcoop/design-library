@@ -1767,8 +1767,8 @@ Component: app layout
   flex: 0 0 auto;
   padding: 1.8rem;
   margin-top: 0;
-  border-bottom-right-radius: 0.6rem;
-  border-bottom-left-radius: 0.6rem;
+  border-bottom-right-radius: 1.2rem;
+  border-bottom-left-radius: 1.2rem;
   box-shadow: 0 3px 2px rgba(242, 242, 242, 0.4);
 }
 @media (min-width: 700px) {
@@ -1822,14 +1822,13 @@ Component: app layout
 }
 
 .c-app-layout-inner__content {
-  margin-top: 0.2rem;
+  margin-top: 0;
   width: 100%;
   height: 100%;
   flex: 1;
 }
 .c-app-layout-inner__content .c-navbar {
   height: auto;
-  border-top: 2px solid #F2F2F2;
   border-bottom: 2px solid #F2F2F2;
 }
 .c-app-layout-inner__content .c-navbar .c-toolbar {
@@ -1838,6 +1837,9 @@ Component: app layout
 @media (min-width: 700px) {
   .c-app-layout-inner__content {
     margin-top: 6.2rem;
+  }
+  .c-app-layout-inner__content .c-navbar {
+    border-top: 2px solid #F2F2F2;
   }
   .c-app-layout-inner__content .c-navbar.u-position-fixed.main-title, .c-app-layout-inner__content .c-navbar.main-title.c-app-layout-inner__sidebar {
     top: 6.2rem;

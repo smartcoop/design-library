@@ -5,15 +5,15 @@ var ww = window.innerWidth || document.documentElement.clientWidth || document.b
 var burger_icon = document.querySelector(".burger-icon");
 var side_menu = document.querySelector(".c-app-layout-inner__sidebar");
 
+if (ww < 700) {
+    burger_icon.addEventListener('click', openSideMenu);
+}
+
 function openSideMenu(e) {
     e.preventDefault();
     e.currentTarget.classList.toggle("open");
     slideToggle(side_menu, 600);
     /* Do we need to close the menu after link is clicked in sidemenu ? */
-}
-
-if (ww > 700) {
-    burger_icon.addEventListener('click', openSideMenu);
 }
 
 window.addEventListener('resize', function () {
@@ -27,7 +27,7 @@ window.addEventListener('resize', function () {
 
 }, true);
 
-/* SLIDE UP */
+/* SLIDE UP Might move */ 
 let slideUp = (target, duration = 500) => {
 
     target.style.transitionProperty = 'height, margin, padding';

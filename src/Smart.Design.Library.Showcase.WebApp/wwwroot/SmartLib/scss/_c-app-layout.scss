@@ -38,8 +38,8 @@ Component: app layout
     flex: 0 0 auto;
     padding: 1.8rem;
     margin-top: 0;
-    border-bottom-right-radius: .6rem;
-    border-bottom-left-radius: .6rem;
+    border-bottom-right-radius: 1.2rem;
+    border-bottom-left-radius: 1.2rem;
     box-shadow: 0 3px 2px transparentize($color-gray-50, .60);
 
     @media (min-width: $g-bp2) {
@@ -88,14 +88,13 @@ Component: app layout
 }
 
 .c-app-layout-inner__content {
-    margin-top: .2rem;
+    margin-top: 0;
     width: 100%;
     height: 100%;
     flex: 1;
 
     .c-navbar {
         height: auto;
-        border-top: 2px solid $color-gray-50;
         border-bottom: 2px solid $color-gray-50;
 
         .c-toolbar {
@@ -108,6 +107,8 @@ Component: app layout
         margin-top: 6.2rem;
 
         .c-navbar {
+            border-top: 2px solid $color-gray-50;
+
             &.u-position-fixed.main-title {
                 top: 6.2rem;
 
@@ -137,6 +138,7 @@ Component: app layout
 
             &.u-position-fixed.main-title {
                 top: 6.2rem;
+
                 & + div {
                     margin-top: 12.4rem;
                 }
