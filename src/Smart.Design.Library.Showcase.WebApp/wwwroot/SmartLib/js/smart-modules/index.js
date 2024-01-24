@@ -1,3 +1,1 @@
-import("./smart-modules/burger-menu.js");
-
-console.log("Hello smart modules");
+import slideToggle from "./smart-modules/slides.js";
