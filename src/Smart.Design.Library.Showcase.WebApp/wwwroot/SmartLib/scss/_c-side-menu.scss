@@ -74,18 +74,21 @@
   }
 }
 
+.burger-icon {
+    svg {
+        transform: rotate(0deg);
+        transition: transform .2s ease;
+    }
+
+    &.open svg{
+        transform: rotate(90deg);
+    }
+}
+
 .c-side-menu__subtitle {
     text-decoration: none;
     padding: 1.2rem 2.4rem;
-    color: $color-semantic-body-text;
-    align-items: center;
-    display: flex;
     position: relative;
-
-    &:hover,
-    &:focus {
-        background: $color-gray-25;
-    }
 
     &:hover {
         cursor: pointer;
