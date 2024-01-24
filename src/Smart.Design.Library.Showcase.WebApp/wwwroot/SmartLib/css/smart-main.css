@@ -2654,6 +2654,10 @@ a.link--sup:not(.c-button):hover sup {
 .c-button--borderless-muted {
   border-color: transparent;
   background: transparent;
+  /*&:focus {
+    outline: $c-button-outline-color auto 1px;
+    background: transparent;
+  }*/
 }
 .c-button--borderless:not(.c-button--icon),
 .c-button--borderless-i:not(.c-button--icon),
@@ -2665,12 +2669,6 @@ a.link--sup:not(.c-button):hover sup {
 .c-button--borderless-i svg *,
 .c-button--borderless-muted svg * {
   fill: currentColor;
-}
-.c-button--borderless:focus,
-.c-button--borderless-i:focus,
-.c-button--borderless-muted:focus {
-  outline: #8AB5FF auto 1px;
-  background: transparent;
 }
 .c-button--borderless:focus:not(:focus-visible),
 .c-button--borderless-i:focus:not(:focus-visible),
@@ -4954,6 +4952,17 @@ c-file-attachment-list
   border-bottom-left-radius: 0.3rem;
 }
 
+.burger-icon {
+  padding: 0.4rem 0.4rem;
+  border-radius: 100%;
+  display: flex;
+  border: none;
+  background-color: #FFFFFF;
+  margin-left: 0.4rem;
+}
+.burger-icon:focus {
+  background-color: #F9F9F9;
+}
 .burger-icon svg {
   transform: rotate(0deg);
   transition: transform 0.2s ease;
@@ -4966,6 +4975,9 @@ c-file-attachment-list
   text-decoration: none;
   padding: 1.2rem 2.4rem;
   position: relative;
+  background: transparent;
+  border: none;
+  width: 100%;
 }
 .c-side-menu__subtitle:hover {
   cursor: pointer;
