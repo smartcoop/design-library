@@ -1,9 +1,8 @@
 [
   {
-    "outputFileName": "wwwroot/SmartLib/js/smart-bundle.js",
+    "outputFileName": "wwwroot/SmartLib/js/bundle-client-smart.js",
     "inputFiles": [
-      "wwwroot/SmartLib/js/smart-modules/smart-news.js",
-      "wwwroot/SmartLib/js/smart-modules/table-of-content.js"
+      "wwwroot/SmartLib/js/smart-modules/index.js",
     ]
   }
 ]

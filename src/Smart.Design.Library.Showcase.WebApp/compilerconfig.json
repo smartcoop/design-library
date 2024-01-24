@@ -1,4 +1,4 @@
-﻿[
+[
   {
     "outputFile": "wwwroot/SmartLib/css/smart-main.css",
     "inputFile": "wwwroot/SmartLib/scss/main.scss"
@@ -10,17 +10,5 @@
   {
     "outputFile": "wwwroot/SmartLib/scss/_o-flex.css",
     "inputFile": "wwwroot/SmartLib/scss/_o-flex.scss"
-  },
-  {
-    "outputFile": "wwwroot/SmartLib/js/mono-modules/accordion.es5.js",
-    "inputFile": "wwwroot/SmartLib/js/mono-modules/accordion.js"
-  },
-  {
-    "outputFile": "wwwroot/SmartLib/js/bundle-client.es5.js",
-    "inputFile": "wwwroot/SmartLib/js/bundle-client.js"
-  },
-  {
-    "outputFile": "wwwroot/SmartLib/js/index.es5.js",
-    "inputFile": "wwwroot/SmartLib/js/index.js"
   }
 ]
