@@ -1,0 +1,246 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.FilterPill.FilterPillModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "FilterPill";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b>Completed</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Documentation for @ViewData["ComponentTitle"]</p>
+        </div>
+        <div class="br-sample" id="component-01-c-FilterPill">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">@ViewData["ComponentTitle"]</h3>
+            </div>
+            <div class="br-sample-content">
+                <div style="min-height: 36rem;">
+                    <button class="c-filter-pill" type="button" data-popover="filter-example" data-popover-placement="bottom-start">
+                        <span class="c-filter-pill__label">Label</span>
+                        <span class="c-filter-pill__counter">2</span>
+                        <div class="o-svg-icon o-svg-icon-caret-down">
+                            <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M11 10L6 16L1 10H11Z" fill="#595959" />
+                            </svg>
+                        </div>
+                    </button>
+                    <div class="c-popover" role="popover" id="filter-example">
+                        <h4 class="c-h4">Label</h4>
+                        <div class="u-padding-vertical-s">
+                            <div class="o-form-group-layout o-form-group-layout--standard">
+                                <div class="o-form-group">
+                                    <div class="o-form-group__controls">
+                                        <div class="c-checkbox-group">
+                                            <div class="c-checkbox">
+                                                <label>
+                                                    <input type="checkbox"/>Checkbox
+                                                </label>
+                                            </div>
+                                            <div class="c-checkbox">
+                                                <label>
+                                                    <input type="checkbox" checked="checked"/>Checkbox
+                                                </label>
+                                            </div>
+                                            <div class="c-checkbox">
+                                                <label>
+                                                    <input type="checkbox" checked="checked"/>Checkbox
+                                                </label>
+                                            </div>
+                                            <div class="c-checkbox">
+                                                <label>
+                                                    <input type="checkbox"/>Checkbox
+                                                </label>
+                                            </div>
+                                            <div class="c-checkbox">
+                                                <label>
+                                                    <input type="checkbox"/>Checkbox
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="c-toolbar c-toolbar--auto">
+                            <div class="c-toolbar__right">
+                                <div class="c-toolbar__item">
+                                    <div class="c-button-toolbar">
+                                        <button class="c-button c-button--secondary" type="button">
+                                            <span class="c-button__content">
+                                                <span class="c-button__label">Reset</span>
+                                            </span>
+                                        </button>
+                                        <button class="c-button c-button--primary" type="button">
+                                            <span class="c-button__content">
+                                                <span class="c-button__label">Apply filter</span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div style=\"min-height: 36rem;\">")
+    @("<button class=\"c-filter-pill\" type=\"button\" data-popover=\"filter-example\" data-popover-placement=\"bottom-start\">")
+        @("<span class=\"c-filter-pill__label\">")Label@("</span>")
+        @("<span class=\"c-filter-pill__counter\">")2@("</span>")
+        @("<div class=\"o-svg-icon o-svg-icon-caret-down\">")
+            @("<svg width=\"12\" height=\"24\" viewBox=\"0 0 12 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                @("<path d=\"M11 10L6 16L1 10H11Z\" fill=\"#595959\" />")
+            @("</svg>")
+        @("</div>")
+    @("</button>")
+@("<div class=\"c-popover\" role=\"popover\" id=\"filter-example\">")
+    @("<h4 class=\"c-h4\">")Label@("</h4>")
+        @("<div class=\"u-padding-vertical-s\">")
+            @("<div class=\"o-form-group-layout o-form-group-layout--standard\">")
+                @("<div class=\"o-form-group\">")
+                    @("<div class=\"o-form-group__controls\">")
+                        @("<div class=\"c-checkbox-group\">")
+                            @("<div class=\"c-checkbox\">")
+                                @("<label>")
+                                    @("<input type=\"checkbox\"/>")Checkbox
+                                @("</label>")
+                            @("</div>")
+                            @("<div class=\"c-checkbox\">")
+                                @("<label>")
+                                    @("<input type=\"checkbox\" checked=\"checked\"/>")Checkbox
+                                @("</label>")
+                            @("</div>")
+                            @("<div class=\"c-checkbox\">")
+                                @("<label>")
+                                    @("<input type=\"checkbox\" checked=\"checked\"/>")Checkbox
+                                @("</label>")
+                            @("</div>")
+                            @("<div class=\"c-checkbox\">")
+                                @("<label>")
+                                    @("<input type=\"checkbox\"/>")Checkbox
+                                @("</label>")
+                            @("</div>")
+                            @("<div class=\"c-checkbox\">")
+                                @("<label>")
+                                    @("<input type=\"checkbox\"/>")Checkbox
+                                @("</label>")
+                            @("</div>")
+                        @("</div>")
+                    @("</div>")
+                @("</div>")
+            @("</div>")
+        @("</div>")
+        @("<div class=\"c-toolbar c-toolbar--auto\">")
+            @("<div class=\"c-toolbar__right\">")
+                @("<div class=\"c-toolbar__item\">")
+                    @("<div class=\"c-button-toolbar\">")
+                        @("<button class=\"c-button c-button--secondary\" type=\"button\">")
+                            @("<span class=\"c-button__content\">")
+                                @("<span class=\"c-button__label\">")Reset@("</span>")
+                            @("</span>")
+                        @("</button>")
+                        @("<button class=\"c-button c-button--primary\" type=\"button\">")
+                            @("<span class=\"c-button__content\">")
+                                @("<span class=\"c-button__label\">")Apply filter@("</span>")
+                            @("</span>")
+                        @("</button>")
+                    @("</div>")
+                @("</div>")
+            @("</div>")
+        @("</div>")
+    @("</div>")
+@("</div>")
+                </pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-01-c-FilterPillList">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">@ViewData["ComponentTitle"]</h3>
+            </div>
+            <div class="br-sample-content">
+                <ul class="c-filter-pill-list">
+                    <li class="c-filter-pill-list__item">
+                        <button class="c-filter-pill" type="button">
+                            <span class="c-filter-pill__label">Label</span>
+                            <div class="o-svg-icon o-svg-icon-caret-down">
+                                <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 10L6 16L1 10H11Z" fill="#595959"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </li>
+                    <li class="c-filter-pill-list__item">
+                        <button class="c-filter-pill" type="button">
+                            <span class="c-filter-pill__label">Label</span>
+                            <span class="c-filter-pill__counter">2</span>
+                            <div class="o-svg-icon o-svg-icon-caret-down">
+                                <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 10L6 16L1 10H11Z" fill="#595959"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </li>
+                    <li class="c-filter-pill-list__item">
+                        <button class="c-filter-pill" type="button">
+                            <span class="c-filter-pill__label">Label</span>
+                            <div class="o-svg-icon o-svg-icon-caret-down">
+                                <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 10L6 16L1 10H11Z" fill="#595959"/>
+                                </svg>
+                            </div>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="br-sample-footer">
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<ul class=\"c-filter-pill-list\">")
+    @("<li class=\"c-filter-pill-list__item\">")
+        @("<button class=\"c-filter-pill\" type=\"button\">")
+            @("<span class=\"c-filter-pill__label\">")Label@("</span>")
+            @("<div class=\"o-svg-icon o-svg-icon-caret-down\">")
+                @("<svg width=\"12\" height=\"24\" viewBox=\"0 0 12 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M11 10L6 16L1 10H11Z\" fill=\"#595959\"/>")
+                @("</svg>")
+            @("</div>")
+        @("</button>")
+    @("</li>")
+    @("<li class=\"c-filter-pill-list__item\">")
+        @("<button class=\"c-filter-pill\" type=\"button\">")
+            @("<span class=\"c-filter-pill__label\">")Label@("</span>")
+            @("<span class=\"c-filter-pill__counter\">")2@("</span>")
+            @("<div class=\"o-svg-icon o-svg-icon-caret-down\">")
+                @("<svg width=\"12\" height=\"24\" viewBox=\"0 0 12 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M11 10L6 16L1 10H11Z\" fill=\"#595959\"/>")
+                @("</svg>")
+            @("</div>")
+        @("</button>")
+    @("</li>")
+    @("<li class=\"c-filter-pill-list__item\">")
+        @("<button class=\"c-filter-pill\" type=\"button\">")
+            @("<span class=\"c-filter-pill__label\">")Label@("</span>")
+            @("<div class=\"o-svg-icon o-svg-icon-caret-down\">")
+                @("<svg width=\"12\" height=\"24\" viewBox=\"0 0 12 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M11 10L6 16L1 10H11Z\" fill=\"#595959\"/>")
+                @("</svg>")
+            @("</div>")
+        @("</button>")
+    @("</li>")
+@("</ul>")
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>

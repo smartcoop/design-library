@@ -1,0 +1,339 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components._03_cat_ds.Dropdown.DropdownModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Dropdown";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Completed</p>
+        </div>
+        <div class="br-content c-content">
+            <p>
+                To add a menu (dropdown), pass the menu's id to the <code>data-menu</code> attribute of the trigger element.
+            </p>
+            <p>
+                Make sure the codebases includes <a target="_blank" href="https://popper.js.org/">Popper.js</a>.
+                We are using version 2.x.
+            </p>
+            <h4>Configuration</h4>
+            <p>
+                You can use the following data attributes to change the default behaviour of the menu.
+            </p>
+            <h4>Placement</h4>
+            <p>
+                The <code>data-menu-placement</code> attribute is used to position a menu in relation to the trigger button.
+                E.g. <code>data-menu-placement="bottom-end"</code> places menu below the trigger, aligning the menu with the
+                end of the trigger. See the Popperjs document for all
+                <a target="_blank" href="https://popper.js.org/docs/v2/constructors/#options">available options</a>.
+            </p>
+            <h4>Autosize</h4>
+            <p>
+                The <code>data-menu-samewidth</code> attribute sets the width of the menu to the width of the trigger button.
+                E.g. <code>data-menu-samewidth="true"</code>.
+            </p>
+            <h4>Offset</h4>
+            <p>
+                The data-menu-offset sets the <a target="_blank" href="https://popper.js.org/docs/v2/modifiers/offset/#distance-1">distance</a>
+                in pixels of a menu to the trigger button.
+                E.g. <code>data-menu-offset="16"</code> to place the menu 16 pixels from the button or <code>data-menu-offset="0"</code>
+                to remove the distance.
+            </p>
+        </div>
+        <div class="br-sample" id="component-01-c-Dropdown">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">@ViewData["ComponentTitle"]</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div style="height: 200px;">
+                    <button class="c-button c-button--secondary" type="button" data-menu="dropdownMenu" data-menu-samewidth="true">
+                        <span class="c-button__content">
+                            <span class="c-button__label">Open dropdown</span>
+                            <div class="o-svg-icon o-svg-icon-caret-down  ">
+                                <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 10L6 16L1 10H11Z" fill="#595959" />
+                                </svg>
+                            </div>
+                        </span>
+                    </button>
+                </div>
+                <ul class="c-menu" id="dropdownMenu">
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item A</a>
+                    </li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item B</a>
+                    </li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item C</a>
+                    </li>
+                    <li class="c-menu__divider" role="presentation"></li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Extra Item</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div style=\"height: 200px\">")
+    @("<button class=\"c-button c-button--secondary\"; type=\"button\"; data-menu=\"dropdownMenu\"; data-menu-samewidth=\"true\">")
+        @("<span class=\"c-button__content\">")
+            @("<span class=\"c-button__label\">Open dropdown</span>")
+            @("<div class=\"o-svg-icon o-svg-icon-caret-down\">")
+                @("<svg width =\"12\" height=\"24\" viewBox=\"0 0 12 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M11 10L6 16L1 10H11Z\" fill=\"#595959\"/>")
+                @("</svg>")
+            @("</div>")
+        @("</span>")
+    @("</button>")
+@("</div>")
+@("<ul class=\"c-menu\" id=\"dropdownMenu\">")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">Item A</a>")
+    @("</li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">Item B@</a>")
+    @("</li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">Item C</a>")
+    @("</li>")
+    @("<li class=\"c-menu__divider\" role=\"presentation\"></li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">Extra Item</a>")
+    @("</li>")
+@("</ul>")
+                </pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-01-c-DropdownIcons">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Dropdown icons</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div style="height: 200px;">
+                    <button class="c-button c-button--secondary" type="button" data-menu="dropdownMenuIcons" data-menu-samewidth="true">
+                        <span class="c-button__content">
+                            <span class="c-button__label">Open dropdown</span>
+                            <div class="o-svg-icon o-svg-icon-caret-down">
+                                <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 10L6 16L1 10H11Z" fill="#595959" />
+                                </svg>
+                            </div>
+                        </span>
+                    </button>
+                </div>
+                <ul class="c-menu" id="dropdownMenuIcons">
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">
+                            <div class="o-svg-icon o-svg-icon-edit">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959" />
+                                </svg>
+                            </div>
+                            <span>Edit</span>
+                        </a>
+                    </li>
+                    <li class="c-menu__item c-menu__item--danger">
+                        <a class="c-menu__label" href="#">
+                            <div class="o-svg-icon o-svg-icon-delete">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z" fill="#595959" />
+                                </svg>
+                            </div>
+                            <span>Delete</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div style=\"height: 200px\">")
+    @("<button class=\"c-button c-button--secondary\"; type=\"button\"; data-menu=\"dropdownMenu\"; data-menu-samewidth=\"true\">")
+        @("<span class=\"c-button__content\">")
+            @("<span class=\"c-button__label\">Open dropdown</span>")
+            @("<div class=\"o-svg-icon o-svg-icon-caret-down\">")
+                @("<svg width =\"12\" height=\"24\" viewBox=\"0 0 12 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M11 10L6 16L1 10H11Z\" fill=\"#595959\"/>")
+                @("</svg>")
+            @("</div>")
+        @("</span>")
+    @("</button>")
+@("</div>")
+@("<ul class=\"c-menu\" id =\"dropdownMenuIcons\">")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")
+            @("<div class=\"o-svg-icon o-svg-icon-edit\">")
+                @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill =\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z\" fill=\"#595959\"/>")
+                @("</svg>")
+            @("</div>")
+            @("<span>Edit</span>")
+        @("</a>")
+    @("</li>")
+    @("<li class=\"c-menu__item c-menu__item--danger\">")
+        @("<a class=\"c-menu__label\" href =\"#\">")
+            @("<div class=\"o-svg-icon o-svg-icon-delete\">")
+                @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M7 4C7 2.89543 7.89543 2 9 2H15C16.1046 2 17 2.89543 17 4V6H18.9897C18.9959 5.99994 19.0021 5.99994 19.0083 6H21C21.5523 6 22 6.44772 22 7C22 7.55228 21.5523 8 21 8H19.9311L19.0638 20.1425C18.989 21.1891 18.1182 22 17.0689 22H6.93112C5.88184 22 5.01096 21.1891 4.9362 20.1425L4.06888 8H3C2.44772 8 2 7.55228 2 7C2 6.44772 2.44772 6 3 6H4.99174C4.99795 5.99994 5.00414 5.99994 5.01032 6H7V4ZM9 6H15V4H9V6ZM6.07398 8L6.93112 20H17.0689L17.926 8H6.07398ZM10 10C10.5523 10 11 10.4477 11 11V17C11 17.5523 10.5523 18 10 18C9.44772 18 9 17.5523 9 17V11C9 10.4477 9.44772 10 10 10ZM14 10C14.5523 10 15 10.4477 15 11V17C15 17.5523 14.5523 18 14 18C13.4477 18 13 17.5523 13 17V11C13 10.4477 13.4477 10 14 10Z\" fill=\"#595959\"/>")
+                @("</svg>")
+            @("</div>")
+            @("<span>Delete</span>")
+        @("</a>")
+    @("</li>")
+@("</ul>")
+                </pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-01-c-Dropdup">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Dropup</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div style="height: 200px;">
+                    <div style="padding-top: 180px;">
+                        <button class="c-button c-button--secondary" type="button" data-menu="dropupMenu" data-menu-samewidth="true" data-menu-placement="top-start">
+             <span class="c-button__content">
+                                <span class="c-button__label">Open dropup</span>
+                                <div class="o-svg-icon o-svg-icon-caret-up  ">
+                                    <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 14L6 8L11 14L1 14Z" fill="#595959"/>
+                                    </svg>
+                                </div>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <ul class="c-menu" id="dropupMenu">
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item A</a>
+                    </li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item B</a>
+                    </li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item C</a>
+                    </li>
+                    <li class="c-menu__divider" role="presentation"></li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Extra Item</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div style=\"height: 200px;\">")
+    @("<div style=\"padding-top: 180px;\">")
+        @("<button class=\"c-button c-button--secondary\" type=\"button\" data-menu=\"dropupMenu\" data-menu-samewidth=\"true\" data-menu-placement=\"top-start\">")
+            @("<span class=\"c-button__content\">")
+                @("<span class=\"c-button__label\">")Open dropup@("</span>")
+                @("<div class=\"o-svg-icon o-svg-icon-caret-up\">")
+                    @("<svg width=\"12\" height=\"24\" viewBox=\"0 0 12 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                        @("<path d=\"M1 14L6 8L11 14L1 14Z\" fill=\"#595959\"/>")
+                    @("</svg>")
+                @("</div>")
+            @("</span>")
+        @("</button>")
+    @("</div>")
+@("</div>")
+@("<ul class=\"c-menu\" id=\"dropupMenu\">")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")Item A@("</a>")
+    @("</li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")Item B@("</a>")
+    @("</li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")Item C@("</a>")
+    @("</li>")
+    @("<li class=\"c-menu__divider\" role=\"presentation\">")@("</li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")Extra Item@("</a>")
+    @("</li>")
+@("</ul>")
+                </pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-01-c-DropdownNoSamewidthProperty">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Dropdown (no samewidth property)</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div style="height: 200px;">
+                    <button class="c-button c-button--secondary" type="button" data-menu="dropdownMenu3">
+                        <span class="c-button__content">
+                            <span class="c-button__label">Open dropdown</span>
+                            <div class="o-svg-icon o-svg-icon-caret-down  ">
+                                <svg width="12" height="24" viewBox="0 0 12 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 10L6 16L1 10H11Z" fill="#595959" />
+                                </svg>
+                            </div>
+                        </span>
+                    </button>
+                </div>
+                <ul class="c-menu" id="dropdownMenu3">
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item A</a>
+                    </li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item B - Lorem ipsum dolor sit amet, consectetur adipisicing elit</a>
+                    </li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Item C</a>
+                    </li>
+                    <li class="c-menu__divider" role="presentation"></li>
+                    <li class="c-menu__item">
+                        <a class="c-menu__label" href="#">Extra Item</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div style=\"height: 200px;\">")
+    @("<button class=\"c-button c-button--secondary\" type=\"button\" data-menu=\"dropdownMenu3\">")
+        @("<span class=\"c-button__content\">")
+            @("<span class=\"c-button__label\">")Open dropdown@("</span>")
+            @("<div class=\"o-svg-icon o-svg-icon-caret-down\">")
+                @("<svg width=\"12\" height=\"24\" viewBox=\"0 0 12 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M11 10L6 16L1 10H11Z\" fill=\"#595959\" />")
+                @("</svg>")
+            @("</div>")
+        @("</span>")
+    @("</button>")
+@("</div>")
+@("<ul class=\"c-menu\" id=\"dropdownMenu3\">")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")Item A@("</a>")
+    @("</li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")Item B - Lorem ipsum dolor sit amet, consectetur adipisicing elit@("</a>")
+    @("</li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")Item C@("</a>")
+    @("</li>")
+    @("<li class=\"c-menu__divider\" role=\"presentation\">")@("</li>")
+    @("<li class=\"c-menu__item\">")
+        @("<a class=\"c-menu__label\" href=\"#\">")Extra Item@("</a>")
+    @("</li>")
+@("</ul>")
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
