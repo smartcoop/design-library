@@ -1,7 +1,6 @@
 /* Menu Sublist
    ========================================================================== */
 
-
 class SubTitle {
     constructor(menu_subtitle) {
         this.subtitle = menu_subtitle;

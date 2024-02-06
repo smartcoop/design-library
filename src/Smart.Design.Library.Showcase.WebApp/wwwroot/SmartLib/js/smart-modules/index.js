@@ -1,1 +1,1 @@
-import slideToggle from "./smart-modules/slides.js";
+import { slideUp, slideToggle } from "./smart-modules/slides.js";
