@@ -2,9 +2,9 @@
   {
     "outputFileName": "wwwroot/SmartLib/js/bundle-client-smart.js",
     "inputFiles": [
+      "wwwroot/SmartLib/js/smart-modules/burger-menu.js",
       "wwwroot/SmartLib/js/smart-modules/index.js",
-      "wwwroot/SmartLib/js/smart-modules/menu-sublist.js",
-      "wwwroot/SmartLib/js/smart-modules/burger-menu.js"
+      "wwwroot/SmartLib/js/smart-modules/menu-sublist.js"
     ]
   }
 ]
