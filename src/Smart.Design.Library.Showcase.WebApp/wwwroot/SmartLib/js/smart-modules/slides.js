@@ -65,5 +65,5 @@ let slideToggle = (target, duration = 500) => {
     }
 }
 
-export { slideUp, slideToggle };
+window.slideToggle = slideToggle;
 
