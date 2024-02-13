@@ -2239,7 +2239,7 @@ Component: app layout
   width: 100%;
 }
 .c-brand svg {
-  width: 74px;
+  width: 82px;
 }
 .c-brand--xsmall {
   height: auto;
@@ -2252,7 +2252,7 @@ Component: app layout
   }
   .c-brand--xsmall {
     height: 2.6rem;
-    margin-top: -4px;
+    margin-top: -10px;
   }
 }
 .c-brand--small {
