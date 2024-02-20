@@ -1,4 +1,4 @@
-﻿# Installation des extentions.
+﻿# Installation des extensions.
 
 ![N|Solid](https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/bundlerminifier/2.8.396/1535134367605/Microsoft.VisualStudio.Services.Icons.Default) **Bundler & Minifier**
 
@@ -66,7 +66,7 @@ ___
 
 ![N|Solid](https://ms-vsliveshare.gallerycdn.vsassets.io/extensions/ms-vsliveshare/vsls-vs-2022/1.0.5883.0/1692650871758/Microsoft.VisualStudio.Services.Icons.Default) **Live share 2022**
 
-Permet de visionner en temp réel les modifications faites les fichiers html et css directement dans le navigateur.
+Permet de visionner en temps réel les modifications faites les fichiers html et css directement dans le navigateur.
 
 **NB : Cette extension est installée de base avec visual-studio.**
 
