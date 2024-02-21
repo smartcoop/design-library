@@ -1,0 +1,151 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Templates.NewSubscriptionModel
+@using Kendo.Mvc.UI
+@{
+    ViewData["Title"] = "New Subscription page";
+}
+
+
+<header class="o-container-vertical c-navbar c-navbar--white c-navbar--entry">
+    <div class="o-container o-container--small">
+        <div class="o-grid">
+            <div class="o-grid-col-6">
+                <div class="c-brand c-brand--small">
+                    <a href="/home?lang=FR">
+                        <img src="~/images/logo.svg" alt="Smart">
+                    </a>
+                </div>
+            </div>
+
+            <div class="o-grid-col-6">
+                <ul class="c-pill-navigation">
+                    <li class="c-pill-navigation__item c-pill-navigation__item--has-child-menu u-spacer-left-auto">
+                        <button type="button" data-menu="lang-switch" data-menu-samewidth="true">
+                            Fran&#231;ais
+                        </button>
+                        <ul class="c-menu c-menu--large" id="lang-switch">
+                            <li class="c-menu__item">
+                                <p class="c-menu__info u-text-muted">Fran&#231;ais</p>
+                            </li>
+                            <li class="c-menu__item">
+                                <a class="c-menu__label" href="?lang=NL">Nederlands</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<header class="o-container-vertical c-navbar c-navbar--white c-navbar--entry">
+    <div class="o-container o-container--small">
+        <div class="o-grid">
+            <div class="o-grid-col-6">
+                <div class="c-brand c-brand--small">
+                    <a href="/home?lang=FR">
+                        <img src="~/images/logo.svg" alt="Smart">
+                    </a>
+                </div>
+            </div>
+
+            <div class="o-grid-col-6">
+                <ul class="c-pill-navigation">
+                    <li class="c-pill-navigation__item c-pill-navigation__item--has-child-menu u-spacer-left-auto">
+                        <button type="button" data-menu="lang-switch" data-menu-samewidth="true">
+                            Fran&#231;ais
+                        </button>
+                        <ul class="c-menu c-menu--large" id="lang-switch">
+                            <li class="c-menu__item">
+                                <p class="c-menu__info u-text-muted">Fran&#231;ais</p>
+                            </li>
+                            <li class="c-menu__item">
+                                <a class="c-menu__label" href="?lang=NL">Nederlands</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="o-container-vertical">
+
+    <div class="o-container o-container--small">
+
+        <div class="c-panel u-shadow-50">
+
+            <div class="c-panel__body u-padding-vertical-l u-padding-bottom">
+                <div class="demo-section">
+                    <div id="validation-success"></div>
+                    @(Html.Kendo().Form<Kendo.Mvc.Examples.Models.Form.UserViewModel>()
+                        .Name("formExample")
+                        .HtmlAttributes(new { action = "Index", method = "POST" })
+                        .Validatable(v =>
+                        {
+                            v.ValidateOnBlur(true);
+                            v.ValidationSummary(vs => vs.Enable(false));
+                        })
+                        .Items(items =>
+                        {
+                            items.AddGroup()
+                            .Label("Registration Form")
+                            .Items(i =>
+                            {
+                                i.Add()
+                            .Field(f => f.FirstName)
+                            .Label(l => l.Text("First Name:"));
+                                i.Add()
+                            .Field(f => f.LastName)
+                            .Label(l => l.Text("Last Name:"));
+                                i.Add()
+                            .Field(f => f.UserName)
+                            .Label(l => l.Text("Username:"));
+                                i.Add()
+                            .Field(f => f.Password)
+                            .Label(l => l.Text("Password:"))
+                            .Hint("Hint: enter alphanumeric characters only.")
+                            .EditorTemplateHandler("setPasswordEditor");
+                                i.Add()
+                            .Field(f => f.Email)
+                            .Label(l => l.Text("Email:"));
+                                i.Add()
+                            .Field(f => f.DateOfBirth)
+                            .Label(l => l.Text("Date of Birth:").Optional(true));
+                                i.Add()
+                            .Field(f => f.Agree)
+                            .Label(l => l.Text("Agree to Terms:"));
+                            });
+                        })
+                        .Events(ev => ev.ValidateField("onFormValidateField").Submit("onFormSubmit").Clear("onFormClear"))
+                        )
+                </div>
+
+                <script>
+                    function setPasswordEditor(container, options) {
+                        $('<input type="password" id="Password" name="' + options.field + '" title="Password" required="required" autocomplete="off" aria-labelledby="Password-form-label" data-bind="value: Password" aria-describedby="Password-form-hint"/>')
+                            .appendTo(container)
+                            .kendoTextBox();
+                    }
+
+                    function onFormValidateField(e) {
+                        $("#validation-success").html("");
+                    }
+
+                    function onFormSubmit(e) {
+                        e.preventDefault();
+                        $("#validation-success").html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+                    }
+
+                    function onFormClear(e) {
+                        $("#validation-success").html("");
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</main>
+
+
