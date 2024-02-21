@@ -32,7 +32,7 @@
 }
 
 .c-pill-navigation__item--has-child-menu > button {
-  padding: .8rem 2.6rem .8rem 1rem;
+  padding: .8rem 2.2rem .8rem .8rem;
   appearance: none;
   background: none;
   border: none;
@@ -57,9 +57,15 @@
   }
 }
 
+
 .c-pill-navigation__item--active > a {
   background: $color-gray-50;
   border-radius: .3rem;
 }
 
+@media (min-width: $g-bp2) {
+    .c-pill-navigation__item--has-child-menu > button {
+        padding: .8rem 2.6rem .8rem 1rem;
+    }
+}
 

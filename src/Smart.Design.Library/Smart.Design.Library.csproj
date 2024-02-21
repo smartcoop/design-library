@@ -4,7 +4,7 @@
     <TargetFramework>net6.0</TargetFramework>
     <AddRazorSupportForMvc>true</AddRazorSupportForMvc>
     <Nullable>enable</Nullable>
-    <Version>3.1.8</Version>
+    <Version>3.2.3</Version>
     <Company>Smart Coop</Company>
     <Authors>Smart Coop</Authors>
     <Description>Tag Helpers implementation of the Smart Design System. Official documentation can be seen at https://design-showcase.smartbe.be/</Description>
@@ -53,6 +53,16 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Translations.resx</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\js\bundle-client-smart.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\bundle-client-smart.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
