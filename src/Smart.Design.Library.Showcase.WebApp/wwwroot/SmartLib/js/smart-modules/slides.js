@@ -66,4 +66,3 @@ let slideToggle = (target, duration = 500) => {
 }
 
 window.slideToggle = slideToggle;
-
