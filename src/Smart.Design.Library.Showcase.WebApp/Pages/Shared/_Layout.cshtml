@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Design Library - @ViewData["Title"]</title>
     @* Kendo Scripts *@
-    <!--<link rel="stylesheet" href="~/unity/css/smart-theme-test.css" />-->
-    @{
-        var kendoVersion = "2023.1.425";
-    }
-    <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/jquery.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/jszip.min.js"></script>
+        <!--<link rel="stylesheet" href="~/unity/css/smart-theme-test.css" />-->
+        @{
+        var kendoVersion = "2023.3.1114";
+        }
+    @* Add the jQuery script from the jQuery CDN: *@
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.all.min.js"></script>
-    <script src="https://kendo.cdn.telerik.com/@kendoVersion/js/kendo.aspnetmvc.min.js"></script>
-    <!--<script src="~/SmartLib/js/kendo.all.min.js"></script>-->
+    <script src="https://kendo.cdn.telerik.com/2024.1.130/js/kendo.aspnetmvc.min.js"></script>
     <script src="~/SmartLib/js/kendo-ui-license.js"></script>
-    @* Kendo Scripts *@
-    <link rel="stylesheet" href="~/SmartLib/css/smartui-themebuilder.css" asp-append-version="true" />
+        
+     <link rel="stylesheet" href="~/SmartLib/css/smartui-themebuilder.css" asp-append-version="true" />
+    @* EO Kendo Scripts *@
+   
     <link rel="stylesheet" href="~/SmartLib/css/smart-main.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ElementsForShowcase/prototype.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ElementsForShowcase/styleguide-customizations.css" asp-append-version="true" />
+   
+
     <!-- FAVICONS. -->
         <!-- Apple-specific image, although this is also used by other hardware/software. -->
         <link rel="apple-touch-icon" sizes="180x180" href="~/favicons/apple-touch-icon.png?v=1.5">
@@ -113,8 +116,8 @@
     </footer>
 
     <script type="module" src="~/SmartLib/js/bundle-client.js" asp-append-version="true"></script>
-    <script type="module" src="~/SmartLib/js/bundle-client-smart.js" asp-append-version="true"></script>
-    <!--<script type="module" src="~/ElementsForShowcase/table-of-content.js" asp-append-version="true"></script>-->
+    @*<script type="module" src="~/SmartLib/js/bundle-client-smart.js" asp-append-version="true"></script>*@
+    <script type="module" src="~/ElementsForShowcase/table-of-content.js" asp-append-version="true"></script>-->
     @*<script type="module" src="~/SmartLib/js/smart-bundle.js" asp-append-version="true"></script>*@
     <script src="~/ElementsForShowcase/bundle-prototype.js" asp-append-version="true"></script>
 

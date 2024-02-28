@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <PackageReference Include="Smart.Design.Library" Version="2.1.5" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.3.1114" />
   </ItemGroup>
 
   <ItemGroup>
