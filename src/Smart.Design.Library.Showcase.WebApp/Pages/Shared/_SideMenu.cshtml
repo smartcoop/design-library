@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNetCore.Mvc.TagHelpers
+@using Smart.Design.Library.TagHelpers.SideMenu
+
+
+<div class="c-app-layout-inner__sidebar u-position-fixed">
+    @*@{
+        if (Model.UserRoles.Contains(Roles.Client)) {
+            <div class="u-spacer-bottom-l">
+                <span class="c-status-pill c-status-pill--client">@MenusLocalization.ClientAccount</span>
+            </div>
+        }
+    }*@
+<smart-sidemenu label-and-links="@Model.LabelsAndLinks"></smart-sidemenu>
+
+    @{
+        // AdminSearchPanel
+        if (Model.AdminBehind) {
+            <div class="c-side-menu__item">
+                <form method="POST" id="adminpanel_form" action="/Menu/GetListUserSearched" style="padding-bottom: 2.8rem; padding-top: 2.8rem; background-color: #F9F9F9; ">
+                    <div class="o-form-group-layout o-form-group-layout--standard">
+                        <div class="o-form-group" style="width: 180px; margin: auto;">
+                            <div class="o-form-group">
+                                <div class="o-form-group__controls">
+                                    <input class="c-input" id="user" name="adminpanel_user" type="text" onkeypress="">
+                                </div>
+                            </div>
+                            <div class="o-form-group__controls">
+                                <div class="c-select-holder">
+                                    <select class="c-select" id="adminpanel_usertypes" name="adminpanel_usertype">
+                                        <option value="Membre" selected>Some member</option>
+                                        <option value="DonneurOrdre">Some client</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="o-form-group" style="padding-top: 1.6rem;">
+                                <div class="c-button c-button--primary c-button--block" onclick="document.getElementById('adminpanel_form').submit();">
+                                    <div class="c-button__content">
+                                        <div class="c-button__label">Search</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+    }
+</div>
