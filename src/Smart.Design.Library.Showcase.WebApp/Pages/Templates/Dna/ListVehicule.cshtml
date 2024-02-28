@@ -1,7 +1,7 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.ProductionUnitModel
 @{
-    ViewData["Title"] = "Production unit page";
+    ViewData["Title"] = "Vehicule list page (empty list)";
 }
 
 <style>
@@ -20,62 +20,74 @@
 
 @{
     var list = new List<string> { "preambule", "les parties", "Droit et attribution de compétence", "deux", "trois" };
-    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>{
+    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
     {
-    "Français", "Link/Français"
-    },{
-    "English", "Link/English"
-    },{
-    "Nederlands", "Link/Nederlands"
-    },{
-    "De", "chemin"
-    }
+        {
+            "Français", "Link/Français"
+        },
+        {
+            "English", "Link/English"
+        },
+        {
+            "Nederlands", "Link/Nederlands"
+        },
+        {
+            "De", "chemin"
+        }
     };
 
     string currentLanguage = "nl";
     string fullNameWithTrigram = "John Doe (doe)";
-    string avatarPath = "imageAvater";
+    string avatarPath = "imageAvatar";
 
-    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>{
+    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>
     {
-    "Vos informations personnelles", "/Info"
-    },{
-    "Vos documents", "/documents"
-    },{
-    "Mes véhicules", "/Templates/Dna/ListVehicule"
-    },{
-     "Votre compte", "/Votre compte"
-    },{
-     "Nos conditions d'utilisations", "~/unity/curu"
-    },{
-     "Vos Unité de Production","/unityProduction"
-    }
+        {
+            "Vos informations personnelles", "/Info"
+        },
+        {
+            "Vos documents", "/documents"
+        },
+        {
+            "Mes véhicules", "/Templates/Dna/ListVehicule"
+        },
+        {
+            "Votre compte", "/Votre compte"
+        },
+        {
+            "Nos conditions d'utilisations", "~/unity/curu"
+        },
+        {
+            "Vos Unité de Production", "/unityProduction"
+        }
     };
-    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>{
+    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>
     {
-    "Home", "/home"
-    },{
-    "Prestations en cours", "/PedingPrestations"
-    },{
-     "Nouvelle prestation", "/NewPrestation"
-    },{
-     "Simulation", "/Simulation"
-    },{
-     "Activités et projets","/projets"
-    },{
-     "Formateurs associés","/u/cfa/home"
-    }
-    };
-    Dictionary<string, string> LabelAndValue = new Dictionary<string, string>{
-    {
-    "Titulaire: ", "678362 - John Doe"
-    }
+        {
+            "Home", "/home"
+        },
+        {
+            "Prestations en cours", "/PedingPrestations"
+        },
+        {
+            "Nouvelle prestation", "/NewPrestation"
+        },
+        {
+            "Simulation", "/Simulation"
+        },
+        {
+            "Activités et projets", "/projets"
+        },
+        {
+            "Formateurs associés", "/u/cfa/home"
+        }
     };
 }
 
 <div class="c-app-layout">
     <smart-header home-page-url="/home" labels-and-links="@labelsAndLinks" languages-and-links="@languagesAndLink" full-name-with-trigram=@fullNameWithTrigram
-                  avatar-path="@avatarPath" target-language="@currentLanguage" logout-link="/logout.aspx"></smart-header>
+                  avatar-path="@avatarPath" target-language="@currentLanguage" logout-link="/logout.aspx">
+    </smart-header>
 
     <main class="u-maximize-width">
         <div class="c-app-layout-inner">
@@ -83,25 +95,38 @@
                 <smart-sidemenu label-and-links="SideMenuLabelsAndLinks"></smart-sidemenu>
             </div>
             <div class="c-app-layout-inner__content">
-                <div class="o-container o-container">
+                <div class="o-container o-container--large">
                     <div class="o-container-vertical--padding-small u-position-relative">
                         <div class="u-spacer-bottom-xl">
-                            <h2 class="c-h3">Outil 3en1</h2>
-                            <div class="o-card-grid-l">
-                                <smart-box title-label="Référence: " title="9823109831"
-                                       labels-and-values="@LabelAndValue"></smart-box>
+                            <h2 class="c-h1">Mes véhicules</h2>
+                            <div class="o-flex o-flex--justify-between o-flex--wrap">
+                                <p class="o-container-bp2--small">
+                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Ut enim ad minim veniam.
+                                </p>
+                                <div class="u-padding-vertical-m o-flex o-flex--center">
+                                    <button class="c-button c-button--primary" type="submit">
+                                        <span class="c-button__content">
+                                            <span class="c-button__label">Ajouter un véhicule</span>
+                                            <div class="o-svg-icon o-svg-icon-add">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959"></path>
+                                                </svg>
+                                            </div>
+                                        </span>
+                                    </button>
+                                </div>
+
                             </div>
                         </div>
                         <div class="u-spacer-bottom-xl">
-                            <h2 class="c-h3">Outil Activité</h2>
                             <div class="o-card-grid-l">
-                                <smart-box title-label="Référence: " title="9823109831"
-                                           subtitle="Expérience activités lorem ipsum CDI" labels-and-values="@LabelAndValue"></smart-box>
-                                <smart-box title-label="Référence: " title="9823109831"
-                                           subtitle="Expérience activités lorem ipsum CDI" labels-and-values="@LabelAndValue"></smart-box>
-                                <smart-box title-label="Référence: " title="9823109831"
-                                           subtitle="Expérience activités lorem ipsum CDI" labels-and-values="@LabelAndValue"></smart-box>
-
+                                <div class="c-panel">
+                                    <div class="c-panel__body">
+                                        <p>Aucun véhicule enregistré</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
