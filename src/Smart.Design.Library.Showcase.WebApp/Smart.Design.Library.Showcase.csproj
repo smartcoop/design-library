@@ -23,10 +23,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Smart.Design.Library\Smart.Design.Library.csproj" />
+    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.3.1114" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.3.1114" />
+    <ProjectReference Include="..\Smart.Design.Library\Smart.Design.Library.csproj" />
   </ItemGroup>
+
 </Project>
