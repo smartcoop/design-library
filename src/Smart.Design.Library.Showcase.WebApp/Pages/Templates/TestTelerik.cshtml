@@ -3,7 +3,7 @@
 @using Kendo.Mvc.UI
 
 @{
-    ViewData["Title"] = "New Subscription page";
+    ViewData["Title"] = "Test for Telerik";
 }
 
 <header class="o-container-vertical c-navbar c-navbar--white c-navbar--entry">
@@ -48,14 +48,29 @@
                 @using (Html.BeginForm())
                 {
                     <div class="form-group">
-                        <label for="Nom">Nom :</label>
+                        <label for="Nom">Nom * :</label>
+                        @(Html.Kendo().TextBoxFor(m => m.Model.Nom)
+                            .HtmlAttributes(new { @class = "form-control" }))
+                        <span class="text-danger">@(Html.ValidationMessageFor(m => m.Model.Nom))</span>
+                    </div>
+
+                    @*<div class="form-group">
+                        <label for="DateNaissance">Date de naissance :</label>
+                        @(Html.Kendo().DatePickerFor(m => m.Model.DateNaissance)
+                            .HtmlAttributes(new { @class = "form-control" }))
+                        <span class="text-danger">@(Html.ValidationMessageFor(m => m.Model.DateNaissance))</span>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label for="Nom">Nom * :</label>
                         @(Html.Kendo().TextBox()
                             .Name("Nom")
-                            .Value(Model.Nom)
+                            .Value(FieldsForm.Nom)
                             .HtmlAttributes(new { @class = "form-control " }))
                         <span class="text-danger">@(Html.ValidationMessageFor(m => m.Nom))</span>
                     </div>
-
+                    
                     <div class="form-group">
                         <label for="Genre">Genre :</label>
                         @(Html.Kendo().DropDownListFor(m => m.Genre)
@@ -68,6 +83,7 @@
                                 items.Add().Text("Autre").Value("Autre");
                             })                            
                             .HtmlAttributes(new { @class = "form-control" }))
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.Genre)</span>
                     </div>
 
                     <div class="form-group">
@@ -78,14 +94,14 @@
                             .Max(new DateTime(2099, 12, 31)) // Sets the max date of the DatePicker.
                             .Value(DateTime.Today) // Sets the value of the DatePicker.
                             .HtmlAttributes(new { @class = "form-control" }))
-                    </div>
+                        <span class="text-danger">@Html.ValidationMessageFor(m => m.DateNaissance)</span>
+                    </div>*@
 
                     @(Html.Kendo().Button()
                         .Name("kendoIconTextButton")
-                        .Tag("a")
                         .Icon("k-i-save")
                         .Content("Envoyer")
-                        .HtmlAttributes(new { @class = "c-button c-button--primary" })
+                        .HtmlAttributes(new { @class = "c-button c-button--primary", type = "submit" })
                         )
                 }
             </div>
@@ -94,7 +110,7 @@
 
     <div class="o-container o-container--small">
 
-        <div class="c-panel u-shadow-50">
+       @*  <div class="c-panel u-shadow-50">
 
             <div class="c-panel__body u-padding-vertical-l u-padding-bottom">
                 @(Html.Kendo().Switch()
@@ -103,7 +119,7 @@
                     .Messages(c => c.Checked("Active").Unchecked("Inactive"))
                     )
             </div>
-         </div>
+         </div> *@
     </div>>
 </main>
 <style>
