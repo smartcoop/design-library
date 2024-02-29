@@ -1,35 +1,32 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+using Smart.Design.Library.Showcase.Models;
 
-namespace Smart.Design.Library.Showcase.Pages.Templates
+namespace Smart.Design.Library.Showcase.Pages.Templates;
+
+public class TestTelerikModel : PageModel
 {
-    public class TestTelerikModel : PageModel
+    
+    public FieldsForm? Model { get; set; }
+
+    public void OnGet()
     {
-        [Required(ErrorMessage = "Le champ Nom est requis.")]
-        public string Nom { get; set; }
-        public string Genre { get; set; }
-        public DateTime DateNaissance { get; set; }
+        // Initialisez votre modèle ici si nécessaire lors de la requête HTTP GET
+        Model = new FieldsForm();
+        Console.WriteLine("OnGet method called");
+    }
 
-        public void OnGet()
+    public IActionResult OnPost()
+    {
+        Console.WriteLine("OnPost method called");
+        if (!ModelState.IsValid)
         {
-            // Code à exécuter lors de la requête HTTP GET
+            // Si le modèle n'est pas valide, retournez la page avec les erreurs
+            return Page();
         }
-        // Méthode pour gérer la soumission du formulaire (POST)
-        public IActionResult OnPost()
-        {
-            if (!ModelState.IsValid)
-            {
-                // Si le modèle n'est pas valide, retourner la page avec les erreurs
-                return Page();
-            }
 
-            // Traitement du formulaire ici
-            // Par exemple, rediriger vers une autre page après soumission réussie
-            return RedirectToPage("/Templates/Confirmation");
-        }
+        // Traitement du formulaire ici
+        // Par exemple, redirection vers une autre page après soumission réussie
+        return RedirectToPage("/Templates/Confirmation");
     }
 }
