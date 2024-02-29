@@ -38,35 +38,55 @@
             <div class="br-docs-category-list-wrapper">
                 <ul class="c-styleguide-list">
                     <li class="c-styleguide-list__item @IsActive("Accordion")"><a asp-page="../../03_cat_ds/Accordion/Accordion">Accordion</a></li>
-                    <li class="c-styleguide-list__item @IsActive("AlertDialog")"><a asp-page="../../03_cat_ds/AlertDialog/AlertDialog">Alert dialog </a></li>
-                    <li class="c-styleguide-list__item @IsActive("AlertStack")"><a asp-page="../../03_cat_ds/AlertStack/AlertStack">Alert stack </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Toolbar")"><a asp-page="../../03_cat_ds/Toolbar/Toolbar">Toolbar </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Tooltip")"><a asp-page="../../03_cat_ds/Tooltip/Tooltip">Tooltip </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Wizard")"><a asp-page="../../03_cat_ds/Wizard/Wizard">Wizard </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Table")"><a asp-page="../../03_cat_ds/Table/Table">Table </a></li>
-                    <li class="c-styleguide-list__item @IsActive("SideMenu")"><a asp-page="../../03_cat_ds/SideMenu/SideMenu">SideMenu </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Tabs")"><a asp-page="../../03_cat_ds/Tabs/Tabs">Tabs </a></li>
-                    <li class="c-styleguide-list__item @IsActive("CardGrid")"><a asp-page="../../03_cat_ds/CardGrid/CardGrid">CardGrid </a></li>
-                    <li class="c-styleguide-list__item @IsActive("FlexboxLayout")"><a asp-page="../../03_cat_ds/FlexboxLayout/FlexboxLayout">FlexboxLayout </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Interactions")"><a asp-page="../../03_cat_ds/Interactions/Interactions">Interactions </a></li>
+                    <li class="c-styleguide-list__item @IsActive("AlertDialog")"><a asp-page="../../03_cat_ds/AlertDialog/AlertDialog">Alert dialog</a></li>
+                    <li class="c-styleguide-list__item @IsActive("AlertStack")"><a asp-page="../../03_cat_ds/AlertStack/AlertStack">Alert stack</a></li>
+                    <li class="c-styleguide-list__item @IsActive("BorderedList")"><a asp-page="../../03_cat_ds/BorderedList/BorderedList">Bordered list</a></li>
+                    <li class="c-styleguide-list__item @IsActive("BlankSlate")"><a asp-page="../../03_cat_ds/BlankSlate/BlankSlate">Blank Slate</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Toolbar")"><a asp-page="../../03_cat_ds/Toolbar/Toolbar">Toolbar</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Tooltip")"><a asp-page="../../03_cat_ds/Tooltip/Tooltip">Tooltip</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Wizard")"><a asp-page="../../03_cat_ds/Wizard/Wizard">Wizard</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Table")"><a asp-page="../../03_cat_ds/Table/Table">Table</a></li>
+                    <li class="c-styleguide-list__item @IsActive("SideMenu")"><a asp-page="../../03_cat_ds/SideMenu/SideMenu">SideMenu</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Tabs")"><a asp-page="../../03_cat_ds/Tabs/Tabs">Tabs</a></li>
+                    <li class="c-styleguide-list__item @IsActive("CardGrid")"><a asp-page="../../03_cat_ds/CardGrid/CardGrid">CardGrid</a></li>
+                    <li class="c-styleguide-list__item @IsActive("FlexboxLayout")"><a asp-page="../../03_cat_ds/FlexboxLayout/FlexboxLayout">FlexboxLayout</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Interactions")"><a asp-page="../../03_cat_ds/Interactions/Interactions">Interactions</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="br-docs-category">
-            <h4 class="br-docs-category-name c-h4">Design Library (.NET)</h4>
+            <h4 class="br-docs-category-name c-h4">Design Library (.NET)
+                <span class="c-tooltip-icon" data-tooltip="tooltip-5" data-tooltip-placement="top" style="position: relative; top: 6px;">
+                    <div class="o-svg-icon o-svg-icon-circle-help  ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4C9.87827 4 7.84344 4.84285 6.34315 6.34315C4.84285 7.84344 4 9.87827 4 12C4 14.1217 4.84285 16.1566 6.34315 17.6569C7.84344 19.1571 9.87827 20 12 20C14.1217 20 16.1566 19.1571 17.6569 17.6569C19.1571 16.1566 20 14.1217 20 12C20 9.87827 19.1571 7.84344 17.6569 6.34315C16.1566 4.84285 14.1217 4 12 4ZM2 12C2 6.477 6.477 2 12 2C17.523 2 22 6.477 22 12C22 17.523 17.523 22 12 22C6.477 22 2 17.523 2 12Z" fill="#595959"></path>
+                            <path d="M12 14C11.7348 14 11.4804 13.8946 11.2929 13.7071C11.1054 13.5196 11 13.2652 11 13V12C11 11.7348 11.1054 11.4804 11.2929 11.2929C11.4804 11.1054 11.7348 11 12 11C12.2652 11 12.5196 11.1054 12.7071 11.2929C12.8946 11.4804 13 11.7348 13 12V13C13 13.2652 12.8946 13.5196 12.7071 13.7071C12.5196 13.8946 12.2652 14 12 14ZM10.5 16.5C10.5 16.1022 10.658 15.7206 10.9393 15.4393C11.2206 15.158 11.6022 15 12 15C12.3978 15 12.7794 15.158 13.0607 15.4393C13.342 15.7206 13.5 16.1022 13.5 16.5C13.5 16.8978 13.342 17.2794 13.0607 17.5607C12.7794 17.842 12.3978 18 12 18C11.6022 18 11.2206 17.842 10.9393 17.5607C10.658 17.2794 10.5 16.8978 10.5 16.5Z" fill="#595959"></path>
+                            <path d="M12.3899 7.811C11.4329 7.766 10.6299 8.301 10.4859 9.164C10.4356 9.41907 10.2878 9.6445 10.0741 9.79249C9.86029 9.94047 9.59729 9.99938 9.34081 9.95672C9.08434 9.91406 8.85456 9.77319 8.7002 9.56397C8.54584 9.35476 8.47903 9.09364 8.51394 8.836C8.86994 6.7 10.8169 5.734 12.4849 5.814C13.3389 5.854 14.2179 6.161 14.8939 6.793C15.5869 7.44 15.9999 8.368 15.9999 9.5C15.9999 10.791 15.4919 11.749 14.6169 12.332C13.8139 12.867 12.8289 13 11.9999 13C11.7347 13 11.4804 12.8946 11.2928 12.7071C11.1053 12.5196 10.9999 12.2652 10.9999 12C10.9999 11.7348 11.1053 11.4804 11.2928 11.2929C11.4804 11.1054 11.7347 11 11.9999 11C12.6699 11 13.1859 10.883 13.5079 10.668C13.7579 10.501 13.9999 10.208 13.9999 9.5C13.9999 8.882 13.7879 8.497 13.5279 8.254C13.2509 7.995 12.8479 7.834 12.3899 7.811Z" fill="#595959"></path>
+                        </svg>
+                    </div>
+                </span>
+                <div class="c-tooltip" id="tooltip-5" role="tooltip">
+                    All these components can be used in plain HTML
+                    <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
+                </div>
+            </h4>
+            
             <div class="br-docs-category-list-wrapper">
                 <ul class="c-styleguide-list">
-                    <li class="c-styleguide-list__item @IsActive("TableOfContent")"><a asp-page="../../02_cat_dl/TableOfContent/TableOfContent">Table of content </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Icons")"><a asp-page="../../02_cat_dl/Icons/Icons">Icons</a></li>
-                    <li class="c-styleguide-list__item @IsActive("RadioButton")"><a asp-page="../../02_cat_dl/RadioButton/RadioButton">RadioButton </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Select")"><a asp-page="../../02_cat_dl/Select/Select">Select</a></li>
-                    <li class="c-styleguide-list__item @IsActive("Textarea")"><a asp-page="../../02_cat_dl/TextArea/TextArea">TextArea</a></li>
-                    <li class="c-styleguide-list__item @IsActive("Grid")"><a asp-page="../../02_cat_dl/Grid/Grid">Grid</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Alert")"><a asp-page="../../02_cat_dl/Alert/Alert">Alert</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Avatar")"><a asp-page="../../02_cat_dl/Avatar/Avatar">Avatar</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Badge")"><a asp-page="../../02_cat_dl/Badge/Badge">Badge</a></li>
                     <li class="c-styleguide-list__item @IsActive("Container")"><a asp-page="../../02_cat_dl/Container/Container">Container</a></li>
-                    <li class="c-styleguide-list__item @IsActive("ProgressBar")"><a asp-page="../../02_cat_dl/ProgressBar/ProgressBar">Progress Bar</a></li>
+                    <li class="c-styleguide-list__item @IsActive("FormGroup")"><a asp-page="../../02_cat_dl/FormGroup/FormGroup">Form Group</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Grid")"><a asp-page="../../02_cat_dl/Grid/Grid">Grid</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Icons")"><a asp-page="../../02_cat_dl/Icons/Icons">Icons</a></li>
                     <li class="c-styleguide-list__item @IsActive("Pill")"><a asp-page="../../02_cat_dl/Pill/Pill">Pill</a></li>
-                    <li class="c-styleguide-list__item @IsActive("FormGroup")"><a asp-page="../../02_cat_dl/FormGroup/FormGroup">FormGroup</a></li>
+                    <li class="c-styleguide-list__item @IsActive("ProgressBar")"><a asp-page="../../02_cat_dl/ProgressBar/ProgressBar">Progress Bar</a></li>
+                    <li class="c-styleguide-list__item @IsActive("RadioButton")"><a asp-page="../../02_cat_dl/RadioButton/RadioButton">Radio Button</a></li>
+                    <li class="c-styleguide-list__item @IsActive("Select")"><a asp-page="../../02_cat_dl/Select/Select">Select</a></li>
+                    <li class="c-styleguide-list__item @IsActive("TableOfContent")"><a asp-page="../../02_cat_dl/TableOfContent/TableOfContent">Table of content </a></li>
+                    <li class="c-styleguide-list__item @IsActive("Textarea")"><a asp-page="../../02_cat_dl/TextArea/TextArea">Text Area</a></li>
                 </ul>
             </div>
         </div>
@@ -83,15 +103,12 @@
                     <li class="c-styleguide-list__item @IsActive("Input")"><a asp-page="../../04_todo/Input/Input">Input </a></li>
                     <li class="c-styleguide-list__item @IsActive("Input group")"><a asp-page="../../04_todo/InputGroup/InputGroup">Input group </a></li>
                     <li class="c-styleguide-list__item @IsActive("Input time")"><a asp-page="../../04_todo/InputTime/InputTime">Input time </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Alert")"><a asp-page="../../04_todo/Alert/Alert">Alert </a></li>
                     <li class="c-styleguide-list__item @IsActive("ApplicationLayoutSidebar")"><a asp-page="../../04_todo/ApplicationLayoutSidebar/ApplicationLayoutSidebar">Application layout sidebar </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Avatar")"><a asp-page="../../04_todo/Avatar/Avatar">Avatar </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Badge")"><a asp-page="../../04_todo/Badge/Badge">Badge </a></li>
                     <li class="c-styleguide-list__item @IsActive("Base")"><a asp-page="../../04_todo/Base/Base">Base </a></li>
                     <li class="c-styleguide-list__item @IsActive("Body")"><a asp-page="../../04_todo/Body/Body">Body </a></li>
                     <li class="c-styleguide-list__item @IsActive("BodyWrapper")"><a asp-page="../../04_todo/BodyWrapper/BodyWrapper">Body wrapper </a></li>
                     <li class="c-styleguide-list__item @IsActive("Box")"><a asp-page="../../04_todo/Box/Box">Box </a></li>
-                    <li class="c-styleguide-list__item @IsActive("Button")"><a asp-page="../../04_todo/Button/Button">Button </a></li>
+                    <li class="c-styleguide-list__item @IsActive("Button")"><a asp-page="../../04_todo/Button/Button">Button</a></li>
                     <li class="c-styleguide-list__item @IsActive("ButtonToolbar")"><a asp-page="../../04_todo/ButtonToolbar/ButtonToolbar">Button toolbar </a></li>
                     <li class="c-styleguide-list__item @IsActive("ButtonBackToTop")"><a asp-page="../../04_todo/ButtonBackToTop/ButtonBackToTop">Button back to top </a></li>
                     <li class="c-styleguide-list__item @IsActive("Card")"><a asp-page="../../04_todo/Card/Card">Card </a></li>

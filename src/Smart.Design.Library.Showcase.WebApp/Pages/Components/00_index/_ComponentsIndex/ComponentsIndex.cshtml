@@ -13,12 +13,103 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
         </div>
-        <div class="br-content c-content u-spacer">
-            <div class="title u-spacer">
+        <div class="br-content">
+
+            <ul class="o-card-grid" id="component-docs">
+                <li>
+                    <a class="c-card" asp-page="../../02_cat_dl/TableOfContent/TableOfContent">
+                        <img src="~/SmartLib/images/component-illustrations/c-table-of-content.png" alt="">
+                        <h4 class="c-h4 title">
+                            Table of content<span class="c-status-pill c-status-pill--success">
+                                <span class="c-status-pill__circle"></span>
+                                <span class="c-status-pill__label">New</span>
+                            </span>
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../02_cat_dl/TableOfContent/TableOfContent">
+                        <img src="~/SmartLib/images/component-illustrations/u-interactions.png" alt="">
+                        <h4 class="c-h4 title">
+                            Interactions<span class="c-status-pill c-status-pill--success">
+                                <span class="c-status-pill__circle"></span>
+                                <span class="c-status-pill__label">New</span>
+                            </span>
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../04_todo/Button/Button">
+                        <img src="~/SmartLib/images/component-illustrations/c-button.png" alt="">
+                        <h4 class="c-h4 title">
+                            Button
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../04_todo/Input/Input">
+                        <img src="~/SmartLib/images/component-illustrations/c-input.png" alt="">
+                        <h4 class="c-h4 title">
+                            Input
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../02_cat_dl/RadioButton/RadioButton">
+                        <img src="~/SmartLib/images/component-illustrations/c-radio-button.png" alt="">
+                        <h4 class="c-h4 title">
+                            Radio button
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../04_todo/Checkbox/Checkbox">
+                        <img src="~/SmartLib/images/component-illustrations/c-checkbox.png" alt="">
+                        <h4 class="c-h4 title">
+                            Checkbox
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../02_cat_dl/Select/Select">
+                        <img src="~/SmartLib/images/component-illustrations/c-select.png" alt="">
+                        <h4 class="c-h4 title">
+                            Select
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../03_cat_ds/Tooltip/Tooltip">
+                        <img src="~/SmartLib/images/component-illustrations/c-tooltip.png" alt="">
+                        <h4 class="c-h4 title">
+                            Tooltip
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../04_todo/Dialog/Dialog">
+                        <img src="~/SmartLib/images/component-illustrations/c-dialog.png" alt="">
+                        <h4 class="c-h4 title">
+                            Dialog
+                        </h4>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-card" asp-page="../../03_cat_ds/AlertDialog/AlertDialog">
+                        <img src="~/SmartLib/images/component-illustrations/c-alert.png" alt="">
+                        <h4 class="c-h4 title">
+                            Alert
+                        </h4>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="title u-spacer-top">
                 <h2 class="c-h2">Comment documenter un composant ?</h2>
             </div>
-            <div class="o-flex dynamic-dashboard--grid">
-                <div class="u-spacer">
+            <div class="o-flex dynamic-dashboard--grid c-content">
+                
+                <div class="u-spacer-top">
                     <h3 class="c-h3">Si celui ci n’est pas un composant C#</h3>
                     <ol>
                         <li>Déplacer la page du composant du dossier <code>04_todo</code> vers le dossier <code>03_cat_ds</code></li>
@@ -44,7 +135,37 @@
                     <p class="c-body-2">*Lors du copié/collé, attention à bien respecter l’indentation des balises pour ne pas casser la mise en page</p>
                 </div>
             </div>
-            
+
+            <style>
+                
+                #component-docs a {
+                    background: #FFF;
+                    border-radius: .3rem;
+                    display: block;
+                    border-bottom: 0;
+                }
+                
+                #component-docs .title {
+                    display: block;
+                    padding: .8rem 1.6rem .8rem 0;
+                    color: #333;
+                }
+
+                    #component-docs .title .c-status-pill {
+                        margin-left: .75rem;
+                        position: relative;
+                        top: -1px;
+                    }
+
+                #component-docs img {
+                    background: #F2F2F2;
+                    display: block;
+                }
+
+                #component-docs a:hover {
+                    border-color: #000;
+                }
+            </style>
 
             
 

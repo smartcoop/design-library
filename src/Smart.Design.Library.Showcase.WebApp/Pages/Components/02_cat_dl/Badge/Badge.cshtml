@@ -15,10 +15,10 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
             <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
-            <p class="u-text-danger"><b>Status:</b> wrong integration</p>
+            <p><b>Status:</b> complete</p>
         </div>
         <div class="br-content c-content">
-            <p>Documentation for Badges</p>
+            <p>Documentation for @ViewData["ComponentTitle"]</p>
         </div>
 
         <div class="br-sample" id="component-01-c-badge">
@@ -76,10 +76,6 @@
             <div class="br-sample-header br-sample-clearfix">
                 <h3 class="br-sample-heading c-h3">Badge and text</h3>
             </div>
-            <div class="br-sample-documentation c-content c-menu__item--danger">
-                <p><b>Wrong naming for attributes:</b></p>
-                <p>Title is not a title but normal text. Title comes with the next example.</p>
-            </div>
             <div class="br-sample-content">
                 <smart-badge title="Text"></smart-badge>
             </div>
@@ -93,12 +89,7 @@
             <div class="br-sample-header br-sample-clearfix">
                 <h3 class="br-sample-heading c-h3">Badge and text (2lines)</h3>
             </div>
-            <div class="br-sample-documentation c-content c-menu__item--danger">
-                <p><b>Wrong intergration:</b></p>
-                <p>Title should be a h4.c-h4. Subline has to be a p.u-text-muted</p>
-                <p><b>Wrong naming for attributes:</b></p>
-                <p>Subline here should be the same as title above.<p>
-            </div>
+            
             <div class="br-sample-content">
                 <smart-badge title="Title" subline="Subline"></smart-badge>
             </div>
@@ -112,6 +103,9 @@
             <div class="br-sample-header br-sample-clearfix">
                 <h3 class="br-sample-heading c-h3">Custom icons</h3>
             </div>
+            <div class="br-sample-documentation br-content c-content">
+                <p>Any icon from our <a asp-page="../../02_cat_dl/Icons/Icons">icon list</a> can be used inside the badge</p>
+            </div>
             <div class="br-sample-content">
                 <smart-badge badge-style="Warning" icon="EditAlt"></smart-badge>
                 <smart-badge badge-style="Success" icon="Clock"></smart-badge>
@@ -124,7 +118,6 @@
                 <pre class="br-sample-markup br-sample-markup-csharp">@("<smart-badge badge-style=\"Default\" icon=\"Home\"></smart-badge>")</pre>
             </div>
         </div>
-
 
         <div class="br-componentgroup-footer-wrapper">
             <h1 class="br-componentgroup-footer c-h2">Possible parameters for badge</h1>
