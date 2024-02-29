@@ -1,0 +1,480 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Button.Button
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Button";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> complete</p>
+        </div>
+        <div class="br-content c-content">
+            <p>This page documents the different button skins and types.</p>
+        </div>
+       
+        <div class="br-sample" id="component-01-c-button-primary">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button primary</h3>
+                <a class="br-sample-header-link" href="#component-01-c-button-primary">#</a>
+            </div>
+            <div class="br-sample-content">
+                <button class="c-button c-button--primary">
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+                <button class="c-button c-button--primary" disabled>
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<button class=\"c-button c-button--primary\">")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")
+@("<button class=\"c-button c-button--primary\" disabled>")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-02-c-button-secondary">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button secondary</h3>
+                <a class="br-sample-header-link" href="#component-02-c-button-secondary">#</a>
+            </div>
+            <div class="br-sample-content">
+                <button class="c-button c-button--secondary">
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+                <button class="c-button c-button--secondary" disabled>
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<button class=\"c-button c-button--secondary\">")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")
+@("<button class=\"c-button c-button--secondary\" disabled>")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-03-c-button-danger-secondary">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button Danger primary, secondary and disabled</h3>
+                <a class="br-sample-header-link" href="#component-03-c-button-danger-secondary">#</a>
+            </div>
+            <div class="br-sample-content">
+                <button class="c-button c-button--danger">
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+                <button class="c-button c-button--danger" disabled>
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+                <button class="c-button c-button--danger-secondary">
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<button class=\"c-button c-button--danger\">")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")
+                    @("<button class=\"c-button c-button--danger\" disabled>")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")
+@("<button class=\"c-button c-button--danger-secondary\">")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-04-c-button-warning">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button warning primary and disabled</h3>
+                <a class="br-sample-header-link" href="#component-04-c-button-warning">#</a>
+            </div>
+            <div class="br-sample-content">
+                <button class="c-button c-button--warning" type="button">
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+                <button class="c-button c-button--warning" type="button" disabled>
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<button class=\"c-button c-button--warning\">")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")
+@("<button class=\"c-button c-button--warning\" disabled>")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-05-c-button-borderless">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button borderless</h3>
+                <a class="br-sample-header-link" href="#component-05-c-button-borderless">#</a>
+            </div>
+            <div class="c-content">
+                <p>The borderless has to be used near other default buttons</p>
+                <p>For links inside paragraph, see <a asp-page="../../03_cat_ds/Links/Links">Links</a> component</p>
+            </div>
+            <div class="br-sample-content">
+                <button class="c-button c-button--borderless" type="button">
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+                <button class="c-button c-button--borderless" type="button" disabled>
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<button class=\"c-button c-button--borderless\">")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")
+@("<button class=\"c-button c-button--borderless\" disabled>")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-06-c-button-icon-text">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Text + icon button (left or right side)</h3>
+                <a class="br-sample-header-link" href="#component-06-c-button-icon-text">#</a>
+            </div>
+            <div class="br-sample-content">
+                <button class="c-button c-button--secondary" type="button">
+                    <span class="c-button__content">
+                        <div class="o-svg-icon o-svg-icon-edit">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959"></path>
+                            </svg>
+                        </div>
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+                <button class="c-button c-button--secondary" type="button">
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                        <div class="o-svg-icon o-svg-icon-edit">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959"></path>
+                            </svg>
+                        </div>
+                    </span>
+                </button>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<button class=\"c-button c-button--secondary\" type=\"button\">")
+    @("<span class=\"c-button__content\">")
+        @("<div class=\"o-svg-icon o-svg-icon-edit\">")
+            @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                @("<path d=\"M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z\" fill=\"#595959\"></path>")
+            @("</svg>")
+        @("</div>")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")
+@("<button class=\"c-button c-button--secondary\" type=\"button\">")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+        @("<div class=\"o-svg-icon o-svg-icon-edit\">")
+            @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                @("<path d=\"M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z\" fill=\"#595959\"></path>")
+            @("</svg>")
+        @("</div>")
+    @("</span>")
+@("</button>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-08-c-button-loading">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button Loading</h3>
+                <a class="br-sample-header-link" href="#component-08-c-button-loading">#</a>
+            </div>
+            <div class="br-sample-content">
+                <button class="c-button c-button--secondary c-button--loading" type="button" disabled="disabled">
+                    <div class="c-loader"></div>
+                    <span class="c-button__content">
+                        <span class="c-button__label">Button label</span>
+                    </span>
+                </button>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<button class=\"c-button c-button--secondary c-button--loading\" type=\"button\" disabled=\"disabled\">")
+    @("<div class=\"c - loader\"></div>")
+    @("<span class=\"c-button__content\">")
+        @("<span class=\"c-button__label\">Button label</span>")
+    @("</span>")
+@("</button>")</pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-09-c-button-icon">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">button icon only</h3>
+                <a class="br-sample-header-link" href="#component-09-c-button-icon">#</a>
+            </div>
+            <div class="br-sample-content">
+                <button class="c-button c-button--icon c-button--primary">
+                    <div class="o-svg-icon o-svg-icon-add  ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z" fill="#595959"></path>
+                        </svg>
+                    </div>
+                    <div class="u-sr-accessible">Add</div>
+                </button>
+
+                <button class="c-button c-button--icon c-button--secondary">
+                    <div class="o-svg-icon o-svg-icon-add  ">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959"></path>
+                        </svg>
+                    </div>
+                    <div class="u-sr-accessible">Add</div>
+                </button>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<button class=\"c-button c-button--icon c-button--secondary\">")
+    @("<div class=\"o-svg-icon o-svg-icon-add  \">")
+        @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+            @("<path d=\"M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z\" fill=\"#595959\"></path>")
+        @("</svg>")
+    @("</div>")
+    @("<div class=\"u-sr-accessible\">Add</div>")
+@("</button>")
+@("<button class=\"c-button c-button--icon c-button--secondary\">")
+    @("<div class=\"o-svg-icon o-svg-icon-add  \">")
+        @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+            @("<path d=\"M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z\" fill=\"#595959\"></path>")
+        @("</svg>")
+    @("</div>")
+    @("<div class=\"u-sr-accessible\">Add</div>")
+@("</button>")</pre>
+            </div>
+        </div>
+       
+        <div class="br-sample" id="component-10-c-button-toolbar">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Button icons toolbar</h3>
+                <a class="br-sample-header-link" href="#component-10-c-button-toolbar">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>Simply wrap your buttons inside an element with parent class <code>c-button-toolbar</code> and additional parameters <code>c-button-toolbar--compact</code> and/or <code>c-button-toolbar--vertical</code></p>
+            </div>
+            <div class="br-sample-content">
+                <div class="c-button-toolbar c-button-toolbar--compact">
+                    <button class="c-button c-button--icon c-button--secondary">
+                        <div class="o-svg-icon o-svg-icon-add  ">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z" fill="#595959"></path>
+                            </svg>
+                        </div>
+                        <div class="u-sr-accessible">Add</div>
+                    </button>
+                    
+                    <button class="c-button c-button--icon c-button--secondary">
+                        <div class="o-svg-icon o-svg-icon-add  ">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z" fill="#595959"></path>
+                            </svg>
+                        </div>
+                        <div class="u-sr-accessible">Edit</div>
+                    </button>
+
+                    <button class="c-button c-button--icon c-button--secondary">
+                        <div class="o-svg-icon o-svg-icon-add  ">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z" fill="#595959"></path>
+                            </svg>
+                        </div>
+                        <div class="u-sr-accessible">Add</div>
+                    </button>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"c-button-toolbar c-button-toolbar--compact\">")
+    @("<button class=\"c-button c-button--icon c-button--secondary\">")
+        @("<div class=\"o-svg-icon o-svg-icon-add  \">")
+            @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                @("<path d=\"M4 12C4 11.4477 4.44772 11 5 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H5C4.44772 13 4 12.5523 4 12Z\" fill=\"#595959\"></path>")
+            @("</svg>")
+        @("</div>")
+        @("<div class=\"u-sr-accessible\">Add</div>")
+    @("</button>")
+    @("<button class=\"c-button c-button--icon c-button--secondary\">")
+        @("<div class=\"o-svg-icon o-svg-icon-add  \">")
+            @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                @("<path d=\"M16.2929 2.29289C16.6834 1.90237 17.3166 1.90237 17.7071 2.29289L21.7071 6.29289C22.0976 6.68342 22.0976 7.31658 21.7071 7.70711L8.70711 20.7071C8.51957 20.8946 8.26522 21 8 21H4C3.44772 21 3 20.5523 3 20V16C3 15.7348 3.10536 15.4804 3.29289 15.2929L13.2927 5.2931L16.2929 2.29289ZM14 7.41421L5 16.4142V19H7.58579L16.5858 10L14 7.41421ZM18 8.58579L19.5858 7L17 4.41421L15.4142 6L18 8.58579Z\" fill=\"#595959\"></path>")
+            @("</svg>")
+        @("</div>")
+                    @("<div class=\"u-sr-accessible\">Edit</div>")
+    @("</button>")
+    @("<button class=\"c-button c-button--icon c-button--secondary\">")
+        @("<div class=\"o-svg-icon o-svg-icon-add  \">")
+            @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                @("<path d=\"M12 4C12.5523 4 13 4.44771 13 5V11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H13V19C13 19.5523 12.5523 20 12 20C11.4477 20 11 19.5523 11 19V13H5C4.44772 13 4 12.5523 4 12C4 11.4477 4.44772 11 5 11H11V5C11 4.44771 11.4477 4 12 4Z\" fill=\"#595959\"></path>")
+            @("</svg>")
+        @("</div>")
+        @("<div class=\"u-sr-accessible\">Add</div>")
+    @("</button>")
+@("</div>")</pre>
+            </div>
+            <style>
+                .c-button-toolbar--compact .c-button + .c-button {
+                    margin-top: 0.8rem !important;
+                    margin-left: -1px !important;
+                }
+            </style>
+        </div>
+        <div class="br-componentgroup-footer-wrapper">
+                    <h1 class="br-componentgroup-footer c-h2">Possible parameters for button (when used with DL)</h1>
+                    <div class="br-content c-content">
+                        <table class="c-table">
+                            <thead>
+                                <tr>
+                                    <th>Parameters</th>
+                                    <th>Type</th>
+                                    <th>Possible values</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Label</td>
+                                    <td>string</td>
+                                    <td>
+                                        Any text.
+                                    </td>
+                                    <td>Determines the text label of the button</td>
+                                </tr>
+                                <tr>
+                                    <td>button-style</td>
+                                    <td>string</td>
+                                    <td>
+                                        <code>Highlight (missing)</code>, <code>Primary</code>, <code>Secondary</code>, <code>Borderless</code>, <code>Danger</code>, <code>DangerSecondary</code>, <code>Warning (missing)</code>
+                                    </td>
+                                    <td>Determines how the button is visually rendered.</td>
+                                </tr>
+                                <tr>
+                                    <td>leading-icon</td>
+                                    <td>string</td>
+                                    <td>See <a href="/todo:addLinkToIconsWhenREady">icon style guide</a> for available icons.</td>
+                                    <td>This parameter is used for buttons with icons on the <b>left side</b></td>
+                                </tr>
+                                <tr>
+                                    <td>icon-only</td>
+                                    <td>Parameter only</td>
+                                    <td>No value needed</td>
+                                    <td>This parameter is used for buttons without Label. The <code>leading-icon</code> must be set.</td>
+                                </tr>
+                                 <tr>
+                                    <td>trailing-icon</td>
+                                    <td>string</td>
+                                    <td>See <a href="/todo:addLinkToIconsWhenREady">icon style guide</a> for available icons.</td>
+                                    <td>This parameter is used for buttons with icons on the <b>right side</b></td>
+                                </tr>
+                                <tr>
+                                    <td>type</td>
+                                    <td>string</td>
+                                    <td>
+                                        <code>button</code>, <code>submit</code>
+                                    </td>
+                                    <td>The default value is <code>button</code>.</td>
+                                </tr>
+                                <tr>
+                                    <td>href</td>
+                                    <td>string</td>
+                                    <td>This can be any url or id.</td>
+                                    <td>If this parameter is used then this button will automatically become a link.</td>
+                                </tr>
+                                <tr>
+                                    <td>isBlock</td>
+                                    <td>boolean</td>
+                                    <td>
+                                        <code>true</code>, <code>false</code>
+                                    </td>
+                                    <td>Determines if the button is a full width block button. The default state is <code>false</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>isLoading (missing)</td>
+                                    <td>boolean</td>
+                                    <td>
+                                        <code>true</code>, <code>false</code>
+                                    </td>
+                                    <td>Determines if the button has a loading state. The default state is <code>false</code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+    </div>
+</div>
