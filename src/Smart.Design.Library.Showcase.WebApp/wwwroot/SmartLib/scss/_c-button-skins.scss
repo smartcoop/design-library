@@ -276,10 +276,10 @@ $c-button-link-color: $color-red-600 !default;
     fill: currentColor;
   }
 
-  &:focus {
+  /*&:focus {
     outline: $c-button-outline-color auto 1px;
     background: transparent;
-  }
+  }*/
 
   &:focus:not(:focus-visible) {
     outline: none;

@@ -1,4 +1,4 @@
-﻿# Installation des extentions.
+﻿# Installation des extensions.
 
 ![N|Solid](https://madskristensen.gallerycdn.vsassets.io/extensions/madskristensen/bundlerminifier/2.8.396/1535134367605/Microsoft.VisualStudio.Services.Icons.Default) **Bundler & Minifier**
 
@@ -52,24 +52,21 @@ Les fichiers de configuration (Smart.Design.Library.Showcase/bundleconfig.json e
  Cela comprendra les derniers ajouts/modifications css.
 
  Il suffira de copier le contenu de ce fichier minifié (Smart.Design.Library.Showcase/SmartLib/css/smart-main.min.css) dans :
-**Smart.Design.Library/css/smart-main.min.css**
+**Smart.Design.Library/wwwroot/css/**
 
 
 ### Génération du JS final ###
- Faire un click droit sur l'ensemble des fichiers du dossier
- **Smart.Design.Library.Showcase/SmartLib/js/smart-modules**
- et choisir **Bundler & Minifier / Bundle and Minify** Files pour générer le js final
- Smart.Design.Library.Showcase/SmartLib/js/smart-modules/smart-bundle.js et sa minification **Smart.Design.Library.Showcase/SmartLib/js/smart-bundle.min.js**.
- Cela comprendra les derniers ajouts/modifications js.
+ L'extension Bundle & Minify regroupe tous les fichiers js dans le fichier **Smart.Design.Library.Showcase/SmartLib/js/smart-bundle-client.min.js** dès qu'on modifie et sauve un fichier se retrouvant repris dans  **C:\joe-repos\design-library\src\Smart.Design.Library.Showcase.WebApp\bundleconfig.json**
+ 
 
- Il suffira de copier le contenu de ce fichier minifié (Smart.Design.Library.Showcase/SmartLib/js/smart-bundle.min.js) dans :
-**Smart.Design.Library/js/smart-main.min.css**
+ Il suffira de copier le contenu de ce fichier minifié (Smart.Design.Library.Showcase/SmartLib/js/smart-bundle-client.min.js) dans :
+**Smart.Design.Library/wwwroot/js/**
 
 ___
 
 ![N|Solid](https://ms-vsliveshare.gallerycdn.vsassets.io/extensions/ms-vsliveshare/vsls-vs-2022/1.0.5883.0/1692650871758/Microsoft.VisualStudio.Services.Icons.Default) **Live share 2022**
 
-Permet de visionner en temp réel les modifications faites les fichiers html et css directement dans le navigateur.
+Permet de visionner en temps réel les modifications faites les fichiers html et css directement dans le navigateur.
 
 **NB : Cette extension est installée de base avec visual-studio.**
 

@@ -1,7 +1,7 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.ProductionUnitModel
 @{
-    ViewData["Title"] = "Production unit page";
+    ViewData["Title"] = "Vos unités de production"; // for _TemplatesMainTitle
 }
 
 <style>
@@ -49,21 +49,6 @@
      "Vos Unité de Production","/unityProduction"
     }
     };
-    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>{
-    {
-    "Home", "/home"
-    },{
-    "Prestations en cours", "/PedingPrestations"
-    },{
-     "Nouvelle prestation", "/NewPrestation"
-    },{
-     "Simulation", "/Simulation"
-    },{
-     "Activités et projets","/projets"
-    },{
-     "Formateurs associés","/u/cfa/home"
-    }
-    };
     Dictionary<string, string> LabelAndValue = new Dictionary<string, string>{
     {
     "Titulaire: ", "678362 - John Doe"
@@ -77,19 +62,9 @@
 
     <main class="u-maximize-width">
         <div class="c-app-layout-inner">
-            <div class="c-app-layout-inner__sidebar u-position-fixed">
-                <smart-sidemenu label-and-links="SideMenuLabelsAndLinks"></smart-sidemenu>
-            </div>
+            @await Html.PartialAsync("Shared/_TemplatesSideMenu")
             <div class="c-app-layout-inner__content">
-                <div class="c-navbar u-position-fixed main-title">
-                    <div class="c-toolbar">
-                        <div class="c-toolbar__left">
-                            <div class="c-toolbar__item">
-                                <h1 class="c-toolbar__title">Vos Unités de Production</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @await Html.PartialAsync("Shared/_TemplatesMainTitle")
                 <div class="o-container o-container--large">
                     <div class="o-container-vertical--padding-small u-position-relative">
                         <div class="u-spacer-bottom-xl">
