@@ -1,0 +1,228 @@
+﻿@page
+@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.ModelBinding;
+@using Smart.Design.Library
+@using Kendo.Mvc.UI
+@using Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Kendo.Mvc
+
+@model Smart.Design.Library.Showcase.Pages.Templates.DNA
+
+@{
+    ViewData["Title"] = "DNA : Add a vehicule ";
+}
+
+<header class="o-container-vertical c-navbar c-navbar--white c-navbar--entry">
+    <div class="o-container o-container--small">
+        <div class="o-grid">
+            <div class="o-grid-col-6">
+                <div class="c-brand c-brand--small">
+                    <a href="/home?lang=FR">
+                        <img src="~/images/logo.svg" alt="Smart">
+                    </a>
+                </div>
+            </div>
+
+            <div class="o-grid-col-6">
+                <ul class="c-pill-navigation">
+                    <li class="c-pill-navigation__item c-pill-navigation__item--has-child-menu u-spacer-left-auto">
+                        <button type="button" data-menu="lang-switch" data-menu-samewidth="true">
+                            Fran&#231;ais
+                        </button>
+                        <ul class="c-menu c-menu--large" id="lang-switch">
+                            <li class="c-menu__item">
+                                <p class="c-menu__info u-text-muted">Fran&#231;ais</p>
+                            </li>
+                            <li class="c-menu__item">
+                                <a class="c-menu__label" href="?lang=NL">Nederlands</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="o-container-vertical">
+
+    <div class="o-container o-container--small">
+
+        <div class="c-panel u-shadow-50">
+
+            <div class="c-panel__body u-padding-vertical-l u-padding-bottom">
+
+                <form id="dnaForm" method="post" class="k-form k-form-vertical" kendo-validator="true">
+                    
+                    <ul class="k-form-group">
+                        <li class="k-form-field">
+                            <label for="vehiculeName" class="k-form-label">
+                                Nommez votre véhicule <span id="autohide-vehiculeName" class="key-button wider"><smart-icon icon="CircleHelp"></smart-icon></span>
+
+                                @(Html.Kendo().Tooltip()
+                                    .For("#autohide-vehiculeName")
+                                    .Position(TooltipPosition.Top)
+                                    .Content("For Nom du véhicule : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.")
+                                    .Width(240)
+                                    )
+                            </label>
+
+                            <span class="k-form-field-wrap">
+                                @(Html.Kendo()
+                                    .TextBox()
+                                    .Name("vehiculeName")
+                                    .HtmlAttributes(new { placeholder = "Ma voiture privée", maxlength = "50", validationmessage = "Ce champs est requis", required = "required" })
+                                    )
+                            </span>
+                        </li>
+
+                        <li class="k-form-field">
+                            <label for="licencePlate" class="k-form-label">Plaque d'immatriculation</label>
+                            <span class="k-form-field-wrap">
+                                @(Html.Kendo()
+                                    .TextBox()
+                                    .Name("licencePlate")
+                                    .HtmlAttributes(new { placeholder = "1 - AAA - 123", required = "required", maxlength = "15" })
+                                    )
+                            </span>
+                        </li>
+                        
+                        <li class="k-form-field">
+                            <label for="licencePlateDate" class="k-form-label">Date de la première immatriculation</label>
+                            <span class="k-form-field-wrap">
+                                @(Html.Kendo().DatePicker()
+                                    .Name("licencePlateDate")
+                                    .Value(DateTime.Now)
+                                    )
+                            </span>
+                        </li>
+
+                        <li class="k-form-field">
+                            <label for="motorType" class="k-form-label">Type de moteur</label>
+                            <span class="k-form-field-wrap">
+                                @(Html.Kendo()
+                                    .DropDownList()
+                                    .Name("motorType")
+                                    .BindTo(new[] {
+                                        new SelectListItem { Text="Hybride-essence", Value="1" },
+                                        new SelectListItem { Text="typeMoteur2", Value="2" },
+                                        new SelectListItem { Text="typeMoteur3", Value="3" },
+                                        new SelectListItem { Text="typeMoteur4", Value="4" }
+                                    })
+                                    .HtmlAttributes(new { required = "required" })
+                                    )
+                            </span>
+                        </li>
+
+                        <li class="k-form-field">
+                            <label for="vehiculeConsumption" class="k-form-label">
+                                Consommation du véhicule <span id="autohide-vehiculeConsumption" class="key-button wider">
+                                    <smart-icon icon="CircleHelp"></smart-icon>
+                                </span>
+
+                                @(Html.Kendo().Tooltip()
+                                    .For("#autohide-vehiculeConsumption")
+                                    .Position(TooltipPosition.Top)
+                                    .Content("For Consommation du véhicule : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.")
+                                    .Width(240)
+                                    )
+                            </label>
+
+                            <span class="k-form-field-wrap">
+                                @(Html.Kendo()
+                                    .NumericTextBox()
+                                    .Name("vehiculeConsumption")
+                                    .Min(0)
+                                    .Max(100)
+                                    .Decimals(0)
+                                    .Format("n0")
+                                    .HtmlAttributes(new { placeholder = "97", required = "required" })
+                                    )
+                            </span>
+                        </li>
+                        <li class="k-form-field">
+                            <label for="vehiculeType" class="k-form-label">
+                                Type de véhicule <span id="autohide-vehiculeType" class="key-button wider"><smart-icon icon="CircleHelp"></smart-icon></span>
+
+                                @(Html.Kendo().Tooltip()
+                                    .For("#autohide-vehiculeType")
+                                    .Position(TooltipPosition.Top)
+                                    .Content("For Nom du vehicule : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.")
+                                    .Width(240)
+                                    )
+                            </label>
+
+                            <span class="k-form-field-wrap">
+                                @(Html.Kendo().RadioGroup()
+                                    .Name("radiogroup")
+                                    .Layout("horizontal")
+                                    .Items(i =>
+                                    {
+                                        i.Add().Label("Véhicule utilitaire").Value("1");
+                                        i.Add().Label("Véhicule non-utilitaire").Value("2");
+                                    })
+                                    .Value("1")
+                                    )
+                            </span>
+                        </li>
+
+                        <li>
+                            <hr class ="c-hr" />
+                        </li>
+
+                        <li class="k-form-field">
+
+                            <span class="k-form-field-wrap">
+                                @(Html.Kendo()
+                                    .RadioButton()
+                                    .Name("approval1")
+                                    .Checked(true)
+                                    .HtmlAttributes(new { @name = "approval" }).Label("Je certifie..."))
+                            </span>
+                        </li>
+
+                        <li class="k-form-buttons">
+
+                            @(Html.Kendo().Button()
+                                .Name("kendoIconTextButton1")
+                                .Icon("k-i-x")
+                                .Content(" Annuler")
+                                .HtmlAttributes(new { @class = "c-button c-button--secondary", type = "reset" })
+                                )
+
+                            @(Html.Kendo().Button()
+                                .Name("kendoIconTextButton2")
+                                .Icon("k-i-save")
+                                .Content(" Envoyer")
+                                .HtmlAttributes(new { @class = "c-button c-button--primary", type = "submit" })
+                                )
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
+
+<style>
+    .k-form-field {
+        list-style: none;
+        padding: 1em 0;
+    }
+</style>
+
+
+<script>    
+    
+    (function ($, kendo) {
+        $.extend(true, kendo.ui.validator, {
+            messages: {
+                // https://docs.telerik.com/kendo-ui/api/javascript/ui/validator/configuration/messages 
+                // overrides the built-in message for the required rule
+                required: "Ce champ est requis"
+            }
+
+        });
+
+    })(jQuery, kendo);
+</script>
