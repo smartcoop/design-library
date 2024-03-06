@@ -2,3 +2,14 @@
 // when you use icon font generation in Bedrock.
 // Check out README.md on how to enable
 // icon font generation.
+
+.icon-add {
+  background-image: url('/Smartlib/icons/add.svg'); /* Your Base64 encoded SVG */
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 20px 20px; /* Adjust based on your SVG's viewbox */
+  display: inline-block;
+  width: 20px; /* Match the SVG width */
+  height: 20px; /* Match the SVG height */
+  color: white;
+}
