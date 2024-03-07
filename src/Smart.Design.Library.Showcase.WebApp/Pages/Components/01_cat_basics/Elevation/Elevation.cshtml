@@ -1,0 +1,72 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Elevation.Elevation
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Elevation";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complete</p>
+        </div>
+        <div class="br-content c-content">
+            <p>There's 3 elevations available. Simply add the adequate html class to any element on the page to see the shadow appearing.</p>
+        </div>
+
+        <div class="br-sample" id="component-01-small-shadow">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Small shadow</h3>
+                <a class="br-sample-header-link" href="#component-01-small-shadow">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>Add <code>.u-shadow-10</code> class to any element on the page</p>
+            </div>
+            <div class="br-sample-content">
+                <div class="u-shadow-10">
+                    <div class="u-padding-vertical-l u-padding-horizontal-l">I am a box with a shadow.</div>
+                </div>
+            </div>
+            
+        </div>
+
+        <div class="br-sample" id="component-02-medium-shadow">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Medium shadow</h3>
+                <a class="br-sample-header-link" href="#component-02-medium-shadow">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>Add <code>.u-shadow-30</code> class to any element on the page</p>
+            </div>
+            <div class="br-sample-content">
+                <div class="u-shadow-30">
+                    <div class="u-padding-vertical-l u-padding-horizontal-l">I am a box with a shadow.</div>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="br-sample" id="component-03-large-shadow">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Large shadow</h3>
+                <a class="br-sample-header-link" href="#component-03-large-shadow">#</a>
+            </div>
+            <div class="br-sample-documentation c-content">
+                <p>Add <code>.u-shadow-50</code> class to any element on the page</p>
+            </div>
+            <div class="br-sample-content">
+                <div class="u-shadow-50">
+                    <div class="u-padding-vertical-l u-padding-horizontal-l">I am a box with a shadow.</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
