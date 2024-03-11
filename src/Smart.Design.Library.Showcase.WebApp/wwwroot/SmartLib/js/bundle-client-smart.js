@@ -6,7 +6,7 @@ var burger_icon = document.querySelector(".burger-icon");
 var other_menu_points = document.querySelectorAll(".c-toolbar__item:not(.u-hidden--dsktp) button");
 var side_menu = document.querySelector(".c-app-layout-inner__sidebar");
 
-if (ww < 700) {
+if (ww < 700 && burger_icon) {
     burger_icon.addEventListener('click', openSideMenu);
     other_menu_points.forEach((el) => {
         el.addEventListener('click', closeSideMenu);
@@ -38,38 +38,13 @@ function openSideMenu(e) {
 window.addEventListener('resize', function () {
     var ww = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
-    if (ww > 700) {
+    if (ww > 700 && side_menu) {
         side_menu.style.display = 'block';
-    } else {
+    } else if (burger_icon) {
         closeSideMenu();
         burger_icon.addEventListener('click', openSideMenu);
     }
 }, true);
-
-/* Menu Sublist
-   ========================================================================== */
-
-class SubTitle {
-    constructor(menu_subtitle) {
-        this.subtitle = menu_subtitle;
-
-        this.subtitle.addEventListener('click', openSubList, false);
-
-        function openSubList(e) {
-            var sublist = e.currentTarget.nextElementSibling;
-            sublist.classList.toggle("open");
-            e.currentTarget.classList.toggle("active");
-            slideToggle(sublist);
-            sublist.setAttribute('aria-expanded', (sublist.getAttribute('aria-expanded') === "false") ? true : false); 
-        }
-    }
-}
-
-const menu_subtitles = document.querySelectorAll(".c-side-menu__subtitle");
-
-if (menu_subtitles.length) {
-    [...menu_subtitles].map((menu_subtitle) => new SubTitle(menu_subtitle));
-}
 
 /* SLIDE UP Might move */
 let slideUp = (target, duration = 500) => {
@@ -139,3 +114,27 @@ let slideToggle = (target, duration = 500) => {
 }
 
 window.slideToggle = slideToggle;
+/* Menu Sublist
+   ========================================================================== */
+
+class SubTitle {
+    constructor(menu_subtitle) {
+        this.subtitle = menu_subtitle;
+
+        this.subtitle.addEventListener('click', openSubList, false);
+
+        function openSubList(e) {
+            var sublist = e.currentTarget.nextElementSibling;
+            sublist.classList.toggle("open");
+            e.currentTarget.classList.toggle("active");
+            slideToggle(sublist);
+            sublist.setAttribute('aria-expanded', (sublist.getAttribute('aria-expanded') === "false") ? true : false); 
+        }
+    }
+}
+
+const menu_subtitles = document.querySelectorAll(".c-side-menu__subtitle");
+
+if (menu_subtitles.length) {
+    [...menu_subtitles].map((menu_subtitle) => new SubTitle(menu_subtitle));
+}
