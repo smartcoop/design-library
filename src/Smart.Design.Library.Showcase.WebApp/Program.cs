@@ -6,7 +6,7 @@ builder.Services.AddKendo();
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSmartDesign();
-
+builder.Services.AddKendo();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

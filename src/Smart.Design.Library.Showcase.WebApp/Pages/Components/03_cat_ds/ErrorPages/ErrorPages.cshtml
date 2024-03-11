@@ -1,0 +1,100 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components._03_cat_ds.ErrorPages.ErrorPagesModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "ErrorPages";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Completed</p>
+        </div>
+        <div class="br-sample" id="component-01-c-ErrorPage400">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Error page 404</h3>
+            </div>
+            <div class="br-sample-content">
+                <div class="c-error-page">
+                    <span class="c-error-page__code">404</span>
+                    <h4 class="c-error-page__title">Page not found</h4>
+                    <p class="c-error-page__desc">Sorry, we couldn’t find the page you are looking for.</p>
+                    <a class="c-button c-button--secondary" href="/">
+                        <span class="c-button__content">
+                            <div class="o-svg-icon o-svg-icon-arrow-left  ">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.7071 5.29289C12.0976 5.68342 12.0976 6.31658 11.7071 6.70711L7.41421 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H7.41421L11.7071 17.2929C12.0976 17.6834 12.0976 18.3166 11.7071 18.7071C11.3166 19.0976 10.6834 19.0976 10.2929 18.7071L4.29289 12.7071C4.10536 12.5196 4 12.2652 4 12C4 11.7348 4.10536 11.4804 4.29289 11.2929L10.2929 5.29289C10.6834 4.90237 11.3166 4.90237 11.7071 5.29289Z" fill="#595959" />
+                                </svg>
+                            </div>
+                            <span class="c-button__label">Go back home</span>
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"c-error-page\">")
+    @("<span class=\"c-error-page__code\">")404@("</span>")
+    @("<h4 class=\"c-error-page__title\">")Page not found@("</h4>")
+    @("<p class=\"c-error-page__desc\">")Sorry, we couldn’t find the page you are looking for.@("</p>")
+    @("<a class=\"c-button c-button--secondary\" href=\"/\">")
+        @("<span class=\"c-button__content\">")
+            @("<div class=\"o-svg-icon o-svg-icon-arrow-left\">")
+                @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                    @("<path d=\"M11.7071 5.29289C12.0976 5.68342 12.0976 6.31658 11.7071 6.70711L7.41421 11H19C19.5523 11 20 11.4477 20 12C20 12.5523 19.5523 13 19 13H7.41421L11.7071 17.2929C12.0976 17.6834 12.0976 18.3166 11.7071 18.7071C11.3166 19.0976 10.6834 19.0976 10.2929 18.7071L4.29289 12.7071C4.10536 12.5196 4 12.2652 4 12C4 11.7348 4.10536 11.4804 4.29289 11.2929L10.2929 5.29289C10.6834 4.90237 11.3166 4.90237 11.7071 5.29289Z\" fill=\"#595959\" />")
+                @("</svg>")
+            @("</div>")
+            @("<span class=\"c-button__label\">")Go back home@("</span>")
+        @("</span>")
+    @("</a>")
+@("</div>")
+                </pre>
+            </div>
+        </div>
+        <div class="br-sample" id="component-01-c-ErrorPage500">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Error page 500</h3>
+            </div>
+            <div class="br-sample-content">
+                <div class="c-error-page">
+                    <span class="c-error-page__code">500</span>
+                    <h4 class="c-error-page__title">Internal server error</h4>
+                    <p class="c-error-page__desc">Please try again later or contact us</p>
+                    <div class="c-button-toolbar">
+                        <a class="c-button c-button--secondary" href="#">
+                            <span class="c-button__content">
+                                <span class="c-button__label">Contact</span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"c-error-page\">")
+    @("<span class=\"c-error-page__code\">")500@("</span>")
+    @("<h4 class=\"c-error-page__title\">")Internal server error@("</h4>")
+    @("<p class=\"c-error-page__desc\">")Please try again later or contact us@("</p>")
+    @("<div class=\"c-button-toolbar\">")
+        @("<a class=\"c-button c-button--secondary\" href=\"#\">")
+            @("<span class=\"c-button__content\">")
+                @("<span class=\"c-button__label\">")Contact@("</span>")
+            @("</span>")
+        @("</a>")
+    @("</div>")
+@("</div>")
+                </pre>
+            </div>
+        </div>
+    </div>
+</div>
+

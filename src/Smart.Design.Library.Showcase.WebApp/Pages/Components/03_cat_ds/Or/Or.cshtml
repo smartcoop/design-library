@@ -1,8 +1,8 @@
-@page
-@model Smart.Design.Library.Showcase.Pages.Components.IconList.IconList
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Or.OrModel
 @{
     ViewData["MainTitle"] = "Components documentation";
-    ViewData["ComponentTitle"] = "Icon list";
+    ViewData["ComponentTitle"] = "Or";
 }
 
 <div class="u-padding-bottom-l">
@@ -15,18 +15,27 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
             <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Completed</p>
         </div>
         <div class="br-content c-content">
-            <p>Documentation for Icon list</p>
+            <p>Provide the user with a separator between two options. Example usage can be found in the sign in form.</p>
         </div>
-        <div class="br-sample" id="component-01-c-button-primary">
+        <div class="br-sample" id="component-01-c-Or">
             <div class="br-sample-header br-sample-clearfix">
-                <h3 class="br-sample-heading c-h3">Icon list</h3>
+                <h3 class="br-sample-heading c-h3">@ViewData["ComponentTitle"]</h3>
             </div>
-            <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
+                <p class="c-or">
+                    <span>or</span>
+                </p>
             </div>
             <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<p class=\"c-or\">")
+    @("<span>or</span>")
+@("</p>")
+                </pre>
             </div>
         </div>
     </div>
