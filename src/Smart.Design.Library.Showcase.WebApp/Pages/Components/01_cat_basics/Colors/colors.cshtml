@@ -1,7 +1,10 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Components.Colors.colorsModel
 @{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Colors";
 }
+
 <div class="u-padding-bottom-l">
     <h1 class="c-h2">@ViewData["MainTitle"]</h1>
 </div>
@@ -12,18 +15,15 @@
     <div class="o-grid-col-bp3-9">
         <div class="br-componentgroup-header-wrapper">
             <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
-            <p><b>Status:</b> Complete (not a taghelper, but doesnt need to be one)</p>
+            <p><b>Status:</b> Colors missing: see figma</p>
         </div>
-        <div class="br-content c-content">
-            <p class="u-text-danger">Document color usage (with comm ?)</p>
-        </div>
-        <div class="br-sample" id="component-01-icons">
+        <div class="br-sample" id="component-01-colors">
             <div class="br-sample-header br-sample-clearfix">
-                <h3 class="br-sample-heading c-h3">Icon list</h3>
+                <h3 class="br-sample-heading c-h3">Color list</h3>
             </div>
             <div class="br-sample-documentation c-content"></div>
             <div class="br-sample-content">
-                <h4>Base</h4>
+                <h4 class="c-h4">Base</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #FFFFFF"></div>
@@ -124,7 +124,8 @@
                         </div>
                     </li>
                 </ul>
-                <h4>Reds</h4>
+                <hr class="c-hr">
+                <h4 class="c-h4">Reds</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #FEE7E9"></div>
@@ -169,7 +170,8 @@
                         </div>
                     </li>
                 </ul>
-                <h4>Yellows</h4>
+                <hr class="c-hr">
+                <h4 class="c-h4">Yellows</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #FCF7E8"></div>
@@ -235,7 +237,8 @@
                         </div>
                     </li>
                 </ul>
-                <h4>Greens</h4>
+                <hr class="c-hr">
+                <h4 class="c-h4">Greens</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #ECF9F6"></div>
@@ -273,7 +276,8 @@
                         </div>
                     </li>
                 </ul>
-                <h4>Blues</h4>
+                <hr class="c-hr">
+                <h4 class="c-h4">Blues</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #F3F7FE"></div>
@@ -339,7 +343,8 @@
                         </div>
                     </li>
                 </ul>
-                <h4>Purples</h4>
+                <hr class="c-hr">
+                <h4 class="c-h4">Purples</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #F3F7FE"></div>
@@ -391,7 +396,8 @@
                         </div>
                     </li>
                 </ul>
-                <h4>Beiges</h4>
+                <hr class="c-hr">
+                <h4 class="c-h4">Beiges</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #FDFAE8"></div>
@@ -408,7 +414,8 @@
                         </div>
                     </li>
                 </ul>
-                <h4>Light greens</h4>
+                <hr class="c-hr">
+                <h4 class="c-h4">Light greens</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #ECFFF5"></div>
@@ -425,8 +432,8 @@
                         </div>
                     </li>
                 </ul>
-                <h4>Semantic colors</h4>
-                <p class="u-text-danger">Is it used ?</p>
+                <hr class="c-hr">
+                <h4 class="c-h4">Semantic colors</h4>
                 <ul class="br-color-swatch-list">
                     <li class="br-color-swatch-item">
                         <div class="br-color-swatch-preview" style="background-color: #FF4054"></div>
@@ -524,4 +531,3 @@
         </div>
     </div>
 </div>
-

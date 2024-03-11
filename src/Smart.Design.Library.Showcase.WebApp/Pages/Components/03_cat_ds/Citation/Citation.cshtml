@@ -1,0 +1,48 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Citation.Citation
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Citation";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complete</p>
+        </div>
+        <div class="br-content c-content">
+            <p>This page documents the citation component.</p>
+        </div>
+        <div class="br-sample" id="component-01-c-citation">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Citation</h3>
+                <a class="br-sample-header-link" href="#component-01-c-citation">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="c-content">
+                    <div class="c-citation">
+                        <h4 class="h4">En résumé</h4>
+                        <p>Le contrat couvre les deux parties et à pour objectif d'accompagner, d’informer et d’orienter le Titulaire dans la gestion son l’Activité.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"c-citation\">")
+    @("h4 class=\"h4\">En résumé</h4>")
+    @("p>Le contrat couvre les deux parties et à pour objectif d'accompagner, d’informer et d’orienter le Titulaire dans la gestion son l’Activité.</p>")
+@("</div>")</pre>
+            </div>
+        </div>
+
+    </div>
+</div>

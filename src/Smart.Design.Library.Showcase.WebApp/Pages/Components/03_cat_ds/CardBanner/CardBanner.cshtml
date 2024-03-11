@@ -1,0 +1,227 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.CardBanner.CardBanner
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "CardBanner";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+        </div>
+        <div class="br-sample" id="component-01-c-card-banner">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Card banner</h3>
+                <a class="br-sample-header-link" href="#component-01-c-card-banner">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="o-grid u-spacer-bottom-l">
+                    <div class="o-grid-col-4 c-card c-card__banner" data-gradient="data-gradient" style="--bckg-color: black; --title-color: #B32D3B; --subtitle-color: #fff; --background: url('../images/banners/202212/banner-december-2022.jpg'); --background-r: url('../images/banners/202212/banner-december-2022.jpg'); --gradient-step-1-pos: 20%; --gradient-step-1-opacity: 0.85; --gradient-step-2-pos: 80%; --gradient-step-2-opacity: 0.25; --gradient-color: 0, 0, 0;">
+                        <div class="c-card__banner--text">
+                            <div class="wrap">
+                                <p class="sub-title">Smart vous <br> souhaite de</p>
+                               <p class="main-title c-h3">joyeuses fêtes <br> de fin d'année</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-grid-col-4 c-card c-card__banner" data-gradient="data-gradient" style="--bckg-color: #228860; --title-color: #FFBC1A; --subtitle-color: #fff; --background: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@1x.jpg'); --background-r: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@2x.jpg'); --gradient-step-1-pos: 15%; --gradient-step-1-opacity: 0.455; --gradient-step-2-pos: 85%; --gradient-step-2-opacity: 0.20; --gradient-color: 34, 135, 95;">
+                        <div class="c-card__banner--text">
+                            <div class="wrap">
+                                <p class="sub-title">Smart vous <br> souhaite de</p>
+                               <p class="main-title c-h3">joyeuses fêtes <br> de fin d'année</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-grid-col-4 c-card c-card__banner" data-gradient="data-gradient" style="--bckg-color: black; --title-color: #fff; --subtitle-color: #00A57D; --background: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@1x.jpg'); --background-r: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@2x.jpg'); --gradient-step-1-pos: 20%; --gradient-step-1-opacity: 0.45; --gradient-step-2-pos: 80%; --gradient-step-2-opacity: 0.25; --gradient-color: 0, 0, 0;">
+                        <div class="c-card__banner--text">
+                            <div class="wrap">
+                                <p class="sub-title">Smart vous <br> souhaite de</p>
+                               <p class="main-title c-h3">joyeuses fêtes <br> de fin d'année</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-grid u-spacer-bottom-l">
+                    <div class="o-grid-col-4 c-card c-card__banner img-right" data-gradient="data-gradient" style="--bckg-color: #1e3137; --title-color: #FFBC1A; --subtitle-color: #fff; --background: url('../images/banners/202212/banner-december-2022.jpg'); --background-r: url('../images/banners/202212/banner-december-2022.jpg'); --gradient-step-1-pos: 35%; --gradient-step-1-opacity: 1; --gradient-step-2-pos: 80%; --gradient-step-2-opacity: 0.25; --gradient-color: 30, 49, 55;">
+                        <div class="c-card__banner--text">
+                            <div class="wrap">
+                                <p class="sub-title u-text-center">Smart vous <br> souhaite de</p>
+                                <p class="main-title c-h3 u-text-center">joyeuses fêtes <br> de fin d'année</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-grid-col-4 c-card c-card__banner" data-gradient="data-gradient" style="--bckg-color: black; --title-color: #FFBC1A; --subtitle-color: #fff; --background: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@1x.jpg'); --background-r: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@2x.jpg'); --gradient-step-1-pos: 10%; --gradient-step-1-opacity: 0.75; --gradient-step-2-pos: 80%; --gradient-step-2-opacity: 0.05; --gradient-color: 0, 0, 0;">
+                        <div class="c-card__banner--text">
+                            <div class="wrap">
+                                <p class="sub-title">Smart vous <br> souhaite de</p>
+                                <p class="main-title c-h3">joyeuses fêtes <br> de fin d'année</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-grid-col-4 c-card c-card__banner" data-gradient="data-gradient" style="--bckg-color: #228860; --title-color: #DF8D2D; --subtitle-color: #fff; --background: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@1x.jpg'); --background-r: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@2x.jpg'); --gradient-step-1-pos: 15%; --gradient-step-1-opacity: 0.345; --gradient-step-2-pos: 85%; --gradient-step-2-opacity: 0.10; --gradient-color: 34, 135, 95;">
+                        <div class="c-card__banner--text">
+                            <div class="wrap">
+                                <p class="sub-title">Smart vous <br> souhaite de</p>
+                                <p class="main-title c-h3">joyeuses fêtes <br> de fin d'année</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-grid">
+                    <div class="o-grid-col-4 c-card c-card__banner" data-gradient="data-gradient" style="--bckg-color: #228860; --title-color: #DF8D2D; --subtitle-color: #fff; --background: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@1x.jpg'); --background-r: url('../images/banners/202212/min-banner-december-tree-2022-dsktp@2x.jpg'); --gradient-step-1-pos: 45%; --gradient-step-1-opacity: 0.045; --gradient-step-2-pos: 100%; --gradient-step-2-opacity: 0.4; --gradient-color: 34, 135, 95;">
+                        <div class="c-card__banner--text">
+                            <div class="wrap">
+                                <p class="sub-title u-text-right">Smart vous <br> souhaite de</p>
+                                <p class="main-title c-h3 u-text-right">joyeuses fêtes <br> de fin d'année</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-grid-col-4 c-card c-card__banner img-right" data-gradient="data-gradient" style="--bckg-color: #950413; --title-color: #F8DB94; --subtitle-color: #FEE7E9; --background: url('../images/banners/202212/banner-december-2022.jpg'); --background-r: url('../images/banners/202212/banner-december-2022.jpg'); --gradient-step-1-pos: 35%; --gradient-step-1-opacity: 1; --gradient-step-2-pos: 80%; --gradient-step-2-opacity: 0.25; --gradient-color: 149, 4, 19;">
+                        <div class="c-card__banner--text">
+                            <div class="wrap">
+                                <p class="sub-title">Smart vous <br> souhaite de</p>
+                                <p class="main-title c-h3">
+                                    joyeuses fêtes <br> de fin d'année
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="o-grid-col-3"></div>
+                    <div class="o-grid-col-3"></div>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"o-grid-col-3 c-card c-card__banner\"")
+    @("data-gradient=\"data-gradient\"")
+    @("style=\"--bckg-color: black;")
+           @("--title-color: #FFBC1A;")
+           @("--subtitle-color: #fff;")
+           @("--background: url('../images/banners/202212/banner-december-2022.jpg');")
+           @("--background-r: url('../images/banners/202212/banner-december-2022.jpg');")
+           @("--gradient-step-1-pos: 20%;")
+           @("--gradient-step-1-opacity: 0.85;")
+           @("--gradient-step-2-pos: 80%;")
+           @("--gradient-step-2-opacity: 0.25;")
+           @("--gradient-color: 0, 0, 0;\">")
+    @("<div class=\"c-card__banner--text\">")
+        @("<div class=\"wrap\">")
+            @("<p class=\"sub-title\">Smart vous <br> souhaite de</p>")
+           @("<p class=\"main-title c-h3\">joyeuses fêtes <br> de fin d'année</p>")
+        @("</div>")
+    @("</div>")
+@("</div>")</pre>
+            </div>
+            <div class="br-componentgroup-footer-wrapper">
+                <h1 class="br-componentgroup-footer c-h2">How to customize card banners</h1>
+
+                <h1 class="br-componentgroup-footer c-h3">Variables in styles</h1>
+                <div class="br-content c-content">
+                    <table class="c-table">
+                        <thead>
+                            <tr>
+                                <th>Var in style</th>
+                                <th>Possible values</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>--bckg-color</td>
+                                <td>Hexadecimal, rgb, rgba, named colors</td>
+                                <td>Background color of the card</td>
+                            </tr>
+                            <tr>
+                                <td>--title-color</td>
+                                <td>Hexadecimal, rgb, rgba, named colors</td>
+                                <td>Text color of the main title</td>
+                            </tr>
+                            <tr>
+                                <td>--subtitle-color</td>
+                                <td>Hexadecimal, rgb, rgba, named colors</td>
+                                <td>Text color of the sub title</td>
+                            </tr>
+                            <tr>
+                                <td>--background</td>
+                                <td>url('PATH_TO_THE_IMAGE')</td>
+                                <td>Background image for default displays</td>
+                            </tr>
+                            <tr>
+                                <td>--background-r</td>
+                                <td>url('PATH_TO_THE_IMAGE_RETINA')</td>
+                                <td>Background image for retina displays (optional)</td>
+                            </tr>
+                            <tr>
+                                <td>--gradient-step-1-pos</td>
+                                <td>
+                                   Pourcentage (0% to 100%)
+                                </td>
+                                <td>Starting position of the gradient starting from left</td>
+                            </tr>
+                            <tr>
+                                <td>--gradient-step-1-opacity</td>
+                                <td>number between 0 and 1</td>
+                                <td>opacity of the gradient starting point</td>
+                            </tr>
+                            <tr>
+                                <td>--gradient-step-2-pos</td>
+                                <td>Pourcentage (0% to 100%)</td>
+                                <td>Ending position of the gradient</td>
+                            </tr>
+                            <tr>
+                                <td>--gradient-step-2-opacity</td>
+                                <td>number between 0 and 1</td>
+                                <td>opacity of the gradient ending point</td>
+                            </tr>
+                            <tr>
+                                <td>--gradient-color</td>
+                                <td>Hexadecimal, rgb, rgba, named colors</td>
+                                <td>Color of the gradient.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="br-componentgroup-footer-wrapper">
+                <h1 class="br-componentgroup-footer c-h3">Classes</h1>
+                <div class="br-content c-content">
+                    <table class="c-table">
+                        <thead>
+                            <tr>
+                                <th>Class</th>
+                                <th>Element</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>img-right</td>
+                                <td>.c-card__banner</td>
+                                <td>Align the image on the right</td>
+                            </tr>
+                            <tr>
+                                <td>u-text-right</td>
+                                <td>.sub-title, .main-title</td>
+                                <td>Align the text on the right</td>
+                            </tr>
+                            <tr>
+                                <td>u-text-center</td>
+                                <td>.sub-title, .main-title</td>
+                                <td>Center the text</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

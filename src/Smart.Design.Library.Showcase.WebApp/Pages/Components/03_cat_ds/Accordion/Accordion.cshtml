@@ -1,0 +1,110 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components.Accordion.AccordionModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Accordion";
+}
+
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complete</p>
+        </div>
+        <div class="br-content c-content">
+            <p>Documentation for Accordion</p>
+        </div>
+        <div class="br-sample" id="component-01-c-button-primary">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Accordion</h3>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="c-accordion">
+                    <div class="c-accordion__item">
+                        <div class="c-accordion__item-header">
+                            <button class="c-button c-button--borderless c-button--icon" type="button">
+                                <span class="c-button__content">
+                                    <div class="o-svg-icon o-svg-icon-chevron-right  ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.29289 18.7071C8.90237 18.3166 8.90237 17.6834 9.29289 17.2929L14.5858 12L9.29289 6.70711C8.90237 6.31658 8.90237 5.68342 9.29289 5.29289C9.68342 4.90237 10.3166 4.90237 10.7071 5.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L10.7071 18.7071C10.3166 19.0976 9.68342 19.0976 9.29289 18.7071Z" fill="#595959"></path></svg>
+                                    </div>
+                                    <div class="u-sr-accessible">Chevron</div>
+                                </span>
+                            </button>
+                            <span class="c-accordion__item-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span>
+                        </div>
+                        <div class="c-accordion__item-content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        </div>
+                    </div>
+                    <div class="c-accordion__item">
+                        <div class="c-accordion__item-header">
+                            <button class="c-button c-button--borderless c-button--icon" type="button">
+                                <span class="c-button__content">
+                                    <div class="o-svg-icon o-svg-icon-chevron-right  ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.29289 18.7071C8.90237 18.3166 8.90237 17.6834 9.29289 17.2929L14.5858 12L9.29289 6.70711C8.90237 6.31658 8.90237 5.68342 9.29289 5.29289C9.68342 4.90237 10.3166 4.90237 10.7071 5.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L10.7071 18.7071C10.3166 19.0976 9.68342 19.0976 9.29289 18.7071Z" fill="#595959"></path></svg>
+                                    </div>
+                                    <div class="u-sr-accessible">Chevron</div>
+                                </span>
+                            </button>
+                            <span class="c-accordion__item-title">Accordion title</span>
+                        </div>
+                        <div class="c-accordion__item-content">
+                            <p>Content here...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="br-sample-footer">
+                <b>HTML Code: </b>
+                <pre class="br-sample-markup br-sample-markup-html">
+@("<div class=\"c-accordion\">")
+    @("<div class=\"c-accordion__item\">")
+        @("<div class=\"c-accordion__item-header\">")
+            @("<button class=\"c-button c-button--borderless c-button--icon\" type=\"button\">")
+                @("<span class=\"c-button__content\">")
+                    @("<div class=\"o-svg-icon o-svg-icon-chevron-right\">")
+                        @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"> ")
+                            @("<path d=\"M9.29289 18.7071C8.90237 18.3166 8.90237 17.6834 9.29289 17.2929L14.5858 12L9.29289 6.70711C8.90237 6.31658 8.90237 5.68342 9.29289 5.29289C9.68342 4.90237 10.3166 4.90237 10.7071 5.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L10.7071 18.7071C10.3166 19.0976 9.68342 19.0976 9.29289 18.7071Z\" fill=\"#595959\"></path>")
+                        @("</svg>")
+                    @("</div>")
+                    @("<div class=\"u-sr-accessible\">Chevron</div>")
+                @("</span>")
+            @("</button>")
+            @("<span class=\"c-accordion__item-title\">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</span>")
+        @("</div>")
+        @("<div class=\"c-accordion__item-content\">")
+                    @("<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>")
+        @("</div>")
+    @("</div>")
+    @("<div class=\"c-accordion__item\">")
+        @("<div class=\"c-accordion__item-header\">")
+            @("<button class=\"c-button c-button--borderless c-button--icon\" type =\"button\">")
+                @("<span class=\"c-button__content\">")
+                    @("<div class=\"o-svg-icon o-svg-icon-chevron-right\">")
+                        @("<svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">")
+                            @("<path d=\"M9.29289 18.7071C8.90237 18.3166 8.90237 17.6834 9.29289 17.2929L14.5858 12L9.29289 6.70711C8.90237 6.31658 8.90237 5.68342 9.29289 5.29289C9.68342 4.90237 10.3166 4.90237 10.7071 5.29289L16.7071 11.2929C17.0976 11.6834 17.0976 12.3166 16.7071 12.7071L10.7071 18.7071C10.3166 19.0976 9.68342 19.0976 9.29289 18.7071Z\" fill=\"#595959\"></path>")
+                        @("</svg>")
+                    @("</div>")
+                    @("<div class=\"u-sr-accessible\">Chevron</div>")
+                @("</span>")
+            @("</button>")
+            @("<span class=\"c-accordion__item-title\">Accordion title</span>")
+        @("</div>")
+                @("<div class=\"c-accordion__item-content\">")
+            @("<p>Content here...</p>")
+        @("</div>")
+   @("</div>")
+@("</div>")
+                </pre>
+              
+            </div>
+        </div>
+    </div>
+</div>

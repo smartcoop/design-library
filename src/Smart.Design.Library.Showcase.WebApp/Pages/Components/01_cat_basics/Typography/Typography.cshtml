@@ -1,0 +1,266 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Components._01_cat_basics.Typography.typographyModel
+@{
+    ViewData["MainTitle"] = "Components documentation";
+    ViewData["ComponentTitle"] = "Typography";
+}
+<div class="u-padding-bottom-l">
+    <h1 class="c-h2">@ViewData["MainTitle"]</h1>
+</div>
+
+<div class="o-grid">
+    @await Html.PartialAsync("Shared/_ComponentList")
+    <div class="o-grid-col-bp3-9">
+        <div class="br-componentgroup-header-wrapper">
+            <h1 class="br-componentgroup-header c-h2">@ViewData["ComponentTitle"]</h1>
+            <p><b>Status:</b> Complete</p>
+        </div>
+        <div class="br-content c-content">
+            <p>The Smart design system provides 2 distinct typographic styles. The document style is meant for documents that are meant to be read (i.e. content websites such as this one).</p>
+            <p>The UI style is meant for user interfaces - usually for the display of a lot of information in a condensed space.</p>
+            <p>Add a <code>.c-content</code> (for the UI style) or <code>.c-display</code> (for the document style) class as a parent to your typographic HTML elements to “activate” rich typography. Rich typography means default styling of base elements like h1, h2, h3 but also paragraphs and lists.</p>
+        </div>
+        <div class="br-sample" id="component-App-style-(c_content)">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">App style (c_content)</h3>
+                <a class="br-sample-header-link" href="#component-App-style-(c_content)">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="c-content">
+                    <div class="u-spacer-bottom-l u-spacer-top-l">
+                        <table class="c-table c-table c-styleguide-table-typography">
+                            <tbody>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Content heading 1</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <h1 class="c-h1">Lorem ipsum dolor sit amet</h1>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Content heading 2</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <h2 class="c-h2">Lorem ipsum dolor sit amet</h2>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Content heading 3</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <h3 class="c-h3">Lorem ipsum dolor sit amet</h3>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Content heading 4</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <h4 class="c-h4">Lorem ipsum dolor sit amet</h4>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Body 1</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Body 2</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <p class="c-body-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Unordered lists</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <ul>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Ordered lists</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <ol>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                            </ol>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="br-sample" id="component-Styleguide-style-(c_display)">
+            <div class="br-sample-header br-sample-clearfix">
+                <h3 class="br-sample-heading c-h3">Styleguide style (c_display)</h3>
+                <a class="br-sample-header-link" href="#component-Styleguide-style-(c_display)">#</a>
+            </div>
+            <div class="br-sample-documentation c-content"></div>
+            <div class="br-sample-content">
+                <div class="c-display">
+                    <div class="u-spacer-bottom-l u-spacer-top-l">
+                        <table class="c-table c-table c-styleguide-table-typography">
+                            <tbody>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Display heading 1</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <h1 class="c-display-h1">Lorem ipsum dolor sit amet</h1>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Display heading 2</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <h2 class="c-display-h2">Lorem ipsum dolor sit amet</h2>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Display heading 3</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <h3 class="c-display-h3">Lorem ipsum dolor sit amet</h3>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Display Intro</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <p class="c-display-intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Display Body 1</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <p class="c-display-body-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Display Body 2</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <p class="c-display-body-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Unordered lists</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <ul>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="o-table-col-4">
+                                        <span class="br-typography-sample-name">Ordered lists</span>
+                                        <br>
+                                        <span class="br-typography-sample-size"></span>
+                                    </td>
+                                    <td class="o-table-col-12">
+                                        <div class="br-typography-sample-content">
+                                            <ol>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                                <li>Lorem ipsum dolor sit amet</li>
+                                            </ol>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
