@@ -4239,6 +4239,17 @@ header .c-navbar .c-toolbar, header.c-navbar .c-toolbar {
   border-bottom: 1px solid #E5E5E5;
 }
 
+.c-navbar--with-stepper {
+  border-bottom: 2px solid #F2F2F2;
+}
+.c-navbar--with-stepper .c-navbar--entry {
+  border-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+.c-navbar--with-stepper .c-wizard {
+  margin-top: 2rem;
+}
+
 .c-navbar--scrollable {
   overflow-x: auto;
   overflow-y: hidden;
@@ -6909,10 +6920,6 @@ c-table-of-content
 
 .u-p-r-0 {
   padding-right: 0 !important;
-}
-
-.u-p-b-0 {
-  padding-bottom: 0 !important;
 }
 
 /* ==========================================================================
