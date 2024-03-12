@@ -2952,7 +2952,6 @@ a.c-card:hover {
 }
 .c-card__banner--text p.sub-title {
   color: var(--subtitle-color);
-  width: 80%;
   font-weight: 500;
   margin-bottom: 0.2rem;
 }
