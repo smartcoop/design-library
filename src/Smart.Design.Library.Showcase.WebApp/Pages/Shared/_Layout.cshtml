@@ -7,7 +7,7 @@
 
     @* Kendo Scripts *@
     @{
-        var kendoVersion = "2023.3.1114";
+        var kendoVersion = "2024.1.130";
     }
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -119,8 +119,7 @@
     </footer>
 
     <script type="module" src="~/SmartLib/js/bundle-client.js" asp-append-version="true"></script>
-    <script type="module" src="~/ElementsForShowcase/table-of-content.js" asp-append-version="true"></script>
-
+    <script type="module" src="~/SmartLib/js/bundle-client-smart.js" asp-append-version="true"></script>
     <script src="~/ElementsForShowcase/bundle-prototype.js" asp-append-version="true"></script>
 
     @await RenderSectionAsync("Scripts", required: false)
