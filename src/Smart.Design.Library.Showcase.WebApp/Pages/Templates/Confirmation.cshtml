@@ -1,4 +1,5 @@
 ﻿@page
+@using Smart.Design.Library.TagHelpers.Header
 @model Smart.Design.Library.Showcase.Pages.Templates.ConfirmationtionModel
 @{
     ViewData["Title"] = "Subscription confirmation page";
@@ -10,37 +11,47 @@
     }
 </style>
 
-<header class="o-container-vertical c-navbar c-navbar--white c-navbar--entry">
-    <div class="o-container o-container--small">
-        <div class="o-grid">
-            <div class="o-grid-col-6">
-                <div class="c-brand c-brand--small">
-                    <a href="/home?lang=FR">
-                        <img src="~/images/logo.svg" alt="Smart">
-                    </a>
-                </div>
-            </div>
+@{
+    Dictionary<string, string> items = new Dictionary<string, string>
+    {
+        { "Item 1", "value1" },
+        { "Item 2", "value2" }
+    };
+}
+@{
+    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
+    {
+        {
+            "French", "?SelectedMenu=French"
+        },
+        {
+            "Dutch", "?SelectedMenu=Dutch"
+        }
+    };
+}
 
-            <div class="o-grid-col-6">
-                <ul class="c-pill-navigation">
-                    <li class="c-pill-navigation__item c-pill-navigation__item--has-child-menu u-spacer-left-auto">
-                        <button type="button" data-menu="lang-switch" data-menu-samewidth="true">
-                            Fran&#231;ais
-                        </button>
-                        <ul class="c-menu c-menu--large" id="lang-switch">
-                            <li class="c-menu__item">
-                                <p class="c-menu__info u-text-muted">Fran&#231;ais</p>
-                            </li>
-                            <li class="c-menu__item">
-                                <a class="c-menu__label" href="?lang=NL">Nederlands</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
+@{
+    StepperItem item1 = new StepperItem
+    {
+        Label = "Données personelles et professionelles",
+        IsActive = false // Assuming this is the current active step
+    };
+
+    StepperItem item2 = new StepperItem
+    {
+        Label = "Upload des documents",
+        IsActive = true // Assuming this is not the active step yet
+    };
+
+
+    List<StepperItem> stepperItems = new List<StepperItem>();
+
+    stepperItems.Add(item1);
+    stepperItems.Add(item2);
+}
+
+<smart-not-logged-in-header home-page-url="" languages-and-links="@languagesAndLink" target-language="fr" stepper-items="@stepperItems"></smart-not-logged-in-header>
+
 
 <main class="o-container-vertical">
 
@@ -56,7 +67,9 @@
                     <smart-grid-column width="10">
                         <h3 class="c-h4  u-text-bold">
                             Pour finaliser il vous reste à signer et nous envoyer les documents suivant à l'adresse
-                            <span><a class="link--sup" href="mailto:teamadmin@smart.coop">teamadmin@smart.coop</a></span>
+                            <span>
+                                <a class="link--sup" href="mailto:teamadmin@smart.coop">teamadmin@smart.coop</a>
+                            </span>
                         </h3>
                     </smart-grid-column>
                 </smart-grid>
@@ -64,7 +77,7 @@
                 <div class="c-h4 u-spacer-top-xl u-spacer-bottom-l u-text-bold">
                     1. La fiche d'inscription signée
                 </div>
-                <smart-button button-style="Secondary" trailing-icon="Download" label="Télécharger la fiche d'inscription" ></smart-button>
+                <smart-button button-style="Secondary" trailing-icon="Download" label="Télécharger la fiche d'inscription"></smart-button>
 
                 <div class="c-h4 u-spacer-top-xl u-text-bold">
                     2. Une copie de votre carte d'identité (recto & verso)
@@ -79,7 +92,7 @@
                     Que va-t-il se passer ensuite ?
                 </h5>
                 <ul class="u-li-disc">
-                    <li>Vous recevrez vos codes personnels par mail pour accéder à votre «&nbsp;compte Smart&nbsp;» (et encoder vos contrats) dans les 48h ouvrés suivant l'envoi de vos documents d'inscription.<br />N'hésitez pas à contacter <a href="https://smartbe.be/contact">le bureau Smart le plus proche de chez vous</a> en cas d'urgence.</li>
+                    <li>Vous recevrez vos codes personnels par mail pour accéder à votre «&nbsp;compte Smart&nbsp;» (et encoder vos contrats) dans les 48h ouvrés suivant l'envoi de vos documents d'inscription.<br/>N'hésitez pas à contacter <a href="https://smartbe.be/contact">le bureau Smart le plus proche de chez vous</a> en cas d'urgence.</li>
                     <li>N'oubliez pas de toujours déclarer vos dates de travail à l'avance. Il n'est pas permis d'antidater vos prestations.</li>
                 </ul>
 
@@ -87,4 +100,3 @@
         </div>
     </div>
 </main>
-

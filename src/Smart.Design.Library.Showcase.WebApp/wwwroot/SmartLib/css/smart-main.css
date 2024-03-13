@@ -84,7 +84,7 @@
    ========================================================================== */
 /* Generic: CSS reset, box-sizing, global CSS tweaks
    ========================================================================== */
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -4247,7 +4247,7 @@ header .c-navbar .c-toolbar, header.c-navbar .c-toolbar {
   padding-bottom: 0 !important;
 }
 .c-navbar--with-stepper .c-wizard {
-  margin-top: 2rem;
+  margin-top: 0.3rem;
 }
 
 .c-navbar--scrollable {

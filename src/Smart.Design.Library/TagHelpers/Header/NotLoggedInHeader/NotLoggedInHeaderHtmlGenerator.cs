@@ -17,7 +17,7 @@ public class NotLoggedInHeaderHtmlGenerator : INotLoggedInHeaderHtmlGenerator
         _imageHtmlGenerator = imageHtmlGenerator;
     }
 
-    public TagBuilder GenerateNotLoggedInHeader(string homePageUrl, Dictionary<string, string> languagesAndLinks, string? targetLanguage)
+    public TagBuilder GenerateNotLoggedInHeader(string homePageUrl, Dictionary<string, string> languagesAndLinks, string? targetLanguage, List<StepperItem>? stepperItems)
     {
 
         (string CultureCode, string Language) languageCulture = targetLanguage?.ToUpper() switch
