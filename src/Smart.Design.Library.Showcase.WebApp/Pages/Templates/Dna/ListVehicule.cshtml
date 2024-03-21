@@ -1,9 +1,9 @@
-﻿@page
+@page
+@model Smart.Design.Library.Showcase.Pages.Templates.Dna.ListVehiculeModel
 @using Kendo.Mvc.UI
-@model Smart.Design.Library.Showcase.Pages.Templates.ProductionUnitModel
 @addTagHelper *, Kendo.Mvc
 @{
-    ViewData["Title"] = "Vehicule list page (empty list)";
+    ViewData["Title"] = "Vehicule list page";
 }
 
 <style>
@@ -104,6 +104,8 @@
             "Formateurs associés", "/u/cfa/home"
         }
     };
+
+    string AddVehiculePage = "/Templates/Dna/AddVehicule";
 }
 
 <div class="c-app-layout">
@@ -127,10 +129,16 @@
                                     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                     Ut enim ad minim veniam.
                                 </p>
-                                <div class="u-padding-vertical-m o-flex o-flex--center">
-                                    <kendo-button name="addVehicule" theme-color="ThemeColor.Primary" icon-class="icon-add">
-                                        Ajouter un véhicule
-                                    </kendo-button>
+                                <div class="u-padding-vertical-m o-flex o-flex--center ">
+                                    <form method="post">
+                                        @(Html.Kendo().Button()
+                                            .Name("addVehicule")
+                                            .ThemeColor(ThemeColor.Primary)
+                                            .Icon("plus")
+                                            .Content("Ajouter un véhicule")
+                                            .HtmlAttributes(new { type = "submit" })
+                                        )
+                                    </form>
                                 </div>
 
                             </div>
@@ -158,9 +166,13 @@
                                                 </span>
                                             </div>
                                             <div class="o-flex o-flex--justify-between">
-                                                <kendo-switch name="switch" enabled="true" checked="true" width="80">
-                                                    <messages checked="ACTIF" unchecked="INACTIF"/>
-                                                </kendo-switch>
+                                                @(Html.Kendo().Switch()
+                                                    .Name("switch")
+                                                    .Enabled(true)
+                                                    .Checked(true)
+                                                    .Width(80)
+                                                    .Messages(c => c.Checked("Actif").Unchecked("Inactif"))
+                                                )
                                             </div>
                                         </div>
 
@@ -227,9 +239,13 @@
                                                 </span>
                                             </div>
                                             <div class="o-flex o-flex--justify-between">
-                                                <kendo-switch name="switch2" enabled="true" checked="false" width="80">
-                                                    <messages checked="ACTIF" unchecked="INACTIF"/>
-                                                </kendo-switch>
+                                                @(Html.Kendo().Switch()
+                                                    .Name("switch2")
+                                                    .Enabled(true)
+                                                    .Checked(false)
+                                                    .Width(80)
+                                                    .Messages(c => c.Checked("Actif").Unchecked("Inactif"))
+                                                )
                                             </div>
                                         </div>
 
