@@ -50,7 +50,29 @@
     stepperItems.Add(item2);
 }
 
-<smart-not-logged-in-header home-page-url="" languages-and-links="@languagesAndLink" target-language="fr" stepper-items="@stepperItems"></smart-not-logged-in-header>
+<smart-not-logged-in-header home-page-url="" languages-and-links="@languagesAndLink" target-language="fr"></smart-not-logged-in-header>
+
+<div class="c-navbar--with-stepper k-mt--4" style="background: white">
+    <div class="o-container o-container--small">
+        <h2 class="c-d-h4  br-styleguide-brand-heading">Inscrivez-vous en suivant ces 2 étapes</h2>
+        <nav class="c-wizard">
+            <ul>
+                <li>
+                    <a class="c-wizard__item c-wizard--complete">
+                        <div class="c-wizard__indicator"></div>
+                        <div class="c-wizard__label">Données personelles et professionelles</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="c-wizard__item c-wizard--active">
+                        <div class="c-wizard__indicator">2</div>
+                        <div class="c-wizard__label">Upload des documents</div>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
 
 
 <main class="o-container-vertical">

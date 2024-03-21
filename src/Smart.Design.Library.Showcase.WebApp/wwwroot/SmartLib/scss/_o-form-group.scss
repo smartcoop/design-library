@@ -30,7 +30,7 @@ $o-form-group-label-font-weight: 500 !default;
 
     label.o-form-group__label,
     .o-form-group__label label {
-        padding: $o-form-group-spacing/2 0;
+        padding: calc($o-form-group-spacing / 2) 0;
         color: $c-input-label-color;
         font-size: $g-base-font-size;
         font-weight: $o-form-group-label-font-weight;

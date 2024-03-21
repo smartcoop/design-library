@@ -2,7 +2,7 @@
   c-wizard
  ========================================================================== */
 
-.c-wizard {  
+.c-wizard {
   ul {
     display: flex;
   }
@@ -94,7 +94,7 @@
 
     &:before {
       content: "";
-      position: absolute; 
+      position: absolute;
       width: 2.4rem;
       height: 2.4rem;
       left: -0.2rem;
@@ -105,7 +105,6 @@
     }
   }
 }
-
 
 .c-wizard--active {
   color: $color-semantic-body-text;
@@ -118,5 +117,23 @@
     background: $color-black;
     border-color: $color-black;
     color: $color-white;
+  }
+}
+
+.c-wizard--inactive {
+  color: $color-semantic-body-text;
+
+  &:after {
+    background-color: $color-black;
+  }
+
+  .c-wizard__indicator {
+    background: $color-gray-100;
+    border-color: $color-gray-100;
+    color: $color-white;
+  }
+
+  .c-wizard__label {
+    color: $color-gray-100;
   }
 }

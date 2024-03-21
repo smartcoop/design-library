@@ -20,8 +20,8 @@ $o-grid-bp4: 1200px;
 .o-grid {
   display: flex;
   flex-wrap: wrap;
-  margin-left: -($o-grid-column-gap / 2);
-  margin-right: -($o-grid-column-gap / 2);
+  margin-left: -(calc($o-grid-column-gap / 2));
+  margin-right: -(calc($o-grid-column-gap / 2));
 }
 
 /* Grid columns (default)
@@ -30,8 +30,8 @@ $o-grid-bp4: 1200px;
 [class*='o-grid-col'] {
   flex: 1 0 calc(100% - #{$o-grid-column-gap});
   min-width: 0;
-  margin-left: $o-grid-column-gap / 2;
-  margin-right: $o-grid-column-gap / 2;
+  margin-left: calc($o-grid-column-gap / 2);
+  margin-right: calc($o-grid-column-gap / 2);
 }
 
 // Activate columns regardless of breakpoint
@@ -39,7 +39,8 @@ $i: 0;
 
 @while($i < $o-grid-columns) {
   .o-grid-col-#{$i + 1} {
-    width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+    width: calc(#{calc(($i + 1) / $o-grid-columns) * 100%} - #{$o-grid-column-gap});
+
     flex: 1 1 auto;
   }
   $i: $i + 1;
@@ -56,7 +57,7 @@ $i: 0;
 
   @while($i < $o-grid-columns) {
     .o-grid-col-bp1-#{$i + 1} {
-      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100%} - #{$o-grid-column-gap});
     }
     $i: $i + 1;
   }
@@ -73,7 +74,7 @@ $i: 0;
 
   @while($i < $o-grid-columns) {
     .o-grid-col-bp2-#{$i + 1} {
-      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100%} - #{$o-grid-column-gap});
     }
     $i: $i + 1;
   }
@@ -92,7 +93,7 @@ $i: 0;
 
   @while($i < $o-grid-columns) {
     .o-grid-col-bp2m-#{$i + 1} {
-      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100%} - #{$o-grid-column-gap});
     }
     $i: $i + 1;
   }
@@ -109,7 +110,7 @@ $i: 0;
 
   @while($i < $o-grid-columns) {
     .o-grid-col-bp3-#{$i + 1} {
-      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100%} - #{$o-grid-column-gap});
     }
     $i: $i + 1;
   }
@@ -125,7 +126,7 @@ $i: 0;
 
   @while($i < $o-grid-columns) {
     .o-grid-col-bp4-#{$i + 1} {
-      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100}% - #{$o-grid-column-gap});
+      width: calc(#{( ( $i + 1 ) / $o-grid-columns ) * 100%} - #{$o-grid-column-gap});
     }
     $i: $i + 1;
   }
