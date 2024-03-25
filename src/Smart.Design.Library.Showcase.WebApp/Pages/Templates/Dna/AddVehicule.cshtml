@@ -177,7 +177,7 @@
                                                     .TextBox()
                                                     .Name(nameof(Model.Vehicule.Name))
                                                     .Value(Model.Vehicule.Name)
-                                                    .HtmlAttributes(new { placeholder = "Ma voiture privée", maxlength = "50" })
+                                                    .HtmlAttributes(new { placeholder = "Ma voiture privée", maxlength = "100" })
                                                 )
                                             </span>
                                             @if (ModelState["Name"] != null && ModelState["Name"].Errors.Count > 0)
@@ -191,9 +191,9 @@
                                             <span class="k-form-field-wrap">
                                                 @(Html.Kendo()
                                                     .TextBox()
-                                                    .Name(nameof(Model.Vehicule.LicensePlate))
-                                                    .Value(Model.Vehicule.LicensePlate)
-                                                    .HtmlAttributes(new { placeholder = "1 - AAA - 123", maxlength = "15" })
+                                                    .Name(nameof(Model.Vehicule.PlateNumber))
+                                                    .Value(Model.Vehicule.PlateNumber)
+                                                    .HtmlAttributes(new { placeholder = "1 - AAA - 123", maxlength = "30" })
                                                 )
                                             </span>
                                             @if (ModelState["LicensePlate"] != null && ModelState["LicensePlate"].Errors.Count > 0)
@@ -206,8 +206,8 @@
                                             <label for="licencePlateDate" class="k-label">Date de la première immatriculation</label>
                                             <span class="k-form-field-wrap">
                                                 @(Html.Kendo().DatePicker()
-                                                    .Name(nameof(Model.Vehicule.LicencePlateDate))
-                                                    .Value(Model.Vehicule.LicencePlateDate)
+                                                    .Name(nameof(Model.Vehicule.FirstRegistrationDate))
+                                                    .Value(Model.Vehicule.FirstRegistrationDate)
                                                 )
                                             </span>
                                             @if (ModelState["LicencePlateDate"] != null && ModelState["LicencePlateDate"].Errors.Count > 0)
@@ -244,7 +244,7 @@
                                         <div class="k-form-field u-padding-bottom-l">
                                             <div class="k-flex-layout o-flex--horizontal" style="align-items: center">
                                                 <label for="vehiculeConsumption" class="k-label">
-                                                    Consommation du véhicule (CO2)
+                                                    Émission du véhicule (CO2)
                                                 </label>
                                                 <span id="autohide-vehiculeConsumption" class="key-button wider k-ml-1">
                                                     <smart-icon icon="CircleHelp"></smart-icon>
@@ -264,7 +264,7 @@
                                                          @(Html.Kendo().Button()
                                                              .Name("suffixVehiculeConsumption")
                                                              .Content("<span class='k-button-text'>g de CO2 / km</span>")
-                                                             .HtmlAttributes(new { @class = "k-button k-button-md k-button-flat k-button-flat-primary" })
+                                                             .HtmlAttributes(new { @class = "k-button k-button-md k-button-flat k-button-flat-primary", disabled = true })
                                                              .ToClientTemplate()
                                                          )
 

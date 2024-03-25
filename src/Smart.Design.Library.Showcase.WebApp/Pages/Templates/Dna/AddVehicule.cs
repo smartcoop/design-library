@@ -22,10 +22,10 @@ public class VehiculeModel
     public string Name { get; set; }
 
     [Required(ErrorMessage = "The license plate is required.")]
-    public string LicensePlate { get; set; }
+    public string PlateNumber { get; set; }
 
     [Required(ErrorMessage = "The date of the first license is required.")]
-    public DateTime LicencePlateDate { get; set; }
+    public DateTime FirstRegistrationDate { get; set; }
 
     [Required(ErrorMessage = "The engine type is required.")]
     public string EngineType { get; set; }
