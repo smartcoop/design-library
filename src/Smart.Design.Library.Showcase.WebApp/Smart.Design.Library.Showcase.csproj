@@ -29,4 +29,13 @@
   <ItemGroup>
     <ProjectReference Include="..\Smart.Design.Library\Smart.Design.Library.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\Templates\Dna\ListVehicule.cs">
+      <DependentUpon>ListVehicule.cshtml</DependentUpon>
+    </Compile>
+    <Compile Update="Pages\Templates\Dna\AddVehicule.cs">
+      <DependentUpon>AddVehicule.cshtml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

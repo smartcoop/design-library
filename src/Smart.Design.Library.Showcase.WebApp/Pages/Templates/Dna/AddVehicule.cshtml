@@ -1,0 +1,414 @@
+﻿@page
+@model Smart.Design.Library.Showcase.Pages.Templates.Dna.AddVehiculePageModel
+@using Kendo.Mvc.UI
+@addTagHelper *, Kendo.Mvc
+@{
+    ViewData["Title"] = "Vehicule add page";
+}
+
+<style>
+    #header, #footer {
+        display: none !important;
+    }
+
+    main.o-container{
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .c-app-layout{
+        min-height: 100vh;
+    }
+</style>
+
+
+@{
+    var list = new List<string> { "preambule", "les parties", "Droit et attribution de compétence", "deux", "trois" };
+    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
+    {
+        {
+            "Français", "Link/Français"
+        },
+        {
+            "English", "Link/English"
+        },
+        {
+            "Nederlands", "Link/Nederlands"
+        },
+        {
+            "Deutsh", "Link/Deutsh"
+        }
+    };
+
+    string currentLanguage = "nl";
+    string fullNameWithTrigram = "John Doe (doe)";
+    string avatarPath = "imageAvatar";
+
+    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>
+    {
+        {
+            "Vos informations personnelles", "/Info"
+        },
+        {
+            "Vos documents", "/documents"
+        },
+        {
+            "Mes véhicules", "/Templates/Dna/ListVehicule"
+        },
+        {
+            "Votre compte", "/Votre compte"
+        },
+        {
+            "Nos conditions d'utilisations", "~/unity/curu"
+        },
+        {
+            "Vos Unité de Production", "/unityProduction"
+        }
+    };
+    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>
+    {
+        {
+            "Home", "/home"
+        },
+        {
+            "Prestations en cours", "/PedingPrestations"
+        },
+        {
+            "Nouvelle prestation", "/NewPrestation"
+        },
+        {
+            "Simulation", "/Simulation"
+        },
+        {
+            "Activités et projets", "/projets"
+        },
+        {
+            "Formateurs associés", "/u/cfa/home"
+        }
+    };
+
+    var engineType = new List<SelectListItem>()
+    {
+        new SelectListItem()
+        {
+            Text = "Essence",
+            Value = "1"
+        },
+        new SelectListItem()
+        {
+            Text = "Diesel",
+            Value = "2"
+        },
+        new SelectListItem()
+        {
+            Text = "Electrique",
+            Value = "3"
+        },
+        new SelectListItem()
+        {
+            Text = "Hybride",
+            Value = "4"
+        }
+    };
+
+    var VehiculeTypeItems = new List<IInputGroupItem>()
+    {
+        new InputGroupItemModel()
+        {
+            Label = "Véhicule utilitaire",
+            Value = "1",
+        },
+        new InputGroupItemModel()
+        {
+            Label = "Véhicule non-utilitaire",
+            Value = "2"
+        }
+    };
+}
+
+<div class="c-app-layout">
+    <smart-header home-page-url="/home" labels-and-links="@labelsAndLinks" languages-and-links="@languagesAndLink" full-name-with-trigram="@fullNameWithTrigram"
+                  avatar-path="@avatarPath" target-language="@currentLanguage" logout-link="/logout.aspx">
+    </smart-header>
+
+    <main class="u-maximize-width">
+        <div class="c-app-layout-inner">
+            <div class="c-app-layout-inner__sidebar u-position-fixed">
+                <smart-sidemenu label-and-links="SideMenuLabelsAndLinks"></smart-sidemenu>
+            </div>
+            <div class="c-app-layout-inner__content">
+                <div class="o-container o-container--small">
+                    <div class="o-container-vertical--padding-small u-position-relative">
+                        <div class="u-spacer-bottom-l">
+                            <h2 class="c-d-h2">Ajouter un véhicule</h2>
+                            <div class="o-flex o-flex--justify-between o-flex--wrap">
+                                <p class="o-container-bp2--small">
+                                    Pour ajouter un véhicule, munissez-vous <span class="c-h5">des document officiels de votre véhicule</span>
+                                    et nous invitons à consulter <a class="cm-link" href="#">l'article dédié dans notre guide d'utilisation</a>.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="c-panel">
+                                <div class="c-panel__body u-padding-vertical-l u-padding-bottom">
+                                    <form class="k-form-group" method="post" id="form-add-vehicule">
+                                        <div class="k-form-field u-padding-bottom-l">
+                                            <span class="k-flex-layout o-flex--horizontal" style="align-items: center">
+                                                <label for="vehiculeName" class="k-label">
+                                                    Nommez votre véhicule
+                                                </label>
+
+                                                <span id="autohide-vehiculeName" class="key-button wider k-ml-1">
+                                                    <smart-icon icon="CircleHelp"></smart-icon>
+                                                </span>
+
+                                                @(Html.Kendo().Tooltip()
+                                                    .For("#autohide-vehiculeName")
+                                                    .Position(TooltipPosition.Top)
+                                                    .Content("For Nom du véhicule : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.")
+                                                    .Width(240)
+                                                )
+                                            </span>
+
+
+                                            <span class="k-form-field-wrap">
+                                                @(Html.Kendo()
+                                                    .TextBox()
+                                                    .Name(nameof(Model.Vehicule.Name))
+                                                    .Value(Model.Vehicule.Name)
+                                                    .HtmlAttributes(new { placeholder = "Ma voiture privée", maxlength = "100" })
+                                                )
+                                            </span>
+                                            @if (ModelState["Name"] != null && ModelState["Name"].Errors.Count > 0)
+                                            {
+                                                <span class="k-syntax-error">@string.Join("; ", ModelState["Name"].Errors.Select(e => e.ErrorMessage))</span>
+                                            }
+                                        </div>
+
+                                        <div class="k-form-field u-padding-bottom-l">
+                                            <label for="licencePlate" class="k-label">Plaque d'immatriculation</label>
+                                            <span class="k-form-field-wrap">
+                                                @(Html.Kendo()
+                                                    .TextBox()
+                                                    .Name(nameof(Model.Vehicule.PlateNumber))
+                                                    .Value(Model.Vehicule.PlateNumber)
+                                                    .HtmlAttributes(new { placeholder = "1 - AAA - 123", maxlength = "30" })
+                                                )
+                                            </span>
+                                            @if (ModelState["LicensePlate"] != null && ModelState["LicensePlate"].Errors.Count > 0)
+                                            {
+                                                <span class="k-syntax-error">@string.Join("; ", ModelState["LicensePlate"].Errors.Select(e => e.ErrorMessage))</span>
+                                            }
+                                        </div>
+
+                                        <div class="k-form-field u-padding-bottom-l">
+                                            <label for="licencePlateDate" class="k-label">Date de la première immatriculation</label>
+                                            <span class="k-form-field-wrap">
+                                                @(Html.Kendo().DatePicker()
+                                                    .Name(nameof(Model.Vehicule.FirstRegistrationDate))
+                                                    .Value(Model.Vehicule.FirstRegistrationDate)
+                                                )
+                                            </span>
+                                            @if (ModelState["LicencePlateDate"] != null && ModelState["LicencePlateDate"].Errors.Count > 0)
+                                            {
+                                                <span class="k-syntax-error">@string.Join("; ", ModelState["LicencePlateDate"].Errors.Select(e => e.ErrorMessage))</span>
+                                            }
+                                        </div>
+
+                                        <div class="k-form-field u-padding-bottom-l">
+                                            <label for="engineType" class="k-label">Type de moteur</label>
+                                            <span class="k-form-field-wrap">
+                                                @(Html.Kendo()
+                                                    .DropDownList()
+                                                    .Name(nameof(Model.Vehicule.EngineType))
+                                                    .BindTo(engineType)
+                                                    .Value(Model.Vehicule.EngineType)
+                                                    .Events(e => { e.Select("onSelect"); })
+                                                    .HtmlAttributes(new { id = "engineType" })
+                                                )
+                                            </span>
+                                            @if (ModelState["EngineType"] != null && ModelState["EngineType"].Errors.Count > 0)
+                                            {
+                                                <span class="k-syntax-error">@string.Join("; ", ModelState["EngineType"].Errors.Select(e => e.ErrorMessage))</span>
+                                            }
+                                        </div>
+
+                                        <div class="u-padding-bottom-l" id="alert-hybrid">
+                                            <smart-alert
+                                                message="<p>Attention, avant d'indiquer votre consommation du véhicule, vérifiez que votre véhicule ne soit pas considéré comme un 'faux hybride' par l'administration fiscale. Veuillez lire  <a  href='https://guide.smart.coop/' target='_blank'>l'article dédié.</a></p>"
+                                                is-closable="false">
+                                            </smart-alert>
+                                        </div>
+
+                                        <div class="k-form-field u-padding-bottom-l">
+                                            <div class="k-flex-layout o-flex--horizontal" style="align-items: center">
+                                                <label for="vehiculeConsumption" class="k-label">
+                                                    Émission du véhicule (CO2)
+                                                </label>
+                                                <span id="autohide-vehiculeConsumption" class="key-button wider k-ml-1">
+                                                    <smart-icon icon="CircleHelp"></smart-icon>
+                                                </span>
+
+                                                @(Html.Kendo().Tooltip()
+                                                    .For("#autohide-vehiculeConsumption")
+                                                    .Position(TooltipPosition.Top)
+                                                    .Content("For consommation du véhicule : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.")
+                                                    .Width(240)
+                                                )
+                                            </div>
+                                            <div class="k-form-field-wrap">
+                                                <span class="k-flex-layout">
+                                                    <span style="width: 100%;">
+                                                        <script type="text/x-kendo-template" id="suffixVehiculeConsumption">
+                                                         @(Html.Kendo().Button()
+                                                             .Name("suffixVehiculeConsumption")
+                                                             .Content("<span class='k-button-text'>g de CO2 / km</span>")
+                                                             .HtmlAttributes(new { @class = "k-button k-button-md k-button-flat k-button-flat-primary", disabled = true })
+                                                             .ToClientTemplate()
+                                                         )
+
+                                                    </script>
+
+                                                        @(Html.Kendo()
+                                                            .TextBox()
+                                                            .Name(nameof(Model.Vehicule.Consumption))
+                                                            .Value(Model.Vehicule.Consumption)
+                                                            .SuffixOptions(suffix => suffix.TemplateId("suffixVehiculeConsumption"))
+                                                            .HtmlAttributes(new { maxlength = "50" })
+                                                        )
+                                                    </span>
+                                                </span>
+                                                @if (ModelState["Consumption"] != null && ModelState["Consumption"].Errors.Count > 0)
+                                                {
+                                                    <span class="k-syntax-error">@string.Join("; ", ModelState["Consumption"].Errors.Select(e => e.ErrorMessage))</span>
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div class="k-form-field u-padding-bottom-l">
+                                            <div class="k-flex-layout o-flex--horizontal" style="align-items: center">
+                                                <label for="vehiculeType" class="k-label">
+                                                    Type de véhicule
+                                                </label>
+                                                <span id="autohide-vehiculeType" class="key-button wider k-ml-1">
+                                                    <smart-icon icon="CircleHelp"></smart-icon>
+                                                </span>
+
+                                                @(Html.Kendo().Tooltip()
+                                                    .For("#autohide-vehiculeType")
+                                                    .Position(TooltipPosition.Top)
+                                                    .Content("For consommation du véhicule : Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.")
+                                                    .Width(240)
+                                                )
+                                            </div>
+                                            <div class="k-form-field-wrap">
+                                                @(Html.Kendo()
+                                                    .RadioGroup()
+                                                    .Name(nameof(Model.Vehicule.VehiculeType))
+                                                    .BindTo(VehiculeTypeItems)
+                                                    .Layout("horizontal")
+                                                    .Value(Model.Vehicule.VehiculeType)
+                                                )
+                                            </div>
+                                            @if (ModelState["VehiculeType"] != null && ModelState["VehiculeType"].Errors.Count > 0)
+                                            {
+                                                <span class="k-syntax-error">@string.Join("; ", ModelState["VehiculeType"].Errors.Select(e => e.ErrorMessage))</span>
+                                            }
+                                        </div>
+
+                                        <div class="u-padding-bottom-l">
+                                            <smart-alert
+                                                message="<p>Attention, veuillez vérifier que votre véhicule est bien considéré comme utilitaire selon <a  href='#' target='_blank'>les directives spécifiques.</a></p>"
+                                                is-closable="false">
+                                            </smart-alert>
+
+                                        </div>
+
+                                        <hr class="k-hr k-mb-6"/>
+
+                                        <div class="k-form-field u-padding-bottom-l">
+                                            <div class="k-form-field-wrap k-flex-layout">
+                                                <div class="k-checkbox-wrap">
+                                                    @(Html.Kendo().CheckBox()
+                                                        .Name(nameof(Model.Vehicule.Gdpr))
+                                                        .Checked(Model.Vehicule.Gdpr)
+                                                    )
+
+                                                </div>
+
+                                                <div class="k-flex-layout k-d-flex-col k-pl-4">
+                                                    <span>Je certifie l’exactitude des informations fournies et je me tiens à disposition de Smart pour donner plus d’informations</span>
+                                                    @if (ModelState["Gdpr"] != null && ModelState["Gdpr"].Errors.Count > 0)
+                                                    {
+                                                        <span class="k-syntax-error">@string.Join("; ", ModelState["Gdpr"].Errors.Select(e => e.ErrorMessage))</span>
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="k-form-field u-padding-bottom-l">
+                                            <div class="k-form-field-wrap k-flex-layout k-justify-content-between">
+
+                                                <a asp-page="./ListVehicule">
+                                                    @(Html.Kendo()
+                                                        .Button()
+                                                        .Name("cancel")
+                                                        .Content("Annuler")
+                                                        .Icon("k-i-x")
+                                                        .ThemeColor(ThemeColor.Base)
+                                                        .FillMode(ButtonFillMode.Solid))
+                                                </a>
+
+
+                                                <span>
+                                                    @(Html.Kendo().Button()
+                                                        .Name("save")
+                                                        .Content("Enregistrer")
+                                                        .Icon("k-i-save")
+                                                        .ThemeColor(ThemeColor.Primary)
+                                                        .HtmlAttributes(new { type = "submit", id = "saveButton" })
+                                                    )
+
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+<script>
+    function docReady(fn) {
+        if (document.readyState === "complete" || document.readyState === "interactive") {
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+
+    function onSelect(e) {
+        if (e.item) {
+    		var dataItem = this.dataItem(e.item);
+            var alertHybridElement = document.getElementById("alert-hybrid");
+
+    		if (dataItem.Value === "4") {
+                alertHybridElement.style.display = "block";
+            } else {
+                alertHybridElement.style.display = "none";
+            }
+    	}
+    }
+
+    docReady(function () {
+       var initialValue = document.getElementById("engineType").value;
+       console.log(document.getElementById("alert-hybrid"))
+       document.getElementById("alert-hybrid").style.display = initialValue === "4" ? "block" : "none";
+    });
+</script>
