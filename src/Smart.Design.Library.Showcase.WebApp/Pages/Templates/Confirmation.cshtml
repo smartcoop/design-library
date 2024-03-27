@@ -30,26 +30,6 @@
     };
 }
 
-@{
-    StepperItem item1 = new StepperItem
-    {
-        Label = "Données personelles et professionelles",
-        IsActive = false // Assuming this is the current active step
-    };
-
-    StepperItem item2 = new StepperItem
-    {
-        Label = "Upload des documents",
-        IsActive = true // Assuming this is not the active step yet
-    };
-
-
-    List<StepperItem> stepperItems = new List<StepperItem>();
-
-    stepperItems.Add(item1);
-    stepperItems.Add(item2);
-}
-
 <smart-not-logged-in-header home-page-url="" languages-and-links="@languagesAndLink" target-language="fr"></smart-not-logged-in-header>
 
 <div class="c-navbar--with-stepper k-mt--4" style="background: white">
@@ -60,7 +40,7 @@
                 <li>
                     <a class="c-wizard__item c-wizard--complete">
                         <div class="c-wizard__indicator"></div>
-                        <div class="c-wizard__label">Données personelles et professionelles</div>
+                        <div class="c-wizard__label">Données personnelles et professionelles</div>
                     </a>
                 </li>
                 <li>
