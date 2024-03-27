@@ -9,14 +9,13 @@ using Smart.Design.Library.TagHelpers.Constants;
 
 namespace Smart.Design.Library.TagHelpers.Header.NotLoggedInHeader;
 
-
 [HtmlTargetElement(TagNames.NotLoggedInHeaderTagName)]
 public class NotLoggedInHeaderTagHelper : TagHelper
 {
     private readonly INotLoggedInHeaderHtmlGenerator _notLoggedInHeaderHtmlGenerator;
     public string HomePageUrl { get; set; }
 
-    public Dictionary<string, string> LanguagesAndLinks { get; set; } = new Dictionary<string, string>();
+    public Dictionary<string, string> LanguagesAndLinks { get; set; }
 
     public string? TargetLanguage { get; set; }
 
