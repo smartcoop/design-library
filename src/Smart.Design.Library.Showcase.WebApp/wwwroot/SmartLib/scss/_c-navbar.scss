@@ -87,7 +87,7 @@
         display: flex;
         height: $g-bar-size-regular;
       }
-      
+
     }
   }
 }
@@ -148,6 +148,8 @@ header .c-navbar, header.c-navbar{
 
 .c-navbar--with-stepper {
     border-bottom: 2px solid $color-gray-50;
+    margin-top: -3.5rem;
+    background-color: $color-white;
 
     .c-navbar--entry {
         border-bottom: 0 !important;
@@ -158,8 +160,6 @@ header .c-navbar, header.c-navbar{
         margin-top: .5rem;
     }
 }
-
-
 
 .c-navbar--scrollable {
   overflow-x: auto;
