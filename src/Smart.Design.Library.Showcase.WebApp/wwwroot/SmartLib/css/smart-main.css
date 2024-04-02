@@ -154,17 +154,13 @@ table {
 }
 
 html {
-  font-size: 54.16%;
-}
-@media (min-width: 900px) {
-  html {
-    font-size: 58.33%;
+  font-size: 100%;
+  /*@media (min-width: $g-bp3) {
+    font-size: 58.33%; // 14px
   }
-}
-@media (min-width: 1200px) {
-  html {
-    font-size: 62.5%;
-  }
+  @media (min-width: $g-bp4) {
+    font-size: 62.5%; // Base 10
+  }*/
 }
 
 body {
