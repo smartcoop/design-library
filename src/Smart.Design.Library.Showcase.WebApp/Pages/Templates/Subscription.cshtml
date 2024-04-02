@@ -4,24 +4,27 @@
     ViewData["Title"] = "Subscription page";
 }
 @{
-    Dictionary<string, string> items = new Dictionary<string, string>{
+    Dictionary<string, string> items = new Dictionary<string, string>
+    {
         { "Item 1", "value1" },
-        { "Item 2", "value2"}
+        { "Item 2", "value2" }
     };
 }
 @{
-    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>{
-                {
-                "French", "?SelectedMenu=French"
-                },{
-                "Dutch", "?SelectedMenu=Dutch"
-                }
-                };
+    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
+    {
+        {
+            "French", "?SelectedMenu=French"
+        },
+        {
+            "Dutch", "?SelectedMenu=Dutch"
+        }
+    };
 }
 
 <smart-not-logged-in-header home-page-url="" languages-and-links="@languagesAndLink" target-language="fr"></smart-not-logged-in-header>
 
-<div class="c-navbar--with-stepper k-mt--4" style="background: white">
+<div class="c-navbar--with-stepper">
     <div class="o-container o-container--small">
         <h2 class="c-d-h4  br-styleguide-brand-heading">Inscrivez-vous en suivant ces 2 étapes</h2>
         <nav class="c-wizard">
@@ -45,272 +48,274 @@
 
 <main class="o-container-vertical">
 
-    <div class="o-container o-container--small">
+<div class="o-container o-container--small">
 
-        <div class="u-spacer-bottom-xl">
-            <smart-alert title="Session d'informations" message="<p>Pour une utilisation optimale des services que Smart met à votre disposition, il est vivement souhaitable et recommandé de participer à une session Smart : <a  href='https://guide.smart.coop/' target='_blank'>mode d’emploi.</a></p>" is-closable="false"></smart-alert>
+
+<div class="u-spacer-bottom-xl">
+    <smart-alert title="Session d'informations" message="<p>Pour une utilisation optimale des services que Smart met à votre disposition, il est vivement souhaitable et recommandé de participer à une session Smart : <a  href='https://guide.smart.coop/' target='_blank'>mode d’emploi.</a></p>" is-closable="false"></smart-alert>
+</div>
+
+
+<div class="c-panel u-shadow-50">
+
+<div class="c-panel__body u-padding-vertical-l u-padding-bottom">
+
+<h3 class="c-h2 u-spacer-bottom-s">Vos données personnelles</h3>
+
+<smart-form id="subscription">
+<div class="o-grid">
+    <div class="o-grid-col-6">
+        <smart-formgroup label="Nom">
+            <smart-input id="lastname" name="lastname" asp-for="@Model.Subscription.LastName"></smart-input>
+        </smart-formgroup>
+    </div>
+    <div class="o-grid-col-6">
+        <smart-formgroup label="Prénom">
+            <smart-input id="firstname" name="firstname" asp-for="@Model.Subscription.FirstName"></smart-input>
+        </smart-formgroup>
+    </div>
+</div>
+
+<smart-formgroup label="Genre">
+    <smart-select
+        id="gender"
+        name="gender"
+        items="@items"
+        asp-for="@Model.Subscription.Gender">
+    </smart-select>
+</smart-formgroup>
+
+<smart-formgroup label="Langue">
+    <smart-select
+        id="language"
+        name="language"
+        defautValueLabel="Sélectionner une langue"
+        items="@languagesAndLink"
+        asp-for="@Model.Subscription.Language">
+    </smart-select>
+</smart-formgroup>
+
+<smart-formgroup label="Adresse email">
+    <smart-input-email id="email" name="email" placeholder="youremail@email.com" asp-for="@Model.Subscription.Email"></smart-input-email>
+</smart-formgroup>
+
+<smart-formgroup label="Numéro de téléphone">
+    <smart-input-phone phoneType="TagHelpers.Elements.Input.PhoneType.Landline" id="phone-landline" name="phoneLandline" placeholder="____ ______" asp-for="@Model.Subscription.LandLine"></smart-input-phone>
+</smart-formgroup>
+
+<smart-formgroup label="Numéro de GSM">
+    <smart-input-phone phoneType="TagHelpers.Elements.Input.PhoneType.Mobile" id="phone-mobile" name="phoneMobile" placeholder="____ ______" asp-for="@Model.Subscription.Mobile"></smart-input-phone>
+</smart-formgroup>
+
+<smart-formgroup label="Date de naissance">
+    <smart-input-date id="birthDate" name="birthDate" asp-for="@Model.Subscription.BirthDate"></smart-input-date>
+</smart-formgroup>
+
+<smart-formgroup label="Ville de naissance">
+    <smart-input id="birthTown" name="birthTown" asp-for="@Model.Subscription.BirthTown"></smart-input>
+</smart-formgroup>
+
+<smart-formgroup label="Etat civil">
+    <smart-select
+        id="civilStatus"
+        name="civilStatus"
+        defautValueLabel="Sélectionner un état civil"
+        items="@items"
+        asp-for="@Model.Subscription.CivilStatus">
+    </smart-select>
+</smart-formgroup>
+
+<smart-formgroup label="Nationalité">
+    <smart-select
+        id="natinonality"
+        name="natinonality"
+        items="@items"
+        asp-for="@Model.Subscription.Nationality">
+    </smart-select>
+</smart-formgroup>
+
+<smart-hr></smart-hr>
+
+<h3 class="c-h2 u-spacer-bottom-s">Adresse Officielle</h3>
+
+<div class="o-grid">
+    <div class="o-grid-col-6">
+        <smart-formgroup label="Rue">
+            <smart-input id="street" name="street" asp-for="@Model.Subscription.OfficialAddress.Street"></smart-input>
+        </smart-formgroup>
+    </div>
+    <div class="o-grid-col-3">
+        <smart-formgroup label="Numéro">
+            <smart-input id="numberStreet" name="numberStreet" asp-for="@Model.Subscription.OfficialAddress.Number"></smart-input>
+        </smart-formgroup>
+    </div>
+    <div class="o-grid-col-3">
+        <smart-formgroup label="Boîte">
+            <smart-input id="boxStreet" name="boxStreet" asp-for="@Model.Subscription.OfficialAddress.BoxStreet"></smart-input>
+        </smart-formgroup>
+    </div>
+</div>
+
+<div class="o-grid">
+    <div class="o-grid-col-4">
+        <smart-formgroup label="Code postal">
+            <smart-input id="zip" name="zip" asp-for="@Model.Subscription.OfficialAddress.ZipCode"></smart-input>
+        </smart-formgroup>
+    </div>
+    <div class="o-grid-col-8">
+        <smart-formgroup label="Ville">
+            <smart-input id="city" name="city" asp-for="@Model.Subscription.OfficialAddress.City"></smart-input>
+        </smart-formgroup>
+    </div>
+</div>
+
+<smart-formgroup label="Pays">
+    <smart-select
+        id="country"
+        name="country"
+        defautValueLabel="Sélectionner un pays"
+        items="@items"
+        asp-for="@Model.Subscription.OfficialAddress.Country">
+    </smart-select>
+</smart-formgroup>
+
+<smart-hr></smart-hr>
+
+<h2 class="c-h2 u-spacer-bottom-l">Adresse Courrier</h2>
+
+<div class="u-spacer-bottom">
+    <smart-radio id="sameAddress" name="subscriptionAddressChoice" label="Mon adresse courrier <strong>est la même</strong> que mon adresse officielle" value="same_adress" checked="true"></smart-radio>
+</div>
+<div class="u-spacer-bottom-xl">
+    <smart-radio id="anotherAddress" name="subscriptionAddressChoice" label="Mon adresse courrier <strong>est différente</strong> de mon adresse officielle" value="another_address" checked="false"></smart-radio>
+</div>
+<!--- BO Bloc à ne faire apparaître que lorsque le radio subscriptionAnotherAddress est ON-->
+<div id="blocAnotherAdress" style="display:none;">
+    <div class="o-grid">
+        <div class="o-grid-col-6">
+            <smart-formgroup label="Rue">
+                <smart-input id="anotherStreet" name="anotherStreet" asp-for="@Model.Subscription.ShippingAddress.Street"></smart-input>
+            </smart-formgroup>
         </div>
-
-        <div class="c-panel u-shadow-50">
-
-            <div class="c-panel__body u-padding-vertical-l u-padding-bottom">
-
-                <h3 class="c-h2 u-spacer-bottom-s">Vos données personnelles</h3>
-
-                <smart-form id="subscription">
-                    <div class="o-grid">
-                        <div class="o-grid-col-6">
-                            <smart-formgroup label="Nom">
-                                <smart-input id="lastname" name="lastname" asp-for="@Model.Subscription.LastName"></smart-input>
-                            </smart-formgroup>
-                        </div>
-                        <div class="o-grid-col-6">
-                            <smart-formgroup label="Prénom">
-                                <smart-input id="firstname" name="firstname" asp-for="@Model.Subscription.FirstName"></smart-input>
-                            </smart-formgroup>
-                        </div>
-                    </div>
-
-                    <smart-formgroup label="Genre">
-                        <smart-select
-                            id="gender"
-                            name="gender"
-                            items="@items"
-                            asp-for="@Model.Subscription.Gender">
-                        </smart-select>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="Langue">
-                        <smart-select
-                            id="language"
-                            name="language"
-                            defautValueLabel="Sélectionner une langue"
-                            items="@languagesAndLink"
-                            asp-for="@Model.Subscription.Language">
-                        </smart-select>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="Adresse email">
-                        <smart-input-email id="email" name="email" placeholder="youremail@email.com" asp-for="@Model.Subscription.Email"></smart-input-email>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="Numéro de téléphone">
-                        <smart-input-phone phoneType="TagHelpers.Elements.Input.PhoneType.Landline" id="phone-landline" name="phoneLandline" placeholder="____ ______" asp-for="@Model.Subscription.LandLine"></smart-input-phone>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="Numéro de GSM">
-                        <smart-input-phone phoneType="TagHelpers.Elements.Input.PhoneType.Mobile" id="phone-mobile" name="phoneMobile" placeholder="____ ______" asp-for="@Model.Subscription.Mobile"></smart-input-phone>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="Date de naissance">
-                        <smart-input-date id="birthDate" name="birthDate" asp-for="@Model.Subscription.BirthDate"></smart-input-date>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="Ville de naissance">
-                        <smart-input id="birthTown" name="birthTown" asp-for="@Model.Subscription.BirthTown"></smart-input>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="Etat civil">
-                        <smart-select
-                            id="civilStatus"
-                            name="civilStatus"
-                            defautValueLabel="Sélectionner un état civil"
-                            items="@items"
-                            asp-for="@Model.Subscription.CivilStatus">
-                        </smart-select>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="Nationalité">
-                        <smart-select
-                            id="natinonality"
-                            name="natinonality"
-                            items="@items"
-                            asp-for="@Model.Subscription.Nationality">
-                        </smart-select>
-                    </smart-formgroup>
-
-                    <smart-hr></smart-hr>
-
-                    <h3 class="c-h2 u-spacer-bottom-s">Adresse Officielle</h3>
-
-                    <div class="o-grid">
-                        <div class="o-grid-col-6">
-                            <smart-formgroup label="Rue">
-                                <smart-input id="street" name="street" asp-for="@Model.Subscription.OfficialAddress.Street"></smart-input>
-                            </smart-formgroup>
-                        </div>
-                        <div class="o-grid-col-3">
-                            <smart-formgroup label="Numéro">
-                                <smart-input id="numberStreet" name="numberStreet" asp-for="@Model.Subscription.OfficialAddress.Number"></smart-input>
-                            </smart-formgroup>
-                        </div>
-                        <div class="o-grid-col-3">
-                            <smart-formgroup label="Boîte">
-                                <smart-input id="boxStreet" name="boxStreet" asp-for="@Model.Subscription.OfficialAddress.BoxStreet"></smart-input>
-                            </smart-formgroup>
-                        </div>
-                    </div>
-
-                <div class="o-grid">
-                    <div class="o-grid-col-4">
-                        <smart-formgroup label="Code postal">
-                            <smart-input id="zip" name="zip" asp-for="@Model.Subscription.OfficialAddress.ZipCode"></smart-input>
-                        </smart-formgroup>
-                    </div>
-                    <div class="o-grid-col-8">
-                        <smart-formgroup label="Ville">
-                            <smart-input id="city" name="city" asp-for="@Model.Subscription.OfficialAddress.City"></smart-input>
-                        </smart-formgroup>
-                    </div>
-                </div>
-
-                <smart-formgroup label="Pays">
-                    <smart-select
-                        id="country"
-                        name="country"
-                        defautValueLabel="Sélectionner un pays"
-                        items="@items"
-                        asp-for="@Model.Subscription.OfficialAddress.Country">
-                        </smart-select>
-                    </smart-formgroup>
-
-                    <smart-hr></smart-hr>
-
-                    <h2 class="c-h2 u-spacer-bottom-l">Adresse Courrier</h2>
-
-                    <div class="u-spacer-bottom">
-                        <smart-radio id="sameAddress" name="subscriptionAddressChoice" label="Mon adresse courrier <strong>est la même</strong> que mon adresse officielle" value="same_adress" checked="true"></smart-radio>
-                    </div>
-                    <div class="u-spacer-bottom-xl">
-                        <smart-radio id="anotherAddress" name="subscriptionAddressChoice" label="Mon adresse courrier <strong>est différente</strong> de mon adresse officielle" value="another_address" checked="false"></smart-radio>
-                    </div>
-                    <!--- BO Bloc à ne faire apparaître que lorsque le radio subscriptionAnotherAddress est ON-->
-                    <div id="blocAnotherAdress" style="display:none;">
-                        <div class="o-grid">
-                            <div class="o-grid-col-6">
-                                <smart-formgroup label="Rue">
-                                    <smart-input id="anotherStreet" name="anotherStreet" asp-for="@Model.Subscription.ShippingAddress.Street"></smart-input>
-                                </smart-formgroup>
-                            </div>
-                            <div class="o-grid-col-3">
-                                <smart-formgroup label="Numéro">
-                                    <smart-input id="anotherNumber" name="anotherNumber" asp-for="@Model.Subscription.ShippingAddress.Number"></smart-input>
-                                </smart-formgroup>
-                            </div>
-                            <div class="o-grid-col-3">
-                                <smart-formgroup label="Boîte">
-                                    <smart-input id="anotherBox" name="anotherBox" asp-for="@Model.Subscription.ShippingAddress.BoxStreet"></smart-input>
-                                </smart-formgroup>
-                            </div>
-                        </div>
-
-                        <div class="o-grid">
-                            <div class="o-grid-col-4">
-                                <smart-formgroup label="Code postal">
-                                    <smart-input id="anotherZip" name="anotherZip" asp-for="@Model.Subscription.ShippingAddress.ZipCode"></smart-input>
-                                </smart-formgroup>
-                            </div>
-                            <div class="o-grid-col-8">
-                                <smart-formgroup label="Ville">
-                                    <smart-input id="anotherCity" name="anotherCity" asp-for="@Model.Subscription.ShippingAddress.City"></smart-input>
-                                </smart-formgroup>
-                            </div>
-                        </div>
-
-                        <smart-formgroup label="Pays">
-                            <smart-select
-                                id="anotherCountry"
-                                name="anotherCountry"
-                                items="@items"
-                                asp-for="@Model.Subscription.ShippingAddress.Country">
-                            </smart-select>
-                        </smart-formgroup>
-
-                    </div>
-                    <!--- EO Bloc -->
-                    <smart-hr></smart-hr>
-
-                    <h3 class="c-h2 u-spacer-bottom-s">Vos données professionnelles</h3>
-
-                    <smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e, artiste et chômeur n'est pas une fonction). Voir le registre des métiers.">
-                        <label class="o-form-group__label">
-                            Fonctions principales
-                            <span data-tooltip="tooltip-function" data-tooltip-placement="top" class="icon-help">
-                                <smart-icon icon="CircleHelp"></smart-icon>
-                            </span>
-                        </label>
-                        <div class="c-tooltip" id="tooltip-function" role="tooltip">
-                            Fonction Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
-                            <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
-                        </div>
-                        <smart-input id="function" name="function" value=""></smart-input>
-                    </smart-formgroup>
-
-                    <smart-formgroup helper-text="Message d'explication pour le pourcentage de précompte professionnel.">
-                        <label class="o-form-group__label">
-                            Pourcentage de précompte professionnel par défaut
-                            <span data-tooltip="tooltip-witholding" data-tooltip-placement="top" class="icon-help">
-                                <smart-icon icon="CircleHelp"></smart-icon>
-                            </span>
-                        </label>
-                        <div class="c-tooltip" id="tooltip-witholding" role="tooltip">
-                            Précompte Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
-                            <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
-                        </div>
-                        <smart-input-number min="11.11"  max="100" id="witholding" name="witholding" value="11.11" asp-for="@Model.Subscription.Withholding"></smart-input-number>
-                    </smart-formgroup>
-
-                    <h3 class="c-h2 u-spacer-bottom-s">Votre carte d'identité</h3>
-
-                    <smart-formgroup label="Numéro de registre national ou inscription au registre des étrangers">
-                        <smart-input id="numNat" name="numNat" asp-for="@Model.Subscription.RegisterIdNumber"></smart-input>
-                    </smart-formgroup>
-
-                    <smart-formgroup label="N° carte identité">
-                        <smart-input id="numCI" name="numCI" asp-for="@Model.Subscription.IdCardNumber"></smart-input>
-                    </smart-formgroup>
-
-                    <div class="u-spacer-bottom-xl">
-                        <smart-alert title="Envoi obligatoire" message="<p>Veuillez envoyer <strong>une copie de votre carte d'identité (recto & verso)</strong> en annexe à la fin des 3 étapes de ce formulaire</p>" is-closable="false"></smart-alert>
-                    </div>
-
-                    <smart-hr></smart-hr>
-
-                    <h3 class="c-h2 u-spacer-bottom-s">Vos données bancaires</h3>
-
-                    <smart-formgroup label="Numéro IBAN de votre compte bancaire personnel">
-                        <smart-input id="numIban" name="numIban" asp-for="@Model.Subscription.Iban"></smart-input>
-                    </smart-formgroup>
-
-                    <div class="u-spacer-bottom-xl">
-                        <smart-alert title="Envoi obligatoire" message="<p>Veuillez envoyer <strong>une copie de votre carte bancaire</strong> en annexe à la fin des 3 étapes de ce formulaire</p>" is-closable="false"></smart-alert>
-                    </div>
-
-                    <smart-hr></smart-hr>
-
-                    <div class="u-spacer-bottom-xl">
-                        <smart-checkbox id="subscriptionAutorisation" name="subscriptionAutorisation" label="J'autorise Smart à transmettre mes données à des tiers, à des fins professionnelles uniquement et j’ai bien pris connaissance des informations reprises sur la page « Politique de protection des donnée personnelles » <b><a href='https://smartbe.be/fr/smart-politique-de-protection-des-donnees-personnelles/' target='_blank'>du site Smart</a></b> , définissant notamment les notions de « données », « tiers » et « fins professionnelles »." asp-for="@Model.Subscription.SubscriptionApproval" checked="false"></smart-checkbox>
-                    </div>
-                    <p>
-                        En savoir plus ?
-                        <a class="c-link" href="mailto:autoriteprotectiondonnees.be">
-                            <span class="c-link__label">autoriteprotectiondonnees.be</span>
-                            <span class="o-svg-icon o-svg-icon-external-link">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M14 5C13.7348 5 13.4804 4.89464 13.2929 4.70711C13.1054 4.51957 13 4.26522 13 4C13 3.73478 13.1054 3.48043 13.2929 3.29289C13.4804 3.10536 13.7348 3 14 3H20C20.2652 3 20.5196 3.10536 20.7071 3.29289C20.8946 3.48043 21 3.73478 21 4V10C21 10.2652 20.8946 10.5196 20.7071 10.7071C20.5196 10.8946 20.2652 11 20 11C19.7348 11 19.4804 10.8946 19.2929 10.7071C19.1054 10.5196 19 10.2652 19 10V6.414L9.707 15.707C9.5184 15.8892 9.2658 15.99 9.0036 15.9877C8.7414 15.9854 8.49059 15.8802 8.30518 15.6948C8.11977 15.5094 8.0146 15.2586 8.01233 14.9964C8.01005 14.7342 8.11084 14.4816 8.293 14.293L17.586 5H14ZM3 7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H10C10.2652 5 10.5196 5.10536 10.7071 5.29289C10.8946 5.48043 11 5.73478 11 6C11 6.26522 10.8946 6.51957 10.7071 6.70711C10.5196 6.89464 10.2652 7 10 7H5V19H17V14C17 13.7348 17.1054 13.4804 17.2929 13.2929C17.4804 13.1054 17.7348 13 18 13C18.2652 13 18.5196 13.1054 18.7071 13.2929C18.8946 13.4804 19 13.7348 19 14V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V7Z" fill="#595959" />
-                                </svg>
-                            </span>
-                        </a>
-                    </p>
-
-                    <div class="u-spacer-top-l u-spacer-bottom-s">
-                        <smart-button button-type="Submit" button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
-                    </div>
-                </smart-form>
-
-            </div>
+        <div class="o-grid-col-3">
+            <smart-formgroup label="Numéro">
+                <smart-input id="anotherNumber" name="anotherNumber" asp-for="@Model.Subscription.ShippingAddress.Number"></smart-input>
+            </smart-formgroup>
+        </div>
+        <div class="o-grid-col-3">
+            <smart-formgroup label="Boîte">
+                <smart-input id="anotherBox" name="anotherBox" asp-for="@Model.Subscription.ShippingAddress.BoxStreet"></smart-input>
+            </smart-formgroup>
         </div>
     </div>
+
+    <div class="o-grid">
+        <div class="o-grid-col-4">
+            <smart-formgroup label="Code postal">
+                <smart-input id="anotherZip" name="anotherZip" asp-for="@Model.Subscription.ShippingAddress.ZipCode"></smart-input>
+            </smart-formgroup>
+        </div>
+        <div class="o-grid-col-8">
+            <smart-formgroup label="Ville">
+                <smart-input id="anotherCity" name="anotherCity" asp-for="@Model.Subscription.ShippingAddress.City"></smart-input>
+            </smart-formgroup>
+        </div>
+    </div>
+
+    <smart-formgroup label="Pays">
+        <smart-select
+            id="anotherCountry"
+            name="anotherCountry"
+            items="@items"
+            asp-for="@Model.Subscription.ShippingAddress.Country">
+        </smart-select>
+    </smart-formgroup>
+
+</div>
+<!--- EO Bloc -->
+<smart-hr></smart-hr>
+
+<h3 class="c-h2 u-spacer-bottom-s">Vos données professionnelles</h3>
+
+<smart-formgroup helper-text="Displine(s)\métier(s) que vous souhaitez développer au sein de Smart (étudiant.e, artiste et chômeur n'est pas une fonction). Voir le registre des métiers.">
+    <label class="o-form-group__label">
+        Fonctions principales
+        <span data-tooltip="tooltip-function" data-tooltip-placement="top" class="icon-help">
+            <smart-icon icon="CircleHelp"></smart-icon>
+        </span>
+    </label>
+    <div class="c-tooltip" id="tooltip-function" role="tooltip">
+        Fonction Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
+        <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
+    </div>
+    <smart-input id="function" name="function" value=""></smart-input>
+</smart-formgroup>
+
+<smart-formgroup helper-text="Message d'explication pour le pourcentage de précompte professionnel.">
+    <label class="o-form-group__label">
+        Pourcentage de précompte professionnel par défaut
+        <span data-tooltip="tooltip-witholding" data-tooltip-placement="top" class="icon-help">
+            <smart-icon icon="CircleHelp"></smart-icon>
+        </span>
+    </label>
+    <div class="c-tooltip" id="tooltip-witholding" role="tooltip">
+        Précompte Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec feugiat mauris dolor, non porta elit faucibus quis. Donec faucibus diam eu lectus venenatis, ut accumsan turpis vestibulum.
+        <div class="c-tooltip__arrow" data-popper-arrow="data-popper-arrow"></div>
+    </div>
+    <smart-input-number min="11.11" max="100" id="witholding" name="witholding" value="11.11" asp-for="@Model.Subscription.Withholding"></smart-input-number>
+</smart-formgroup>
+
+<h3 class="c-h2 u-spacer-bottom-s">Votre carte d'identité</h3>
+
+<smart-formgroup label="Numéro de registre national ou inscription au registre des étrangers">
+    <smart-input id="numNat" name="numNat" asp-for="@Model.Subscription.RegisterIdNumber"></smart-input>
+</smart-formgroup>
+
+<smart-formgroup label="N° carte identité">
+    <smart-input id="numCI" name="numCI" asp-for="@Model.Subscription.IdCardNumber"></smart-input>
+</smart-formgroup>
+
+<div class="u-spacer-bottom-xl">
+    <smart-alert title="Envoi obligatoire" message="<p>Veuillez envoyer <strong>une copie de votre carte d'identité (recto & verso)</strong> en annexe à la fin des 3 étapes de ce formulaire</p>" is-closable="false"></smart-alert>
+</div>
+
+<smart-hr></smart-hr>
+
+<h3 class="c-h2 u-spacer-bottom-s">Vos données bancaires</h3>
+
+<smart-formgroup label="Numéro IBAN de votre compte bancaire personnel">
+    <smart-input id="numIban" name="numIban" asp-for="@Model.Subscription.Iban"></smart-input>
+</smart-formgroup>
+
+<div class="u-spacer-bottom-xl">
+    <smart-alert title="Envoi obligatoire" message="<p>Veuillez envoyer <strong>une copie de votre carte bancaire</strong> en annexe à la fin des 3 étapes de ce formulaire</p>" is-closable="false"></smart-alert>
+</div>
+
+<smart-hr></smart-hr>
+
+<div class="u-spacer-bottom-xl">
+    <smart-checkbox id="subscriptionAutorisation" name="subscriptionAutorisation" label="J'autorise Smart à transmettre mes données à des tiers, à des fins professionnelles uniquement et j’ai bien pris connaissance des informations reprises sur la page « Politique de protection des donnée personnelles » <b><a href='https://smartbe.be/fr/smart-politique-de-protection-des-donnees-personnelles/' target='_blank'>du site Smart</a></b> , définissant notamment les notions de « données », « tiers » et « fins professionnelles »." asp-for="@Model.Subscription.SubscriptionApproval" checked="false"></smart-checkbox>
+</div>
+<p>
+    En savoir plus ?
+    <a class="c-link" href="mailto:autoriteprotectiondonnees.be">
+        <span class="c-link__label">autoriteprotectiondonnees.be</span>
+        <span class="o-svg-icon o-svg-icon-external-link">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 5C13.7348 5 13.4804 4.89464 13.2929 4.70711C13.1054 4.51957 13 4.26522 13 4C13 3.73478 13.1054 3.48043 13.2929 3.29289C13.4804 3.10536 13.7348 3 14 3H20C20.2652 3 20.5196 3.10536 20.7071 3.29289C20.8946 3.48043 21 3.73478 21 4V10C21 10.2652 20.8946 10.5196 20.7071 10.7071C20.5196 10.8946 20.2652 11 20 11C19.7348 11 19.4804 10.8946 19.2929 10.7071C19.1054 10.5196 19 10.2652 19 10V6.414L9.707 15.707C9.5184 15.8892 9.2658 15.99 9.0036 15.9877C8.7414 15.9854 8.49059 15.8802 8.30518 15.6948C8.11977 15.5094 8.0146 15.2586 8.01233 14.9964C8.01005 14.7342 8.11084 14.4816 8.293 14.293L17.586 5H14ZM3 7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H10C10.2652 5 10.5196 5.10536 10.7071 5.29289C10.8946 5.48043 11 5.73478 11 6C11 6.26522 10.8946 6.51957 10.7071 6.70711C10.5196 6.89464 10.2652 7 10 7H5V19H17V14C17 13.7348 17.1054 13.4804 17.2929 13.2929C17.4804 13.1054 17.7348 13 18 13C18.2652 13 18.5196 13.1054 18.7071 13.2929C18.8946 13.4804 19 13.7348 19 14V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V7Z" fill="#595959"/>
+            </svg>
+        </span>
+    </a>
+</p>
+
+<div class="u-spacer-top-l u-spacer-bottom-s">
+    <smart-button button-type="Submit" button-style="Primary" trailing-icon="ArrowRight" label="Finaliser ma demande d’inscription"></smart-button>
+</div>
+</smart-form>
+
+</div>
+</div>
+</div>
 </main>
 
 <script>
