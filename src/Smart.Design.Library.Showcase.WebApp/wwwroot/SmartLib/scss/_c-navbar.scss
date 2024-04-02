@@ -5,56 +5,47 @@
    ========================================================================== */
 
 .c-navbar {
-    height: $g-bar-size-regular;
-
-    &.main-title {
-        box-shadow: 0 3px 2px transparentize($color-gray-50, .60);
-
-        @media (min-width: $g-bp1) {
-            right: 0;
-            left: 0;
-        }
+  height: $g-bar-size-regular;
+  &.main-title{
+    box-shadow: 0 3px 2px transparentize($color-gray-50, .60);
+    @media (min-width: $g-bp1) {
+      right: 0;
+      left: 0;
     }
+  }
+  .c-toolbar{
+    padding: 0 1.125rem;
+  }
 
-    .c-toolbar {
-        padding: 0 1.8rem;
+  &.collapsing{
+    .c-toolbar{
+      display: block;
+      height: auto;
     }
-
-    &.collapsing {
-        .c-toolbar {
-            display: block;
-            height: auto;
+    .c-toolbar__left {
+      flex-wrap: wrap;
+      .c-toolbar__item {
+        &+.c-toolbar__item{
+          margin-bottom: 0.875rem;
         }
-
-        .c-toolbar__left {
-            flex-wrap: wrap;
-
-            .c-toolbar__item {
-                & + .c-toolbar__item {
-                    margin-bottom: 1.4rem;
-                }
-
-                &:first-child {
-                    width: 100%;
-                    margin-bottom: 1rem;
-                }
-            }
+        &:first-child {
+          width: 100%;
+          margin-bottom: 0.625rem;
         }
-
-        .c-toolbar__right {
-            justify-content: flex-start;
-
-            .c-toolbar__item {
-                margin-left: 0;
-                margin-right: 1.6rem;
-            }
-        }
+      }
     }
+    .c-toolbar__right {
+      justify-content: flex-start;
+      .c-toolbar__item{
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+    }
+  }
 
-    &.main-title {
-        .c-toolbar {
-            padding: 1.2rem 1.8rem;
-        }
+  &.main-title{
+    .c-toolbar{
+      padding: 0.75rem 1.125rem;
     }
 }
 
@@ -75,7 +66,7 @@
       .c-toolbar__right {
         justify-content: flex-end;
         .c-toolbar__item{
-          margin-left: 1.6rem;
+          margin-left: 1rem;
           margin-right: 0;
         }
       }
@@ -96,8 +87,8 @@
 @media (min-width: $g-bp3-m) {
   .c-navbar {
     .c-toolbar, &.main-title .c-toolbar {
-      padding-left: 2.4rem;
-      padding-right: 2.4rem;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
     }
   }
 }
@@ -108,17 +99,17 @@ header .c-navbar, header.c-navbar{
   background-color: $color-white;
   border-bottom: 2px solid $color-gray-50;
   .c-toolbar{
-    height: 6rem;
+    height: 3.75rem;
   }
 }
 
 .c-navbar--entry {
-  padding: 4rem 2.4rem;
+  padding: 2.5rem 1.5rem;
   height: auto;
 }
 
 .c-navbar--entry {
-  padding: 4rem 2.4rem;
+  padding: 2.5rem 1.5rem;
   height: auto;
 }
 
@@ -186,7 +177,7 @@ header .c-navbar, header.c-navbar{
    ========================================================================== */
 
 .c-navbar--bordered-top {
-  border-top: 0.1rem solid $color-semantic-border;
+  border-top: 0.0625rem solid $color-semantic-border;
 }
 
 /* Sizes

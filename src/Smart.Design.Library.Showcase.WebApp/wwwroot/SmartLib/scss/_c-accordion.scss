@@ -23,7 +23,7 @@ $c-accordion-border: $color-gray-100 !default;
   }
 
   .c-accordion__item-title {
-    font-size: 1.8rem;
+    font-size: 1.125rem;
     font-weight: 600;
     color: $color-semantic-header-text;
   }
@@ -31,13 +31,13 @@ $c-accordion-border: $color-gray-100 !default;
   .c-accordion__item-header .c-button {
     transition: transform 200ms ease-in-out;
     padding: 0;
-    margin-top: .2rem;
-    margin-right: 1rem;
+    margin-top: 0.125rem;
+    margin-right: 0.625rem;
     align-self: flex-start;
   }
 
   .c-accordion__item-content {
-    margin-left: 3.2rem;
+    margin-left: 2rem;
     max-height: 0px;
     overflow: hidden;
     line-height: 1.6;

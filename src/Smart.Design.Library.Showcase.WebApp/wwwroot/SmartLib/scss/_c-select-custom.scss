@@ -15,11 +15,11 @@
   border: 1px solid $c-input-border-color;
   border-radius: $c-input-border-radius; // We use properties from textfield here
   position: relative;
-  height: 3.6rem;
+  height: 2.25rem;
   font-size: inherit;
   display: flex;
   align-items: center;
-  padding: 0.8rem 2.8rem 0.8rem 0.8rem;
+  padding: 0.5rem 1.75rem 0.5rem 0.5rem;
   width: 100%;
   overflow: auto;
   @include textfield-focus;
@@ -28,12 +28,12 @@
     pointer-events: none;
     content: ' ';
     position: absolute;
-    right: 1rem;
-    top: calc(50% - 0.25rem);
+    right: 0.625rem;
+    top: calc(50% - 0.15625rem);
     width: 0;
     height: 0;
-    border-width: 1rem;
-    border: 0.5rem solid $color-gray-600;
+    border-width: 0.625rem;
+    border: 0.3125rem solid $color-gray-600;
     border-bottom-color: transparent;
     border-left-color: transparent;
     border-right-color: transparent;
@@ -59,7 +59,7 @@
 
 
 // Widths
-.c-select-custom--w-xsmall { width: 6.4rem; }
-.c-select-custom--w-small { width: 12rem; }
-.c-select-custom--w-medium { width: 20rem; }
-.c-select-custom--w-large { width: 44rem; }
+.c-select-custom--w-xsmall { width: 4rem; }
+.c-select-custom--w-small { width: 7.5rem; }
+.c-select-custom--w-medium { width: 12.5rem; }
+.c-select-custom--w-large { width: 27.5rem; }

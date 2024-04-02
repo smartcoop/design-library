@@ -9,16 +9,16 @@
   display: flex;
 
   .c-button{
-    // margin-top: 1rem;
-    margin-right: 0.8rem;
-    margin-top: 0.8rem;
+    // margin-top: 0.625rem;
+    margin-right: 0.5rem;
+    margin-top: 0.5rem;
     &:last-child{
       margin-right: 0;
     }
   }
 
   .c-button--link + .c-button--link {
-    margin-left: 1.6rem;
+    margin-left: 1rem;
   }
 
   &.wrap{
@@ -63,20 +63,20 @@
   }
 
   .c-button + .c-button {
-    margin: 0 0 0 -0.2rem;
+    margin: 0 0 0 -0.125rem;
   }
   .c-button:first-child{
-    padding-right: .5rem;
+    padding-right: 0.3125rem;
     &.c-button--small{
-      padding-right: .25rem;
-      padding-left: .5rem;
+      padding-right: 0.15625rem;
+      padding-left: 0.3125rem;
     }
   }
   .c-button:last-child{
-    padding-left: .5rem;
+    padding-left: 0.3125rem;
     &.c-button--small{
-      padding-right: .5rem;
-      padding-left: .25rem;
+      padding-right: 0.3125rem;
+      padding-left: 0.15625rem;
     }
   }
 }
@@ -84,10 +84,10 @@
 .c-button-toolbar--vertical {
   flex-flow: column;
   .c-button:first-child{
-    padding-right: .7rem;
+    padding-right: 0.4375rem;
   }
   .c-button:last-child{
-    padding-left: .7rem;
+    padding-left: 0.4375rem;
   }
   .c-button + .c-button {
     margin-left: 0;
@@ -108,7 +108,7 @@
 
   &.c-button-toolbar--compact {
     .c-button + .c-button {
-      margin: -0.2rem 0 0 0;
+      margin: -0.125rem 0 0 0;
     }
   }
 }

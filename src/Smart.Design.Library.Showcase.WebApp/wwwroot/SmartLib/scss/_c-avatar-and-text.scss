@@ -8,7 +8,7 @@
   min-width: 0;
 
   .c-avatar {
-    margin-right: 1.2rem;
+    margin-right: 0.75rem;
   }
 
 }
@@ -16,11 +16,11 @@
 .c-avatar-and-text__text {
   flex: 1;
   min-width: 0;
-  margin: 0 .4rem;
+  margin: 0 0.25rem;
 }
 
 .c-avatar-and-text__title {
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   font-weight: 500;
 }
 
@@ -32,7 +32,7 @@
 }
 
 .c-avatar-and-text__text h3 {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
 }
 
 .c-avatar-and-text--wrap {

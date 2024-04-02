@@ -8,18 +8,18 @@
    ========================================================================== */
 
 $c-avatar-default-bg: $color-gray-50 !default;
-$c-avatar-dimensions-xl: 9.6rem !default;
-$c-avatar-dimensions-l: 6.4rem !default;
-$c-avatar-dimensions-m: 4.8rem !default;
-$c-avatar-dimensions: 3.2rem !default;
-$c-avatar-dimensions-s: 2.4rem !default;
-$c-avatar-dimensions-xs: 1.8rem !default;
+$c-avatar-dimensions-xl: 6rem !default;
+$c-avatar-dimensions-l: 4rem !default;
+$c-avatar-dimensions-m: 3rem !default;
+$c-avatar-dimensions: 2rem !default;
+$c-avatar-dimensions-s: 1.5rem !default;
+$c-avatar-dimensions-xs: 1.125rem !default;
 
 /* Component
    ========================================================================== */
 
 .c-avatar {
-  font-size: 1.4rem;
+  font-size: 0.875rem;
   font-weight: 500;
   width: $c-avatar-dimensions;
   height: $c-avatar-dimensions;
@@ -36,10 +36,10 @@ $c-avatar-dimensions-xs: 1.8rem !default;
   justify-content: center;
 
   .o-svg-icon {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.125rem;
+    height: 1.125rem;
     position: relative;
-    top: -0.1rem;
+    top: -0.0625rem;
     margin: auto;
   }
 }
@@ -53,12 +53,12 @@ $c-avatar-dimensions-xs: 1.8rem !default;
   min-width: $c-avatar-dimensions-xs;
   min-height: $c-avatar-dimensions-xs;
   line-height: $c-avatar-dimensions-xs;
-  font-size: 0.8rem;
+  font-size: 0.5rem;
   .o-svg-icon {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 1.125rem;
+    height: 1.125rem;
     position: relative;
-    top: -0.1rem;
+    top: -0.0625rem;
   }
 }
 
@@ -71,10 +71,10 @@ $c-avatar-dimensions-xs: 1.8rem !default;
   font-size: 80%;
 
   .o-svg-icon {
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1rem;
+    height: 1rem;
     position: relative;
-    top: -0.1rem;
+    top: -0.0625rem;
   }
 }
 
@@ -84,13 +84,13 @@ $c-avatar-dimensions-xs: 1.8rem !default;
   min-width: $c-avatar-dimensions-m;
   min-height: $c-avatar-dimensions-m;
   line-height: $c-avatar-dimensions-m;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
 
   .o-svg-icon {
-    width: 2.4rem;
-    height: 2.4rem;
+    width: 1.5rem;
+    height: 1.5rem;
     position: relative;
-    top: -0.1rem;
+    top: -0.0625rem;
   }
 }
 
@@ -100,13 +100,13 @@ $c-avatar-dimensions-xs: 1.8rem !default;
   min-width: $c-avatar-dimensions-l;
   min-height: $c-avatar-dimensions-l;
   line-height: $c-avatar-dimensions-l;
-  font-size: 2.4rem;
+  font-size: 1.5rem;
 
   .o-svg-icon {
-    width: 3.2rem;
-    height: 3.2rem;
+    width: 2rem;
+    height: 2rem;
     position: relative;
-    top: -0.1rem;
+    top: -0.0625rem;
   }
 }
 
@@ -114,7 +114,7 @@ $c-avatar-dimensions-xs: 1.8rem !default;
    ========================================================================== */
 
 .c-avatar--img {
-  border: 0.1rem solid $color-gray-300;
+  border: 0.0625rem solid $color-gray-300;
   overflow: hidden;
 
   img {
@@ -134,7 +134,7 @@ $c-avatar-dimensions-xs: 1.8rem !default;
   align-items: center;
 
   .c-avatar + .c-avatar {
-    margin-left: -0.8rem;
+    margin-left: -0.5rem;
   }
 
   $i: 0;

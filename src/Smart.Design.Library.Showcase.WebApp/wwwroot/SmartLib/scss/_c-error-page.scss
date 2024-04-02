@@ -10,12 +10,12 @@
   justify-content: center;
   width: 100%;
   height: 100%;
-  padding: 2.4rem;
+  padding: 1.5rem;
 
 }
 
 .c-error-page__code {
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   font-weight: 500;
   color: $color-gray-600;
 
@@ -24,12 +24,12 @@
 
 .c-error-page__title {
   color: $g-headings-color;
-  font-size: 2.2rem;
+  font-size: 1.375rem;
   font-weight: 500;
-  margin: 0 0 0.8rem;
+  margin: 0 0 0.5rem;
 }
 
 .c-error-page__desc + .c-button,
 .c-error-page__desc + .c-button-toolbar {
-  margin-top: 2.4rem;
+  margin-top: 1.5rem;
 }

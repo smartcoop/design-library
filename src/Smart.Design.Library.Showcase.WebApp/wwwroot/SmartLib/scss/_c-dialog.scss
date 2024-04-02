@@ -7,9 +7,9 @@
 /* Variables
    ========================================================================== */
 
-$c-dialog-padding-horizontal: 2.4rem !default;
-$c-dialog-padding-vertical: 2.4rem !default;
-$c-dialog-border-radius: 0.4rem !default;
+$c-dialog-padding-horizontal: 1.5rem !default;
+$c-dialog-padding-vertical: 1.5rem !default;
+$c-dialog-border-radius: 0.25rem !default;
 $c-dialog-shadow-color: $color-gray-650 !default;
 
 $c-dialog-header-bg-color: #fff !default;
@@ -31,7 +31,7 @@ $g-c-dialog-z: 50 !default;
   opacity: 0;
   position: fixed;
   top: 0;
-  transform: translateY(-4rem) scale(0.98);
+  transform: translateY(-2.5rem) scale(0.98);
   transition: visibility 0s linear 0.2s, opacity 0.2s linear,
     transform 0.2s ease-in-out;
   visibility: hidden;
@@ -56,11 +56,11 @@ $g-c-dialog-z: 50 !default;
   z-index: $g-c-dialog-z;
   margin: 0 auto;
   position: relative;
-  max-height: calc(100vh - 4.8rem);
+  max-height: calc(100vh - 3rem);
 }
 
 .c-dialog__push {
-  min-height: 2.4rem;
+  min-height: 1.5rem;
   flex: 1;
 }
 
@@ -79,7 +79,7 @@ $g-c-dialog-z: 50 !default;
 }
 
 .c-dialog__header {
-  height: 6.4rem;
+  height: 4rem;
   flex: 0;
   background-color: $c-dialog-header-bg-color;
   border-radius: $c-dialog-border-radius $c-dialog-border-radius 0 0;
@@ -90,7 +90,7 @@ $g-c-dialog-z: 50 !default;
 }
 
 .c-dialog__title {
-  font-size: 2rem;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 
@@ -100,14 +100,14 @@ $g-c-dialog-z: 50 !default;
 }
 
 .c-dialog__footer {
-  height: 6.4rem;
+  height: 4rem;
   flex: 0;
   background-color: $c-dialog-footer-bg-color;
   border-radius: 0 0 $c-dialog-border-radius $c-dialog-border-radius;
 
   // fix for border radii when no footer actions are available
   &:empty {
-    height: 0.3rem;
+    height: 0.1875rem;
     border-radius: 0 0 $c-dialog-border-radius $c-dialog-border-radius;
     flex-basis: auto;
   }
@@ -121,15 +121,15 @@ $g-c-dialog-z: 50 !default;
   ========================================================================== */
 
 .c-dialog--large {
-  width: 88rem;
+  width: 55rem;
 }
 
 .c-dialog--medium {
-  width: 66rem;
+  width: 41.25rem;
 }
 
 .c-dialog--small {
-  width: 44rem;
+  width: 27.5rem;
 }
 
 .c-dialog--fullscreen {
@@ -145,12 +145,12 @@ $g-c-dialog-z: 50 !default;
 }
 
 .c-dialog--fullwidth {
-  max-width: 66rem;
+  max-width: 41.25rem;
   width: calc(100% - #{$c-dialog-padding-horizontal * 2});
 }
 
 .c-dialog--fullheight {
-  max-height: 120rem;
+  max-height: 75rem;
   height: calc(100% - #{$c-dialog-padding-horizontal * 2});
 
   .c-dialog__body {

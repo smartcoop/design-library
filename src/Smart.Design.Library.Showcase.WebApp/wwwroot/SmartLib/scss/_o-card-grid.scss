@@ -12,13 +12,13 @@ $o-card-grid-breakpoints: (
   "extra-large": $g-bp4,
 ) !default;
 
-$o-card-grid-column-gap: 2.4rem !default;
-$o-card-grid-row-gap: 2.4rem !default;
+$o-card-grid-column-gap: 1.5rem !default;
+$o-card-grid-row-gap: 1.5rem !default;
 $o-card-grid-max-columns: 6 !default;
 $o-card-grid-max-rows: 6 !default;
 
-$o-card-grid-item-width: 25.6rem !default; // minimum width of a card
-$o-card-grid-item-min-width: 4.8rem !default; // the absolute minimum width of a card, to prevent grid blowout
+$o-card-grid-item-width: 16rem !default; // minimum width of a card
+$o-card-grid-item-min-width: 3rem !default; // the absolute minimum width of a card, to prevent grid blowout
 
 
 /* Object
@@ -83,5 +83,5 @@ $o-card-grid-item-min-width: 4.8rem !default; // the absolute minimum width of a
 }
 
 .o-card-grid--fill {
-  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
 }

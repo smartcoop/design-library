@@ -12,7 +12,7 @@ $c-checkbox-input-border-color: $color-semantic-input-border !default;
 $c-checkbox-input-border: 1px solid $c-checkbox-input-border-color !default;
 $c-radio-input-border: 1px solid $c-checkbox-input-border-color !default;
 
-$c-checkbox-input-border-radius: 0.3rem !default;
+$c-checkbox-input-border-radius: 0.1875rem !default;
 
 // Pixel unit to avoid rounding rendering2px
 $c-checkbox-size: 20px !default;
@@ -41,7 +41,7 @@ $c-radio-checked-color: $color-blue-600 !default;
 .o-form-group .c-radio,
 .c-checkbox-group .c-checkbox,
 .c-radio-group .c-radio {
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
 }
 
 /* Labels
@@ -97,7 +97,7 @@ $c-radio-checked-color: $color-blue-600 !default;
 .c-radio input[type='radio']:active,
 .c-radio input[type='radio']:focus {
   outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba($c-checkbox-input-border-color, .5);
+  box-shadow: 0 0 0 0.125rem rgba($c-checkbox-input-border-color, .5);
   border-color: $c-checkbox-input-border-color;
 }
 
@@ -237,5 +237,5 @@ $c-radio-checked-color: $color-blue-600 !default;
    ========================================================================== */
 
 .c-checkbox-subgroup {
-  margin: 0.8rem 0 0 2.4rem;
+  margin: 0.5rem 0 0 1.5rem;
 }

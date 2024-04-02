@@ -7,10 +7,10 @@
 /* Variables
    ========================================================================== */
 
-$o-svg-icon-size-huge: 4.8rem !default;
-$o-svg-icon-size-large: 3.2rem !default;
-$o-svg-icon-size: 2.4rem !default;
-$o-svg-icon-size-small: 2rem !default;
+$o-svg-icon-size-huge: 3rem !default;
+$o-svg-icon-size-large: 2rem !default;
+$o-svg-icon-size: 1.5rem !default;
+$o-svg-icon-size-small: 1.25rem !default;
 
 /* Object
    ========================================================================== */
@@ -37,8 +37,8 @@ $o-svg-icon-size-small: 2rem !default;
   }
   svg {
     vertical-align: middle;
-    max-width: 2.4rem;
-    max-height: 2.4rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
     display: inline;
     color: #666;
   }
@@ -51,16 +51,16 @@ $o-svg-icon-size-small: 2rem !default;
 
   svg {
     vertical-align: middle;
-    max-width: 2.4rem;
-    max-height: 2.4rem;
+    max-width: 1.5rem;
+    max-height: 1.5rem;
     display: inline;
     color: #666;
   }
 }
 
 .o-svg-icon[class*="o-svg-icon-narrow-"] {
-  width: 1rem;
-  height: 2rem;
+  width: 0.625rem;
+  height: 1.25rem;
 }
 
 .o-svg-icon--large {

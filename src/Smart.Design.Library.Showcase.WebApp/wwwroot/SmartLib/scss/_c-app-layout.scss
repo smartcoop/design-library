@@ -35,16 +35,16 @@ Component: app layout
     position: absolute;
     z-index: 11111;
     flex: 0 0 auto;
-    padding: 1.8rem;
+    padding: 1.125rem;
     margin-top: 0;
-    border-bottom-right-radius: 1.2rem;
-    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
     box-shadow: 0 3px 2px transparentize($color-gray-50, .60);
 
     @media (min-width: $g-bp2) {
         display: block;
-        top: 6.4rem;
-        border-top-right-radius: .6rem;
+        top: 4rem;
+        border-top-right-radius: 0.375rem;
         width: $g-sidebar-width-m;
         position: relative;
         z-index: inherit;
@@ -55,7 +55,7 @@ Component: app layout
     }
 
     @media (min-width: $g-bp3-m) {
-        padding: 2.4rem;
+        padding: 1.5rem;
     }
 
     @media (min-width: $g-bp4) {
@@ -68,10 +68,10 @@ Component: app layout
     margin-left: $g-sidebar-width-m;
     .c-navbar{
       padding-left: 0;
-      margin-left: .2rem;
+      margin-left: 0.125rem;
       .c-toolbar{
-        border-bottom-left-radius: .6rem;
-        border-top-left-radius: .6rem;
+        border-bottom-left-radius: 0.375rem;
+        border-top-left-radius: 0.375rem;
       }
       &.main-title{
         left: $g-sidebar-width-m;
@@ -97,55 +97,55 @@ Component: app layout
         border-bottom: 2px solid $color-gray-50;
 
         .c-toolbar {
-            // height: 6.4rem;
+            // height: 4rem;
             background: white;
         }
     }
 
     @media (min-width: $g-bp2) {
-        margin-top: 6.2rem;
+        margin-top: 3.875rem;
 
         .c-navbar {
             border-top: 2px solid $color-gray-50;
 
             &.u-position-fixed.main-title {
-                top: 6.2rem;
+                top: 3.875rem;
 
                 & + div {
-                    margin-top: 6.2rem;
+                    margin-top: 3.875rem;
                 }
             }
 
             &.u-position-fixed.collapsing {
                 & + div {
-                    margin-top: 20.4rem;
+                    margin-top: 12.75rem;
                 }
             }
         }
     }
 
     @media (min-width: $g-bp3-m) {
-        margin-top: 6.2rem;
+        margin-top: 3.875rem;
 
         .c-navbar {
             padding-left: 0;
             position: fixed;
 
             .c-toolbar {
-                height: 6.2rem;
+                height: 3.875rem;
             }
 
             &.u-position-fixed.main-title {
-                top: 6.2rem;
+                top: 3.875rem;
 
                 & + div {
-                    margin-top: 12.4rem;
+                    margin-top: 7.75rem;
                 }
             }
 
             &.u-position-fixed.main-title, &.u-position-fixed.collapsing {
                 & + div {
-                    margin-top: 7rem;
+                    margin-top: 4.375rem;
                 }
             }
         }

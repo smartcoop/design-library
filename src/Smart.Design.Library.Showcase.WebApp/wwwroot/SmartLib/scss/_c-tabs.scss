@@ -9,8 +9,8 @@ $c-tabs-item-color: $color-semantic-muted-text !default;
 $c-tabs-item-active-color: $color-semantic-header-text !default;
 $c-tabs-item-border-color: $color-gray-200 !default;
 $c-tabs-item-hover-border-color: $color-gray-200 !default;
-$c-tabs-active-border-width: 0.3rem !default;
-$c-tabs-padding-all: 3.2rem !default;
+$c-tabs-active-border-width: 0.1875rem !default;
+$c-tabs-padding-all: 2rem !default;
 $c-tabs-border-radius: $g-border-radius-medium !default;
 
 
@@ -27,8 +27,8 @@ $c-tabs-border-radius: $g-border-radius-medium !default;
 
     @media screen and (min-width: $g-bp1) {
       display: flex;
-      height: 4.8rem;
-      max-height: 4.8rem;
+      height: 3rem;
+      max-height: 3rem;
     }
 
     > li {
@@ -62,7 +62,7 @@ $c-tabs-border-radius: $g-border-radius-medium !default;
   text-decoration: none;
   font-weight: 500;
   height: 100%;
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
 
   &:hover {
     box-shadow: inset 0 -#{$c-tabs-active-border-width} 0 $color-semantic-border;
@@ -88,7 +88,7 @@ $c-tabs-border-radius: $g-border-radius-medium !default;
   border-bottom: 1px solid $c-tabs-item-border-color;
 
   li {
-    margin-top: 0.1rem;
+    margin-top: 0.0625rem;
   }
 }
 
