@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Smart.Design.Library\Smart.Design.Library.csproj" />
+    <ProjectReference Include="..\Smart.Unity.Design\Smart.Unity.Design.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,5 +38,9 @@
     <Compile Update="Pages\Templates\Dna\AddVehicule.cs">
       <DependentUpon>AddVehicule.cshtml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 </Project>

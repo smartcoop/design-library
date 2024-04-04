@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+
+    <ItemGroup>
+        <SupportedPlatform Include="browser" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.13" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\Smart.Design.Library\js\bundle-client-smart.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\Smart.Design.Library\js\bundle-client-smart.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\Smart.Design.Library\js\bundle-client.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\Smart.Design.Library\js\bundle-client.min.js" />
+      <_ContentIncludedByDefault Remove="wwwroot\Smart.Design.Library\js\kendo-ui-license.js" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="wwwroot\SmartLib\css\" />
+    </ItemGroup>
+
+</Project>

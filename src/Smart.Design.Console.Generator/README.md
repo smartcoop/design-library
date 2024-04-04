@@ -13,8 +13,7 @@ A simple command line which allows auto-generating templated pages of components
 
 ## Prerequisites
 In its original form, the console app generation make some assumptions to work properly:
-1. In Design Razor:
-    * The project folder is called _"Smart.Design.Razor"_ and is in the parent folder of the console application
+1. In Design Razor:    * The project folder is called _"Smart.Design.Razor"_ and is in the parent folder of the console application
       * The application is relying on that to construct the base path to the design library
      * All written components are placed in the _"TagHelpers"_ at the root of the project folder and their name finish by _"TagHelper"_
        * The application is relying on that to build an up-to-date list of all created components

@@ -3,6 +3,9 @@ using Smart.Design.Library.Extensions;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddKendo();
 
+builder.WebHost.UseWebRoot("wwwroot");
+builder.WebHost.UseStaticWebAssets();
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddSmartDesign();

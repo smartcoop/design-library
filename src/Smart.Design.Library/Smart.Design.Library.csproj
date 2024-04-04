@@ -66,4 +66,14 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\css\smart-main.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\smart-main.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\smartui-themebuilder.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Smart.Unity.Design\Smart.Unity.Design.csproj" />
+  </ItemGroup>
+
 </Project>
