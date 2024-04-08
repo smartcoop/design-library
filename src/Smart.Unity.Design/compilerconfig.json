@@ -1,0 +1,13 @@
+﻿[
+  {
+    "outputFile": "wwwroot/smart-main.css",
+    "inputFile": "wwwroot/SmartLib/scss/main.scss"
+  },
+  {
+    "outputFile": "wwwroot/smart-main-min.css",
+    "inputFile": "wwwroot/smart-main.css",
+    "minify": {
+      "enabled": true
+    }
+  }
+]
