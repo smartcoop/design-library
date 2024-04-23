@@ -9,7 +9,7 @@ FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["src/Smart.Design.Library.Showcase.WebApp/Smart.Design.Library.Showcase.csproj", "src/Smart.Design.Library.Showcase.WebApp/"]
 COPY ["src/Smart.Design.Library/Smart.Design.Library.csproj", "src/Smart.Design.Library/"]
-RUN dotnet restore "src/Smart.Design.Library.Showcase.WebApp/Smart.Design.Library.Showcase.csproj" -s https://api.nuget.org/v3/index.json -s https://sam2.ubik.be/nugetserver/nuget
+RUN dotnet restore "src/Smart.Design.Library.Showcase.WebApp/Smart.Design.Library.Showcase.csproj" -s https://api.nuget.org/v3/index.json -s https://sam2.ubik.be:443/nugetServer/nuget
 COPY . .
 WORKDIR "/src/src/Smart.Design.Library.Showcase.WebApp"
 RUN dotnet build "Smart.Design.Library.Showcase.csproj" -c Release -o /app/build
