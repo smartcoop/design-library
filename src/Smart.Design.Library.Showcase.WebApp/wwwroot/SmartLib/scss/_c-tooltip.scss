@@ -14,10 +14,10 @@ $c-tooltip-bg: rgba(0,0,0,0.75) !default;
     display: none;
     background: $c-tooltip-bg;
     color: #FFF;
-    padding: .8rem 1.2rem;
-    font-size: 1.3rem;
-    border-radius: 0.4rem;
-    max-width: 24rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+    border-radius: 0.25rem;
+    max-width: 15rem;
     z-index: 1;
 
     &-icon {
@@ -30,7 +30,7 @@ $c-tooltip-bg: rgba(0,0,0,0.75) !default;
 }
 
 .c-tooltip--size-m {
-    min-width: 24rem;
+    min-width: 15rem;
 }
 
 .c-tooltip[data-show] {
@@ -40,8 +40,8 @@ $c-tooltip-bg: rgba(0,0,0,0.75) !default;
 .c-tooltip__arrow,
 .c-tooltip__arrow::before {
     position: absolute;
-    width: 0.8rem;
-    height: 0.8rem;
+    width: 0.5rem;
+    height: 0.5rem;
     z-index: -1;
 }
 

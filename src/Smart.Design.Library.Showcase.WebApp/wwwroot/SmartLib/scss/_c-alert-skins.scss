@@ -8,19 +8,19 @@
    ========================================================================== */
 
 .c-alert {
-  border-radius: 0.3rem;
-  border: 0.1rem solid $color-blue-400;
+  border-radius: 0.1875rem;
+  border: 0.0625rem solid $color-blue-400;
   background: $color-blue-25;
   position: relative;
 
   &:before {
     content: '';
-    height: calc(100% + .1rem);
-    width: 0.4rem;
-    border-radius: 0.3rem 0 0 .3rem;
+    height: calc(100% + 0.0625rem);
+    width: 0.25rem;
+    border-radius: 0.1875rem 0 0 0.1875rem;
     position: absolute;
-    left: -.1rem;
-    bottom: -.05rem;
+    left: -0.0625rem;
+    bottom: -0.03125rem;
     background: $color-blue-400;
   }
 

@@ -22,21 +22,21 @@
   overflow: auto;
 
   li[role="presentational"] {
-    height: .1rem;
-    margin: .4rem 0;
+    height: 0.0625rem;
+    margin: 0.25rem 0;
     background: $color-gray-100;
   }
   > ul {
-    margin-top: 2.4rem;
-    margin-bottom: 2.4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 
     ul {
-      margin-left: 1.2rem;
+      margin-left: 0.75rem;
     }
   }
   a, span {
     display: block;
-    padding: .8rem 1.2rem .8rem 1.2rem;
+    padding: 0.5rem 0.75rem 0.5rem 0.75rem;
     position: relative;
     color: $color-semantic-body-text;
   }
@@ -44,9 +44,9 @@
     &:before {
       content: '';
       height: 100%;
-      width: 0.4rem;
+      width: 0.25rem;
       position: absolute;
-      border-radius: 0.3rem 0 0 0.3rem;
+      border-radius: 0.1875rem 0 0 0.1875rem;
       left: 0;
       bottom: 0;
       background: $color-red-600;
@@ -61,8 +61,8 @@
     color: $color-gray-400;
   }
   ul {
-    padding-left: 1.2rem;
-    padding-right: 1.2rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
@@ -70,15 +70,15 @@
   position: fixed;
   display: block;
   inset: 0;
-  height: calc(100% - 6.4rem);
-  top: 6.4rem;
+  height: calc(100% - 4rem);
+  top: 4rem;
 }
 
 .c-design-system-logo {
-  height: 2.8rem;
+  height: 1.75rem;
 
   @media (min-width: $g-bp3) {
-    height: 3.6rem;
+    height: 2.25rem;
   }
 }
 

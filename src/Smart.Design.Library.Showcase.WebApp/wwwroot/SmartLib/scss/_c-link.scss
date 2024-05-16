@@ -5,7 +5,7 @@
 // color
 $c-link-underline-color: $color-blue-600;
 
-$c-link-button-height: 1.8rem;
+$c-link-button-height: 1.125rem;
 
 /* Default size
    ========================================================================== */
@@ -15,14 +15,14 @@ $c-link-button-height: 1.8rem;
     display: inline-block;
   }
   .o-svg-icon {
-    margin-bottom: -.2rem;
+    margin-bottom: -0.125rem;
     display: inline-block;
     height: $c-link-button-height;
     width: $c-link-button-height;
   }
   .c-button{
-    padding: 0.2rem;
-    margin: -.2rem 0 0 .3rem;
+    padding: 0.125rem;
+    margin: -0.125rem 0 0 0.1875rem;
     &__content{
       
       height: $c-link-button-height;

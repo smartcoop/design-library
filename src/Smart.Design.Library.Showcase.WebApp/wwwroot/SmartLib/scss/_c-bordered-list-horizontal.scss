@@ -7,13 +7,13 @@
   display: flex;
 
   li {
-    border-right: 0.1rem solid $color-gray-200;
+    border-right: 0.0625rem solid $color-gray-200;
     &:last-child {
       border: none;
     }
     a, span {
       display: block;
-      padding: .4rem 0.8rem;
+      padding: 0.25rem 0.5rem;
     }
   }
 }

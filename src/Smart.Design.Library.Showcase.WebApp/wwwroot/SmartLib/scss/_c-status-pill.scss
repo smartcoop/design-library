@@ -6,31 +6,31 @@
    ========================================================================== */
 
 .c-status-pill {
-  border-radius: 2.4rem;
-  padding: 0.2rem 1rem 0.2rem .8rem;
+  border-radius: 1.5rem;
+  padding: 0.125rem 0.625rem 0.125rem 0.5rem;
   display: inline-flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 0.75rem;
   font-weight: 500;
-  border: 0.1rem solid transparent;
+  border: 0.0625rem solid transparent;
 }
 
 .c-status-pill__circle {
   display: block;
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 0.8rem;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 0.5rem;
 }
 
 .c-status-pill__circle + .c-status-pill__label {
-  margin-left: 0.6rem;
+  margin-left: 0.375rem;
 }
 
 /* Skins
    ========================================================================== */
 
 .c-status-pill--default {
-  border: 0.1rem solid $color-gray-200;
+  border: 0.0625rem solid $color-gray-200;
   background: $color-gray-25;
 
   .c-status-pill__circle {
@@ -48,7 +48,7 @@
 }
 
 .c-status-pill--danger {
-  border: 0.1rem solid $color-red-150;
+  border: 0.0625rem solid $color-red-150;
   background: $color-red-50;
 
   .c-status-pill__circle {
@@ -57,7 +57,7 @@
 }
 
 .c-status-pill--success {
-  border: 0.1rem solid $color-green-300;
+  border: 0.0625rem solid $color-green-300;
   background: $color-green-50;
 
   .c-status-pill__circle {
@@ -66,7 +66,7 @@
 }
 
 .c-status-pill--warning {
-  border: 0.1rem solid $color-yellow-500;
+  border: 0.0625rem solid $color-yellow-500;
   background: $color-yellow-50;
 
   .c-status-pill__circle {
@@ -75,7 +75,7 @@
 }
 
 .c-status-pill--client {
-  border: 0.1rem solid $color-beige-50;
+  border: 0.0625rem solid $color-beige-50;
   background: $color-beige-50;
   color: $color-beige-900;
   font-weight: bold;

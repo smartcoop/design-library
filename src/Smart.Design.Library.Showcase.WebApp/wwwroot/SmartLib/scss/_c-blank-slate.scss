@@ -5,7 +5,7 @@
 /* Variables
    ========================================================================== */
 
-$c-blank-slate-border-radius: 0.3rem !default;
+$c-blank-slate-border-radius: 0.1875rem !default;
 
 
 /* Component
@@ -13,7 +13,7 @@ $c-blank-slate-border-radius: 0.3rem !default;
 
 .c-blank-slate {
   border-radius: $c-blank-slate-border-radius;
-  padding: 3.2rem 2.4rem;
+  padding: 2rem 1.5rem;
   text-align: center;
   display: flex;
   flex-direction: column;

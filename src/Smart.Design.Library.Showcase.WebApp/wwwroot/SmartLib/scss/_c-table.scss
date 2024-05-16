@@ -12,7 +12,7 @@ $c-table-border-color: $color-gray-50 !default;
 $c-table-row-odd-color: $color-gray-50 !default;
 $c-table-row-selected-color: #FFF !default;
 $c-table-row-selected-bg: $color-semantic-primary !default;
-$c-table-padding-all: 3.2rem !default;
+$c-table-padding-all: 2rem !default;
 $c-table-border-radius: $g-border-radius-medium !default;
 
 /* Component
@@ -52,7 +52,7 @@ $c-table-border-radius: $g-border-radius-medium !default;
     td,
     th {
         text-align: left;
-        padding: 0.8rem;
+        padding: 0.5rem;
         vertical-align: middle;
         position: relative;
     }
@@ -67,7 +67,7 @@ $c-table-border-radius: $g-border-radius-medium !default;
 
     th {
         font-weight: 500;
-        height: 5.6rem;
+        height: 3.5rem;
         border-bottom: 2px solid $color-gray-50;
         vertical-align: middle;
     }
@@ -100,7 +100,7 @@ $c-table-border-radius: $g-border-radius-medium !default;
     }
 
     td {
-        border-bottom: 0.1rem solid $c-table-border-color;
+        border-bottom: 0.0625rem solid $c-table-border-color;
     }
 
     tr:last-child {
@@ -112,14 +112,14 @@ $c-table-border-radius: $g-border-radius-medium !default;
     td,
     th {
         text-align: left;
-        padding: 1.2rem 1.6rem;
+        padding: 0.75rem 1rem;
         position: relative;
     }
 
     td .c-button,
     th .c-button {
-        margin-bottom: -0.8rem;
-        margin-top: -0.8rem;
+        margin-bottom: -0.5rem;
+        margin-top: -0.5rem;
     }
 
     td input[type=checkbox] {
@@ -129,17 +129,17 @@ $c-table-border-radius: $g-border-radius-medium !default;
 
 .c-table--big {
     border-collapse: separate;
-    border-spacing: 0 1.2rem;
+    border-spacing: 0 0.75rem;
 
     td {
         border-bottom: none;
-        padding: 1.8rem 2rem;
+        padding: 1.125rem 1.25rem;
     }
 
     thead th {
         border: none;
-        padding: .5rem 2rem;
-        height: 2rem;
+        padding: 0.3125rem 1.25rem;
+        height: 1.25rem;
 
         &:first-child {
             border-top-left-radius: $g-border-radius-medium;
@@ -169,7 +169,7 @@ $c-table-border-radius: $g-border-radius-medium !default;
 
     th {
         font-weight: 500;
-        height: 5.6rem;
+        height: 3.5rem;
         border-bottom: 2px solid $color-gray-50;
         vertical-align: middle;
     }
@@ -259,8 +259,8 @@ $c-table-border-radius: $g-border-radius-medium !default;
 
     td .c-button,
     th .c-button {
-        margin-bottom: -0.8rem;
-        margin-top: -0.8rem;
+        margin-bottom: -0.5rem;
+        margin-top: -0.5rem;
     }
 
     td input[type=checkbox] {
@@ -270,17 +270,17 @@ $c-table-border-radius: $g-border-radius-medium !default;
 
 .c-table--big {
     border-collapse: separate;
-    border-spacing: 0 1.2rem;
+    border-spacing: 0 0.75rem;
 
     td {
         border-bottom: none;
-        padding: 1.8rem 2rem;
+        padding: 1.125rem 1.25rem;
     }
 
     thead th {
         border: none;
-        padding: .5rem 2rem;
-        height: 2rem;
+        padding: 0.3125rem 1.25rem;
+        height: 1.25rem;
 
         &:first-child {
             border-top-left-radius: $g-border-radius-medium;
@@ -339,7 +339,7 @@ $c-table-border-radius: $g-border-radius-medium !default;
 
 .c-table--horizontal {
     th {
-        width: 18rem;
+        width: 11.25rem;
     }
 }
 
@@ -360,8 +360,8 @@ $c-table-border-radius: $g-border-radius-medium !default;
     tr td {
         border: 0;
         padding-left: 0;
-        padding-top: 0.4rem;
-        padding-bottom: 0.4rem;
+        padding-top: 0.25rem;
+        padding-bottom: 0.25rem;
     }
 }
 
@@ -385,7 +385,7 @@ $i: 1;
 
 .c-table-responsive {
     border: 1px solid $c-table-border-color;
-    border-radius: 0.3rem;
+    border-radius: 0.1875rem;
     display: block;
     width: 100%;
     overflow-x: auto;
@@ -404,22 +404,22 @@ $i: 1;
     background: #FFF;
 
     tr td {
-        padding: 1.6rem;
+        padding: 1rem;
     }
 
     tr td:first-child {
-        padding-left: 2.4rem;
+        padding-left: 1.5rem;
     }
 
     tr td:last-child {
-        padding-right: 2.4rem;
+        padding-right: 1.5rem;
     }
 
     tr th:first-child {
-        padding-left: 2.4rem;
+        padding-left: 1.5rem;
     }
 
     tr th:last-child {
-        padding-right: 2.4rem;
+        padding-right: 1.5rem;
     }
 }

@@ -9,7 +9,7 @@
 /* Variables
    ========================================================================== */
 
-$c-alert-border-radius: 0.3rem !default;
+$c-alert-border-radius: 0.1875rem !default;
 
 /* Component
       ========================================================================== */
@@ -28,14 +28,14 @@ $c-alert-border-radius: 0.3rem !default;
 
   .c-button--icon:last-child {
     cursor: pointer;
-    padding: 0.6rem;
-    margin: -0.6rem;
+    padding: 0.375rem;
+    margin: -0.375rem;
   }
   
   .c-alert__message{
     .c-button--icon{
-      padding: 0.1rem;
-      margin: 0 .3rem;
+      padding: 0.0625rem;
+      margin: 0.1875rem;
     }
   }
 
@@ -58,11 +58,11 @@ $c-alert-border-radius: 0.3rem !default;
 }
 
 .c-alert.c-alert--medium {
-  max-width: 66rem;
+  max-width: 41.25rem;
 }
 
 .c-alert.c-alert--large {
-  max-width: 88rem;
+  max-width: 55rem;
 }
 
 .c-alert__message .c-content p:only-child {

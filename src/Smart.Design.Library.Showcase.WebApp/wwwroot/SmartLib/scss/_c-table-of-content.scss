@@ -12,10 +12,10 @@ $c-table-of-content-item-active-color-light: $color-blue-50 !default;
 $c-table-of-content-item-active-color-dark: $color-blue-700 !default;
 
 
-$c-table-of-content-padding-v: 2.6rem !default;
-$c-table-of-content-padding-h: 3.2rem !default;
-$c-table-of-content-padding--mobile1: 1.8rem !default;
-$c-table-of-content-padding--mobile2: 2.4rem !default;
+$c-table-of-content-padding-v: 1.625rem !default;
+$c-table-of-content-padding-h: 2rem !default;
+$c-table-of-content-padding--mobile1: 1.125rem !default;
+$c-table-of-content-padding--mobile2: 1.5rem !default;
 
 /* Component
 ========================================================================== */
@@ -26,14 +26,14 @@ $c-table-of-content-padding--mobile2: 2.4rem !default;
   .back-to-top {
     display: block;
     position: fixed;
-    bottom: 4rem;
-    right: 4rem;
-    width: 4rem;
-    height: 4rem;
+    bottom: 2.5rem;
+    right: 2.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   &__content{
-    margin-bottom: 2rem;
+    margin-bottom: 1.25rem;
   }
   
   @media (min-width: $g-bp3) {
@@ -47,11 +47,11 @@ $c-table-of-content-padding--mobile2: 2.4rem !default;
       display: none !important;
     }
     .c-table-of-content-navigation {
-      padding: 0 3.2rem 0 0;
+      padding: 0 2rem 0 0;
     }
 
     &__content{
-      margin-bottom: 10rem;
+      margin-bottom: 6.25rem;
     }
   }
 }
@@ -68,12 +68,12 @@ $c-table-of-content-padding--mobile2: 2.4rem !default;
     display: inline-block;
     position: relative;
     padding-left: 0;
-    margin: .4rem 0;
+    margin: 0.25rem 0;
     
     &.stickyPosition {
       align-self: flex-start;
       position: sticky;
-      top: 16rem;
+      top: 10rem;
     }
     
     .current-state {
@@ -106,7 +106,7 @@ $c-table-of-content-padding--mobile2: 2.4rem !default;
         text-decoration: none;
         font-weight: 500;
         display: inline-block;
-        padding: .3rem 1.4rem .3rem 2rem;
+        padding: 0.1875rem 0.875rem 0.1875rem 1.25rem;
         transition: all .3s ease;
         color: $c-table-of-content-item-active-text-color;
         
@@ -119,8 +119,8 @@ $c-table-of-content-padding--mobile2: 2.4rem !default;
           display: inline-block;
           margin-bottom: 1px;
           color: $c-table-of-content-item-color-number;
-          width: 1.8rem;
-          left: -.8rem;
+          width: 1.125rem;
+          left: -0.5rem;
           font-weight: 400;
           -webkit-transition: color .1s cubic-bezier(0, 0.99, 0.31, 1);
           transition: color .1s cubic-bezier(0, 0.99, 0.31, 1);
@@ -136,7 +136,7 @@ $c-table-of-content-padding--mobile2: 2.4rem !default;
       
       
       & + li {
-        margin-top: 1rem;
+        margin-top: 0.625rem;
       }
     }
     
@@ -188,10 +188,10 @@ $c-table-of-content-padding--mobile2: 2.4rem !default;
   }
   &:first-child{
     p:first-child {
-      margin-top: 0.75rem;
+      margin-top: 0.46875rem;
     }   
   }
   h2 + h3{
-    margin-top: 1rem;
+    margin-top: 0.625rem;
   }
 }

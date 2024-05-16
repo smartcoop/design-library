@@ -5,7 +5,7 @@
 /* Variables
    ========================================================================== */
 
-$c-card-padding: 2.4rem !default;
+$c-card-padding: 1.5rem !default;
 $c-card-border-radius: $g-border-radius-medium !default;
 $c-card-border-color: $color-gray-150 !default;
 
@@ -39,7 +39,7 @@ a.c-card:hover {
 
 .c-card__title {
   color: $color-semantic-header-text;
-  font-size: 1.8rem;
+  font-size: 1.125rem;
   font-weight: 500;
 }
 
@@ -62,10 +62,10 @@ a.c-card:hover {
 
 .c-card__body + .c-card__actions {
   @media (max-width: $g-bp2) {
-    margin-top: -2.4rem;
+    margin-top: -1.5rem;
   }
   @media (min-width: $g-bp2) {
-    margin-left: -2.4rem;
+    margin-left: -1.5rem;
   }
 }
 
@@ -107,7 +107,7 @@ a.c-card:hover {
       &.sub-title{
         color: var(--subtitle-color);
         font-weight: 500;
-        margin-bottom: .2rem;
+        margin-bottom: 0.125rem;
       }
       &.main-title{
         color: var(--title-color);
@@ -149,23 +149,23 @@ a.c-card:hover {
     background-size: 100% ;
   }
   .c-button--secondary {
-    margin-top: .8rem;
+    margin-top: 0.5rem;
     color: white;
   }
   .sup-title, .divider{
-    font-size: 1.6rem;
+    font-size: 1rem;
     text-transform: uppercase;
     font-weight: 400;
   }
   .divider{
-    margin: 0 .2rem;
+    margin: 0 0.125rem;
     &--off{
       display: none;
     }
   }
   .sup-title{
     display: block;
-    margin-top: .4rem;
+    margin-top: 0.25rem;
   }
   @media (min-width: $g-bp3) {
     background-size: 50%;
@@ -195,7 +195,7 @@ a.c-card:hover {
       margin-top: 0;
     }
     .divider{
-      margin: 0 .4rem;
+      margin: 0 0.25rem;
       &--off{
         display: inline;
       }

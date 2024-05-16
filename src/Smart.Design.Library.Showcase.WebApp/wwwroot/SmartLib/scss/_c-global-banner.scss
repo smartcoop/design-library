@@ -3,9 +3,9 @@
    ========================================================================== */
 
 .c-global-banner {
-  padding: .6rem 2.4rem;
+  padding: 0.375rem 1.5rem;
   position: relative;
-  min-height: 4rem;
+  min-height: 2.5rem;
   display: flex;
   align-items: center;
 
@@ -27,16 +27,16 @@
   }
 
   .o-svg-icon {
-    margin-right: 1.6rem;
+    margin-right: 1rem;
     flex-shrink: 0;
   }
 
   .c-button--icon {
     position: absolute;
-    right: 1.2rem;
+    right: 0.75rem;
     top: 0;
     bottom: 0;
     margin: auto;
-    height: 2.4rem;
+    height: 1.5rem;
   }
 }

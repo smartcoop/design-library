@@ -4,11 +4,11 @@
 
 .c-popover {
   background: #fff;
-  border: 0.1rem solid $color-gray-200;
-  padding: 1.6rem;
-  border-radius: 0.4rem;
-  filter: drop-shadow(0 0 0.5rem rgba(33, 33, 33, 0.25));
-  max-width: 60rem;
+  border: 0.0625rem solid $color-gray-200;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  filter: drop-shadow(0 0 0.3125rem rgba(33, 33, 33, 0.25));
+  max-width: 37.5rem;
   z-index: $g-c-menu-z;
   opacity: 0;
   visibility: hidden;
@@ -26,7 +26,7 @@
   width: 0;
   height: 0;
   margin: auto;
-  border: 0.8rem solid transparent;
+  border: 0.5rem solid transparent;
 }
 
 [data-popper-placement^='top'] > [data-popper-arrow] {

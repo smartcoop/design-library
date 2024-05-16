@@ -16,13 +16,13 @@
 }
 
 .c-pagination__link {
-  min-width: 3.6rem;
-  height: 3.6rem;
-  padding: 0 0.8rem;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0.4rem;
+  border-radius: 0.25rem;
   text-decoration: none;
   color: $g-text-color;
   background: $color-gray-25;
@@ -35,8 +35,8 @@
 }
 
 .c-pagination__dots {
-  width: 3.6rem;
-  height: 3.6rem;
+  width: 2.25rem;
+  height: 2.25rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -44,7 +44,7 @@
 }
 
 .c-pagination__item + .c-pagination__item {
-  margin-left: 0.8rem;
+  margin-left: 0.5rem;
 }
 
 .c-pagination__item--active {

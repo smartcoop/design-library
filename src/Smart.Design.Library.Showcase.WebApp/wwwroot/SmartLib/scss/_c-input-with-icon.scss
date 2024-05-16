@@ -9,27 +9,27 @@
 
   .o-svg-icon {
     position: absolute;
-    top: 0.9rem;
-    width: 1.8rem;
-    height: 1.8rem;
-    left: 0.8rem;
+    top: 0.5625rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    left: 0.5rem;
   }
 
   .c-input:first-child {
-    padding-right: 3rem;
+    padding-right: 1.875rem;
   }
 
   .c-input:last-child {
-    padding-left: 3rem;
+    padding-left: 1.875rem;
   }
 
   .c-input + .o-svg-icon {
-    right: 0.8rem;
+    right: 0.5rem;
     left: auto;
   }
 
   .c-input + .o-svg-icon + .o-svg-icon {
-    right: 0.8rem;
+    right: 0.5rem;
     left: auto;
   }
 
@@ -44,11 +44,11 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 0.6rem;
-    width: 2.4rem;
-    height: 2.4rem;
-    right: 0.4rem;
-    padding: 0.3rem;
+    top: 0.375rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    right: 0.25rem;
+    padding: 0.1875rem;
 
     .o-svg-icon {
       position: initial;

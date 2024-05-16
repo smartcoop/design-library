@@ -10,37 +10,37 @@
 
 .c-citation{
   background-color: $color-gray-25;
-  padding: 2.2rem 2rem 2rem 4rem;
+  padding: 1.375rem 1.25rem 1.25rem 2.5rem;
   border-radius: $g-border-radius-small;
   h4{
     position: relative;
     display: block;
-    margin-bottom: .8rem;
+    margin-bottom: 0.5rem;
     &:after{
       content: "";
       display: block;
       position: absolute;
-      width: 2.8rem;
+      width: 1.75rem;
       height: 1px;
-      left: -4.5rem;
-      top: 1.3rem;
+      left: -2.8125rem;
+      top: 0.8125rem;
       background-color: $color-blue-600;
     }
   }
   p{
-    margin: .8rem .8rem .4rem 0;
+    margin: 0.5rem 0.5rem 0.25rem 0;
   }
 
   @media (min-width: $g-bp1) {
-    padding: 2.2rem 2rem 2rem 6rem;
+    padding: 1.375rem 1.25rem 1.25rem 3.75rem;
     h4{
       &:after{
-        width: 4rem;
-        left: -6.5rem;
+        width: 2.5rem;
+        left: -4.0625rem;
       }
     }
     p{
-      margin: .8rem 2rem .4rem 0;
+      margin: 0.5rem 1.25rem 0.25rem 0;
     }
   }
 }

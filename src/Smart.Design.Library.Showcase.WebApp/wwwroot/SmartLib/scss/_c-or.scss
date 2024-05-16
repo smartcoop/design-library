@@ -7,11 +7,11 @@
   position: relative;
   width: 100%;
   text-align: center;
-  margin: 2.4rem 0;
+  margin: 1.5rem 0;
 
   span {
     background: #FFF;
-    padding: 1rem;
+    padding: 0.625rem;
     z-index: 2;
     position: relative;
   }
@@ -19,10 +19,10 @@
   &:after {
     content: " ";
     position: absolute;
-    top: 1.2rem;
+    top: 0.75rem;
     left: 0;
     right: 0;
     width: 100%;
-    border-top: .1rem solid $color-semantic-border;
+    border-top: 0.0625rem solid $color-semantic-border;
   }
 }

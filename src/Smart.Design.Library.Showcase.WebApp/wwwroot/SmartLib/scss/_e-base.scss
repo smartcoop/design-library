@@ -18,13 +18,13 @@ $g-base-background: #FFF !default;
 }
 
 html {
-  font-size: 54.16%; // 13px
-  @media (min-width: $g-bp3) {
+  font-size: 100%; // 13px
+  /*@media (min-width: $g-bp3) {
     font-size: 58.33%; // 14px
   }
   @media (min-width: $g-bp4) {
     font-size: 62.5%; // Base 10
-  }
+  }*/
 }
 
 body {
