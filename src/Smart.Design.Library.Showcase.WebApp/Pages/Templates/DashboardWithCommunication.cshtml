@@ -3,6 +3,48 @@
 @{
     ViewData["Title"] = "Dashboard with communication for AG"; // for _TemplatesMainTitle
 }
+<style>
+    .card__banner--ag:before {
+        background-image: url("../SmartLib/images/banners/202305/letscoop2024.png");
+        right: inherit;
+    }
+
+    .card__banner--ag:before {
+        left: 2px;
+    }
+
+    @@media (min-width: 900px) {
+        .card__banner--ag:before {
+            left: 14.5%;
+            bottom: inherit;
+        }
+    }
+
+    .card__banner--ag:after {
+        content: none;
+    }
+
+    .card__banner--ag {
+        background-position-x: left;
+    }
+
+    .wrap .flex.u-spacer-top {
+        justify-content: flex-end;
+        display: flex;
+        flex-direction: row;
+        column-gap: 15px;
+    }
+
+    .c-card__banner--text p.main-title {
+        text-align: right;
+    }
+
+    .card__banner--ag {
+        background-size: auto 100%;
+    }
+
+</style>
+
 
 <div class="c-app-layout">
     @await Html.PartialAsync("Shared/_TemplatesHeader")
@@ -71,45 +113,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <style>
-                                .card__banner--ag:before {
-                                    background-image: url("../SmartLib/images/banners/202305/letscoop2024.png");
-                                    right: inherit;
-                                }
-
-                                .card__banner--ag:before {
-                                    left: 2px;
-                                }
-
-                                @@media (min-width: 900px) {
-                                    .card__banner--ag:before {
-                                        left: 14.5%;
-                                        bottom: inherit;
-                                    }
-                                }
-
-                                .card__banner--ag:after {
-                                    content:none;
-                                }
-
-                                .card__banner--ag{
-                                    background-position-x: left;
-                                }
-                                .wrap .flex.u-spacer-top{
-                                    justify-content: flex-end;
-                                    display: flex;
-                                    flex-direction: row;
-                                    column-gap: 15px;
-                                }
-                                .c-card__banner--text p.main-title{
-                                    text-align: right;
-                                }
-
-                                .card__banner--ag {
-                                    background-size: auto 100%;
-                                }
-
-                            </style>
+                            
                         </div>
                         <div class="u-spacer-bottom-l">
                             <div class="c-panel">
