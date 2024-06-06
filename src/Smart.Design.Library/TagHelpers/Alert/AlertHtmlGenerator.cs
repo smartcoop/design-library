@@ -113,7 +113,7 @@ public class AlertHtmlGenerator : IAlertHtmlGenerator
         foreach (var message in messages)
         {
             var htmlMessage = new TagBuilder("li");
-            htmlMessage.InnerHtml.Append(message);
+            htmlMessage.InnerHtml.AppendHtml(message);
             messagesContainer.InnerHtml.AppendHtml(htmlMessage);
         }
 
