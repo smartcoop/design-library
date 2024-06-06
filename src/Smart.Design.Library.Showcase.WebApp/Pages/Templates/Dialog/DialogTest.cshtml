@@ -43,14 +43,59 @@
             "Formateurs associés", "/u/cfa/home"
         }
     };
+
+    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>
+    {
+        {
+            "Vos informations personnelles", "/Info"
+        },
+        {
+            "Vos documents", "/documents"
+        },
+        {
+            "Mes véhicules", "/Templates/Dna/ListVehicule"
+        },
+        {
+            "Votre compte", "/Votre compte"
+        },
+        {
+            "Nos conditions d'utilisations", "~/unity/curu"
+        },
+        {
+            "Vos Unité de Production", "/unityProduction"
+        }
+    };
+
+    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
+    {
+        {
+            "Français", "Link/Français"
+        },
+        {
+            "English", "Link/English"
+        },
+        {
+            "Nederlands", "Link/Nederlands"
+        },
+        {
+            "Deutsh", "Link/Deutsh"
+        }
+    };
+
+    string fullNameWithTrigram = "ling xiaoyu";
+    string avatarPath = "imageAvatar";
+    string currentLanguage = "fr";
 }
 
 
 <div class="c-app-layout">
 
 
-    <main class="u-maximize-width">
+    <smart-header home-page-url="/home" labels-and-links="@labelsAndLinks" languages-and-links="@languagesAndLink" full-name-with-trigram="@fullNameWithTrigram"
+                  avatar-path="@avatarPath" target-language="@currentLanguage" logout-link="/logout.aspx">
+    </smart-header>
 
+    <main class="u-maximize-width">
         <div class="c-app-layout-inner">
             <div class="c-app-layout-inner__sidebar u-position-fixed">
                 <smart-sidemenu label-and-links="SideMenuLabelsAndLinks"></smart-sidemenu>
