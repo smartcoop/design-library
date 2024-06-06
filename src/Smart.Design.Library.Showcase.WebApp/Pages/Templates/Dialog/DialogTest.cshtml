@@ -5,11 +5,57 @@
 @{
     ViewData["Title"] = "Dialog box page";
 }
+
+<style>
+    #header, #footer {
+        display: none !important;
+    }
+
+    main.o-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .c-app-layout {
+        min-height: 100vh;
+    }
+</style>
+
+@{
+    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>
+    {
+        {
+            "Home", "/home"
+        },
+        {
+            "Prestations en cours", "/PedingPrestations"
+        },
+        {
+            "Nouvelle prestation", "/NewPrestation"
+        },
+        {
+            "Simulation", "/Simulation"
+        },
+        {
+            "Activités et projets", "/projets"
+        },
+        {
+            "Formateurs associés", "/u/cfa/home"
+        }
+    };
+}
+
+
 <div class="c-app-layout">
 
 
     <main class="u-maximize-width">
-        Hello world
+
+        <div class="c-app-layout-inner">
+            <div class="c-app-layout-inner__sidebar u-position-fixed">
+                <smart-sidemenu label-and-links="SideMenuLabelsAndLinks"></smart-sidemenu>
+            </div>
+        </div>
     </main>
 
 </div>
