@@ -7,6 +7,7 @@ namespace Smart.Design.Library.Showcase.Pages.Templates.Dialog
     {
         public void OnGet()
         {
+            
         }
     }
 }
