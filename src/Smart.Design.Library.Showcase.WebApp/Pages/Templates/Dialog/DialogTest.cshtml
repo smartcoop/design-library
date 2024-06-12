@@ -115,55 +115,23 @@
                             <br />
 
                             <span class="k-form-field-wrap">
-                                @(Html.Kendo()
-                                    .Dialog()
-                                    .Name("dialog") // The name of the Dialog is mandatory. It specifies the "id" attribute of the widget.
-                                    .Title("Software Update")// Set the title of the Dialog.
-                                    .Content("Do you agree terms and conditions?") // Define the content of the Dialog.
-                                    .Visible(false) // The widget will be initialized as invisible.
-                                    )
-                            </span>
-
-
-                            <span class="k-form-field-wrap">
+                                @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+                                @Html.AntiForgeryToken()
                                 @(Html.Kendo().Dialog()
-                                    .Name("dialogTest00")
+                                    .Name("dialog")
                                     .Title("Rendre inactif")
-                                    .Content("Attention vous ne pouvez plus choisir votre véhicule pour la saisie d'un nouveau fais. Vous pourrez le rendre actif à nouveau si vous souhaitez.")
-                                    .Width(400)  // Set the width of the Dialog.
-                                    .Modal(true) // Disable the modality of the Dialog.
+                                    .Content("<p>Attention vous ne pouvez plus choisir votre véhicule pour la saisie d'un nouveau fais. Vous pourrez le rendre actif à nouveau si vous souhaitez.<p>")
+                                    .Width(700)
+                                    .Height(400)
+                                    .Modal(true)
                                     .ButtonLayout("normal")
                                     .Actions(actions =>
                                     {
-                                        actions.Add().Text("Annuler").Primary(true); // Set text of the second button and define it as primary.
-                                        actions.Add().Text("Ok"); // Set text of the first button.
+                                        actions.Add().Text("Annuler");
+                                        actions.Add().Text("Ok").Primary(true).Action("makeVehicleInactive");
                                     })
                                     )
-                            </span>
-
-                            <span class="k-form-field-wrap">
-                                @(
-                                    Html.Kendo().Dialog()
-                                    .Name("dialog")
-                                    .Title("Data Update")
-                                    .Content("<p>Would you like to confirm updating the data?<p>")
-                                    .Width(400)
-                                    .Modal(false)
-                                    .Actions(actions =>
-                                    {
-                                        actions.Add().Text("Cancel");
-                                        actions.Add().Text("Send data").Primary(true).Action("onSendData");
-                                    })
-                                    )
-                            </span>
-
-
                         </div>
-
-
-
-
-
                     </div>
                 </div>
             </div>
@@ -171,9 +139,9 @@
         </div>
 
         <script>
-            function onSendData() {
+            function makeVehicleInactive() {
                 $.ajax({
-                    url: "/DialogTest",
+                    url: "/Templates/Dialog/DialogTest",
                     type: "POST",
                     headers: {
                         RequestVerificationToken: kendo.antiForgeryTokens().__RequestVerificationToken

@@ -12,7 +12,7 @@ namespace Smart.Design.Library.Showcase.Pages.Templates.Dialog
 
         public void OnPost()
         {
-            var acc = "";
+            var message = "Add here the code to remove the car from vehicle assets";
         }
     }
 }
