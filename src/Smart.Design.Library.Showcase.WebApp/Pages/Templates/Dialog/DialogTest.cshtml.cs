@@ -1,5 +1,7 @@
+using System.Linq.Expressions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Telerik.SvgIcons;
 
 namespace Smart.Design.Library.Showcase.Pages.Templates.Dialog
 {
@@ -12,7 +14,18 @@ namespace Smart.Design.Library.Showcase.Pages.Templates.Dialog
 
         public void OnPost()
         {
-            var message = "Add here the code to remove the car from vehicle assets";
+            var action = Request.Form["action"];
+            string message;
+            switch (action)
+            {
+                case "validate":
+                     message = "Add here the code when the user click on ok button";
+                    break;
+                case "cancel":
+                     message = "Add here the code when the user click on cancel button";
+                    break;
+            }
+           
         }
     }
 }

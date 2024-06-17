@@ -127,8 +127,8 @@
                                     .ButtonLayout("normal")
                                     .Actions(actions =>
                                     {
-                                        actions.Add().Text("<span class='k-button-text'>Annuler</span>");
-                                        actions.Add().Text("<span class='k-button-text'>Ok</span>").Primary(true).Action("makeVehicleInactive");
+                                        actions.Add().Text("<span class='k-button-text'>Annuler</span>").Action("dialogCancel");
+                                        actions.Add().Text("<span class='k-button-text'>Ok</span>").Primary(true).Action("dialogOk");
                                     })
                                     )
                         </div>
@@ -139,10 +139,20 @@
         </div>
 
         <script>
-            function makeVehicleInactive() {
+
+            function dialogCancel() {
+                makeVehicleInactive("cancel")
+            }
+
+            function dialogOk() {
+                makeVehicleInactive("validate")
+            }
+
+            function makeVehicleInactive(actionType) {
                 $.ajax({
                     url: "/Templates/Dialog/DialogTest",
                     type: "POST",
+                    data: { action: actionType },
                     headers: {
                         RequestVerificationToken: kendo.antiForgeryTokens().__RequestVerificationToken
                     },
