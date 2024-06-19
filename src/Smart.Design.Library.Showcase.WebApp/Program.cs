@@ -20,6 +20,9 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
+builder.WebHost.UseWebRoot("wwwroot");
+builder.WebHost.UseStaticWebAssets();
+
 app.UseRouting();
 
 app.UseAuthorization();
