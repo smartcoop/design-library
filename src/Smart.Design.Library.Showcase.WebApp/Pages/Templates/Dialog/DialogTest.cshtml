@@ -1,161 +1,39 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.Dialog.DialogTestModel
-@using Kendo.Mvc.UI
-@addTagHelper *, Kendo.Mvc
 @{
-    ViewData["Title"] = "Dialog box page";
+    ViewData["Title"] = "Default template"; // for _TemplatesMainTitle
 }
-
-<style>
-    #header, #footer {
-        display: none !important;
-    }
-
-    main.o-container {
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    .c-app-layout {
-        min-height: 100vh;
-    }
-</style>
-
-@{
-    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>
-    {
-        {
-            "Home", "/home"
-        },
-        {
-            "Prestations en cours", "/PedingPrestations"
-        },
-        {
-            "Nouvelle prestation", "/NewPrestation"
-        },
-        {
-            "Simulation", "/Simulation"
-        },
-        {
-            "Activités et projets", "/projets"
-        },
-        {
-            "Formateurs associés", "/u/cfa/home"
-        }
-    };
-
-    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>
-    {
-        {
-            "Vos informations personnelles", "/Info"
-        },
-        {
-            "Vos documents", "/documents"
-        },
-        {
-            "Mes véhicules", "/Templates/Dna/ListVehicule"
-        },
-        {
-            "Votre compte", "/Votre compte"
-        },
-        {
-            "Nos conditions d'utilisations", "~/unity/curu"
-        },
-        {
-            "Vos Unité de Production", "/unityProduction"
-        }
-    };
-
-    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
-    {
-        {
-            "Français", "Link/Français"
-        },
-        {
-            "English", "Link/English"
-        },
-        {
-            "Nederlands", "Link/Nederlands"
-        },
-        {
-            "Deutsh", "Link/Deutsh"
-        }
-    };
-
-    string fullNameWithTrigram = "ling xiaoyu";
-    string avatarPath = "imageAvatar";
-    string currentLanguage = "fr";
-}
-
 
 <div class="c-app-layout">
-
-
-    <smart-header home-page-url="/home" labels-and-links="@labelsAndLinks" languages-and-links="@languagesAndLink" full-name-with-trigram="@fullNameWithTrigram"
-                  avatar-path="@avatarPath" target-language="@currentLanguage" logout-link="/logout.aspx">
-    </smart-header>
-
+    @await Html.PartialAsync("Shared/_TemplatesHeader")
     <main class="u-maximize-width">
         <div class="c-app-layout-inner">
-            <div class="c-app-layout-inner__sidebar u-position-fixed">
-                <smart-sidemenu label-and-links="SideMenuLabelsAndLinks"></smart-sidemenu>
-            </div>
-
+            @await Html.PartialAsync("Shared/_TemplatesSideMenu")
             <div class="c-app-layout-inner__content">
-                <div class="o-container o-container--small">
+                @await Html.PartialAsync("Shared/_TemplatesMainTitle")
+                <div class="o-container o-container--large">
                     <div class="o-container-vertical--padding-small u-position-relative">
-                        <div class="u-spacer-bottom-l">
-                            <h2 class="c-d-h2">TELERIK Dialog</h2>
-                        </div>
-
-                        <div>
-                            <span class="k-form-field-wrap">
-                                @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
-                                @Html.AntiForgeryToken()
-                                @(Html.Kendo().Dialog()
-                                    .Name("dialog")
-                                    .Title("Rendre inactif")
-                                    .Content("<p>Attention vous ne pouvez plus choisir votre véhicule pour la saisie d'un nouveau fais. Vous pourrez le rendre actif à nouveau si vous souhaitez.<p>")
-                                    .Width(700)
-                                    .Height(400)
-                                    .Modal(true)
-                                    .ButtonLayout("normal")
-                                    .Actions(actions =>
-                                    {
-                                        actions.Add().Text("<span class='k-button-text'>Annuler</span>").Action("dialogCancel");
-                                        actions.Add().Text("<span class='k-button-text'>Ok</span>").Primary(true).Action("dialogOk");
-                                    })
-                                    )
+                        <div class="u-spacer-bottom-xl">
+                            <h2 class="c-h3">Heading 2</h2>
+                            <div class="o-card-grid-l">
+                                <div class="o-card-grid-l">
+                                    <div class="c-panel c-panel--border-r-sm">
+                                        <div class="c-panel__header c-panel__header-box o-block u-padding-vertical-m">
+                                            <h3 class="c-panel__title">Heading 3</h3>
+                                        </div>
+                                        <div class="c-panel__body u-padding-vertical">
+                                            <p class="u-spacer-bottom-s">
+                                                Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit,</b> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </p>
+                                            <smart-button button-style="Primary" trailing-icon="Add" label="Button Label"></smart-button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-
-        <script>
-
-            function dialogCancel() {
-                makeVehicleInactive("cancel")
-            }
-
-            function dialogOk() {
-                makeVehicleInactive("validate")
-            }
-
-            function makeVehicleInactive(actionType) {
-                $.ajax({
-                    url: "/Templates/Dialog/DialogTest",
-                    type: "POST",
-                    data: { action: actionType },
-                    headers: {
-                        RequestVerificationToken: kendo.antiForgeryTokens().__RequestVerificationToken
-                    },
-                    dataType: "json"
-                });
-            }
-        </script>
-
     </main>
-
 </div>
