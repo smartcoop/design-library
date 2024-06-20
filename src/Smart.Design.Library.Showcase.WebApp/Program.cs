@@ -1,6 +1,6 @@
 using Smart.Design.Library.Extensions;
 
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(new WebApplicationOptions {WebRootPath = "wwwroot"});
 builder.Services.AddKendo();
 
 // Add services to the container.
@@ -20,7 +20,6 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-builder.WebHost.UseWebRoot("wwwroot");
 builder.WebHost.UseStaticWebAssets();
 
 app.UseRouting();
