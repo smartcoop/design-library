@@ -1,5 +1,7 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.Dialog.DialogTestModel
+@using Kendo.Mvc.UI
+@addTagHelper *, Kendo.Mvc
 @{
     ViewData["Title"] = "Default template"; // for _TemplatesMainTitle
 }
@@ -19,14 +21,26 @@
                                 <div class="o-card-grid-l">
                                     <div class="c-panel c-panel--border-r-sm">
                                         <div class="c-panel__header c-panel__header-box o-block u-padding-vertical-m">
-                                            <h3 class="c-panel__title">Heading 3</h3>
+                                            <h3 class="c-panel__title">TELERIK Dialog-box</h3>
                                         </div>
-                                        <div class="c-panel__body u-padding-vertical">
-                                            <p class="u-spacer-bottom-s">
-                                                Lorem ipsum dolor sit amet, <b>consectetur adipiscing elit,</b> sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                            </p>
-                                            <smart-button button-style="Primary" trailing-icon="Add" label="Button Label"></smart-button>
-                                        </div>
+                                        <span class="k-form-field-wrap">
+                                            @inject Microsoft.AspNetCore.Antiforgery.IAntiforgery Xsrf
+                                            @Html.AntiForgeryToken()
+                                            @(Html.Kendo().Dialog()
+                                                .Name("dialog")
+                                                .Title("Rendre inactif")
+                                                .Content("<p>Attention vous ne pouvez plus choisir votre véhicule pour la saisie d'un nouveau fais. Vous pourrez le rendre actif à nouveau si vous souhaitez.<p>")
+                                                .Width(700)
+                                                .Height(400)
+                                                .Modal(true)
+                                                .ButtonLayout("normal")
+                                                .Actions(actions =>
+                                                {
+                                                    actions.Add().Text("<span class='k-button-text'>Annuler</span>").Action("dialogCancel");
+                                                    actions.Add().Text("<span class='k-button-text'>Ok</span>").Primary(true).Action("dialogOk");
+                                                })
+                                                )
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -35,5 +49,29 @@
                 </div>
             </div>
         </div>
+
+        <script>
+
+            function dialogCancel() {
+                makeVehicleInactive("cancel")
+            }
+
+            function dialogOk() {
+                makeVehicleInactive("validate")
+            }
+
+            function makeVehicleInactive(actionType) {
+                $.ajax({
+                    url: "/Templates/Dialog/DialogTest",
+                    type: "POST",
+                    data: { action: actionType },
+                    headers: {
+                        RequestVerificationToken: kendo.antiForgeryTokens().__RequestVerificationToken
+                    },
+                    dataType: "json"
+                });
+            }
+        </script>
+
     </main>
 </div>
