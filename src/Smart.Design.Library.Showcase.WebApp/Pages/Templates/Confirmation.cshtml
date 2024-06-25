@@ -1,4 +1,5 @@
 ﻿@page
+@using Smart.Design.Library.Showcase.Pages.Shared
 @using Smart.Design.Library.TagHelpers.Header
 @model Smart.Design.Library.Showcase.Pages.Templates.ConfirmationtionModel
 @{
@@ -17,20 +18,29 @@
         { "Item 1", "value1" },
         { "Item 2", "value2" }
     };
-}
-@{
-    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
+
+    var headerModel = new HeaderModel()
     {
+        HomePageUrl = "/Templates/_TemplatesIndex",
+        LanguagesAndLinks = new Dictionary<string, string>
         {
-            "French", "?SelectedMenu=French"
+            {
+                "Français", "?lang=fr"
+            },
+            {
+                "English", "?lang=en"
+            },
+            {
+                "Nederlands", "?lang=nl"
+            },
+            {
+                "Deutsh", "?lang=dt"
+            }
         },
-        {
-            "Dutch", "?SelectedMenu=Dutch"
-        }
+        TargetLanguage = "nl",
     };
 }
-
-<smart-not-logged-in-header home-page-url="" languages-and-links="@languagesAndLink" target-language="fr"></smart-not-logged-in-header>
+<partial name="~/Pages/Shared/Header/_HeaderNotLoggedInPartial.cshtml" model="headerModel"/>
 
 <div class="c-navbar--with-stepper k-mt--4" style="background: white">
     <div class="o-container o-container--small">

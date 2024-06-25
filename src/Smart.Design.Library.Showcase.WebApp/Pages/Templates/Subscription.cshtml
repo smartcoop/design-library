@@ -1,4 +1,5 @@
 ﻿@page
+@using Smart.Design.Library.Showcase.Pages.Shared
 @model Smart.Design.Library.Showcase.Pages.Templates.SubscriptionModel
 @{
     ViewData["Title"] = "Subscription page";
@@ -11,24 +12,35 @@
     };
 }
 @{
-    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
-    {
-        {
-            "French", "?SelectedMenu=French"
-        },
-        {
-            "Dutch", "?SelectedMenu=Dutch"
-        }
-    };
-
     List<string> messages = new List<string>
     {
     "Si votre fonction nécessite un justificatif (à vérifier dans <a class=\"link--sup\" href=\"https://guide.smart.coop/docs/fr/registre-des-metiers-1\" target=\"_blank\"> le registre des métiers</a>), il vous sera demandé de l'uploader à l'étape 2 du formulaire.",
     "une autre erreur"
     };
+
+    var headerModel = new HeaderModel()
+    {
+        HomePageUrl = "/Templates/_TemplatesIndex",
+        LanguagesAndLinks = new Dictionary<string, string>
+        {
+            {
+                "Français", "?lang=fr"
+            },
+            {
+                "English", "?lang=en"
+            },
+            {
+                "Nederlands", "?lang=nl"
+            },
+            {
+                "Deutsh", "?lang=dt"
+            }
+        },
+        TargetLanguage = "nl",
+    };
 }
 
-<smart-not-logged-in-header home-page-url="" languages-and-links="@languagesAndLink" target-language="fr"></smart-not-logged-in-header>
+<partial name="~/Pages/Shared/Header/_HeaderNotLoggedInPartial.cshtml" model="headerModel"/>
 
 <div class="c-navbar--with-stepper u-spacer-top">
     <div class="o-container o-container--small">
@@ -98,7 +110,7 @@
                         <smart-select id="language"
                                       name="language"
                                       defautValueLabel="Sélectionner une langue"
-                                      items="@languagesAndLink"
+                                      items="@headerModel.LanguagesAndLinks"
                                       asp-for="@Model.Subscription.Language">
                         </smart-select>
                     </smart-formgroup>

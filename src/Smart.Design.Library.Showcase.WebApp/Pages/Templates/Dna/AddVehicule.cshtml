@@ -1,6 +1,7 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.Dna.AddVehiculePageModel
 @using Kendo.Mvc.UI
+@using Smart.Design.Library.Showcase.Pages.Shared
 @addTagHelper *, Kendo.Mvc
 @{
     ViewData["Title"] = "Vehicule add page";
@@ -24,47 +25,6 @@
 
 @{
     var list = new List<string> { "preambule", "les parties", "Droit et attribution de compétence", "deux", "trois" };
-    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>
-    {
-        {
-            "Français", "Link/Français"
-        },
-        {
-            "English", "Link/English"
-        },
-        {
-            "Nederlands", "Link/Nederlands"
-        },
-        {
-            "Deutsh", "Link/Deutsh"
-        }
-    };
-
-    string currentLanguage = "nl";
-    string fullNameWithTrigram = "John Doe (doe)";
-    string avatarPath = "imageAvatar";
-
-    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>
-    {
-        {
-            "Vos informations personnelles", "/Info"
-        },
-        {
-            "Vos documents", "/documents"
-        },
-        {
-            "Mes véhicules", "/Templates/Dna/ListVehicule"
-        },
-        {
-            "Votre compte", "/Votre compte"
-        },
-        {
-            "Nos conditions d'utilisations", "~/unity/curu"
-        },
-        {
-            "Vos Unité de Production", "/unityProduction"
-        }
-    };
     Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>
     {
         {
@@ -124,12 +84,55 @@
             Value = "2"
         }
     };
+
+    var headerModel = new HeaderModel()
+    {
+        HomePageUrl = "/Templates/_TemplatesIndex",
+        LanguagesAndLinks = new Dictionary<string, string>
+        {
+            {
+                "Français", "?lang=fr"
+            },
+            {
+                "English", "?lang=en"
+            },
+            {
+                "Nederlands", "?lang=nl"
+            },
+            {
+                "Deutsh", "?lang=dt"
+            }
+        },
+        TargetLanguage = "nl",
+        FullNameWithTrigram = "John Doe (doe)",
+        AvatarPath = "imageAvatar",
+        LabelsAndLinks = new Dictionary<string, string>
+        {
+            {
+                "Vos informations personnelles", "/Info"
+            },
+            {
+                "Vos documents", "/documents"
+            },
+            {
+                "Mes véhicules", "/Templates/Dna/ListVehicule"
+            },
+            {
+                "Votre compte", "/Votre compte"
+            },
+            {
+                "Nos conditions d'utilisations", "~/unity/curu"
+            },
+            {
+                "Vos Unité de Production", "/unityProduction"
+            }
+        },
+        LogoutLink = "/logout.aspx"
+    };
 }
 
 <div class="c-app-layout">
-    <smart-header home-page-url="/home" labels-and-links="@labelsAndLinks" languages-and-links="@languagesAndLink" full-name-with-trigram="@fullNameWithTrigram"
-                  avatar-path="@avatarPath" target-language="@currentLanguage" logout-link="/logout.aspx">
-    </smart-header>
+    <partial name="~/Pages/Shared/Header/_HeaderPartial.cshtml" model="headerModel"/>
 
     <main class="u-maximize-width">
         <div class="c-app-layout-inner">
