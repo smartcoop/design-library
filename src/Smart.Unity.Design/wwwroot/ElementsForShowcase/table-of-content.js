@@ -208,8 +208,8 @@ window.addEventListener('load', (event) => {
             str = str.replace(/^\s+|\s+$/g, ''); // trim
             str = str.toLowerCase();
 
-            // remove accents, swap ρ for n, etc
-            var from = "ΰαδβθιλκμνοξςσφτωϊόϋρη·/_,:;";
+            // remove accents, swap Γ± for n, etc
+            var from = "Γ Γ΅Γ¤ΓΆΓ¨Γ©Γ«ΓªΓ¬Γ­Γ―Γ®Γ²Γ³Γ¶Γ΄ΓΉΓΊΓΌΓ»Γ±Γ§Β·/_,:;";
             var to = "aaaaeeeeiiiioooouuuunc------";
             for (var i = 0, l = from.length; i < l; i++) {
                 str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));

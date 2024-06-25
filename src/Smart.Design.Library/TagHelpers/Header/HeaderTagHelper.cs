@@ -37,7 +37,7 @@ public class HeaderTagHelper : TagHelper
     /// <summary>
     /// Path to the current user avatar
     /// </summary>
-    public string AvatarPath { get; set; } = "~/images/default_image.svg";
+    public string AvatarPath { get; set; } = "/_content/Smart.Unity.Design/images/default_image.svg";
 
     /// <summary>
     /// Path to logout
