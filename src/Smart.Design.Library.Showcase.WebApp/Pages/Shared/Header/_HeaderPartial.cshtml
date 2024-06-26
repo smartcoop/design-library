@@ -2,6 +2,22 @@
 @using Smart.Design.Library.Resources
 @using Smart.Design.Library.Showcase.Pages.Shared.Header
 
+<style>
+    /* For Design Library only - DO NOT REUSE */
+    #header, #footer {
+        display: none !important;
+    }
+
+    main.o-container {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .c-app-layout {
+        min-height: 100vh;
+    }
+</style>
+
 @{
     (string CultureCode, string Language) languageCulture = Model.TargetLanguage?.ToUpper() switch
     {

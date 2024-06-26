@@ -1,16 +1,87 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.DefaultTemplateModel
+
+@using Smart.Design.Library.Showcase.Pages.Shared
 @{
     ViewData["Title"] = "Default template"; // for _TemplatesMainTitle
 }
+@{
+    var list = new List<string> { "preambule", "les parties", "Droit et attribution de compétence", "deux", "trois" };
+    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>
+    {
+        {
+            "Home", "/home"
+        },
+        {
+            "Prestations en cours", "/PedingPrestations"
+        },
+        {
+            "Nouvelle prestation", "/NewPrestation"
+        },
+        {
+            "Simulation", "/Simulation"
+        },
+        {
+            "Activités et projets", "/projets"
+        },
+        {
+            "Formateurs associés", "/u/cfa/home"
+        }
+    };   
+
+    var headerModel = new HeaderModel()
+            {
+                HomePageUrl = "/Templates/_TemplatesIndex",
+                LanguagesAndLinks = new Dictionary<string, string>
+        {
+            {
+                "Français", "?lang=fr"
+            },
+            {
+                "English", "?lang=en"
+            },
+            {
+                "Nederlands", "?lang=nl"
+            },
+            {
+                "Deutsh", "?lang=dt"
+            }
+        },
+                TargetLanguage = "nl",
+                FullNameWithTrigram = "John Doe (doe)",
+                AvatarPath = "imageAvatar",
+                LabelsAndLinks = new Dictionary<string, string>
+        {
+            {
+                "Vos informations personnelles", "/Info"
+            },
+            {
+                "Vos documents", "/documents"
+            },
+            {
+                "Mes véhicules", "/Templates/Dna/ListVehicule"
+            },
+            {
+                "Votre compte", "/Votre compte"
+            },
+            {
+                "Nos conditions d'utilisations", "~/unity/curu"
+            },
+            {
+                "Vos Unité de Production", "Templates/ProductionUnit"
+            }
+        },
+                LogoutLink = "/logout.aspx"
+            };
+}
 
 <div class="c-app-layout">
-    @await Html.PartialAsync("Shared/_TemplatesHeader")
+    <partial name="~/Pages/Shared/Header/_HeaderPartial.cshtml" model="headerModel" />
     <main class="u-maximize-width">
         <div class="c-app-layout-inner">
-            @await Html.PartialAsync("Shared/_TemplatesSideMenu")
+            <partial name="Shared/_TemplatesSideMenu" />
             <div class="c-app-layout-inner__content">
-                @await Html.PartialAsync("Shared/_TemplatesMainTitle")
+                <partial name="Shared/_TemplatesMainTitle"/>
                 <div class="o-container o-container--large">
                     <div class="o-container-vertical--padding-small u-position-relative">
                         <div class="u-spacer-bottom-xl">

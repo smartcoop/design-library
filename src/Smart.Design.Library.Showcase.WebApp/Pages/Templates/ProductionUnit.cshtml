@@ -1,5 +1,6 @@
 ﻿@page
 @model Smart.Design.Library.Showcase.Pages.Templates.ProductionUnitModel
+@using Smart.Design.Library.Showcase.Pages.Shared
 @{
     ViewData["Title"] = "Vos unités de production"; // for _TemplatesMainTitle
 }
@@ -20,35 +21,73 @@
 
 @{
     var list = new List<string> { "preambule", "les parties", "Droit et attribution de compétence", "deux", "trois" };
-    Dictionary<string, string> languagesAndLink = new Dictionary<string, string>{
+    Dictionary<string, string> SideMenuLabelsAndLinks = new Dictionary<string, string>
     {
-    "Français", "Link/Français"
-    },{
-    "English", "Link/English"
-    },{
-    "Nederlands", "Link/Nederlands"
-    },{
-    "De", "chemin"
-    }
+        {
+            "Home", "/home"
+        },
+        {
+            "Prestations en cours", "/PedingPrestations"
+        },
+        {
+            "Nouvelle prestation", "/NewPrestation"
+        },
+        {
+            "Simulation", "/Simulation"
+        },
+        {
+            "Activités et projets", "/projets"
+        },
+        {
+            "Formateurs associés", "/u/cfa/home"
+        }
     };
 
-    string currentLanguage = "nl";
-    string fullNameWithTrigram = "John Doe (doe)";
-    string avatarPath = "imageAvater";
+    var headerModel = new HeaderModel()
+            {
+                HomePageUrl = "/Templates/_TemplatesIndex",
+                LanguagesAndLinks = new Dictionary<string, string>
+        {
+            {
+                "Français", "?lang=fr"
+            },
+            {
+                "English", "?lang=en"
+            },
+            {
+                "Nederlands", "?lang=nl"
+            },
+            {
+                "Deutsh", "?lang=dt"
+            }
+        },
+                TargetLanguage = "nl",
+                FullNameWithTrigram = "John Doe (doe)",
+                AvatarPath = "imageAvatar",
+                LabelsAndLinks = new Dictionary<string, string>
+        {
+            {
+                "Vos informations personnelles", "/Info"
+            },
+            {
+                "Vos documents", "/documents"
+            },
+            {
+                "Mes véhicules", "/Templates/Dna/ListVehicule"
+            },
+            {
+                "Votre compte", "/Votre compte"
+            },
+            {
+                "Nos conditions d'utilisations", "~/unity/curu"
+            },
+            {
+                "Vos Unité de Production", "Templates/ProductionUnit"
+            }
+        },
+                LogoutLink = "/logout.aspx"
+            };
 
-    Dictionary<string, string> labelsAndLinks = new Dictionary<string, string>{
-    {
-    "Vos informations personnelles", "/Info"
-    },{
-    "Vos documents", "/documents"
-    },{
-     "Votre compte", "/Votre compte"
-    },{
-     "Nos conditions d'utilisations", "~/unity/curu"
-    },{
-     "Vos Unité de Production","/unityProduction"
-    }
-    };
     Dictionary<string, string> LabelAndValue = new Dictionary<string, string>{
     {
     "Titulaire: ", "678362 - John Doe"
@@ -57,8 +96,7 @@
 }
 
 <div class="c-app-layout">
-    <smart-header home-page-url="/home" labels-and-links="@labelsAndLinks" languages-and-links="@languagesAndLink" full-name-with-trigram=@fullNameWithTrigram
-                  avatar-path="@avatarPath" target-language="@currentLanguage" logout-link="/logout.aspx"></smart-header>
+    <partial name="~/Pages/Shared/Header/_HeaderPartial.cshtml" model="headerModel" />
 
     <main class="u-maximize-width">
         <div class="c-app-layout-inner">
